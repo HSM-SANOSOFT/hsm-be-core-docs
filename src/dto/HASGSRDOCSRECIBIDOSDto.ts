@@ -4,7 +4,7 @@ import { IsArray, IsNotEmpty, IsObject, IsString } from 'class-validator';
 export class HASGSRDOCSRECIBIDOSDto {
     @IsString()
     @IsNotEmpty()
-    postulacion;
+    POSTULACION;
 
     @IsString()
     @IsNotEmpty()
@@ -12,9 +12,9 @@ export class HASGSRDOCSRECIBIDOSDto {
 
     @IsString()
     @IsNotEmpty()
-    Tipo_documento: string;
+    TIPO_DOCUMENTO: string;
 
     @IsString()
     @IsNotEmpty()
-    ruta: string;
+    RUTA: string;
 }
