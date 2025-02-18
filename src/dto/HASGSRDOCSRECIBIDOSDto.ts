@@ -1,10 +1,9 @@
-import { Type } from 'class-transformer';
-import { IsArray, IsNotEmpty, IsObject, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class HASGSRDOCSRECIBIDOSDto {
-    @IsString()
+    @IsNumber()
     @IsNotEmpty()
-    POSTULACION;
+    POSTULACION: number;
 
     @IsString()
     @IsNotEmpty()
@@ -17,4 +16,5 @@ export class HASGSRDOCSRECIBIDOSDto {
     @IsString()
     @IsNotEmpty()
     RUTA: string;
+
 }

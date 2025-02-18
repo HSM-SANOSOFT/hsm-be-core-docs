@@ -1,6 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import * as fs from 'fs';
-import * as path from 'path';
 import { DatabaseService } from 'src/database/database.service';
 import { HASGSRDOCSRECIBIDOSDto } from 'src/dto/HASGSRDOCSRECIBIDOSDto';
 
@@ -8,8 +6,7 @@ import { HASGSRDOCSRECIBIDOSDto } from 'src/dto/HASGSRDOCSRECIBIDOSDto';
 export class HASGSRDOCSRECIBIDOSDatabaseService {
     constructor(private readonly db: DatabaseService) { }
     async guardarGSRDocumentosRecibidos(
-        file: Express.Multer.File,
-        GSR_DOCUMENTOS: HASGSRDOCSRECIBIDOSDto
+        GSR_DOCUMENTOS: HASGSRDOCSRECIBIDOSDto,
     ) {
         const query = {
             label: 'guardarGSRDocumentosRecibidos',
@@ -24,11 +21,7 @@ export class HASGSRDOCSRECIBIDOSDatabaseService {
         };
 
         const resultado = await this.db.query(query);
-        const filePath = path.join(
-            GSR_DOCUMENTOS.RUTA,
-            GSR_DOCUMENTOS.DOCUMENTO
-        );
-        fs.writeFileSync(filePath, Buffer.from(file.buffer));
+
         return resultado;
     }
 }
