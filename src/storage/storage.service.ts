@@ -61,4 +61,23 @@ export class StorageService {
       return false;
     }
   }
+
+  async uploadFile(type: string, id: string, content: Buffer): Promise<void> {
+    try {
+      await this.storageProvider.client.putObject(
+        this.storageProvider.bucket,
+        `${type}/${id}.pdf`,
+        content,
+      );
+      this.logger.log(`File ${type}/${id}.pdf uploaded successfully`);
+    } catch (error) {
+      this.logger.error(
+        `Failed to upload file ${type}/${id}.pdf: ${JSON.stringify(error)}`,
+      );
+      throw new RpcException({
+        statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+        message: `Failed to upload file ${type}/${id}.pdf`,
+      });
+    }
+  }
 }
