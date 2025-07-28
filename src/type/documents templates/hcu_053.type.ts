@@ -1,0 +1,43 @@
+export type Hcu053DocumentTemplate = {
+  hallazgo: string;
+  diag: string;
+  cod_d: string;
+  pre: string;
+  def: string;
+  diag1: string;
+  cod_d1: string;
+  pre1: string;
+  def1: string;
+  diag2: string;
+  cod_d2: string;
+  pre2: string;
+  def2: string;
+  firma_referencia: string;
+  sello_referencia: string;
+  table_med_responsable: string;
+
+  archivo: {
+    CEDULA: string;
+    PCN_NUMERO_HC: string;
+    APELLIDO_PATERNO: string;
+    APELLIDO_MATERNO: string;
+    PRIMER_NOMBRE: string;
+    SEGUNDO_NOMBRE: string;
+    SEXO: string;
+    FECHA_NACIMIENTO: string;
+    EDAD: string;
+    TELEFONO: string;
+    PRQ_CNT_PRV_CODIGO: string;
+    PRQ_CNT_CODIGO: string;
+    PRQ_CODIGO: string;
+    SERVICIO: string;
+    ESPECIALIDAD: string;
+    RESUMEN: string;
+    FECHA: string;
+    HORA: string;
+    NOMBRE_MED: string;
+    PRIMER_APELLID_MED: string;
+    SEGUNDO_APELLIDO_MED: string;
+    CD_PER: string;
+  };
+};

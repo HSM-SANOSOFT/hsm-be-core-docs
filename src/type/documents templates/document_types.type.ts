@@ -6,4 +6,5 @@ export enum DocumentTypes {
   resultado_imagen = 'resultado_imagen',
   resultado_laboratorio = 'resultado_laboratorio',
   resultado_patologia = 'resultado_patologia',
+  hcu_053 = 'hcu-053',
 }

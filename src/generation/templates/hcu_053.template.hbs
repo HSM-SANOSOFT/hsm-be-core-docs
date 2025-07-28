@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang ="es">
+<head>
+  <style>
+    @page { margin: 20px; }
+    footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      height: 50px;
+      bottom: 0;
+      margin-bottom: -30px;
+    }
+    footer .page:after { content: counter(page, decimal); }
+  </style>
+</head>
+<body>
+
+  <div style="width:100%">
+    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
+      <thead>
+        <tr>
+          <th colspan="11" bgcolor="ccccff">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2" align="center">RED COMPLEMENTARIA</td>
+          <td align="center">25410</td>
+          <td colspan="2" align="center">{{institucion_ser}}</td>
+          <td colspan="2" align="center"><b>{{archivo.CEDULA}}</b></td>
+          <td colspan="4" align="center">{{archivo.PCN_NUMERO_HC}}</td>
+        </tr>
+        <tr>
+          <td>{{archivo.APELLIDO_PATERNO}}</td>
+          <td>{{archivo.APELLIDO_MATERNO}}</td>
+          <td>{{archivo.PRIMER_NOMBRE}}</td>
+          <td>{{archivo.SEGUNDO_NOMBRE}}</td>
+          <td>{{archivo.SEXO}}</td>
+          <td>{{archivo.FECHA_NACIMIENTO}}</td>
+          <td>{{archivo.EDAD}}</td>
+          <td></td><td></td><td></td><td>X</td>
+        </tr>
+        <tr>
+          <td colspan="4" align="center">{{archivo.TELEFONO}}</td>
+        </tr>
+        <tr>
+          <td colspan="2">{{archivo.PRQ_CNT_PRV_CODIGO}}</td>
+          <td>{{archivo.PRQ_CNT_CODIGO}}</td>
+          <td>{{archivo.PRQ_CODIGO}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="width:100%;padding-top: 3px">
+    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
+      <thead>
+        <tr>
+          <th colspan="4" bgcolor="ccccff">B. DATOS DEL ESTABLECIMIENTO AL QUE SE REFIERE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>{{archivo.SERVICIO}}</td>
+          <td>{{archivo.ESPECIALIDAD}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="width:100%;padding-top: 3px">
+    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
+      <thead><tr><th bgcolor="ccccff">C. RESUMEN DEL CUADRO CLÍNICO</th></tr></thead>
+      <tbody><tr><td>{{archivo.RESUMEN}}</td></tr></tbody>
+    </table>
+  </div>
+
+  <div style="width:100%;padding-top: 3px">
+    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
+      <thead><tr><th bgcolor="ccccff">D. HALLAZGOS RELEVANTES</th></tr></thead>
+      <tbody><tr><td>{{hallazgo}}</td></tr></tbody>
+    </table>
+  </div>
+
+  <div style="width:100%;padding-top: 3px">
+    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
+      <thead>
+        <tr>
+          <th colspan="2" bgcolor="ccccff">E. DIAGNÓSTICO</th>
+          <th bgcolor="ccccff">CIE</th>
+          <th bgcolor="ccccff">PRE</th>
+          <th bgcolor="ccccff">DEF</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.</td>
+          <td>{{diag}}</td>
+          <td>{{cod_d}}</td>
+          <td>{{pre}}</td>
+          <td>{{def}}</td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>{{diag1}}</td>
+          <td>{{cod_d1}}</td>
+          <td>{{pre1}}</td>
+          <td>{{def1}}</td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>{{diag2}}</td>
+          <td>{{cod_d2}}</td>
+          <td>{{pre2}}</td>
+          <td>{{def2}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="width:100%;padding-top: 3px">
+    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
+      <thead><tr><th colspan="5" bgcolor="ccccff">F. DATOS DEL PROFESIONAL RESPONSABLE</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>{{archivo.FECHA}}</td>
+          <td>{{archivo.HORA}}</td>
+          <td>{{archivo.NOMBRE_MED}}</td>
+          <td>{{archivo.PRIMER_APELLID_MED}}</td>
+          <td>{{archivo.SEGUNDO_APELLIDO_MED}}</td>
+        </tr>
+        <tr>
+          <td colspan="2">{{archivo.CD_PER}}</td>
+          <td colspan="2"><img src="{{firma_referencia}}" style="width: 80px;"></td>
+          <td><img src="{{sello_referencia}}" style="width: 80px;"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <div style="width:100%;">
+      <table style="font-size: 8px;width:100%;">
+        <tbody>
+          <tr>
+            <td>SNS-MSP / HCU-form.053 / 2021</td>
+            <td align="right">REFERENCIA - DERIVACIÓN - CONTRAREFERENCIA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </footer>
+
+</body>
+</html>

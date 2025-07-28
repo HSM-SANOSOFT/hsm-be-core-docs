@@ -1,4 +1,4 @@
-import { HttpStatus, Inject, Injectable } from '@nestjs/common';
+import { HttpStatus, Inject, Injectable, Logger } from '@nestjs/common';
 import { RpcException } from '@nestjs/microservices';
 import Handlebars from 'handlebars';
 import { DocumentTemplates } from 'src/type';
@@ -7,6 +7,7 @@ import wkhtmltopdf from 'wkhtmltopdf';
 
 @Injectable()
 export class GenerationService {
+  private readonly logger = new Logger(GenerationService.name);
   constructor(
     @Inject('DocumentTemplates') private templates: DocumentTemplates,
   ) {}
@@ -21,9 +22,14 @@ export class GenerationService {
       });
     }
 
+    this.logger.debug(`template: ${template}`);
+
     try {
       const compiledTemplate = Handlebars.compile(template);
       const html = compiledTemplate(payload);
+
+      this.logger.debug(`html: ${html}`);
+
       const buffer = await new Promise<Buffer>((resolve, reject) => {
         const chunks: Buffer[] = [];
         wkhtmltopdf(html, {
@@ -38,12 +44,24 @@ export class GenerationService {
           .on('data', (chunk: Buffer) => chunks.push(chunk))
           .on('end', () => resolve(Buffer.concat(chunks)));
       });
+      this.logger.debug(`buffer: ${buffer.length} bytes`);
+
+      if (!buffer || buffer.length === 0) {
+        throw new RpcException({
+          statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+          message: 'PDF buffer is empty',
+        });
+      }
       return buffer;
-    } catch {
-      throw new RpcException({
-        status: HttpStatus.INTERNAL_SERVER_ERROR,
-        message: 'Error generating document',
-      });
+    } catch (error) {
+      if (error instanceof RpcException) {
+        throw error;
+      } else {
+        throw new RpcException({
+          statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+          message: 'Error generating document',
+        });
+      }
     }
   }
 }

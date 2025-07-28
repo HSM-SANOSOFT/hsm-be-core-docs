@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 
-import { GenerationService } from './generation.service';
 import { DocumentTemplatesProvider } from './document.template.provider';
+import { GenerationService } from './generation.service';
 @Module({
   providers: [GenerationService, DocumentTemplatesProvider],
+  exports: [GenerationService],
 })
 export class GenerationModule {}
