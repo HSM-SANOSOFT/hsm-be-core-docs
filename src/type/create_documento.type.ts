@@ -3,5 +3,6 @@ import type { DocumentTypesPayloadMap } from './documents templates/document_typ
 
 export type createDocumento = {
   type: DocumentTypes;
+  id: string;
   payload: DocumentTypesPayloadMap[DocumentTypes];
 };

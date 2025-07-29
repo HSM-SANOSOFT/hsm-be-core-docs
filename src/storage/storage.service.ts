@@ -1,7 +1,9 @@
+import { UUID } from 'node:crypto';
 import * as stream from 'node:stream';
 
 import { HttpStatus, Injectable, Logger } from '@nestjs/common';
 import { RpcException } from '@nestjs/microservices';
+import { DocumentTypes } from 'src/type/documents templates/document_types.type';
 
 import { StorageProvider } from './storage.provider';
 
@@ -10,31 +12,31 @@ export class StorageService {
   private readonly logger = new Logger(StorageService.name);
   constructor(private readonly storageProvider: StorageProvider) {}
 
-  async getPresignedUrl(type: string, id: string): Promise<string> {
+  async getPresignedUrl(type: string, uuid: UUID): Promise<string> {
     const expires = 60 * 60;
     const url = await this.storageProvider.client.presignedUrl(
       'GET',
       this.storageProvider.bucket,
-      `${type}/${id}.pdf`,
+      `${type}/${uuid}.pdf`,
       expires,
     );
-    this.logger.debug(`Presigned URL for ${type}/${id}: ${url}`);
+    this.logger.debug(`Presigned URL for ${type}/${uuid}: ${url}`);
     if (!url) {
-      this.logger.error(`Failed to generate presigned URL for ${type}/${id}`);
+      this.logger.error(`Failed to generate presigned URL for ${type}/${uuid}`);
       throw new RpcException({
         statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
-        message: `Failed to generate presigned URL for ${type}/${id}`,
+        message: `Failed to generate presigned URL for ${type}/${uuid}`,
       });
     }
     return url;
   }
 
-  async getFileStream(type: string, id: string): Promise<stream.Readable> {
+  async getFileStream(type: string, uuid: UUID): Promise<stream.Readable> {
     const fileStream = this.storageProvider.client.getObject(
       this.storageProvider.bucket,
-      `${type}/${id}.pdf`,
+      `${type}/${uuid}.pdf`,
     );
-    this.logger.debug(`File stream for ${type}/${id} retrieved successfully`);
+    this.logger.debug(`File stream for ${type}/${uuid} retrieved successfully`);
     return fileStream;
   }
 
@@ -47,36 +49,40 @@ export class StorageService {
     });
   }
 
-  async fileExists(type: string, id: string): Promise<boolean> {
+  async fileExists(type: DocumentTypes, uuid: UUID): Promise<boolean> {
     try {
       const stat = await this.storageProvider.client.statObject(
         this.storageProvider.bucket,
-        `${type}/${id}.pdf`,
+        `${type}/${uuid}.pdf`,
       );
       return stat ? true : false;
     } catch (error) {
       this.logger.warn(
-        `File ${type}/${id}.pdf does not exist or cannot be accessed: ${JSON.stringify(error)}`,
+        `File ${type}/${uuid}.pdf does not exist or cannot be accessed: ${JSON.stringify(error)}`,
       );
       return false;
     }
   }
 
-  async uploadFile(type: string, id: string, content: Buffer): Promise<void> {
+  async uploadFile(
+    type: DocumentTypes,
+    uuid: UUID,
+    content: Buffer,
+  ): Promise<void> {
     try {
       await this.storageProvider.client.putObject(
         this.storageProvider.bucket,
-        `${type}/${id}.pdf`,
+        `${type}/${uuid}.pdf`,
         content,
       );
-      this.logger.log(`File ${type}/${id}.pdf uploaded successfully`);
+      this.logger.log(`File ${type}/${uuid}.pdf uploaded successfully`);
     } catch (error) {
       this.logger.error(
-        `Failed to upload file ${type}/${id}.pdf: ${JSON.stringify(error)}`,
+        `Failed to upload file ${type}/${uuid}.pdf: ${JSON.stringify(error)}`,
       );
       throw new RpcException({
         statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
-        message: `Failed to upload file ${type}/${id}.pdf`,
+        message: `Failed to upload file ${type}/${uuid}.pdf`,
       });
     }
   }

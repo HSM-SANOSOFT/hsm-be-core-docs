@@ -81,8 +81,8 @@ importers:
         specifier: 1.4.5-lts.1
         version: 1.4.5-lts.1
       oracledb:
-        specifier: ^6.8.0
-        version: 6.8.0
+        specifier: ^6.9.0
+        version: 6.9.0
       passport:
         specifier: ^0.7.0
         version: 0.7.0
@@ -106,7 +106,7 @@ importers:
         version: 4.8.1
       typeorm:
         specifier: ^0.3.21
-        version: 0.3.21(oracledb@6.8.0)(reflect-metadata@0.2.2)(ts-node@10.9.2(@swc/core@1.10.15(@swc/helpers@0.5.15))(@types/node@22.13.10)(typescript@5.8.2))
+        version: 0.3.21(oracledb@6.9.0)(reflect-metadata@0.2.2)(ts-node@10.9.2(@swc/core@1.10.15(@swc/helpers@0.5.15))(@types/node@22.13.10)(typescript@5.8.2))
       typescript-eslint:
         specifier: ^8.26.1
         version: 8.26.1(eslint@9.22.0)(typescript@5.8.2)
@@ -135,9 +135,6 @@ importers:
       '@types/express':
         specifier: ^5.0.0
         version: 5.0.0
-      '@types/handlebars':
-        specifier: ^4.1.0
-        version: 4.1.0
       '@types/jest':
         specifier: ^29.5.14
         version: 29.5.14
@@ -147,6 +144,9 @@ importers:
       '@types/node':
         specifier: ^22.13.10
         version: 22.13.10
+      '@types/oracledb':
+        specifier: ^6.6.2
+        version: 6.6.2
       '@types/supertest':
         specifier: ^6.0.2
         version: 6.0.2
@@ -1075,10 +1075,6 @@ packages:
   '@types/graceful-fs@4.1.9':
     resolution: {integrity: sha512-olP3sd1qOEe5dXTSaFvQG+02VdRXcdytWLAZsAq1PecU8uqQAhkrnbli7DagjtXKW/Bl7YJbUsa8MPcuc8LHEQ==}
 
-  '@types/handlebars@4.1.0':
-    resolution: {integrity: sha512-gq9YweFKNNB1uFK71eRqsd4niVkXrxHugqWFQkeLRJvGjnxsLr16bYtcsG4tOFwmYi0Bax+wCkbf1reUfdl4kA==}
-    deprecated: This is a stub types definition. handlebars provides its own type definitions, so you do not need this installed.
-
   '@types/http-errors@2.0.4':
     resolution: {integrity: sha512-D0CFMMtydbJAegzOyHjtiKPLlvnm3iTZyZRSZoLq2mRhDdmLfIWOCYPfQJ4cu2erKghU++QvjcUjp/5h7hESpA==}
 
@@ -1111,6 +1107,9 @@ packages:
 
   '@types/node@22.13.10':
     resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
+
+  '@types/oracledb@6.6.2':
+    resolution: {integrity: sha512-YK4NMSWOx/voncyLlJGsgaoW0+GzVrpYadAJAJZ94foIOVd6Ucdwq4FRQgT8+141L5KRVnitgsjgDJVWD0a07A==}
 
   '@types/qs@6.9.18':
     resolution: {integrity: sha512-kK7dgTYDyGqS+e2Q4aK9X3D7q234CIZ1Bv0q/7Z5IwRDoADNU81xXJK/YVyLbLTZCoIwUoDoffFeF+p/eIklAA==}
@@ -2957,9 +2956,9 @@ packages:
     resolution: {integrity: sha512-5b6Y85tPxZZ7QytO+BQzysW31HJku27cRIlkbAXaNx+BdcVi+LlRFmVXzeF6a7JCwJpyw5c4b+YSVImQIrBpuQ==}
     engines: {node: '>=10'}
 
-  oracledb@6.8.0:
-    resolution: {integrity: sha512-A4ds4n4xtjPTzk1gwrHWuMeWsEcrScF0GFgVebGrhNpHSAzn6eDwMKcSbakZODKfFcI099iqhmqWsgko8D+7Ww==}
-    engines: {node: '>=14.6'}
+  oracledb@6.9.0:
+    resolution: {integrity: sha512-NwPbIGPv6m0GTFSbyy4/5WEjsKMiiJRxztLmYUcfD3oyh/uXdmVmKOwEWr84wFwWJ/0wQrYQh4PjnzvShibRaA==}
+    engines: {node: '>=14.17'}
 
   os-tmpdir@1.0.2:
     resolution: {integrity: sha512-D2FR03Vir7FIu45XBY20mTb+/ZSWB00sjU9jdQXt83gDrI4Ztz5Fs7/yy74g2N5SVQY4xY1qDr4rNddwYRVX0g==}
@@ -4930,10 +4929,6 @@ snapshots:
     dependencies:
       '@types/node': 22.13.10
 
-  '@types/handlebars@4.1.0':
-    dependencies:
-      handlebars: 4.7.8
-
   '@types/http-errors@2.0.4': {}
 
   '@types/istanbul-lib-coverage@2.0.6': {}
@@ -4968,6 +4963,10 @@ snapshots:
   '@types/node@22.13.10':
     dependencies:
       undici-types: 6.20.0
+
+  '@types/oracledb@6.6.2':
+    dependencies:
+      '@types/node': 22.13.10
 
   '@types/qs@6.9.18': {}
 
@@ -7072,7 +7071,7 @@ snapshots:
       strip-ansi: 6.0.1
       wcwidth: 1.0.1
 
-  oracledb@6.8.0: {}
+  oracledb@6.9.0: {}
 
   os-tmpdir@1.0.2: {}
 
@@ -7805,7 +7804,7 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typeorm@0.3.21(oracledb@6.8.0)(reflect-metadata@0.2.2)(ts-node@10.9.2(@swc/core@1.10.15(@swc/helpers@0.5.15))(@types/node@22.13.10)(typescript@5.8.2)):
+  typeorm@0.3.21(oracledb@6.9.0)(reflect-metadata@0.2.2)(ts-node@10.9.2(@swc/core@1.10.15(@swc/helpers@0.5.15))(@types/node@22.13.10)(typescript@5.8.2)):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 3.17.0
@@ -7822,7 +7821,7 @@ snapshots:
       uuid: 11.1.0
       yargs: 17.7.2
     optionalDependencies:
-      oracledb: 6.8.0
+      oracledb: 6.9.0
       ts-node: 10.9.2(@swc/core@1.10.15(@swc/helpers@0.5.15))(@types/node@22.13.10)(typescript@5.8.2)
     transitivePeerDependencies:
       - supports-color

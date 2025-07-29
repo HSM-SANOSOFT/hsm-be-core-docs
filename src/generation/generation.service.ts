@@ -1,6 +1,8 @@
 import { HttpStatus, Inject, Injectable, Logger } from '@nestjs/common';
 import { RpcException } from '@nestjs/microservices';
+import { UUID } from 'crypto';
 import Handlebars from 'handlebars';
+import { DatabaseRepository } from 'src/database/database.repository';
 import { DocumentTemplates } from 'src/type';
 import { createDocumento } from 'src/type/create_documento.type';
 import wkhtmltopdf from 'wkhtmltopdf';
@@ -10,9 +12,10 @@ export class GenerationService {
   private readonly logger = new Logger(GenerationService.name);
   constructor(
     @Inject('DocumentTemplates') private templates: DocumentTemplates,
+    private readonly databaseRepository: DatabaseRepository,
   ) {}
-  async createDocumento(data: createDocumento): Promise<Buffer> {
-    const { type, payload } = data;
+  async createDocumento(data: createDocumento, uuid: UUID): Promise<Buffer> {
+    const { type, id, payload } = data;
 
     const template = this.templates[type];
     if (!template) {
@@ -22,13 +25,13 @@ export class GenerationService {
       });
     }
 
-    this.logger.debug(`template: ${template}`);
+    //this.logger.debug(`template: ${template}`);
 
     try {
       const compiledTemplate = Handlebars.compile(template);
       const html = compiledTemplate(payload);
 
-      this.logger.debug(`html: ${html}`);
+      //this.logger.debug(`html: ${html}`);
 
       const buffer = await new Promise<Buffer>((resolve, reject) => {
         const chunks: Buffer[] = [];
@@ -44,7 +47,7 @@ export class GenerationService {
           .on('data', (chunk: Buffer) => chunks.push(chunk))
           .on('end', () => resolve(Buffer.concat(chunks)));
       });
-      this.logger.debug(`buffer: ${buffer.length} bytes`);
+      //this.logger.debug(`buffer: ${buffer.length} bytes`);
 
       if (!buffer || buffer.length === 0) {
         throw new RpcException({
@@ -52,6 +55,13 @@ export class GenerationService {
           message: 'PDF buffer is empty',
         });
       }
+
+      await this.databaseRepository.DocumentosGeneradosRepository.saveDocumento(
+        type,
+        id,
+        uuid,
+      );
+
       return buffer;
     } catch (error) {
       if (error instanceof RpcException) {
