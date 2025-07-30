@@ -8,16 +8,16 @@ import { envs } from '../config';
 @Injectable()
 export class StorageProvider implements OnModuleInit {
   private readonly minioClient: Client;
-  private readonly bucketName = envs.HSM_BE_CORE_STORAGE_BUCKET;
+  private readonly bucketName = envs.S3_BUCKET;
   private readonly logger = new Logger(StorageProvider.name);
 
   constructor() {
     this.minioClient = new Client({
-      endPoint: envs.HSM_BE_CORE_STORAGE_HOST,
-      port: parseInt(envs.HSM_BE_CORE_STORAGE_PORT, 10),
+      endPoint: envs.S3_HOST,
+      port: parseInt(envs.S3_PORT, 10),
       useSSL: false,
-      accessKey: envs.HSM_BE_CORE_STORAGE_ACCESS_KEY,
-      secretKey: envs.HSM_BE_CORE_STORAGE_SECRET_ACCESS_KEY,
+      accessKey: envs.S3_ACCESS_KEY,
+      secretKey: envs.S3_SECRET_KEY,
     });
   }
 
@@ -27,7 +27,7 @@ export class StorageProvider implements OnModuleInit {
       if (!exists) {
         await this.minioClient.makeBucket(
           this.bucketName,
-          envs.HSM_BE_CORE_STORAGE_REGION || 'us-east-1',
+          envs.S3_REGION || 'us-east-1',
         );
         this.logger.log(`Bucket '${this.bucketName}' created`);
       }
