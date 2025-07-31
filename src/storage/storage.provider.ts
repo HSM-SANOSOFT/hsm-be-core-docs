@@ -15,7 +15,7 @@ export class StorageProvider implements OnModuleInit {
     this.minioClient = new Client({
       endPoint: envs.S3_HOST,
       port: parseInt(envs.S3_PORT, 10),
-      useSSL: true,
+      useSSL: true, // false in development, true in production
       accessKey: envs.S3_ACCESS_KEY,
       secretKey: envs.S3_SECRET_KEY,
     });
