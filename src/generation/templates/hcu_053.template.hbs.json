@@ -1,42 +1,65 @@
 {
-  "hallazgo": "Hallazgo Test 2",
-  "diag": "Diag Test",
-  "cod_d": "Cod D Test",
-  "pre": "Pre Test",
-  "def": "Def Test",
-  "diag1": "Diag1 Test",
-  "cod_d1": "Cod D1 Test",
-  "pre1": "Pre1 Test",
-  "def1": "Def1 Test",
-  "diag2": "Diag2 Test",
-  "cod_d2": "Cod D2 Test",
-  "pre2": "Pre2 Test",
-  "def2": "Def2 Test",
-  "firma_referencia": "Firma Referencia Test",
-  "sello_referencia": "Sello Referencia Test",
-  "table_med_responsable": "Table Med Responsable Test",
-  "archivo": {
-    "CEDULA": "Cedula Test",
-    "PCN_NUMERO_HC": "PCN Numero HC Test",
-    "APELLIDO_PATERNO": "Apellido Paterno Test",
-    "APELLIDO_MATERNO": "Apellido Materno Test",
-    "PRIMER_NOMBRE": "Primer Nombre Test",
-    "SEGUNDO_NOMBRE": "Segundo Nombre Test",
-    "SEXO": "Sexo Test",
-    "FECHA_NACIMIENTO": "Fecha Nacimiento Test",
-    "EDAD": "Edad Test",
-    "TELEFONO": "Telefono Test",
-    "PRQ_CNT_PRV_CODIGO": "PRQ CNT PRV Codigo Test",
-    "PRQ_CNT_CODIGO": "PRQ CNT Codigo Test",
-    "PRQ_CODIGO": "PRQ Codigo Test",
-    "SERVICIO": "Servicio Test",
-    "ESPECIALIDAD": "Especialidad Test",
-    "RESUMEN": "Resumen Test",
-    "FECHA": "Fecha Test",
-    "HORA": "Hora Test",
-    "NOMBRE_MED": "Nombre Med Test",
-    "PRIMER_APELLID_MED": "Primer Apellido Med Test",
-    "SEGUNDO_APELLIDO_MED": "Segundo Apellido Med Test",
-    "CD_PER": "CD PER Test"
+  "A_ref": {
+    "establecimiento_salud": "",
+    "numero_historia_clinica": "",
+    "numero_archivo": "",
+    "primer_apellido": "",
+    "segundo_apellido": "",
+    "primer_nombre": "",
+    "segundo_nombre": "",
+    "sexo": "",
+    "fecha_nacimiento": "",
+    "edad": "",
+    "telefono": ""
+  },
+  "b_ref": {
+    "servicio": "",
+    "especialidad": ""
+  },
+  "c_ref": {
+    "resumen_clinico": ""
+  },
+  "d_ref": {
+    "hallazgos": ""
+  },
+  "f_ref": {
+    "fecha": "",
+    "hora": "",
+    "primer_nombre_med": "",
+    "primer_apellido_medd": "",
+    "segundo_apellido_med": "",
+    "documento_identificacion_med": ""
+  },
+  "a_contref": {
+    "institución_sistema": "",
+    "unicodigo": "",
+    "establecimiento_salud": "",
+    "numero_historia_clinica": ""
+  },
+  "b_contref": {
+    "institución_sistema": "",
+    "establecimiento_salud": "",
+    "distrito": "",
+    "fecha": ""
+  },
+  "c_contref": {
+    "resumen_clinico": ""
+  },
+  "d_contref": {
+    "hallazgos": ""
+  },
+  "e_contref": {
+    "tratamientos": ""
+  },
+  "g_contref": {
+    "tratamiento_recomendado": ""
+  },
+  "h_contref": {
+    "fecha": "",
+    "hora": "",
+    "primer_nombre_med": "",
+    "primer_apellido_med": "",
+    "segundo_apellido_med": "",
+    "documento_identificción_med": ""
   }
 }
