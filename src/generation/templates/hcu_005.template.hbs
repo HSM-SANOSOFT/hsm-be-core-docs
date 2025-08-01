@@ -1,0 +1,56 @@
+$html="
+<html>
+  <head>
+    <style>
+      @page { margin: 170px 50px 20px 50px; }
+      #header { position: fixed; left: 0px; top: -150px; right: 0px; height: 40px; text-align: center; padding-bottom: 0px; margin-bottom: 0px;}
+      #header .page:after { content: counter(page, upper-roman); }
+      .estilocelda {background-color: #;border-style: solid;border-color: #000000;border-width: 1px; padding: 0px; margin: 0px; text-align: left;}
+    </style>
+  </head>
+  <body style='font-size: 9px'>
+  <div id='header'>
+    <table style='width:100%; border: 1px solid #000; ' >
+      <tr style='text-align: center;'>
+        <th style='width: 15%'>ESTABLECIMIENTO</th>
+        <th style='width: 25%'>NOMBRE</th>
+        <th style='width: 25%'>APELLIDOS</th>
+        <th style='width: 10%'>SEXO</th>
+        <th style='width: 10%'>N° HOJA</th>
+        <th style='width: 15%'>N° HISTORIA CLINICA</th>
+      </tr>
+      <tr style='text-align: center;''>
+        <td>CLINICA SANTAMARIA</td>
+        <td>".$nombre."</td>
+        <td>".$apellido."</td>
+        <td>".$sexo."</td>
+        <td><p class='page'></p></td>
+        <td>".$valor2."</td>
+      </tr>
+    </table> 
+
+    <table style='width:100%; border: 1px solid #000; margin-top: 10px;'' >
+      <tr style='text-align: left;'>
+        <th style='width: 70%; font-size: 12px'>1 EVOLUCION</th>
+        <th style='width: 15%; font-size: 12px'>2 PRESCRIPCION</th>
+        <th style='width: 15%; font-size: 5px'>FIRMAR AL PIE DE<br>CADA PRESCRIPCION</th>
+      </tr>
+    </table> 
+
+    <table style='width:100%; border: 1px solid #000; margin-top: 10px;'>
+      <tr style='text-align: center;'>
+        <th style='width: 10%'>FECHA<br>DIA/MES/AÑO</th>
+        <th style='width: 10%'>HORA</th>
+        <th style='width: 40%'>NOTA DE EVOLUCION</th>
+        <th style='width: 30%'>FARMACOTERAPIA E INDICACIONES<BR><a style='font-size: 6px'>(PARA ENFERMERIA Y OTRO PERSONAL)<a></th>
+        <th style='width: 10%'>ADMINISTRA<BR>FARMACO</th>
+      </tr>
+    </table> 
+  </div>
+
+  <div id='content'>
+    <table style='width:100%; margin-top: -20px;' cellpadding='0' cellspacing='0'>".$tr."
+    </table>
+  </div>
+  </body>
+</html>";

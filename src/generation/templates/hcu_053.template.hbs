@@ -1,158 +1,545 @@
 <!DOCTYPE html>
-<html lang ="es">
+<html>
 <head>
-  <style>
-    @page { margin: 20px; }
-    footer {
-      position: fixed;
-      left: 0;
-      right: 0;
-      height: 50px;
-      bottom: 0;
-      margin-bottom: -30px;
-    }
-    footer .page:after { content: counter(page, decimal); }
-  </style>
+	<style>
+      @page { margin: 20px 20px 20px 20px; }
+      footer{
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        height: 50px;
+        bottom: 0px;
+        margin-bottom: -30px;
+      }
+      footer .page:after { content: counter(page, decimal); }
+    </style>
 </head>
 <body>
+	<div style="width:100%">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="11" style="text-align: left;font-size: 9px" bgcolor="ccccff">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr >
+	            	<th colspan="2" style="text-align: center;" bgcolor="CCFFCC">INSTITUCION DEL SISTEMA</th>
+	            	<th style="text-align: center;" bgcolor="CCFFCC">UNICÓDIGO</th>
+	            	<th colspan="2"style="text-align: center;text-align: center;" bgcolor="CCFFCC">ESTABLECIMIENTO DE SALUD</th>
+	            	<th colspan="2" style="text-align: left;" bgcolor="CCFFCC">NUMERO DE HISTORIA CLÍNICA</th>
+	            	<th colspan="4" style="text-align: left;" bgcolor="CCFFCC">NUMERO DE ARCHIVO</th>
+	            </tr>
+	            <tr>
+	            	<td colspan="2" style="text-align: center">RED COMPLEMENTARIA</td>
+	            	<td style="text-align: center">25410</td>
+	            	<td colspan="2" style="text-align: center">{{A_ref.establecimiento_salud}} </td>
+	            	<td colspan="2" style="text-align: center;font-weight: bold;font-size: 9px"><b>{{A_ref.numero_historia_clinica}}</b></td>
+	            	<td colspan="4" style="text-align: center">{{A_ref.numero_archivo}}</td>
+	            </tr>
+	            <tr>
+	            	<th rowspan="2" style="text-align: center;width: 90px" bgcolor="CCFFCC">PRIMER APELLIDO</th>
+	            	<th rowspan="2" style="text-align: center;width: 90px" bgcolor="CCFFCC">SEGUNDO APELLIDO</th>
+	            	<th rowspan="2" style="text-align: center;width: 90px" bgcolor="CCFFCC">PRIMER NOMBRE</th>
+	            	<th rowspan="2" style="text-align: center;width: 90px" bgcolor="CCFFCC">SEGUNDO NOMBRE</th>
+	            	<th rowspan="2" style="text-align: center;width: 50px" bgcolor="CCFFCC">SEXO</th>
+	            	<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">FECHA NACIMIENTO</th>
+	            	<th rowspan="2" style="text-align: center;width: 50px" bgcolor="CCFFCC">EDAD</th>
+	            	<th colspan="4" style="text-align: center;text-align: center;"  bgcolor="CCFFCC">CONDICION EDAD</th>
+	            </tr>
+	            <tr>
+	            	<td bgcolor="CCFFCC">M</td>
+	            	<td bgcolor="CCFFCC">D</td>
+	            	<td bgcolor="CCFFCC">M</td>
+	            	<td bgcolor="CCFFCC">A</td>
+	            </tr>
+	            <tr>
+	            	<td style="font-size: 8px;height: 10px">{{A_ref.primer_apellido}}</td>
+	            	<td style="font-size: 8px">{{A_ref.segundo_apellido}}</td>
+	            	<td style="font-size: 8px">{{A_ref.primer_nombre}}</td>
+	            	<td style="font-size: 8px">{{A_ref.segundo_nombre}}</td>
+	            	<td >{{A_ref.sexo}}</td>
+	            	<td >{{A_ref.fecha_nacimiento}}</td>
+	            	<td >{{A_ref.edad}}</td>
+	            	<td ></td>
+	            	<td ></td>
+	            	<td ></td>
+	            	<td >X</td>
+	            </tr> 
+	            <tr>
+	            	<th colspan="4" bgcolor="CCFFCC">No. TELÉFONO (CELULAR O CONVENCIONAL)</th>
+	            	<th colspan="2">REFERENCIA</th>
+	            	<th>X</th>
+	            	<th colspan="3">DERIVACIÓN</th>
+	            	<th></th>
+	            </tr>
+	            <tr>
+	            	<td rowspan="2" colspan="4" style="height: 10px;text-align: center;">{{A_ref.telefono}}</td>
+	            	<th colspan="7">MOTIVO</th>
+	            </tr>
+	            <tr>
+	            	<td colspan="2">1. Accesibilidad geográfica.</td>
+	            	<th><?php if($archivo[1]['MOTIVO'][0] == 'AG'){ echo('X'); } ?></th>
+	            	<td colspan="3">6. Problemas de abastecimiento.</td>
+	            	<th><?php if($archivo[1]['MOTIVO'][0] == 'AE'){ echo('X'); } ?></th>
+	            </tr>
+	            <tr>
+	            	<th colspan="4" bgcolor="CCFFCC">LUGAR DE RESIDENCIA ACTUAL</th>
+	            	<td colspan="2">2. Falta de espacio físico.</td>
+	            	<th><?php if($archivo[1]['MOTIVO'][0] == 'FE'){ echo('X'); } ?></th>
+	            	<td colspan="3">7. Insuficiencia de profesionales.</td>
+	            	<th><?php if($archivo[1]['MOTIVO'][0] == 'FP'){ echo('X'); } ?></th>
+	            </tr>
+	            <tr>
+	            	<th colspan="2">PROVINCIA</th>
+	            	<th >CANTÓN</th>
+	            	<th >PARROQUIA</th>
+	            	<td colspan="2">3. Falta de equipamiento.</td>
+	            	<th><?php if($archivo[1]['MOTIVO'][0] == 'EE'){ echo('X'); } ?></th>
+	            	<td colspan="3">8. Inadecuada capacidad resolutiva</td>
+	            	<th></th>
+	            </tr>
+	            <tr>
+	            	<th rowspan="2" colspan="2" style="height: 10px"><?php echo($archivo[1]['PRQ_CNT_PRV_CODIGO'][0])?></th>
+	            	<th rowspan="2"><?php echo($archivo[1]['PRQ_CNT_CODIGO'][0])?></th>
+	            	<th rowspan="2"><?php echo($archivo[1]['PRQ_CODIGO'][0])?></th>
+	            	<td colspan="2">4. Equipos en mal estado.</td>
+	            	<th></th>
+	            	<td colspan="3">9. Ausencia de la prestación en la cartera de servicios</td>
+	            	<th></th>
+	            </tr>
+	            <tr>
+	            	<td colspan="2">5. Problemas de infraestructura.</td>
+	            	<th><?php if($archivo[1]['MOTIVO'][0] == 'IN'){ echo('X'); } ?></th>
+	            	<td colspan="3"></td>
+	            	<th></th>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
 
-  <div style="width:100%">
-    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
-      <thead>
-        <tr>
-          <th colspan="11" bgcolor="ccccff">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="2" align="center">RED COMPLEMENTARIA</td>
-          <td align="center">25410</td>
-          <td colspan="2" align="center">{{institucion_ser}}</td>
-          <td colspan="2" align="center"><b>{{archivo.CEDULA}}</b></td>
-          <td colspan="4" align="center">{{archivo.PCN_NUMERO_HC}}</td>
-        </tr>
-        <tr>
-          <td>{{archivo.APELLIDO_PATERNO}}</td>
-          <td>{{archivo.APELLIDO_MATERNO}}</td>
-          <td>{{archivo.PRIMER_NOMBRE}}</td>
-          <td>{{archivo.SEGUNDO_NOMBRE}}</td>
-          <td>{{archivo.SEXO}}</td>
-          <td>{{archivo.FECHA_NACIMIENTO}}</td>
-          <td>{{archivo.EDAD}}</td>
-          <td></td><td></td><td></td><td>X</td>
-        </tr>
-        <tr>
-          <td colspan="4" align="center">{{archivo.TELEFONO}}</td>
-        </tr>
-        <tr>
-          <td colspan="2">{{archivo.PRQ_CNT_PRV_CODIGO}}</td>
-          <td>{{archivo.PRQ_CNT_CODIGO}}</td>
-          <td>{{archivo.PRQ_CODIGO}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="4" style="text-align: left;font-size: 9px" bgcolor="ccccff">B. DATOS DEL ESTABLECIMIENTO AL QUE SE REFIERE - DERIVA</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr >
+	            	<th  bgcolor="CCFFCC">INSTITUCION DEL SISTEMA</th>
+	            	<th  bgcolor="CCFFCC">ESTABLECIMIENTO DE SALUD</th>
+	            	<th  bgcolor="CCFFCC">SERVICIO</th>
+	            	<th  bgcolor="CCFFCC">ESPECIALIDAD</th>
+	            </tr>
+	            <tr>
+	            	<!--<td style="height: 10px"><?php //echo($archivo[1]['DESCRIPCION'][0])?></td>
+	            	<td style="height: 10px"><?php //echo($archivo[1]['D_ESTABLECIMIENTO'][0])?></td>-->
+                    <td style="height: 10px"></td>
+                    <td style="height: 10px"></td>
+	            	<td style="height: 10px">{{b_ref.servicio}}</td>
+	            	<td style="height: 10px">{{b_ref.especialidad}}</td>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
 
-  <div style="width:100%;padding-top: 3px">
-    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
-      <thead>
-        <tr>
-          <th colspan="4" bgcolor="ccccff">B. DATOS DEL ESTABLECIMIENTO AL QUE SE REFIERE</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>{{archivo.SERVICIO}}</td>
-          <td>{{archivo.ESPECIALIDAD}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th  style="text-align: left;font-size: 9px" bgcolor="ccccff">C. RESUMEN DEL CUADRO CLÍNICO</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr >
+	            	<td style="height: 40px">{{c_ref.resumen_clinico}}</td>
 
-  <div style="width:100%;padding-top: 3px">
-    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
-      <thead><tr><th bgcolor="ccccff">C. RESUMEN DEL CUADRO CLÍNICO</th></tr></thead>
-      <tbody><tr><td>{{archivo.RESUMEN}}</td></tr></tbody>
-    </table>
-  </div>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
 
-  <div style="width:100%;padding-top: 3px">
-    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
-      <thead><tr><th bgcolor="ccccff">D. HALLAZGOS RELEVANTES</th></tr></thead>
-      <tbody><tr><td>{{hallazgo}}</td></tr></tbody>
-    </table>
-  </div>
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th  style="text-align: left;font-size: 9px" bgcolor="ccccff">D. HALLAZGOS RELEVANTES DE EXÁMENES Y PROCEDIMIENTOS DIAGNÓSTICOS</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr >
+	            	<td style="height: 40px">{{d_ref.hallazgos}}</td>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
 
-  <div style="width:100%;padding-top: 3px">
-    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
-      <thead>
-        <tr>
-          <th colspan="2" bgcolor="ccccff">E. DIAGNÓSTICO</th>
-          <th bgcolor="ccccff">CIE</th>
-          <th bgcolor="ccccff">PRE</th>
-          <th bgcolor="ccccff">DEF</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1.</td>
-          <td>{{diag}}</td>
-          <td>{{cod_d}}</td>
-          <td>{{pre}}</td>
-          <td>{{def}}</td>
-        </tr>
-        <tr>
-          <td>2.</td>
-          <td>{{diag1}}</td>
-          <td>{{cod_d1}}</td>
-          <td>{{pre1}}</td>
-          <td>{{def1}}</td>
-        </tr>
-        <tr>
-          <td>3.</td>
-          <td>{{diag2}}</td>
-          <td>{{cod_d2}}</td>
-          <td>{{pre2}}</td>
-          <td>{{def2}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="2" style="text-align: left;font-size: 9px" bgcolor="ccccff">E. DIAGNÓSTICO</th>
+	              <th bgcolor="ccccff">CIE</th>
+	              <th bgcolor="ccccff">PRE</th>
+	              <th bgcolor="ccccff">DEF</th>
+	              <th colspan="2"  bgcolor="ccccff"></th>
+	              <th bgcolor="ccccff">CIE</th>
+	              <th bgcolor="ccccff">PRE</th>
+	              <th bgcolor="ccccff">DEF</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr>
+	            	<th  bgcolor="CCFFCC">1.</th>
+	            	<td><?php echo($diag)?></td>
+	            	<td ><?php echo($cod_d)?></td>
+	            	<th ><?php echo($pre)?></th>
+	            	<th ><?php echo($def)?></th>
+	            	<!-- 2 -->
+	            	<th  bgcolor="CCFFCC">4.</th>
+	            	<td></td>
+	            	<td ></td>
+	            	<td ></td>
+	            	<td ></td>
+	            </tr>
+	            <tr>
+	            	<th  bgcolor="CCFFCC">2.</th>
+	            	<td><?php echo($diag1)?></td>
+	            	<td ><?php echo($cod_d1)?></td>
+	            	<td ><?php echo($pre1)?></td>
+	            	<td ><?php echo($def1)?></td>
+	            	<!-- 2 -->
+	            	<th bgcolor="CCFFCC">5.</th>
+	            	<td></td>
+	            	<td></td>
+	            	<td ></td>
+	            	<td ></td>
+	            </tr>
+	            <tr>
+	            	<th bgcolor="CCFFCC">3.</th>
+	            	<td><?php echo($diag2)?></td>
+	            	<td ><?php echo($cod_d2)?></td>
+	            	<td ><?php echo($pre2)?></td>
+	            	<td ><?php echo($def2)?></td>
+	            	<!-- 2 -->
+	            	<th  bgcolor="CCFFCC">6.</th>
+	            	<td></td>
+	            	<td ></td>
+	            	<td ></td>
+	            	<td ></td>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
 
-  <div style="width:100%;padding-top: 3px">
-    <table border="1" style="font-size: 8px; font-family: arial; width: 100%;">
-      <thead><tr><th colspan="5" bgcolor="ccccff">F. DATOS DEL PROFESIONAL RESPONSABLE</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>{{archivo.FECHA}}</td>
-          <td>{{archivo.HORA}}</td>
-          <td>{{archivo.NOMBRE_MED}}</td>
-          <td>{{archivo.PRIMER_APELLID_MED}}</td>
-          <td>{{archivo.SEGUNDO_APELLIDO_MED}}</td>
-        </tr>
-        <tr>
-          <td colspan="2">{{archivo.CD_PER}}</td>
-          <td colspan="2"><img src="{{firma_referencia}}" style="width: 80px;"></td>
-          <td><img src="{{sello_referencia}}" style="width: 80px;"></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <footer>
-    <div style="width:100%;">
-      <table style="font-size: 8px;width:100%;">
+	<div style="width:100%;padding-top: 3px">
+    <table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
         <tbody>
-          <tr>
-            <td>SNS-MSP / HCU-form.053 / 2021</td>
-            <td align="right">REFERENCIA - DERIVACIÓN - CONTRAREFERENCIA</td>
-          </tr>
+            <tr>
+                <th colspan="5" style="text-align: left;font-size: 9px;" bgcolor="ccccff">F. DATOS DEL PROFESIONAL RESPONSABLE</th>
+            </tr>
+            <tr>
+                <th style="width:10%;" bgcolor="#ccffcc">FECHA</th>
+                <th style="width:10%;" bgcolor="#ccffcc">HORA</th>
+                <th style="width:30%;" bgcolor="#ccffcc">PRIMER NOMBRE</th>
+                <th style="width:20%;" bgcolor="#ccffcc">PRIMER APELLIDO</th>
+                <th style="width:30%;" bgcolor="#ccffcc">SEGUNDO APELLIDO</th>
+            </tr>
+            <tr>
+                <td>{{f_ref.fecha}}</td>
+                <td>{{f_ref.hora}}</td>
+                <td>{{f_ref.primer_nombre_med}}</td>
+                <td>{{f_ref.primer_apellido_medd}}</td>
+                <td>{{f_ref.segundo_apellido_med}}</td>
+            </tr>
+            <tr>
+                <th colspan="2" bgcolor="#ccffcc">NUMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+                <th colspan="2" bgcolor="#ccffcc">FIRMA</th>
+                <th bgcolor="#ccffcc">SELLO</th>
+            </tr>
+            <tr>
+                <td colspan="2">{{f_ref.documento_identificacion_med}}</td>
+                <td colspan="2" style="padding:0px;text-align:center;margin: 0px;">
+                    <img src="<?php echo($firma_referencia); ?>" style="width: 80px; height: auto; margin: 0px; padding:0px;">
+                </td>
+                <td style="padding:0px;text-align:center;margin: 0px;">
+                    <img src="<?php echo($sello_referencia); ?>" style="width: 80px; height: auto; margin: 0px; padding:0px;">
+                </td>
+            </tr>
         </tbody>
-      </table>
-    </div>
-  </footer>
+    </table>
+</div>
+
+
+	<div style="width:100%;padding-top: 3px">
+	    <table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="11" style="text-align: left;font-size: 9px" bgcolor="ccccff">G. EVALUACIÓN DE LA REFERENCIA / DERIVACIÒN</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr >
+	            	<th bgcolor="#ccffcc">REFERENCIA JUSTIFICADA</th>
+	            	<th>SI</th>
+	            	<th></th>
+	            	<th>NO</th>
+	            	<th></th>
+	            	<td></td>
+	            	<th bgcolor="#ccffcc">DERIVACIÒN  JUSTIFICADA</th>
+	            	<th>SI</th>
+	            	<th></th>
+	            	<th>NO</th>
+	            	<th></th>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="0" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; ">
+	        <tbody>
+	            <tr >
+	            	<th style="width: 100px"></th>
+	            	<th style="width: 120px" >CONTRAREFERENCIA</th>
+	            	<th style="width: 30px" bgcolor="ccccff">X</th>
+	            	<td style="width: 30px" ></td>
+	            	<th style="width: 120px" >REFERENCIA INVERSA</th>
+	            	<th style="width: 30px" bgcolor="ccccff"></th>
+	            	<th style="width: 100px"></th>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="6" style="text-align: left;font-size: 9px" bgcolor="ccccff">A. DATOS DEL ESTABLECIMIENTO QUE CONTRAREFIERE O REALIZA LA REFERENCIA INVERSA</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr >
+	            	<th  bgcolor="CCFFCC">INSTITUCION DEL SISTEMA</th>
+	            	<th  bgcolor="CCFFCC">UNICÓDIGO</th>
+	            	<th  bgcolor="CCFFCC">ESTABLECIMIENTO DE SALUD</th>
+	            	<th  bgcolor="CCFFCC">TIPOLOGIA</th>
+	            	<th  bgcolor="CCFFCC">NUMERO DE HISTORIA CLÍNICA</th>
+	            	<th  bgcolor="CCFFCC">NUMERO DE ARCHIVO</th>
+	            </tr>
+	            <tr>
+	            	<td style="height: 10px;text-align: center;">{{a_contref.institución_sistema}}</td>
+	            	<td style="height: 10px;text-align: center;">{{a_contref.unicodigo}}</td>
+	            	<td style="height: 10px;text-align: center;">{{a_contref.establecimiento_salud}}</td>
+	            	<td style="height: 10px;text-align: center;"></td>
+	            	<td style="height: 10px;text-align: center;"><b>{{a_contref.numero_historia_clinica}}</b></td>
+	            	<td style="height: 10px;text-align: center;"></th>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="4" style="text-align: left;font-size: 9px" bgcolor="ccccff">B. DATOS DEL ESTABLECIMIENTO AL CUAL SE CONTRAREFIERE O SE REALIZA REFERENCIA INVERSA</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr >
+	            	<th  bgcolor="CCFFCC">INSTITUCION DEL SISTEMA</th>
+	            	<th  bgcolor="CCFFCC">ESTABLECIMIENTO DE SALUD</th>
+	            	<th  bgcolor="CCFFCC">DISTRITO</th>
+	            	<th  bgcolor="CCFFCC">FECHA</th>
+	            </tr>
+	            <tr>
+	            	<td style="height: 10px;text-align: center;">{{b_contref.institución_sistema}}</td>
+	            	<td style="height: 10px;text-align: center;">{{b_contref.establecimiento_salud}}</td>
+	            	<td style="height: 10px;text-align: center;">{{b_contref.distrito}}</td>
+	            	<td style="height: 10px;text-align: center;">{{b_contref.fecha}}</td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th  style="text-align: left;font-size: 9px" bgcolor="ccccff">C. RESUMEN DEL CUADRO CLÍNICO</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr >
+	            	<td >
+						<div style="text-align: justify;padding:2px 0px;font-size: 8px;">{{c_contref.resumen_clinico}}</div>
+					</td>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th  style="text-align: left;font-size: 9px" bgcolor="ccccff">D. HALLAZGOS RELEVANTES DE EXÁMENES Y PROCEDIMIENTOS DIAGNÓSTICOS</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr >
+	            	<td >
+						<div style="text-align: justify;padding:2px 0px;font-size: 8px;">{{d_contref.hallazgos}}</div>
+					</td>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th  style="text-align: left;font-size: 9px" bgcolor="ccccff">E. TRATAMIENTOS Y PROCEDIMIENTOS TERAPÉUTICOS REALIZADOS</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr >
+	            	<td >
+						<div style="text-align: justify;padding:2px 0px;font-size: 8px;">{{e_contref.tratamientos}}</div>
+					</td>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="2" style="text-align: left;font-size: 9px" bgcolor="ccccff">F. DIAGNÓSTICO</th>
+	              <th bgcolor="ccccff">CIE</th>
+	              <th bgcolor="ccccff">PRE</th>
+	              <th bgcolor="ccccff">DEF</th>
+	              <th colspan="2" style="width: 90px" bgcolor="ccccff"></th>
+	              <th bgcolor="ccccff">CIE</th>
+	              <th bgcolor="ccccff">PRE</th>
+	              <th bgcolor="ccccff">DEF</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr>
+	            	<th style="width: 20px" bgcolor="CCFFCC">1.</th>
+	            	<td><?php echo($diag_c)?></td>
+	            	<th style="width: 40px"><?php echo($cod_d_c)?></th>
+	            	<th style="width: 40px"><?php echo($pre_c)?></th>
+	            	<th style="width: 40px"><?php echo($def_c)?></th>
+	            	<!-- 2 -->
+	            	<th style="width: 20px" bgcolor="CCFFCC">4.</th>
+	            	<td></td>
+	            	<td style="width: 40px"></td>
+	            	<td style="width: 40px"></td>
+	            	<td style="width: 40px"></td>
+	            </tr>
+	            <tr>
+	            	<th style="width: 20px" bgcolor="CCFFCC">2.</th>
+	            	<td><?php echo($diag_c1)?></td>
+	            	<td style="width: 40px"><?php echo($cod_d_c1)?></td>
+	            	<td style="width: 40px"><?php echo($pre_c1)?></td>
+	            	<td style="width: 40px"><?php echo($def_c1)?></td>
+	            	<!-- 2 -->
+	            	<th style="width: 20px" bgcolor="CCFFCC">5.</th>
+	            	<td></td>
+	            	<td style="width: 40px"></td>
+	            	<td style="width: 40px"></td>
+	            	<td style="width: 40px"></td>
+	            </tr>
+	            <tr>
+	            	<th style="width: 20px" bgcolor="CCFFCC">3.</th>
+	            	<td><?php echo($diag_c2)?></td>
+	            	<td style="width: 40px"><?php echo($cod_d_c2)?></td>
+	            	<td style="width: 40px"><?php echo($pre_c2)?></td>
+	            	<td style="width: 40px"><?php echo($def_c2)?></td>
+	            	<!-- 2 -->
+	            	<th style="width: 20px" bgcolor="CCFFCC">6.</th>
+	            	<td></td>
+	            	<td style="width: 40px"></td>
+	            	<td style="width: 40px"></td>
+	            	<td style="width: 40px"></td>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th  style="text-align: left;font-size: 9px" bgcolor="ccccff">G. TRATAMIENTO RECOMENDADO A SEGUIR EN ESTABLECIMIENTO DE SALUD AL QUE SE CONTRAREFIERE</th>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	            <tr >
+	            	<td >
+						<div style="text-align: justify;padding:2px 0px;font-size: 8px;">{{g_contref.tratamiento_recomendado}}</div>
+					</td>
+	            </tr>
+	        </tboddy>
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+	    <table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;">
+	        <tbody>
+	            <tr>
+	                <th colspan="5" style="text-align: left;font-size: 9px;" bgcolor="ccccff">H. DATOS DEL PROFESIONAL RESPONSABLE</th>
+	            </tr>
+	            <tr>
+	                <th style="width: 100px;" bgcolor="#ccffcc">FECHA</th>
+	                <th style="width: 100px;" bgcolor="#ccffcc">HORA</th>
+	                <th style="width: ;"bgcolor="#ccffcc">PRIMER NOMBRE</th>
+	                <th style="width: ;" bgcolor="#ccffcc">PRIMER APELLIDO</th>
+	                <th style="width: ;" bgcolor="#ccffcc">SEGUNDO APELLIDO</th>
+	            </tr>
+	            <tr>
+	                <td><div style="text-align: justify;padding:1px 0px;font-size: 8px;">{{h_contref.fecha}}</div></td>
+	                <td>{{h_contref.hora}}</td>
+	                <td>{{h_contref.primer_nombre_med}}</td>
+	                <td>{{h_contref.primer_apellido_med}}</td>
+	                <td>{{h_contref.segundo_apellido_med}}</td>
+	            </tr>
+	            <tr>
+	            	<th colspan="2" bgcolor="#ccffcc">NUMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+	            	<th colspan="2" bgcolor="#ccffcc">FIRMA</th>
+	            	<th bgcolor="#ccffcc">SELLO</th>
+	            </tr>
+	            <tr>
+	            	<td colspan="2">{{h_contref.documento_identificción_med}}</td>
+	            	<td colspan="2" style="height: 20px" valign="top">
+						<img src="<?php echo($firma_contra); ?>" style="width: 100Px;">
+					</td>
+	            	<td> <?php echo($table_med_responsable); ?>
+                        <!--<img src="<?php //echo($sello_contra); ?>" style="position: absolute; left: 460;top: 720;width: 100px;">-->
+                    </td>
+					<!--<img src="<?php echo($firma_contra); ?>" style="position: absolute; left: 240;top: 720;width: 100Px;">-->
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+
+	<footer>
+		<div style="width:100%;">
+			<table class="table table-bordered" style="font-size: 8px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+		        <tbody>
+		            <th style="text-align: left;" >SNS-MSP / HCU-form.053 / 2021</th>
+		            <th style="text-align: right;font-size: 8px">REFERENCIA - DERIVACIÓN- CONTRAREFERENCIA - REFERENCIA INVERSA</th>
+		        </tbody>
+	    	</table>
+		</div>
+	</footer>
 
 </body>
 </html>

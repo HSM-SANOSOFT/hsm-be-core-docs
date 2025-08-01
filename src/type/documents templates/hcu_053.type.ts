@@ -1,43 +1,165 @@
 export type Hcu053DocumentTemplate = {
-  hallazgo: string;
-  diag: string;
-  cod_d: string;
-  pre: string;
-  def: string;
-  diag1: string;
-  cod_d1: string;
-  pre1: string;
-  def1: string;
-  diag2: string;
-  cod_d2: string;
-  pre2: string;
-  def2: string;
-  firma_referencia: string;
-  sello_referencia: string;
-  table_med_responsable: string;
+    //DATOS DEL ESTABLECIMIENTO Y USUARIO/PACIENTE
+    A_ref: {  
+      institucion_sistema: string;
+      unicodigo: string;
+      establecimiento_salud: string;
+      numero_historia_clinica: string;
+      numero_archivo: string;
 
-  archivo: {
-    CEDULA: string;
-    PCN_NUMERO_HC: string;
-    APELLIDO_PATERNO: string;
-    APELLIDO_MATERNO: string;
-    PRIMER_NOMBRE: string;
-    SEGUNDO_NOMBRE: string;
-    SEXO: string;
-    FECHA_NACIMIENTO: string;
-    EDAD: string;
-    TELEFONO: string;
-    PRQ_CNT_PRV_CODIGO: string;
-    PRQ_CNT_CODIGO: string;
-    PRQ_CODIGO: string;
-    SERVICIO: string;
-    ESPECIALIDAD: string;
-    RESUMEN: string;
-    FECHA: string;
-    HORA: string;
-    NOMBRE_MED: string;
-    PRIMER_APELLID_MED: string;
-    SEGUNDO_APELLIDO_MED: string;
-    CD_PER: string;
-  };
-};
+      primer_apellido: string;
+      segundo_apellido: string;
+      primer_nombre: string;
+      segundo_nombre: string;
+
+      sexo: string;
+      fecha_nacimiento: string;
+      edad: string;
+
+      condicion_edad: {
+        m1: boolean;
+        d: boolean;
+        m2: boolean;
+        a: boolean;
+      };
+
+      telefono: string;
+
+      referencia: string;
+      derivacion: string;
+
+      motivos: {
+        numero: number;
+        descripcion: string;
+        seleccionado: boolean;
+      }; 
+
+
+      residencia: {
+        provincia: string;
+        canton: string;
+        parroquia: string;
+      };
+    };
+
+    //DATOS DEL ESTABLECIMIENTO AL QUE SE REFIERE - DERIVA
+    B_ref: {
+      institucion_sistema: string;
+      establecimiento_salud: string;
+      servicio: string;
+      especialidad: string;
+    };
+
+    //RESUMEN DEL CUADRO CLINICO
+    C_ref: {
+      resumen_clinico: string;
+    };
+
+    //HALLAZGOS RELEVANTES DE EXÁMENES Y PROCEDIMIENTOS DIAGNÓSTICOS
+    D_ref: {
+      hallazgos: string;
+    };
+
+    //DIAGNÓSTICO
+    E_ref: {
+      diagnosticos: {
+        id: string;
+        descripcion: string;
+        cie: string;
+        pre: string;
+        def: string;
+      }[];
+    };
+
+    //DATOS DEL PROFESIONAL RESPONSABLE
+    F_ref: {
+      fecha: string;
+      hora: string;
+      primer_nombre_med: string;
+      primer_apellido_med: string;
+      segundo_apellido_med: string;
+      documento_identificacion_med: string;
+      firma_med: string; 
+      sello_med: string; 
+    };
+
+    //EVALUACIÓN DE LA REFERENCIA - DERIVACIÓN
+    G_ref: {
+      referencia_justificada: {
+        si: string;
+        no: string;
+      };
+      derivacion_justificada: {
+        si: string;
+        no: string;
+      };
+    };
+  
+  
+    tipo: {
+      contrarreferencia: boolean;
+      referencia_inversa: boolean;
+    };
+
+    //DATOS DEL ESTABLECIMIENTO QUE CONTRAREFIERE O REALIZA LA REFERENCIA INVERSA
+    A_contref: {
+      institucion_sistema: string;
+      unicodigo: string;
+      establecimiento_salud: string;
+      tipologia: string;
+      numero_historia_clinica: string;
+      numero_archivo: string;
+    };
+
+    //DATOS DEL ESTABLECIMIENTO AL CUAL SE CONTRAFIERE O SE REALIZA REFERENCIA INVERSA
+    B_contref: {
+      institucion_sistema: string;
+      establecimiento_salud: string;
+      distrito: string;
+      fecha: string;
+    };
+
+    //RESUMEN DEL CUADRO CLINICO
+    C_contref: {
+      resumen_clinico: string;
+    };
+
+    //HALLAZGOS RELEVANTESS DE EXÁMENES Y PROCEDIMIENTOS DIÁGNOSTICOS
+    D_contref: {
+      hallazgos: string;
+    };
+
+    //TRATAMIENTOS Y PROCEDIMIENTOS TERAPÉUTICOS REALIZADOS
+    E_contref: {
+      tratamientos: string; 
+    };
+
+    //DIAGNÓSTICO
+    F_contref: {
+      diagnosticos: {
+        id: string;
+        descripcion: string;
+        cie: string;
+        pre: string;
+        def: string;
+      }[];
+    };
+
+    //TRATAMIENTO RECOMENDADO A SEGUIR EN ESTABLECIMIENTO DE SALUD AL QUE SE CONTRAREFIERE
+    G_contref: {
+      tratamiento_recomendado: string;
+    };
+
+    //DATOS DEL PROFESIONAL RESPONSABLE
+    H_contref: {
+      fecha: string;
+      hora: string;
+      primer_nombre_med: string;
+      primer_apellido_med: string;
+      segundo_apellido_med: string;
+      documento_identificacion_med: string;
+      firma_med: string;
+      sello_med: string;
+    };
+  }
+
