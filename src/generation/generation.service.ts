@@ -18,12 +18,6 @@ export class GenerationService {
     const { type, id, payload } = data;
 
     const template = this.templates[type];
-    if (!template) {
-      throw new RpcException({
-        status: HttpStatus.BAD_REQUEST,
-        message: `Template for type ${type} not found`,
-      });
-    }
 
     //this.logger.debug(`template: ${template}`);
 
