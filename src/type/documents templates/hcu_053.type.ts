@@ -2,7 +2,7 @@ export type Hcu053DocumentTemplate = {
     //DATOS DEL ESTABLECIMIENTO Y USUARIO/PACIENTE
     A_ref: {  
       institucion_sistema: string;
-      unicodigo: string;
+      unicodigo: number;
       establecimiento_salud: string;
       numero_historia_clinica: string;
       numero_archivo: string;

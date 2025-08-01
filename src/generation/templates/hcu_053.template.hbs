@@ -2,7 +2,11 @@
 <html>
 <head>
 	<style>
-      @page { margin: 20px 20px 20px 20px; background-color: white;}
+      @page { margin: 20px 20px 20px 20px;}
+      body {
+        background-color: white;
+        color: black;
+      }
       footer{
         position: fixed;
         left: 0px;
@@ -25,14 +29,14 @@
 	        <tbody>
 	            <tr >
 	            	<th colspan="2" style="text-align: center;" bgcolor="CCFFCC">INSTITUCION DEL SISTEMA</th>
-	            	<th style="text-align: center;" bgcolor="CCFFCC">UNICÓDIGO</th>
+	            	<th colspan="1" style="text-align: center;" bgcolor="CCFFCC">UNICÓDIGO</th>
 	            	<th colspan="2"style="text-align: center;text-align: center;" bgcolor="CCFFCC">ESTABLECIMIENTO DE SALUD</th>
 	            	<th colspan="2" style="text-align: left;" bgcolor="CCFFCC">NUMERO DE HISTORIA CLÍNICA</th>
 	            	<th colspan="4" style="text-align: left;" bgcolor="CCFFCC">NUMERO DE ARCHIVO</th>
 	            </tr>
 	            <tr>
-	            	<td colspan="2" style="text-align: center">RED COMPLEMENTARIA</td>
-	            	<td style="text-align: center">25410</td>
+	            	<td colspan="2" style="text-align: center">{{A_ref.institucion_sistema}}</td>
+	            	<td colspan="1" style="text-align: center">{{A_ref.unicodigo}}</td>
 	            	<td colspan="2" style="text-align: center">{{A_ref.establecimiento_salud}} </td>
 	            	<td colspan="2" style="text-align: center;font-weight: bold;font-size: 9px"><b>{{A_ref.numero_historia_clinica}}</b></td>
 	            	<td colspan="4" style="text-align: center">{{A_ref.numero_archivo}}</td>
@@ -48,23 +52,24 @@
 	            	<th colspan="4" style="text-align: center;text-align: center;"  bgcolor="CCFFCC">CONDICION EDAD</th>
 	            </tr>
 	            <tr>
-	            	<td bgcolor="CCFFCC">M</td>
-	            	<td bgcolor="CCFFCC">D</td>
-	            	<td bgcolor="CCFFCC">M</td>
-	            	<td bgcolor="CCFFCC">A</td>
+	            	<td style="text-align: center; width: 10px" bgcolor="CCFFCC">M</td>
+	            	<td style="text-align: center; width: 10px" bgcolor="CCFFCC">D</td>
+	            	<td style="text-align: center; width: 10px" bgcolor="CCFFCC">M</td>
+	            	<td style="text-align: center; width: 10px" bgcolor="CCFFCC">A</td>
 	            </tr>
 	            <tr>
-	            	<td style="font-size: 8px;height: 10px">{{A_ref.primer_apellido}}</td>
-	            	<td style="font-size: 8px">{{A_ref.segundo_apellido}}</td>
-	            	<td style="font-size: 8px">{{A_ref.primer_nombre}}</td>
-	            	<td style="font-size: 8px">{{A_ref.segundo_nombre}}</td>
+	            	<td colspan="1" style="font-size: 8px">{{A_ref.primer_apellido}}</td>
+	            	<td colspan="1" style="font-size: 8px">{{A_ref.segundo_apellido}}</td>
+	            	<td colspan="1" style="font-size: 8px">{{A_ref.primer_nombre}}</td>
+	            	<td colspan="1" style="font-size: 8px">{{A_ref.segundo_nombre}}</td>
 	            	<td >{{A_ref.sexo}}</td>
 	            	<td >{{A_ref.fecha_nacimiento}}</td>
 	            	<td >{{A_ref.edad}}</td>
-	            	<td ></td>
-	            	<td ></td>
-	            	<td ></td>
-	            	<td >X</td>
+                <td colspan="1"> {{#if A_ref.condicion_edad.m1}} X {{else}}  {{/if}}</td>
+                <td colspan="1"> {{#if A_ref.condicion_edad.d}}  X {{else}}  {{/if}}</td>
+                <td colspan="1"> {{#if A_ref.condicion_edad.m2}} X {{else}}  {{/if}}</td>
+                <td colspan="1"> {{#if A_ref.condicion_edad.a}}  X {{else}}  {{/if}}</td>
+	            	
 	            </tr> 
 	            <tr>
 	            	<th colspan="4" bgcolor="CCFFCC">No. TELÉFONO (CELULAR O CONVENCIONAL)</th>

@@ -1,6 +1,8 @@
 {
   "A_ref": {
-    "establecimiento_salud": "",
+    "institucion_sistema": "sdsc",
+    "unicodigo": 24510,
+    "establecimiento_salud": "asascasc",
     "numero_historia_clinica": "",
     "numero_archivo": "",
     "primer_apellido": "",
@@ -10,7 +12,13 @@
     "sexo": "",
     "fecha_nacimiento": "",
     "edad": "",
-    "telefono": ""
+    "telefono": "",
+    "condicion_edad": {
+      "m1": false,
+      "d": false,
+      "m2": true,
+      "a": false
+    }
   },
   "b_ref": {
     "servicio": "",
