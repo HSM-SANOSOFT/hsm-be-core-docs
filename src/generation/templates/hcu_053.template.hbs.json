@@ -1,73 +1,147 @@
 {
   "A_ref": {
-    "institucion_sistema": "sdsc",
-    "unicodigo": 24510,
-    "establecimiento_salud": "asascasc",
+    "institucion_sistema": "RED COMPLEMENTARIA",
+    "unicodigo": 25410,
+    "establecimiento_salud": "",
     "numero_historia_clinica": "",
     "numero_archivo": "",
+
     "primer_apellido": "",
     "segundo_apellido": "",
     "primer_nombre": "",
     "segundo_nombre": "",
+
     "sexo": "",
     "fecha_nacimiento": "",
     "edad": "",
-    "telefono": "",
+
     "condicion_edad": {
       "m1": false,
       "d": false,
       "m2": true,
       "a": false
-    }
-  },
-  "b_ref": {
+    },
+
+    "telefono": "",
+    
+    "referencia": "string",
+    "derivacion": "string",
+
+"motivos": [
+  { "numero": 1, "descripcion": "Accesibilidad geográfica", "seleccionado": false },
+  { "numero": 2, "descripcion": "Falta de espacio físico", "seleccionado": false },
+  { "numero": 3, "descripcion": "Falta de equipamiento", "seleccionado": false },
+  { "numero": 4, "descripcion": "Equipos en mal estado", "seleccionado": false },
+  { "numero": 5, "descripcion": "Problemas de infraestructura", "seleccionado": false },
+  { "numero": 6, "descripcion": "Problemas de abastecimiento", "seleccionado": false },
+  { "numero": 7, "descripcion": "Insuficiencia de profesionales", "seleccionado": false },
+  { "numero": 8, "descripcion": "Inadecuada capacidad resolutiva", "seleccionado": false },
+  { "numero": 9, "descripcion": "Ausencia de la prestación en la cartera de servicios", "seleccionado": false }
+],
+
+    "residencia": {
+        "provincia": "",
+        "canton": "",
+        "parroquia": ""
+      }
+},
+
+  "B_ref": {
+    "institucion_sistema": "",
+    "establecimiento_salud": "",
     "servicio": "",
     "especialidad": ""
   },
-  "c_ref": {
+
+  "C_ref": {
     "resumen_clinico": ""
   },
-  "d_ref": {
+
+  "D_ref": {
     "hallazgos": ""
   },
-  "f_ref": {
-    "fecha": "",
-    "hora": "",
-    "primer_nombre_med": "",
-    "primer_apellido_medd": "",
-    "segundo_apellido_med": "",
-    "documento_identificacion_med": ""
+
+  
+  "E_ref": {
+    "diagnosticos": [
+      { "descripcion": "", "cie": "", "pre": "", "def": "" },
+      { "descripcion": "", "cie": "", "pre": "", "def": "" },
+      { "descripcion": "", "cie": "", "pre": "", "def": "" },
+      { "descripcion": "", "cie": "", "pre": "", "def": "" },
+      { "descripcion": "", "cie": "", "pre": "", "def": "" },
+      { "descripcion": "", "cie": "", "pre": "", "def": "" }
+    ]
   },
-  "a_contref": {
-    "institución_sistema": "",
-    "unicodigo": "",
-    "establecimiento_salud": "",
-    "numero_historia_clinica": ""
-  },
-  "b_contref": {
-    "institución_sistema": "",
-    "establecimiento_salud": "",
-    "distrito": "",
-    "fecha": ""
-  },
-  "c_contref": {
-    "resumen_clinico": ""
-  },
-  "d_contref": {
-    "hallazgos": ""
-  },
-  "e_contref": {
-    "tratamientos": ""
-  },
-  "g_contref": {
-    "tratamiento_recomendado": ""
-  },
-  "h_contref": {
+
+
+  "F_ref": {
     "fecha": "",
     "hora": "",
     "primer_nombre_med": "",
     "primer_apellido_med": "",
     "segundo_apellido_med": "",
-    "documento_identificción_med": ""
+    "documento_identificacion_med": "",
+    "firma_med": "https://i.pinimg.com/736x/fe/6e/0c/fe6e0c8393c486bbb75e3112f207285e.jpg",
+    "sello_med": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQB9rgaFsh2wgJNXNfK2r2EZIVY0e_Pqi0vg&s"
+  },
+
+  "G_ref": {
+      "referencia_justificada": {
+        "si": "",
+        "no": ""
+      },
+      "derivacion_justificada": {
+        "si": "",
+        "no": ""
+      }
+    },
+
+  "A_contref": {
+    "institución_sistema": "",
+    "unicodigo": "",
+    "establecimiento_salud": "",
+    "tipologia": "",
+    "numero_historia_clinica": "",
+    "numero_archivo": ""
+  },
+  "B_contref": {
+    "institución_sistema": "",
+    "establecimiento_salud": "",
+    "distrito": "",
+    "fecha": ""
+  },
+  "C_contref": {
+    "resumen_clinico": ""
+  },
+  "D_contref": {
+    "hallazgos": ""
+  },
+  "E_contref": {
+    "tratamientos": ""
+  },
+
+  "F_contref": {
+      "diagnosticos": [
+      { "descripcion": "", "cie": "", "pre": "", "def": "" },
+      { "descripcion": "", "cie": "", "pre": "", "def": "" },
+      { "descripcion": "", "cie": "", "pre": "", "def": "" },
+      { "descripcion": "", "cie": "", "pre": "", "def": "" },
+      { "descripcion": "", "cie": "", "pre": "", "def": "" },
+      { "descripcion": "", "cie": "", "pre": "", "def": "" }
+    ]
+  },
+
+  "G_contref": {
+    "tratamiento_recomendado": ""
+  },
+  "H_contref": {
+    "fecha": "",
+    "hora": "",
+    "primer_nombre_med": "",
+    "primer_apellido_med": "",
+    "segundo_apellido_med": "",
+    "documento_identificción_med": "",
+    "firma_med": "https://www.pngkey.com/png/detail/358-3588668_firmas-png.png",
+    "sello_med": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Firma-y-sello-morales.jpg"
   }
 }

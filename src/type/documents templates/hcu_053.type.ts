@@ -32,13 +32,13 @@ export type Hcu053DocumentTemplate = {
         numero: number;
         descripcion: string;
         seleccionado: boolean;
-      }; 
+      }[]; 
 
 
       residencia: {
-        provincia: string;
-        canton: string;
-        parroquia: string;
+        provincia: number;
+        canton: number;
+        parroquia: number;
       };
     };
 
@@ -63,11 +63,11 @@ export type Hcu053DocumentTemplate = {
     //DIAGNÓSTICO
     E_ref: {
       diagnosticos: {
-        id: string;
+        id: number;
         descripcion: string;
         cie: string;
-        pre: string;
-        def: string;
+        pre: boolean;
+        def: boolean;
       }[];
     };
 
@@ -86,12 +86,12 @@ export type Hcu053DocumentTemplate = {
     //EVALUACIÓN DE LA REFERENCIA - DERIVACIÓN
     G_ref: {
       referencia_justificada: {
-        si: string;
-        no: string;
+        si: boolean;
+        no: boolean;
       };
       derivacion_justificada: {
-        si: string;
-        no: string;
+        si: boolean;
+        no: boolean;
       };
     };
   
