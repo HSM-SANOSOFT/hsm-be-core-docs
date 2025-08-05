@@ -84,19 +84,15 @@
     "firma_med": "https://i.pinimg.com/736x/fe/6e/0c/fe6e0c8393c486bbb75e3112f207285e.jpg",
     "sello_med": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQB9rgaFsh2wgJNXNfK2r2EZIVY0e_Pqi0vg&s"
   },
-
-  "G_ref": {
-      "referencia_justificada": {
-        "si": "",
-        "no": ""
-      },
-      "derivacion_justificada": {
-        "si": "",
-        "no": ""
-      }
-    },
-
-  "A_contref": {
+  "g_ref": {
+    "referencia": true,
+    "derivacion": false
+  },
+  "seleccion_ref": {
+    "contrareferencia": true,
+    "referencia_inversa": false
+  },
+  "a_contref": {
     "institución_sistema": "",
     "unicodigo": "",
     "establecimiento_salud": "",
