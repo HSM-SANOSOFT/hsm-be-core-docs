@@ -30,6 +30,9 @@
   "d_ref": {
     "hallazgos": ""
   },
+  "e_ref": {
+    "tratamientos": ""
+  },
   "f_ref": {
     "fecha": "",
     "hora": "",
@@ -37,6 +40,14 @@
     "primer_apellido_medd": "",
     "segundo_apellido_med": "",
     "documento_identificacion_med": ""
+  },
+  "g_ref": {
+    "referencia": true,
+    "derivacion": false
+  },
+  "seleccion_ref": {
+    "contrareferencia": true,
+    "referencia_inversa": false
   },
   "a_contref": {
     "institución_sistema": "",
@@ -57,6 +68,9 @@
     "hallazgos": ""
   },
   "e_contref": {
+    "tratamientos": ""
+  },
+  "f_contref": {
     "tratamientos": ""
   },
   "g_contref": {
