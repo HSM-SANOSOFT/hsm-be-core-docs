@@ -2,89 +2,156 @@
   "A_ref": {
     "institucion_sistema": "RED COMPLEMENTARIA",
     "unicodigo": 25410,
-    "establecimiento_salud": "",
-    "numero_historia_clinica": "",
-    "numero_archivo": "",
-
-    "primer_apellido": "",
-    "segundo_apellido": "",
-    "primer_nombre": "",
-    "segundo_nombre": "",
-
-    "sexo": "",
-    "fecha_nacimiento": "",
-    "edad": "",
-
+    "establecimiento_salud": "Hospital Santamaria",
+    "numero_historia_clinica": "09254223793",
+    "numero_archivo": "091547",
+    "primer_apellido": "Raul",
+    "segundo_apellido": "Gonzalez",
+    "primer_nombre": "Juan",
+    "segundo_nombre": "Pablo",
+    "sexo": "M",
+    "fecha_nacimiento": "14/01/2001",
+    "edad": "24",
     "condicion_edad": {
-      "m1": false,
+      "m1": true,
       "d": false,
-      "m2": true,
+      "m2": false,
       "a": false
     },
-
-    "telefono": "",
-    
-    "referencia": "string",
-    "derivacion": "string",
-
-"motivos": [
-  { "numero": 1, "descripcion": "Accesibilidad geográfica", "seleccionado": false },
-  { "numero": 2, "descripcion": "Falta de espacio físico", "seleccionado": false },
-  { "numero": 3, "descripcion": "Falta de equipamiento", "seleccionado": false },
-  { "numero": 4, "descripcion": "Equipos en mal estado", "seleccionado": false },
-  { "numero": 5, "descripcion": "Problemas de infraestructura", "seleccionado": false },
-  { "numero": 6, "descripcion": "Problemas de abastecimiento", "seleccionado": false },
-  { "numero": 7, "descripcion": "Insuficiencia de profesionales", "seleccionado": false },
-  { "numero": 8, "descripcion": "Inadecuada capacidad resolutiva", "seleccionado": false },
-  { "numero": 9, "descripcion": "Ausencia de la prestación en la cartera de servicios", "seleccionado": false }
-],
-
-    "residencia": {
-        "provincia": "",
-        "canton": "",
-        "parroquia": ""
+    "telefono": "0969883868",
+    "referencia": true,
+    "derivacion": false,
+    "motivos": [
+      {
+        "numero": 1,
+        "descripcion": "Accesibilidad geográfica",
+        "seleccionado": true
+      },
+      {
+        "numero": 2,
+        "descripcion": "Falta de espacio físico",
+        "seleccionado": true
+      },
+      {
+        "numero": 3,
+        "descripcion": "Falta de equipamiento",
+        "seleccionado": false
+      },
+      {
+        "numero": 4,
+        "descripcion": "Equipos en mal estado",
+        "seleccionado": false
+      },
+      {
+        "numero": 5,
+        "descripcion": "Problemas de infraestructura",
+        "seleccionado": false
+      },
+      {
+        "numero": 6,
+        "descripcion": "Problemas de abastecimiento",
+        "seleccionado": false
+      },
+      {
+        "numero": 7,
+        "descripcion": "Insuficiencia de profesionales",
+        "seleccionado": false
+      },
+      {
+        "numero": 8,
+        "descripcion": "Inadecuada capacidad resolutiva",
+        "seleccionado": false
+      },
+      {
+        "numero": 9,
+        "descripcion": "Ausencia de la prestación en la cartera de servicios",
+        "seleccionado": false
       }
-},
-
+    ],
+    "residencia": {
+      "provincia": "Guayas",
+      "canton": "Guayaquil",
+      "parroquia": "Garcia Moreno"
+    }
+  },
   "B_ref": {
-    "institucion_sistema": "",
-    "establecimiento_salud": "",
-    "servicio": "",
-    "especialidad": ""
+    "institucion_sistema": "Hospital Santamaria",
+    "establecimiento_salud": "Hospital Santamaria",
+    "servicio": "Emergencias",
+    "especialidad": "Medicina General"
   },
-
   "C_ref": {
-    "resumen_clinico": ""
+    "resumen_clinico": " Paciente masculino de 24 años, con antecedentes de hipertensión arterial, que acude a consulta por dolor torácico persistente desde hace 3 días. Se realiza evaluación clínica y se solicita electrocardiograma. Se descartan complicaciones mayores y se recomienda seguimiento ambulatorio."
   },
-
-  "D_ref": {
-    "hallazgos": ""
-  },
-
-  
   "E_ref": {
     "diagnosticos": [
-      { "descripcion": "", "cie": "", "pre": "", "def": "" },
-      { "descripcion": "", "cie": "", "pre": "", "def": "" },
-      { "descripcion": "", "cie": "", "pre": "", "def": "" },
-      { "descripcion": "", "cie": "", "pre": "", "def": "" },
-      { "descripcion": "", "cie": "", "pre": "", "def": "" },
-      { "descripcion": "", "cie": "", "pre": "", "def": "" }
+      {
+        "descripcion": "loreitsum ipsum dolor sit amet consectetur adipiscing elit",
+        "cie": {
+          "seleccionado": true,
+          "codigo": "loreitsum"
+        },
+        "pre": false,
+        "def": true
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      }
     ]
   },
-
-
   "F_ref": {
-    "fecha": "",
-    "hora": "",
-    "primer_nombre_med": "",
-    "primer_apellido_med": "",
-    "segundo_apellido_med": "",
-    "documento_identificacion_med": "",
+    "fecha": "01/01/1991",
+    "hora": "20:55",
+    "primer_nombre_med": "Marcos",
+    "primer_apellido_med": "Pérez",
+    "segundo_apellido_med": "González",
+    "documento_identificacion_med": "1234567890",
     "firma_med": "https://i.pinimg.com/736x/fe/6e/0c/fe6e0c8393c486bbb75e3112f207285e.jpg",
     "sello_med": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQB9rgaFsh2wgJNXNfK2r2EZIVY0e_Pqi0vg&s"
   },
-  "g_ref": {
+  "G_ref": {
     "referencia": true,
     "derivacion": false
   },
@@ -92,51 +159,97 @@
     "contrareferencia": true,
     "referencia_inversa": false
   },
-  "a_contref": {
-    "institución_sistema": "",
-    "unicodigo": "",
-    "establecimiento_salud": "",
-    "tipologia": "",
-    "numero_historia_clinica": "",
-    "numero_archivo": ""
+  "A_contref": {
+    "institucion_sistema": "Hospital Santamaria",
+    "unicodigo": 25410,
+    "establecimiento_salud": "Hospital Santamaria",
+    "tipologia": "loreitsum ipsum dolor sit amet consectetur adipiscing elit",
+    "numero_historia_clinica": "0924549885",
+    "numero_archivo": "189049"
   },
   "B_contref": {
-    "institución_sistema": "",
-    "establecimiento_salud": "",
-    "distrito": "",
-    "fecha": ""
+    "institucion_sistema": "Hospital Santamaria",
+    "establecimiento_salud": "Hospital Santamaria",
+    "distrito": "Guayaquil",
+    "fecha": "01/01/1991"
   },
   "C_contref": {
-    "resumen_clinico": ""
+    "resumen_clinico": " Paciente masculino de 24 años, con antecedentes de hipertensión arterial, que acude a consulta por dolor torácico persistente desde hace 3 días. Se realiza evaluación clínica y se solicita electrocardiograma. Se descartan complicaciones mayores y se recomienda seguimiento ambulatorio."
   },
   "D_contref": {
-    "hallazgos": ""
+    "hallazgos": " Hallazgos clínicos relevantes incluyen hipertensión arterial, dolor torácico persistente y resultados normales en electrocardiograma. No se reportan complicaciones mayores."
   },
   "E_contref": {
-    "tratamientos": ""
+    "tratamientos": " Se recomienda seguimiento ambulatorio con control de hipertensión arterial y evaluación periódica del dolor torácico. Se sugiere evitar esfuerzos físicos intensos y mantener una dieta equilibrada."
   },
-
   "F_contref": {
-      "diagnosticos": [
-      { "descripcion": "", "cie": "", "pre": "", "def": "" },
-      { "descripcion": "", "cie": "", "pre": "", "def": "" },
-      { "descripcion": "", "cie": "", "pre": "", "def": "" },
-      { "descripcion": "", "cie": "", "pre": "", "def": "" },
-      { "descripcion": "", "cie": "", "pre": "", "def": "" },
-      { "descripcion": "", "cie": "", "pre": "", "def": "" }
+    "diagnosticos": [
+      {
+        "descripcion": "loreitsum ipsum dolor sit amet consectetur adipiscing elit",
+        "cie": {
+          "seleccionado": true,
+          "codigo": "loreitsum"
+        },
+        "pre": false,
+        "def": true
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      }
     ]
   },
-
   "G_contref": {
-    "tratamiento_recomendado": ""
+    "tratamiento_recomendado": " Se recomienda seguimiento ambulatorio con control de hipertensión arterial y evaluación periódica del dolor torácico. Se sugiere evitar esfuerzos físicos intensos y mantener una dieta equilibrada."
   },
   "H_contref": {
-    "fecha": "",
-    "hora": "",
-    "primer_nombre_med": "",
-    "primer_apellido_med": "",
-    "segundo_apellido_med": "",
-    "documento_identificción_med": "",
+    "fecha": "10/10/2023",
+    "hora": "10:00",
+    "primer_nombre_med": "Javier",
+    "primer_apellido_med": "Pérez",
+    "segundo_apellido_med": "González",
+    "documento_identificacion_med": "1234567890",
     "firma_med": "https://www.pngkey.com/png/detail/358-3588668_firmas-png.png",
     "sello_med": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Firma-y-sello-morales.jpg"
   }
