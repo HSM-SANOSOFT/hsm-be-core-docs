@@ -1,55 +1,194 @@
 <html>
   <head>
+    <meta charset='UTF-8' />
     <style>
-      @page { margin: 170px 50px 20px 50px; }
-      #header { position: fixed; left: 0px; top: -150px; right: 0px; height: 40px; text-align: center; padding-bottom: 0px; margin-bottom: 0px;}
-      #header .page:after { content: counter(page, upper-roman); }
-      .estilocelda {background-color: #;border-style: solid;border-color: #000000;border-width: 1px; padding: 0px; margin: 0px; text-align: left;}
+       @page {
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        margin: 1px;
+        padding: 1px;
+      }
+       main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 2px;
+        border: 2px solid black;
+        font-size: 8px;
+        font-family: arial;
+        table-layout: fixed;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+      
+       th,
+      tr,
+      td {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+      }
+      th {
+        font-weight: bold;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+      .th3 {
+        background-color: white;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+
+     .td4j {
+        height: 700px;
+        text-align: left;
+        vertical-align: top;
+        padding: 2px;
+        white-space: pre-wrap; 
+      }
+
+      .document_a,
+      .document_b {
+        width: 100%;
+        margin-top: 6px;
+        padding: 0;
+      }
+      
     </style>
   </head>
-  <body style='font-size: 9px'>
-  <div id='header'>
-    <table style='width:100%; border: 1px solid #000; ' >
-      <tr style='text-align: center;'>
-        <th style='width: 15%'>ESTABLECIMIENTO</th>
-        <th style='width: 25%'>NOMBRE</th>
-        <th style='width: 25%'>APELLIDOS</th>
-        <th style='width: 10%'>SEXO</th>
-        <th style='width: 10%'>N° HOJA</th>
-        <th style='width: 15%'>N° HISTORIA CLINICA</th>
-      </tr>
-      <tr style='text-align: center;''>
-        <td>CLINICA SANTAMARIA</td>
-        <td>".$nombre."</td>
-        <td>".$apellido."</td>
-        <td>".$sexo."</td>
-        <td><p class='page'></p></td>
-        <td>".$valor2."</td>
-      </tr>
-    </table> 
+  <body>
+    <header></header>
+    <main>
+      <div class='document_evolution'>
+        <div class='document_evolution_a'>
+          {{#with A}}
+      <table>
+        <tr>
+          <th class='th1' rowspan='1' colspan='16'>A. DATOS DEL ESTABLECIMIENTO Y USUARIO / PACIENTE</th>
+        </tr>
+        <tr>
+          <th class='th2' rowspan='1' colspan='4'>INSTITUCIÓN DEL SISTEMA</th>
+          <th class='th2' rowspan='1' colspan='2'>UNICÓDIGO</th>
+          <th class='th2' rowspan='1' colspan='3'>ESTABLECIMIENTO DE SALUD</th>
+          <th class='th2' rowspan='1' colspan='3'>NÚMERO DE HISTORIA CLÍNICA</th>
+          <th class='th2' rowspan='1' colspan='3'>NÚMERO DE ARCHIVO</th>
+          <th class='th2' rowspan='1' colspan='3'>N°. HOJA</th>
+        </tr>
+        <tr>
+          <td rowspan='1' colspan='4'>{{institucion_sistema}}</td>
+          <td rowspan='1' colspan='2'>{{unicodigo}}</td>
+          <td rowspan='1' colspan="3">{{establecimiento_salud}}</td>
+          <td rowspan='1' colspan="3">{{numero_historia_clinica}}</td>
+          <td rowspan='1' colspan="3">{{numero_archivo}}</td>
+          <td rowspan='1' colspan="3">{{numero_hoja}}</td>
+        </tr>
+        <tr>
+          <th class='th2' rowspan='2' colspan='3'>PRIMER APELLIDO</th>
+          <th class='th2' rowspan='2' colspan='3'>SEGUNDO APELLIDO</th>
+          <th class='th2' rowspan='2' colspan='2'>PRIMER NOMBRE</th>
+          <th class='th2' rowspan='2' colspan='2'>SEGUNDO NOMBRE</th>
+          <th class='th2' rowspan='2' colspan='1'>SEXO</th>
+          <th class='th2' rowspan='2' colspan='1'>EDAD</th>
+          <th class='th2' rowspan='1' colspan='4'>CONDICIÓN EDAD (MARCAR)</th>
+        </tr>
 
-    <table style='width:100%; border: 1px solid #000; margin-top: 10px;'' >
-      <tr style='text-align: left;'>
-        <th style='width: 70%; font-size: 12px'>1 EVOLUCION</th>
-        <th style='width: 15%; font-size: 12px'>2 PRESCRIPCION</th>
-        <th style='width: 15%; font-size: 5px'>FIRMAR AL PIE DE<br>CADA PRESCRIPCION</th>
-      </tr>
-    </table> 
+        <tr>
+          <th class='th2' rowspan='1' colspan='1'>H</th>
+          <th class='th2' rowspan='1' colspan='1'>D</th>
+          <th class='th2' rowspan='1' colspan='1'>M</th>
+          <th class='th2' rowspan='1' colspan='1'>A</th>
+        </tr>
 
-    <table style='width:100%; border: 1px solid #000; margin-top: 10px;'>
-      <tr style='text-align: center;'>
-        <th style='width: 10%'>FECHA<br>DIA/MES/AÑO</th>
-        <th style='width: 10%'>HORA</th>
-        <th style='width: 40%'>NOTA DE EVOLUCION</th>
-        <th style='width: 30%'>FARMACOTERAPIA E INDICACIONES<BR><a style='font-size: 6px'>(PARA ENFERMERIA Y OTRO PERSONAL)<a></th>
-        <th style='width: 10%'>ADMINISTRA<BR>FARMACO</th>
-      </tr>
-    </table> 
-  </div>
+        <tr>
+          <td rowspan='1' colspan='3'>{{primer_apellido}}</td>
+          <td rowspan='1' colspan='3'>{{segundo_apellido}}</td>
+          <td rowspan='1' colspan='2'>{{primer_nombre}}</td>
+          <td rowspan='1' colspan='2'>{{segundo_nombre}}</td>
+          <td rowspan='1' colspan='1'>{{sexo}}</td>
+          <td rowspan='1' colspan='1'>{{edad}}</td>
+          <td rowspan='1' colspan='1'>{{#if condicion_edad.h}} x {{/if}}</td>
+          <td rowspan='1' colspan='1'>{{#if condicion_edad.d}} x {{/if}}</td>
+          <td rowspan='1' colspan='1'>{{#if condicion_edad.m}} x {{/if}}</td>
+          <td rowspan='1' colspan='1'>{{#if condicion_edad.a}} x {{/if}}</td>
+        </tr>
+      </table> 
+      {{/with}}
+    </div>  
 
-  <div id='content'>
-    <table style='width:100%; margin-top: -20px;' cellpadding='0' cellspacing='0'>".$tr."
+    <div class='document_evolution_b'>
+  {{#with B}}
+    <table>
+      <tr>
+        <th class='th1' colspan='4'>B. EVOLUCIÓN Y PRESCRIPCIONES</th>
+        <th class='th1' colspan='5'>FIRMAR AL PIE DE CADA EVOLUCIÓN Y PRESCRIPCIÓN</th>
+        <th class='th1' colspan='5'>REGISTRAR CON ROJO LA ADMINISTRACIÓN DE FÁRMACOS Y COLOCACIÓN DE DISPOSITIVOS MÉDICOS</th>
+      </tr>
+
+      <tr>
+        <th class='th1' colspan='7'>1. EVOLUCIÓN</th>
+        <th class='th1' colspan='7'>2. PRESCRIPCIONES</th>
+      </tr>
+
+      <tr>
+        <th class='th2'>FECHA<br>DIA/MES/AÑO</th>
+        <th class='th2'>HORA</th>
+        <th class='th2' colspan='5'>NOTAS DE EVOLUCIÓN</th>
+        <th class='th2' colspan='5'>
+          <b>FARMACOTERAPIA E INDICACIONES</b><br>
+          <span style='font-size: 6px'>(PARA ENFERMERÍA Y OTRO PERSONAL)</span>
+        </th>
+        <th class='th2' colspan='2'>ADMINISTRA<br>FÁRMACOS / DISPOSITIVOS</th>
+      </tr>
+
+      <tr>
+        <td class='td4j'>{{evolucion.fecha}}</td>
+        <td class='td4j'>{{evolucion.hora}}</td>
+        <td class='td4j' colspan='5'>{{evolucion.nota_evolucion}}</td>
+        <td class='td4j' colspan='5'>{{prescripciones.farmaco_indicaciones}}</td>
+        <td class='td4j' colspan='2'>{{prescripciones.administracion_farmacos}}</td>
+      </tr>
     </table>
-  </div>
+  {{/with}} 
+</div>
+
+
+    <div>
+      <table width='100%' border='1' cellpadding='0' cellspacing='0' style='font-family: arial;text-align: center; border-collapse:collapse;border-color:#ddd;font-size:7px;'>
+      </table>
+    </div>
   </body>
 </html>

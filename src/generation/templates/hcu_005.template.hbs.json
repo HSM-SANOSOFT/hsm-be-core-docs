@@ -1,0 +1,20 @@
+{
+    "A": {
+        "institucion_sistema": "CLINICA SANTAMARIA",
+        "unicodigo": "25410",
+        "establecimiento_salud": "CLINICA SANTAMARIA",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "987654321"
+    },
+    "B": {
+        "evolucion":{
+            "fecha": "25-JUN-2023",
+            "hora": "15:30",
+            "nota_evolucion": "Paciente de 30años"
+        },
+        "prescripciones": {
+            "farmaco_indicaciones": "6552",
+            "administracion_farmacos": "556"
+        }
+    }
+}
