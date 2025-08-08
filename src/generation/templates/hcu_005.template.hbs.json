@@ -4,13 +4,27 @@
         "unicodigo": "25410",
         "establecimiento_salud": "CLINICA SANTAMARIA",
         "numero_historia_clinica": "123456789",
-        "numero_archivo": "987654321"
+        "numero_archivo": "987654321",
+        "numero_hoja": "IV",
+        "primer_apellido": "LOPEZ",
+        "segundo_apellido": "GARCIA",
+        "primer_nombre": "JOSE",
+        "segundo_nombre": "PABLO",
+        "sexo": "M",
+        "edad": "30",
+        "condicion_edad": {
+           "h": false,
+           "d": false,
+           "m": false,
+           "a": true
+        }
     },
+
     "B": {
         "evolucion":{
             "fecha": "25-JUN-2023",
             "hora": "15:30",
-            "nota_evolucion": "Paciente de 30años"
+            "nota_evolucion": "Paciente de 30años sexo masculino, con antecedentes de hipertensión arterial y diabetes mellitus tipo 2, acude a consulta por dolor torácico y dificultad respiratoria. Se realiza electrocardiograma que muestra signos de isquemia miocárdica. Se inicia tratamiento con nitroglicerina y se solicita ingreso hospitalario para monitorización y estudios adicionales."
         },
         "prescripciones": {
             "farmaco_indicaciones": "6552",
@@ -18,3 +32,4 @@
         }
     }
 }
+

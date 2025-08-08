@@ -1,0 +1,86 @@
+{
+    "A": {
+        "institucion_sistema": "CLINICA SANTAMARIA",
+        "unicodigo": "25410",
+        "establecimiento_salud": "CLINICA SANTAMARIA",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "987654321",
+        "numero_hoja": "IV",
+        "primer_apellido": "LOPEZ",
+        "segundo_apellido": "GARCIA",
+        "primer_nombre": "JOSE",
+        "segundo_nombre": "PABLO",
+        "sexo": "M",
+        "edad": "30",
+        "condicion_edad": {
+           "h": false,
+           "d": false,
+           "m": false,
+           "a": true
+        }
+    },
+
+    "B": {
+        "resumen_clinico": "hoola"
+    },
+
+     "C": {
+        "resumen_evolucion_complicaciones": "holaa"
+    },
+
+     "D": {
+        "hallazgos_relevantes": "hola"
+    },
+
+    "E": {
+        "resumen_tratamiento": ""
+    },
+
+    "F": {
+        "indicacion_alta": "hola"
+    },
+
+     
+    "G": {
+        "diagnosticosEgreso": [
+            {
+            "tipo": "DIAGNÓSTICO PRINCIPAL",
+            "diagnostico": "HEMORRAGIA SEBDURAL (AGUDA) (NO TRAUMÁTICA)",
+            "cie": "S06.4"
+            },
+
+            {
+            "tipo": "DIAGNÓSTICO SECUNDARIO",
+           " diagnostico": "",
+           " cie": ""
+            },
+
+            {
+            "tipo": "DIAGNÓSTICO SECUNDARIO",
+            "diagnostico": "",
+            "cie": ""
+            },
+            {
+            "tipo": "DIAGNÓSTICO SECUNDARIO",
+            "diagnostico": "hola",
+            "cie": "6523"
+            },
+            {
+            "tipo": "DIAGNÓSTICO SECUNDARIO",
+            "diagnostico": "",
+            "cie": ""
+            },
+            {
+            "tipo": "DIAGNÓSTICO SECUNDARIO",
+            "diagnostico": "",
+            "cie": ""
+            },
+            {
+            "tipo": "CAUSA EXTERNA",
+            "diagnostico": "",
+            "cie": ""
+            }
+        ]
+    
+    }
+}

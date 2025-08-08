@@ -9,6 +9,7 @@
         background-color: white;
         color: black;
         font-size: 8px;
+        font-family: arial;
         margin: 1px;
         padding: 1px;
       }
@@ -30,29 +31,37 @@
       .page::after {
         content: counter(page);
       }
+      
       table {
         width: 100%;
         border-collapse: collapse;
-        border-spacing: 2px;
+        border-spacing: 1px;
         border: 2px solid black;
-        font-size: 8px;
-        font-family: arial;
         table-layout: fixed;
+      }
+
+      .table2{
+        table-layout:unset;
       }
       img {
         max-height: 100px;
         width: auto;
       }
-      
-       th,
-      tr,
+          
       td {
+        width: fit-content;
+        white-space: nowrap;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+
+      }
+
+      th {
         width: 100%;
         text-align: center;
         border: 1px solid black;
         height: 10px;
-      }
-      th {
         font-weight: bold;
       }
 
@@ -60,10 +69,12 @@
         text-align: left;
         font-size: 9px;
         background-color: #ccccff;
+
       }
       .th2 {
         background-color: #ccffcc;
       }
+
       .th3 {
         background-color: white;
       }
@@ -73,12 +84,14 @@
         text-align: left;
       }
 
-     .td4j {
-        height: 700px;
+      .td1 {
         text-align: left;
+      }
+
+     .td4j {
+        height: 90px;
+        text-align: justify;
         vertical-align: top;
-        padding: 2px;
-        white-space: pre-wrap; 
       }
 
       .document_a,
@@ -167,16 +180,13 @@
         <th class='th2'>FECHA<br>DIA/MES/AÑO</th>
         <th class='th2'>HORA</th>
         <th class='th2' colspan='5'>NOTAS DE EVOLUCIÓN</th>
-        <th class='th2' colspan='5'>
-          <b>FARMACOTERAPIA E INDICACIONES</b><br>
-          <span style='font-size: 6px'>(PARA ENFERMERÍA Y OTRO PERSONAL)</span>
-        </th>
-        <th class='th2' colspan='2'>ADMINISTRA<br>FÁRMACOS / DISPOSITIVOS</th>
+        <th class='th2' colspan='5'><b>FARMACOTERAPIA E INDICACIONES</b><br>(PARA ENFERMERÍA Y OTRO PERSONAL)</th>
+        <th class='th2' colspan='3'>ADMINISTRA<br>FÁRMACOS <br> DISPOSITIVOS</th>
       </tr>
 
       <tr>
-        <td class='td4j'>{{evolucion.fecha}}</td>
-        <td class='td4j'>{{evolucion.hora}}</td>
+        <td class='td4j2'>{{evolucion.fecha}}</td>
+        <td class='td4j2'>{{evolucion.hora}}</td>
         <td class='td4j' colspan='5'>{{evolucion.nota_evolucion}}</td>
         <td class='td4j' colspan='5'>{{prescripciones.farmaco_indicaciones}}</td>
         <td class='td4j' colspan='2'>{{prescripciones.administracion_farmacos}}</td>
