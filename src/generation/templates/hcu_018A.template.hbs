@@ -1,0 +1,1452 @@
+<html>
+    <head>
+      <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+        }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: white;
+      }
+      .th4 {
+        background-color: #ccffcc;
+        font-size: 9px;
+        text-align: left;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: center;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+	  .td2 {
+        text-align: center;
+        /*width: max-content;*/
+        white-space: nowrap;
+		background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__transA,
+      .document__transA__a,
+      .document__transA__b,
+      .document__transA__c,
+      .document__transA__d,
+      .document__transA__e,
+      .document__transA__f,
+      .document__transA__g,
+      .document__transA__h,
+      .document__transA__i,
+      .document__transA__j,
+      .document__transA__k,
+      .document__transA__l,
+      .document__transA__m,
+      .document__transA__n,
+      .document__transA__o,
+      .document__transA__p,
+      .document__transA__q,
+      .document__transA__r,
+      .document__transA__s {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+    }
+
+    </style>
+    </head>
+    <body>
+    <header></header>
+    <main>
+
+<div class='document__transA'>
+    <div class='document__transA__a'>
+        {{#with A}}
+	    <table>
+	    	<tr>
+	            <th class="th1" colspan="11">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+	        </tr>
+	        <tr>
+	            <th class="th2" colspan="2">INSTITUCION DEL SISTEMA</th>
+	            <th class="th2">UNICÓDIGO</th>
+	            <th class="th2" colspan="2">ESTABLECIMIENTO DE SALUD</th>
+	            <th class="th2" colspan="2">NÚMERO DE HISTORIA CLÍNICA</th>
+	            <th class="th2" colspan="4">NÚMERO DE ARCHIVO</th>
+	        </tr>
+	        <tr>
+	            <td colspan="2">{{institucion_sistema}}</td>
+	            <td>{{unicodigo}}</td>
+	            <td colspan="2">{{establecimiento_salud}}</td>
+	            <td colspan="2">{{numero_historia_clinica}}</td>
+	            <td colspan="4">{{numero_archivo}}</td>
+	        </tr>
+	        <tr>
+	            <th class="th2" rowspan="2">PRIMER APELLIDO</th>
+	            <th class="th2" rowspan="2">SEGUNDO APELLIDO</th>
+	            <th class="th2" rowspan="2">PRIMER NOMBRE</th>
+	            <th class="th2" rowspan="2">SEGUNDO NOMBRE</th>
+	            <th class="th2" rowspan="2">SEXO</th>
+	            <th class="th2" rowspan="2">FECHA NACIMIENTO</th>
+	            <th class="th2" rowspan="2">EDAD</th>
+	            <th class="th2" colspan="4">CONDICIÓN EDAD</th>
+	        </tr>
+	        <tr>
+	            <th class="th2">H</th>
+	            <th class="th2">D</th>
+	            <th class="th2">M</th>
+	            <th class="th2">A</th>
+	        </tr>
+	        <tr>
+	            <td>{{primer_apellido}}</td>
+	            <td>{{segundo_apellido}}</td>
+	            <td>{{primer_nombre}}</td>
+	            <td>{{segundo_nombre}}</td>
+	            <td>{{sexo}}</td>
+	            <td>{{fecha_nacimiento}}</td>
+	            <td>{{edad}}</td>
+	            <td>{{#if condicion_edad.h}}X{{/if}}</td>
+	            <td>{{#if condicion_edad.d}}X{{/if}}</td>
+	            <td>{{#if condicion_edad.m}}X{{/if}}</td>
+	            <td>{{#if condicion_edad.a}}X{{/if}}</td>
+	        </tr> 
+	        <tr>
+	            <th class="th2">FECHA:</th>
+	            <td>{{fecha}}</td>
+	            <th class="th2">TALLA(cm)</th>
+	            <td>{{talla}}</td>
+	            <th class="th2">PESO(kg)</th>
+	            <td>{{peso}}</td>
+	            <th class="th2" colspan="2">GRUPO Y FACTOR</th>
+	            <td colspan="3">{{grupo_factor}}</td>
+	        </tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class='document__transA__b'>
+        {{#with B}}
+		<table>
+	    	<tr>
+	            <th class="th1" colspan="8">B. SERVICIO Y PRIORIDAD DE ATENCIÓN</th>
+	        </tr>
+	        <tr>
+	            <td class="td2">DIAGNÓSTICO</td>
+	            <td>{{diagnostico}}</td>
+	            <td class="td2">CIE</td>
+	            <td>{{cie1}}</td>
+	            <td class="td2">CIRUGÍA PROPUESTA</td>
+	            <td>{{cx_propuesta}}</td>
+	            <td class="td2">ESPECIALIDAD</td>
+	            <td class="td2" rowspan="4">PRIORIDAD</td>
+	        </tr>
+	        <tr>
+	            <td class="td2">DX POSTOPERATORIO</td>
+	            <td>{{dx_postoperatorio}}</td>
+	            <td class="td2">CIE</td>
+	            <td>{{cie2}}</td>
+	            <td class="td2">CIRUGÍA REALIZADA</td>
+	            <td>{{cx_realizada}}</td>
+	            <td>{{especialidad}}</td>
+	        </tr>
+	        <tr>
+	            <td class="td2">ANESTESIÓLOGO</td>
+	            <td>{{anestesiologo}}</td>
+	            <td class="td2">AYUDANTE(S)</td>
+	            <td>{{ayudante1}}</td>
+	            <td  class="td2">INSTRUMENTISTA</td>
+	            <td>{{instrumentista}}</td>
+	            <td class="td2">QUIRÓFANO</td>
+	        </tr>
+	        <tr>
+	            <td class="td2">CIRUJANO</td>
+	            <td>{{cirujano}}</td>
+	            <td class="td2">AYUDANTE(S)</td>
+	            <td>{{ayudante2}}</td>
+	            <td class="td2">CIRCULANTE</td>
+	            <td>{{circulante}}</td>
+	            <td>{{quirofano}}</td>
+	        </tr>
+	    </table>
+        {{/with}}
+	</div>	
+
+	<div class='document__transA__c'>
+        {{#with C}}
+		<table>
+	    	<tr>
+	            <th class="th1" colspan="20">C. REGIÓN OPERATORIA</th>
+	        </tr>
+	        <tr>
+	            <td>CABEZA</td>
+	            <td>{{#if cabeza}}X{{/if}}</td>
+	            <td>ORGANOS DE LOS  SENTIDOS</td>
+	            <td>{{#if organos_sentidos}}X{{/if}}</td>
+	            <td>CUELLO</td>
+	            <td>{{#if cuello}}X{{/if}}</td>
+	            <td>COLUMNA</td>
+	            <td>{{#if columna}}X{{/if}}</td>
+	            <td>TORAX</td>
+	            <td>{{#if torax}}X{{/if}}</td>
+	            <td>ABDOMEN</td>
+	            <td>{{#if abdomen}}X{{/if}}</td>
+	            <td>PELVIS</td>
+	            <td>{{#if pelvis}}X{{/if}}</td>
+	            <td>EXTREMIDADES SUPERIORES</td>
+	            <td>{{#if extr_sup}}X{{/if}}</td>
+	            <td>EXTREMIDADES INFERIORES</td>
+	            <td>{{#if extr_inf}}X{{/if}}</td>
+	            <td>PERINEAL</td>
+	            <td>{{#if perineal}}X{{/if}}</td>
+	        </tr>
+	    </table>
+        {{/with}}
+	</div>	
+
+	<div class='document__transA__d'>
+        {{#with D}}
+		<table>
+	    	<tr>
+	            <th class="th1" colspan="4">D. MONITORIZACIÓN</th>
+	              <td>
+	              	<table>
+				        <tr>
+				        <?php
+				        //$hora_inicio = $archivo3[1]['HORA'][0]; 
+				        //$hora_max = $hora_inicio+4;
+
+				        for ($l= $hora_inicio ; $l <= $hora_max; $l++) {   ?>
+				                <th style="width: 10px"><?php echo($l)?></th>
+				                <td style="width: 13px" ><label style="color: #fff;">X</label></td>
+				                <td style="width: 13px" ><label style="color: #fff;">X</label></td>
+				            <?php for ($v=15; $v < 60; $v++) { ?>
+				                <td style="width: 10px"><?php echo($v)?></td>
+				                <td style="width: 13px" ><label style="color: #fff;">X</label></td>
+				                <td style="width: 13px" ><label style="color: #fff;">X</label></td>
+				            <?php $v = $v+14;
+				            } ?>
+				        <?php } ?>
+				        </tr>
+				    </table>
+	              </td>
+	            </tr>
+	    	</thead>
+	        <tbody>
+	        	<tr>
+	        		<td colspan="4"  style="text-align: center;width: 100px">
+	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 7px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+					    	<tbody>
+					    		<tr>
+					    			<th style="width: 70px;height: 10px;"  bgcolor="CCFFCC">AGENTES</th>
+					    		</tr>
+					    		<?php for($t=0; $t < 5 ; $t++) {  ?>
+					    		<tr>
+					    			<td style="width: 70px;height: 10px;"  bgcolor="CCFFCC"><?php echo($archivo5[1]['AGENTE'][$t])?></td>
+					    		</tr>
+					    		<?php } ?>
+					    	</tbody>
+					    </table>
+	        		</td>
+	        		<td>
+	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 7px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+					    	<tbody>
+					    		<tr>
+					    			<td style="height: 10px" colspan="49"></td>
+					    		</tr>
+					    		<?php
+					    		$aux_a=0;
+					    		$aux1_a=0;
+					    		for($k=1; $k< 6; $k++){ ?>
+					    		<tr>
+					    			<?php for ($l= $ini; $l < $fin; $l++) {
+					    			//guarda_log($l.'/'.$v);
+					    			if($archivo4[1]['FILA'][$aux_a] == $k && $archivo4[1]['COLUMNA'][$aux1_a] == $l){ 
+					    				$aux_a ++;
+                            			$aux1_a ++;
+                            			 ?>
+					    				<td style="height: 10px;width: 5px"><?php echo($archivo4[1]['VALOR'][$l])?></td>
+					    			<?php }else{ ?>
+					    				<td style="height: 10px;width: 5px"></td>
+					    			<?php } ?>
+					    			<?php } ?>
+					    		</tr>
+					    		<?php } ?>
+					    	</tbody>
+					    </table>
+	        		</td>
+	        	</tr>
+	        	<tr>
+	        		<td  style="text-align: center;width: 100px">
+	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 7px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+					    	<tbody>
+					    		<tr>
+					    			<td colspan="2" style="width: 70px;height: 10px;"  bgcolor="CCFFCC">SIMBOLOGIA</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="width: 70px;height: 10px"  bgcolor="CCFFCC">INICIO ANESTESIA</td>
+					    			<th><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img1); ?>" ></div></th>
+					    		</tr>
+					    		<tr>
+					    			<td  bgcolor="CCFFCC" style="height: 10px">INDUCCION</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img2); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td   bgcolor="CCFFCC" style="height: 10px">INICIO CIRUGIA</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img3); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">FIN CIRUGIA</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img4); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">FIN ANESTESIA</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img5); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">TAS</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img6); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">TAD</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img7); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">TAM</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img8); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">FREC.CARDIACA</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img9); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">TEMPERATURA</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img10); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">PVC</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img11); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">RES.ESPONTANEA</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img12); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">RES.ASISTIDA</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img13); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">RES.CONTROLADA</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img14); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">TORNIQUETE</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img15); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px">FETO</td>
+					    			<td><div style="height: 10px;overflow: hidden;text-align: center;"><img src="<?php echo($img16); ?>" ></div></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
+					    			<td></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
+					    			<td></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
+					    			<td></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
+					    			<td></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
+					    			<td></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
+					    			<td></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
+					    			<td></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
+					    			<td></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
+					    			<td></td>
+					    		</tr>
+					    		<tr>
+					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
+					    			<td></td>
+					    		</tr>
+
+					    	</tbody>
+					    </table>
+	        		</td>
+
+	        		<td style="width: 20px">
+	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 7px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+					    	<tbody>
+					    		<tr>
+					    			<td style="height: 10px"  bgcolor="CCFFCC">T°</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">42</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">41</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">40</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">39</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">38</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">37</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">36</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">35</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    	</tbody>
+					    </table>
+	        		</td>
+
+	        		<td style="width: 20px">
+	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 7px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+					    	<tbody>
+					    		<tr>
+					    			<td style="height: 10px"  bgcolor="CCFFCC">PV</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">23</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">21</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">19</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">17</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">15</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">13</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">11</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">9</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">7</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">5</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">3</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">1</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    	</tbody>
+					    </table>
+	        		</td>
+
+	        		<td style="width: 20px">
+	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 7px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+					    	<tbody>
+					    		<tr>
+					    			<td style="height: 10px"  bgcolor="CCFFCC">TA</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">240</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">220</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">200</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">180</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">160</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">140</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">120</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">100</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">80</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">60</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">40</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">20</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px">0</td>
+					    		</tr>
+					    		<tr>
+					    			<td style="height: 10px"></td>
+					    		</tr>
+					    	</tbody>
+					    </table>
+	        		</td>
+
+	        		<td>
+	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 7px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+					    	<tbody>
+					    		<?php
+					    		$aux=0;
+					    		$aux1=0;
+                                $g=0;
+					    		for ($i=1; $i < 27; $i++) { ?>
+					    		<tr>
+					    			<?php for ($a= $ini; $a < $fin ; $a++) {
+					    			//guarda_log($i.'/'.$a);
+					    			if($archivo2[1]['FILA'][$aux] == $i && $archivo2[1]['COLUMNA'][$aux1] == $a){ 
+                                        //guarda_log($archivo2[1]['FILA'][$aux].' '.$archivo2[1]['COLUMNA'][$aux1]);
+                                        //guarda_log('entro por valor');
+					    				$aux ++;
+                            			$aux1 ++;
+                            			 ?>
+					    				<td style="height: 10px;width: 5px"><?php echo($archivo2[1]['VALOR'][$g])?></td>
+                                        <?php
+                                        //guarda_log('Valor:'.$archivo2[1]['VALOR'][$g]);
+                                        $g++; ?>
+					    			<?php }else{ ?>
+					    				<td style="height: 10px;width: 5px"></td>
+					    			<?php } ?>
+					    			<?php } ?>
+					    		</tr>
+					    		<?php } ?>
+					    	</tbody>
+					    </table>
+	        		</td>
+	        	</tr>
+	        </tbody>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class='document__transA__e'>
+        {{#with E}}
+		<table>
+	    	<tr>
+	            <th class="th1" colspan="6">E. DROGAS ADMINISTRADAS</th>
+	        </tr>
+	        <tr>
+	            <th class="th5">1.</th>
+	            <td class="td1">{{d_administradas1}}</td>
+	            <th class="th5">5.</th>
+	            <td class="td1">{{d_administradas5}}</td>
+	            <th class="th5">9.</th>
+	            <td class="td1">{{d_administradas9}}</td>
+	        </tr>
+	        <tr>
+	            <th class="th5">2.</th>
+	            <td class="td1">{{d_administradas2}}</td>
+	            <th class="th5">6.</th>
+	            <td class="td1">{{d_administradas6}}</td>
+	            <th class="th5">10.</th>
+	            <td class="td1">{{d_administradas10}}</td>
+	        </tr>
+	        <tr>
+	            <th class="th5">3.</th>
+	            <td class="td1">{{d_administradas3}}</td>
+	            <th class="th5">7.</th>
+	            <td class="td1">{{d_administradas7}}</td>
+	            <th class="th5">11.</th>
+	            <td class="td1">{{d_administradas11}}</td>
+	        </tr>
+	        <tr>
+	            <th class="th5">4.</th>
+	            <td class="td1">{{d_administradas4}}</td>
+	            <th class="th5">8.</th>
+	            <td class="td1">{{d_administradas8}}</td>
+	            <th class="th5">12.</th>
+	            <td class="td1">{{d_administradas12}}</td>
+	        </tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class='document__transA__f'>
+        {{#with F}}
+		<table>
+			<tr>
+				<th class="th1" colspan="2">F. TÉCNICA ANESTÉSICA</th>
+			</tr>
+	        <tr>
+	            <td>
+		            <table>
+					        <tr>
+					            <th class="th2" colspan="10">GENERAL</th>
+					        </tr>
+					        <tr>
+					            <th class="th2" colspan="6">SISTEMA</th>
+					            <th class="th2" colspan="4">APARATO</th>
+					        </tr>
+					        <tr>
+					            <th>ABIERTO</th>
+					            <td>{{#if general.sistema.abierto}}X{{/if}}</td>
+					            <th>SEMICERRADO</th>
+					            <td>{{#if general.sistema.semicerrado}}X{{/if}}</td>
+					            <th>CERRADO</th>
+					            <td>{{#if general.sistema.cerrado}}X{{/if}}</td>
+					            <th>CIRCUITO CIRCULAR</th>
+					            <td>{{#if general.aparato.circuito_circular}}X{{/if}}</td>
+					            <th>UNIDIRECCIONAL</th>
+					            <td>{{#if general.aparato.unidireccional}}X{{/if}}</td>
+					        </tr>
+					        <tr>
+					           	<th colspan="10">MANEJO DE VÍA AÉREA</th>
+					        </tr>
+					        <tr>
+					           	<th colspan="2">MÁSCARA FACIAL</th>
+					           	<td>{{#if vias_aereas.mascara_facial}}X{{/if}}</td>
+					           	<th colspan="3">SUPRAGLÓTICA</th>
+					           	<td>{{#if vias_aereas.supraglotica}}X{{/if}}</td>
+					           	<th colspan="2">TRAQUEOTOMO</th>
+					           	<td>{{#if vias_aereas.traqueotomo}}X{{/if}}</td>
+					        </tr>
+					        <tr>
+					           	<th colspan="10">INTUBACIÓN</th>
+					        </tr>
+					        <tr>
+					           	<th>NASAL</th>
+					           	<td>{{#if intubacion.nasal}}X{{/if}}</td>
+					           	<th>ORAL</th>
+					           	<td>{{#if intubacion.oral}}X{{/if}}</td>
+					           	<th>SUBMENTONEANA</th>
+					           	<td>{{#if intubacion.submentoneana}}X{{/if}}</td>
+					           	<th>VISIÓN DIRECTA</th>
+					           	<td>{{#if intubacion.vision_directa}}X{{/if}}</td>
+					           	<th>A CIEGAS</th>
+					           	<td>{{#if intubacion.ciegas}}X{{/if}}</td>
+					        </tr>
+					        <tr>
+					           	<th colspan="10">TIPO DE TUBO</th>
+					        </tr>
+					        <tr>
+					           	<th>CONVENCIONAL</th>
+					           	<td>{{#if tipo_tubo.convencional}}X{{/if}}</td>
+					           	<th>PREFORMADO ORAL</th>
+					           	<td>{{#if tipo_tubo.preformado_oral}}X{{/if}}</td>
+					           	<th colspan="3">PREFORMADO NASAL</th>
+					           	<td>{{#if tipo_tubo.preformado_nasal}}X{{/if}}</td>
+					           	<th>REFORZADO</th>
+					           	<td>{{#if tipo_tubo.reforzado}}X{{/if}}</td>
+					        </tr>
+					        <tr>
+					           	<th>DOBLE LUMEN</th>
+					           	<td>{{#if tipo_tubo.doble_lumen}}X{{/if}}</td>
+					           	<th>DIÁMETRO</th>
+					           	<td>{{#if tipo_tubo.diametro}}X{{/if}}</td>
+					           	<th>BALON</th>
+					           	<td>{{#if tipo_tubo.balon}}X{{/if}}</td>
+					           	<th colspan="3">TAPONAMIENTO</th>
+					           	<td>{{#if tipo_tubo.taponamiento}}X{{/if}}</td>
+					        </tr>
+					        <tr>
+					           	<th colspan="10">EQUIPO PARA INTUBACIÓN</th>
+					        </tr>
+					        <tr>
+					           	<th colspan="2">CORMACK:</th>
+					           	<th>I</th>
+					           	<td>{{#if equipo_intubacion.cormack.I}}X{{/if}}</td>
+					           	<th>II</th>
+					           	<td>{{#if equipo_intubacion.cormack.II}}X{{/if}}</td>
+					           	<th>III</th>
+					           	<td>{{#if equipo_intubacion.cormack.III}}X{{/if}}</td>
+					           	<th>IV</th>
+					           	<td>{{#if equipo_intubacion.cormack.IV}}X{{/if}}</td>
+					        </tr>
+					        <tr>
+					           	<th colspan="4">INDUCCIÓN</th>
+					           	<th colspan="6">MANTENIMIENTO</th>
+					        </tr>
+					        <tr>
+					           	<th>INHALATORIA</th>
+					           	<td>{{#if induccion.inhalatoria}}X{{/if}}</td>
+					           	<th>INTRAVENOSA</th>
+					           	<td>{{#if induccion.intravenosa}}X{{/if}}</td>
+					           	<th>INHALATORIA</th>
+					           	<td>{{#if mantenimiento.inhalatoria}}X{{/if}}</td>
+					           	<th>INTRAVENOSA</th>
+					           	<td>{{#if mantenimiento.intravenosa}}X{{/if}}</td>
+					           	<th>BALANCEADA</th>
+					           	<td>{{#if mantenimiento.balanceada}}X{{/if}}</td>
+					        </tr>
+					    </table>	
+				    </td>
+				<td>
+		            <table>
+					    <tr>
+					        <th class="th2" colspan="9">REGIONAL</th>
+					    </tr>
+					    <tr>
+					        <th>ASEPSIA CON:</th>
+					        <td class="td1" colspan="6">{{regional.asepsia}}</td>
+					        <th>HABÓN CON:</th>
+					        <td>{{#if regional.habon}}X{{/if}}</td>
+					    </tr>
+					    <tr>
+					        <th>LOCAL ASISTIDA</th>
+					        <td colspan="6">{{#if regional.local_asistida}}X{{/if}}</td>
+					        <th>INTRAVENOSA</th>
+					        <td>{{#if regional.intravenosa}}X{{/if}}</td>
+					    </tr>
+					    <tr>
+					        <th colspan="9">TRONCULAR</th>
+					    </tr>
+					    <tr>
+					        <th>BLOQUEO DE NERVIO</th>
+					        <td class="td1" colspan="6">{{troncular.bloqueo_nervio}}</td>
+					        <th>No. INTENTOS</th>
+					        <td class="td1">{{troncular.no_intentos}}</td>
+					    </tr>
+					    <tr>
+					        <th>BLOQUEO DEL PLEXO</th>
+					        <td class="td1" colspan="6">{{troncular.bloqueo_plexo}}</td>
+					        <th>No. INTENTOS</th>
+					        <td class="td1">{{troncular.no_intentos_plexo}}</td>
+					    </tr>
+					    <tr>
+					        <th>ANESTÉSICO LOCAL</th>
+					        <td class="td1" colspan="6">{{troncular.anestesico_local}}</td>
+					        <th>COADYUVANTE</th>
+					        <td class="td1">{{troncular.coadyuvante}}</td>
+					    </tr>
+					    <tr>
+					        <th>TIPO DE AGUJA</th>
+					        <td class="td1" colspan="6">{{troncular.tipo_aguja}}</td>
+					        <th>EQUIPO</th>
+					        <td class="td1">{{troncular.equipo}}</td>
+					    </tr>
+					    <tr>
+					        <th>RAQUÍDEA</th>
+					        <td>{{#if troncular.raquidea}}X{{/if}}</td>
+					        <th>EPIDURAL</th>
+					        <td>{{#if troncular.epidural}}X{{/if}}</td>
+					        <th colspan="2">CAUDAL</th>
+					        <td>{{#if troncular.caudal}}X{{/if}}</td>
+					        <th>CATETER</th>
+					        <td>{{#if troncular.cateter}}X{{/if}}</td>
+					    </tr>
+					    <tr>
+					        <th>TIPO AGUJA</th>
+					        <td class="td1" colspan="2">{{troncular.tipo_aguja}}</td>
+					        <th colspan="2">N° AGUJA</th>
+					        <td class="td1" colspan="2">{{troncular.nro_aguja}}</td>
+					        <th>No. INTENTOS</th>
+					        <td class="td1">{{troncular.nro_intentos}}</td>
+					    </tr>
+					    <tr>
+					        <th>BORBOTAJE</th>
+					        <td>{{#if troncular.borbotaje}}X{{/if}}</td>
+					        <th>ACCESO</th>
+					        <th>MEDIAL</th>
+					        <td>{{#if troncular.acceso.medial}}X{{/if}}</td>
+					        <th>LATERAL</th>
+					        <td>{{#if troncular.acceso.lateral}}X{{/if}}</td>
+					        <th>SITIO DE PUNCIÓN</th>
+					        <td>{{#if troncular.acceso.sitio_puncion}}X{{/if}}</td>
+					    </tr>
+					    <tr>
+					        <td colspan="9"></td>
+					    </tr>
+					    <tr>
+					        <th>DERMATOMA</th>
+					        <td class="td1" colspan="6">{{troncular.dermatoma}}</td>
+					        <td>POSICIÓN</td>
+					        <td class="td1">{{troncular.posicion}}</td>
+					    </tr>
+					    <tr>
+					        <td colspan="9"></td>
+					    </tr>			            	
+					    </table>	
+				    </td>
+				</tr>		
+	    </table>
+        {{/with}}
+	</div>
+
+	<footer>
+		<div style="width:100%;">
+			<table class="table table-bordered" style="font-size: 8px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+		        <tbody>
+		            <th style="text-align: left;" >SNS-MSP / HCU-form.018A / 2021</th>
+		            <th style="text-align: right;font-size: 8px">TRANSANESTÉSICO(<span class="page"></span>)</th>
+		        </tbody>
+	    	</table>
+		</div>
+	</footer>
+
+    <?php
+
+    unset($archivo2);
+    if($limite == 2){ 
+        if($ban == 0){ 
+            $ban = 1;
+            $hora_inicio = $hora_max+1;
+            $hora_max = $hora_inicio+3; guarda_log($hora_inicio.'/'.$hora_max); ?>
+        <div style="width:100%;page-break-before: always;"></div>
+    <?php } }
+    } ?>
+
+	<div class='document__transA__g'>
+		{{#with G}}
+		<table class="table2">
+	        <tr>
+	            <td>
+		            <table class="table2">
+						<tr>
+							<th class="th1" colspan="3">G. ACCESOS VASCULARES</th>
+						</tr>
+					    <tr>
+					        <th>TIPO</th>
+					        <th>CALIBRE</th>
+					        <th>SITIO</th>
+					    </tr>
+					    <tr>
+					        <td>IV PERIFÉRICO 1</td>
+					        <td>{{#if a_vasculares.[0].calibre}}X{{/if}}</td>
+					        <td>{{#if a_vasculares.[0].sitio}}X{{/if}}</td>
+					    </tr>
+					    <tr>
+					        <td>IV PERIFÉRICO 2</td>
+					        <td>{{#if a_vasculares.[1].calibre}}X{{/if}}</td>
+					        <td>{{#if a_vasculares.[1].sitio}}X{{/if}}</td>
+					    </tr>
+					    <tr>
+					        <td>IV PERIFÉRICO 3</td>
+					        <td>{{#if a_vasculares.[2].calibre}}X{{/if}}</td>
+					        <td>{{#if a_vasculares.[2].sitio}}X{{/if}}</td>
+					    </tr>
+					    <tr>
+					        <td>IV CENTRAL</td>
+					        <td>{{#if a_vasculares.[3].calibre}}X{{/if}}</td>
+					        <td>{{#if a_vasculares.[3].sitio}}X{{/if}}</td>
+					    </tr>
+					    <tr>
+					        <td>INTRA ARTERIAL</td>
+					        <td>{{#if a_vasculares.[4].calibre}}X{{/if}}</td>
+					        <td>{{#if a_vasculares.[4].sitio}}X{{/if}}</td>
+					    </tr>
+					    <tr>
+					        <td>OTRO</td>
+					        <td>{{#if a_vasculares.[5].calibre}}X{{/if}}</td>
+					        <td>{{#if a_vasculares.[5].sitio}}X{{/if}}</td>
+					    </tr>
+					    </table>
+						{{/with}}	
+				    </td>
+				    <td>
+						{{#with H}}
+		            	<table class="table2">
+							<tr>
+								<th class="th1" colspan="4">H. REPOSICIÓN VOLÉMICA (ml)</th>
+							</tr>
+					        <tr>
+					            <td>DEXTROSA 5%</td>
+					            <td>{{dextrosa_5}}</td>
+					            <td>SANGRE</td>
+					            <td>{{sangre}}</td>
+					        </tr>
+					        <tr>
+					            <td>DEXTROSA 10%</td>
+					            <td>{{dextrosa_10}}</td>
+					            <td>PLASMA</td>
+					            <td>{{plasma}}</td>
+					        </tr>
+					        <tr>
+					            <td>DEXTROSA 50%</td>
+					            <td>{{dextrosa_50}}</td>
+					            <td>PLAQUETAS</td>
+					            <td>{{plaquetas}}</td>
+					        </tr>
+					        <tr>
+					            <td>DEXTROSA EN SS</td>
+					            <td>{{dextrosa_ss}}</td>
+					            <td>CRIOPRECIPITADOS</td>
+					            <td>{{crioprecipitados}}</td>
+					        </tr>
+					        <tr>
+					            <td>SS 0.9%</td>
+					            <td>{{ss_9}}</td>
+					            <td rowspan="2">OTROS</td>
+					            <td>{{otros}}</td>
+					        </tr>
+					        <tr>
+					            <td>LACTATO RINGER</td>
+					            <td>{{lactato_ringer}}</td>
+					            <td></td>
+					        </tr>
+					        <tr>
+					            <td>EXPANSORES</td>
+					            <td>{{expansores}}</td>
+					            <td>TOTAL</td>
+					         	<td>{{total}}</td>
+					        </tr>
+					    </table>
+						{{/with}}
+				    </td>
+				    <td>
+						{{#with I}}
+		            	<table class="table2">
+							<tr>
+								<th class="th1" colspan="2">I. PERDIDAS</th>
+							</tr>
+					        <tr>
+					            <td>SANGRADO</td>
+					            <td>{{sangrado}}</td>
+					        </tr>
+					        <tr>
+					            <td>DIURESIS</td>
+					            <td>{{diuresis}}</td>
+					        </tr>
+					        <tr>
+					            <td>OTROS</td>
+					            <td>{{otros}}</td>
+					        </tr>
+					        <tr>
+					            <td>TOTAL</td>
+					            <td>{{total}}</td>
+					        </tr>
+					        <tr>
+					            <td></td>
+					            <td></td>
+					        </tr>
+					        <tr>
+					            <td></td>
+					            <td></td>
+					        </tr>
+					        <tr>
+					            <td>BALANCE</td>
+					            <td>{{balance}}</td>
+					        </tr>
+					    </table>
+						{{/with}}	
+				    </td>
+				</tr>		
+	    </table>
+	</div>
+
+	<div class='document__transA__j'>
+		{{#with J}}
+		<table>
+	        <tr>
+	            <td>
+		            <table>
+		        		<tr>
+							<th class="th1" colspan="5">J. DATOS DEL RECIÉN NACIDO</th>
+						</tr>
+					    <tr>
+					        <th rowspan="2">APGAR</th>
+					        <td>FETO MUERTO</td>
+					        <td>{{#if apgar.feto_muerto}}X{{/if}}</td>
+					        <td>5 MINUTOS</td>
+					        <td>{{#if apgar.minuto_5}}X{{/if}}</td>
+					    </tr>
+					    <tr>
+					        <td>1 MINUTOS</td>
+					        <td>{{#if apgar.minuto_1}}X{{/if}}</td>
+					        <td>10 MINUTOS</td>
+					        <td>{{#if apgar.minuto_10}}X{{/if}}</td>
+					    </tr>
+					</table>
+					{{/with}}	
+				</td>
+				<td>
+					{{#with K}}
+		            <table>
+						<tr>
+							<th class="th1" colspan="4">K. TIEMPOS TRANSCURRIDOS</th>
+						</tr>
+					    <tr>
+					        <td class="td2">DURACIÓN ANESTESIA</td>
+					        <td>{{duracion_anestesia}}</td>
+					        <td class="td2">DURACIÓN DE CIRUGÍA</td>
+					        <td>{{duracion_cirugia}}</td>
+					    </tr>
+					    <tr>
+					        <td class="td2"></td>
+					        <td></td>
+					        <td class="td2"></td>
+					        <td></td>
+					    </tr>		            	
+					    </table>
+						{{/with}}	
+				    </td>
+				</tr>		
+	    </table>
+	</div>
+
+	<div class='document__transA__l'>
+		{{#with L}}
+		<table>
+	    	<tr>
+	            <th class="th1" colspan="10">L. TÉCNICAS ESPECIALES</th>
+	        </tr>
+	        <tr>
+	            <td>HEMODILUCIÓN</td>
+	            <td>{{#if hemodilucion}}X{{/if}}</td>
+	            <td>AUTOTRANSFUSIÓN</td>
+	            <td>{{#if autotransfusion}}X{{/if}}</td>
+	            <td>HIPOTENSIÓN</td>
+	            <td>{{#if hipotension}}X{{/if}}</td>
+	            <td>HIPOTERMIA</td>
+	            <td>{{#if hipotermia}}X{{/if}}</td>
+	            <td>CIRCULACIÓN EXTRACORPÓREA</td>
+	            <td>{{#if circulacion_extracorporea}}X{{/if}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__transA__m'>
+		{{#with M}}
+		<table>
+	    	<tr>
+	            <th class="th1" colspan="6">M. MANTENIMIENTO TEMPERATURA CORPORAL</th>
+	        </tr>
+	        <tr>
+	            <td>MANTA TÉRMICA</td>
+	            <td>{{#if manta_termica}}X{{/if}}</td>
+	            <td>CALENTAMIENTO DE FLUIDOS</td>
+	            <td>{{#if calentador_fluidos}}X{{/if}}</td>
+	            <td>OTROS</td>
+	            <td class="td1">{{otros}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__transA__n'>
+		{{#with N}}
+		<table>
+	    	<tr>
+	            <th class="th1" colspan="10">N. INCIDENTES</th>
+	        </tr>
+	        <tr>
+	            <td>ACTIVIDAD ELÉCTRICA SIN PULSO</td>
+	            <td>{{#if actividad_sinpulso}}X{{/if}}</td>
+	            <td>ARRITMIA</td>
+	            <td>{{#if arritmia}}X{{/if}}</td>
+	            <td>ASISTOLIA</td>
+	            <td>{{#if asistolia}}X{{/if}}</td>
+	            <td>BRADICARDIA INESTABLE</td>
+	            <td>{{#if bradicardia}}X{{/if}}</td>
+	            <td>TROMBOEMBOLIA PULMONAR</td>
+	            <td>{{#if tromboembolia}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td>HIPERTERMIA MALIGNA</td>
+	            <td>{{#if hipertermia}}X{{/if}}</td>
+	            <td>ANAFILAXIA</td>
+	            <td>{{#if anafilaxia}}X{{/if}}</td>
+	            <td>ISQUEMIA MIOCÁRDICA</td>
+	            <td>{{#if isquemia}}X{{/if}}</td>
+	            <td >HIPOXEMIA</td>
+	            <td>{{#if hipoxemia}}X{{/if}}</td>
+	            <td >NEUMOTÓRAX</td>
+	            <td>{{#if neumotorax}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td>BRONCOESPASMO</td>
+	            <td>{{#if broncoespasmo}}X{{/if}}</td>
+	            <td>DESPERTAR PROLONGADO</td>
+	            <td>{{#if despertar_prolongado}}X{{/if}}</td>
+	            <td>EMBOLIA AÉREA VENOSA</td>
+	            <td>{{#if embolia_venosa}}X{{/if}}</td>
+	            <td >REACCIÓN A LA TRANSFUSIÓN</td>
+	            <td>{{#if reaccion_transfusion}}X{{/if}}</td>
+	            <td>LARINGOESPASMO</td>
+	            <td>{{#if laringoespasmo}}X{{/if}}</th>
+	        </tr>
+	        <tr>
+	            <td>DIFICULTAD DE LA TÉCNICA</td>
+	            <td>{{#if dificultad_tecnica}}X{{/if}}</td>
+	            <td>OTROS</td>
+	            <td class="td1" colspan="7">{{otros}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__transA__o'>
+		{{#with O}}
+		<table>
+	    	<tr>
+	            <th class="th1" colspan="16">O. RESULTADO DE EXÁMENES DE LABORATORIO</th>
+	        </tr>
+	        <tr>
+	            <th colspan="2">HORA</th>
+	            <th>pH</th>
+	            <th>PO2</th>
+	            <th>PCO2</th>
+	            <th>HCO3</th>
+	            <th>EB</th>
+	            <th>SAT. O2</th>
+	            <th>LACTATO</th>
+	            <th>GLUCOSA</th>
+	            <th>Na</th>
+	            <th>K</th>
+	            <th>Cl</th>
+	            <th>HCTO</th>
+	            <th>HB</th>
+	            <th>OTRO</th>
+	        </tr>
+
+	            {{#each resultado_examenes}}
+	            <tr>
+	            	<th class='th5'>{{id}}</th>
+	            	<td>{{hora}}</td>
+	            	<td>{{ph}}</td>
+	            	<td>{{po2}}</td>
+	            	<td>{{pco2}}</td>
+	            	<td>{{hco3}}</td>
+	            	<td>{{eb}}</td>
+	            	<td>{{satO2}}</td>
+	            	<td>{{lactato}}</td>
+	            	<td>{{glucosa}}</td>
+	            	<td>{{na}}</td>
+	            	<td>{{k}}</td>
+	            	<td>{{cl}}</td>
+	            	<td>{{hcto}}</td>
+	            	<td>{{hb}}</td>
+	            	<td>{{otro}}</td>
+	            </tr>
+	           {{/each}}
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__transA__p'>
+		{{#with O}}
+		<table>
+	    	<tr>
+	            <th class="th1">P. OBSERVACIONES</th>
+	        </tr>
+	        <tr>
+	            <td class="td4j">{{observaciones}}</td>
+	            </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__transA__r'>
+		{{#with R}}
+		<table>
+	    	<tr>
+	            <th class="th1" colspan="10">R. CONDICIÓN DE EGRESO</th>
+	        </tr>
+	        <tr>
+	            <td rowspan="2">CONDICIONES AL SALIR</td>
+	            <td>EXTUBADO</td>
+	            <td>{{#if condiciones_salida.extubado}}X{{/if}}</td>
+	            <td rowspan="2">CONDUCIDO A:</td>
+	            <td rowspan="2">UNIDAD DE CUIDADOS POST ANESTÉSICOS</td>
+	            <td rowspan="2">{{#if conducido.cuidados_postanestesicos}}X{{/if}}</td>
+	            <td rowspan="2">UNIDAD CUIDADOS INTENSIVOS</td>
+	            <td rowspan="2">{{#if conducido.cuidados_intensivos}}X{{/if}}</td>
+	            <td rowspan="2">MORGUE</td>
+	            <td rowspan="2">{{#if conducido.morgue}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td>INTUBADO</td>
+	            <td>{{#if condiciones_salida.intubado}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <th>CONSTANTES VITALES DE ENTREGA</th>
+	            <td>TA</td>
+	            <td>{{const_vitales.ta}}</td>
+	            <td>FC</td>
+	            <td>{{const_vitales.fc}}</td>
+	            <td>SAT. O2</td>
+	            <td>{{const_vitales.sat_O2}}</td>
+	            <td>T°</td>
+	            <td colspan="2">{{const_vitales.t}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__transA__s'>
+		{{#with S}}
+	    <table>
+	        <tr>
+	            <th class="th1" colspan="5">S. DATOS DEL PROFESIONAL RESPONSABLE</th>
+	        </tr>
+	        <tr>
+	            <th class="th2">FECHA</th>
+	            <th class="th2">HORA</th>
+	            <th class="th2">PRIMER NOMBRE</th>
+	            <th class="th2">PRIMER APELLIDO</th>
+	            <th class="th2">SEGUNDO APELLIDO</th>
+	        </tr>
+	        <tr>
+	            <td>{{fecha}}</td>
+	            <td>{{hora}}</td>
+	            <td>{{primer_nombre_resp}}</td>
+	            <td>{{primer_apellido_resp}}</td>
+	            <td>{{segundo_apellido_resp}}</td>
+	        </tr>
+	        <tr>
+	            <th class="th2" colspan="2">NUMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+	            <th class="th2" colspan="2">FIRMA</th>
+	            <th class="th2">SELLO</th>
+	        </tr>
+	        <tr>
+	            <td colspan="2">{{identificacion_resp}}</td>
+	            <td colspan="2"><img src="{{firma_resp}}"></td>
+	            	<td><img src="{{sello_resp}}"></td>
+	            </tr>
+	        </tbody>
+	    </table>
+		{{/with}}
+	</div>
+
+</body>
+</html>
+

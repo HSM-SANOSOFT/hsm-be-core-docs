@@ -1,0 +1,279 @@
+{
+    "A": {
+        "institucion_sistema": "CLINICA SANTAMARIA",
+        "unicodigo": 25410,
+        "establecimiento_salud": "CLINICA SANTAMARIA",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "104242",
+        "primer_apellido": "LOPEZ",
+        "segundo_apellido": "GARCIA",
+        "primer_nombre": "JOSE",
+        "segundo_nombre": "PABLO",
+        "sexo": "M",
+        "fecha_nacimiento": "20/04/1990",
+        "edad": "30",
+        "condicion_edad": {
+           "m1": false,
+           "d": false,
+           "m2": false,
+           "a": true
+        }
+    },
+
+    "B": {
+        "diagnostico": "string",
+        "cie": "string",
+        "procedimiento": "string",
+        
+        "electiva": true,
+        "emergencia": true,
+        "urgencia": true,
+
+        "riesgo_quirurgico": {
+            "bajo": true,
+            "moderado": true,
+            "alto": true
+        }
+    },
+
+    "C": {
+        "antecedentesPatologicos": [
+            {
+                "id": "1.",
+                "diagnostico": "125",
+                "tiempo_evolucion": "Paciente",
+                "tratamiento": "Amoxicilina"
+            },
+            {
+                "id": "2.",
+                "diagnostico": "",
+                "tiempo_evolucion": "",
+                "tratamiento": ""
+            },
+            {
+                "id": "3.",
+                "diagnostico": "",
+                "tiempo_evolucion": "",
+                "tratamiento": ""
+            },
+            {
+                "id": "4.",
+                "diagnostico": "",
+                "tiempo_evolucion": "",
+                "tratamiento": ""
+            },
+            {
+                "id": "5.",
+                "diagnostico": "",
+                "tiempo_evolucion": "",
+                "tratamiento": ""
+            }
+        ],
+        
+        "anestesicos": "string",
+        "quirurgicos": "string",
+        "alergicos": "string",
+        "transfusiones": "string",
+        "habitos": "string",
+
+        "antecedentes_patologicos_fam": "string"
+    },
+
+    "D": {
+        "constantes_vitales":{
+            "ta": "string",
+            "fc": "string",
+            "fr": "string",
+            "temp": "string",
+            "sat": "string",
+            "glasgow": "string"
+        },
+
+        "antropometria":{
+            "peso": "string",
+            "talla": "string",
+            "imc": "string"
+        },
+
+        "via_aerea": {
+            "apertura_bucal": {
+                "menor_2": true,
+                "entre_2": true,
+                "entre2_3": true,
+                "mayor_3": true
+            },
+
+            "distancia_tiromentoneana": {
+                "menor_6": true,
+                "entre_6": true,
+                "mayor6_5": true
+            },
+
+            "mallampati": {
+                "clase1": true,
+                "clase2": true,
+                "clase3": true,
+                "clase4": true
+            },
+
+            "protrusion_mandibular": {
+                "menor_0": true,
+                "en0": true,
+                "mayor_0": true
+            },
+
+            "perimetro_cervical": {
+                "menor_40": true,
+                "mayor_40": true
+            },
+
+            "movilidad_cervical": {
+                "menor_35": true,
+                "mayor_35": true
+            },
+
+            "intubacion_dificil": {
+                "si": true,
+                "no": true
+            },
+
+            "patologia_intubacion": {
+                "si": true,
+                "no": true
+            }
+        },
+
+        "otros": "N/A",
+
+        "torax": "N/A",
+        "corazon": "N/A",
+        "pulmones": "N/A",  
+        "abdomen": "N/A",
+        "extremidades": "N/A",
+        "sistema_nervioso": "N/A",
+        "mets": "N/A"
+    },
+
+    "E": {
+        "hemograma": {
+            "hcto": "string",
+            "hb": "string",
+            "plaquetas": "string",
+            "tp": "string",
+            "ttp": "string",
+            "inr": "string",
+            "leucocitos": "string"
+        },
+
+        "tipificacion": {
+            "grupo": "string",
+            "factor": "string"
+        },
+
+        "quimica_sanguinea": {
+            "glucosa": "string",
+            "urea": "string",
+            "creatinina": "string",
+            "otros": "string"
+        },
+
+        "perfil_hepatico": {
+            "ast": "string",
+            "alt": "string",
+            "fa": "string",
+            "ldh": "string",
+            "bt": "string",
+            "bd": "string",
+            "bi": "string"
+        },
+
+        "ionograma": {
+            "na": "string",
+            "k": "string",
+            "cl": "string",
+            "ca": "string",
+            "mg": "string"
+        },
+
+        "gasometria": {
+            "ph": "string",
+            "po2": "string",
+            "pco2": "string",
+            "hco3": "string",
+            "eb": "string",
+            "sat02": "string",
+            "lactato": "string"
+        },
+
+        "hormonas": {
+            "t4": "string",
+            "tsh": "string",
+
+            "prueba_embarazo": {
+                "si": true,
+                "no": true
+            }
+        },
+
+        "orina":{
+            "ph": "string",
+            "densidad": "string",
+            "bacterias": "string",
+            "leucocitos": "string",
+            "piocitos": "string",
+            "hematies": "string",
+            "glucosa": "string"
+        },
+
+        "ekg": "string",
+        "rx_torax": "string",
+        "espirometria": "string",
+        "otros": "string"
+    },
+
+    "F": {
+        "estado_fisico": {
+            "I": true,
+            "II": true,
+            "III": true,
+            "IV": true,
+            "V": true,
+            "VI": true
+        },
+
+        "riesgo_cardiaco": "string",
+        "riesgo_pulmonar": "string",
+        "riesgo_tromboembolico": "string",
+        "otros": "string"
+    },
+
+    "G": {
+        "liq_claros": "string",
+        "leche_formula": "string",
+        "leche_materna": "string",
+        "solidos": "string"
+    },
+
+    "H": {
+        "indicaciones": "string"
+    },
+
+    "I": {
+        "plan_anestesico": "string"
+    },
+
+    "J": {
+        "observaciones": "string"
+    },
+
+    "K": {
+        "fecha": "24/04/2024",
+        "hora": "10:50",
+        "primer_nombre": "JOSE PABLO",
+        "primer_apellido": "LOPEZ",
+        "segundo_apellido": "GARCIA",
+        "numero_identificacion_resp": "0987456321",
+        "firma_resp": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjbjSefMfrJKUO0ydDVjkZpZyAwQBLk5b2_g&s",
+        "sello_resp":  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQB9rgaFsh2wgJNXNfK2r2EZIVY0e_Pqi0vg&s"
+    }
+}

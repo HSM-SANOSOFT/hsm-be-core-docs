@@ -1,0 +1,442 @@
+{
+    "A_anv": {
+        "institucion_sistema": "CLINICA SANTAMARIA",
+        "unicodigo": 25410,
+        "establecimiento_salud": "CLINICA SANTAMARIA",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "104242",
+        "primer_apellido": "LOPEZ",
+        "segundo_apellido": "GARCIA",
+        "primer_nombre": "JOSE",
+        "segundo_nombre": "PABLO",
+        "sexo": "M",
+        "fecha_nacimiento": "20/04/1990",
+        "edad": "30",
+        "condicion_edad": {
+           "h": false,
+           "d": false,
+           "m": false,
+           "a": true
+        }
+    },
+
+    "B_anv": {
+        "diagnosticos": [
+            {
+                "descripcion": "HEMORRAGIA EPIDURAL","cie": "S06.4"
+            },
+            {
+                "descripcion": "HEMORRAGIA SUBARACNOIDEA TRAUMATICA","cie": "S06.6"
+            }
+       ],
+
+       "servicio": {
+            "emergencia": false,
+            "consulta_externa": false,
+            "hospitalizacion":true
+       },
+
+       "especialidad": "",
+       "sala": "",
+       "cama": "",
+
+       "prioridad": {
+            "urgente": false,
+            "rutina": true
+       }
+    },
+
+    "C_anv": {
+        "hematologia": {
+            "biometria_hematica": true,
+            "fragilidad_osmotica": true,
+            "hematocrito": true,
+            "metabisulfito": true,
+            "hemoglobina": true,
+            "hematozooario": true,
+            "plaquetas": true,
+            "inv_leishmania": true,
+            "reticulocitos": true,
+            "eosinofilo_nasal": true,
+            "vel_eritrosedimentacion": true,
+            "frotis_sangre_periferica": true,
+            "hierro_serico": true,
+            "acido_folico": true,
+            "fijacion_hierro": true,
+            "vitamina_b12":true,
+            "saturacion_transferrina": true,
+            "transferrina": true,
+            "ferritina": true,
+            "concentrado_globulos": true
+        },
+
+        "inmunologia": {
+            "complemento_c3": true,
+            "antigeno_hepatitisB": true,
+            "complemento_c4": true,
+            "anticore_igG": true,
+            "igA_total": true,
+            "anticore_igM": true,
+            "igE_total": true,
+            "hepatitisC": true,
+            "igG_total": true,
+            "vih_cuali": true,
+            "igM_total": true,
+            "vih_cuanti": true,
+            "procalcitonina": true,
+            "herpes1_igG": true,
+            "il6": true,
+            "herpes1_igM": true,
+            "ana": true,
+            "herpes2_igG": true,
+            "anca_c": true,
+            "herpes2_igM": true,
+            "anca_p": true,
+            "rubeola_igG": true,
+            "anti_dna": true,
+            "rubeola_igM": true,
+            "anti_ccp": true,
+            "toxoplasma_igG": true,
+            "anti_sm": true,
+            "toxoplasma_igM": true,
+            "anti_ro": true,
+            "citomegalovirus_igG": true,
+            "anti_la": true,
+            "citomegalovirus_igM": true,
+            "cardiolipina_igG": true,
+            "epsteinBar_igG": true,
+            "cardiolipina_igM": true,
+            "epsteinBar_igM": true,
+            "antifosfolipidos_igG": true,
+            "dengue_igG": true,
+            "antifosfolipidos_igM": true,
+            "dengue_igM": true,
+            "factor_reumatoideo": true,
+            "clamidia_igA": true,
+            "sflt1": true,
+            "clamidia_igG": true,
+            "pigf": true,
+            "fta_abs": true,
+            "anticuerpos_igG": true,
+            "hepatitisA_total": true,
+            "hepatitisA": true,
+            "covid": true
+        },
+
+        "vasculares": {
+            "cpk_total": true,
+            "troponina_I": true,
+            "ck_mb": true,
+            "NTproBNP": true,
+            "cpk_nac": true,
+            "mioglobina": true,
+            "troponina_T": true
+        },
+
+        "hormonas": {
+            "t3": true,
+            "progesterona": true,
+            "ft3": true,
+            "insulina": true,
+            "t4": true,
+            "acth": true,
+            "ft4": true,
+            "prolactina": true,
+            "tsh": true,
+            "vitaminaD": true,
+            "pth": true,
+            "estradiol": true,
+            "fsh": true,
+            "lh": true,
+            "androstenediona": true,
+            "testosterona_total": true,
+            "factor_crecimientoT1": true,
+            "testosterona_libre": true,
+            "BHCG_cuali": true,
+            "dhea_s": true,
+            "BHCG_cuanti": true,
+            "hormona_crecimiento": true
+        },
+
+        "biologia_genetica": "",
+
+        "coagulacion": {
+            "tiempo_protrombina": true,
+            "tiempo_protrombina_parcial": true,
+            "tiempo_trombina": true,
+            "inr": true,
+            "factor_coagulacion8": true,
+            "factor_coagulacion9": true,
+            "factor_willebrand": true,
+            "fibrinogeno": true,
+            "dimero_d": true,
+            "ident_inhibidores": true
+        },
+
+        "orina": {
+            "elem_microscopico": true,
+            "gram_gotaFresca": true,
+            "osmolaridad_urinaria": true,
+            "sodio_orinaParcial": true,
+            "potasio_orinaParcial": true,
+            "cloro_orinaParcial": true,
+            "calcio_urinario": true,
+            "fosforo_orinaParcial": true,
+            "magnesio_orinaParcial": true,
+            "glucosa_orinaParcial": true,
+            "urea_orinaParcial": true,
+            "creatina_orinaParcial": true,
+            "nitrogeno_ureicoParcial": true,
+            "acidoUrico_parcial": true,
+            "proteinas_parcial": true,
+            "fosforo_24hrs": true,
+            "potasio_24hrs": true,
+            "proteinas_24hrs": true,
+            "depuracion_creatinina24hrs": true,
+            "acidoUrico_24hrs": true,
+            "calcio_24hrs": true,
+            "amilasa_24hrs": true,
+            "cobre_24hrs": true,
+            "azucares_reductores": true,
+            "drogas_abuso": true,
+            "albinuria": true
+        },
+
+        "inmunosupresores": {
+            "cyclosporina": true,
+            "everolimus": true,
+            "sirolimus": true,
+            "tacrolimus": true
+            
+        },
+
+        "gases_electrolitos": {
+            "na": true,
+            "mh": true,
+            "k": true,
+            "li": true,
+            "cl": true,
+            "gasometria_arterial": true,
+            "ca1": true,
+            "gasometria_venosa": true,
+            "ca2": true,
+            "calcio_total": true,
+            "p": true,
+            "fosforo": true
+        },
+
+        "transfusional": {
+            "grupo_factor": true,
+            "coombs_directo": true,
+            "coombs_indirecto": true
+        },
+
+        "quimica_sang": {
+            "glucosa_basal": true,
+            "bilirrubina_directa": true,
+            "glucosa_2hrs": true,
+            "bilirrubina_indirecta": true,
+            "glucosa_azar": true,
+            "colesterol_total": true,
+            "sobrecarga_glucosa": true,
+            "hdl": true,
+            "sullivan": true,
+            "ldl": true,
+            "urea": true,
+            "vldl": true,
+            "creatinina": true,
+            "trigliceridos": true,
+            "acido_urico": true,
+            "albumina": true,
+            "fosfatasa_alcalina": true,
+            "proteina_totales": true,
+            "ldh": true,
+            "hba1c": true,
+            "ast_tgo": true,
+            "cpk_total": true,
+            "alt_gp": true,
+            "fructosamina": true,
+            "ggt": true,
+            "pcr_cuantitativo": true,
+            "amilasa": true,
+            "amonio": true,
+            "lipasa": true,
+            "bilirrubina_total": true
+        },
+
+        "heces": {
+            "coproparasitario": true,
+            "criptosporidium": true,
+            "coproparasitario_concentracion": true,
+            "oxiuros": true,
+            "copro_seriado": true,
+            "gardia_antigeno": true,
+            "pmn": true,
+            "inv_grasas": true,
+            "sangre_oculta": true,
+            "azucares_reductores": true,
+            "investigacion_ph": true,
+            "helicobacter_pylori": true,
+            "rotavirus": true,
+            "adenoviris": true
+        },
+
+       "marcadores_tumorales": {
+            "cea": true,
+            "psa_libre": true,
+            "h4a": true,
+            "afp": true,
+            "psa_total": true,
+            "bhcg_libre": true,
+            "ca_125": true,
+            "microglobulina": true,
+            "bhcg_cuanti": true,
+            "ca_15": true,
+            "anti_tpo": true,
+            "psa_libreT": true,
+            "ca_19": true,
+            "anti_tg": true,
+            "ca_72": true,
+            "tiroglobulina": true
+        },
+
+        "citoquimicos": {
+            "cefalorraquideo": true,
+            "pleural": true,
+            "sinovial": true,
+            "pericardico": true,
+            "peritoneal": true,
+            "liquido_amniotico": true
+        },
+
+        "farmacos": {
+            "acido_valproico": true,
+            "carbamazepina": true,
+            "vancomicina": true,
+            "fenobarbital": true,
+            "amikacina": true,
+            "digoxina": true,
+            "litio": true,
+            "fenitopina_sodica": true
+        },
+
+        "serologia": {
+            "aglutina": true,
+            "pcr_semicuanti": true,
+            "asto": true,
+            "malaria": true,
+            "fr_latex": true,
+            "sifilis": true,
+            "dengue_pcr": true,
+            "helicobacter_pylori": true,
+            "chlamydia_pcr": true,
+            "pepsinogeno": true,
+            "vdrl": true
+        },
+
+        "microbiologia": {
+            "muestra": "",
+            "sitio_anatomico": "",
+            "antibiograma": "",
+            "cristalografia": true,
+            "gram": "",
+            "fresco": "",
+            "micologico": "",
+            "micotico": ""
+        }
+    },
+
+    "D_anv": {
+        "fecha_generacion": "",
+        "hora_generacion": "",
+        "nombres_med": "",
+        "primer_apellido_med": "",
+        "segundo_apellido_med": "",
+        "identificacion_med": "",
+        "firma_med": "",
+        "sello_med": "",
+        "fecha_toma_muestra": "",
+        "hora_toma_muestra": "",
+        "nombre_apellido_personaTmuestra": "",
+        "firma_personaTmuestra": ""
+    },
+
+    "A_rev": {
+        "prueba_rapida": true,
+        "elisa_automatizada": true,
+        "clia": true,
+        "ifi": true,
+        "carga_viral": true,
+        "cd4": true,
+        "tamizaje_sifilis": true,
+        "vdrl": true,
+        "hepatitisB": true
+    },
+
+    "B_rev": {
+        "afectado": {
+            "nuevo": true,
+            "recaida": true,
+            "fracaso": true,
+            "perdida_seguimiento": true,
+            "ppv": true,
+            "ppl": true,
+            "niño_menor5": true,
+            "sospecha_meningitis": true,
+            "sospecha_clinica": true,
+            "comorbilidad": true,
+            "comorbilidad_descrip": "Paciente si",
+            "contacto_tbr": true,
+            "sospecha_tb": true,
+            "th_salud": true,
+            "irregularidad_tto": true,
+            "reversion": true,
+            "embarazo": true,
+            "bk_2": true,
+            "condicion_especial": true,
+            "condicion_especialDescrip": "String",
+            "otros": true,
+            "otros_descrip": "string"
+        },
+
+        "ant_tuberculosis": {
+            "tb_sensible": true,
+            "tb_resistente": true,
+            "tipo_resistencia": "amoxicilina"
+        },
+
+        "tipo_muestra": {
+            "esputo": true,
+            "otros": true,
+            "otros_descripcion": "hola"
+        },
+
+        "soli_diagnostico": {
+            "ada": true,
+
+            "baciloscopia": {
+                "diagnostico": true,
+                "no": true,
+                "control": true,
+                "no_mes": true
+            },
+
+            "cultivo_solido": {
+                "diagnostico": true,
+                "no": true,
+                "control": true,
+                "no_mes": true
+            },
+
+            "pcr_real": true,
+            "nitrato_reductasa": true,
+            "cultivo_mliquido": true,
+            "genotipificacion": true,
+            "tripificacion": true,
+            "psd_1S": true,
+            "psd_1L": true,
+            "psd_2S": true,
+            "psd_2L": true
+        }
+    }
+}

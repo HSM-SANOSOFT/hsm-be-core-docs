@@ -49,12 +49,10 @@
       }
           
       td {
-        width: fit-content;
-        white-space: nowrap;
+        width: 100%;
         text-align: center;
         border: 1px solid black;
         height: 10px;
-
       }
 
       th {
@@ -88,6 +86,11 @@
         text-align: left;
       }
 
+      .td2 {
+        text-align: center;
+        vertical-align: top;
+      }
+
      .td4j {
         height: 90px;
         text-align: justify;
@@ -107,7 +110,7 @@
     <header></header>
     <main>
       <div class='document_evolution'>
-        <div class='document_evolution_a'>
+        <div class='document_a'>
           {{#with A}}
       <table>
         <tr>
@@ -116,18 +119,18 @@
         <tr>
           <th class='th2' rowspan='1' colspan='4'>INSTITUCIÓN DEL SISTEMA</th>
           <th class='th2' rowspan='1' colspan='2'>UNICÓDIGO</th>
-          <th class='th2' rowspan='1' colspan='3'>ESTABLECIMIENTO DE SALUD</th>
-          <th class='th2' rowspan='1' colspan='3'>NÚMERO DE HISTORIA CLÍNICA</th>
-          <th class='th2' rowspan='1' colspan='3'>NÚMERO DE ARCHIVO</th>
-          <th class='th2' rowspan='1' colspan='3'>N°. HOJA</th>
+          <th class='th2' rowspan='1' colspan='4'>ESTABLECIMIENTO DE SALUD</th>
+          <th class='th2' rowspan='1' colspan='3'>NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+          <th class='th2' rowspan='1' colspan='2'>NÚMERO DE ARCHIVO</th>
+          <th class='th2' rowspan='1' colspan='1'>N°. HOJA</th>
         </tr>
         <tr>
           <td rowspan='1' colspan='4'>{{institucion_sistema}}</td>
           <td rowspan='1' colspan='2'>{{unicodigo}}</td>
-          <td rowspan='1' colspan="3">{{establecimiento_salud}}</td>
+          <td rowspan='1' colspan="4">{{establecimiento_salud}}</td>
           <td rowspan='1' colspan="3">{{numero_historia_clinica}}</td>
-          <td rowspan='1' colspan="3">{{numero_archivo}}</td>
-          <td rowspan='1' colspan="3">{{numero_hoja}}</td>
+          <td rowspan='1' colspan="2">{{numero_archivo}}</td>
+          <td rowspan='1' colspan="1">{{numero_hoja}}</td>
         </tr>
         <tr>
           <th class='th2' rowspan='2' colspan='3'>PRIMER APELLIDO</th>
@@ -159,10 +162,10 @@
           <td rowspan='1' colspan='1'>{{#if condicion_edad.a}} x {{/if}}</td>
         </tr>
       </table> 
-      {{/with}}
+      
     </div>  
 
-    <div class='document_evolution_b'>
+    <div class='document_b'>
   {{#with B}}
     <table>
       <tr>
@@ -185,8 +188,8 @@
       </tr>
 
       <tr>
-        <td class='td4j2'>{{evolucion.fecha}}</td>
-        <td class='td4j2'>{{evolucion.hora}}</td>
+        <td class="td2">{{evolucion.fecha}}</td>
+        <td class="td2">{{evolucion.hora}}</td>
         <td class='td4j' colspan='5'>{{evolucion.nota_evolucion}}</td>
         <td class='td4j' colspan='5'>{{prescripciones.farmaco_indicaciones}}</td>
         <td class='td4j' colspan='2'>{{prescripciones.administracion_farmacos}}</td>

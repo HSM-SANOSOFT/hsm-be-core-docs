@@ -1,0 +1,186 @@
+{
+    "A": {
+        "institucion_sistema": "CLINICA SANTAMARIA",
+        "unicodigo": 25410,
+        "establecimiento_salud": "CLINICA SANTAMARIA",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "104242",
+        "primer_apellido": "LOPEZ",
+        "segundo_apellido": "GARCIA",
+        "primer_nombre": "JOSE",
+        "segundo_nombre": "PABLO",
+        "sexo": "M",
+        "fecha_nacimiento": "20/04/1990",
+        "edad": "30",
+        "condicion_edad": {
+           "h": false,
+           "d": false,
+           "m": false,
+           "a": true
+        }
+    },
+
+    "B": {
+        "motivo_consulta": "NO APLICA"
+    },
+
+    "C": {
+        "alergia_medicamentos": true,
+        "otras_alergias": false,
+        "vacunas": false,
+        "patologias_clinicas": false,
+        "medicacion_habitual": false,
+        "quirurgicos": false,
+        "habitos": false,
+        "condicion_socioeconomica": false,
+        "discapacidad": false,
+        "religion": false,
+        "tipificacion_sanguinea": false,
+
+        "obstetricos_andrologicos": {
+            "edad_menarquia": 10,
+            "edad_menospausia": 50,
+            "ciclos": "number",
+            "inicio_vida_sexual": "number",
+            "num_gestas": "number",
+            "num_partos": "number",
+            "num_abortos": "number",
+            "num_cesareas": "number",
+            "num_hijos_vivos": "number",
+            "fecha_ult_menstruacion": "number",
+            "fecha_ult_parto": "number",
+            "fecha_ult_citologia_cervical": "number",
+            "fecha_ult_colposcopia": "number",
+            "fecha_ult_mamografia": "number",
+            "metodo_planificacion": true,
+            "terapia_hormonal": "number",
+            "fecha_ult_antigeno_prostatico": "string",
+            "fecha_ult_eco_prostatico": "string"
+        },
+
+        "descripcion_antecedentes": "PACIENTE N/P"
+    },
+
+    "D":{
+        "cardiopatia": true,
+        "hipertension": false,
+        "enf_c_vascular": false,
+        "endocrino_metabolico": false,
+        "cancer": false,
+        "tuberculosis": false,
+        "enf_menta": false,
+        "enf_infecciosa": false,
+        "mal_formacion": false,
+        "otro": false,
+
+        "descripcion_antecedentes": "PACIENTE N/P"
+    },
+
+    "E": {
+        "enfermedad_actual": ""
+    },
+
+    "F": {
+        "piel_anexos": true,
+        "organos_sentidos": false,
+        "respiratorio": true,
+        "cardio_vascular": false,
+        "digestivo": false,
+        "genito_urinario": false,
+        "musculo_esqueletico": false,
+        "endocrino": false,
+        "hemo_linfatico": false,
+        "nervioso": false,
+
+        "descripcion_revision": "PACIENTE N/P"
+    },
+
+    "G":{
+        "temperatura": "",
+        "presion_arterial": "",
+        "pulso": "",
+        "frecuencia_respiratoria": "",
+        "peso": "",
+        "talla": "",
+        "imc": "",
+        "perimetro_cefalico": "",
+        "pulsioximetria": ""
+    },
+
+   "H":{
+        "regional":{
+            "piel_faneras": false,
+            "cabeza": true,
+            "ojos": false,
+            "oidos": false,
+            "nariz": false,
+            "boca": false,
+            "oro_faringe": true,
+            "cuello": true,
+            "axilas_mamas": false,
+            "torax": false,
+            "abdomen": false,
+            "columna": false,
+            "ingle_perine": false,
+            "miembros_superiores": false,
+            "miembros_inferiores": false,
+            "descripcion_regional": "Paciente"
+        },
+        "sistemico":{
+            "organos_sentidos": true,
+            "respiratorio": true,
+            "cardio_vascular": false,
+            "digestivo": false,
+            "genital": false,
+            "urinario": false,
+            "musculo_esqueletico": false,
+            "endocrino": false,
+            "hemo_linfatico": false,
+            "neurologico": true,
+            "descripcion": "https://physiotutors.com/wp-content/uploads/2021/06/Lateral-Epicondylalgia-Pain-Diagram.png"
+        }
+    },
+
+    "I": {
+        "analisis": "Paciente"
+    },
+
+    "J": {
+      "diagnosticos": [
+        {
+        "descripcion": "HEMORRAGIA EPIDURAL","cie": "S06.4","pre": false,"def": true    
+        },
+        {
+        "descripcion": "HEMORRAGIA SUBARACNOIDEA TRAUMATICA","cie": "S06.6","pre": true,"def": false   
+        },
+        {
+        "descripcion": "HEMORRAGIA SUBDURAL TRAUMATICA","cie": "s06.5","pre": true,"def": false    
+        },
+        {
+        "descripcion": "","cie": "","pre": "","def": ""    
+        },
+        {
+        "descripcion": "","cie": "","pre": "","def": ""    
+        },
+        {
+        "descripcion": "","cie": "","pre": "","def": ""   
+        }
+      ]
+    },
+
+    "K": {
+        "plan_tratamiento": "Paciente"
+
+    },
+
+    "L": {
+        "fecha": "24/05/2025",
+        "hora": "13:30",
+        "nombres_med": "JOSE PABLO",
+        "primer_apellido_med": "LOPEZ",
+        "segundo_apellido_med": "GONZALEZ",
+        "numero_identificacion_med": "0987456321",
+        "firma_med": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUIatSyUxtsXYV7vX2bCYy7i2kIIQWhH3_eQ&s",
+        "sello_med": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUIatSyUxtsXYV7vX2bCYy7i2kIIQWhH3_eQ&s"
+    }
+}

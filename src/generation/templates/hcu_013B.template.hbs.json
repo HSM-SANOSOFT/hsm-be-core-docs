@@ -1,0 +1,74 @@
+{
+    "A": {
+        "institucion_sistema": "CLINICA SANTAMARIA",
+        "unicodigo": 25410,
+        "establecimiento_salud": "CLINICA SANTAMARIA",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "104242",
+        "primer_apellido": "LOPEZ",
+        "segundo_apellido": "GARCIA",
+        "primer_nombre": "JOSE",
+        "segundo_nombre": "PABLO",
+        "sexo": "M",
+        "fecha_nacimiento": "20/04/1990",
+        "edad": "30",
+        "condicion_edad": {
+           "m1": false,
+           "d": false,
+           "m2": false,
+           "a": true
+        }
+    },
+
+    "B": {
+        "establecimiento_solicitante": "CLINICA SANTAMARIA",
+        "profesional_solicitante": "string",
+        "especialidad": "string",
+        "codigo_muestra": "string"
+    },
+
+    "C": {
+        "descripcion_macroscopica": "string"
+    },
+
+    "D": {
+        "descripcion_microscopica": "string"
+    },
+
+    "E": {
+        "normal": true,
+        "lie_bajo": true,
+        "lie_alto": true,
+        "ca": true,
+
+        "muestra_inadecuada": true,
+        "hongos": true,
+        "eritrocitos": true,
+        "flora_bacteriana": true,
+        "histiocitos": true,
+        "numero_muestra": true,
+        "fecha_proceso": "string",
+
+        "observaciones": "string",
+        "descripcion": "string"
+    },
+
+    "F": {
+        "diagnostico": "INFORME FINAL: NEGATIVO"
+    },
+
+    "G": {
+        "recomendaciones": "string"
+    },
+
+    "H": {
+        "fecha": "24/08/2025",
+        "hora": "17:50",
+        "primer_nombre": "JOSE PABLO",
+        "primer_apellido": "GOMEZ",
+        "segundo_apellido": "GONZALEZ",
+        "documento_identificacion": "0987456321",
+        "firma_resp": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHbsWe6IscSeAznMYKbJb5ZQ0xm7XCEmlIg&s",
+        "sello_resp": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR7BGEOK522Xk0sCuyNZuALIdvpCFlMOXd6w&s"
+    }
+}

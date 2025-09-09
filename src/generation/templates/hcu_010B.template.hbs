@@ -1,0 +1,1486 @@
+<html>
+    <head>
+      <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+        }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: white;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: left;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+	  .td2 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+		background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__lab__inf_anverso,
+      .document__lab__inf_anverso__a,
+      .document__lab__inf_anverso__b,
+      .document__lab__inf_anverso__c,
+      .document__lab__inf_anverso__d{
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+
+</style>
+</head>
+<body>
+    <header></header>
+    <main>
+    <!--inicio de la primera hoja-->
+    <div class='document__lab__inf_anverso'></div>
+        <div class='document__lab__inf_anverso__a'></div>
+        {{#with A}}
+        <table class="table2">
+            <tr>
+                <th class='th1' colspan="11">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+            </tr>
+            <tr >
+                <th class='th2'>INSTITUCION DEL SISTEMA</th>
+                <th class='th2'>UNICÓDIGO</th>
+                <th class='th2' colspan="2">ESTABLECIMIENTO DE SALUD</th>
+                <th class='th2' colspan="3">NÚMERO DE HISTORIA CLÍNICA</th>
+                <th class='th2' colspan="4">NÚMERO DE ARCHIVO</th>
+            </tr>
+            <tr>
+                <td>{{institucion_sistema}}</td>
+                <td>{{unicodigo}}</td>
+                <td colspan="2">{{establecimiento_salud}}</td>
+                <td colspan="3">{{numero_historia_clinica}}</td>
+                <td colspan="4">{{numero_archivo}}</td>
+            </tr>
+            <tr>
+                <th class='th2' rowspan="2">PRIMER APELLIDO</th>
+                <th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
+                <th class='th2' rowspan="2">PRIMER NOMBRE</th>
+                <th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
+                <th class='th2' rowspan="2">SEXO</th>
+                <th class='th2' rowspan="2">FECHA NACIMIENTO</th>
+                <th class='th2' rowspan="2">EDAD</th>
+                <th class='th2' colspan="4">CONDICION EDAD</th>
+            </tr>
+            <tr>
+                <th class='th2'>M</th>
+                <th class='th2'>D</th>
+                <th class='th2'>M</th>
+                <th class='th2'>A</th>
+            </tr>
+            <tr>
+                <td>{{primer_apellido}}</td>
+                <td>{{segundo_apellido}}</td>
+                <td>{{primer_nombre}}</td>
+                <td>{{segundo_nombre}}</td>
+                <td>{{sexo}}</td>
+                <td>{{fecha_nacimiento}}</td>
+                <td>{{edad}}</td>
+                <td>{{#if condicion_edad.m1}}X{{/if}}</td>
+                <td>{{#if condicion_edad.d}}X{{/if}}</td>
+                <td>{{#if condicion_edad.m2}}X{{/if}}</td>
+                <td>{{#if condicion_edad.a}}X{{/if}}</td>
+            </tr> 
+        </table>
+        {{/with}}
+    </div>
+    <div class='document__lab__inf_anverso__b'>
+        {{#with B}}
+        <table class="table2">
+            <tr>
+                <th class='th1' colspan="17">B. SERVICIO Y PRIORIDAD DE ATENCIÓN</th>
+            </tr>
+            <tr>
+                <th class='th2'>DIAGNÓSTICO</th>
+                <th class='th2'>CIE</th>
+                <th class='th2' colspan="6">SERVICIO</th>
+                <th class='th5'>ESPECIALIDAD</th>
+                <th class='th5'>CAMA</th>
+                <th class='th5'>SALA</th>
+                <th class='th2' colspan="6">PRIORIDAD</th>
+            </tr>
+            <tr>
+                <td>{{diagnostico}}</td>
+                <td>{{cie}}</td>
+                <td class='td2'>EMERGENCIA:</td>
+                <td>{{#if servicio.emergencia}}X{{/if}}</td>
+                <td class='td2'>CONSULTA EXTERNA:</td>
+                <td>{{#if servicio.consulta_ext}}X{{/if}}</td>
+                <td class='td2'>HOSPITALIZACION</td>
+                <td>{{#if servicio.hospitalizacion}}X{{/if}}</td>
+                <td>{{especialidad}}</td>
+                <td>{{cama}}</td>
+                <td>{{sala}}</td>
+                <td class='td2'>URGENTE</td>
+                <td>{{#if prioridad.urgente}}X{{/if}}</td>
+                <td class='td2'>RUTINA</td>
+                <td>{{#if prioridad.rutina}}X{{/if}}</td>
+                <td class='td2'>CONTROL</td>
+                <td>{{#if prioridad.control}}X{{/if}}</td>
+            </tr>
+        </table>
+        {{/with}}
+    </div>
+    <div style="width:100%;padding-top: 3px">
+      {{!-- {{#with C}} --}}
+        <table class="table2">
+            <tr>
+                <th class='th1' colspan="5">C. RESULTADOS DE EXÁMENES</th>
+            </tr>
+
+
+                <?php if(isset($archivo26[1]['NOMBRE'])){ 
+                $ban=$archivo26[1]['ORDEN_IMP'][0]; 
+                $ban1 = 0;
+                ?>
+
+                    <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+
+                        if($ban1 == 0){
+                            $html = '';
+                            $ban1 = 1; 
+                    ?>
+                            <tr>
+                                <th colspan="5" style="text-align: center" bgcolor="ccffcc"><?php echo($archivo26[1]['NOM_TIP_EXA'][$i])?></th>
+                            </tr>
+                            <tr>
+                                <th class='th6'>EXAMEN</th>
+                                <th style="width: 5%;text-align: left;" bgcolor="ccffff"></th>
+                                <th style="width: 30%;text-align: left;" bgcolor="ccffff">RESULTADO</th>
+                                <th style="width: 10%;text-align: left;" bgcolor="ccffff">UNIDAD</th>
+                                <th style="width: 20%;text-align: left;" bgcolor="ccffff">VALORES DE REFERENCIA</th>
+                            </tr>
+                        <?php }
+                        if($archivo26[1]['ORDEN_IMP'][$i] == $ban){
+                            $ban = $archivo26[1]['ORDEN_IMP'][$i]; ?>
+                            <tr  style="">
+                                <td style="width: 35%;text-align: left;border-bottom: 0.5px dashed #9dba9d;" ><?php echo($archivo26[1]['DESCRIPCION'][$i])?></td>
+                                <td style="width: 5%;text-align: left;border-bottom: 0.5px dashed #9dba9d;" ><?php 
+                                if ( $archivo26[1]['VAL_PDF'][$i]==1 ){  echo ("*"); } if ( $archivo26[1]['VAL_PDF'][$i]==2 ){ echo ("*"); } ?></td>
+                                <td style="width: 30%;text-align: left;border-bottom: 0.5px dashed #9dba9d;" ><?php echo($archivo26[1]['RESULTADO'][$i])?></td>
+                                <td style="width: 10%;text-align: left;border-bottom: 0.5px dashed #9dba9d;" ><?php echo($archivo26[1]['UNIDAD'][$i])?></td>
+                                <td style="width: 20%;text-align: left;border-bottom: 0.5px dashed #9dba9d;" ><?php echo($archivo26[1]['RANGO'][$i])?></td>
+                            </tr>
+                        <?php }else{
+                            $ban = $archivo26[1]['ORDEN_IMP'][$i];
+                            $i = $i-1;
+                            $ban1 = 0;
+                        }
+
+                        ?>
+                    <?php } ?>
+
+                <?php } ?>
+
+                <?php if(isset($archivo19[1]['NOMBRE'])){ ?>
+                    <tr>
+                        <th style="text-align: center" colspan="5" bgcolor="ccffcc">MICROBIOLOGIA</th>
+                    </tr>
+                  
+                    <?php for ($i=0; $i <= count($archivo19[1]['NOMBRE'])-1 ; $i++) { ?>
+                        <tr>
+                            <td style="text-align: center;" colspan="5"><?php echo($archivo19[1]['NOMBRE'][$i])?></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: justify;" colspan="5"><p><?php echo(nl2br($archivo19[1]['RESULTADO'][$i]))?></p></td>
+                        </tr>
+                    <?php } ?>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+
+    <div class='document__lab__inf_anverso__d'>
+      {{#with D}}
+        <table class="table2">
+          <tr>
+              <th class='th1' colspan="5">D. DATOS DEL PROFESIONAL RESPONSABLE</th>
+          </tr>
+                <tr>
+                    <th class='th2'>FECHA</th>
+                    <th class='th2'>HORA</th>
+                    <th class='th2'>NOMBRES Y APELLIDOS</th>
+                    <th class='th2'>CEDULA</th>
+                    <th class='th2'>FIRMA</th>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>{{hora}}</td>
+                    <td>{{nombres_apellidos}}</td>
+                    <td>{{cedula_resp}}</td>
+                    <td><img src="{{firma_resp}}"></td>
+                </tr>
+            </tbody>
+        </table>
+        {{/with}}
+    </div>
+    <div style="width:100%;">
+        <table class="table table-bordered" style="font-size: 7px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+            <tbody>
+                <th style="text-align: left;" >SNS-MSP / HCU-form.010B / 2021</th>
+                <th style="text-align: right;font-size: 8px">LABORATORIO CLINICO - INFORME(2)</th>
+            </tbody>
+        </table>
+    </div>
+    <!--fin de la primera hoja-->
+
+    <!--inicio de la segunda hoja-->
+      <div style="width:100%;page-break-before: always;">
+        <table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px; font-family: arial; margin-bottom: 0px; width: 100%; border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-color: black;">
+          <thead>
+            <tr>
+                  <th colspan="11" style="text-align: left;width: 10%;font-size: 10px" bgcolor="ccccff">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+                </tr>
+          </thead>
+            <body>
+                <tr >
+                  <th style="text-align: center;width: 7%;" bgcolor="ccffcc">INSTITUCION DEL SISTEMA</th>
+                  <th style="text-align: center;width: 5%;" bgcolor="ccffcc">UNICÓDIGO</th>
+                  <th colspan="2"style="text-align: center;width: 10%;text-align: center;" bgcolor="ccffcc">ESTABLECIMIENTO DE SALUD</th>
+                  <th colspan="3" style="text-align: left;width: 8%;text-align: center;" bgcolor="ccffcc">NÚMERO DE HISTORIA CLÍNICA</th>
+                  <th colspan="4" style="text-align: left;width: 7%;text-align: center;" bgcolor="ccffcc">NÚMERO DE ARCHIVO</th>
+                </tr>
+                <tr>
+                  <td style="text-align: center">CLINICA SANTAMARIA</td>
+                  <td style="text-align: center">25410</td>
+                  <td colspan="2" style="text-align: center">CLINICA SANTAMARIA</td>
+                  <td colspan="3" style="text-align: center;font-weight: bold;font-size: 9px"><b><?php echo($archivo2[1]['CED_PCT'][0])?></b></td>
+                  <td colspan="4" style="text-align: center"><?php echo($archivo2[1]['PCN_NUMERO_HC'][0])?></td>
+                </tr>
+                <tr>
+                  <th class='th2' rowspan="2">PRIMER APELLIDO</th>
+                  <th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
+                  <th class='th2' rowspan="2">PRIMER NOMBRE</th>
+                  <th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
+                  <th class='th2' rowspan="2">SEXO</th>
+                  <th class='th2' rowspan="2">FECHA NACIMIENTO</th>
+                  <th class='th2' rowspan="2">EDAD</th>
+                  <th class='th2' colspan="4">CONDICION EDAD</th>
+                </tr>
+                <tr>
+                  <td bgcolor="ccffcc">M</td>
+                  <td bgcolor="ccffcc">D</td>
+                  <td bgcolor="ccffcc">M</td>
+                  <td bgcolor="ccffcc">A</td>
+                </tr>
+                <tr>
+                  <td>{{primer_apellido}}</td>
+                  <td>{{segundo_apellido}}</td>
+                  <td>{{primer_nombre}}</td>
+                  <td>{{segundo_nombre}}</td>
+                  <td>{{sexo}}</td>
+                  <td>{{fecha_nacimiento}}</td>
+                  <td>{{edad}}</td>
+                  <td>{{#if condicion_edad.m1}} x {{/if}}</td>
+                  <td>{{#if condicion_edad.d}} x {{/if}}</td>
+                  <td>{{#if condicion_edad.m2}} x {{/if}}</td>
+                  <td>{{#if condicion_edad.a}} x {{/if}}</td>
+                </tr> 
+            </boddy>
+        </table>
+      </div>
+      <div style="width:100%;padding-top: 3px">
+          <table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px; font-family: arial; margin-bottom: 0px; width: 100%; border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-color: black;">
+              <tbody>
+                  <tr>
+                      <th colspan="17" style="text-align: left;font-size: 10px" bgcolor="ccccff">B. SERVICIO Y PRIORIDAD DE ATENCIÓN</th>
+                  </tr>
+                  <tr>
+                      <th style="text-align: center;" bgcolor="ccffcc">DIAGNÓSTICO</th>
+                      <th style="text-align: center;" bgcolor="ccffcc">CIE</th>
+                      <th colspan="6" style="text-align: center;" bgcolor="ccffcc">SERVICIO</th>
+                      <th style="text-align: left;" bgcolor="ccffcc">ESPECIALIDAD</th>
+                      <th style="text-align: left;" bgcolor="ccffcc">CAMA</th>
+                      <th style="text-align: center;" bgcolor="ccffcc">SALA</th>
+                      <th colspan="6"  style="text-align: center;" bgcolor="ccffcc">PRIORIDAD</th>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td></td>
+                      <td bgcolor="ccffcc">EMERGENCIA:</td>
+                      <td  bgcolor="ffff99"><label style="color: red;font-size: 10px;"><?php  if($archivo2[1]['TIPO'][0] == 'EMR'){ echo('X');} ?></label></td>
+                      <td bgcolor="ccffcc">CONSULTA EXTERNA:</td>
+                      <td  bgcolor="ffff99"><label style="color: red;font-size: 10px;"><?php  if($archivo2[1]['TIPO'][0] == 'CEX'){ echo('X');} ?></label></td>
+                      <td style="" bgcolor="ccffcc">HOSPITALIZACION</td>
+                      <td style="font-size: 7px;" bgcolor="ffff99"><label style="color: red;font-size: 10px;"><?php  if($archivo2[1]['TIPO'][0] == 'HSP'){ echo('X');} ?></label></td>
+                      <td style="text-align: center;" ></td>
+                      <td ><?php echo($archivo2[1]['CAMA'][0])?></td>
+                      <td ><?php echo($archivo2[1]['SALA'][0])?></td>
+                      <td style="text-align: center;" bgcolor="ccffcc">URGENTE</td>
+                      <td bgcolor="ffff99"><label style="color: red;font-size: 10px;"><?php  if($archivo2[1]['TIPO'][0] == 'EMR'){ echo('X');} ?></label></td>
+                      <td style="text-align: center;" bgcolor="ccffcc">RUTINA</td>
+                      <td bgcolor="ffff99"><label style="color: red;font-size: 10px;"><?php  if($archivo2[1]['TIPO'][0] == 'CEX'){ echo('X');} ?></label></td>
+                      <td style="text-align: center;" bgcolor="ccffcc">CONTROL</td>
+                      <td bgcolor="ffff99"><label style="color: red;font-size: 10px;"><?php  if($archivo2[1]['TIPO'][0] == 'HSP'){ echo('X');} ?></label></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div style="width:100%;padding-top: 3px">
+          <table class="table table-bordered"  cellpadding="0px" cellspacing="0px"  style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;">
+              <tbody>
+                  <tr>
+                      <th colspan="2" style="padding: 0px;margin: 0px; text-align: left;font-size: 10px" bgcolor="ccccff">C. RESULTADOS DE EXÁMENES</th>
+                  </tr>
+                  <tr>
+                      <td colspan="2">
+                          <table  cellpadding="0px" cellspacing="1px"  style="width: 100%;">
+                              <td style="width: 50%;">
+                                  <table class="table table-bordered" cellpadding="0px" cellspacing="0px" border="1" style="font-size: 8px; font-family: arial; margin-bottom: 0px; width: 100%; border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-color: black;">
+                                      <tr>
+                                          <th colspan="11" style="text-align: center;" bgcolor="ccccff">HEMATOLÓGICO</th>
+                                      </tr>
+                                      <tr>
+                                          <td style="height: 12px;" bgcolor="ccffff">HCTO</td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340077' && $archivo26[1]['COD_COM'][$i]=='165'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>  
+                                          </td>
+                                          <td style="height: 12px;" >%</td>
+                                          <td style="height: 12px;" bgcolor="ccffff">HB</td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340077' && $archivo26[1]['COD_COM'][$i]=='166'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?> 
+                                          </td>
+                                          <td style="height: 12px;" >g/dl</td>
+                                          <td style="height: 12px;" bgcolor="ccffff">VCM</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" bgcolor="ccffff" >RETICULOCITOS</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" ></td>
+                                      </tr>
+                                      <tr>
+                                          <td style="height: 12px;" colspan="3" bgcolor="ccffff">V. SEDIMENTACIÓN</td>
+                                          <td style="height: 12px;" colspan="2"></td>
+                                          <td style="height: 12px;" >mmh</td>
+                                          <td style="height: 12px;" bgcolor="ccffff">HCM</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" bgcolor="ccffff">DREPANOCITOS</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" ></td>
+                                      </tr>
+                                      <tr>
+                                          <td style="height: 12px;" colspan="3" bgcolor="ccffff">PLAQUETAS</td>
+                                          <td style="height: 12px;" colspan="2"></td>
+                                          <td style="height: 12px;" >mmc</td>
+                                          <td style="height: 12px;" bgcolor="ccffff">CHCM</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" bgcolor="ccffff">GRUPO - FACTOR Rh</td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='370024' && $archivo26[1]['COD_COM'][$i]=='14'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                                if($archivo26[1]['COD_CAB'][$i]=='370024' && $archivo26[1]['COD_COM'][$i]=='15'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px;" ></td>
+                                      </tr>
+                                      <tr>
+                                          <td style="height: 12px;" colspan="3" bgcolor="ccffff">LEUCOCITOS</td>
+                                          <td style="height: 12px;" colspan="2">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340077' && $archivo26[1]['COD_COM'][$i]=='225'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340077' && $archivo26[1]['COD_COM'][$i]=='225'){
+                                                  echo($archivo26[1]['UNIDAD'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px;" bgcolor="ccffff">HIPOCROMIA</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" bgcolor="ccffff">COOMBS DIRECTO</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" ></td>
+                                      </tr>
+                                      <tr>
+                                          <td style="height: 12px;" bgcolor="ccffff">METAM</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" >%</td>
+                                          <td style="height: 12px;" bgcolor="ccffff">BASOF</td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340077' && $archivo26[1]['COD_COM'][$i]=='5'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340077' && $archivo26[1]['COD_COM'][$i]=='5'){
+                                                  echo($archivo26[1]['UNIDAD'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px;" bgcolor="ccffff">ANSOCITOSIS</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" bgcolor="ccffff">COOMBS INDIRECTO</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" ></td>
+                                      </tr>
+                                      <tr>
+                                          <td style="height: 12px;" bgcolor="ccffff">CAYAD</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" >%</td>
+                                          <td style="height: 12px;" bgcolor="ccffff">MONOC</td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340077' && $archivo26[1]['COD_COM'][$i]=='1'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340077' && $archivo26[1]['COD_COM'][$i]=='1'){
+                                                  echo($archivo26[1]['UNIDAD'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px;" bgcolor="ccffff">POIQUILOCIT</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" bgcolor="ccffff">TIEMPO SANGRÍA</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" ></td>
+                                      </tr>
+                                      <tr>
+                                          <td style="height: 12px;" bgcolor="ccffff">SEGME</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" >%</td>
+                                          <td style="height: 12px;" bgcolor="ccffff">LINFO</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" >%</td>
+                                          <td style="height: 12px;" bgcolor="ccffff">MICROCITOSIS</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" bgcolor="ccffff">TIEMPO PROTROMBINA</td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340011' && $archivo26[1]['COD_COM'][$i]=='17'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340011' && $archivo26[1]['COD_COM'][$i]=='17'){
+                                                  echo($archivo26[1]['UNIDAD'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="height: 12px;" bgcolor="ccffff">EOSIN</td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340077' && $archivo26[1]['COD_COM'][$i]=='4'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340077' && $archivo26[1]['COD_COM'][$i]=='4'){
+                                                  echo($archivo26[1]['UNIDAD'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px;" bgcolor="ccffff">ATIPI</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" >%</td>
+                                          <td style="height: 12px;" bgcolor="ccffff">POLICROMAT</td>
+                                          <td style="height: 12px;" ></td>
+                                          <td style="height: 12px;" bgcolor="ccffff">TIEMPO T.PARCIAL</td>
+                                          <td style="height: 12px;" >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='340011' && $archivo26[1]['COD_COM'][$i]=='18'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px;" >seg</td>
+                                      </tr>
+                                  </table>
+                              </td>
+                              <td style="width: 45%;">
+                                  <table class="table table-bordered" cellpadding="0px" cellspacing="0px" border="1" style="font-size: 8px; font-family: arial; margin-bottom: 0px; width: 100%; border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-color: black;">
+                                      <tr>
+                                          <th colspan="8" style="text-align: center;" bgcolor="ccccff">COPROLÓGICO</th>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">COLOR</td>
+                                          <td >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380035' && $archivo26[1]['COD_COM'][$i]=='52'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">HEMOGLOBINA</td>
+                                          <td ></td>
+                                          <td bgcolor="ccffff">ESPORAS</td>
+                                          <td >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380035' && $archivo26[1]['COD_COM'][$i]=='247'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">FIBRAS</td>
+                                          <td >
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380035' && $archivo26[1]['COD_COM'][$i]=='98'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">CONSIST</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380035' && $archivo26[1]['COD_COM'][$i]=='600'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">GLO.ROJOS</td>
+                                          <td style="width: 11%;height: 12px;"></td>
+                                          <td bgcolor="ccffff">MICELIOS</td>
+                                          <td style="width: 11%;height: 12px;"></td>
+                                          <td bgcolor="ccffff">ALMIDÓN</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380035' && $archivo26[1]['COD_COM'][$i]=='105'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">pH</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='390003' && $archivo26[1]['COD_COM'][$i]=='9004'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">POLIMORFOS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='390003' && $archivo26[1]['COD_COM'][$i]=='9005'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">MOCO</td>
+                                          <td style="width: 11%;height: 12px;"></td>
+                                          <td bgcolor="ccffff">GRASA</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380035' && $archivo26[1]['COD_COM'][$i]=='602'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <th colspan="2" style="height: 17px;text-align: center;" bgcolor="ccffff">PROTOZOARIOS</th>
+                                          <td bgcolor="ccffff">QUISTE</td>
+                                          <td style="width: 11%;height: 17px;" bgcolor="ccffff">TROFOZOITO</td>
+                                          <th colspan="2" style="text-align: center;" bgcolor="ccffff">HELMINTOS</th>
+                                          <td bgcolor="ccffff">HUEVO</td>
+                                          <td bgcolor="ccffff">LARVA</td>
+                                      </tr>
+                                      <tr>
+                                          <td colspan="2" style="height: 17px;"></td>
+                                          <td></td>
+                                          <td style="width: 11%;height: 17px;"></td>
+                                          <td colspan="2"></td>
+                                          <td></td>
+                                          <td></td>
+                                      </tr>
+                                      <tr>
+                                          <td colspan="2" style="height: 17px;"></td>
+                                          <td></td>
+                                          <td style="width: 11%;height: 17px;"></td>
+                                          <td colspan="2"></td>
+                                          <td></td>
+                                          <td></td>
+                                      </tr>
+                                      <tr>
+                                          <td colspan="2" style="height: 17px;"></td>
+                                          <td></td>
+                                          <td style="width: 11%;height: 17px;"></td>
+                                          <td colspan="2"></td>
+                                          <td></td>
+                                          <td></td>
+                                      </tr>
+                                      <tr>
+                                          <td colspan="2" style="height: 15px;"></td>
+                                          <td></td>
+                                          <td style="width: 11%;height: 15px;"></td>
+                                          <td colspan="2"></td>
+                                          <td></td>
+                                          <td></td>
+                                      </tr>
+                                  </table>
+                              </td>  
+                          </table>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan="2">
+                          <table cellpadding="0px" cellspacing="1px"  style="width: 100%;">
+                              <td >
+                                  <table class="table table-bordered" cellpadding="0px" cellspacing="0px" border="1" style="font-size: 8px; font-family: arial; margin-bottom: 0px; width: 100%; border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-color: black;">
+                                      <tr>
+                                          <th colspan="4" style="text-align: center;" bgcolor="ccccff">UROANÁLISIS</th>
+                                      </tr>
+                                      <tr>
+                                          <th colspan="2" style="text-align: center" bgcolor="ccffcc">ELEMENTAL</th>
+                                          <th colspan="2" style="text-align: center" bgcolor="ccffcc">MICROSCÓPICO</th>
+                                      </tr>
+
+                                      <tr>
+                                        <td bgcolor="ccffff">COLOR</td>
+                                        <td style="width: 11%;height: 12px;">
+                                          <?php 
+                                            for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                              if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='52'){
+                                                echo($archivo26[1]['RESULTADO'][$i]);
+                                              }
+                                            }
+                                          ?>
+                                        </td>
+                                        <td bgcolor="ccffff">HEMATIES</td>
+                                        <td style="width: 11%;height: 12px;">
+                                          <?php 
+                                            for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                              if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='241'){
+                                                echo($archivo26[1]['RESULTADO'][$i]);
+                                              }
+                                            }
+                                          ?>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">ASPECTO</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='56'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">LEUCOCITOS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='9056'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">DENSIDAD</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='232'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">CELULAS EPITELIALES</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='243'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">pH</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='233'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">FILAMENTO MUCOSO</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='248'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">GLUCOSA EN ORINA</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='237'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">BACTERIAS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='244'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">CETONAS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='238'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">ESPORAS DE HONGOS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='112'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">BILIRRUBINA</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='240'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">LEVADURAS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='113'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">LEUCOCITOS EN ORINA</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='234'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">URATOS AMORFOS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='114'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">NITRITOS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='72'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">FOSFATO AMORFO</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='115'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">SANGRE</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='242'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">FOSFATO TRIPLE DE AMONIO Y MAGNESIO</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='116'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">PROTEINAS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='236'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">OXALATO DE CALCIO</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='117'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">UROBILINOGENO</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='68'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">CILINDROS GRANULOSOS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='80'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">ACIDO ASCORBICO</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='151'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td bgcolor="ccffff">ACIDO URICO</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='118'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td></td>
+                                          <td style="width: 11%;height: 12px;"></td>
+                                          <td bgcolor="ccffff">OTROS CRISTALES</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='249'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td></td>
+                                          <td style="width: 11%;height: 12px;"></td>
+                                          <td bgcolor="ccffff">TRICHOMONAS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='119'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td></td>
+                                          <td style="width: 11%;height: 12px;"></td>
+                                          <td bgcolor="ccffff">PARASITOS</td>
+                                          <td style="width: 11%;height: 12px;">
+                                            <?php 
+                                              for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='153'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                      </tr>
+                                  </table>
+                              </td>
+                              <td >
+                                  <table class="table table-bordered" cellpadding="0px" cellspacing="0px" border="1" style="font-size: 8px; font-family: arial; margin-bottom: 0px; width: 100%; border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-color: black;">
+                                      <tr>
+                                          <th colspan="8" style="text-align: center;" bgcolor="ccccff">QUÍMICA</th>
+                                      </tr>
+                                      <tr>
+                                          <th  bgcolor="ccffcc">DETERMINACION</th>
+                                          <th  bgcolor="ccffcc">RESULTADO</th>
+                                          <th  bgcolor="ccffcc">UNIDAD DE MEDIDA</th>
+                                          <th  bgcolor="ccffcc">VALOR DE REFERENCIA</th>
+                                          <th  bgcolor="ccffcc">DETERMINACION</th>
+                                          <th  bgcolor="ccffcc">RESULTADO</th>
+                                          <th  bgcolor="ccffcc">UNIDAD DE MEDIDA</th>
+                                          <th  bgcolor="ccffcc">VALOR DE REFERENCIA</th>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">GLUCOSA EN AYUNA</td>
+                                          <td style="height: 12px">
+                                            <?php 
+                                                for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                  if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='9065'){
+                                                    echo($archivo26[1]['RESULTADO'][$i]);
+                                                  }
+                                                }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">mg%</td>
+                                          <td style="height: 12px">N/ 70 – 110</td>
+                                          <td bgcolor="ccffff">T.PIRUVICA</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360035'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">U/L</td>
+                                          <td style="height: 12px">N/ hasta 41</td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">GLUCOSA 2 HORAS</td>
+                                          <td style="height: 12px">
+                                          <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='9069'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">umol/L</td>
+                                          <td style="height: 12px">N/ 16 – 53</td>
+                                          <td bgcolor="ccffff">T.OXALACETICA</td>
+                                          <td style="height: 12px"><?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360034'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">U/L</td>
+                                          <td style="height: 12px">N/ hasta 40</td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">UREA</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360015'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">mg%</td>
+                                          <td style="height: 12px">N/ 15 – 45</td>
+                                          <td bgcolor="ccffff">FOSFATASA ALCALINA</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360039'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">U/L</td>
+                                          <td style="height: 12px">N /68-240 NIÑOS 400</td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">CREATININA</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360016'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">mg%</td>
+                                          <td style="height: 12px">N/ 0,4 – 1,2</td>
+                                          <td bgcolor="ccffff">FOSFATASA ACIDA</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360041'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">U/L</td>
+                                          <td style="height: 12px"></td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">BILIRRUBINA TOTAL</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='297'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                            
+                                          </td>
+                                          <td style="height: 12px">mg %</td>
+                                          <td style="height: 12px">N/ hasta 1,0</td>
+                                          <td bgcolor="ccffff">COLESTEROL TOTAL</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360021'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">mg%</td>
+                                          <td style="height: 12px">N/ 150 – 200</td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">BILIRRUBINA DIRECTA</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='251'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">mg %</td>
+                                          <td style="height: 12px">N/ hasta 0,2</td>
+                                          <td bgcolor="ccffff">COLESTEROL HDL</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='210'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">mg/dl</td>
+                                          <td style="height: 12px">N/ 40 – 60</td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">ACIDO ÚRICO</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360017'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">mg%</td>
+                                          <td style="height: 12px">N/ 2,2 – 5,7</td>
+                                          <td bgcolor="ccffff">COLESTEROL LDL</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='209'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">mg/dl</td>
+                                          <td style="height: 12px">N/ 85 – 100</td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">PROTEÍNA TOTAL</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360048'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">g %</td>
+                                          <td style="height: 12px">N/ 6,1 – 7,9</td>
+                                          <td bgcolor="ccffff">TRIGLICÉRIDOS</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360020'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">mg%</td>
+                                          <td style="height: 12px">N/ 10 – 150</td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">ALBÚMINA</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360115'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">g %</td>
+                                          <td style="height: 12px">N/ 3,5 – 4,8</td>
+                                          <td bgcolor="ccffff">HIERRO SERICO</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='340128'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">ug/dl</td>
+                                          <td style="height: 12px">N/ 50 – 120</td>
+                                      </tr>
+                                      <tr>
+                                          <td bgcolor="ccffff">GLOBULINA</td>
+                                          <td style="height: 12px"></td>
+                                          <td style="height: 12px">g %</td>
+                                          <td style="height: 12px">g %</td>
+                                          <td bgcolor="ccffff">AMILASA</td>
+                                          <td style="height: 12px">
+                                            <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='360043'){
+                                                  echo($archivo26[1]['RESULTADO'][$i]);
+                                                }
+                                              }
+                                            ?>
+                                          </td>
+                                          <td style="height: 12px">U/L</td>
+                                          <td style="height: 12px">N/ hasta 100</td>
+                                      </tr>
+                                  </table>
+                              </td>  
+                          </table>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan="2" >
+                          <table cellpadding="0px" cellspacing="1px"  style="width: 100%;" >
+                              <tr>
+                                  <td style="width: 40%">
+                                      <table class="table table-bordered" cellpadding="0px" cellspacing="0px" border="1" style="font-size: 8px; font-family: arial; margin-bottom: 0px; width: 100%; border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-color: black;">
+                                          <tr>
+                                              <th colspan="4" style="text-align: center;" bgcolor="ccccff">SEROLOGÍA</th>
+                                          </tr>
+                                          <tr>
+                                              <td bgcolor="ccffff">VDRL</td>
+                                              <td style="height: 12px">
+                                                <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                    if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='270100'){
+                                                      echo($archivo26[1]['RESULTADO'][$i]);
+                                                    }
+                                                  }
+                                                ?>
+                                            </td>
+                                              <td bgcolor="ccffff">LATEX</td>
+                                              <td style="height: 12px"></td>
+                                          </tr>
+                                          <tr>
+                                              <td bgcolor="ccffff">AGLU.FEBRILES</td>
+                                              <td style="height: 12px"></td>
+                                              <td bgcolor="ccffff">ASTRO</td>
+                                              <td style="height: 12px">
+                                                <?php for($i=0; $i < count($archivo26[1]['NOMBRE']) ; $i++) { 
+                                                    if($archivo26[1]['COD_CAB'][$i]=='380012' && $archivo26[1]['COD_COM'][$i]=='270098'){
+                                                      echo($archivo26[1]['RESULTADO'][$i]);
+                                                    }
+                                                  }
+                                                ?>
+                                              </td>
+                                          </tr>
+                                      </table>
+                                  </td>
+                                  <td style="width: 30%">
+                                      <table class="table table-bordered" cellpadding="0px" cellspacing="0px" border="1" style="font-size: 8px; font-family: arial; margin-bottom: 0px; width: 100%; border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-color: black;">
+                                          <tr>
+                                              <th  style="text-align: center;" bgcolor="ccccff">BACTERIOLOGÍA</th>
+                                          </tr>
+                                          <tr>
+                                              <td style="height: 30px"></td>
+                                          </tr>
+                                      </table>
+                                  </td>
+                                  <td style="width: 30%">
+                                      <table class="table table-bordered" cellpadding="0px" cellspacing="0px" border="1" style="font-size: 8px; font-family: arial; margin-bottom: 0px; width: 100%; border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-color: black;">
+                                          <tr>
+                                              <th  style="text-align: center;" bgcolor="ccccff">OTROS</th>
+                                          </tr>
+                                          <tr>
+                                              <td style="height: 30px"></td>
+                                          </tr>
+                                      </table>
+                                  </td>
+                              </tr>
+                          </table>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div style="width:100%;padding-top: 3px">
+          <table class="table table-bordered" cellpadding="0px" cellspacing="0px" border="1" style="font-size: 8px; font-family: arial; margin-bottom: 0px; width: 100%; border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-color: black;">
+              <tbody>
+                  <tr>
+                      <th colspan="5" style="text-align: left;font-size: 10px;" bgcolor="ccccff">D. DATOS DEL PROFESIONAL RESPONSABLE</th>
+                  </tr>
+                  <tr>
+                      <th style="width: 5%;" bgcolor="ccffcc">FECHA</th>
+                      <th style="width: 5%;" bgcolor="ccffcc">HORA</th>
+                      <th style="width: 10%;" bgcolor="ccffcc">NOMBRES</th>
+                      <th style="width: 10%;" bgcolor="ccffcc">PRIMER APELLIDO</th>
+                      <th style="width: 10%;" bgcolor="ccffcc">SEGUNDO APELLIDO</th>
+                  </tr>
+                  <tr>
+                      <td style="height: 35px"><?php echo($archivo2[1]['FECHA'][0])?></td>
+                      <td><?php echo($archivo2[1]['HORA'][0])?></td>
+                      <td><?php echo($archivo2[1]['NOMBRES_MED'][0]) ?></td>
+                      <td><?php echo($archivo2[1]['APELLIDOS_MED'][0])?></td>
+                      <td><?php echo($archivo2[1]['APELLIDOS_MED'][0])?></td>
+                  </tr>
+                  <tr>
+                      <th colspan="2" style="width: 5%;" bgcolor="ccffcc">NÚMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+                      <th style="width: 5%;" colspan="2" bgcolor="ccffcc">FIRMA</th>
+                      <th style="width: 10%;"  bgcolor="ccffcc">SELLO</th>
+                  </tr>
+                  <tr>
+                      <td colspan="2" style="height: 35px"><?php echo($archivo2[1]['CED_MED'][0])?></td>
+                      <td colspan="2"><?php echo($table_med_responsable); ?></td>
+                      <td  style="padding: 0px;"><?php echo($table_med_responsable); ?>
+                          <!--<img src="<?php //echo($rutaImagenSalida); ?>" style="position: absolute; top: 480; left: 370;width: 200px;">-->
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div style="width:100%;">
+          <table class="table table-bordered" style="font-size: 7px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+              <tbody>
+                  <th style="text-align: left;" >SNS-MSP / HCU-form.010B / 2021</th>
+                  <th style="text-align: right;font-size: 8px">LABORATORIO CLINICO - INFORME(1)</th>
+              </tbody>
+          </table>
+      </div>
+    <!--fin de la segunda hoja-->
+  </body>
+</html>

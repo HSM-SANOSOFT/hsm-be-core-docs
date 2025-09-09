@@ -1,0 +1,338 @@
+{
+    "A": {
+        "institucion_sistema": "CLINICA SANTAMARIA",
+        "unicodigo": 25410,
+        "establecimiento_salud": "CLINICA SANTAMARIA",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "104242",
+        "primer_apellido": "LOPEZ",
+        "segundo_apellido": "GARCIA",
+        "primer_nombre": "JOSE",
+        "segundo_nombre": "PABLO",
+        "sexo": "M",
+        "fecha_nacimiento": "20/04/1990",
+        "edad": "30",
+
+        "condicion_edad": {
+           "h": false,
+           "d": false,
+           "m": false,
+           "a": true
+        },
+
+        "fecha": "25/04/2024",
+        "talla": "0",
+        "peso": "0",
+        "grupo_factor": "O+"
+    },
+
+    "B": {
+        "diagnostico": "string",
+        "cie1": "string",
+        "cx_propuesta": "string",
+        "especialidad": "string",
+        "dx_postoperatorio": "string",
+        "cie2": "string",
+        "cx_realizada": "string",
+        "anestesiologo": "string",
+        "ayudante1": "string",
+        "instrumentista": "string",
+        "quirofano": "string",
+        "cirujano": "string",
+        "ayudante2": "string",
+        "circulante": "string"
+    },
+
+    "C": {
+        "cabeza": true,
+        "organos_sentidos": true,
+        "cuello": true,
+        "columna": true,
+        "torax": true,
+        "abdomen": true,
+        "pelvis": true,
+        "extr_sup": true,
+        "extr_inf": true,
+        "perineal": true
+    },
+
+    "D": {},
+
+    "E": {
+        "d_administradas1": "string",
+        "d_administradas2": "string",
+        "d_administradas3": "string",
+        "d_administradas4": "string",
+        "d_administradas5": "string",
+        "d_administradas6": "string",
+        "d_administradas7": "string",
+        "d_administradas8": "string",
+        "d_administradas9": "string",
+        "d_administradas10": "string",
+        "d_administradas11": "string",
+        "d_administradas12": "string"
+    },
+
+    "F": {
+        "general": {
+            "sistema": {
+                "abierto": true,
+                "semicerrado": true,
+                "cerrado": true
+            },
+
+            "aparato": {
+                "circuito_circular": true,
+                "unidireccional": true
+            }
+        },
+
+        "vias_aereas": {
+            "mascara_facial": true,
+            "supraglotica": true,
+            "traqueotomo": true
+        },
+
+        "intubacion": {
+            "nasal": true,
+            "oral": true,
+            "submentoneana": true,
+            "vision_directa": true,
+            "ciegas": true
+        },
+
+        "tipo_tubo": {
+            "convencional": true,
+            "preformado_oral": true,
+            "preformado_nasal": true,
+            "reforzado": true,
+            "doble_lumen": true,
+            "diametro": true,
+
+            "balon": {
+                "si": true,
+                "no": true
+            },
+
+            "taponamiento": {
+                "si": true,
+                "no": true
+            }
+        },
+
+        "equipo_intubacion": {
+            "cormack": {
+                "I": true,
+                "II": true,
+                "III": true,
+                "IV": true
+            }
+        },
+
+        "induccion": {
+            "inhalatoria": true,
+            "intravenosa": true            
+        },
+
+        "mantenimiento": {
+            "inhalatoria": true,
+            "intravenosa": true,
+            "balanceada": true
+        },
+       
+
+        "regional": {
+            "asepsia": "string",
+            "habon": true,
+            "local_asistida": true,
+            "intravenosa": true
+        },
+
+        "troncular": {
+            "bloqueo_nervio": "string",
+            "no_intentos": "string",
+            "bloqueo_plexo": "string",
+            "no_intentos_plexo": "string",
+            "anestesico_local": "string",
+            "coadyuvante": "string",
+            "tipo_aguja": "string",
+            "equipo": "string",
+            "raquidea": "true",
+            "epidural": "string",
+            "caudal": "string",
+            "cateter": "string",
+            "tipo_aguja2": "string",
+            "nro_aguja": "string",
+            "nro_intentos": "string",
+            "borbotaje": "string",
+
+            "acceso": {
+                "medial": true,
+                "lateral": true,
+                "sitio_puncion": "string"
+            },
+
+            "dermatoma": "string",
+            "posicion": "string"
+        }
+    },
+
+    "G": {
+        "a_vasculares": [
+            {
+                "calibre": "true",
+                "sitio": "true"
+            },
+            {
+                "calibre": "true",
+                "sitio": "true"
+            },
+            {
+                "calibre": "true",
+                "sitio": "true"
+            },
+            {
+                "calibre": "true",
+                "sitio": "true"
+            },
+            {
+                "calibre": "true",
+                "sitio": "true"
+            },
+            {
+                "calibre": "true",
+                "sitio": "true"
+            }
+        ]
+    },
+
+    "H":{
+        "dextrosa_5": "string",
+        "sangre": "string",
+        "dextrosa_10": "string",
+        "plasma": "string",
+        "dextrosa_50": "string",
+        "plaquetas": "string",
+        "dextrosa_ss": "string",
+        "crioprecipitados": "string",
+        "ss_9": "string",
+        "otros": "string",
+        "lactato_ringer": "string",
+        "expansores": "string", 
+        "total": "string"
+    },
+
+    "I": {
+        "sangrado": "string",
+        "diuresis": "string",
+        "otros": "string",
+        "total": "string",
+        "balance": "string"
+    },
+
+    "J": {
+        "apgar": {
+            "feto_muerto": true,
+            "minuto_5": true,
+            "minuto_1": true,
+            "minuto_10": true
+        }
+    },
+
+    "K": {
+        "duracion_anestesia": "string",
+        "duracion_cirugia": "string"
+    },
+
+    "L": {
+        "hemodilucion": true,
+        "autotransfusion": true,
+        "hipotension": true,
+        "hipotermia": true,
+        "circulacion_extracorporea": true
+    },
+
+    "M": {
+        "manta_termica": true,
+        "calentador_fluidos": true,
+        "otros": "string"
+    },
+
+    "N": {
+        "actividad_sinpulso": true,
+        "arritmia": true,
+        "asistolia": true,
+        "bradicardia": true,
+        "tromboembolia": true,
+        "hipertermia": true,
+        "anafilaxia": true,
+        "isquemia": true,
+        "hipoxemia": true,
+        "neumotorax": true,
+        "broncoespasmo": true,
+        "despertar_prolongado": true,
+        "embolia_venosa": true,
+        "reaccion_transfusion": true,
+        "laringoespasmo": true,
+        "dificultad_tecnica": true,
+        "otros": "string"
+    },
+
+    "O": {
+        "resultado_examenes": [
+            {
+                "id": "1.",
+                "hora": "11:30",
+                "ph": "7.35 - 7.45",
+                "po2": "80 - 100 mmHg",
+                "pco2": "35 - 45 mmHg",
+                "hco3": "22 - 26 mEq/L",
+                "eb": "-2 a +2 mEq/L",
+                "satO2": "95 - 100%",
+                "lactato": "0.5 - 2.2 mmol/L",
+                "glucosa": "70 - 110 mg/dL",
+                "na": "135 - 145 mEq/L",
+                "k": "3.5 - 5.0 mEq/L",
+                "cl": "98 - 106 mEq/L",
+                "hcto": "36 - 48%",
+                "hb": "40 - 54%",
+                "otro": "-"
+            }
+        ]
+    },
+
+    "P": {
+        "observaciones": "string"
+    },
+
+    "R": {
+        "condiciones_salida": {
+            "extubado": true,
+            "intubado": true
+        },
+
+        "conducido": {
+            "cuidados_postanestesicos": "true",
+            "cuidados_intensivos": "true",
+            "morgue": "true"
+        },
+
+        "const_vitales": {
+            "ta": "string",
+            "fc": "string",
+            "sat_O2": "string",
+            "t": "string"
+        }
+    },
+
+    "S": {
+        "fecha": "21/04/2023",
+        "hora": "11:40",
+        "primer_nombre_resp": "JOSE PABLO",
+        "primer_apellido_resp": "LOPEZ",
+        "segundo_apellido_resp": "GARCIA",
+        "identificacion_resp": "0987456321",
+        "firma_resp": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjbjSefMfrJKUO0ydDVjkZpZyAwQBLk5b2_g&s",
+        "sello_resp": "https://usercontent.one/wp/www.pronacera.com/wp-content/uploads/2022/11/Antonio-Firma-con-sello-Vectorizada-web_Mesa-de-trabajo-1.png?media=1725375620"
+    }
+}

@@ -1,0 +1,375 @@
+<html>
+    <head>
+      <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+        }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: white;
+      }
+      .th4 {
+        background-color: #ccccff;
+        font-size: 9px;
+        text-align: right;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: left;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+	  .td2 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+		background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+    .document__img__sol,
+    .document__img__sol__a,
+    .document__img__sol__b,
+    .document__img__sol__c,
+    .document__img__sol__d,
+    .document__img__sol__e,
+    .document__img__sol__f,
+    .document__img__sol__g {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+    }
+
+</style>
+    </head>
+    <body>
+    <header></header>
+    <main>
+
+<div class='document__img__sol'>
+    <div class='document__img__sol__a'>
+        {{#with A}}
+    <table>
+    	<tr>
+            <th class='th1' colspan="11">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+        </tr>
+        <tr>
+            <th class='th2' colspan="2">INSTITUCION DEL SISTEMA</th>
+            <th class='th2'>UNICÓDIGO</th>
+            <th class='th2' colspan="2">ESTABLECIMIENTO DE SALUD</th>
+            <th class='th2' colspan="2">NUMERO DE HISTORIA CLÍNICA</th>
+            <th class='th2' colspan="4">NUMERO DE ARCHIVO</th>
+        </tr>
+        <tr>
+            <td colspan="2">{{institucion_sistema}}</td>
+            <td>{{unicodigo}}</td>
+            <td colspan="2">{{establecimiento_salud}}</td>
+            <td colspan="2">{{numero_historia_clinica}}</td>
+            <td colspan="4">{{numero_archivo}}</td>
+        </tr>
+        <tr>
+            <th class='th2' rowspan="2">PRIMER APELLIDO</th>
+            <th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
+            <th class='th2' rowspan="2">PRIMER NOMBRE</th>
+            <th class='th2' rowspan="2">SEGUNDO NOMBRE</th>
+            <th class='th2' rowspan="2">SEXO</th>
+            <th class='th2' rowspan="2">FECHA NACIMIENTO</th>
+            <th class='th2' rowspan="2">EDAD</th>
+            <th class='th2' colspan="4">CONDICION EDAD</th>
+        </tr>
+        <tr>
+            <th class='th2' rowspan='1' colspan='1'>M</th>
+            <th class='th2' rowspan='1' colspan='1'>D</th>
+            <th class='th2' rowspan='1' colspan='1'>M</th>
+            <th class='th2' rowspan='1' colspan='1'>A</th>
+        </tr>
+        <tr>
+            <td>{{primer_apellido}}</td>
+            <td>{{segundo_apellido}}</td>
+            <td>{{primer_nombre}}</td>
+            <td>{{segundo_nombre}}</td>
+            <td>{{sexo}}</td>
+            <td>{{fecha_nacimiento}}</td>
+            <td>{{edad}}</td>
+            <td>{{#if condicion_edad.m1}}X{{/if}}</td>
+            <td>{{#if condicion_edad.d}}X{{/if}}</td>
+            <td>{{#if condicion_edad.m2}}X{{/if}}</td>
+            <td>{{#if condicion_edad.a}}X{{/if}}</td>
+        </tr>
+    </table>
+    {{/with}}
+</div>
+<div class='document__img__sol__b'>
+    {{#with B}}
+	<table class="table2">
+    	<tr>
+    		<th class='th1' colspan="15">B. SERVICIO Y PRIORIDAD DE ATENCIÓN</th>
+    	</tr>
+    	<tr>
+    		<th class='th2' colspan="6">SERVICIO</th>
+    		<th class='th2'>ESPECIALIDAD</th>
+    		<th class='th2'>CAMA</th>
+    		<th class='th2'>SALA</th>
+    		<th class='th2' colspan="6">PRIORIDAD</th>
+    	</tr>
+    	<tr>
+    		<td class='td2'>EMERGENCIA</td>
+    		<td>{{#if servicio.emergencia}}X{{/if}}</td>
+    		<td class='td2'>CONSULTA EXTERNA</td>
+    		<td>{{#if servicio.consulta_externa}}X{{/if}}</td>
+    		<td class='td2'>HOSPITALIZACION</td>
+    		<td>{{#if servicio.hospitalizacion}}X{{/if}}</td>
+    		<td>{{especialidad}}</td>
+    		<td>{{cama}}</td>
+    		<td>{{sala}}</td>
+    		<td class='td2'>URGENTE</td>
+    		<td>{{#if prioridad.urgente}}X{{/if}}</td>
+    		<td class='td2'>RUTINA</td>
+    		<td>{{#if prioridad.rutina}}X{{/if}}</td>
+    		<td class='td2'>CONTROL</td>
+    		<td>{{#if prioridad.control}}X{{/if}}</td>
+    	</tr>
+	</table>
+    {{/with}}
+</div>
+<div class='document__img__sol__c'>
+    {{#with C}}
+	<table class="table 2">
+		<tr>
+			<th class='th1' colspan="22">C. ESTUDIO DE IMAGENOLOGIA REALIZADO</th>
+		</tr>
+		<tr>
+			<th class='th2'>RX CONVENCIONAL</th>
+			<td>{{#if rx_convencional}}X{{/if}}</td>
+			<th class='th2'>RX PORTÁTIL</th>
+			<td>{{#if rx_portatil}}X{{/if}}</td>
+			<th class='th2'>TOMOGRAFÍA</th>
+			<td>{{#if tomografia}}X{{/if}}</td>
+			<th class='th2'>RESONANCIA</th>
+			<td>{{#if resonancia}}X{{/if}}</td>
+			<th class='th2'>ECOGRAFÍA</th>
+			<td>{{#if ecografia}}X{{/if}}</td>
+			<th class='th2'>MAMOGRAFÍA</th>
+			<td>{{#if mamografia}}X{{/if}}</td>
+			<th class='th2'>PROCEDIMIENTO</th>
+			<td>{{#if procedimiento}}X{{/if}}</td>
+			<th class='th2'>OTRO</th>
+			<td>{{#if otro}}X{{/if}}</td>
+			<th class='th2'>SEDACIÓN</th>
+			<td>{{#if sedacion}}X{{/if}}</td>
+			<th class='th2'>SI</th>
+			<td>{{#if si}}X{{/if}}</td>
+			<th class='th2'>NO</th>
+			<td>{{#if no}}X{{/if}}</td>
+		</tr>
+		<tr>
+    		<th class='th2'>DESCRIPCION</th>
+    		<td class='td1'colspan="21">{{descripcion}}</td>
+    	</tr>
+	</table>
+    {{/with}}
+</div>
+	
+<div class='document__img__sol__d'>
+    {{#with D}}
+	<table class="table 2">
+			<tr>
+				<th class='th1' colspan="7">D. MOTIVO DE LA SOLICITUD</th>
+				<th class='th4' colspan="3">REGISTRAR LAS RAZONES PARA SOLICITAR EL ESTUDIO</th>
+			</tr>
+			<tr>
+				<th class='th2' colspan="2">FUM (aaaa-mm-dd)</th>
+				<td colspan="2">{{fum}}</td>
+				<th class='th2'>PACIENTE CONTAMINADO</th>
+				<th class='th2'>SI</th>
+				<td>{{#if paciente.si}}X{{/if}}</td>
+				<th class='th2'>NO</th>
+				<td>{{#if paciente.no}}X{{/if}}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class='td4j' colspan="10">{{descripcion}}</td>
+			</tr>
+		</tbody>
+	</table>
+    {{/with}}
+</div>
+
+<div class='document__img__sol__e'>
+    {{#with E}}
+	<table>
+		<tr>
+			<th class='th1'>E. RESUMEN CLÍNICO ACTUAL</th>
+		</tr>
+		<tr>
+			<td class='td4j'>{{resumen_clinico}}</td>
+		</tr>
+	</table>
+    {{/with}}
+</div>
+<div class='document__img__sol__f'>
+    {{#with F}}
+	<table class="table2">
+		<tr>
+			<th class='th1' colspan="10">F. DIAGNÓSTICO</th>
+		</tr>
+		<tr>
+			<td class='td2'></td>
+			<td class='td2'></td>
+			<th class='th2'>CIE</th>
+			<th class='th2'>PRE</th>
+			<th class='th2'>DEF</th>
+			<td class='td2'> </td>
+			<td class='td2'> </td>
+			<th class='th2'>CIE</th>
+			<th class='th2'>PRE</th>
+			<th class='th2'>DEF</th>
+		</tr>
+		<tr>
+			<th class='th5'>1.</th>
+			<td class='td1'>{{diagnosticos.[0].descripcion}}</td>
+			<td class='td1'>{{diagnosticos.[0].cie}}</td>
+			<td>{{#if diagnosticos.[0].pre}}X{{/if}}</td>
+			<td>{{#if diagnosticos.[0].def}}X{{/if}}</td>
+			<th class='th5'>4.</th>
+			<td class='td1'>{{diagnosticos.[3].descripcion}}</td>
+			<td class='td1'>{{diagnosticos.[3].cie}}</td>
+			<td>{{#if diagnosticos.[3].pre}}X{{/if}}</td>
+			<td>{{#if diagnosticos.[3].def}}X{{/if}}</td>
+		</tr>
+		<tr>
+			<th class='th5'>2.</th>
+			<td class='td1'>{{diagnosticos.[1].descripcion}}</td>
+			<td class='td1'>{{diagnosticos.[1].cie}}</td>
+			<td>{{#if diagnosticos.[1].pre}}X{{/if}}</td>
+			<td>{{#if diagnosticos.[1].def}}X{{/if}}</td>
+			<th class='th5'>5.</th>
+			<td class='td1'>{{diagnosticos.[4].descripcion}}</td>
+			<td class='td1'>{{diagnosticos.[4].cie}}</td>
+			<td>{{#if diagnosticos.[4].pre}}X{{/if}}</td>
+			<td>{{#if diagnosticos.[4].def}}X{{/if}}</td>
+		</tr>
+		<tr>
+			<th class='th5'>3.</th>
+			<td class='td1'>{{diagnosticos.[2].descripcion}}</td>
+			<td class='td1'>{{diagnosticos.[2].cie}}</td>
+			<td>{{#if diagnosticos.[2].pre}}X{{/if}}</td>
+			<td>{{#if diagnosticos.[2].def}}X{{/if}}</td>
+			<th class='th5'>6.</th>
+			<td class='td1'>{{diagnosticos.[5].descripcion}}</td>
+			<td class='td1'>{{diagnosticos.[5].cie}}</td>
+			<td>{{#if diagnosticos.[5].pre}}X{{/if}}</td>
+			<td>{{#if diagnosticos.[5].def}}X{{/if}}</td>
+		</tr>
+        {{/with}}
+</div>
+<div class='document__img__sol__g'>
+    {{#with G}}
+	<table class="table2">
+			<tr>
+				<th class='th1' colspan="5">G. DATOS DEL PROFESIONAL RESPONSABLE</th>
+			</tr>
+			<tr>
+				<th class='th2'>FECHA</th>
+				<th class='th2'>HORA</th>
+				<th class='th2'>NOMBRES Y APELLIDOS</th>
+				<th class='th2'>CEDULA</th>
+				<th class='th2'>FIRMA</th>
+			</tr>
+			<tr>
+				<td>{{fecha}}</td>
+				<td>{{hora}}</td>
+				<td>{{nombres_apellidos_med}}</td>
+				<td>{{cedula_med}}</td>
+				<td><img src={{firma_med}}></td>
+			</tr>
+		{{/with}}
+</div>
+
+<div style="width:100%;padding-top: 3px">
+    <table class="table table-bordered" style="font-size: 9px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+        <tbody>
+            <th style="text-align: left;" >SNS-MSP / HCU-form.012A / 2021</th>
+            <th style="text-align: right;font-size: 10px">IMAGENOLOGÍA - SOLICITUD</th>
+        </tbody>
+    </table>
+</div>

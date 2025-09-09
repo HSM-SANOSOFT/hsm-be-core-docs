@@ -1,0 +1,634 @@
+<html>
+    <head>
+      <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+        }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: white;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: left;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+	  .td2 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+		background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__anamnesis,
+      .document__a,
+      .document__b,
+      .document__c,
+      .document__d,
+      .document__e,
+      .document__f,
+      .document__g,
+      .document__h,
+      .document__i,
+      .document__j,
+      .document__k,
+	  .document__l{
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+    <div class="document__anamnesis">
+	<div class="document__a">
+        {{#with A}}
+	    <table>
+	    	<tr>
+	            <th class='th1' colspan="16">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+	        </tr>
+	        <tr>
+	            <th class='th2' colspan="4">INSTITUCION DEL SISTEMA</th>
+	            <th class='th2' colspan="2">UNICÓDIGO</th>
+	            <th class='th2' colspan="3">ESTABLECIMIENTO DE SALUD</th>
+	            <th class='th2' colspan="3">NUMERO DE HISTORIA CLÍNICA</th>
+	            <th class='th2' colspan="4">NUMERO DE ARCHIVO</th>
+	        </tr>
+	        <tr>
+	            <td colspan='4'>{{institucion_sistema}}</td>
+                <td colspan='2'>{{unicodigo}}</td>
+                <td colspan='3'>{{establecimiento_salud}}</td>
+                <td colspan='3'>{{numero_historia_clinica}}</td>
+                <td colspan='4'>{{numero_archivo}}</td>
+	        </tr>
+	        <tr>
+                <th class='th2' rowspan='2' colspan='2'>PRIMER APELLIDO</th>
+                <th class='th2' rowspan='2' colspan='2'>SEGUNDO APELLIDO</th>
+                <th class='th2' rowspan='2' colspan='2'>PRIMER NOMBRE</th>
+                <th class='th2' rowspan='2' colspan='2'>SEGUNDO NOMBRE</th>
+                <th class='th2' rowspan='2' colspan='1'>SEXO</th>
+                <th class='th2' rowspan='2' colspan='2'>FECHA NACIMIENTO</th>
+                <th class='th2' rowspan='2' colspan='1'>EDAD</th>
+                <th class='th2' rowspan='1' colspan='4'>CONDICIÓN EDAD</th>
+              </tr>
+	         <tr>
+                <th class='th2' rowspan='1' colspan='1'>M</th>
+                <th class='th2' rowspan='1' colspan='1'>D</th>
+                <th class='th2' rowspan='1' colspan='1'>M</th>
+                <th class='th2' rowspan='1' colspan='1'>A</th>
+              </tr>
+	        <tr>
+                <td rowspan='1' colspan='2'>{{primer_apellido}}</td>
+                <td rowspan='1' colspan='2'>{{segundo_apellido}}</td>
+                <td rowspan='1' colspan='2'>{{primer_nombre}}</td>
+                <td rowspan='1' colspan='2'>{{segundo_nombre}}</td>
+                <td rowspan='1' colspan='1'>{{sexo}}</td>
+                <td rowspan='1' colspan='2'>{{fecha_nacimiento}}</td>
+                <td rowspan='1' colspan='1'>{{edad}}</td>
+                <td rowspan='1' colspan='1'>{{#if condicion_edad.m1}}X{{/if}}</td>
+                <td rowspan='1' colspan='1'>{{#if condicion_edad.d}}X{{/if}}</td>
+                <td rowspan='1' colspan='1'>{{#if condicion_edad.m2}}X{{/if}}</td>
+                <td rowspan='1' colspan='1'>{{#if condicion_edad.a}}X{{/if}}</td>
+            </tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class="document__b">
+        {{#with B}}
+	    <table>
+	    	<tr>
+	            <th class='th1' rowspan='1' colspan='1'>B. MOTIVO DE CONSULTA</th>
+	        </tr>
+	        <tr>
+	            <td class='td1'>{{motivo_consulta}}</td>
+	        </tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class="document__c">
+        {{#with C}}
+	    <table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="14">C. ANTECEDENTES PATOLÓGICOS PERSONALES</th>
+	        </tr>
+	        <tr>
+	            <th class='th5' colspan="3">1. ALERGIA A MEDICAMENTOS</th>
+	            <td class='td3'>{{#if alergia_medicamentos}}X{{/if}}</td>
+	            <th class='th5'>2. OTRAS ALERGIAS</th>
+	            <td class='td3'>{{#if otras_alergias}}X{{/if}}</td>
+	            <th class='th5'>3. VACUNAS</th>
+	            <td class='td3'>{{#if vacunas}}X{{/if}}</td>
+	            <th class='th5'>4. PATOLOGÍAS CLÍNICAS</th>
+	            <td class='td3'>{{#if patologias_clinicas}}X{{/if}}</td>
+	            <th class='th5'>5. MEDICACIÓN HABITUAL</th>
+	            <td class='td3'>{{#if medicacion_habitual}}X{{/if}}</td>
+	            <th class='th5'>6. QUIRÚRGICOS</th>
+	            <td class='td3'>{{#if quirurgicos}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th5' colspan="3">7. HÁBITOS</th>
+	            <td class='td3'>{{#if quirurgicos}}X{{/if}}</td>
+	            <th class='th5' colspan="3">8. CONDICIÓN SOCIO ECONÓMICA</th>
+	            <td class='td3'>{{#if condicion_economica}}X{{/if}}</td>
+	            <th class='th5'>9. DISCAPACIDAD</th>
+	            <td class='td3'>{{#if discapacidad}}X{{/if}}</td>
+	            <th class='th5'>10. RELIGIÓN</th>
+	            <td class='td3'>{{#if religion}}X{{/if}}</td>
+	            <th class='th5'>11. TIPIFICACIÓN SANGUÍNEA</th>
+	            <td class='td3'>{{#if tipificacion_sanguinea}}X{{/if}}</td>
+	        </tr>	
+	        <tr>
+	            <th class='th5' colspan="2" rowspan="5">12. GINECO OBSTÉTRICOS Y ANDROLÓGICOS</th>
+	            <th class='th5'>EDAD MENARQUIA</th>
+	            <td>{{obstetricos_andrologicos.edad_menarquia}}</td>
+	            <th class='th5'>EDAD MENOPAUSIA</th>
+	            <td>{{obstetricos_andrologicos.edad_menospausia}}</td>
+	            <th class='th5'>CICLOS</th>
+	            <td>{{obstetricos_andrologicos.ciclos}}</td>
+	            <th class='th5'>EDAD INICIO VIDA SEXUAL</th>
+	            <td>{{obstetricos_andrologicos.inicio_vida_sexual}}</td>
+	            <th class='th5'>NÚMERO GESTAS</th>
+	            <td>{{obstetricos_andrologicos.num_gestas}}</td>
+	            <th class='th5'>NÚMERO PARTOS</th>
+	            <td>{{obstetricos_andrologicos.num_partos}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th5'>NÚMERO ABORTOS</th>
+	            <td>{{obstetricos_andrologicos.num_abortos}}</td>
+	            <th class='th5'>NÚMERO CESÁREAS</th>
+	            <td>{{obstetricos_andrologicos.num_cesareas}}</td>
+	            <th class='th5'>NÚMERO HIJOS VIVOS</th>
+	            <td>{{obstetricos_andrologicos.num_hijos_vivos}}</td>
+	            <th class='th5' colspan="2">FECHA ÚLTIMA MENSTRUACIÓN</th>
+	            <td colspan="2">{{obstetricos_andrologicos.fecha_ult_menstruacion}}</td>
+	            <th class='th5'>FECHA ÚLTIMO PARTO</th>
+	            <td>{{obstetricos_andrologicos.fecha_ult_parto}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th5' colspan="2">FECHA ÚLTIMA CITOLOGÍA CERVICAL</th>
+	            <td colspan="2">{{obstetricos_andrologicos.fecha_ult_citologia_cervical}}</td>
+	            <th class='th5' colspan="2">FECHA ÚLTIMA COLPOSCOPÍA</th>
+	            <td colspan="2">{{obstetricos_andrologicos.fecha_ult_colposcopia}}</td>
+	            <th class='th5' colspan="2">FECHA ÚLTIMA MAMOGRAFÍA</th>
+	            <td colspan="2">{{obstetricos_andrologicos.fecha_ult_mamografia}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th5' colspan="3">MÉTODO DE PLANIFICACIÓN FAMILIAR</th>
+	            <td colspan="3">{{#if obstetricos_andrologicos.metodo_planificacion}}X{{/if}}</td>
+	            <th class='th5' colspan="3">TERAPIA HORMONAL</th>
+	            <td colspan="3">{{obstetricos_andrologicos.terapia_hormonal}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th5' colspan="3">FECHA ÚLTIMO ANTÍGENO PROSTÁTICO</th>
+	            <td colspan="3">{{obstetricos_andrologicos.fecha_ult_antigeno_prostatico}}</td>
+	            <th class='th5' colspan="3">FECHA ÚLTIMO ECO PROSTÁTICO</th>
+	            <td colspan="3">{{obstetricos_andrologicos.fecha_ult_eco_prostatico}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td4j' colspan="14">{{descripcion_antecedentes}}</td>
+	        </tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class="document__d">
+        {{#with D}}
+	    <table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="20">D. ANTECEDENTES PATOLÓGICOS FAMILIARES</th>
+	        </tr>
+	        <tr>
+	        	<th class='th5'>1. CARDIOPATÍA</th>
+	        	<td>{{#if cardiopatia}}X{{/if}}</td>
+	        	<th class='th5'>2. HIPERTENSIÓN</th>
+	        	<td>{{#if hipertension}}X{{/if}}</td>
+	        	<th class='th5'>3. ENF. C. VASCULAR</th>
+	        	<td>{{#if enf_c_vascular}}X{{/if}}</td>
+	        	<th class='th5'>4.  ENDÓCRINO METABÓLICO</th>
+	        	<td>{{#if endocrino_metabolico}}X{{/if}}</td>
+	        	<th class='th5'>5. CÁNCER</th>
+	        	<td>{{#if cancer}}X{{/if}}</td>
+	        	<th class='th5'>6. TUBERCULOSIS</th>
+	        	<td>{{#if tuberculosis}}X{{/if}}</td>
+	        	<th class='th5'>7.  ENF. MENTAL</th>
+	        	<td>{{#if enf_mental}}X{{/if}}</td>
+	        	<th class='th5'>8. ENF. INFECCIOSA</th>
+	        	<td>{{#if enf_infecciosa}}X{{/if}}</td>
+	        	<th class='th5'>9.  MAL FORMACIÓN</th>
+	        	<td>{{#if mal_formacion}}X{{/if}}</td>
+	        	<th class='th5'>10.  OTRO</th>
+	        	<td>{{#if otro}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td4j'colspan="20">{{descripcion_antecedentes}}</td>
+	        </tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class="document__e">
+        {{#with E}}
+	    <table class="table2">
+	    	<tr>
+	            <th class='th1'>E. ENFERMEDAD O PROBLEMA ACTUAL</th>
+	        </tr>
+	        <tr>
+	            <td class='td1'>{{enfermedad_actual}}</td>
+	        </tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class="document__f">
+        {{#with F}}
+	    <table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="10">F. REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS</th>
+	        </tr>
+	        <tr>
+	        	<th class='th5'>1.PIEL - ANEXOS</th>
+	        	<td>{{#if piel_anexos}}X{{/if}}</td>
+	        	<th class='th5'>3.RESPIRATORIO</th>
+	        	<td>{{#if respiratorio}}X{{/if}}</td>
+	        	<th class='th5'>5.DIGESTIVO</th>
+	        	<td>{{#if digestivo}}X{{/if}}</td>
+	        	<th class='th5'>7.MÚSCULO - ESQUELÉTICO</th>
+	        	<td>{{#if musculo_esqueletico}}X{{/if}}</td>
+	        	<th class='th5'>9.HEMO - LINFÁTICO</th>
+	        	<td>{{#if hemo_linfatico}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	        	<th class='th5'>2.ÓRGANOS DE LOS SENTIDOS</th>
+	        	<td>{{#if organos_sentidos}}X{{/if}}</td>
+	        	<th class='th5'>4.CARDIO - VASCULAR</th>
+	        	<td>{{cardio_vascular}}</td>
+	        	<th class='th5'>6.GENITO - URINARIO</th>
+	        	<td>{{#if genito_urinario}}X{{/if}}</td>
+	        	<th class='th5'>8.ENDÓCRINO</th>
+	        	<td>{{#if endocrino}}X{{/if}}</td>
+	        	<th class='th5'>10.NERVIOSO</th>
+	        	<td>{{#if nervioso}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td4j'colspan="10">{{descripcion_revision}}</td>
+	        </tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<footer>
+		<div style="width:100%;">
+			<table class="table table-bordered" style="font-size: 8px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+		        <tbody>
+		            <th style="text-align: left;" >SNS-MSP / HCU-form.003 / 2021</th>
+		            <th style="text-align: right;font-size: 8px">HOSPITALIZACIÓN - ANAMNESIS(<span class="page"></span>)</th>
+		        </tbody>
+	    	</table>
+		</div>
+	</footer>
+
+		<div style="width:100%;padding-top: 3px">
+			<table class="table2">
+		    		<tr>
+		              <th colspan="5" style="text-align: left;font-size: 10px" bgcolor="ccccff">DATOS DEL USUARIO / PACIENTE</th>
+		            </tr>
+		    	</thead>
+		        <tbody>
+		            <tr >
+		            	<th  bgcolor="CCFFCC">PRIMER APELLIDO</th>
+		            	<th  bgcolor="CCFFCC">PRIMER NOMBRE</th>
+		            	<th  bgcolor="CCFFCC">EDAD</th>
+		            	<th  bgcolor="CCFFCC">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+		            	<th  bgcolor="CCFFCC">NÚMERO DE ARCHIVO</th>
+		            </tr>
+		            <tr>
+		            	<td style="height: 10px;text-align: center;"><?php echo($archivo[1]['APELLIDO_PATERNO'][0])?></td>
+		            	<td style="height: 10px;text-align: center;"><?php echo($archivo[1]['PRIMER_NOMBRE'][0])?></td>
+		            	<td style="height: 10px;text-align: center;"><?php echo($archivo[1]['EDAD'][0])?></td>
+		            	<td style="height: 10px;text-align: center;"><b><?php echo($archivo[1]['NUMERO_HC'][0])?></b></td>
+		            	<td style="height: 10px;text-align: center;"></td>
+		            </tr>
+		        </tbody>
+		    </table>
+		</div>
+	</div>
+
+	<div class="document__g">
+		{{#with G}}
+	    <table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="9">G. CONSTANTES VITALES Y ANTROPOMETRÍA</th>
+	        </tr>
+	        <tr>
+	        	<th class='th5'>TEMPERATURA (ºC)</th>
+	        	<th class='th5'>PRESIÓN ARTERIAL (mmHg)</th>
+	        	<th class='th5'>PULSO /  min</th>
+	        	<th class='th5'>FRECUENCIA RESPIRATORIA / min</th>
+	        	<th class='th5'>PESO (Kg)</th>
+	        	<th class='th5'>TALLA (cm)</th>
+	        	<th class='th5'>IMC (Kg/m2)</th>
+	        	<th class='th5'>PERÍMETRO CEFÁLICO (cm)</th>
+	        	<th class='th5'>PULSIOXIMETRIA (%)</th>
+	        </tr>
+	        <tr>
+	            <td>{{temperatura}}</td>
+	            <td>{{presion_arterial}}</td>
+	            <td>{{pulso}}</td>
+	            <td>{{frecuencia_respiratoria}}</td>
+	            <td>{{peso}}</td>
+	            <td>{{talla}}</td>
+	            <td>{{imc}}</td>
+	            <td>{{perimetro_cefalico}}</td>
+	            <td>{{pulsioximetria}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class="document__h">
+		{{#with H}}
+	    <table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="10">H. EXAMEN FÍSICO</th>
+	        </tr>
+	        <tr>
+	        	<th class='th1' colspan="6">REGIONAL</th>
+	        	<th class='th1' colspan="4">SISTÉMICO</th>
+	        </tr>
+	        <tr>
+	            <td class='td2'>1R. PIEL - FANERAS</td>
+	            <td>{{#if regional.piel_faneras}}X{{/if}}</td>
+	            <td class='td2'>6R. BOCA</td>
+	            <td>{{#if regional.boca}}X{{/if}}</td>
+	            <td class='td2'>11R. ABDOMEN </td>
+	            <td>{{#if regional.abdomen}}X{{/if}}</td>
+	            <td class='td2'>1S. ÓRGANOS DE LOS SENTIDOS</td>
+	            <td>{{#if sistemico.organos_sentidos}}X{{/if}}</td>
+	            <td class='td2'>6S. URINARIO</td>
+	            <td>{{#if sistemico.urinario}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td2'>2R. CABEZA </td>
+	            <td>{{#if regional.cabeza}}X{{/if}}</td>
+	            <td class='td2'>7R. OROFARINGE</td>
+	            <td>{{#if regional.oro_faringe}}X{{/if}}</td>
+	            <td class='td2'>12R. COLUMNA VERTEBRAL</td>
+	            <td>{{#if regional.columna}}X{{/if}}</td>
+	            <td class='td2'>2S. RESPIRATORIO</td>
+	            <td>{{#if sistemico.respiratorio}}X{{/if}}</td>
+	            <td class='td2'>7S. MÚSCULO - ESQUELÉTICO</td>
+	            <td>{{#if sistemico.musculo_esqueletico}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td2'>3R. OJOS</td>
+	            <td>{{#if regional.ojos}}X{{/if}}</td>
+	            <td class='td2'>8R. CUELLO</td>
+	            <td>{{#if regional.cuello}}X{{/if}}</td>
+	            <td class='td2'>13R. INGLE-PERINÉ</td>
+	            <td>{{#if regional.ingle_perine}}X{{/if}}</td>
+	            <td class='td2'>3S. CARDIO - VASCULAR</td>
+	            <td>{{#if sistemico.cardio_vascular}}X{{/if}}</td>
+	            <td class='td2'>8S. ENDÓCRINO</td>
+	            <td>{{#if sistemico.endocrino}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td2'>4R. OÍDOS</td>
+	            <td>{{#if regional.oidos}}X{{/if}}</td>
+	            <td class='td2'>9R. AXILAS - MAMAS</td>
+	            <td>{{#if regional.axilas_mamas}}X{{/if}}</td>
+	            <td class='td2'>14R. MIEMBROS SUPERIORES</td>
+	            <td>{{#if regional.miembros_superiores}}X{{/if}}</td>
+	            <td class='td2'>4S. DIGESTIVO</td>
+	            <td>{{#if sistemico.digestivo}}X{{/if}}</td>
+	            <td class='td2'>9S. HEMO - LINFÁTICO</td>
+	            <td>{{#if sistemico.hemo_linfatico}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td2'>5R. NARIZ</td>
+	            <td>{{#if regional.nariz}}X{{/if}}</td>
+	            <td class='td2'>10R. TÓRAX</td>
+	            <td>{{#if regional.torax}}X{{/if}}</td>
+	            <td class='td2'>15R. MIEMBROS INFERIORES</td>
+	            <td>{{#if regional.miembros_inferiores}}X{{/if}}</td>
+	            <td class='td2'>5S. GENITAL</td>
+	            <td>{{#if sistemico.genital}}X{{/if}}</td>
+	            <td class='td2'>10S. NEUROLÓGICO</td>
+	            <td>{{#if sistemico.neurologico}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td4j' colspan="6">{{regional.descripcion_regional}}</td>
+	            <td colspan="4"><img src={{sistemico.descripcion}}></td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+
+	<div class="document__i">
+		{{#with I}}
+	    <table>
+	    	<tr>
+	            <th class='th1'>I. ANÁLISIS</th>
+	        </tr>
+	        <tr>
+	        	<td class='td4j'>{{analisis}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class="document__j">
+		{{#with J}}
+		<table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="2">J. DIAGNÓSTICO</th>
+	            <th class='th1'>CIE</th>
+	            <th class='th1'>PRE</th>
+	            <th class='th1'>DEF</th>
+	            <th class='th1' colspan="2"></th>
+	            <th class='th1'>CIE</th>
+	            <th class='th1'>PRE</th>
+	            <th class='th1'>DEF</th>
+	        </tr>
+	        <tr>
+	            <th class='th5'>1.</th>
+	            <td class='td1'>{{diagnosticos.[0].descripcion}}</td>
+	            <td class='td1'>{{diagnosticos.[0].cie}}</td>
+	            <td class='td1'>{{#if diagnosticos.[0].pre}}X{{/if}}</th>
+	            <td class='td1'>{{#if diagnosticos.[0].def}}X{{/if}}</th>
+	            <!-- 2 -->
+	            <th  class='th5'>4.</th>
+	            <td class='td1'>{{diagnosticos.[3].descripcion}}</td>
+	            <td class='td1'>{{diagnosticos.[3].cie}}</td>
+	            <td class='td1'>{{#if diagnosticos.[3].pre}}X{{/if}}</th>
+	            <td class='td1'>{{#if diagnosticos.[3].def}}X{{/if}}</th>
+	        </tr>
+	        <tr>
+	            <th class='th5'>2.</th>
+	            <td class='td1'>{{diagnosticos.[1].descripcion}}</td>
+	            <td class='td1'>{{diagnosticos.[1].cie}}</td>
+	            <td class='td1'>{{#if diagnosticos.[1].pre}}X{{/if}}</th>
+	            <td class='td1'>{{#if diagnosticos.[1].def}}X{{/if}}</th>
+	            <!-- 2 -->
+	            <th  class='th5'>5.</th>
+	            <td class='td1'>{{diagnosticos.[4].descripcion}}</td>
+	            <td class='td1'>{{diagnosticos.[4].cie}}</td>
+	            <td class='td1'>{{#if diagnosticos.[4].pre}}X{{/if}}</th>
+	            <td class='td1'>{{#if diagnosticos.[4].def}}X{{/if}}</th>
+	        </tr>
+	        <tr>
+	            <th class='th5'>3.</th>
+	            <td class='td1'>{{diagnosticos.[2].descripcion}}</td>
+	            <td class='td1'>{{diagnosticos.[2].cie}}</td>
+	            <td class='td1'>{{#if diagnosticos.[2].pre}}X{{/if}}</th>
+	            <td class='td1'>{{#if diagnosticos.[2].def}}X{{/if}}</th>
+	            <!-- 2 -->
+	            <th class='th5'>6.</th>
+	            <td class='td1'>{{diagnosticos.[5].descripcion}}</td>
+	            <td class='td1'>{{diagnosticos.[5].cie}}</td>
+	            <td class='td1'>{{#if diagnosticos.[5].pre}}X{{/if}}</th>
+	            <td class='td1'>{{#if diagnosticos.[5].def}}X{{/if}}</th>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class="document__k">
+		{{#with K}}
+	    <table class="table2">
+	    	<tr>
+	            <th class='th1'>K. PLAN DE TRATAMIENTO</th>
+	        </tr>
+	        <tr>
+	        	<td class='td4j'>{{plan_tratamiento}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class="document__l">
+		{{#with L}}
+	    <table class="table2">
+	        <tr>
+	            <th class='th1' colspan="5">L. DATOS DEL PROFESIONAL RESPONSABLE</th>
+	        </tr>
+	        <tr>
+	            <th  class='th2'>FECHA</th>
+	            <th  class='th2'>HORA</th>
+	            <th  class='th2'>PRIMER NOMBRE</th>
+	            <th  class='th2'>PRIMER APELLIDO</th>
+	            <th  class='th2'>SEGUNDO APELLIDO</th>
+	        </tr>
+	        <tr>
+	            <td>{{fecha}}</td>
+	            <td>{{hora}}</td>
+	            <td>{{nombres_med}}</td>
+	            <td>{{primer_apellido_med}}</td>
+	            <td>{{segundo_apellido_med}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2' colspan="2">NUMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+	            <th class='th2' colspan="2">FIRMA</th>
+	            <th bgcolor="#ccffcc">SELLO</th>
+	        </tr>
+	        <tr>
+	            <td colspan="2">{{numero_identificacion_med}}</td>
+	            <td colspan="2"><img src="{{firma_med}}"></td>
+	            <td><img src="{{sello_med}}"></td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+</body>
+</html>

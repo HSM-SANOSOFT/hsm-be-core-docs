@@ -1,0 +1,583 @@
+<html>
+    <head>
+      <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+        }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: white;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: left;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+	  .td2 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+		background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+    .document__intercons__sol, 
+    .document__intercons__sol__a,
+    .document__intercons__sol__b,
+    .document__intercons__sol__c,
+	.document__intercons__sol__d,
+	.document__intercons__sol__e,
+	.document__intercons__sol__f,
+	.document__intercons__sol__g,
+	.document__intercons__inf,
+	.document__intercons__inf__a,
+	.document__intercons__inf__b,
+	.document__intercons__inf__c,
+	.document__intercons__inf__d,
+	.document__intercons__inf__e,
+	.document__intercons__inf__f,
+	.document__intercons__inf__g {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+    }
+
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+  <div clas='document__intercons__sol'>
+        <div class='document__intercons__sol__a'>
+            {{#with A_sol}}
+	    <table>
+	    	<tr>
+	            <th class='th1' rowspan='1' colspan='11'>A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+	        </tr>
+	        <tr>
+	            <th class='th2' rowspan='1' colspan='2'>INSTITUCION DEL SISTEMA</th>
+	            <th class='th2' rowspan='1' colspan='1'>UNICÓDIGO</th>
+	            <th class='th2' rowspan='1' colspan='2'>ESTABLECIMIENTO DE SALUD</th>
+	            <th class='th2' rowspan='1' colspan='2'>NÚMERO DE HISTORIA CLÍNICA</th>
+	            <th class='th2' rowspan='1' colspan='4'>NÚMERO DE ARCHIVO</th>
+	        </tr>
+	        <tr>
+	            <td rowspan='1' colspan='2'>{{institucion_sistema}}</td>
+	            <td rowspan='1' colspan='1'>{{unicodigo}}</td>
+	            <td rowspan='1' colspan="2">{{establecimiento_salud}}</td>
+	            <td rowspan='1' colspan="2">{{numero_historia_clinica}}</td>
+	            <td rowspan='1' colspan="4">{{numero_archivo}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2' rowspan='2' colspan='1'>PRIMER APELLIDO</th>
+	            <th class='th2' rowspan='2' colspan='1'>SEGUNDO APELLIDO</th>
+	            <th class='th2' rowspan='2' colspan='1'>PRIMER NOMBRE</th>
+	            <th class='th2' rowspan='2' colspan='1'>SEGUNDO NOMBRE</th>
+	            <th class='th2' rowspan='2' colspan='1'>SEXO</th>
+	            <th class='th2' rowspan='2' colspan='1'>FECHA NACIMIENTO</th>
+	            <th class='th2' rowspan='2' colspan='1'>EDAD</th>
+	            <th class='th2' rowspan='1' colspan='4'>CONDICION EDAD</th>
+	        </tr>
+	        <tr>
+	            <th class='th2' rowspan='1' colspan='1'>H</th>
+	            <th class='th2' rowspan='1' colspan='1'>D</th>
+	            <th class='th2' rowspan='1' colspan='1'>M</th>
+	            <th class='th2' rowspan='1' colspan='1'>A</th>
+	        </tr>
+	        <tr>
+	            <td rowspan='1' colspan='1'>{{primer_apellido}}</td>
+	            <td rowspan='1' colspan='1'>{{segundo_apellido}}</td>
+	            <td rowspan='1' colspan='1'>{{primer_nombre}}</td>
+	            <td rowspan='1' colspan='1'>{{segundo_nombre}}</td>
+	            <td rowspan='1' colspan='1'>{{sexo}}</td>
+	            <td rowspan='1' colspan='1'>{{fecha_nacimiento}}</td>
+	            <td rowspan='1' colspan='1'>{{edad}}</td>
+	            <td rowspan='1' colspan='1'>{{#if condicion_edad.h}} x {{/if}}</td>
+	            <td rowspan='1' colspan='1'>{{#if condicion_edad.d}} x {{/if}}</td>
+	            <td rowspan='1' colspan='1'>{{#if condicion_edad.m}} x {{/if}}</td>
+	            <td rowspan='1' colspan='1'>{{#if condicion_edad.a}} x {{/if}}</td>
+	        </tr> 
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class='document__intercons__sol__b'>
+  		{{#with B_sol}}
+  	<table class="table2">
+    	<tr>
+      		<th class='th1' colspan='13'>B. CARACTERÍSTICA DE LA SOLICITUD, MOTIVO Y PRIORIDAD DE ATENCIÓN</th>
+    	</tr>
+    	<tr>
+      		<th class='th2' colspan='6'>SERVICIO</th>
+			<th class='th2'>ESPECIALIDAD</th>
+			<th class='th2'>N° CAMA</th>
+			<th class='th2'>N° SALA</th>
+			<th class='th2' colspan='4'>URGENTE</th>
+    	</tr>
+    	<tr>
+			<td class="td1">EMERGENCIA</td>
+			<td>{{#if servicio.emergencia}}X{{/if}}</td>
+			<td class="td1">CONSULTA EXTERNA</td>
+			<td>{{#if servicio.consulta_externa}}X{{/if}}</td>
+			<td class="td1">HOSPITALIZACIÓN</td>
+			<td>{{#if servicio.hospitalizacion}}X{{/if}}</td>
+			<td>{{especialidad}}</td>
+			<td>{{num_cama}}</td>
+			<td>{{num_sala}}</td>
+			<td class="td2">SI</td>
+			<td>{{#if urgente.si}}X{{/if}}</td>
+			<td class="td2">NO</td>
+			<td>{{#if urgente.no}}X{{/if}}</td>
+    	</tr>
+    	<tr>
+			<th class='th5' colspan='3'>ESPECIALIDAD CONSULTADA</th>
+			<td colspan="10">{{especialidad_consultada}}</td>
+    	</tr>
+    	<tr>
+			<th class='th5' colspan='3'>DESCRIPCIÓN DEL MOTIVO</th>
+			<td class="td1" colspan="10">{{descripcion_motivo}}</td>
+    	</tr>
+	</table>
+  	{{/with}}
+</div>
+
+	<div class='document__intercons__sol__c'>
+        {{#with C_sol}}
+		<table class="table2">
+	    	<tr>
+	           <th class='th1' colspan='1'>C. CUADRO CLÍNICO ACTUAL </th>
+	        </tr>
+	        <tr>
+	            <td class="td1">{{cuadro_clinico}}</td>
+	        </tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class="document__intercons__sol__d">
+		{{#with D_sol}}
+		<table class="table2">
+	    	<tr>
+	           <th  class='th1' colspan='1'>D. RESULTADOS DE EXÁMENES Y PROCEDIMIENTOS DIAGNÓSTICOS RELEVANTES </th>
+	        </tr>
+	        <tr>
+	            <td class="td1">{{resultado_examenes}}</td>
+	        </tr> 
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class="document__intercons__sol__e">
+		{{#with E_sol}}
+		<table class="table2">
+            <tr>
+              <th class='th1' colspan='4'>E. DIAGNÓSTICO</th>
+              <th class='th1'>CIE</th>
+              <th class='th1'>PRE</th>
+              <th class='th1'>DEF</th>
+              <th class='th1' colspan='4'></th>
+              <th class='th1'>CIE</th>
+              <th class='th1'>PRE</th>
+              <th class='th1'>DEF</th>
+            </tr>
+            <tr>
+              <th class='th5'>1.</th>
+              <td class='td1' colspan='3'>{{diagnosticos.[0].descripcion}}</td>
+              <td class='td1'>{{#if diagnosticos.[0].cie.seleccionado}}{{diagnosticos.[0].cie.codigo}}{{/if}}</td>
+              <td>{{#if diagnosticos.[0].pre}}X{{/if}}</td>
+              <td>{{#if diagnosticos.[0].def}}X{{/if}}</td>
+
+              <th class='th5'>4.</th>
+              <td class='td1' colspan='3'>{{diagnosticos.[3].descripcion}}</td>
+              <td class='td1'>{{#if diagnosticos.[3].cie.seleccionado}}{{diagnosticos.[3].cie.codigo}}{{/if}}</td>
+              <td>{{#if diagnosticos.[3].pre}}X{{/if}}</td>
+              <td>{{#if diagnosticos.[3].def}}X{{/if}}</td>
+            </tr>
+            <tr>
+               <th class='th5'>2.</th>
+               <td class='td1' colspan='3'>{{diagnosticos.[1].descripcion}}</td>
+               <td class='td1'>{{#if diagnosticos.[1].cie.seleccionado}}{{diagnosticos.[1].cie.codigo}}{{/if}}</td>
+               <td>{{#if diagnosticos.[1].pre}}X{{/if}}</td>
+               <td>{{#if diagnosticos.[1].def}}X{{/if}}</td>
+
+               <th class='th5'>5.</th>
+               <td class='td1' colspan='3'>{{diagnosticos.[4].descripcion}}</td>
+               <td class='td1'>{{#if diagnosticos.[4].cie.seleccionado}}{{diagnosticos.[4].cie.codigo}}{{/if}}</td>
+               <td>{{#if diagnosticos.[4].pre}}X{{/if}}</td>
+               <td>{{#if diagnosticos.[4].def}}X{{/if}}</td>
+            </tr>
+            <tr>
+               <th class='th5'>3.</th>
+               <td class='td1' colspan='3'>{{diagnosticos.[2].descripcion}}</td>
+               <td class='td1'>{{#if diagnosticos.[2].cie.seleccionado}}{{diagnosticos.[2].cie.codigo}}{{/if}}</td>
+               <td>{{#if diagnosticos.[2].pre}}X{{/if}}</td>
+               <td>{{#if diagnosticos.[2].def}}X{{/if}}</td>
+
+               <th class='th5'>6.</th>
+               <td class='td1'colspan='3'>{{diagnosticos.[5].descripcion}}</td>
+               <td class='td1'>{{#if diagnosticos.[5].cie.seleccionado}}{{diagnosticos.[5].cie.codigo}}{{/if}}</td>
+               <td>{{#if diagnosticos.[5].pre}}X{{/if}}</td>
+               <td>{{#if diagnosticos.[5].def}}X{{/if}}</td>
+            </tr>
+        </table>
+          {{/with}}
+    </div>
+
+	<div class="document__intercons__sol__f">
+		{{#with F_sol}}
+		<table class="table2">
+	        <tr>
+	          <th class='th1' rowspan='1' colspan='1'>F. PLAN TERAPEÚTICO REALIZADO</th>
+	        </tr>
+	        <tr>
+	          <td class="td1">{{plan_realizado}}</td>
+	        </tr> 
+	        </tboddy>
+	    </table>
+		 {{/with}}
+	</div>
+
+	<div class="document__intercons__sol__g">
+		{{#with G_sol}}
+	    <table>
+	        <tr>
+	           <th class='th1' rowspan='1' colspan='5'>G. DATOS DEL PROFESIONAL RESPONSABLE</th>
+	        </tr>
+	        <tr>
+	            <th class="th2">FECHA</th>
+	            <th class="th2">HORA</th>
+	            <th class="th2">PRIMER NOMBRE</th>
+	            <th class="th2">PRIMER APELLIDO</th>
+	            <th class="th2">SEGUNDO APELLIDO</th>
+	        </tr>
+	        <tr>
+	            <td>{{fecha}}</td>
+	            <td>{{hora}}</td>
+	            <td>{{nombre_med}}</td>
+	            <td>{{primer_apellido_med}}</td>
+	            <td>{{segundo_apellido_med}}</td>
+	        </tr>
+	        <tr>
+	            <th class="th2" colspan="2">NÚMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+	            <th class="th2" colspan="2">FIRMA</th>
+	            <th class="th2">SELLO</th>
+	        </tr>
+	        <tr>
+	            <td colspan="2">{{numero_identificacion_med}}</td>
+	            <td colspan="2"><img src={{firma_med}}></td>
+	            <td ><img src={{sello_med}}></td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<!--<img src="<?php echo($firma_soli); ?>" style="position: absolute; left: 240;top: 920px;width: 100px;">-->
+	<!--<img src="<?php//echo($sello_soli); ?>" style="position: absolute; left: 460;top: 920px;width: 100px;">-->
+	<!--<?php echo($table_med_responsable_solicitud); ?>-->
+
+		<div style="width:100%;">
+			<table class="table table-bordered" style="font-size: 8px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+		        <tbody>
+		            <th style="text-align: left;" >SNS-MSP / HCU-form.007 / 2021</th>
+		            <th style="text-align: right;font-size: 8px">INTERCONSULTA - SOLICITUD</th>
+		        </tbody>
+	    	</table>
+		</div>
+
+ <div class='document__intercons__inf'>	
+	<div class='document__intercons__inf__a'>
+		{{#with A_inf}}
+	    <table>
+	    	<tr>
+	        	<th class='th1' rowspan='1' colspan='11'>A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+	        </tr>
+	        <tr >
+	            <th class='th2' rowspan='1' colspan='2'>INSTITUCION DEL SISTEMA</th>
+	            <th class='th2' rowspan='1' colspan='1'>UNICÓDIGO</th>
+	            <th class='th2' rowspan='1' colspan='2'>ESTABLECIMIENTO DE SALUD</th>
+	            <th class='th2' rowspan='1' colspan='2'>NÚMERO DE HISTORIA CLÍNICA</th>
+	            <th class='th2' rowspan='1' colspan='4'>NÚMERO DE ARCHIVO</th>
+	        </tr>
+	        <tr>
+	            <td rowspan='1' colspan='2'>{{institucion_sistema}}</td>
+	            <td rowspan='1' colspan='1'>{{unicodigo}}</td>
+	            <td rowspan='1' colspan="2">{{establecimiento_salud}}</td>
+	            <td rowspan='1' colspan="2">{{numero_historia_clinica}}</td>
+	            <td rowspan='1' colspan="4">{{numero_archivo}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2' rowspan='2' colspan='1'>PRIMER APELLIDO</th>
+	            <th class='th2' rowspan='2' colspan='1'>SEGUNDO APELLIDO</th>
+	            <th class='th2' rowspan='2' colspan='1'>PRIMER NOMBRE</th>
+	            <th class='th2' rowspan='2' colspan='1'>SEGUNDO NOMBRE</th>
+	            <th class='th2' rowspan='2' colspan='1'>SEXO</th>
+	            <th class='th2' rowspan='2' colspan='1'>FECHA NACIMIENTO</th>
+	            <th class='th2' rowspan='2' colspan='1'>EDAD</th>
+	            <th class='th2' rowspan='1' colspan='4'>CONDICION EDAD</th>
+	        </tr>
+	        <tr>
+	            <td class='th2' rowspan='1' colspan='1'>M</td>
+	            <td class='th2' rowspan='1' colspan='1'>D</td>
+	            <td class='th2' rowspan='1' colspan='1'>M</td>
+	            <td class='th2' rowspan='1' colspan='1'>A</td>
+	        </tr>
+	        <tr>
+	            <td rowspan='1' colspan='1'>{{primer_apellido}}</td>
+	            <td rowspan='1' colspan='1'>{{segundo_apellido}}</td>
+	            <td rowspan='1' colspan='1'>{{primer_nombre}}</td>
+	            <td rowspan='1' colspan='1'>{{segundo_nombre}}</td>
+	            <td rowspan='1' colspan='1'>{{sexo}}</td>
+	            <td rowspan='1' colspan='1'>{{fecha_nacimiento}}</td>
+	            <td rowspan='1' colspan='1'>{{edad}}</td>
+	            <td rowspan='1' colspan='1'>{{#if condicion_edad.h}} x {{/if}}</td>
+	            <td rowspan='1' colspan='1'>{{#if condicion_edad.d}} x {{/if}}</td>
+	            <td rowspan='1' colspan='1'>{{#if condicion_edad.m}} x {{/if}}</td>
+	            <td rowspan='1' colspan='1'>{{#if condicion_edad.a}} x {{/if}}</td>
+	        </tr> 
+	    </table>
+		{{/with}}
+	</div>
+
+
+	<div class='document__intercons__inf__b'>
+		{{#with B_inf}}
+		<table>
+	    	<tr>
+	            <th  class='th1' rowspan='1' colspan='1'>B. CUADRO CLÍNICO DE INTERCONSULTA</th>
+	        </tr>
+	        <tr>
+	            <td class='td1'>{{cuadro_clinico_inter}}</td>
+	        </tr> 
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__intercons__inf__c'>
+		{{#with C_inf}}
+		<table>
+	    	<tr>
+	            <th  class='th1' rowspan='1' colspan='1'>C. RESUMEN DEL CRITERIO CLÍNICO</th>
+	        </tr>
+	        <tr>
+	            <td class='td1'>{{resumen_criterio_clinico}}</td>
+	        </tr> 
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__intercons__inf__d'>
+		{{#with D_inf}}
+		<table class="table2">
+			<tr>
+			  <th class='th1' colspan='4'>D. DIAGNÓSTICO</th>
+			  <th class='th1'>CIE</th>
+			  <th class='th1'>PRE</th>
+			  <th class='th1'>DEF</th>
+			  <th class='th1' colspan='4'></th>
+			  <th class='th1'>CIE</th>
+			  <th class='th1'>PRE</th>
+			  <th class='th1'>DEF</th>
+	    	<tr>
+            <tr>
+              <th class='th5'>1.</th>
+              <td class='td1' colspan='3'>{{diagnosticos.[0].descripcion}}</td>
+              <td class='td1'>{{#if diagnosticos.[0].cie.seleccionado}}{{diagnosticos.[0].cie.codigo}}{{/if}}</td>
+              <td>{{#if diagnosticos.[0].pre}}X{{/if}}</td>
+              <td>{{#if diagnosticos.[0].def}}X{{/if}}</td>
+
+              <th class='th5'>4.</th>
+              <td class='td1' colspan='3'>{{diagnosticos.[3].descripcion}}</td>
+              <td class='td1'>{{#if diagnosticos.[3].cie.seleccionado}}{{diagnosticos.[3].cie.codigo}}{{/if}}</td>
+              <td>{{#if diagnosticos.[3].pre}}X{{/if}}</td>
+              <td>{{#if diagnosticos.[3].def}}X{{/if}}</td>
+            </tr>
+            <tr>
+               <th class='th5'>2.</th>
+               <td class='td1' colspan='3'>{{diagnosticos.[1].descripcion}}</td>
+               <td class='td1'>{{#if diagnosticos.[1].cie.seleccionado}}{{diagnosticos.[1].cie.codigo}}{{/if}}</td>
+               <td>{{#if diagnosticos.[1].pre}}X{{/if}}</td>
+               <td>{{#if diagnosticos.[1].def}}X{{/if}}</td>
+
+               <th class='th5'>5.</th>
+               <td class='td1' colspan='3'>{{diagnosticos.[4].descripcion}}</td>
+               <td class='td1'>{{#if diagnosticos.[4].cie.seleccionado}}{{diagnosticos.[4].cie.codigo}}{{/if}}</td>
+               <td>{{#if diagnosticos.[4].pre}}X{{/if}}</td>
+               <td>{{#if diagnosticos.[4].def}}X{{/if}}</td>
+            </tr>
+            <tr>
+               <th class='th5'>3.</th>
+               <td class='td1' colspan='3'>{{diagnosticos.[2].descripcion}}</td>
+               <td class='td1'>{{#if diagnosticos.[2].cie.seleccionado}}{{diagnosticos.[2].cie.codigo}}{{/if}}</td>
+               <td>{{#if diagnosticos.[2].pre}}X{{/if}}</td>
+               <td>{{#if diagnosticos.[2].def}}X{{/if}}</td>
+
+               <th class='th5'>6.</th>
+               <td class='td1'colspan='3'>{{diagnosticos.[5].descripcion}}</td>
+               <td class='td1'>{{#if diagnosticos.[5].cie.seleccionado}}{{diagnosticos.[5].cie.codigo}}{{/if}}</td>
+               <td>{{#if diagnosticos.[5].pre}}X{{/if}}</td>
+               <td>{{#if diagnosticos.[5].def}}X{{/if}}</td>
+            </tr>
+        </table>
+          {{/with}}
+    </div>
+
+	<div class='document__intercons__inf__e'>
+		{{#with E_inf}}
+		<table>
+	    	<tr>
+	            <th class='th1' rowspan='1' colspan='1'>E. PLAN DE DIAGNÓSTICO PROPUESTO</th>
+	        </tr>
+	        <tr>
+	            <td class='td1'>{{plan_diagnostico}}</td>
+	        </tr> 
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__intercons__inf__f'>
+		{{#with F_inf}}
+		<table>
+	    	<tr>
+	            <th  class='th1' rowspan='1' colspan='1'>F. PLAN TERAPEÚTICO PROPUESTO</th>
+	        </tr>
+	        <tr>
+	            <td class='td1'>{{plan_terapeutico}}</td>
+	        </tr> 
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__intercons__inf__g'>
+		{{#with G_inf}}
+	    <table>
+	        <tr>
+	           <th class='th1' rowspan='1' colspan='5'>G. DATOS DEL PROFESIONAL RESPONSABLE</th>
+	        </tr>
+	        <tr>
+	            <th class="th2">FECHA</th>
+	            <th class="th2">HORA</th>
+	            <th class="th2">PRIMER NOMBRE</th>
+	            <th class="th2">PRIMER APELLIDO</th>
+	            <th class="th2">SEGUNDO APELLIDO</th>
+	        </tr>
+	        <tr>
+	            <td>{{fecha}}</td>
+	            <td>{{hora}}</td>
+	            <td>{{nombre_med}}</td>
+	            <td>{{primer_apellido_med}}</td>
+	            <td>{{segundo_apellido_med}}</td>
+	        </tr>
+	        <tr>
+	            <th class="th2" colspan="2">NÚMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+	            <th class="th2" colspan="2">FIRMA</th>
+	            <th class="th2">SELLO</th>
+	        </tr>
+	        <tr>
+	            <td colspan="2">{{numero_identificacion_med}}</td>
+	            <td colspan="2"><img src={{firma_med}}></td>
+	            <td ><img src={{sello_med}}></td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+		<div style="width:100%;">
+			<table class="table table-bordered" style="font-size: 8px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+		        <tbody>
+		            <th style="text-align: left;" >SNS-MSP / HCU-form.007 / 2021</th>
+		            <th style="text-align: right;font-size: 8px">INTERCONSULTA - INFORME</th>
+		        </tbody>
+	    	</table>
+		</div>
+	<!--<img src="<?php echo($firma_info); ?>" style="position: absolute; left: 240;top: 920px;width: 100px;">	-->
+	<!--<?php echo($table_med_responsable_informe); ?>-->
+	<!--<img src="<?php //echo($sello_info); ?>" style="position: absolute; left: 460;top: 920px;width: 100px;">-->
+
+</body>
+</html>
+

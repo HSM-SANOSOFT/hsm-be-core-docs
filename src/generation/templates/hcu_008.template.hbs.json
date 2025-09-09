@@ -1,0 +1,337 @@
+{
+    "A": {
+        "institucion_sistema": "CLINICA SANTAMARIA",
+        "unicodigo": "25410",
+        "establecimiento_salud": "CLINICA SANTAMARIA",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "104242"
+    },
+
+    "B": {
+        "registro_admision":"",
+
+        "fecha_admision": "01/01/1991",
+        "nombre_apellido_admisionista": "Maria Luisa Pérez González",
+        "historia_clinica_establecimiento": {
+            "si": true,
+            "no": false
+        },
+
+        "primer_apellido":"LOPEZ",
+        "segundo_apellido":"GARCIA",
+        "primer_nombre":"JOSE",
+        "segundo_nombre":"PABLO",
+
+        "documento_identificacion":{
+            "cedula": false,
+            "pasaporte":true,
+            "carne": false,
+            "sindatos":false
+        },
+
+        "estado_civil":{
+            "soltero": true,
+            "casado": false,
+            "divorciado": false,
+            "viudo": false,
+            "unido": false,
+            "union_hecho": false,
+            "n_a": false
+        },
+
+        "sexo":"MASCULINO",
+        "num_telefono":"042774363",
+        "num_celular":"0987654123",
+        "fecha_nacimiento":"08/10/2010",
+        "lugar_nacimiento":"GUAYAQUIL",
+        "nacionalidad":"ECUATORIANO",
+        "edad":"30",
+
+        "condicion_edad": {
+           "h": false,
+           "d": false,
+           "m": false,
+           "a": true
+        },
+
+        "grupo_prioritario":{
+            "si":true,
+            "no":false
+        },
+
+        "especifique":"algun otro",
+
+        "autoidentificacion_etnica":"",
+        "nacionalidad_etnica":"",
+        "pueblos":"",
+        "nivel_educacion":"",
+
+        "seguro_prrincipal":{
+            "iess_g":"",
+            "iess_c":"",
+            "isspol":"",
+            "issfa":"",
+            "privado":""
+        },
+
+        "estado_nivel_educacion":"",
+        "tipo_empresa_trabajo":"",
+        "ocupacion":"",
+
+        "residencia":{
+            "provincia":"",
+            "canton":"",
+            "parroquia":"",
+            "sector":"",
+            "calle_principal":"",
+            "calle_secundaria":"",
+            "referencia":""
+        },
+
+        "nombre_familiar":"",
+        "parentesco":"",
+        "direccion_parentesco":"",
+        "telefono_parentesco":"",
+
+        "forma_llegada":{
+            "ambulatorio":"",
+            "ambulancia":"",
+            "otro_transporte":""
+        },
+
+        "fuente_informacicon":"",
+        "persona_entrega_pcte":"",
+        "numero_persona_entrega_pcte":""
+    },
+
+    "C":  {
+        "fecha":"25/07/2025",
+        "hora":"13:30",
+        "condicion_llegada": {
+            "estable": true,
+            "inestable": false,
+            "fallecido": false
+        },
+        "motivo_atencion": "Ambulatoria"
+    },
+
+    "D": {
+        "fecha":"",
+        "hora":"",
+        "lugar_evento":"",
+        "direccion_evento":"",
+        "custodia_policial": {
+            "si":false,
+            "no":true
+        },
+
+        "mecanismo_evento": {
+            "accidente_transito": "",
+            "caida": "",
+            "quemadura": "",
+            "mordedura": "",
+            "ahogamiento": "",
+            "cuerpo_extraño": "",
+            "aplastamiento": "",
+            "otro_accidente": "",
+            "violencia_arma": "",
+            "violencia_cortopunzante": "",
+            "violencia_riña": "",
+            "violencia_familiar": "",
+            "presunta_violencia_fisica": "",
+            "presunta_violencia_psico": "",
+            "presunta_violencia_sexual": "",
+            "notificacion": "",
+            "intoxicacion_alcoholica": "",
+            "intoxicacion_alimentaria": "",
+            "intoxicacion_drogas": "",
+            "inhalacion_gases": "",
+            "otra_intoxicacion": "",
+            "picadura": "",
+            "envenenamiento":"",
+            "inafilaxia":""
+        },
+
+        "observaciones":"NO APLICA"
+    },
+
+    "E": {
+        "no_aplica": false,
+
+        "antecedentes": {
+            "alergicos": false,
+            "clinicos": false,
+            "ginecologicos": false,
+            "traumatologicos": false,
+            "pediatricos": false,
+            "quirurgicos": false,
+            "farmacologicos": "true",
+            "habitos": false,
+            "familiares": false,
+            "otros": false
+        },
+
+        "descripcion_otros": "No aplica"
+    },
+
+    "F": {
+        "problema_actual": ""
+    },
+
+    "G": {
+            "sin_cons_vitales": "",
+            "presion_arterial": "",
+            "pulso": "",
+            "frecuencia_respitaroria": "",
+            "pulsioximetria": "",
+            "perimetro_cefalico": "",
+            "peso": "",
+            "talla": "",
+            "glicemia_capilar": "",
+
+        "glasgow": {
+            "ocular": "",
+            "verbal": "",
+            "motora": "",
+            "reacc_pupila_dere": "",
+            "reacc_pupila_izq": "",
+            "llenado_capilar": ""
+        }
+    },
+
+    "H": {
+        "examen_fisico":{
+            "piel_faneras": true,
+            "cabeza": false,
+            "ojos": false,
+            "oidos": false,
+            "nariz": false,
+            "boca": false,
+            "oro_faringe": false,
+            "cuello": false,
+            "axilas_mamas": false,
+            "torax": false,
+            "abdomen": false,
+            "columna": false,
+            "ingle_perine": false,
+            "miembros_superiores": false,
+            "miembros_inferiores": true
+        },
+
+        "descripcion_examen": "Examen General"
+    },
+
+    "I": {
+        "examen_trauma_critico":"Los resultados"
+    },
+
+    "J": {
+        "no_aplica": true,
+
+        "embarazo":{
+            "numero_gestas":"",
+            "numero_partos":"",
+            "numero_abortos":"",
+            "numero_cesareas":"",
+            "fum":"",
+            "semanas_gestacion":"",
+            "movimiento_fetal":"",
+            "frec_cardiaca_fetal":"",
+            "ruptura_membranas":"",
+            "tiempo":"",
+            "afu": "",
+            "presentacion":"",
+            "dilatacion":"",
+            "borramiento":"",
+            "plano":"",
+            "pelvis_viable": "",
+            "sangrado_vaginal":"",
+            "contracciones":"",
+            "score_mama":""
+        },
+
+        "descripcion_parto": "Bien"
+    },
+
+     "K": {
+        "no_aplica": false,
+
+        "examen_complementario":{
+            "biometria": true,
+            "uroanalisis": false,
+            "quimica_sanguinea": false,
+            "electrolitos": false,
+            "gasometria": false,
+            "electro_cardiograma": false,
+            "endoscopia": false,
+            "rx_torax": false,
+            "rx_abdomen": false,
+            "rx_osea": false,
+            "ecografia_abdomen": false,
+            "ecografia_pelvica": false,
+            "tomografia": false,
+            "resonancia": false,
+            "interconsulta": false,
+            "otros": false
+        },
+
+        "observaciones": "Bien"
+    },
+
+    "L": {
+      "diagnosticos_presuntivos": [
+        {
+            "descripcion": "Hemorragia subdural", "cie": "I62.0"
+        },
+        {
+            "descripcion": "", "cie": ""
+        },
+        {
+            "descripcion": "", "cie": ""
+        }],
+
+        "diagnosticos_definitivos": [
+        {
+            "descripcion": "Hemorragia subdural", "cie": "I62.0"
+        },
+        {
+            "descripcion": "", "cie": ""
+        },
+        {
+            "descripcion": "", "cie": ""
+        }]
+    },
+
+     "N": {
+            "plan_tratamiento": "Amoxicilina"
+        },
+
+     "O": {
+        "vivo": true,
+        "estable": false,
+        "inestable": false,
+        "fallecido": false,
+        "alta_definitiva": false,
+        "consulta_externa": false,
+        "observacion_emergencia": false,
+        "hospitalizacion": true,
+        "referencia": false,
+        "referencia_inversa": false,
+        "derivacion": false,
+        "establecimiento": false,
+
+        "observaciones": "Traslado",
+        "dias_reposo": "8"
+     },
+     
+     "P": {
+        "fecha": "25/07/2025",
+        "hora": "13:30",
+        "nombres": " JOSE PABLO",
+        "primer_apellido_med": "LOPEZ",
+        "segundo_apellido_med": "GONZALEZ",
+        "numero_identificacion_med": "0987456321",
+        "firma_med": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUIatSyUxtsXYV7vX2bCYy7i2kIIQWhH3_eQ&s",
+        "sello_med": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUIatSyUxtsXYV7vX2bCYy7i2kIIQWhH3_eQ&s"
+     }
+}

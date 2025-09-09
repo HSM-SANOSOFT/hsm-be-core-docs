@@ -1,0 +1,452 @@
+<html>
+    <head>
+      <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+        }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: white;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: left;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+	  .td2 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+		background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__admision
+      .document__admision__a,
+      .document__admision__b,
+      .document__admision__c,
+      .document__admision__d{
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+</style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class='document__lab__inf_anverso'></div>
+	<div style="width:100%">
+	    <table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="5" style="text-align: left;font-size: 10px" bgcolor="ccccff">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+	            </tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr>
+	    			<th bgcolor="CCFFCC">INSTITUCIÓN DEL SISTEMA</th>
+	    			<th bgcolor="CCFFCC">ESTABLECIMIENTO DE SALUD</th>
+	    			<th bgcolor="CCFFCC">UNICÓDIGO</th>
+	    			<th bgcolor="CCFFCC">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+	    			<th bgcolor="CCFFCC">NÚMERO DE ARCHIVO</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 9px">CLINICA SANTAMARIA</td>
+	    			<td>CLINICA SANTAMARIA</td>
+	    			<td>25410</td>
+	    			<td></td>
+	    			<td></td>
+	    		</tr>
+	    	</tbody>
+
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+	    <table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="2" style="text-align: left;font-size: 10px" bgcolor="ccccff">B. REGISTRO DE ADMISIÓN</th>
+	            </tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr>
+	    			<th bgcolor="CCFFCC">FECHA DE ADMISIÓN</th>
+	    			<th bgcolor="CCFFCC">NOMBRE Y APELLIDO DEL ADMISIONISTA</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 9px"><?php echo($archivo[1]['FECHA_INGRESO'][0])?></td>
+	    			<td><?php echo($archivo[1]['ADMITIDA'][0])?></td>
+	    		</tr>
+	    	</tbody>
+
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+	    <table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="8" style="text-align: left;font-size: 10px" bgcolor="ccccff">C. DATOS PERSONALES DEL USUARIO</th>
+	            </tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr>
+	    			<th bgcolor="CCFFCC">PRIMER APELLIDO</th>
+	    			<th bgcolor="CCFFCC">SEGUNDO APELLIDO</th>
+	    			<th bgcolor="CCFFCC">PRIMER NOMBRE</th>
+	    			<th bgcolor="CCFFCC">SEGUNDO NOMBRE</th>
+	    			<th colspan="4" bgcolor="CCFFCC">TIPO DE IDENTIFICACION</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 9px"><?php echo($archivo[1]['APELLIDO_PATERNO'][0])?></td>
+	    			<td><?php echo($archivo[1]['APELLIDO_MATERNO'][0])?></td>
+	    			<td><?php echo($archivo[1]['PRIMER_NOMBRE'][0])?></td>
+	    			<td><?php echo($archivo[1]['SEGUNDO_NOMBRE'][0])?></td>
+	    			<td colspan="4"><?php echo($archivo[1]['CEDULA'][0])?></td>
+	    		</tr>
+	    		<tr>
+	    			<th bgcolor="CCFFCC">ESTADO CIVIL</th>
+	    			<th bgcolor="CCFFCC">SEXO</th>
+	    			<th bgcolor="CCFFCC">N° TELÉFONO</th>
+	    			<th bgcolor="CCFFCC">N° TELÉFONO CELULAR</th>
+	    			<th colspan="4" bgcolor="CCFFCC">CORREO ELECTRÓNICO</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 9px"><?php echo($archivo[1]['ESTADO_CIVIL'][0])?></td>
+	    			<td><?php echo($archivo[1]['SEXO'][0])?></td>
+	    			<td><?php echo($archivo[1]['TELEFONO'][0])?></td>
+	    			<td></td>
+	    			<td colspan="4"><?php echo($archivo[1]['EMAIL'][0])?></td>
+	    		</tr>
+	    		<tr>
+	    			<th rowspan="2" bgcolor="CCFFCC">FECHA NACIMIENTO</th>
+	    			<th rowspan="2" bgcolor="CCFFCC">LUGAR DE NACIMIENTO</th>
+	    			<th rowspan="2" bgcolor="CCFFCC">NACIONALIDAD</th>
+	    			<th rowspan="2" bgcolor="CCFFCC">EDAD</th>
+	    			<th colspan="4" bgcolor="CCFFCC">CONDICION DE EDAD</th>
+	    		</tr>
+	    		<tr>
+	    			<th>H</th>
+	    			<th>D</th>
+	    			<th>M</th>
+	    			<th>A</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 9px" ><?php echo($archivo[1]['FECHA_NACIMIENTO'][0])?></td>
+	    			<td><?php echo($archivo[1]['LUGAR_NACIMIENTO'][0])?></td>
+	    			<td><?php echo($archivo[1]['NACIONALIDAD'][0])?></td>
+	    			<td><?php echo($archivo[1]['EDAD'][0])?></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    		</tr>
+	    		<tr>
+	    			<td rowspan="4" bgcolor="CCFFCC">RESIDENCIA HABITUAL</td>
+	    			<th bgcolor="CCFFCC">PROVINCIA</th>
+	    			<th bgcolor="CCFFCC">CANTÓN</th>
+	    			<th bgcolor="CCFFCC">PARROQUIA</th>
+	    			<th colspan="4" bgcolor="CCFFCC">BARRIO O SECTOR</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 9px" ><?php echo($archivo[1]['PROVINCIA'][0])?></td>
+	    			<td><?php echo($archivo[1]['CANTON'][0])?></td>
+	    			<td><?php echo($archivo[1]['PARROQUIA'][0])?></td>
+	    			<td colspan="4"><?php echo($archivo[1]['BARRIO'][0])?></td>
+	    		</tr>
+	    		<tr>
+	    			<th colspan="2" bgcolor="CCFFCC">CALLE PRINCIPAL</th>
+	    			<th bgcolor="CCFFCC">CALLE SECUNDARIA</th>
+	    			<th colspan="4" bgcolor="CCFFCC">REFERENCIA</th>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="2" style="height: 9px" ><?php echo($archivo[1]['DIRECCION_DOMICILIO'][0])?></td>
+	    			<td></td>
+	    			<td colspan="4"></td>
+	    		</tr>
+	    		<tr>
+	    			<th colspan="2" bgcolor="CCFFCC">AUTOIDENTIFICACIÓN ÉTNICA</th>
+	    			<th bgcolor="CCFFCC"> NACIONALIDAD</th>
+	    			<th bgcolor="CCFFCC"> PUEBLOS</th>
+	    			<th colspan="4" bgcolor="CCFFCC">NIVEL DE EDUCACIÓN</th>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="2" style="height: 9px" ><?php echo($archivo[1]['GRUPO_CULTURAL'][0])?></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td colspan="4"><?php echo($archivo[1]['INSTRUCCION'][0])?></td>
+	    		</tr>
+	    		<tr>
+	    			<th bgcolor="CCFFCC">ESTADO DE EDUCACIÓN</th>
+	    			<th bgcolor="CCFFCC">OCUPACIÓN / PROFESIÓN</th>
+	    			<th bgcolor="CCFFCC">EMPRESA DE TRABAJO</th>
+	    			<th bgcolor="CCFFCC">SEGURO SALUD</th>
+	    			<th colspan="4" bgcolor="CCFFCC">TIPO DE BONO</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 9px" ></td>
+	    			<td></td>
+	    			<td><?php echo($archivo[1]['EMPRESA_TRABAJO'][0])?></td>
+	    			<td></td>
+	    			<td colspan="4"></td>
+	    		</tr>
+
+	    	</tbody>
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="4" style="text-align: left;font-size: 10px" bgcolor="ccccff">D. DATOS DE CONTACTO</th>
+	            </tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr>
+	    			<th bgcolor="CCFFCC">EN CASO NECESARIO LLAMAR A:</th>
+	    			<th bgcolor="CCFFCC">PARENTESCO</th>
+	    			<th bgcolor="CCFFCC" style="width: 250px">DIRECCIÓN </th>
+	    			<th bgcolor="CCFFCC">N° TELÉFONO</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 9px"></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    		</tr>
+	    	</tbody>
+
+	    </table>
+	</div>
+
+	<div style="width:100%;padding-top: 3px">
+		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
+	    	<thead>
+	    		<tr>
+	              <th colspan="7" style="text-align: left;font-size: 10px" bgcolor="ccccff">E. REGISTRO DE CAMBIOS</th>
+	            </tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr>
+	    			<th rowspan="6" bgcolor="CCFFCC">1.</th>
+	    			<th bgcolor="CCFFCC">FECHA DE REGISTRO</th>
+	    			<th bgcolor="CCFFCC">ESTADO CIVIL</th>
+	    			<th bgcolor="CCFFCC">NIVEL EDUCACION</th>
+	    			<th bgcolor="CCFFCC">EMPRESA</th>
+	    			<th bgcolor="CCFFCC">OCUPACION</th>
+	    			<th bgcolor="CCFFCC">SEGURO</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 8px"></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    		</tr>
+	    		<tr>
+	    			<th rowspan="4">RESIDENCIA HABITUAL</th>
+	    			<th bgcolor="CCFFCC">PROVINCIA</th>
+	    			<th bgcolor="CCFFCC">CANTON</th>
+	    			<th bgcolor="CCFFCC">PARROQUIA</th>
+	    			<th bgcolor="CCFFCC">BARRIO </th>
+	    			<th bgcolor="CCFFCC">N° TELEFONO</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 8px"></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    		</tr>
+	    		<tr>
+	    			<th colspan="2" bgcolor="CCFFCC">CALLE PRINCIPAL</th>
+	    			<th colspan="2" bgcolor="CCFFCC">CALLE SECUNDARIA</th>
+	    			<th bgcolor="CCFFCC">REFERENCIA</th>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="2" style="height: 8px"></td>
+	    			<td colspan="2"></td>
+	    			<td></td>
+	    		</tr>
+
+	    		<tr>
+	    			<th rowspan="6" bgcolor="CCFFCC">2.</th>
+	    			<th bgcolor="CCFFCC">FECHA DE REGISTRO</th>
+	    			<th bgcolor="CCFFCC">ESTADO CIVIL</th>
+	    			<th bgcolor="CCFFCC">NIVEL EDUCACION</th>
+	    			<th bgcolor="CCFFCC">EMPRESA</th>
+	    			<th bgcolor="CCFFCC">OCUPACION</th>
+	    			<th bgcolor="CCFFCC">SEGURO</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 8px"></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    		</tr>
+	    		<tr>
+	    			<th rowspan="4">RESIDENCIA HABITUAL</th>
+	    			<th bgcolor="CCFFCC">PROVINCIA</th>
+	    			<th bgcolor="CCFFCC">CANTON</th>
+	    			<th bgcolor="CCFFCC">PARROQUIA</th>
+	    			<th bgcolor="CCFFCC">BARRIO </th>
+	    			<th bgcolor="CCFFCC">N° TELEFONO</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 8px"></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    		</tr>
+	    		<tr>
+	    			<th colspan="2" bgcolor="CCFFCC">CALLE PRINCIPAL</th>
+	    			<th colspan="2" bgcolor="CCFFCC">CALLE SECUNDARIA</th>
+	    			<th bgcolor="CCFFCC">REFERENCIA</th>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="2" style="height: 8px"></td>
+	    			<td colspan="2"></td>
+	    			<td></td>
+	    		</tr>
+
+	    		<tr>
+	    			<th rowspan="6" bgcolor="CCFFCC">3.</th>
+	    			<th bgcolor="CCFFCC">FECHA DE REGISTRO</th>
+	    			<th bgcolor="CCFFCC">ESTADO CIVIL</th>
+	    			<th bgcolor="CCFFCC">NIVEL EDUCACION</th>
+	    			<th bgcolor="CCFFCC">EMPRESA</th>
+	    			<th bgcolor="CCFFCC">OCUPACION</th>
+	    			<th bgcolor="CCFFCC">SEGURO</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 8px"></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    		</tr>
+	    		<tr>
+	    			<th rowspan="4">RESIDENCIA HABITUAL</th>
+	    			<th bgcolor="CCFFCC">PROVINCIA</th>
+	    			<th bgcolor="CCFFCC">CANTON</th>
+	    			<th bgcolor="CCFFCC">PARROQUIA</th>
+	    			<th bgcolor="CCFFCC">BARRIO </th>
+	    			<th bgcolor="CCFFCC">N° TELEFONO</th>
+	    		</tr>
+	    		<tr>
+	    			<td style="height: 8px"></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    		</tr>
+	    		<tr>
+	    			<th colspan="2" bgcolor="CCFFCC">CALLE PRINCIPAL</th>
+	    			<th colspan="2" bgcolor="CCFFCC">CALLE SECUNDARIA</th>
+	    			<th bgcolor="CCFFCC">REFERENCIA</th>
+	    		</tr>
+	    		<tr>
+	    			<td colspan="2" style="height: 8px"></td>
+	    			<td colspan="2"></td>
+	    			<td></td>
+	    		</tr>
+
+	    	</tbody>
+
+	    </table>
+	</div>
+</body>
+</html>

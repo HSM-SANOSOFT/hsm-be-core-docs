@@ -1,0 +1,148 @@
+{
+    "A": {
+        "institucion_sistema": "CLINICA SANTAMARIA",
+        "unicodigo": 25410,
+        "establecimiento_salud": "CLINICA SANTAMARIA",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "104242",
+        "primer_apellido": "LOPEZ",
+        "segundo_apellido": "GARCIA",
+        "primer_nombre": "JOSE",
+        "segundo_nombre": "PABLO",
+        "sexo": "M",
+        "fecha_nacimiento": "20/04/1990",
+        "edad": "30",
+        "condicion_edad": {
+           "h": false,
+           "d": false,
+           "m": false,
+           "a": true
+        }
+    },
+
+    "B": {
+        "servicio": {
+            "emergencia": true,
+            "consulta_externa":true,
+            "hospitalizacion":true
+        },
+        
+        "especialidad": "string",
+        
+        "prioridad": {
+            "urgente":true,
+            "rutina":true
+        },
+
+        "hora_toma": "string",
+        "fecha_toma": "string"
+    },
+
+    "C": {
+        "histopatologia": true,
+        "citologia": true,
+        "rev_laminillas": true,
+        "transoperatorio": true,
+        "otros_estudios": true,
+
+        "descripcion": "string"
+    },
+
+    "D": {
+        "cuadro_clinico": "string",
+        "resultado_laboratorio": "string",
+        "datos_imagen": "string",
+        "tratamiento": "string",
+        "obtencion_muestra": "string"
+    },
+
+    "E": {
+        "diagnosticos": [{
+            "descripcion": "CALCULO DE LA VESICULA BILIAR CON COLECISTITIS AGUDA",
+            "cie": "K80.0",
+            "pre": true,
+            "def": true
+        },
+        {
+            "descripcion": "CALCULO",
+            "cie": "K80.0",
+            "pre": true,
+            "def": true
+        },
+        {
+            "descripcion": "CALCULO",
+            "cie": "K80.0",
+            "pre": true,
+            "def": true
+        },
+        {
+            "descripcion": "CALCULO",
+            "cie": "K80.0",
+            "pre": true,
+            "def": true
+        }]
+    },
+
+    "F": {
+        "muestra_pieza": "string"
+    },
+
+    "G": {
+        "material": {
+            "endocervix": true,
+            "exocervix": true,
+            "pared_vaginal": true,
+            "union_escamo": true,
+            "muñon_cervical": true
+        },
+        
+        "anticoncepcion": {
+            "otro_inyectable": true,
+            "diu": true,
+            "ligadura": true,
+            "barrera": true,
+            "implante": true,
+            "otro": "string"
+        },
+
+        "edad": {
+            "menarquia": "string",
+            "menopausia": "string",
+            "inicio_vida_sexual": "string"
+        },
+
+        "terapia_hormonal": true,
+
+        "paridad": {
+            "gestas": "string",
+            "partos": "string",
+            "abortos": "string",
+            "cesareas": "string"
+        },
+
+        "fechas": {
+            "fum": "string",
+            "ultimo_parto": "string",
+            "ultima_citologia": "string"
+        },
+
+        "descripcion_macroscopica": "string",
+        "dx_ultima_citologia": "string"
+    },
+
+    "H": {
+        "biologia_molecular": "Paciente"
+    },
+
+    "I":{
+        "fecha": "24/04/2024",
+        "hora": "10:50",
+        "primer_nombre": "JOSE JOSE",
+        "primer_apellido": "GOMEZ",
+        "segundo_apellido": "GONZALEZ",
+        "numero_identificacion": "0987456321",
+        "firma_resp": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjbjSefMfrJKUO0ydDVjkZpZyAwQBLk5b2_g&s",
+        "sello_resp": "https://usercontent.one/wp/www.pronacera.com/wp-content/uploads/2022/11/Antonio-Firma-con-sello-Vectorizada-web_Mesa-de-trabajo-1.png?media=1725375620"
+    }
+
+}

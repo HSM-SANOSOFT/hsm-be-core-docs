@@ -1,0 +1,1571 @@
+<html>
+    <head>
+      <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+        }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: #ccccff;
+        text-align: center;
+      }
+      .th4 {
+        background-color: #ccffff;
+        text-align: left;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: left;
+      }
+      .th6 {
+        text-align: left;
+        font-size: 9px;
+        background-color:#80808091;
+      }
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+      .td2 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+        background-color: #ccffcc;
+      }
+
+      .td3 {
+        text-align: center;
+        /*width: max-content;*/
+        white-space: nowrap;
+        background-color: #ccffff;
+      }
+      .td4 {
+        text-align: right;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+    .document__lab__sol_anverso,
+    .document__lab__sol_anverso__a,
+    .document__lab__sol_anverso__b,
+    .document__lab__sol_anverso__c,
+    .document__lab__sol_anverso__d,
+    .document__lab__sol_reverso,
+    .document__lab__sol_reverso__a,
+    .document__lab__sol_reverso__b,
+    .document__lab__sol_reverso__c{
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+    }
+    </style>
+</head>
+    <body>
+        <header></header>
+        <main>
+    <div class='document__lab__sol_anverso'> 
+        <div class='document__lab__sol_anverso__a'>
+            {{#with A_anv}}
+            <table>
+    		<tr>
+                <th class='th1' colspan="11">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+            </tr>
+            <tr >
+            	<th class='th2' colspan="2">INSTITUCION DEL SISTEMA</th>
+            	<th class='th2'>UNICÓDIGO</th>
+            	<th class='th2' colspan="2">ESTABLECIMIENTO DE SALUD</th>
+            	<th class='th2' colspan="2">NUMERO DE HISTORIA CLÍNICA</th>
+            	<th class='th2' colspan="4">NUMERO DE ARCHIVO</th>
+            </tr>
+            <tr>
+            	<td colspan="2">{{institucion_sistema}}</td>
+            	<td>{{unicodigo}}</td>
+            	<td colspan="2">{{establecimiento_salud}}</td>
+            	<td colspan="2">{{numero_historia_clinica}}</td>
+            	<td colspan="4">{{numero_archivo}}</td>
+            </tr>
+            <tr>
+            	<th class='th2' rowspan="2">PRIMER APELLIDO</th>
+            	<th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
+            	<th class='th2' rowspan="2">PRIMER NOMBRE</th>
+            	<th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
+            	<th class='th2' rowspan="2">SEXO</th>
+            	<th class='th2' rowspan="2">FECHA NACIMIENTO</th>
+            	<th class='th2' rowspan="2">EDAD</th>
+            	<th class='th2' colspan="4">CONDICION EDAD</th>
+            </tr>
+            <tr>
+            	<th class='th2'>M</th>
+            	<th class='th2'>D</th>
+            	<th class='th2'>M</th>
+            	<th class='th2'>A</th>
+            </tr>
+            <tr>
+            	<td>{{primer_apellido}}</td>
+            	<td>{{segundo_apellido}}</td>
+            	<td>{{primer_nombre}}</td>
+            	<td>{{segundo_nombre}}</td>
+            	<td>{{sexo}}</td>
+            	<td>{{fecha_nacimiento}}</td>
+            	<td>{{edad}}</td>
+            	<td>{{#if condicion_edad.m1}}X{{/if}}</td>
+            	<td>{{#if condicion_edad.d}}X{{/if}}</td>
+            	<td>{{#if condicion_edad.m2}}X{{/if}}</td>
+            	<td>{{#if condicion_edad.a}}X{{/if}}</td>
+            </tr>
+        </table>
+        {{/with}}
+</div>
+        <div class='document__lab__sol_anverso__b'>
+            {{#with B_anv}}
+	        <table>
+            <tr>
+                <th class='th1' colspan="10">B. SERVICIO Y PRIORIDAD DE ATENCIÓN</th>
+            </tr>
+            <tr>
+                <th class='th2' colspan="2">DIAGNÓSTICO</th>
+                <th class='th2'>CIE</th>
+                <th class='th2' rowspan="3">SERVICIO</th>
+                <td class='td2'>EMERGENCIA</td>
+                <td>{{#if servicio.emergencia}}X{{/if}}</td>
+                <th class='th2'>ESPECIALIDAD</th>
+                <td>{{especialidad}}</td>
+                <th class='th2' colspan="2">PRIORIDAD</th>
+            </tr>
+            <tr>
+                <th class='th5'>1.</th>
+                <td class='td1' colspan="1">{{diagnosticos.[0].descripcion}}</td>
+                <td class='td1'>{{diagnosticos.[0].cie}}</td>
+                <td class='td2'>CONSULTA EXTERNA</td>
+                <td>{{#if servicio.consulta_externa}}X{{/if}}</label></td>
+                <th class='th2'>SALA</th>
+                <td>{{sala}}</td>
+                <td class='td2'>URGENTE</td>
+                <td>{{#if prioridad.urgente}}X{{/if}}</td>
+            </tr>
+            <tr>
+                <th class='th5'>2.</th>
+                <td class='td1' colspan="1">{{diagnosticos.[1].descripcion}}</td>
+                <td class='td1'>{{diagnosticos.[1].cie}}</td>
+                <td class='td2'>HOSPITALIZACIÓN</td>
+                <td>{{#if servicio.hospitalizacion}}X{{/if}}</td>
+                <th class='th2'>CAMA</th>
+                <td>{{cama}}</td>
+                <td class='td2'>RUTINA</td>
+                <td>{{#if prioridad.rutina}}X{{/if}}</td>
+            </tr>    	
+	</table>
+    {{/with}}
+</div>
+    <div class='document__lab__sol_anverso__c'>
+         {{#with C_anv}}
+	<table class="table2">
+		<tr>
+			<th class='th1' colspan="3">C. LISTADO DE EXÁMENES</th>
+		</tr>
+        <tr>
+            <!-- HEMATOLOGIA-->
+            <td>
+                <table class="table2">
+                    <tr>
+                        <th class='th3' colspan="4">HEMATOLOGIA </th>
+                    </tr>
+                    <tr>
+                        <th class='th4'>BIOMETRICA HEMÁTICA</th>
+                        <td>{{#if hematologia.biometria_hematica}}X{{/if}}</td>
+                        <th class='th4'>FRAGILIDAD OSMÓTICA ERITROCITARIA</th>
+                        <td>{{#if hematologia.fragilidad_osmotica}}X{{/if}}</td>
+                    </tr>
+                    <tr>
+                        <th class='th4'>HEMATOCRITO(HCTO)</th>
+                        <td>{{#if hematologia.hematocrito}}X{{/if}}</td>
+                        <th class='th4'>METABISULFITO</th>
+                        <td>{{#if hematologia.metabisulfito}}X{{/if}}</td>
+                    </tr>
+                    <tr>
+                        <th class='th4'>HEMOGLOBINA(HB)</th>
+                        <td>{{#if hematologia.hemoglobina}}X{{/if}}</td>
+                        <th class='th4'>HEMATOZOOARIO</th>
+                        <td>{{#if hematologia.hematozooario}}X{{/if}}</td>
+                    </tr>
+                    <tr>
+                        <th class='th4'>PLAQUETAS</th>
+                        <td>{{#if hematologia.plaquetas}}X{{/if}}</td>
+                        <th class='th4'>INVESTIGACIÓN DE LEISHMANIA</th>
+                        <td>{{#if hematologia.inv_leishmania}}X{{/if}}</td>
+                    </tr>
+                    <tr>
+                        <th class='th4'>RETICULOCITOS</th>
+                        <td>{{#if hematologia.reticulocitos}}X{{/if}}</td>
+                        <th class='th4'>EOSINÓFILO EN MOCO NASAL</th>
+                        <td>{{#if hematologia.eosinofilo_nasal}}X{{/if}}</td>
+                    </tr>
+                    <tr>
+                        <th class='th4'>VELOCIDAD DE ERITROSEDIMENTACIÓN</th>
+                        <td>{{#if hematologia.vel_eritrosedimentacion}}X{{/if}}</td>
+                        <th class='th4'>FROTIS SANGRE PERIFERICA</th>
+                        <td>{{#if hematologia.frotis_sangre_periferica}}X{{/if}}</td>
+                    </tr>
+                    <tr>
+                        <th class='th4'>HIERRO SERICO</th>
+                        <td>{{#if hematologia.hierro_serico}}X{{/if}}</td>
+                        <th class='th4'>ÁCIDO FÓLICO</th>
+                        <td>{{#if hematologia.acido_folico}}X{{/if}}</td>
+                    </tr>
+                    <tr>
+                        <th class='th4'>FIJACIÓN HIERRO</th>
+                        <td>{{#if hematologia.fijacion_hierro}}X{{/if}}</td>
+                        <th class='th4'>VITAMINA B12</th>
+                        <td>{{#if hematologia.vitamina_b12}}X{{/if}}</td>
+                    </tr>
+                    <tr>
+                        <th class='th4'>PORCENTAJE SATURACIÓN TRANSFERRINA</th>
+                        <td>{{#if hematologia.saturacion_transferrina}}X{{/if}}</td>
+                        <th class='th4'>FERRITINA</th>
+                        <td>{{#if hematologia.ferritina}}X{{/if}}</td>
+                    </tr>
+                    <tr>
+                        <th class='th4'>TRANSFERRINA</th>
+                        <td>{{#if hematologia.transferrina}}X{{/if}}</td>
+                        <th class='th4'>CONCENTRADO GLOBULOS</th>
+                        <td>{{#if hematologia.concentrado_globulos}}X{{/if}}</td>
+                    </tr>
+                        <!--<tr>
+                          <td style="text-align: left;height: 10px;" bgcolor="ccffff">FERRITINA</td>
+                          <th style="width: 10%;text-align: center;"  bgcolor="ffff99"><label style="font-size: 7px;color: red;font-weight: bold;text-align: center;"></th>
+                          <td style="text-align: left;height: 10px;" bgcolor="ccffff"></td>
+                          <th style="width: 10%"  bgcolor="ffff99"><label style="font-size: 7px;color: red;font-weight: bold;text-align: center;"></th>
+                        </tr>-->
+                    </table>
+                    <div style="height: 3px;"></div>
+                    <table  class="table2">
+                        <tr>
+                            <th class='th3' colspan="4">INMUNOLOGÍA/ INFECCIOSAS</th>
+                        </tr>
+                        <tr>
+                          <th class='th4'>COMPLEMENTO C3</th>
+                          <td>{{#if inmunologia.complemento_c3}}X{{/if}}</td>
+                          <th class='th4'>ANTIGENO SUPERFICIE HEPATITIS B(HBSAG)</td>
+                          <td>{{#if inmunologia.antigeno_hepatitisB}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>COMPLEMENTO C4</th>
+                          <td>{{#if inmunologia.complemento_c4}}X{{/if}}</td>
+                          <th class='th4'>ANTICUERPOS ANTICORE Ig-G(HCcAG)</th>
+                          <td>{{#if inmunologia.anticore_igG}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>IgA TOTAL</td>
+                          <td>{{#if inmunologia.igA_total}}X{{/if}}</td>
+                          <th class='th4'>ANTICUERPOS ANTICORE Ig-M(HBcAG)</th>
+                          <td>{{#if inmunologia.anticore_igM}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>IgE TOTAL</th>
+                          <td>{{#if inmunologia.igE_total}}X{{/if}}</td>
+                          <th class='th4'>HEPATITS C</th>
+                          <td>{{#if inmunologia.hepatitisC}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>IgG TOTAL</th>
+                          <td>{{#if inmunologia.igG_total}}X{{/if}}</td>
+                          <th class='th4'>VIH(1+2) CUALITATIVA</th>
+                          <td>{{#if inmunologia.vih_cuali}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>IgM TOTAL</th>
+                          <td>{{#if inmunologia.igM_total}}X{{/if}}</td>
+                          <th class='th4'>VIH(1+2) CUANTITATIVA</th>
+                          <td>{{#if inmunologia.vih_cuanti}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>PROCALCITONINA</th>
+                          <td>{{#if inmunologia.procalcitonina}}X{{/if}}</td>
+                          <th class='th4'>HERPES 1(igG)</th>
+                          <td>{{#if inmunologia.herpes1_igG}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>IL-6</th>
+                          <td>{{#if inmunologia.il6}}X{{/if}}</td>
+                          <th class='th4'>HERPES 1(IgM)</th>
+                          <td>{{#if inmunologia.herpes1_igM}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANA</th>
+                          <td>{{#if inmunologia.ana}}X{{/if}}</td>
+                          <th class='th4'>HERPES 2(IgG)</th>
+                          <td>{{#if inmunologia.herpes2_igG}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANCA-C</th>
+                          <td>{{#if inmunologia.anca_c}}X{{/if}}</td>
+                          <th class='th4'>HERPES 2(IgM)</th>
+                          <td>{{#if inmunologia.herpes2_igM}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANCA-P</th>
+                          <td>{{#if inmunologia.anca_p}}X{{/if}}</td>
+                          <th class='th4'>RUBEOLA(IgG)</th>
+                          <td>{{#if inmunologia.rubeola_igG}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANTI-DNA</th>
+                          <td>{{#if inmunologia.anti_dna}}X{{/if}}</td>
+                          <th class='th4'>RUBEOLA(IgM)</th>
+                          <td>{{#if inmunologia.rubeola_igM}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANTI-CCP</th>
+                          <td>{{#if inmunologia.anti_ccp}}X{{/if}}</td>
+                          <th class='th4'>TOXOPLASMA(IgG)</th>
+                          <td>{{#if inmunologia.toxoplasma_igG}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANTI-SM</th>
+                          <td>{{#if inmunologia.anti_sm}}X{{/if}}</td>
+                          <th class='th4'>TOXOPLASMA(IgM)</th>
+                          <td>{{#if inmunologia.toxoplasma_igM}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANTI-RO</th>
+                          <td>{{#if inmunologia.anti_ro}}X{{/if}}</td>
+                          <th class='th4'>CITOMEGALOVIRUS(IgG)</th>
+                          <td>{{#if inmunologia.citomegalovirus_igG}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANTI-LA</th>
+                          <td>{{#if inmunologia.anti_la}}X{{/if}}</td>
+                          <th class='th4'>CITOMEGALOVIRUS(IgM)</th>
+                          <td>{{#if inmunologia.citomegalovirus_igG}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANTI CARDIOLIPINA IgG</th>
+                          <td>{{#if inmunologia.cardiolipina_igG}}X{{/if}}</td>
+                          <th class='th4'>EPSTEIN BAR(IgG)</th>
+                          <td>{{#if inmunologia.epsteinBar_igG}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANTI CARDIOLIPINA IgM</th>
+                          <td>{{#if inmunologia.cardiolipina_igM}}X{{/if}}</td>
+                          <th class='th4'>EPSTEIN BAR(IgM)</th>
+                          <td>{{#if inmunologia.epsteinBar_igM}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANTIFOSFOLIPIDOS IgG</th>
+                          <td>{{#if inmunologia.antifosfolipidos_igG}}X{{/if}}</td>
+                          <th class='th4'>DENGUE(IgG)</th>
+                          <td>{{#if inmunologia.dengue_igG}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANTIFOSFOLIPIDOS IgM</th>
+                          <td>{{#if inmunologia.antifosfolipidos_igM}}X{{/if}}</td>
+                          <th class='th4'>DENGUE(IgM)</th>
+                          <td>{{#if inmunologia.dengue_igM}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>FACTOR REUMATOIDEO()IgM</th>
+                          <td>{{#if inmunologia.factor_reumatoideo}}X{{/if}}</td>
+                          <th class='th4'>CLAMIDIA(IgA)</th>
+                          <td>{{#if inmunologia.clamidia_igA}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>SFLT1(MARCADOR DE PREECLAMPSIA)</th>
+                          <td>{{#if inmunologia.sflt1}}X{{/if}}</td>
+                          <th class='th4'>CLAMIDIA(IgG)</th>
+                          <td>{{#if inmunologia.clamidia_igG}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>PIGF(MARCADOR DE PREECLAMPSIA)</th>
+                          <td>{{#if inmunologia.pigf}}X{{/if}}</td>
+                          <th class='th4'>FTA-ABS</th>
+                          <td>{{#if inmunologia.fta_abs}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANTICUERPOS ANTICORE Ig-G</th>
+                          <td>{{#if inmunologia.anticore_igG}}X{{/if}}</td>
+                          <th class='th4'>HEPATITIS A TOTAL</th>
+                          <td>{{#if inmunologia.hepatitisA_total}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>HEPATITIS A(IgM)</th>
+                          <td>{{#if inmunologia.hepatitisA}}X{{/if}}</td>
+                          <th class='th4'>COVID/SARS</th>
+                          <td>{{#if inmunologia.covid}}X{{/if}}</td>
+                        </tr>
+                        <!--<tr>
+                          <td style="text-align: left;height: 10px;" bgcolor="ccffff">HEPATITIS A TOTAL</td>
+                          <th style="width: 10%;text-align: center;"  bgcolor="ffff99"><label style="font-size: 7px;color: red;font-weight: bold;text-align: center;"></th>
+                          <td style="text-align: left;height: 10px;" bgcolor="ccffff"></td>
+                          <th style="width: 10%"  bgcolor="ffff99"><label style="font-size: 7px;color: red;font-weight: bold;text-align: center;"></th>
+                        </tr>-->
+                    </table>
+                    <div style="height: 3px"></div>
+                    <table class="table2">
+                        <tr>
+                            <th class='th3' colspan="4">MARCADORES CARDIACOS/VASCULARES </th>
+                        </tr>
+                        <tr>
+                          <th class='th4'>CPK TOTAL</th>
+                          <td>{{#if vasculares.cpk_total}}X{{/if}}</td>
+                          <th class='th4'>TROPONINA T</th>
+                          <td>{{#if vasculares.troponina_I}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>CK-MB</th>
+                          <td>{{#if vasculares.ck_mb}}X{{/if}}</td>
+                          <th class='th4'>NT.proBNP</th>
+                          <td>{{#if vasculares.NTproBNP}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>CPK-NAC</th>
+                          <td>{{#if vasculares.cpk_nac}}X{{/if}}</td>
+                          <th class='th4'>MIOGLOBINA</th>
+                          <td>{{#if vasculares.mioglobina}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>TROPONINA I</th>
+                          <td>{{#if vasculares.troponina_T}}X{{/if}}</td>
+                          <th class='th4'></td>
+                          <td></td>
+                        </tr>
+                    </table>
+                    <div style="height: 3px"></div>
+                    <table class="table2">
+                        <tr>
+                            <th class='th3' colspan="4">HORMONAS</th>
+                        </tr>
+                        <tr>
+                          <th class='th4'>T3</th>
+                          <td>{{#if hormonas.t3}}X{{/if}}</td>
+                          <th class='th4'>PROGESTERONA</th>
+                          <td>{{#if hormonas.progesterona}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>FT3</th>
+                          <td>{{#if hormonas.ft3}}X{{/if}}</td>
+                          <th class='th4'>INSULINA</th>
+                          <td>{{#if hormonas.insulina}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>T4</th>
+                          <td>{{#if hormonas.t4}}X{{/if}}</td>
+                          <th class='th4'>ACTH</th>
+                          <td>{{#if hormonas.acth}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>FT4</th>
+                          <td>{{#if hormonas.ft4}}X{{/if}}</td>
+                          <th class='th4'>PROLACTINA</td>
+                          <td>{{#if hormonas.prolactina}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>TSH</th>
+                          <td>{{#if hormonas.tsh}}X{{/if}}</td>
+                          <th class='th4'>VITAMINA D</th>
+                          <td>{{#if hormonas.vitaminaD}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>PTH</th>
+                          <td>{{#if hormonas.pth}}X{{/if}}</td>
+                          <th class='th4'>ESTRADIOL(E2)</th>
+                          <td>{{#if hormonas.estradiol}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>FSH</th>
+                          <td>{{#if hormonas.fsh}}X{{/if}}</td>
+                          <th class='th4'>LH</th>
+                          <td>{{#if hormonas.lh}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ANDROSTENEDIONA</th>
+                          <td>{{#if hormonas.androstenediona}}X{{/if}}</td>
+                          <th class='th4'>TESTOSTERONA TOTAL</th>
+                          <td>{{#if hormonas.testosterona_total}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>FACTOR DE UNION DEL FACTOR DE CRECIMIENTO T1</th>
+                          <td>{{#if hormonas.factor_crecimientoT1}}X{{/if}}</td>
+                          <th class='th4'>TESTOSTERONA LIBRE</th>
+                          <td>{{#if hormonas.testosterona_libre}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>B-HCG CUALITATIVA</th>
+                          <td>{{#if hormonas.BHCG_cuali}}X{{/if}}</td>
+                          <th class='th4'>DHEA-S</th>
+                          <td>{{#if hormonas.dhea_s}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>B-HCG CUANTITATIVA</th>
+                          <td>{{#if hormonas.BHCG_cuanti}}X{{/if}}</td>
+                          <th class='th4'>HORMONA DE CRECIMIENTO</th>
+                          <td>{{#if hormonas.hormona_crecimiento}}X{{/if}}</td>
+                        </tr>
+                        <!--<tr>
+                          <td style="text-align: left;height: 10px;" bgcolor="ccffff">HORMONA DE CRECIMIENTO</td>
+                          <th style="width: 10%;text-align: center;"  bgcolor="ffff99"><label style="font-size: 7px;color: red;font-weight: bold;text-align: center;"></th>
+                          <td style="text-align: left;height: 10px;" bgcolor="ccffff"></td>
+                          <th style="width: 10%"  bgcolor="ffff99"><label style="font-size: 7px;color: red;font-weight: bold;text-align: center;"></th>
+                        </tr>-->
+                    </table>
+                    <div style="height: 3px"></div>
+                    <table>
+                        <tr>
+                            <th class='th3' colspan="4">BIOLOGÍA MOLECULAR Y GENÉTICA</th>
+                        </tr>
+                        <tr>
+                            <td class='td1' colspan="4">{{biologia_genetica}}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top">
+                    <!-- COAGULACIÓN Y HEMOSTAS-->
+                    <table class="table2">
+                        <tr>
+                            <th class='th3' colspan="2">COAGULACIÓN Y HEMOSTASIA</th>
+                        </tr>
+                        <tr>
+                            <th class='th4'>TIEMPO DE PROTROMBINA(TP)</th>
+                            <td>{{#if coagulacion.tiempo_protrombina}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>TIEMPO DE PROTROMBINA PARCIAL(TPP)</th>
+                            <td>{{#if coagulacion.tiempo_protrombina_parcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>TIEMPO DE TROMBINA(TT)</th>
+                            <td>{{#if coagulacion.tiempo_trombina}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>INR</th>
+                            <td>{{#if coagulacion.inr}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>FACTOR COAGULACIÓN VIII</th>
+                            <td>{{#if coagulacion.factor_coagulacion8}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class="th4">FACTOR COAGULACIÓN IX</th>
+                            <td>{{#if coagulacion.factor_coagulacion9}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class="th4">FACTOR VON WILLEBRAND</th>
+                            <td>{{#if coagulacion.factor_willebrand}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class="th4">FIBRINOGENO</th>
+                            <td>{{#if coagulacion.fibrinogeno}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class="th4">DIMERO-D</th>
+                            <td>{{#if coagulacion.dimero_d}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class="th4">IDENTIFICACION DE INHIBIDORES</th>
+                            <td>{{#if coagulacion.ident_inhibidores}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class="th4"></th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="th4"></th>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div style="height: 3px"></div>
+                        <table class="table2">
+                        <tr>
+                            <th class="th3" colspan="2">ORINA</th>
+                        </tr>
+                        <tr>
+                            <th class='th4'>ELEMENTAL Y MICROSCOPICO(EMO)</th>
+                            <td>{{#if orina.elem_microscopico}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>GRAM GOTA FRESCA</th>
+                            <td>{{#if orina.gram_gotaFresca}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>OSMOLARIDAD URINARIA</th>
+                            <td>{{#if orina.osmolaridad_urinaria}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>SODIO EN ORINA PARCIAL</th>
+                            <td>{{#if orina.sodio_orinaParcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>POTASIO EN ORINA PARCIAL</th>
+                            <td>{{#if orina.potasio_orinaParcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>CLORO EN ORINA PARCIAL</th>
+                            <td>{{#if orina.cloro_orinaParcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>CALCIO URINARIO</th>
+                            <td>{{#if orina.calcio_urinario}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>FOSFORO EN ORINA PARCIAL</th>
+                            <td>{{#if orina.fosforo_orinaParcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>MAGNESIO EN ORINA PARCIAL</th>
+                            <td>{{#if orina.magnesio_orinaParcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>GLUCOSA EN ORINA PARCIAL</th>
+                            <td>{{#if orina.glucosa_orinaParcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>UREA EN ORINA PARCIAL</th>
+                            <td>{{#if orina.urea_orinaParcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>CREATINA EN ORINA PARCIAL</th>
+                            <td>{{#if orina.creatina_orinaParcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>NITRÓGENO UREICO EN ORINA PARCIAL</th>
+                            <td>{{#if orina.nitrogeno_ureicoParcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>ÁCIDO URICO EN ORINA PARCIAL</th>
+                            <td>{{#if orina.acidoUrico_parcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>PROTEINAS EN ORINA PARCIAL</th>
+                            <td>{{#if orina.proteinas_parcial}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>FÓSFORO EN ORINA 24 HORAS</th>
+                            <td>{{#if orina.fosforo_24hrs}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>POTASIO EN ORINA 24 HORAS</th>
+                            <td>{{#if orina.potasio_24hrs}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>PROTEINAS EN ORINA 24 HORAS</th>
+                            <td>{{#if orina.proteinas_24hrs}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>DEPURACIÓN CREATININA 24 HORAS</th>
+                            <td>{{#if orina.depuracion_creatinina24hrs}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>ACIDO URICO EN ORINA 24 HORAS</th>
+                            <td>{{#if orina.acidoUrico_24hrs}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>CALCIO EN ORINA 24 HORAS</th>
+                            <td>{{#if orina.calcio_24hrs}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>AMILASA EN ORINA 24 HORAS</th>
+                            <td>{{#if orina.amilasa_24hrs}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>COBRE EN ORINA 24 HORAS</th>
+                            <td>{{#if orina.cobre_24hrs}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>AZUCARES REDUCTORES</th>
+                            <td>{{#if orina.azucares_reductores}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>DROGAS DE ABUSO EN ORINA</th>
+                            <td>{{#if orina.drogas_abuso}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>ALBINURIA</th>
+                            <td>{{#if orina.albinuria}}X{{/if}}</td>
+                        </tr>
+                    </table>
+                    <div style="height: 3px"></div>
+                        <table class="table2">
+                            <tr>
+                                <th class='th3' colspan="4">INMUNOSUPRESORES</th>
+                            </tr>
+                            <tr>
+                                <th class='th4'>CYCLOSPORINA</th>
+                                <td>{{#if inmunosupresores.cyclosporina}}X{{/if}}</td>
+                                <th class='th4'>EVEROLIMUS</th>
+                                <td>{{#if inmunosupresores.everolimus}}X{{/if}}</td>
+                            </tr>
+                            <tr>
+                                <th class='th4'>SIROLIMUS</th>
+                                <td>{{#if inmunosupresores.sirolimus}}X{{/if}}</td>
+                                <th class='th4'></th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th class='th4'>TACROLIMUS</th>
+                                <td>{{#if inmunosupresores.tacrolimus}}X{{/if}}</td>
+                                <td class='th4'></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <div style="height: 3px"></div>
+                        <table class="table2">
+                            <tr>
+                                <th class='th3' colspan="4">GASES Y ELECTROLITOS</th>
+                            </tr>
+                            <tr>
+                                <th class='th4'>Na</th>
+                                <td>{{#if gases_electrolitos.na}}X{{/if}}</td>
+                                <th class='th4'>Mh</th>
+                                <td>{{#if gases_electrolitos.mh}}X{{/if}}</td>
+                            </tr>
+                            <tr>
+                                <th class='th4'>K</th>
+                                <td>{{#if gases_electrolitos.k}}X{{/if}}</td>
+                                <th class='th4'>Li</th>
+                                <td>{{#if gases_electrolitos.li}}X{{/if}}</td>
+                            </tr>
+                            <tr>
+                                <th class='th4'>CL</th>
+                                <td>{{#if gases_electrolitos.cl}}X{{/if}}</td>
+                                <th class='th4'>GASOMETRIA ARTERIAL</th>
+                                <td>{{#if gases_electrolitos.gasometria_arterial}}X{{/if}}</td>
+                            </tr>
+                            <tr>
+                                <th class='th4'>Ca+</th>
+                                <td>{{#if gases_electrolitos.ca1}}X{{/if}}</td>
+                                <th class='th4'>GASOMETRIA VENOSA</th>
+                                <td>{{#if gases_electrolitos.gasometria_venosa}}X{{/if}}</td>
+                            </tr>
+                            <tr>
+                                <th class='th4'>Ca</th>
+                                <td>{{#if gases_electrolitos.ca2}}X{{/if}}</td>
+                                <th class='th4'>CALCIO TOTAL</th>
+                                <td>{{#if gases_electrolitos.calcio_total}}X{{/if}}</td>
+                            </tr>
+                            <tr>
+                                <th class='th4'>P</th>
+                                <td>{{#if gases_electrolitos.p}}X{{/if}}</td>
+                                <th class='th4'>FOSFORO</th>
+                                <td>{{#if gases_electrolitos.fosforo}}X{{/if}}</td>
+                            </tr>
+                        </table>
+                        <div style="height: 3px"></div>
+                        <table class="table2">
+                            <tr>
+                                <th class='th3' colspan="4">MEDICINA TRANSFUSIONAL</th>
+                            </tr>
+                            <tr>
+                                <th class='th4'>GRUPO Y FACTOR</th>
+                                <td>{{#if transfusional.grupo_factor}}X{{/if}}</td>
+                                <td class='th4'></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th class='th4'>COOMBS DIRECTO</th>
+                                <td>{{#if transfusional.coombs_directo}}X{{/if}}</td>
+                                <td class='th4'></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th class='th4'>COOMBS INDIRECTO</th>
+                                <td>{{#if transfusional.coombs_indirecto}}X{{/if}}</td>
+                                <td class='th4'></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                </td>
+                <td valign="top">
+                    <!--QUÍMICA SANGUINEA-->
+                    <table class="table2">
+                        <tr>
+                            <th class='th3' colspan="4">QUÍMICA SANGUINEA</th>
+                        </tr>
+                        <tr>
+                          <th class='th4'>GLUCOSA BASAL</th>
+                          <td>{{#if quimica_sang.glucosa_basal}}X{{/if}}</td>
+                          <th class='th4'>BILIRRUBINA DIRECTA</th>
+                          <td>{{#if quimica_sang.bilirrubina_directa}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>GLUCOSA POST PRANDIAL 2 HORAS</th>
+                          <td>{{#if quimica_sang.glucosa_2hrs}}X{{/if}}</td>
+                          <th class='th4'>BILIRRUBINA INDIRECTA</th>
+                          <td>{{#if quimica_sang.bilirrubina_indirecta}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>GLUCOSA AL AZAR</th>
+                          <td>{{#if quimica_sang.glucosa_azar}}X{{/if}}</td>
+                          <th class='th4'>COLESTEROL TOTAL</th>
+                          <td>{{#if quimica_sang.colesterol_total}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>SOBRECARGA GLUCOSA</th>
+                          <td>{{#if quimica_sang.sobrecarga_glucosa}}X{{/if}}</td>
+                          <th class='th4'>LIPOPROTEÍNA DE ALTA DENSIDAD(HDL)</th>
+                          <td>{{#if quimica_sang.hdl}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>TEST DE SULLIVAN</th>
+                          <td>{{#if quimica_sang.sullivan}}X{{/if}}</td>
+                          <th class='th4'>LIPOPROTEÍNA BAJA DENSIDAD(LDL)</th>
+                          <td>{{#if quimica_sang.ldl}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>UREA</th>
+                          <td>{{#if quimica_sang.urea}}X{{/if}}</td>
+                          <th class='th4'>LIPOPROTEÍNA DE MUY BAJA DENSIDAD(VLDL)</th>
+                          <td>{{#if quimica_sang.vldl}}X{{/if}}</th>
+                        </tr>
+                        <tr>
+                          <th class='th4'>CREATININA</th>
+                          <td>{{#if quimica_sang.creatinina}}X{{/if}}</td>
+                          <th class='th4'>TRIGLICERIDOS</th>
+                          <td>{{#if quimica_sang.trigliceridos}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ACIDO ÚRICO</th>
+                          <td>{{#if quimica_sang.acido_urico}}X{{/if}}</td>
+                          <th class='th4'>ALBUMINA</th>
+                          <td>{{#if quimica_sang.albumina}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>FOSFATASA ALCALINA</th>
+                          <td>{{#if quimica_sang.fosfatasa_alcalina}}X{{/if}}</td>
+                          <th class='th4'>PROTEÍNA TOTALES</th>
+                          <td>{{#if quimica_sang.proteina_totales}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>DESHIDROGENASA LACTICA(LDH)</th>
+                          <td>{{#if quimica_sang.ldh}}X{{/if}}</td>
+                          <th class='th4'>HEMOGLOBINA GLICOSILADA(HBA1C)</th>
+                          <td>{{#if quimica_sang.hba1c}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ASPARTATO AMINOTRANSFERASA(AST/TGO)</th>
+                          <td>{{#if quimica_sang.ast_tgo}}X{{/if}}</td>
+                          <th class='th4'>CPK TOTAL</th>
+                          <td>{{#if quimica_sang.cpk_total}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ALANINA AMINOTRANSFERASA(ALT/GP)</th>
+                          <td>{{#if quimica_sang.alt_gp}}X{{/if}}</td>
+                          <th class='th4'>FRUCTOSAMINA</th>
+                          <td>{{#if quimica_sang.fructosamina}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>GAMMA-GLUTARIL TRANSFERASA(GGT)</th>
+                          <td>{{#if quimica_sang.ggt}}X{{/if}}</td>
+                          <th class='th4'>PCR CUANTITATIVO</th>
+                          <td>{{#if quimica_sang.pcr_cuantitativo}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>AMILASA</th>
+                          <td>{{#if quimica_sang.amilasa}}X{{/if}}</th>
+                          <th class='th4'>AMONIO</th>
+                          <td>{{#if quimica_sang.amonio}}X{{/if}}</th>
+                        </tr>
+                        <tr>
+                          <th class='th4'>LIPASA</th>
+                          <td>{{#if quimica_sang.lipasa}}X{{/if}}</th>
+                          <th class='th4'></tdh>
+                          <td></th>
+                        </tr>
+                        <tr>
+                          <th class='th4'>BILIRRUBINA TOTAL</th>
+                          <td>{{#if quimica_sang.bilirrubina_total}}X{{/if}}</th>
+                          <td class='th4'></td>
+                          <td></th>
+                        </tr>
+                    </table>
+                    <div style="height: 3px"></div>
+                    <table class="table2">
+                        <tr>
+                            <th class='th3' colspan="4">HECES</th>
+                        </tr>
+                        <tr>
+                          <th class='th4'>COPROLÓGICO/ COPROPARASITARIO</th>
+                          <td>{{#if heces.coproparasitario}}X{{/if}}</td>
+                          <th class='th4'>CRIPTOSPORIDIUM</th>
+                          <td>{{#if heces.criptosporidium}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>COPROPARASITARIO POR CONCENTRACIÓN</th>
+                          <td>{{#if heces.coproparasitario_concentracion}}X{{/if}}</td>
+                          <th class='th4'>OXIUROS</th>
+                          <td>{{#if heces.oxiuros}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>COPRO SERIADO</th>
+                          <td>{{#if heces.copro_seriado}}X{{/if}}</td>
+                          <th class='th4'>GARDIA-LAMBLIA ANTÍGENO</th>
+                          <td>{{#if heces.gardia_antigeno}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>INVESTIGACION DE POLIMORFONUCLEARES(PMN)</th>
+                          <td>{{#if heces.pmn}}X{{/if}}</td>
+                          <th class='th4'>INVESTIGACION DE GRASAS</th>
+                          <td>{{#if heces.inv_grasas}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>SANGRE OCULTA</th>
+                          <td>{{#if heces.sangre_oculta}}X{{/if}}</td>
+                          <th class='th4'>AZÚCARES REDUCTORES</th>
+                          <td>{{#if heces.azucares_reductores}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>INVESTIGACION DE pH</th>
+                          <td>{{#if heces.investigacion_ph}}X{{/if}}</td>
+                          <th class='th4'>HELICOBACTER PYLORI</th>
+                          <td>{{#if heces.helicobacter_pylori}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ROTAVIRUS</th>
+                          <td>{{#if heces.rotavirus}}X{{/if}}</td>
+                          <th class='th4'>ADENOVIRIS</th>
+                          <td>{{#if heces.adenoviris}}X{{/if}}</td>
+                        </tr>
+                        <!--<tr>
+                          <th style="text-align: left;height: 10px;" bgcolor="ccffff">ADENOVIRIS</th>
+                          <th style="width: 10%;text-align: center;"  bgcolor="ffff99"><label style="font-size: 8px;color: red;font-weight: bold;text-align: center;"><?php echo($archivo2['380053']); ?></th>
+                          <th style="text-align: left;height: 10px;" bgcolor="ccffff"></th>
+                          <th style="width: 10%;text-align: center;"  bgcolor="ffff99"><label style="font-size: 8px;color: red;font-weight: bold;text-align: center;"></th>
+                        </tr>-->
+                    </table>
+                    <div style="height: 3px"></div>
+                    <table class="table2">
+                        <tr>
+                            <th class='th3' colspan="6">MARCADORES TUMORALES</th>
+                        </tr>
+                        <tr>
+                          <th class='th4'>CEA</th>
+                          <td>{{#if marcadores_tumorales.cea}}X{{/if}}</td>
+                          <th class='th4'>PSA LIBRE</th>
+                          <td>{{#if marcadores_tumorales.psa_libre}}X{{/if}}</td>
+                          <th class='th4'>H4A</th>
+                          <td>{{#if marcadores_tumorales.h4a}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>AFP</th>
+                          <td>{{#if marcadores_tumorales.afp}}X{{/if}}</td>
+                          <th class='th4'>PSA TOTAL</th>
+                          <td>{{#if marcadores_tumorales.psa_total}}X{{/if}}</td>
+                          <th class='th4'>B-HCG LIBRE</th>
+                          <td>{{#if marcadores_tumorales.bhcg_libre}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>CA 125 </th>
+                          <td>{{#if marcadores_tumorales.ca_125}}X{{/if}}</td>
+                          <th class='th4'>B2-MICROGLOBULINA</th>
+                          <td>{{#if marcadores_tumorales.microglobulina}}X{{/if}}</td>
+                          <th class='th4'>B-HCG CUANTITATIVA</th>
+                          <td>{{#if marcadores_tumorales.bhcg_cuanti}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>CA 15 3 </th>
+                          <td>{{#if marcadores_tumorales.ca_125}}X{{/if}}</td>
+                          <th class='th4'>ANTI-TPO</th>
+                          <td>{{#if marcadores_tumorales.anti_tpo}}X{{/if}}</td>
+                          <th class='th4'>PSA LIBRE Y TOTAL</th>
+                          <td>{{#if marcadores_tumorales.psa_libreT}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>CA 19 9 </th>
+                          <td>{{#if marcadores_tumorales.ca_19}}X{{/if}}</td>
+                          <th class='th4'>ANTI-TG</th>
+                          <td>{{#if marcadores_tumorales.anti_tg}}X{{/if}}</td>
+                          <th class='th4'></th>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>CA 72.4</th>
+                          <td>{{#if marcadores_tumorales.ca_72}}X{{/if}}</td>
+                          <th class='th4'>TIROGLOBULINA</th>
+                          <td>{{#if marcadores_tumorales.tiroglobulina}}X{{/if}}</td>
+                          <th class='th4'></th>
+                          <td></td>
+                        </tr>
+                    </table>
+                    <div style="height: 3px"></div>
+                    <table class="table2">
+                        <tr>
+                            <th class='th3' colspan="6">CITOQUÍMICOS Y BACTERIOLÓGICO DE LÍQUIDOS</th>
+                        </tr>
+                        <tr>
+                          <th class='th4'>CEFALORRAQUIDEO</th>
+                          <td>{{#if citoquimicos.cefalorraquideo}}X{{/if}}</td>
+                          <th class='th4'>PLEURAL</th>
+                          <td>{{#if citoquimicos.pleural}}X{{/if}}</td>
+                          <th class='th4'></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ARTICULAR / SINOVIAL</th>
+                          <td>{{#if citoquimicos.sinovial}}X{{/if}}</td>
+                          <th class='th4'>PERICÁRDICO</th>
+                          <td>{{#if citoquimicos.pericardico}}X{{/if}}</td>
+                          <th class='th4'></th>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th class='th4'>ASCÍTO / PERITONEAL</th>
+                          <td>{{#if citoquimicos.peritoneal}}X{{/if}}</td>
+                          <th class='th4'>LÍQUIDO AMNIÓTICO</th>
+                          <td>{{#if citoquimicos.liquido_amniotico}}X{{/if}}</td>
+                          <th class='th4'></th>
+                          <td></td>
+                        </tr>
+                    </table>
+                    <div style="height: 3px"></div>
+                    <table class="table2">
+                        <tr>
+                            <th class='th3' colspan="4">NIVELES DE FÁRMACOS TERAPÉUTICAS</th>
+                        </tr>
+                        <tr>
+                            <th class='th4'>ÁCIDO VALPROICO</th>
+                            <td>{{#if farmacos.acido_valproico}}X{{/if}}</td>
+                            <th class='th4'></th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>CARBAMAZEPINA</th>
+                            <td>{{#if farmacos.carbamazepina}}X{{/if}}</td>
+                            <th class='th4'>VANCOMICINA</th>
+                            <td>{{#if farmacos.vancomicina}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>FENOBARBITAL</th>
+                            <td>{{#if farmacos.fenobarbital}}X{{/if}}</td>
+                            <th class='th4'>AMIKACINA</th>
+                            <td>{{#if farmacos.amikacina}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>DIGOXINA</th>
+                            <td>{{#if farmacos.digoxina}}X{{/if}}</td>
+                            <th class='th4'>LITIO</th>
+                            <td>{{#if farmacos.litio}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>FENITOPINA SÓDICA</th>
+                            <td>{{#if farmacos.fenitopina_sodica}}X{{/if}}</td>
+                            <th class='th4'></th>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div style="height: 3px"></div>
+                    <table class="table2">
+                        <tr>
+                            <th class='th3' colspan="4">SEROLOGÍA</th>
+                        </tr>
+                        <tr>
+                            <th class='th4'>AGLUTINACIONES FEBRILES</th>
+                            <td>{{#if serologia.aglutina}}X{{/if}}</td>
+                            <th class='th4'>PCR SEMICUANTITATIVA</th>
+                            <td>{{#if serologia.pcr_semicuanti}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>ASTO</th>
+                            <td>{{#if serologia.asto}}X{{/if}}</td>
+                            <th class='th4'>MALARIA(PCR)</th>
+                            <td>{{#if serologia.malaria}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>FR-LÁTEX</th>
+                            <td>{{#if serologia.fr_latex}}X{{/if}}</td>
+                            <th class='th4'>SIFILIS(PCR)</th>
+                            <td>{{#if serologia.sifilis}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>DENGUE(PCR)</th>
+                            <td>{{#if serologia.dengue_pcr}}X{{/if}}</td>
+                            <th class='th4'>HELICOBACTER PYLORI</th>
+                            <td>{{#if serologia.helicobacter_pylori}}X{{/if}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>CHLAMYDIA(PCR)</th>
+                            <td>{{#if serologia.chlamydia_pcr}}X{{/if}}</td>
+                            <th class='th4'></th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>PEPSINÓGENO</th>
+                            <td>{{#if serologia.pepsinogeno}}X{{/if}}</td>
+                            <th class='th4'></th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class='th4'>VDRL</th>
+                            <td>{{#if serologia.vdrl}}X{{/if}}</td>
+                            <td class='th4'></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div style="height: 3px"></div>
+                    <table class="table2">
+                        <tr>
+                            <th class='th3' colspan="8">MICROBIOLOGIA</th>
+                        </tr>
+                        <tr>
+                            <th class='th4' colspan="1">MUESTRA:</th>
+                            <td colspan="7">{{microbiologia.muestra}}</td>
+                        </tr>
+                        <tr>
+                            <th class='th4' colspan="1">SITIO ANATÓMICO</th>
+                            <td colspan="7"></td>
+                        </tr>
+                        <tr>
+                            <th colspan="1">CULTIVO Y ANTIOGRAMA</th>
+                            <td colspan="1"></td>
+                            <th colspan="1">CRISTALOGRAFIA</th>
+                            <td colspan="1"></td>
+                            <th colspan="1">GRAM</th>
+                            <td colspan="1"></td>
+                            <th colspan="1">FRESCO</th>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr>
+                            <th colspan="1">ESTUDIO MICOLÓGICO DE:</th>
+                            <td colspan="7"></td>
+                        </tr>
+                        <tr>
+                            <th colspan="1">CULTIVO MICÓTICO DE:</th>
+                            <td colspan="7"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+	</table>
+    {{/with}}
+</div>
+
+<div class='document__lab__sol_anverso__d'>
+  {{#with D_anv}}
+	<table class="table2">
+    		<tr>
+          <th class='th4' colspan="4">D. DATOS DEL PROFESIONAL RESPONSABLE</th>
+        </tr>
+        <tr>
+            <th class='th4'>FECHA GENERACIÓN PEDIDO</th>
+            <th class='th4'>HORA GENERACIÓN PEDIDO</th>
+            <th class='th4'>NOMBRES Y APELLIDOS</th>
+            <th rowspan="6" style="text-align: left;width: 30%" ></th>
+        </tr>
+        <tr>
+            <td style="height: 10px"><?php echo($archivo[1]['FECHA_DE_PETICION'][0])?> </td>
+            <td style="height: 10px"><?php echo($archivo[1]['HORA'][0])?></td>
+            <td style="height: 10px"><?php echo($archivo[1]['MEDICO'][0])?></td>
+        </tr>
+        <tr>
+            <th colspan="2" style="width: 30%;height: 10px;text-align: left" bgcolor="ccffff">NÚMERO DOCUMENTO DE IDENTIFICACION</th>
+            <th  style="width: 30%;height: 10px;text-align: left" bgcolor="ccffff">FIRMA Y SELLO</th>
+        </tr>
+        <tr>
+            <td colspan="2" style="height: 10px"><?php echo($archivo[1]['CEDULA'][0])?></td>
+            <td style="height: 10px"></td>
+        </tr>
+        <tr>
+            <th style="text-align: left;width: 15%" bgcolor="ccffff">FECHA TOMA MUESTRA</th>
+            <th style="text-align: left;width: 15%" bgcolor="ccffff">HORA TOMA MUESTRA</th>
+            <th  style="text-align: left;width: 10%;" bgcolor="ccffff">NOMBRE Y APELLIDO PERSONA QUE TOMA</th>
+        </tr>
+            <tr>
+                <td style="height: 10px"></td>
+                <td style="height: 10px"></td>
+                <td  style="height: 10px"></td>
+            </tr>
+</table>
+{{/with}}
+	</div>
+<div style="width:100%">
+    <table class="table table-bordered" style="font-size: 7px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+        <tbody>
+            <th style="text-align: left;" >SNS-MSP / HCU-form.010A / 2021</th>
+            <th style="text-align: right;font-size: 8px">LABORATORIO CLINICO - SOLICITUD</th>
+        </tbody>
+    </table>
+</div>
+{{!-- <img src="<?php echo($rutaImagenSalida); ?>" style="position: absolute; top: 690; left: 400;height: 100px;width: 100px;"> --}}
+
+<!-----CARLOS------>
+
+<div class='document__lab__sol_reverso'> 
+    <div class='document__lab__sol_reverso__a'>
+      {{#with A_rev}}
+      <table class="table2">
+		<tr>
+      <th class='th1' colspan='10'>A. VIH/ITS</th>
+		</tr>
+		<tr>
+			<td class='td2'>Prueba Rápida</td>
+			<td>{{#if prueba_rapida}}X{{/if}}</td>
+			<td class='td2'>Elisa Automatizada</td>
+			<td>{{#if elisa_automatizada}}X{{/if}}</td>
+			<td class='td2'>CLIA</td>
+			<td>{{#if clia}}X{{/if}}</td>
+			<td class='td2'>IFI</td>
+			<td>{{#if ifi}}X{{/if}}</td>
+			<td class='td2'>Carga Viral</td>
+			<td>{{#if carga_viral}}X{{/if}}</td>
+		</tr>
+		<tr>
+			<td class='td2'>CD4</td>
+			<td>{{#if cd4}}X{{/if}}</td>
+			<td class='td2'>Tamizaje de Sifilis</td>
+			<td>{{#if tamizaje_sifilis}}X{{/if}}</td>
+			<td class='td2'>VDRL</td>
+			<td>{{#if vdrl}}X{{/if}}</td>
+			<td class='td2'>Hepatitis B (HBs-AG)</td>
+			<td>{{#if hepatitisB}}X{{/if}}</td>
+			<td></td>
+			<td></td>
+		</tr>		
+</table>
+{{/with}}
+</div>
+
+<div class='document__lab__sol_reverso__b'>
+  {{#with B_rev}}
+	<table class="table2">
+			<tr>
+				<th class='th6' colspan='15'>B. TUBERCULOSIS</th>
+			</tr>
+			<tr>
+				<th class='th2' colspan='15'>Tipo de Afectado</th>
+			</tr>				
+			<tr>
+				<td colspan="15">
+					<table class="table2">
+						<tr>
+							<td>Nuevo</td>
+							<td>{{#if afectado.nuevo}}X{{/if}}</td>
+							<td>Recaída</td>
+							<td>{{#if afectado.recaida}}X{{/if}}</td>
+							<td>Fracaso</td>
+							<td>{{#if afectado.fracaso}}X{{/if}}</td>
+							<td>Perdida en el segumiento</td>
+							<td>{{#if afectado.perdida_seguimiento}}X{{/if}}</td>
+							<td>PVV</td>
+							<td>{{#if afectado.pvv}}X{{/if}}</td>
+							<td>PPL</td>
+							<td>{{#if afectado.ppl}}X{{/if}}</td>
+							<td>Niño &lt; 5 años</td>
+							<td>{{#if afectado.niño_menor5}}X{{/if}}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="15">
+					<table class="table2">
+						<tr>
+							<td>Sospecha de Meningitis TB</td>
+							<td>{{#if afectado.sospecha_meningitis}}X{{/if}}</td>
+							<td>Alta sospecha clinica y/o radiológica BK (-)</td>
+							<td>{{#if afectado.sospecha_clinica}}X{{/if}}</td>
+							<td>Comorbilidad</td>
+							<td>{{#if afectado.comorbilidad}}X{{/if}}</td>
+							<td colspan="4">{{afectado.comorbilidad_descrip}}</td>
+						</tr>	
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="15">
+					<table>
+						<tr>
+							<td>Contacto TBR</td>
+							<td>{{#if afectado.contacto_tbr}}X{{/if}}</td>
+						</tr>	
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="15">
+					<table>
+						<tr>
+							<td>Sospecha de TB EP</td>
+							<td>{{#if afectado.sospecha_tb}}X{{/if}}</td>
+							<td>Talento humanos en salud</td>
+							<td>{{#if afectado.th_salud}}X{{/if}}</td>
+							<td>Irregularidad en la toma Tto</td>
+							<td>{{#if afectado.irregularidad_tto}}X{{/if}}</td>
+							<td>Reversión</td>
+							<td>{{#if afectado.reversion}}X{{/if}}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="15">
+					<table >
+						<tr>
+							<td>Embarazo</td>
+							<td>{{#if afectado.embarazo}}X{{/if}}</td>
+							<td>BK (+) al 2do. mes</td>
+							<td>{{#if afectado.bk_2}}X{{/if}}</td>
+							<td>Condiciones especiales</td>
+							<td>{{#if afectado.condicion_especial}}X{{/if}}</td>
+							<td colspan="4">{{afectado.condicion_especialDescrip}}</td>
+							<td>Otros</td>
+							<td>{{#if afectado.otros}}X{{/if}}</td>
+							<td colspan="4">{{afectado.otros_descrip}}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table class="table2">
+						<tr>
+							<th class='th2' colspan="7.5">Antecedentes de tuberculosis</th>
+						</tr>
+						<tr>
+							<td class='td4' colspan="7.5">TIPO DE RESISTENCIA</td>
+						</tr>
+						<tr>
+							<td>TB sensible</td>
+							<td>{{#if ant_tuberculosis.tb_sensible}}X{{/if}}</td>
+							<td>TB resistente</td>
+							<td>{{#if ant_tuberculosis.tb_resistente}}X{{/if}}</td>
+							<td colspan="4">{{ant_tuberculosis.tipo_resistencia}}</td>							
+						</tr>						
+					</table>
+				</td>
+				<td colspan="7.5">
+					<table class="table2">
+						<tr>
+							<th class='th2' colspan="7.5">Tipo de muestra</th>
+						</tr>
+						<tr>
+							<td colspan="7.5"> </td>
+						</tr>	
+					<tr>
+							<td>Esputo</td>
+							<td>{{#if tipo_muestra.esputo}}X{{/if}}</td>
+							<td>Otros</td>
+							<td>{{#if tipo_muestra.otros}}X{{/if}}</td>
+							<td colspan="4">{{tipo_muestra.otros_descripcion}}</td>							
+						</tr>												
+					</table>
+				</td>				
+			</tr>
+			<tr>
+				<th class='th2' colspan='15'>Solicitud para diagnóstico</th>
+			</tr>				
+
+			<tr>
+				<td colspan="15">
+					<table class="table2">
+						<tr>
+							<td colspan="15">
+								<table class="table2">
+									<tr>
+										<td>Ada</td>
+										<td>{{#if soli_diagnostico.ada}}X{{/if}}</td>										
+									</tr>									
+								</table>
+							</td>
+
+							<td colspan="15">
+								<table class="table2">
+									<tr>
+										<th>Baciloscopia</th>
+										<td>Diagnostico</td>
+										<td>{{#if soli_diagnostico.baciloscopia.diagnostico}}X{{/if}}</td>
+										<td>No</td>
+										<td>{{#if soli_diagnostico.baciloscopia.no}}X{{/if}}</td>										
+									</tr>
+									<tr>
+										<td><b></b></td>
+										<td>Control</td>
+										<td>{{#if soli_diagnostico.baciloscopia.control}}X{{/if}}</td>
+										<td>No.Mes</td>
+										<td>{{#if soli_diagnostico.baciloscopia.no_mes}}X{{/if}}</td>										
+									</tr>									
+								</table>
+							</td>
+
+							<td colspan="15">
+								<table class="table2">
+									<tr>
+										<th>Cultivo medio sólido(OK)</th>
+										<td>Diagnostico</td>
+										<td>{{#if soli_diagnostico.cultivo_solido.diagnostico}}X{{/if}}</td>
+										<td>No</td>
+										<td>{{#if soli_diagnostico.cultivo_solido.no}}X{{/if}}</td>											
+									</tr>
+									<tr>
+										<td><b></b></td>
+										<td>Control</td>
+										<td>{{#if soli_diagnostico.cultivo_solido.control}}X{{/if}}</td>
+										<td>No.Mes</td>
+										<td>{{#if soli_diagnostico.cultivo_solido.no_mes}}X{{/if}}</td>										
+									</tr>									
+								</table>
+							</td>							
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="15">
+					<table class="table2">
+						<tr>
+							<td><strong>PCR Tiempo real</strong><br>(Xpert/MTB/RIF)</td>
+							<td>{{#if soli_diagnostico.pcr_real}}X{{/if}}</td>
+							<td><strong>Nitrato reductasa</strong><br>(GRIESS)*</td>
+							<td>{{#if soli_diagnostico.nitrato_reductasa}}X{{/if}}</td>
+							<td><strong>Cultivo medio líquido</strong><br>(MGIT)</td>
+							<td>{{#if soli_diagnostico.cultivo_mliquido}}X{{/if}}</td>
+							<td>Genotipificación</td>
+							<td>{{#if soli_diagnostico.genotipificacion}}X{{/if}}</td>
+							<td>Tripificación</td>
+							<td>{{#if soli_diagnostico.tripificacion}}X{{/if}}</td>							
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="15">
+					<table class="table2">
+						<tr>
+							<td><strong>Psd 1ra Línea</strong><br>(Proporciones Medio-sólido)</td>
+							<td>{{#if soli_diagnostico.psd_1S}}X{{/if}}</td>
+							<td><strong>Psd 1ra Línea</strong><br>(MGIT-Medio líquido)</td>
+							<td>{{#if soli_diagnostico.psd_1L}}X{{/if}}</td>
+							<td><strong>Psd 2da Línea</strong><br>(Proporciones Medio-sólido)</td>
+							<td>{{#if soli_diagnostico.psd_2S}}X{{/if}}</td>
+							<td><strong>Psd 2da Línea</strong><br>(MGIT-Medio líquido)</td>
+							<td>{{#if soli_diagnostico.psd_2L}}X{{/if}}</td>							
+						</tr>
+					</table>
+				</td>
+			</tr>											
+	</table>
+  {{/with}}	
+</div>
+
+<div style="width:100%;padding-top: 2px">
+    <table cellpadding="1px" cellspacing="0px" border="1"   style="width: 100%;font-size: 7px">
+        <thead>
+            <tr>
+              <th colspan="4" style="text-align: left;" bgcolor="ccffff">D. DATOS DEL PROFESIOANL RESPONSABLE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th style="text-align: left;width: 15%" bgcolor="ccffff">FECHA GENERACIÓN PEDIDO</th>
+                <th style="text-align: left;width: 15%" bgcolor="ccffff">HORA GENERACIÓN PEDIDO</th>
+                <th style="text-align: left;width: 10%" bgcolor="ccffff">NOMBRES Y APELLIDOS</th>
+                <th rowspan="6" style="text-align: left;width: 30%" ></th>
+
+            </tr>
+            <tr>
+                <td style="height: 10px"><?php echo($archivo[1]['FECHA_DE_PETICION'][0])?> </td>
+                <td style="height: 10px"><?php echo($archivo[1]['HORA'][0])?></td>
+                <td style="height: 10px"><?php echo($archivo[1]['MEDICO'][0])?></td>
+            </tr>
+            <tr>
+                <th colspan="2" style="width: 30%;height: 10px;text-align: left" bgcolor="ccffff">NÚMERO DOCUMENTO DE IDENTIFICACION</th>
+                <th  style="width: 30%;height: 10px;text-align: left" bgcolor="ccffff">FIRMA Y SELLO</th>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 10px"><?php echo($archivo[1]['CEDULA'][0])?></td>
+                <td style="height: 10px"></td>
+            </tr>
+            <tr>
+                <th style="text-align: left;width: 15%" bgcolor="ccffff">FECHA TOMA MUESTRA</th>
+                <th style="text-align: left;width: 15%" bgcolor="ccffff">HORA TOMA MUESTRA</th>
+                <th  style="text-align: left;width: 10%;" bgcolor="ccffff">NOMBRE Y APELLIDO PERSONA QUE TOMA</th>
+
+            </tr>
+            <tr>
+                <td style="height: 10px"></td>
+                <td style="height: 10px"></td>
+                <td  style="height: 10px"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<img src="<?php echo($rutaImagenSalida); ?>" style="position: absolute; top: 280; left: 400;height: 100px;width: 100px;"></th>
+<div style="width:100%">
+    <table class="table table-bordered" style="font-size: 7px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+        <tbody>
+            <th style="text-align: left;" >SNS-MSP / HCU-form.010A / 2021</th>
+            <th style="text-align: right;font-size: 8px">LABORATORIO CLINICO - SOLICITUD(2)</th>
+        </tbody>
+    </table>
+</div>

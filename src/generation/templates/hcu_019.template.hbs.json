@@ -1,16 +1,16 @@
 {
     "A": {
         "institucion_sistema": "CLINICA SANTAMARIA",
-        "unicodigo": "25410",
+        "unicodigo": 25410,
         "establecimiento_salud": "CLINICA SANTAMARIA",
         "numero_historia_clinica": "123456789",
-        "numero_archivo": "987654321",
-        "numero_hoja": "IV",
+        "numero_archivo": "104242",
         "primer_apellido": "LOPEZ",
         "segundo_apellido": "GARCIA",
         "primer_nombre": "JOSE",
         "segundo_nombre": "PABLO",
         "sexo": "M",
+        "fecha_nacimiento": "20/04/1990",
         "edad": "30",
         "condicion_edad": {
            "h": false,
@@ -18,18 +18,5 @@
            "m": false,
            "a": true
         }
-    },
-
-    "B": {
-        "evolucion":{
-            "fecha": "25-JUN-2023",
-            "hora": "15:30",
-            "nota_evolucion": " "
-        },
-        "prescripciones": {
-            "farmaco_indicaciones": "6552",
-            "administracion_farmacos": "556"
-        }
     }
-}
-
+}    

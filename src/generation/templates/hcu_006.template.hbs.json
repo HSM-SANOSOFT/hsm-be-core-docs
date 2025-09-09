@@ -33,7 +33,7 @@
     },
 
     "E": {
-        "resumen_tratamiento": ""
+        "resumen_tratamiento": "hola"
     },
 
     "F": {
@@ -81,6 +81,50 @@
             "cie": ""
             }
         ]
-    
+    },
+
+    "H": {
+        "condicionEgreso": {
+            "vivo": true,
+            "fallecido": false,
+
+            "alta_medica": false,
+            "alta_voluntaria": true,
+            "asintomatico": false,
+            "retiro_no_autorizado": false,
+            "discapacidad": false,
+            "defuncion_menos_horas": false,
+            "defuncion_mas_horas": false,
+
+            "dias_estadia": 14,
+            "dias_reposo": 0
+        }
+    },
+
+    "I": {
+           "medico_tratante": [
+           {
+                "id": "1",
+                "nombre": "JOSE PABLO LOPEZ GARCIA",
+                "especialidad":"Intensivista",
+                "sello_cedula":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUIatSyUxtsXYV7vX2bCYy7i2kIIQWhH3_eQ&s",
+                "periodo_responsabilidad": "18/10/2023 - 01/11/2023"
+            }
+        ] 
+    },
+
+    "J": {
+        "profesional_responsable": {
+            "fecha": "2025-07-25",
+            "hora": "15:30",
+            "nombres": "JOSE PABLO",
+            "primer_apellido": "LOPEZ",
+            "segundo_apellido": "GARCIA",
+            "numero_cedula": "0987456321",
+            "firma": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUIatSyUxtsXYV7vX2bCYy7i2kIIQWhH3_eQ&s",
+            "sello_cedula": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUIatSyUxtsXYV7vX2bCYy7i2kIIQWhH3_eQ&s",
+            "elaborado_por": "JOSE PABLO LOPEZ GARCIA",
+            "revisado_por": "JOSE PABLO LOPEZ GARCIA"
+        }
     }
 }

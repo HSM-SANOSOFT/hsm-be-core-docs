@@ -1,0 +1,232 @@
+{
+    "A_sol": {
+        "institucion_sistema": "RED COMPLEMENTARIA",
+        "unicodigo": "25410",
+        "establecimiento_salud": "CLINICA SANTAMARIA S.A",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "104242 - 788380",
+        "primer_apellido": "LOPEZ",
+        "segundo_apellido": "GARCIA",
+        "primer_nombre": "JOSE",
+        "segundo_nombre": "PABLO",
+        "sexo": "M",
+        "fecha_nacimiento": "01/01/1993",
+        "edad": "30",
+        "condicion_edad": {
+           "h": false,
+           "d": false,
+           "m": false,
+           "a": true
+        }
+      },
+        "B_sol": {
+          "caracteristicas_atencion": {
+            "servicio":{
+                "emergencia": true,
+                "consulta_externa": false,
+                "hospitalizacion": false
+            },
+
+            "especialidad": "",
+            "num_cama": "",
+            "num_sala": "",
+
+            "urgente":{
+                "si": "",
+                "no": ""
+            },
+
+            "especialidad_consultada": "",
+            "descripcion_motivo": ""
+          }
+        },
+
+        "C_sol": {
+            "cuadro_clinico": "Paciente masculino"
+    },
+
+    "D_sol": {
+        "resultado_examenes": "Exámenes de laboratorio y estudios de imagen realizados durante la hospitalización."
+    },
+    
+    "E_sol": {
+    "diagnosticos": [
+      {
+        "descripcion": "loreitsum ipsum dolor sit amet consectetur adipiscing elit",
+        "cie": {
+          "seleccionado": true,
+          "codigo": "I62.0"
+        },
+        "pre": false,
+        "def": true
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      }
+    ]
+  },
+
+  "F_sol": {
+    "plan_realizado": "El paciente fue dado de alta con un plan de seguimiento ambulatorio y recomendaciones específicas para el cuidado en casa."
+  },
+
+  "G_sol":{
+    "fecha":"18/10/2023",
+    "hora":"10:00",
+    "nombre_med":"JAVIER",
+    "primer_apellido_med":"GONZALEZ",
+    "segundo_apellido_med":"MARTINEZ",
+    "numero_identificacion_med":"0987456321",
+    "firma_med":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUIatSyUxtsXYV7vX2bCYy7i2kIIQWhH3_eQ&s",
+    "sello_med":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQB9rgaFsh2wgJNXNfK2r2EZIVY0e_Pqi0vg&s"
+  },
+
+  "A_inf":{
+        "institucion_sistema": "RED COMPLEMENTARIA",
+        "unicodigo": "25410",
+        "establecimiento_salud": "CLINICA SANTAMARIA S.A",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "104242 - 788380",
+        "primer_apellido": "LOPEZ",
+        "segundo_apellido": "GARCIA",
+        "primer_nombre": "JOSE",
+        "segundo_nombre": "PABLO",
+        "sexo": "M",
+        "fecha_nacimiento": "01/01/1993",
+        "edad": "30",
+        "condicion_edad": {
+           "h": false,
+           "d": false,
+           "m": false,
+           "a": true
+        }
+    },
+
+    "B_inf": {
+        "cuadro_clinico_inter": ""
+    },
+
+    "C_inf": {
+        "resumen_criterio_clinico": "Paciente masculino con antecedentes de hipertensión arterial y diabetes mellitus tipo 2, que ingresa por cuadro de cefalea intensa y vómitos."
+    },
+
+    "D_inf": {
+        "diagnosticos": [
+      {
+        "descripcion": "loreitsum ipsum dolor sit amet consectetur adipiscing elit",
+        "cie": {
+          "seleccionado": true,
+          "codigo": "I62.0"
+        },
+        "pre": false,
+        "def": true
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      },
+      {
+        "descripcion": "",
+        "cie": {
+          "seleccionado": false,
+          "codigo": ""
+        },
+        "pre": "",
+        "def": ""
+      }
+    ]
+  },
+
+  "E_inf": {
+    "plan_diagnostico": "El paciente fue diagnosticado con hemorragia subdural aguda no traumática, y se le realizó una craneotomía descompresiva."
+  },
+
+  "F_inf": {
+    "plan_terapeutico": "El paciente fue dado de alta con un plan de seguimiento ambulatorio y recomendaciones específicas para el cuidado en casa."
+  },
+
+  "G_inf":{
+    "fecha":"18/10/2023",
+    "hora":"10:00",
+    "nombre_med":"JAVIER",
+    "primer_apellido_med":"GONZALEZ",
+    "segundo_apellido_med":"MARTINEZ",
+    "numero_identificacion_med":"0987456321",
+    "firma_med":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUIatSyUxtsXYV7vX2bCYy7i2kIIQWhH3_eQ&s",
+    "sello_med":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQB9rgaFsh2wgJNXNfK2r2EZIVY0e_Pqi0vg&s"
+  }
+}

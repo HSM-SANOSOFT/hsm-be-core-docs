@@ -13,7 +13,7 @@
         margin: 1px;
         padding: 1px;
       }
-       main {
+      main {
         padding-bottom: 30px;
       }
       footer {
@@ -31,45 +31,43 @@
       .page::after {
         content: counter(page);
       }
-      
+
       table {
         width: 100%;
         border-collapse: collapse;
         border-spacing: 1px;
         border: 2px solid black;
-        table-layout: fixed;
+        table-layout: auto;
       }
 
-      .table2{
-        table-layout:unset;
+      .table2 {
+        table-layout: unset;
       }
       img {
         max-height: 100px;
         width: auto;
       }
-          
+
       td {
-        width: fit-content;
-        white-space: nowrap;
+        min-width: 8px;
         text-align: center;
         border: 1px solid black;
-        height: 10px;
-
-      }
+        height: 8px;      
+        }
 
       th {
-        width: 100%;
+        width: auto;
         text-align: center;
         border: 1px solid black;
         height: 10px;
         font-weight: bold;
+        white-space: nowrap;
       }
 
       .th1 {
         text-align: left;
         font-size: 9px;
         background-color: #ccccff;
-
       }
       .th2 {
         background-color: #ccffcc;
@@ -83,12 +81,19 @@
         font-weight: normal;
         text-align: left;
       }
-
-      .td1 {
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
         text-align: left;
       }
 
-     .td4j {
+      .td1 {
+        text-align: left;
+        width: max-content;
+        white-space: nowrap;
+      }
+
+      .td4j {
         height: 90px;
         text-align: justify;
         vertical-align: top;
@@ -101,7 +106,10 @@
       .document_d,
       .document_e,
       .document_f,
-      .document_g {
+      .document_g,
+      .document_h,
+      .document_i,
+      .document_j {
         width: 100%;
         margin-top: 5px;
         padding: 0;
@@ -116,47 +124,47 @@
             {{#with A}}
 	    <table>
 	        <tr>
-               <th class='th1' rowspan='1' colspan='16'>A. DATOS DEL ESTABLECIMIENTO Y USUARIO / PACIENTE</th>
+               <th class='th1' rowspan='1' colspan='11'>A. DATOS DEL ESTABLECIMIENTO Y USUARIO / PACIENTE</th>
 	        </tr>
 	        <tr >
-	            <th class='th2' rowspan='1' colspan='4'>INSTITUCION DEL SISTEMA</th>
-	            <th class='th2' rowspan='1' colspan='2'>UNICÓDIGO</th>
-	            <th class='th2' rowspan='1' colspan='3'>ESTABLECIMIENTO DE SALUD</th>
-	            <th class='th2' rowspan='1' colspan='3'>NUMERO DE HISTORIA CLÍNICA</th>
-	            <th class='th2' rowspan='1' colspan='2'>NUMERO DE ARCHIVO</th>
-                <th class='th2' rowspan='1' colspan='2'>N°. HOJA</th>
+	            <th class='th2' rowspan='1' colspan='2'>INSTITUCION DEL SISTEMA</th>
+	            <th class='th2' rowspan='1' colspan='1'>UNICÓDIGO</th>
+	            <th class='th2' rowspan='1' colspan='1'>ESTABLECIMIENTO DE SALUD</th>
+	            <th class='th2' rowspan='1' colspan='2'>NUMERO DE HISTORIA CLÍNICA</th>
+	            <th class='th2' rowspan='1' colspan='1'>NUMERO DE ARCHIVO</th>
+              <th class='th2' rowspan='1' colspan='4'>N°. HOJA</th>
 	        </tr>
 	        <tr>
-	            <td rowspan='1' colspan='4'>{{institucion_sistema}}</td>
-	            <td rowspan='1' colspan='2'>{{unicodigo}}</td>
-	            <td rowspan='1' colspan="3">{{establecimiento_salud}}</td>
-	            <td rowspan='1' colspan="3">{{numero_historia_clinica}}</td>
-                <td rowspan='1' colspan="2">{{numero_archivo}}</td>
-                <td rowspan='1' colspan="2">{{numero_hoja}}</td>
+	            <td rowspan='1' colspan='2'>{{institucion_sistema}}</td>
+	            <td rowspan='1' colspan='1'>{{unicodigo}}</td>
+	            <td rowspan='1' colspan="1">{{establecimiento_salud}}</td>
+	            <td rowspan='1' colspan="2">{{numero_historia_clinica}}</td>
+              <td rowspan='1' colspan="1">{{numero_archivo}}</td>
+              <td rowspan='1' colspan="4">{{numero_hoja}}</td>
 	        </tr>
 	        <tr>
-                <th class='th2' rowspan='2' colspan='2'>PRIMER APELLIDO</th>
-                <th class='th2' rowspan='2' colspan='2'>SEGUNDO APELLIDO</th>
-                <th class='th2' rowspan='2' colspan='2'>PRIMER NOMBRE</th>
-                <th class='th2' rowspan='2' colspan='2'>SEGUNDO NOMBRE</th>
+                <th class='th2' rowspan='2' colspan='1'>PRIMER APELLIDO</th>
+                <th class='th2' rowspan='2' colspan='1'>SEGUNDO APELLIDO</th>
+                <th class='th2' rowspan='2' colspan='1'>PRIMER NOMBRE</th>
+                <th class='th2' rowspan='2' colspan='1'>SEGUNDO NOMBRE</th>
                 <th class='th2' rowspan='2' colspan='1'>SEXO</th>
-                <th class='th2' rowspan='2' colspan='2'>FECHA NACIMIENTO</th>
+                <th class='th2' rowspan='2' colspan='1'>FECHA NACIMIENTO</th>
                 <th class='th2' rowspan='2' colspan='1'>EDAD</th>
-                <th class='th2' rowspan='1' colspan='4'>CONDICIÓN EDAD (MARCAR)</th>
+                <th class='th2' rowspan='1' colspan='5'>CONDICIÓN EDAD</th>
             </tr>
 	        <tr>
-	            <td bgcolor="CCFFCC">H</td>
-	            <td bgcolor="CCFFCC">D</td>
-	            <td bgcolor="CCFFCC">M</td>
-	            <td bgcolor="CCFFCC">A</td>
+	            <th class='th2' rowspan='1' colspan='1'>H</th>
+	            <th class='th2' rowspan='1' colspan='1'>D</th>
+	            <th class='th2' rowspan='1' colspan='1'>M</th>
+	            <th class='th2' rowspan='1' colspan='1'>A</th>
 	        </tr>
 	        <tr>
-                <td rowspan='1' colspan='2'>{{primer_apellido}}</td>
-                <td rowspan='1' colspan='2'>{{segundo_apellido}}</td>
-                <td rowspan='1' colspan='2'>{{primer_nombre}}</td>
-                <td rowspan='1' colspan='2'>{{segundo_nombre}}</td>
+                <td rowspan='1' colspan='1'>{{primer_apellido}}</td>
+                <td rowspan='1' colspan='1'>{{segundo_apellido}}</td>
+                <td rowspan='1' colspan='1'>{{primer_nombre}}</td>
+                <td rowspan='1' colspan='1'>{{segundo_nombre}}</td>
                 <td rowspan='1' colspan='1'>{{sexo}}</td>
-                <td rowspan='1' colspan='2'>{{fecha_nacimiento}}</td>
+                <td rowspan='1' colspan='1'>{{fecha_nacimiento}}</td>
                 <td rowspan='1' colspan='1'>{{edad}}</td>
                 <td rowspan='1' colspan='1'>{{#if condicion_edad.h}} x {{/if}}</td>
                 <td rowspan='1' colspan='1'>{{#if condicion_edad.d}} x {{/if}}</td>
@@ -168,7 +176,7 @@
 	    </div>
 
 	<div class='document_b'>
-        {{#with B}}
+      {{#with B}}
 	    <table>
               <tr>
                 <th class='th1' rowspan='1' colspan='1'>B. RESUMEN DEL CUADRO CLÍNICO</th>
@@ -218,61 +226,6 @@
 	</footer>
 
 
-	<div class='document_a'>
-		{{#with A}}
-	    <table>
-	        <tr>
-               <th class='th1' rowspan='1' colspan='16'>A. DATOS DEL ESTABLECIMIENTO Y USUARIO / PACIENTE</th>
-	        </tr>
-	        <tr >
-	            <th class='th2' rowspan='1' colspan='4'>INSTITUCION DEL SISTEMA</th>
-	            <th class='th2' rowspan='1' colspan='2'>UNICÓDIGO</th>
-	            <th class='th2' rowspan='1' colspan='3'>ESTABLECIMIENTO DE SALUD</th>
-	            <th class='th2' rowspan='1' colspan='3'>NUMERO DE HISTORIA CLÍNICA</th>
-	            <th class='th2' rowspan='1' colspan='2'>NUMERO DE ARCHIVO</th>
-                <th class='th2' rowspan='1' colspan='2'>N°. HOJA</th>
-	        </tr>
-	        <tr>
-	            <td rowspan='1' colspan='4'>{{institucion_sistema}}</td>
-	            <td rowspan='1' colspan='2'>{{unicodigo}}</td>
-	            <td rowspan='1' colspan="3">{{establecimiento_salud}}</td>
-	            <td rowspan='1' colspan="3">{{numero_historia_clinica}}</td>
-                <td rowspan='1' colspan="2">{{numero_archivo}}</td>
-                <td rowspan='1' colspan="2">{{numero_hoja}}</td>
-	        </tr>
-	        <tr>
-                <th class='th2' rowspan='2' colspan='2'>PRIMER APELLIDO</th>
-                <th class='th2' rowspan='2' colspan='2'>SEGUNDO APELLIDO</th>
-                <th class='th2' rowspan='2' colspan='2'>PRIMER NOMBRE</th>
-                <th class='th2' rowspan='2' colspan='2'>SEGUNDO NOMBRE</th>
-                <th class='th2' rowspan='2' colspan='1'>SEXO</th>
-                <th class='th2' rowspan='2' colspan='2'>FECHA NACIMIENTO</th>
-                <th class='th2' rowspan='2' colspan='1'>EDAD</th>
-                <th class='th2' rowspan='1' colspan='4'>CONDICIÓN EDAD (MARCAR)</th>
-            </tr>
-	        <tr>
-	            <td bgcolor="CCFFCC">H</td>
-	            <td bgcolor="CCFFCC">D</td>
-	            <td bgcolor="CCFFCC">M</td>
-	            <td bgcolor="CCFFCC">A</td>
-	        </tr>
-	        <tr>
-                <td rowspan='1' colspan='2'>{{primer_apellido}}</td>
-                <td rowspan='1' colspan='2'>{{segundo_apellido}}</td>
-                <td rowspan='1' colspan='2'>{{primer_nombre}}</td>
-                <td rowspan='1' colspan='2'>{{segundo_nombre}}</td>
-                <td rowspan='1' colspan='1'>{{sexo}}</td>
-                <td rowspan='1' colspan='2'>{{fecha_nacimiento}}</td>
-                <td rowspan='1' colspan='1'>{{edad}}</td>
-                <td rowspan='1' colspan='1'>{{#if condicion_edad.h}} x {{/if}}</td>
-                <td rowspan='1' colspan='1'>{{#if condicion_edad.d}} x {{/if}}</td>
-                <td rowspan='1' colspan='1'>{{#if condicion_edad.m}} x {{/if}}</td>
-                <td rowspan='1' colspan='1'>{{#if condicion_edad.a}} x {{/if}}</td>
-            </tr>
-            </table> 
-            {{/with}}
-	    </div>
-
 	<div class='document_e'>
           {{#with E}}
             <table>
@@ -280,7 +233,7 @@
                 <th class='th1' rowspan='1' colspan='1'>E. RESUMEN DE TRATAMIENTO Y PROCEDIMIENTOS TERAPÉUTICOS</th>
               </tr>
               <tr>
-                <td class='td4j' rowspan='1' colspan='1'>{{resumen_clinico}}</td>
+                <td class='td4j' rowspan='1' colspan='1'>{{resumen_tratamiento}}</td>
               </tr>
             </table>
           {{/with}}
@@ -302,149 +255,123 @@
 	<div class='document_g'>
           {{#with G}}
 	        <table class="table2">
-	    		<tr>
-	              <th class='th1' rowspan='1' colspan='2'>G. DIAGNOSTICO DE ALTA / EGRESO</th>
-	              <th class='th1' rowspan='1' colspan='1'>CIE</th>
-	            </tr>
+	    		  <tr>
+	            <th class='th1' rowspan='1' colspan='2'>G. DIAGNOSTICO DE ALTA / EGRESO</th>
+	            <th class='th1' rowspan='1' colspan='1'>CIE</th>
+	          </tr>
                 {{#each diagnosticosEgreso}}
                     <tr>
-                        <td class='td1' rowspan='1' colspan='1'>{{tipo}}</td>
-                        <td class="td1" rowspan='1' colspan='1'>{{diagnostico}}</td>
-                        <td class="td1" rowspan='1' colspan='1'>{{cie}}</td>
+                      <th class='th5' rowspan='1' colspan='1'>{{tipo}}</th>
+                      <td class="td1" rowspan='1' colspan='1'>{{diagnostico}}</td>
+                      <td class="td1" rowspan='1' colspan='1'>{{cie}}</td>
                     </tr>
                 {{/each}}
 	        </table>
         {{/with}}
 	</div>
 
-	<div style="width:100%;padding-top: 3px">
-	    <table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-	    	<thead>
-	    		<tr>
-	              <th colspan="8" style="text-align: left;font-size: 10px" bgcolor="ccccff">H. CONDICIÓN DE ALTA / EGRESO</th>
-	              <th bgcolor="ccccff">VIVO</th>
-	              <th><?php if($archivo[1]['CONDICION'][0] != 'FLL'){ echo ('X');} ?></th>
-	              <th bgcolor="ccccff">FALLECIDO</th>
-	              <th><?php if($archivo[1]['CONDICION'][0] == 'FLL' || $archivo[1]['CONDICION'][0] == 'FLO' || $archivo[1]['CONDICION'][0] == 'INF'){ echo ('X');} ?></th>
-	            </tr>
-	    	</thead>
-	        <tbody>
-	            <tr>
-	            	<td bgcolor="CCFFCC">ALTA MÉDICA</td>
-	            	<th style="width: 20px"><?php if($archivo[1]['ALTA'][0] == 1){ echo ('X');} ?></th>
-	            	<td rowspan="2" bgcolor="CCFFCC">ASINTOMÁTICO</td>
-	            	<th rowspan="2" style="width: 20px"><?php if($archivo[1]['ASINTOMATICO'][0] == 'V'){ echo ('X');} ?></th>
-	            	<td rowspan="2" bgcolor="CCFFCC">DISCAPACIDAD</td>
-	            	<th rowspan="2" style="width: 20px"><?php if($archivo[1]['DISCAPACIDAD'][0] != 'N'){ echo ('X');} ?></th>
-	            	<td rowspan="2" bgcolor="CCFFCC">RETIRO NO AUTORIZADO</td>
-	            	<th rowspan="2" style="width: 20px"><?php if($archivo[1]['RETIRO'][0] == '2'){ echo ('X');} ?></th>
-	            	<td bgcolor="CCFFCC">DEFUNCIÓN MENOS DE 48 HORAS</td>
-	            	<td style="width: 20px;text-align: center;"><?php if($archivo[1]['DEFUNCION'][0] == '1'){ echo ('X');} ?></td>
-	            	<td bgcolor="CCFFCC">DÍAS DE ESTADIA</td>
-	            	<td style="width: 20px;text-align: center;"> <?php echo($archivo[1]['DIAS_ESTADIA'][0])?></td>
-	            </tr>
-	            <tr>
-	            	<td bgcolor="CCFFCC">ALTA VOLUNTARIA</td>
-	            	<td style="width: 20px;text-align: center;"><?php if($archivo[1]['ALTA'][0] == '2'){ echo ('X');} ?></td>
-	            	<td bgcolor="CCFFCC">DEFUNCIÓN MAS DE 48 HORAS</td>
-	            	<td style="width: 20px;text-align: center;"><?php if($archivo[1]['DEFUNCION'][0] == '2'){ echo ('X');} ?></td>
-	            	<td bgcolor="CCFFCC">DÍAS DE REPOSO</td>
-	            	<td style="width: 20px;text-align: center;"><?php echo($archivo[1]['DIAS_INCAPACIDAD'][0])?></td>
-	            </tr>
-	        </tboddy>
+	<div class='document_h'>
+        {{#with H}}
+	    <table class="table2">
+	    	<tr>
+	        <th class="th1" colspan='6'>H. CONDICIÓN DE ALTA / EGRESO</th>
+	        <th class="th1" colspan='1'>VIVO</th>
+	        <td class="td1" colspan='1'>{{#if condicionEgreso.vivo}}X{{/if}}</td>
+	        <th class="th1" colspan='1'>FALLECIDO</th>
+	        <td class="td2" colspan='1'>{{#if condicionEgreso.fallecido}}X{{/if}}</td>
+	      </tr>
+	    	
+	      <tr>
+	        <th class="th5" colspan='1'>ALTA MÉDICA</th>
+	        <td colspan='1'>{{#if condicionEgreso.alta_medica}}X{{/if}}</td>
+	        <th class="th5" colspan='1'>ASINTOMÁTICO</th>
+	        <td colspan='1'>{{#if condicionEgreso.asintomatico}}X{{/if}}</td>
+	        <th class="th5" colspan='1'>DISCAPACIDAD</th>
+	        <td class="td2" colspan='1'>{{#if condicionEgreso.discapacidad}}X{{/if}}</td>
+	        <th class="th5" colspan='1'>DEFUNCIÓN MENOS DE 48 HORAS</th>
+	        <td class="td2" colspan='1'>{{#if condicionEgreso.defuncion_menos_horas}}X{{/if}}</td>
+	        <th class="th5" colspan='1'>DÍAS DE ESTADIA</th>
+	        <td class="td2" colspan='1'>{{condicionEgreso.dias_estadia}}</td>
+	      </tr>
+
+	      <tr>
+	        <th class="th5" colspan='1'>ALTA VOLUNTARIA</th>
+	        <td class="td2" colspan='1'>{{#if condicionEgreso.alta_voluntaria}}X{{/if}}</td>
+	        <th class="th5" colspan='3'>RETIRO NO AUTORIZADO</th>
+	        <td class="td2" colspan='1'>{{#if condicionEgreso.retiro_no_autorizado}}X{{/if}}</td>
+	        <th class="th5" colspan='1'>DEFUNCIÓN MAS DE 48 HORAS</th>
+	        <td class="td2" colspan='1'>{{#if condicionEgreso.defuncion_mas_horas}}X{{/if}}</td>
+	        <th class="th5" colspan='1'>DÍAS DE REPOSO</th>
+	        <td class="td2" colspan='1'>{{condicionEgreso.dias_reposo}}</td>	       
+	      </tr>
 	    </table>
+        {{/with}}
 	</div>
 
-	<div style="width:100%;padding-top: 3px">
-		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 9px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-	    	<thead>
+	<div class='document_i'>
+        {{#with I}}
+		<table class="table2">
+	    	<tr>
+	        <th class='th1' colspan='5'>I. MÉDICOS TRATANTES</th> 
+	      </tr>
 	    		<tr>
-	              <th colspan="5" style="text-align: left;font-size: 10px" bgcolor="ccccff">I. MÉDICOS TRATANTES</th> 
-	            </tr>
-	    	</thead>
-	    	<tbody>
-	    		<tr>
-	    			<th colspan="2" style="width: 120px" bgcolor="CCFFCC">NOMBRES Y APELLIDOS</th>
-	    			<th style="width: 120px" bgcolor="CCFFCC">ESPECIALIDAD</th>
-	    			<th style="width: 300px"bgcolor="CCFFCC">SELLO Y DOCUMENTO DE IDENTIFICACION</th>
-	    			<th bgcolor="CCFFCC">PERÍODO DE RESPONSABILIDAD</th>
+	    			<th class='th2' colspan='2'>NOMBRES Y APELLIDOS</th>
+	    			<th class='th2' colspan='1'>ESPECIALIDAD</th>
+	    			<th class='th2' rowspan='1' colspan='1'>SELLO Y DOCUMENTO DE IDENTIFICACION</th>
+	    			<th class='th2' rowspan='1' colspan='1'>PERÍODO DE RESPONSABILIDAD</th>
 	    		</tr>
 
+        {{#each medico_tratante}}
 	    		<tr>
-	    			<th style="width: 3px" bgcolor="CCFFCC">1.</th>
-	    			<td style="height: 40px"><?php echo($archivo[1]['NOMBRES_DOC'][0])?></td>
-	    			<td><?php echo($archivo[1]['ESPECIALIDAD'][0])?></td>
-	    			<td style="text-align: center;"><img src="<?php echo($sello_doc); ?>" style="height: 50px;width: 100px;"></td><!--position: absolute;left: 250;-->
-	    			<td style="text-align: center;"><?php echo($archivo[1]['PERIODO'][0])?></td>
+	    			<th class='th5'>{{id}}</th>
+	    			<td> {{nombre}}</td>
+	    			<td>{{especialidad}}</td>
+	    			<td><img src='{{sello_cedula}}'></td>
+	    			<td>{{periodo_responsabilidad}}</td>
 	    		</tr>
-	    		<tr>
-	    			<th style="width: 3px" bgcolor="CCFFCC">2.</th>
-	    			<td style="height: 20px"></td>
-	    			<td></td>
-	    			<td style="text-align: center;"><img src="" style="width: 100px;"></td>
-	    			<td style="text-align: center;"><img src="" style="width: 100px;"></td>
-	    		</tr>
-	    		<tr>
-	    			<th style="width: 3px" bgcolor="CCFFCC">3.</th>
-	    			<td style="height: 20px"></td>
-	    			<td></td>
-	    			<td style="text-align: center;"><img src="" style="width: 100px;"></td>
-	    			<td style="text-align: center;"><img src="" style="width: 100px;"></td>
-	    		</tr>
-	    		<tr>
-	    			<th style="width: 3px" bgcolor="CCFFCC">4.</th>
-	    			<td style="height: 20px"></td>
-	    			<td></td>
-	    			<td style="text-align: center;"><img src="" style="width: 100px;"></td>
-	    			<td style="text-align: center;"><img src="" style="width: 100px;"></td>
-	    		</tr>
-	    	</tbody>
+        {{/each}}
 	    </table>
+        {{/with}}
 	</div>
 
-	<div style="width:100%;padding-top: 3px">
-	    <table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;">
-	        <tbody>
-	            <tr>
-	                <th colspan="5" style="text-align: left;font-size: 9px;" bgcolor="ccccff">H. DATOS DEL PROFESIONAL RESPONSABLE</th>
-	            </tr>
-	            <tr>
-	                <th style="width: 100px;" bgcolor="#ccffcc">FECHA</th>
-	                <th style="width: 100px;" bgcolor="#ccffcc">HORA</th>
-	                <th style="width: ;"bgcolor="#ccffcc">NOMBRES</th>
-	                <th style="width: ;" bgcolor="#ccffcc">PRIMER APELLIDO</th>
-	                <th style="width: ;" bgcolor="#ccffcc">SEGUNDO APELLIDO</th>
-	            </tr>
-	            <tr>
-	                <td><?php echo($archivo[1]['FECHA1'][0])?> </td>
-	                <td><?php echo($archivo[1]['HORA1'][0])?></td>
-	                <td><?php echo($archivo[1]['NOMBRE_MED'][0])?></td>
-	                <td><?php echo($archivo[1]['PRIMER_APELLID_MED'][0])?></td>
-	                <td><?php echo($archivo[1]['SEGUNDO_APELLIDO_MED'][0])?></td>
-	            </tr>
-	            <tr>
-	            	<th colspan="2" bgcolor="#ccffcc">NUMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
-	            	<th colspan="2" bgcolor="#ccffcc">FIRMA</th>
-	            	<th bgcolor="#ccffcc">SELLO</th>
-	            </tr>
-	            <tr>
-	            	<td colspan="2"><?php echo($archivo[1]['CEDULA'][0])?></td>
-	            	<td style="text-align: center;" colspan="2" valign="top">
-	            		<img src="<?php echo($firma_doc); ?>" style="height: 50px;width: 100px;">
-	            	</td><!--position: absolute; left: 240;-->
-	            	<td style="text-align: center;">
-	            		<img src="<?php echo($sello_doc); ?>" style="height: 50px;width: 100px;">
-	            	</td><!--position: absolute; left: 460;-->
-	            </tr>
-	            <tr>
-	                <th bgcolor="#ccffcc">ELABORADO POR:</th>
-	                <td ></td>
-	                <th bgcolor="#ccffcc">REVISADO POR:</th>
-	                <td colspan="2"></td>
-	            </tr>
-	        </tbody>
+	<div class='document_j'>
+        {{#with J}}
+	    <table>
+	      <tr>
+	        <th class='th1' rowspan='1' colspan='5'>J. DATOS DEL PROFESIONAL RESPONSABLE</th>
+	      </tr>
+	        <tr>
+	          <th class="th2" rowspan='1' colspan='1'>FECHA (AAAA-MM-DD)</th>
+	          <th class="th2" rowspan='1' colspan='1'>HORA (HH:MM)</th>
+	          <th class="th2" rowspan='1' colspan='1'>NOMBRES</th>
+	          <th class="th2" rowspan='1' colspan='1'>PRIMER APELLIDO</th>
+	          <th class="th2" rowspan='1' colspan='1'>SEGUNDO APELLIDO</th>
+	        </tr>
+	        <tr>
+	          <td>{{profesional_responsable.fecha}}</td>
+	          <td>{{profesional_responsable.hora}}</td>
+	          <td>{{profesional_responsable.nombres}}</td>
+	          <td>{{profesional_responsable.primer_apellido}}</td>
+	          <td>{{profesional_responsable.segundo_apellido}}</td>
+	        </tr>
+	        <tr>
+	          <th class="th2" rowspan='1' colspan='2'>NUMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+	          <th class="th2" rowspan='1' colspan='2'>FIRMA</th>
+	          <th class="th2" rowspan='1' colspan='1'>SELLO</th>
+	        </tr>
+	        <tr>
+	          <td colspan="2">{{profesional_responsable.numero_cedula}}</td>
+	          <td colspan="2"><img src={{profesional_responsable.firma}}></td><!--position: absolute; left: 240;-->
+	          <td colspan='1'><img src={{profesional_responsable.sello_cedula}}></td>
+	        </tr>
+	        <tr>
+	          <th class="th2" rowspan='1' colspan='2'>ELABORADO POR:</th>
+	          <td>{{profesional_responsable.elaborado_por}}</td>
+	          <th class="th2" rowspan='1' colspan='1'>REVISADO POR:</th>
+	          <td>{{profesional_responsable.revisado_por}}</td>
+	        </tr>
 	    </table>
+        {{/with}}
 	</div>
-
 </body>
 </html>

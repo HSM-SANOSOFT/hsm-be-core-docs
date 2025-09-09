@@ -1,0 +1,372 @@
+<html>
+    <head>
+      <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+        }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: white;
+      }
+      .th4 {
+        background-color: #ccccff;
+        font-size: 9px;
+        text-align: right;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: left;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+	  .td2 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+		background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+    .document__ap__inf,
+    .document__ap__inf__a,
+    .document__ap__inf__b,
+    .document__ap__inf__c,
+    .document__ap__inf__d,
+    .document__ap__inf__e,
+    .document__ap__inf__f,
+    .document__ap__inf__g,
+    .document__ap__inf__h {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+    }
+    </style>
+    </head>
+    <body>
+    <header></header>
+    <main>
+
+<div class='document__ap__inf'>
+    <div class='document__ap__inf__a'>
+        {{#with A}}
+	<table>
+	    <tr>
+	        <th class='th1' colspan="11">A. DATOS DEL ESTABLECIMIENTO</th>
+	    </tr>
+	    <tr>
+	        <th class='th2' colspan="2">INSTITUCION DEL SISTEMA</th>
+	        <th class='th2'>UNICÓDIGO</th>
+	        <th class='th2' colspan="2">ESTABLECIMIENTO DE SALUD</th>
+	        <th class='th2' colspan="2">NUMERO DE HISTORIA CLÍNICA</th>
+	        <th class='th2' colspan="4">NUMERO DE ARCHIVO</th>
+	    </tr>
+	        <tr>
+	        <td colspan="2">{{institucion_sistema}}</td>
+	        <td>{{unicodigo}}</td>
+	        <td colspan="2">{{establecimiento_salud}}</td>
+	        <td colspan="2">{{numero_historia_clinica}}</td>
+	        <td colspan="4">{{numero_archivo}}</td>
+	    </tr>
+	    <tr>
+	        <th class='th2' rowspan="2">PRIMER APELLIDO</th>
+	        <th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
+	        <th class='th2' rowspan="2">PRIMER NOMBRE</th>
+	        <th class='th2' rowspan="2">SEGUNDO NOMBRE</th>
+	        <th class='th2' rowspan="2">SEXO</th>
+	        <th class='th2' rowspan="2">FECHA NACIMIENTO</th>
+	        <th class='th2' rowspan="2">EDAD</th>
+	        <th class='th2' colspan="4">CONDICION EDAD</th>
+	    </tr>
+	    <tr>
+	        <th class='th2'>M</th>
+	        <th class='th2'>D</th>
+	        <th class='th2'>M</th>
+	        <th class='th2'>A</th>
+	    </tr>
+	    <tr>
+	        <td>{{primer_apellido}}</td>
+	        <td>{{segundo_apellido}}</td>
+	        <td>{{primer_nombre}}</td>
+	        <td>{{segundo_nombre}}</td>
+	        <td>{{sexo}}</td>
+	        <td>{{fecha_nacimiento}}</td>
+	        <td>{{edad}}</td>
+	        <td>{{#if condicion_edad.m1}}X{{/if}}</td>
+	        <td>{{#if condicion_edad.d}}X{{/if}}</td>
+	        <td>{{#if condicion_edad.m2}}X{{/if}}</td>
+	        <td>{{#if condicion_edad.a}}X{{/if}}</td>
+	    </tr> 
+	</table>
+    {{/with}}
+	</div>
+
+	<div class='document__ap__inf__b'>
+        {{#with B}}
+	    <table>
+	    	<tr>
+	            <th class='th1' colspan="4">B. DATOS DEL SERVICIO </th>
+	        </tr>
+	    	<tr>
+	    		<th class='th2'>ESTABLECIMIENTO DE SALUD SOLCIITANTE</th>
+	    		<th class='th2'>PROFESIONAL SOLICITANTE</th>
+	    		<th class='th2'>ESPECIALIDAD</th>
+	    		<th class='th2'>CÓDIGO DE MUESTRA PATOLÓGICA</th>
+	    	</tr>
+	    	<tr>
+	    		<td>{{establecimiento_solicitante}}</td>
+	    		<td>{{profesional_solicitante}}</td>
+	    		<td>{{especialidad}}</td>
+	    		<td>{{codigo_muestra}}</td>
+	    	</tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class='document__ap__inf__c'>
+        {{#with C}}
+	    <table>
+	        <tr>
+	            <th class='th1'>C. DESCRIPCIÓN MACROSCÓPICA</th>
+	        </tr>
+	    	<tr>
+	    		<td class='td1'>{{descripcion_macroscopica}}</td>
+	    	</tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class='document__ap__inf__d'>
+        {{#with D}}
+	    <table>
+	    	<tr>
+	            <th class='th1'>D. DESCRIPCIÓN MICROSCÓPICA</th>
+	        </tr>
+	    	<tr>
+	    		<td class='td1'>{{descripcion_microscopica}}</td>
+	    	</tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class='document__ap__inf__e'>
+        {{#with E}}
+	    <table>
+	    	<tr>
+	            <th class='th1' colspan="14">E. INFORME DE CITOLOGÍA VAGINAL</th>
+	        </tr>
+	    	<tr>
+		    	<th class='th5'>CLASIFICACIÓN BETHESDA</th>
+		    	<td class='th2'>NORMAL</td>
+		    	<td>{{#if normal}}X{{/if}}</td>
+		    	<td class='th2' >LIE BAJO</td>
+		    	<td>{{#if lie_bajo}}X{{/if}}</td>
+		    	<td class='th2'>LIE ALTO</td>
+		    	<td>{{#if lie_alto}}X{{/if}}</td>
+		    	<td class='th2'>CA</td>
+		    	<td colspan="6">{{#if ca}}X{{/if}}</td>
+	    	</tr>
+	    	<tr>
+	    		<td class='th2'>MUESTRA INADECUADA</td>
+	    		<td>{{#if muestra_inadecuada}}X{{/if}}</td>
+	    		<td class='th2'>HONGOS</td>
+	    		<td>{{#if hongos}}X{{/if}}</td>
+	    		<td class='th2'>ERITROCITOS</td>
+	    		<td>{{#if eritrocitos}}X{{/if}}</td>
+	    		<td class='th2'>FLORA BACTERIANA</td>
+	    		<td>{{#if flora_bacteriana}}X{{/if}}</td>
+	    		<td class='th2'>HISTIOCITOS</td>
+	    		<td>{{#if histiocitos}}X{{/if}}</td>
+	    		<td class='th2'>N° DE MUESTRA</td>
+	    		<td>{{#if numero_muestra}}X{{/if}}</td>
+	    		<td class='th2'>FECHA DE PROCESO</td>
+	    		<td>{{#if fecha_proceso}}X{{/if}}</td>
+	    	</tr>
+	    	<tr>
+	    		<th class='th2'>OBSERVACIONES</th>
+	    		<td class='td1' colspan="13">{{observaciones}}</td>
+	    	</tr>
+	    	<tr>
+	    		<td class='td4j' colspan="14">{{descripcion}}</td>
+	    	</tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class='document__ap__inf__f'>
+        {{#with F}}
+	    <table>
+	    	<tr>
+	            <th class='th1'>F. DIAGNÓSTICO</th>
+	        </tr>
+	    	<tr>
+	    		<td valign="top"><div style="height: 150px;text-align: justify;" ><?php echo ($diag).'</br>INFORME FINAL: '. nl2br(($archivo[1]['MALIGNIDAD'][0]=='V')?'POSITIVO':'NEGATIVO')?></div></td>
+	    	</tr>
+				<?php
+				if ($archivo[1]['HAS_IMAGEN'][0] == 1) {
+					$sql_imagen="SELECT 
+						EXM_NUMERO,
+						LEVEL AS PARTE_NUMERO,
+						DBMS_LOB.SUBSTR(IMAGEN, 4000, (LEVEL-1)*4000+1) AS PARTE_IMAGEN
+					FROM BIOPSIAS_DETALLES
+					WHERE EXM_NUMERO = '".$valor1."'  
+					AND IMAGEN IS NOT NULL
+					CONNECT BY 
+						PRIOR EXM_NUMERO = EXM_NUMERO
+						AND PRIOR DBMS_RANDOM.VALUE IS NOT NULL
+						AND (LEVEL-1)*4000+1 <= DBMS_LOB.GETLENGTH(IMAGEN)
+					START WITH EXM_NUMERO = '".$valor1."'";
+					$stmt_imagen = oci_parse($conn, $sql_imagen);
+					oci_execute($stmt_imagen);
+					$ARRAY_IMAGEN = array();
+					oci_fetch_all($stmt_imagen, $ARRAY_IMAGEN, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+					foreach ($ARRAY_IMAGEN as $value) {
+						$imagen.=$value['PARTE_IMAGEN'];
+					}
+				}
+				if (true) {
+				?>
+				<tr>
+	    			<td valign="top"><div style="height: 150px;text-align: justify;" ><img src="<?php echo($imagen); ?>" style="width: 100px;"></div></td>
+	    		</tr>
+				<?php } ?>
+	    	</tbody>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class='document__ap__inf__g'>
+        {{#with G}}
+	    <table>
+	    	<tr>
+	            <th class='th1'>G. RECOMENDACIONES</th>
+	        </tr>
+	    	<tr>
+	    		<td class='td1'>{{recomendaciones}}</td>
+	    	</tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class='document__ap__inf__h'>
+        {{#with H}}
+	    <table>
+	        <tr>
+	            <th class='th1' colspan="5">H. DATOS DEL PROFESIONAL RESPONSABLE</th>
+	        </tr>
+	        <tr>
+	            <th class='th2'>FECHA</th>
+	            <th class='th2'>HORA</th>
+	            <th class='th2'>PRIMER NOMBRE</th>
+	            <th class='th2'>PRIMER APELLIDO</th>
+	            <th class='th2'>SEGUNDO APELLIDO</th>
+	        </tr>
+	        <tr>
+	            <td>{{fecha}}</td>
+	            <td>{{hora}}</td>
+	            <td>{{primer_nombre}}</td>
+	            <td>{{primer_apellido}}</td>
+	            <td>{{segundo_apellido}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2' colspan="2">NUMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+	            <th class='th2' colspan="2">FIRMA</th>
+	            <th class='th2'>SELLO</th>
+	        </tr>
+	        <tr>
+	            <td colspan="2">{{documento_identificacion}}</td>
+	            <td colspan="2"><img src="{{firma_resp}}"></td>
+	            <td><img src="{{sello_resp}}"></td>
+	        </tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<footer>
+		<div style="width:100%;">
+			<table class="table table-bordered" style="font-size: 8px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+		        <tbody>
+		            <th style="text-align: left;" >SNS-MSP / HCU-form.013B / 2021</th>
+		            <th style="text-align: right;font-size: 8px">ANATOMÍA PATOLÓGICA - INFORME</th>
+		        </tbody>
+	    	</table>
+		</div>
+	</footer>

@@ -1,0 +1,922 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <style>
+      @page {
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+        }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: white;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: left;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+      .td2 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+		background-color: #ccffcc;
+      }
+	  
+	  .td3 {
+        text-align: center;
+        /*width: max-content;*/
+        white-space: nowrap;
+		background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__emergencia,
+      .document__a,
+      .document__b,
+      .document__c,
+      .document__d,
+      .document__e,
+      .document__f,
+      .document__g,
+      .document__h,
+      .document__i,
+      .document__j,
+      .document__k,
+      .document__l,
+      .document__m,
+      .document__n,
+      .document__o,
+      .document__p{
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+
+</style>
+</head>
+<body>
+    <header></header>
+    <main>
+
+	<div clas='document__emergencia'>
+        <div class='document__a'>
+            {{#with A}}
+        <table>
+	    	<tr>
+	            <th class='th1' rowspan='1' colspan='5'>A. DATOS DEL ESTABLECIMIENTO</th>
+	        </tr>
+	        <tr>
+	            <th  class='th2' rowspan='1' colspan='1'>INSTITUCIÓN DEL SISTEMA</th>
+	            <th  class='th2' rowspan='1' colspan='1'>UNICÓDIGO</th>
+	            <th  class='th2' rowspan='1' colspan='1'>ESTABLECIMIENTO DE SALUD</th>
+	            <th  class='th2' rowspan='1' colspan='1'>NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+	            <th  class='th2' rowspan='1' colspan='1'>NÚMERO DE ARCHIVO</th>
+	        </tr>
+	        <tr>
+	            <td rowspan='1' colspan='1'>{{institucion_sistema}}</td>
+	            <td rowspan='1' colspan='1'>{{unicodigo}}</td>
+	            <td rowspan='1' colspan="1">{{establecimiento_salud}}</td>
+	            <td rowspan='1' colspan="1">{{numero_historia_clinica}}</td>
+	            <td rowspan='1' colspan="1">{{numero_archivo}}</td>
+	        </tr>
+	    </table>
+         {{/with}}
+	</div>
+
+	<div class='document__b'>
+        {{#with B}}
+		<table class="table2">
+	    	<tr>
+	            <th class='th1' rowspan='1' colspan='18'>B. REGISTRO DE ADMISIÓN</th>
+	        </tr>
+	        <tr>
+	            <th class='th2' rowspan='1' colspan='7'>FECHA DE ADMISIÓN</th>
+	            <th class='th2' rowspan='1' colspan='7'>NOMBRE Y APELLIDO DEL ADMISIONISTA</th>
+	            <th class='th2' rowspan='1' colspan='4'>HISTORIA CLÍNICA EN ESTABLECIMIENTO</th>
+	        </tr>
+	        <tr>
+	            <td class="td1" colspan="7">{{fecha_admision}}</td>
+	            <td class="td1" colspan="7">{{nombre_apellido_admisionista}}</td>
+	            <th class="th2">SI</th>
+	            <td>{{#if historia_clinica_establecimiento.si}}X{{/if}}</td>
+	            <th class="th2">NO</th>
+	            <th>{{#if historia_clinica_establecimiento.no}}X{{/if}}</th>
+	        </tr>
+	        <tr>
+	            <th class='th2' rowspan='2' colspan='7'>PRIMER APELLIDO</th>
+	            <th class='th2' rowspan='2'>SEGUNDO APELLIDO</th>
+	            <th class='th2' rowspan='2'>PRIMER NOMBRE</th>
+	            <th class='th2' rowspan='2' colspan='5'>SEGUNDO NOMBRE</th>
+	            <th class='th2' rowspan='1' colspan='4'>DOCUMENTO DE IDENTIFICACIÓN</th>
+	        </tr>
+	        <tr>
+	            <td class='td1' rowspan='1' colspan='1'>CC/CI</td>
+	            <td class='td1' rowspan='1' colspan='1'>PAS.</td>
+	            <td class='td1' rowspan='1' colspan='1'>CARNÉ</td>
+	            <td class='td1' rowspan='1' colspan='1'>S/D</td>
+	        </tr>
+	        <tr>
+	            <td class='td1'colspan='7'>{{primer_apellido}}</td>
+	            <td class='td1'>{{segundo_apellido}}</td>
+	            <td class='td1'>{{primer_nombre}}</td>
+	            <td class='td1' colspan='5'>{{segundo_nombre}}</td>
+	            <th>{{#if documento_identificacion.cedula}}X{{/if}}</th>
+	            <td>{{#if documento_identificacion.pasaporte}}X{{/if}}</td>
+	            <td>{{#if documento_identificacion.carne}}X{{/if}}</td>
+	            <td>{{#if documento_identificacion.sindatos}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2' colspan='7'>ESTADO CIVIL</th>
+	            <th class='th2' rowspan="2">SEXO</th>
+	            <th class='th2' rowspan="2">N° TELEFNO</th>
+	            <th class='th2' rowspan="2" colspan="4">N° CELULAR</th>
+	            <th class='th2' rowspan="2" colspan="5">FECHA DE NACIMIENTO</th>
+	        </tr>
+	        <tr>
+	            <th rowspan='1' colspan='1'>SOL</th>
+	            <th rowspan='1' colspan='1'>CAS</th>
+	            <th rowspan='1' colspan='1'>DIV</th>
+	            <th rowspan='1' colspan='1'>VIU</th>
+	            <th rowspan='1' colspan='1'>UN</th>
+	            <th rowspan='1' colspan='1'>U-H</th>
+	            <th rowspan='1' colspan='1'>NA</th>
+	        </tr>
+	        <tr>
+	            <td>{{#if estado_civil.soltero}}X{{/if}}</td>
+	            <td>{{#if estado_civil.casado}}X{{/if}}</td>
+	            <td>{{#if estado_civil.divorciado}}X{{/if}}</td>
+	            <td>{{#if estado_civil.viudo}}X{{/if}}</td>
+	            <td>{{#if estado_civil.unido}}X{{/if}}</td>
+	            <td>{{#if estado_civil.union_hecho}}X{{/if}}</td>
+	            <td>{{#if estado_civil.n_a}}X{{/if}}</td>
+	            <td class='td1'>{{sexo}}</td>
+	            <td class='td1'>{{num_telefono}}</td>
+	            <td class='td1' colspan="4">{{num_celular}}</td>
+                <td class='td1' colspan="5">{{fecha_nacimiento}}</td>
+	        </tr>
+            <tr>
+                <th class='th2' rowspan='2' colspan='7'>LUGAR DE NACIMIENTO</th>
+                <th class='th2' rowspan='2'>NACIONALIDAD</th>
+                <th class='th2' rowspan='2'>EDAD</th>
+                <th class='th2' colspan="4">CONDICIÓN EDAD</th>
+                <th class='th2'>GRUPO PRIORITARIO</th>
+                <th class='th2'>SI</th>
+                <td>{{#if grupo_prioritario.si}}X{{/if}}</td>
+                <th class='th2'>NO</th>
+                <td>{{#if grupo_prioritario.no}}X{{/if}}</td>
+            </tr>
+            <tr>
+                <th class='th2'>H</th>
+                <th class='th2'>D</th>
+                <th class='th2'>M</th>
+                <th class='th2'>A</th>
+                <th class='th2'>ESPECIFIQUE</th>
+                <td class='td1' colspan="7">{{especifique}}</td>
+            </tr>
+            <tr>
+                <td class='td1' colspan="7">{{lugar_nacimiento}}</td>
+                <td class='td1'>{{nacionalidad}}</td>
+                <td class='td1'>{{edad}}</td>
+
+                <td>{{#if condicion_edad.h}}X{{/if}}</td>
+                <td>{{#if condicion_edad.d}}X{{/if}}</td>
+                <td>{{#if condicion_edad.m}}X{{/if}}</td>
+                <td>{{#if condicion_edad.a}}X{{/if}}</td>
+
+                <td class='td1' colspan="7">{{especifique}}</td> 
+            </tr>
+	        <tr>
+	            <th class='th2' colspan='7'>AUTOIDENTIFICACIÓN ÉTNICA</th>
+	            <th class='th2' colspan='2'>NACIONALIDAD ÉTNICA</th>
+	            <th class='th2' colspan="4">PUEBLOS</th>
+	            <th class='th2' colspan="5">NIVEL DE EDUCACIÓN</th>
+	        </tr>
+	        <tr>
+	            <td colspan="7">{{autoidentificacion_etnica}}</td>
+	            <td colspan="2">{{nacionalidad_etnica}}</td>
+	            <td colspan="4">{{pueblos}}</td>
+	            <td colspan="5">{{nivel_educacion}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2' colspan="7">SEGURO SALUD PRINCIPAL</th>
+	            <th class='th2' rowspan="2">ESTADO DEL NIVEL DE EDUCACIÓN</th>
+	            <th class='th2' rowspan="2">TIPO DE EMPRESA DE TRABAJO</th>
+	            <th class='th2' rowspan="2" colspan="9">OCUPACIÓN / PROFESIÓN</th>
+	        </tr>
+	            <tr>
+	            	<td class='td2' colspan="2">IESS-G</td>
+	            	<td class='td2' colspan="2">IESS-C</td>
+	            	<td class='td2'>ISSPOL</td>
+	            	<td class='td2'>ISSFA</td>
+	            	<td class='td2'>PRIV.</td>
+	            </tr>
+	            <tr>
+	            	<th colspan="2">{{#if seguro_principal.iess_g}}X{{/if}}</th>
+	            	<th colspan="2">{{#if seguro_principal.iess_c}}X{{/if}}</th>
+	            	<th>{{#if seguro_principal.isspol}}X{{/if}}</th>
+	            	<th>{{#if seguro_principal.issfa}}X{{/if}}</th>
+	            	<th>{{#if seguro_principal.privado}}X{{/if}}</th>
+
+	            	<td>{{estado_nivel_educacion}}</td>
+	            	<td>{{tipo_empresa_trabajo}}</td>
+	            	<td colspan="9">{{ocupacion}}</td>
+	            </tr>
+	            <tr>
+	            	<th class='th2' rowspan="4" colspan="7">RESIDENCIA</th>
+	            	<th class='th2'>PROVINCIA</th>
+	            	<th class='th2'>CANTÓN</th>
+	            	<th class='th2' colspan="5">PARROQUIA</th>
+	            	<th class='th2' colspan="4">BARRIO O SECTOR</th>
+	            </tr>
+	            <tr>
+	            	<td>{{provincia}}</td>
+	            	<td>{{canton}}</td>
+	            	<td colspan="5">{{parroquia}}</td>
+	            	<td colspan="4">{{sector}}</td>
+	            </tr>
+	            <tr>
+	            	<th class='th2' colspan="2">CALLE PRINCIPAL</th>
+	            	<th class='th2' colspan="5">CALLE SECUNDARIA</th>
+	            	<th class='th2' colspan="4">REFERENCIA</th>
+	            </tr>
+	            <tr>
+	            	<td colspan="2">{{calle_principal}}</td>
+	            	<td colspan="5">{{calle_secundaria}}</td>
+	            	<td colspan="4">{{referencia}}</td>
+	            </tr>
+	            <tr>
+	            	<th class='th2' colspan="7">EN CASO NECESARIO LLAMAR A:</th>
+	            	<th class='th2'>PARENTESCO</th>
+	            	<th class='th2' colspan="6">DIRECCIÓN </th>
+	            	<th class='th2' colspan="4">Nº  TELÉFONO</th>
+	            </tr>
+	            <tr>
+	            	<td colspan="7">{{nombre_familiar}}</td>
+	            	<td>{{parentesco}}</td>
+	            	<td colspan="6">{{direccion_parentesco}}</td>
+	            	<td colspan="4">{{telefono_parentesco}}</td>
+	            </tr>
+	            <tr>
+					<th class='th2' colspan="7">FORMA DE LLEGADA</th>
+					<th class='th2' rowspan="2">FUENTE DE INFORMACIÓN</th>
+					<th class='th2' rowspan="2" colspan="6">INSTITUCIÓN O PERSONA QUE ENTREGA AL PACIENTE</th>
+					<th class='th2' rowspan="2" colspan="4">Nº  TELÉFONO</th>
+	            </tr>
+	            <tr>
+	            	<td class='td2' colspan="2">AMBULATORIO</td>
+	            	<td class='td2' colspan="2">AMBULANCIA</td>
+	            	<td class='td2' colspan="3">OTRO TRANSPORTE</th>
+	            </tr>
+	            <tr>
+	            	<th colspan="2">{{forma_llegada.ambulatorio}}</th>
+	            	<th colspan="2">{{forma_llegada.ambulancia}}</th>
+	            	<th colspan="3">{{forma_llegada.otro_transporte}}</th>
+	            	<td>{{fuente_informacion}}</td>
+	            	<td colspan="6">{{persona_entrega_pcte}}</td>
+	            	<td colspan="4">{{numero_persona_entrega_pcte}}</td>
+	            </tr>
+	    </table>
+        {{/with}}
+	</div>
+
+	<div class='document__c'>
+        {{#with C}}
+		<table class="table2">
+		    <tr>
+		        <th class='th1' colspan="11">C. INICIO DE ATENCIÓN</th>
+		    </tr>
+		    <tr>
+		        <th class='th2'>FECHA</th>
+                <td class='td1'>{{fecha}}</td>
+		        <th class='th2'>HORA</th>
+                <td class='td1'>{{hora}}</td>
+		        <th class='th2'>CONDICIÓN DE LLEGADA</th>
+		        <th class='th2'>ESTABLE</th>
+		        <td class='td1'>{{#if condicion_llegada.estable}}X{{/if}}</td>
+		        <th class='th2'>INESTABLE</th>
+		        <td class='td1'>{{#if condicion_llegada.inestable}}X{{/if}}</td>
+		        <th class='th2'>FALLECIDO</th>
+		        <td class='td1'>{{#if condicion_llegada.fallecido}}X{{/if}}</td>
+		    </tr>
+		    <tr>
+		        <th class='th2'>MOTIVO DE ATENCIÓN </th>
+		        <td class='td1'colspan="10">{{motivo_atencion}}</td>
+		    </tr>
+		</table>
+        {{/with}}
+	</div>
+
+	<div class='document__d'>
+        {{#with D}}
+		<table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="16">D. ACCIDENTE, VIOLENCIA, INTOXICACIÓN</th>
+	        </tr>
+	        <tr>
+	            <th class='th2' colspan="2">FECHA</th>
+	            <th class='th2' colspan="2">HORA</th>
+	            <th class='th2' colspan="4">LUGAR DEL EVENTO</th>
+	            <th class='th2' colspan="4">DIRECCIÓN DEL EVENTO</th>
+	            <th class='th2' colspan="4">CUSTODIA POLICIAL</th>
+	        </tr>
+	        <tr>
+	            <td colspan="2">{{fecha}}</td>
+	            <td colspan="2">{{hora}}</td>
+	            <td colspan="4">{{lugar_evento}}</td>
+	            <td colspan="4">{{direccion_evento}}</td></td>
+	            <th class='th2'>SI</th>
+	            <td>{{#if custodia_policial.si}}X{{/if}}</td>
+	            <td class='th2'>NO</td>
+	            <th>{{#if custodia_policial.no}}X{{/if}}</th>
+	        </tr>
+	        <tr>
+	            <th class='th2'>ACCIDENTE DE TRANSITO</th>
+	            <td>{{#if mecanismo_evento.accidente_transito}}X{{/if}}</td>
+	            <th class='th2'>CAÍDA</th>
+	            <td>{{#if mecanismo_evento.caida}}X{{/if}}</td>
+	            <th class='th2'>QUEMADURA</th>
+	            <td>{{#if mecanismo_evento.quemadura}}X{{/if}}</td>
+	            <th class='th2'>MORDEDURA</th>
+	            <td>{{#if mecanismo_evento.mordedura}}X{{/if}}</td>
+	            <th class='th2'>AHOGAMIENTO</th>
+	            <td>{{#if mecanismo_evento.ahogamiento}}X{{/if}}</td>
+	            <th class='th2'>CUERPO EXTRAÑO</th>
+	            <td>{{#if mecanismo_evento.cuerpo_extraño}}X{{/if}}</td>
+	            <th class='th2'>APLASTAMIENTO</th>
+	            <td>{{#if mecanismo_evento.aplastamiento}}X{{/if}}</td>
+	            <th class='th2'>OTRO ACCIDENTE</th>
+	            <td>{{#if mecanismo_evento.otro_accidente}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2'>VIOLENCIA POR ARMA DE FUEGO</th>
+	            <td>{{#if mecanismo_evento.violencia_arma}}X{{/if}}</td>
+	            <th class='th2'>VIOLENCIA POR ARMA C. PUNZANTE</th>
+	            <td>{{#if mecanismo_evento.violencia_cortopunzante}}X{{/if}}</td>
+	            <th class='th2'>VIOLENCIA POR RIÑA</th>
+	            <td>{{#if mecanismo_evento.violencia_riña}}X{{/if}}</td>
+	            <th class='th2'>VIOLENCIA FAMILIAR</th>
+	            <td>{{#if mecanismo_evento.violencia_familiar}}X{{/if}}</td>
+	            <th class='th2'>PRESUNTA VIOLENCIA FÍSICA</th>
+	            <td>{{#if mecanismo_evento.presunta_violencia_fisica}}X{{/if}}</td>
+	            <th class='th2'>PRESUNTA VIOLENCIA PSICOLÓGICA</th>
+	            <td>{{#if mecanismo_evento.presunta_violencia_psico}}X{{/if}}</td>
+	            <th class='th2'>PRESUNTA VIOLENCIA SEXUAL</th>
+	            <td>{{#if mecanismo_evento.presunta_violencia_sexual}}X{{/if}}</td>
+	            <th class='th2'>NOTIFICACIÓN</th>
+	            <td>{{#if mecanismo_evento.notificacion}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2'>INTOXICACIÓN ALCOHÓLICA</th>
+	            <td>{{#if mecanismo_evento.intoxicacion_alcoholica}}X{{/if}}</td>
+	            <th class='th2'>INTOXICACIÓN ALIMENTARIA</th>
+	            <td>{{#if mecanismo_evento.intoxicacion_alimentaria}}X{{/if}}</td>
+	            <th class='th2'>INTOXICACIÓN POR DROGAS</th>
+	            <td>{{#if mecanismo_evento.intoxicacion_drogas}}X{{/if}}</td>
+	            <th class='th2'>INHALACIÓN DE GASES</th>
+	            <td>{{#if mecanismo_evento.inhalacion_gases}}X{{/if}}</td>
+	            <th class='th2'>OTRA INTOXICACIÓN</th>
+	            <td>{{#if mecanismo_evento.otra_intoxicacion}}X{{/if}}</td>
+	            <th class='th2'>PICADURA</th>
+	            <td>{{#if mecanismo_evento.picadura}}X{{/if}}</td>
+	            <th class='th2'>ENVENENAMIENTO</th>
+	            <td>{{#if mecanismo_evento.envenenamiento}}X{{/if}}</td>
+	            <th class='th2'>ANAFILAXIA</th>
+	            <td>{{#if mecanismo_evento.anafilaxia}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2' colspan="2">OBSERVACIONES</th>
+	            <td class='td1' colspan="14">{{observaciones}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td1' colspan="16">{{observaciones}}</td>
+	        </tr>
+		</table>
+        {{/with}}
+	</div>
+
+	<div class='document__e'>
+		{{#with E}}
+		<table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="8">E. ANTECEDENTES PATOLÓGICOS PERSONALES Y FAMILIARES</th>
+	            <th class='th1'>NO APLICA</th>
+	            <th class='th1'>{{#if no_aplica}}X{{/if}}</th>
+	        </tr>
+	        <tr >
+	            <th class='th2'>1. ALÉRGICOS</th>
+	            <td>{{#if antecedentes.alergicos}}X{{/if}}</td>
+	            <th class='th2'>3. GINECOLÓGICOS</th>
+	            <td>{{#if antecedentes.ginecologicos}}X{{/if}}</td>
+	            <th class='th2'>5. PEDIÁTRICOS</th>
+	            <td>{{#if antecedentes.pediatricos}}X{{/if}}</td>
+	            <th class='th2'>7. FARMACOLÓGICOS</th>
+	            <td>{{#if antecedentes.farmacologicos}}X{{/if}}</td>
+	            <th class='th2'>9. FAMILIARES</th>
+	            <td>{{#if antecedentes.familiares}}X{{/if}}</td>
+	        </tr>
+	        <tr >
+	            <th class='th2'>2. CLÍNICOS</th>
+	            <td>{{#if antecedentes.clinicos}}X{{/if}}</td>
+	            <th class='th2'>4. TRAUMATOLÓGICOS</th>
+	            <td>{{#if antecedentes.traumatologicos}}X{{/if}}</td>
+	            <th class='th2'>6. QUIRÚRGICOS</th>
+	            <td>{{#if antecedentes.quirurgicos}}X{{/if}}</td>
+	            <th class='th2'>8. HÁBITOS</th>
+	            <td>{{#if antecedentes.habitos}}X{{/if}}</td>
+	            <th class='th2'>10. OTROS</th>
+	            <td>{{#if antecedentes.otros}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td4j' colspan="10">{{descripcion_otros}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__f'>
+		{{#with F}}
+		<table>
+	    	<tr>
+	            <th class='th1'>F. ENFERMEDAD O PROBLEMA ACTUAL</th>
+	        </tr>
+	        <tr>
+	            <td class='td4j'>{{problema_actual}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>	
+
+	<footer>
+		<div style="width:100%;">
+			<table class="table table-bordered" style="font-size: 8px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
+		        <tbody>
+		            <th style="text-align: left;" >SNS-MSP / HCU-form.008 / 2021</th>
+		            <th style="text-align: right;font-size: 8px">EMERGENCIA(<span class="page"></span>)</th>
+		        </tbody>
+	    	</table>
+		</div>
+	</footer>
+
+	<div class='document__g'>
+		{{#with G}}
+		<table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="13">G. CONSTANTES VITALES Y ANTROPOMETRÍA</th>
+	        </tr>
+	        <tr>
+	            <td class='td3' colspan="2">SIN CONSTANTES VITALES</td>
+	            <td>{{sin_cons_vitales}}</td>
+	            <td class='td3' colspan="5">PRESIÓN ARTERIAL</td>
+	            <td>{{presion_arterial}}</td>
+	            <td class='td3'>PULSO / min</td>
+	            <td>{{pulso}}</td>
+	            <td class='td3'>FRECUENCIA RESPIRATORIA / min</td>
+	            <td>{{frecuencia_respitaroria}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td3' colspan="2">PULSIOXIMETRIA (%)</td>
+	            <td>{{pulsioximetria}}</td>
+	            <td class='td3' colspan="3">PERÍMETRO CEFÁLICO (cm)</td>
+	            <td>{{perimetro_cefalico}}</td>
+	            <td class='td3'>PESO(kg)</td>
+	            <td>{{peso}}</td>
+	            <td class='td3'>TALLA(cm)</td>
+	            <td>{{talla}}</td>
+	            <td class='td3'>GLICEMIA CAPILAR (mg/dl)</td>
+	            <td>{{glicemia_capilar}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2'>GLASGOW INICIAL</th>
+	            <td class='td2'>OCULAR (4)</td>
+	            <td>{{glasgow.ocular}}</td>
+	            <td class='td2'>VERBAL (5)</td>
+	            <td>{{glasgow.verbal}}</td>
+	            <td class='td2'>MOTORA (6)</td>
+	            <td>{{glasgow.motora}}</td>
+	            <td class='td2'>REACCIÓN PUPILA DER.</td>
+	            <td>{{glasgow.reacc_pupila_dere}}</td>
+	            <td class='td2'>REACCIÓN PUPILA IZQ.</td>
+	            <td>{{glasgow.reacc_pupila_izq}}</td>
+	            <td class='td2'>T. LLENADO CAPILAR</td>
+	            <td>{{glasgow.llenado_capilar}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__h'>
+		{{#with H}}
+		<table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="10">H. EXAMEN FÍSICO</th>
+	        </tr>
+	        <tr>
+	            <td class='td2'>1. PIEL - FANERAS</td>
+	            <td>{{#if examen_fisico.piel_faneras}}X{{/if}}</td>
+	            <td class='td2'>4. OÍDOS</td>
+	            <td>{{#if examen_fisico.oidos}}X{{/if}}</td>
+	            <td class='td2'>7. ORO FARINGE</td>
+	            <td>{{#if examen_fisico.oro_faringe}}X{{/if}}</td>
+	            <td class='td2'>10. TÓRAX</td>
+	            <td>{{#if examen_fisico.torax}}X{{/if}}</td>
+	            <td class='td2'>13. INGLE-PERINÉ</td>
+	            <td>{{#if examen_fisico.ingle_perine}}X{{/if}}</td>
+	         </tr>
+	        <tr>
+	            <td class='td2'>2. CABEZA </td>
+	            <td>{{#if examen_fisico.cabeza}}X{{/if}}</td>
+	            <td class='td2'>5. NARIZ</td>
+	            <td>{{#if examen_fisico.nariz}}X{{/if}}</td>
+	            <td class='td2'>8. CUELLO</td>
+	            <td>{{#if examen_fisico.cuello}}X{{/if}}</td>
+	            <td class='td2'>11. ABDOMEN </td>
+	            <td>{{#if examen_fisico.abdomen}}X{{/if}}</td>
+	            <td class='td2'>14. MIEMBROS SUPERIORES</td>
+	            <td>{{#if examen_fisico.miembros_superiores}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	        	<td class='td2'>3. OJOS </td>
+	            <td>{{#if examen_fisico.ojos}}X{{/if}}</td>
+	            <td class='td2'>6. BOCA</td>
+	            <td>{{#if examen_fisico.boca}}X{{/if}}</td>
+	            <td class='td2'>9. AXILAS - MAMAS</td>
+	            <td>{{#if examen_fisico.axilas_mamas}}X{{/if}}</td>
+	            <td class='td2'>12. COLUMNA VERTEBRAL </td>
+	            <td>{{#if examen_fisico.columna}}X{{/if}}</td>
+	            <td class='td2'>15. MIEMBROS INFERIORES</td>
+	            <td>{{#if examen_fisico.miembros_inferiores}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td4j' colspan="10">{{descripcion_examen}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__i'>
+		{{#with I}}
+		<table class="table2">
+	    	<tr>
+	            <th class='th1'>I. EXAMEN FÍSICO DE TRAUMA / CRÍTICO</th>
+	        </tr>
+	        <tr>
+	            <td class='td4j'>{{examen_trauma_critico}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__j'>
+		{{#with J}}
+		<table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="12">J. EMBARAZO - PARTO</th>
+	            <th class='th1'>NO APLICA</th>
+	            <th class='th1'>{{#if no_aplica}}X{{/if}}</th>
+	        </tr>
+	        <tr>
+	            <td class='td2'>NÚMERO GESTAS</td>
+	            <td>{{embarazo.num_gestas}}</td>
+	            <td class='td2'>NÚMERO PARTOS</td>
+	            <td>{{embarazo.num_partos}}</td>
+	            <td class='td2'>NÚMERO ABORTOS</td>
+	            <td>{{embarazo.num_abortos}}</td>
+	            <td class='td2'>NÚMERO CESÁREAS</td>
+	            <td>{{embarazo.num_cesareas}}</td>
+	            <td class='td2'>FUM</td>
+	            <td>{{embarazo.fum}}</td>
+	            <td class='td2'>SEMANAS GESTACIÓN</td>
+	            <td>{{embarazo.semanas_gestacion}}</td>
+	            <td class='td2'>MOVIMIENTO FETAL</td>
+	            <td>{{embarazo.movimiento_fetal}}</td>
+	        </tr>
+	            <tr>
+	            	<td colspan="2" class='td2'>FECUENCIA CARDÌACA FETAL</td>
+	            	<td>{{embarazo.frec_cardiaca_fetal}}</td>
+	            	<td colspan="2" class='td2'>RUPTURA DE MEMBRANAS</td>
+	            	<td>{{embarazo.ruptura_membranas}}</td>
+	            	<td class='td2'>TIEMPO</td>
+	            	<td>{{embarazo.tiempo}}</td>
+	            	<td class='td2'>AFU</td>
+	            	<td>{{embarazo.afu}}</td>
+	            	<td colspan="2" class='td2'>PRESENTACIÓN</td>
+	            	<td colspan="2">{{embarazo.afu}}</td>
+	            </tr>
+	            <tr>
+	            	<td class='td2' colspan="2">DILATACIÓN</td>
+	            	<td>{{embarazo.dilatacion}}</td>
+	            	<td class='td2' colspan="2">BORRAMIENTO</td>
+	            	<td>{{embarazo.borramiento}}</td>
+	            	<td class='td2'>PLANO</td>
+	            	<td>{{embarazo.plano}}</td>
+	            	<td class='td2'>PELVIS VIABLE</td>
+	            	<td>{{embarazo.pelvis_viable}}</td>
+	            	<td class='td2'>SANGRADO VAGINAL</td>
+	            	<td>{{embarazo.sangrado_vaginal}}</td>
+	            	<td class='td2'>CONTRACCIONES</td>
+	            	<td>{{embarazo.contracciones}}</td>
+	            </tr>
+	            <tr>
+	            	<td class='td2' colspan="2">SCORE MAMÁ</td>
+	            	<td colspan="12">{{embarazo.score_mama}}</td>
+	            </tr>
+	            <tr>
+	            	<td class='td1' colspan="14">{{descripcion_parto}}</td>
+	            </tr>
+	        </tbody>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__k'>
+		{{#with K}}
+		<table class="table2">
+	    	<tr>
+				<th class='th1' colspan="14">K. EXÁMENES COMPLEMENTARIOS</th>
+				<th class='th1'>NO APLICA</th>
+				<th class='th1'>{{#if no_aplica}}X{{/if}}</th>
+	        </tr>
+	        <tr>
+	            <td class='td2'>1. BIOMETRÍA</td>
+	            <td>{{#if examen_complementario.biometria}}X{{/if}}</td>
+	            <td class='td2'>3. QUÍMICA SANGUÍNEA</td>
+	            <td>{{#if examen_complementario.quimica_sanguinea}}X{{/if}}</td>
+	            <td class='td2'>5. GASOMETRÍA</td>
+	            <td>{{#if examen_complementario.gasometria}}X{{/if}}</td>
+	            <td class='td2'>7. ENDOSCOPIA</td>
+	            <td>{{#if examen_complementario.endoscopia}}X{{/if}}</td>
+	            <td class='td2'>9. RX ABDOMEN</td>
+	            <td>{{#if examen_complementario.rx_abdomen}}X{{/if}}</td>
+	            <td class='td2'>11. ECOGRAFÌA ABDOMEN</td>
+	            <td>{{#if examen_complementario.ecografia_abdomen}}X{{/if}}</td>
+	            <td class='td2'>13. TOMOGRAFÌA</td>
+	            <td>{{#if examen_complementario.tomografia}}X{{/if}}</td>
+	            <td class='td2'>15. INTERCONSULTA</td>
+	            <td>{{#if examen_complementario.interconsulta}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td2'>2. UROANALISIS</td>
+	            <td>{{#if examen_complementario.uroanalisis}}X{{/if}}</td>
+	            <td class='td2'>4. ELECTROLITOS</td>
+	            <td>{{#if examen_complementario.electrolitos}}X{{/if}}</td>
+	            <td class='td2'>6. ELECTRO CARDIOGRAMA </td>
+	            <td>{{#if examen_complementario.electro_cardiograma}}X{{/if}}</td>
+	            <td class='td2'>8. RX TÓRAX</td>
+	            <td>{{#if examen_complementario.rx_torax}}X{{/if}}</td>
+	            <td class='td2'>10. RX OSEA</td>
+	            <td>{{#if examen_complementario.rx_osea}}X{{/if}}</td>
+	            <td class='td2'>12. ECOGRAFÌA PÈLVICA</td>
+	            <td>{{#if examen_complementario.ecografia_pelvica}}X{{/if}}</td>
+	            <td class='td2'>14. RESONANCIA</td>
+	            <td>{{#if examen_complementario.resonancia}}X{{/if}}</td>
+	            <td class='td2'>16. OTROS</td>
+	            <td>{{#if examen_complementario.otros}}X{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <th class='td2'>OBSERVACIONES:</th>
+	            <td class='td1' colspan="15">{{observaciones}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td1' colspan="16">{{observaciones}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__l'>
+		{{#with L}}
+		<table>
+	        <tr>
+	            <td >
+		            <table class="table2">
+		    			<tr>
+		    				<th class='th1' colspan="2">L. DIAGNÓSTICOS PRESUNTIVOS</th>
+		    				<th class='th1'>CIE</th>
+		    			</tr>
+					    <tr>
+					        <th class='th5'>1.</th>
+					        <td class="td1">{{diagnosticos_presuntivos.[0].descripcion}}</td>
+					        <td class="td1">{{diagnosticos_presuntivos.[0].cie}}</td>
+					    </tr>
+					    <tr>
+					        <th class='th5'>2.</th>
+					        <td class="td1">{{diagnosticos_presuntivos.[1].descripcion}}</td>
+					        <td class="td1">{{diagnosticos_presuntivos.[1].cie}}</td>
+					    </tr>
+					    <tr>
+					        <th class='th5'>3.</th>
+					        <td class="td1">{{diagnosticos_presuntivos.[2].descripcion}}</td>
+					        <td class="td1">{{diagnosticos_presuntivos.[2].cie}}</td>
+					    </tr>
+					    </table>	
+			</td>
+				<td>
+		            <table class="table2">
+		    			<tr>
+		    				<th class='th1' colspan="2">M. DIAGNÓSTICOS DEFINITIVOS</th>
+		    				<th class='th1'>CIE</th>
+		    			</tr>
+					    <tr>
+					        <th class='th5'>1.</th>
+					        <td class="td1">{{diagnosticos_definitivos.[0].descripcion}}</td>
+					        <td class="td1">{{diagnosticos_definitivos.[0].cie}}</td>
+					    </tr>
+					    <tr>
+					        <th class='th5'>2.</th>
+					        <td class="td1">{{diagnosticos_definitivos.[1].descripcion}}</td>
+					        <td class="td1">{{diagnosticos_definitivos.[1].cie}}</td>
+					    </tr>
+					    <tr>
+					        <th class='th5'>3.</th>
+					        <td class="td1">{{diagnosticos_definitivos.[2].descripcion}}</td>
+					        <td class="td1">{{diagnosticos_definitivos.[2].cie}}</td>
+					    </tr>
+					</table>	
+			    </td>
+			</tr>		
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__n'>
+		{{#with N}}
+		<table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="5">N. PLAN DE TRATAMIENTO</th>
+	        </tr>
+	        <tr>
+	            <th class='th2'>MEDICAMENTOS</th>
+	            <th class='th2'>VIA</th>
+	            <th class='th2'>DOSIS</th>
+	            <th class='th2'>POSOLOGIA</th>
+	            <th class='th2'>DIAS</th>
+	        </tr>
+	        <tr>
+	            <td class='td1' colspan="5">{{plan_tratamiento}}</div></td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__o'>
+		{{#with O}}
+		<table class="table2">
+	    	<tr>
+	            <th class='th1' colspan="14">O. CONDICIÓN AL EGRESO DE EMERGENCIA</th>
+	        </tr>
+	        <tr>
+	            <td class='td2'>VIVO</td>
+	            <td>{{#if vivo}}x{{/if}}</td>
+	            <td class='td2'>ESTABLE</td>
+	            <td>{{#if estable}}x{{/if}}</td>
+	            <td class='td2'>INESTABLE</td>
+	            <td>{{#if inestable}}x{{/if}}</td>
+	            <td class='td2'>FALLECIDO</td>
+	            <td>{{#if fallecido}}x{{/if}}</td>
+	            <td class='td2'>ALTA DEFINITIVA</td>
+	            <td>{{#if alta_definitiva}}x{{/if}}</td>
+	            <td class='td2'>CONSULTA EXTERNA</td>
+	            <td>{{#if consulta_externa}}x{{/if}}</td>
+	            <td class='td2'>OBSERVACIÓN DE EMERGENCIA</td>
+	            <td>{{#if observacion_emergencia}}x{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <td class='td2'>HOSPITALIZACIÓN</td>
+	            <td>{{#if hospitalizacion}}x{{/if}}</td>
+	            <td class='td2'>REFERENCIA</td>
+	            <td>{{#if referencia}}x{{/if}}</td>
+	            <td class='td2'>REFERENCIA INVERSA</td>
+	            <td>{{#if referencia_inversa}}x{{/if}}</td>
+	            <td class='td2'>DERIVACIÓN</td>
+	            <td>{{#if derivacion}}x{{/if}}</td>
+	            <td class='td2'>ESTABLECIMIENTO</td>
+	            <td colspan="5">{{#if establecimiento}}x{{/if}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2'>OBSERVACIONES:</th>
+	            <td class='td1' colspan="11">{{observaciones}}</td>
+	            <th class='th2'>DÍAS DE REPOSO</th>
+	            <td>{{dias_reposo}}</td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class='document__p'>
+		{{#with P}}
+	    <table class="table2">
+	        <tr>
+	            <th class='th1' colspan="5">P. DATOS DEL PROFESIONAL RESPONSABLE</th>
+	        </tr>
+	        <tr>
+	            <th class='th2'>FECHA</th>
+	            <th class='th2'>HORA</th>
+	            <th class='th2'>NOMBRES</th>
+	            <th class='th2'>PRIMER APELLIDO</th>
+	        	<th class='th2'>SEGUNDO APELLIDO</th>
+	        </tr>
+	        <tr>
+	            <td>{{fecha}}</td>
+	            <td>{{hora}}</td>
+	            <td>{{nombres}}</td>
+	            <td>{{primer_apellido_med}}</td>
+	            <td>{{segundo_apellido_med}}</td>
+	        </tr>
+	        <tr>
+	            <th class='th2' colspan="2">NUMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+	            <th class='th2' colspan="2">FIRMA</th>
+	            <th class='th2'>SELLO</th>
+	        </tr>
+	        <tr>
+	            <td colspan="2">{{numero_identificacion_med}}</td>
+				<td colspan="2"><img src='{{firma_med}}' /></td>
+	            <td colspan="2"><img src='{{sello_med}}' /></td>
+	        </tr>
+	    </table>
+		{{/with}}
+	</div>
+</body>
+</html>
