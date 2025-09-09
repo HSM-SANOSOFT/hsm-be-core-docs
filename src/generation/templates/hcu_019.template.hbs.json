@@ -18,5 +18,19 @@
            "m": false,
            "a": true
         }
+    },
+
+    "B": {
+        "especialidad": "string",
+        "diagnostico": "string",
+        "cx_realizada": "string",
+        "tecnica_anestesica": {
+            "general": true,
+            "local": true,
+            "troncular": true,
+            "neuroaxial": true,
+            "intravenosa": true,
+            "sedacion": true
+        }
     }
 }    

@@ -19,5 +19,20 @@ export type Hcu019DocumentTemplate = {
             m: boolean;
             a: boolean;
         };
+    },
+
+    B: {
+        especialidad: string,
+        diagnostico: string,
+        cx_realizada: string,
+        tecnica_anestesica: {
+            general: boolean,
+            local: boolean,
+            troncular: boolean,
+            neuroaxial: boolean,
+            intravenosa: boolean,
+            sedacion: boolean
+        }
+
     }
 }    

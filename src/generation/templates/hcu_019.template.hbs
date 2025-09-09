@@ -160,61 +160,57 @@
 	        <tr>
 	            <td>{{primer_apellido}}</td>
 	            <td>{{segundo_apellido}}</td>
-	            <td style="font-size: 9px"><?php echo($archivo[1]['PRIMER_NOMBRE'][0])?></td>
-	            <td style="font-size: 9px"><?php echo($archivo[1]['SEGUNDO_NOMBRE'][0])?></td>
-	            <td><?php echo($archivo[1]['SEXO'][0])?></td>
-	            <td><?php echo($archivo[1]['FECHA_NACIMIENTO'][0])?></td>
-	            <td><?php echo($archivo[1]['EDAD'][0])?></td>
-	            <td></td>
-	            <td></td>
-	            <td></td>
-	            <td></td>
+	            <td>{{primer_nombre}}</td>
+	            <td>{{segundo_nombre}}</td>
+	            <td>{{sexo}}</td>
+	            <td>{{fecha_nacimiento}}</td>
+	            <td>{{edad}}</td>
+	            <td>{{#if condicion_edad.m1}}X{{/if}}</td>
+	            <td>{{#if condicion_edad.d}}X{{/if}}</td>
+	            <td>{{#if condicion_edad.m2}}X{{/if}}</td>
+	            <td>{{#if condicion_edad.a}}X{{/if}}</td>
 	        </tr> 
 	    </table>
         {{/with}}
 	</div>
-	<div style="width:100%;padding-top: 3px">
-		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-	    	<thead>
-	    		<tr>
-	              <th colspan="9" style="text-align: left;font-size: 10px" bgcolor="ccccff">B. PROCEDIMIENTO QUIRÚRGICO ANESTÉSICO</th>
-	            </tr>
-	    	</thead>
-	        <tbody>
-	        	<tr>
-	        		<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">ESPECIALIDAD</th>
-	        		<td style="width: 350px;height: 10px"></td>
-	        		<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">DIAGNÓSTICO</th>
-	        		<td colspan="6"><?php echo($archivo[1]['ENFERMEDAD'][0])?></td>
-	        	</tr>
-	        	<tr>
-	        		<td  style="height: 10px"></td>
-	        		<td  colspan="6"></td>
-
-	        	</tr>
-	        	<tr>
-	        		<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">CIRUGÍA REALIZADA</th>
-	        		<td style="height: 10px"><?php echo($archivo[1]['DESCRIPCION'][0])?></td>
-	        		<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">TÉCNICA ANESTESICA</th>
-	        		<td>General</td>
-	        		<th style="width: 20px"><?php if($archivo[1]['GENERAL'][0] == 'V'){ echo('X'); } ?></th>
-	        		<td>Local</td>
-	        		<th style="width: 20px"><?php if($archivo[1]['LOCAL'][0] == 'V'){ echo('X'); } ?></th>
-	        		<td>Troncular</td>
-	        		<th style="width: 20px"></th>
-	        	</tr>
-	        	<tr>
-	        		<td  style="height: 10px"><?php echo($archivo[1]['DESCRIPCION'][1])?></td>
-	        		<td >Neuroaxial</td>
-	        		<th style="width: 20px"></th>
-	        		<td>Intravenosa</td>
-	        		<th style="width: 20px"></th>
-	        		<td>Sedación</td>
-	        		<th style="width: 20px"><?php if($archivo[1]['CONDUCTIVA'][0] == 'V'){ echo('X'); } ?></th>
-	        	</tr>
-	        	
-	        </tbody>
+	<div class='document__postA__b'>
+		{{#with B}}
+		<table>
+	    	<tr>
+	            <th class="th1" colspan="9">B. PROCEDIMIENTO QUIRÚRGICO ANESTÉSICO</th>
+	        </tr>
+	        <tr>
+	        	<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">ESPECIALIDAD</th>
+	        	<td style="width: 350px;height: 10px"></td>
+	        	<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">DIAGNÓSTICO</th>
+	        	<td colspan="6"><?php echo($archivo[1]['ENFERMEDAD'][0])?></td>
+	        </tr>
+	        <tr>
+	        	<td  style="height: 10px"></td>
+	        	<td  colspan="6"></td>
+	        </tr>
+	        <tr>
+	        	<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">CIRUGÍA REALIZADA</th>
+	        	<td style="height: 10px"><?php echo($archivo[1]['DESCRIPCION'][0])?></td>
+	        	<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">TÉCNICA ANESTESICA</th>
+	        	<td>General</td>
+	        	<th style="width: 20px"><?php if($archivo[1]['GENERAL'][0] == 'V'){ echo('X'); } ?></th>
+	        	<td>Local</td>
+	        	<th style="width: 20px"><?php if($archivo[1]['LOCAL'][0] == 'V'){ echo('X'); } ?></th>
+	        	<td>Troncular</td>
+	        	<th style="width: 20px"></th>
+	        </tr>
+	        <tr>
+	        	<td  style="height: 10px"><?php echo($archivo[1]['DESCRIPCION'][1])?></td>
+	        	<td >Neuroaxial</td>
+	        	<th style="width: 20px"></th>
+	        	<td>Intravenosa</td>
+	        	<th style="width: 20px"></th>
+	        	<td>Sedación</td>
+	        	<th style="width: 20px"><?php if($archivo[1]['CONDUCTIVA'][0] == 'V'){ echo('X'); } ?></th>
+	        </tr>
 	    </table>
+		{{/with}}
 	</div>
 	<div style="width:100%;padding-top: 3px">
 		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 7px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
