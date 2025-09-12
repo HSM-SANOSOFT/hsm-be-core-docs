@@ -2,7 +2,7 @@
     <head>
       <meta charset='UTF-8' />
 	  <style>
-      @page { 
+      @page {
         counter-reset: page 0;
       }
       body {
@@ -41,8 +41,11 @@
       }
 
       .table2 {
-        table-layout: unset;
+        table-layout: fixed;
+  			border: none;
+  			border-spacing: 0;
       }
+
       img {
         max-height: 100px;
         width: auto;
@@ -52,7 +55,7 @@
         min-width: 8px;
         text-align: center;
         border: 1px solid black;
-        height: 8px;      
+        height: 8px;
         }
 
       th {
@@ -74,13 +77,18 @@
       }
 
       .th3 {
-        background-color: white;
-      }
-      .th4 {
-        background-color: #ccffcc;
-        font-size: 9px;
+        width: 5px;
         text-align: left;
       }
+
+      .th4 {
+				background-color: transparent;
+  			font-size: 9px;
+  			text-align: center;
+  			border: none;
+  			padding: 0;
+      }
+
       .th5 {
         background-color: #ccffcc;
         width: 5px;
@@ -97,8 +105,13 @@
         text-align: left;
         /*width: max-content;*/
         white-space: nowrap;
-		background-color: #ccffcc;
-      }
+				background-color: #ccffcc;
+    	}
+
+			.td3 {
+        text-align: center;
+				width: 150px;
+    	}
 
       .td4j {
         height: 90px;
@@ -108,7 +121,14 @@
 
     .document__postA,
     .document__postA__a,
-    .document__postA__b {
+    .document__postA__b,
+		.document__postA__c,
+		.document__postA__d,
+		.document__postA__e,
+		.document__postA__f,
+		.document__postA__g,
+		.document__postA__h,
+		.document__postA__i {
         width: 100%;
         margin-top: 5px;
         padding: 0;
@@ -169,680 +189,401 @@
 	            <td>{{#if condicion_edad.d}}X{{/if}}</td>
 	            <td>{{#if condicion_edad.m2}}X{{/if}}</td>
 	            <td>{{#if condicion_edad.a}}X{{/if}}</td>
-	        </tr> 
+	        </tr>
 	    </table>
         {{/with}}
 	</div>
+
 	<div class='document__postA__b'>
 		{{#with B}}
 		<table>
 	    	<tr>
-	            <th class="th1" colspan="9">B. PROCEDIMIENTO QUIRÚRGICO ANESTÉSICO</th>
-	        </tr>
-	        <tr>
-	        	<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">ESPECIALIDAD</th>
-	        	<td style="width: 350px;height: 10px"></td>
-	        	<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">DIAGNÓSTICO</th>
-	        	<td colspan="6"><?php echo($archivo[1]['ENFERMEDAD'][0])?></td>
-	        </tr>
-	        <tr>
-	        	<td  style="height: 10px"></td>
-	        	<td  colspan="6"></td>
-	        </tr>
-	        <tr>
-	        	<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">CIRUGÍA REALIZADA</th>
-	        	<td style="height: 10px"><?php echo($archivo[1]['DESCRIPCION'][0])?></td>
-	        	<th rowspan="2" style="text-align: center;" bgcolor="CCFFCC">TÉCNICA ANESTESICA</th>
-	        	<td>General</td>
-	        	<th style="width: 20px"><?php if($archivo[1]['GENERAL'][0] == 'V'){ echo('X'); } ?></th>
-	        	<td>Local</td>
-	        	<th style="width: 20px"><?php if($archivo[1]['LOCAL'][0] == 'V'){ echo('X'); } ?></th>
-	        	<td>Troncular</td>
-	        	<th style="width: 20px"></th>
-	        </tr>
-	        <tr>
-	        	<td  style="height: 10px"><?php echo($archivo[1]['DESCRIPCION'][1])?></td>
-	        	<td >Neuroaxial</td>
-	        	<th style="width: 20px"></th>
-	        	<td>Intravenosa</td>
-	        	<th style="width: 20px"></th>
-	        	<td>Sedación</td>
-	        	<th style="width: 20px"><?php if($archivo[1]['CONDUCTIVA'][0] == 'V'){ echo('X'); } ?></th>
-	        </tr>
+	          <th class="th1" colspan="9">B. PROCEDIMIENTO QUIRÚRGICO ANESTÉSICO</th>
+	      </tr>
+	      <tr>
+	        <th class="th2" rowspan="2">ESPECIALIDAD</th>
+	        <td>{{especialidad}}</td>
+	        <th class="th2" rowspan="2">DIAGNÓSTICO</th>
+	        <td colspan="6">{{diagnostico}}</td>
+	      </tr>
+	      <tr>
+	        <td></td>
+	        <td colspan="6"></td>
+	      </tr>
+	      <tr>
+	        <th class="th2" rowspan="2">CIRUGÍA REALIZADA</th>
+	        <td>{{cx_realizada}}</td>
+	        <th class="th2" rowspan="2">TÉCNICA ANESTESICA</th>
+	        <th>General</th>
+	        <td>{{#if tecnica_anestesica.general}}X{{/if}}</td>
+	        <th>Local</th>
+	        <td>{{#if tecnica_anestesica.local}}X{{/if}}</td>
+	        <th>Troncular</th>
+	        <td>{{#if tecnica_anestesica.troncular}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+	        <td></td>
+	        <th>Neuroaxial</th>
+	        <td>{{#if tecnica_anestesica.neuroaxial}}X{{/if}}</td>
+	        <th>Intravenosa</th>
+	        <td>{{#if tecnica_anestesica.intravenosa}}X{{/if}}</td>
+	        <th>Sedación</t>
+	        <td>{{#if tecnica_anestesica.sedacion}}X{{/if}}</td>
+	      </tr>
 	    </table>
 		{{/with}}
 	</div>
-	<div style="width:100%;padding-top: 3px">
-		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 7px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-	    	<thead>
-	    		<tr>
-	              <th colspan="39" style="text-align: left;font-size: 10px" bgcolor="ccccff">C. ENTREGA - RECEPCIÓN DEL PACIENTE</th>
-	            </tr>
-	    	</thead>
-	        <tbody>
-	        	<tr>
-	        		<th rowspan="2" style="text-align: center;width: 50px;font-size: 6px" >INGRESO A UNIDAD DE CUIDADOS POSTANESTÉSICOS</th>
-	        		<td colspan="36" style="width: 350px;height: 10px;text-align: center" >ESCALAS / ÍNDICES / PUNTAJES </td>
-	        		<th colspan="2">Responsable</th>
-	        	</tr>
-	        	<tr>
-	        		<td colspan="8" style="height: 10px;"  bgcolor="CCFFCC">ALDRETE MODIFICADO</td>
-	        		<td colspan="12"  bgcolor="CCFFCC" >BROMAGE</td>
-	        		<td colspan="16" bgcolor="CCFFCC" >RAMSAY</td>
-	        		<th style="width: 30px">Nombre:</th>
-	        		<td></td>
-	        	</tr>
-	        	<tr>
-	        		<th rowspan="2" style="text-align: left;height: 25px">FECHA:</th>
-	        		<td style="width: 10px;height: 10px">7</td>
-	        		<th style="width: 10px"><?php if($archivo4[1]['ALDRETE'][0] <= '7'){ echo('X'); } ?></th>
-	        		<td style="width: 10px">8</td>
-	        		<th style="width: 10px"><?php if($archivo4[1]['ALDRETE'][0] == '8'){ echo('X'); } ?></th>
-	        		<td style="width: 10px">9</td>
-	        		<th style="width: 10px"><?php if($archivo4[1]['ALDRETE'][0] == '9'){ echo('X'); } ?></th>
-	        		<td style="width: 10px">10</td>
-	        		<th style="width: 10px"><?php if($archivo4[1]['ALDRETE'][0] >= '10'){ echo('X'); } ?></th>
-	        		<!-- 2  -->
-	        		<td colspan="2" style="width: 15px">100%</td>
-	        		<th style="width: 10px"><?php if($archivo4[1]['BROMAGE'][0] == 100){ echo('X'); } ?></th>
-	        		<td colspan="2" style="width: 15px">66%</td>
-	        		<th style="width: 10px"><?php if($archivo4[1]['BROMAGE'][0] >= 34 || $archivo4[1]['BROMAGE'][0] <= 99){ echo('X'); } ?></th>
-	        		<td colspan="2" style="width: 15px">33%</td>
-	        		<th style="width: 10px"><?php if($archivo4[1]['BROMAGE'][0] >= 1 || $archivo4[1]['BROMAGE'][0] <= 33){ echo('X'); } ?></th>
-	        		<td colspan="2" style="width: 15px">0%</td>
-	        		<th style="width: 10px"><?php if($archivo4[1]['BROMAGE'][0] == 0 || $archivo4[1]['BROMAGE'][0] == null){ echo('X'); } ?></th>
-	        		<!-- 3  -->
-	        		<td style="width: 10px;height: 10px">0</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 10px">1</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 10px">2</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 10px">3</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 10px">4</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 10px">5</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 10px">6</td>
-	        		<th style="width: 10px"></th>
-	        		<td colspan="2"></td>
-	        		<th>Firma:</th>
-	        		<td></td>
-	        	</tr>
-	   			<tr>
-	   				<th colspan="22" bgcolor="CCFFCC">ETA</th>
-	   				<th colspan="14" bgcolor="CCFFCC">STEWARD</th>
-	   				<th colspan="2">Recibe</th>
-	   			</tr>
-	   			<tr>
-	   				<th rowspan="2" style="text-align: left;height: 25px">HORA</th>
-	   				<td style="width: 15px">0</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">1</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">2</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">3</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">4</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">5</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">6</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">7</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">8</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">9</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">10</td>
-	        		<th style="width: 10px"></th>
-	        		<!-- 2  -->
-	   				<td style="width: 15px">0</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">1</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">2</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">3</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">4</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">5</td>
-	        		<th style="width: 10px"></th>
-	        		<td style="width: 15px">6</td>
-	        		<th style="width: 10px"></th>
-	        		<th>Nombre:</th>
-	        		<td></td>
-	   			</tr>
-	        	<tr>
-	        		<th colspan="2" bgcolor="CCFFCC">Otros:</th>
-	        		<td colspan="34"></td>
-	        		<th>Firma:</th>
-	        		<td></td>
-	        	</tr>
 
-	        </tbody>
+	<div class='document__postA__c'>
+		{{#with C}}
+		<table>
+	    <tr>
+	      <th class="th1" colspan="39">C. ENTREGA - RECEPCIÓN DEL PACIENTE</th>
+	    </tr>
+	    <tr>
+	      <th class="th3" rowspan="2">INGRESO A UNIDAD DE CUIDADOS POSTANESTÉSICOS</th>
+	      <th colspan="36">ESCALAS / ÍNDICES / PUNTAJES </th>
+	      <th colspan="2">Responsable</th>
+	    </tr>
+	    <tr>
+	      <th class="th2" colspan="8">ALDRETE MODIFICADO</th>
+	      <th class="th2" colspan="8">BROMAGE</th>
+	      <th class="th2" colspan="20">RAMSAY</th>
+	      <th class="th3">Nombre:</th>
+	      <td class="td1">{{entrega.nombre}}</td>
+	    </tr>
+	    <tr>
+	      <th class="th3" rowspan="2">FECHA:</th>
+	      <th>7</th>
+	      <td>{{#if aldrede_modificado.a7}}X{{/if}}</td>
+	      <th>8</th>
+	      <td>{{#if aldrede_modificado.a8}}X{{/if}}</td>
+	      <th>9</th>
+	      <td>{{#if aldrede_modificado.a9}}X{{/if}}</td>
+	      <th>10</th>
+	      <td>{{#if aldrede_modificado.a10}}X{{/if}}</td>
+	      <!-- 2  -->
+	      <th>100%</th>
+	      <td>{{#if bromage.b100}}X{{/if}}</td>
+	      <th>66%</th>
+	      <td>{{#if bromage.b66}}X{{/if}}</td>
+	      <th>33%</th>
+	      <td>{{#if bromage.b33}}X{{/if}}</td>
+	      <th>0%</th>
+	      <td>{{#if bromage.b0}}X{{/if}}</td>
+	      <!-- 3  -->
+	      <th>0</th>
+	      <td>{{#if ramsay.r0}}X{{/if}}</td>
+	      <th>1</th>
+	      <td>{{#if ramsay.r1}}X{{/if}}</td>
+	      <th>2</th>
+	      <td>{{#if ramsay.r2}}X{{/if}}</td>
+	      <th>3</t>
+	      <td>{{#if ramsay.r3}}X{{/if}}</td>
+	      <th>4</th>
+	      <td>{{#if ramsay.r4}}X{{/if}}</td>
+	      <th>5</th>
+	      <td>{{#if ramsay.r5}}X{{/if}}</td>
+	      <th>6</th>
+	      <td>{{#if ramsay.r6}}X{{/if}}</td>
+	      <th class="th2" colspan="6"></th>
+	      <th>Firma:</th>
+	      <td class="td1">{{entrega.firma}}</td>
+	    </tr>
+	   	<tr>
+	   		<th class="th2" colspan="22">EVA</th>
+	   		<th class="th2" colspan="14">STEWARD</th>
+	   		<th colspan="2">Recibe</th>
+	   	</tr>
+	   	<tr>
+	   		<th rowspan="2">HORA</th>
+	   		<th>0</th>
+	      <td>{{#if eva.e0}}X{{/if}}</td>
+	      <th>1</th>
+	      <td>{{#if eva.e1}}X{{/if}}</td>
+	      <th>2</th>
+	      <td>{{#if eva.e2}}X{{/if}}</td>
+	      <th>3</th>
+	      <td>{{#if eva.e3}}X{{/if}}</td>
+	      <th>4</th>
+	      <td>{{#if eva.e4}}X{{/if}}</td>
+	      <th>5</th>
+	      <td>{{#if eva.e5}}X{{/if}}</td>
+	      <th>6</th>
+	      <td>{{#if eva.e6}}X{{/if}}</td>
+	      <th>7</th>
+	      <td>{{#if eva.e7}}X{{/if}}</td>
+	      <th>8</th>
+	      <td>{{#if eva.e8}}X{{/if}}</td>
+	      <th>9</th>
+	      <td>{{#if eva.e9}}X{{/if}}</td>
+	      <th>10</th>
+	      <td>{{#if eva.e10}}X{{/if}}</td>
+	      <!-- 2  -->
+	   		<th>0</th>
+	      <td>{{#if steward.s0}}X{{/if}}</td>
+	      <th>1</th>
+	      <td>{{#if steward.s1}}X{{/if}}</td>
+	      <th>2</th>
+	      <td>{{#if steward.s2}}X{{/if}}</td>
+	      <th>3</th>
+	      <td>{{#if steward.s3}}X{{/if}}</td>
+	      <th>4</th>
+	      <td>{{#if steward.s4}}X{{/if}}</td>
+	      <th>5</th>
+	      <td>{{#if steward.s5}}X{{/if}}</td>
+	      <th>6</th>
+	      <td>{{#if steward.s6}}X{{/if}}</td>
+	      <th>Nombre:</th>
+	      <td class="td1">{{recibe.nombre}}</td>
+	   	</tr>
+	    <tr>
+	      <th class="th2" colspan="2">Otros:</th>
+	      <td class="td1" colspan="34">{{otros}}</td>
+	      <th>Firma:</th>
+	      <td class="td1">{{recibe.firma}}</td>
+	    </tr>
+	    </table>
+			{{/with}}
+	</div>
+
+	<div class='document__postA__d'>
+		{{#with D}}
+		<table>
+			<tr>
+				<th class="th1" colspan="5">D. MONITORIZACIÓN</th>
+  		</tr>
+  		<tr>
+				<td>
+					<table>
+						<tr>
+							<th class="th5"></th>
+							<td></td>
+						</tr>
+        		<tr>
+							<th class="th5">TAS</th>
+							<th>∨</th>
+						</tr>
+        		<tr>
+							<th class="th5">TAD</th>
+							<th>∧</th>
+						</tr>
+        		<tr>
+							<th class="th5">TAM</th>
+							<th>×</th>
+						</tr>
+        		<tr>
+							<th class="th5">FREC.CARDIACA</th>
+							<th>●</th>
+						</tr>
+        		<tr>
+							<th class="th5">TEMPERATURA</th>
+							<th>△</th>
+						</tr>
+        		<tr>
+							<th class="th5">PVC</th>
+							<th>+</th>
+						</tr>
+        		<tr>
+							<th class="th5">SATURACION O2</th>
+							<td></td>
+						</tr>
+						{{#each leyendaRelleno}}
+						<tr>
+							<th class="th5">
+							</th><td>
+							</td>
+						</tr>
+						{{/each}}
+      </table>
+    </td>
+
+		<!-- T° -->
+		<td>
+  		<table>
+				<tr>
+					<th class="th5">T°</th>
+				</tr>
+    		{{#each tRows}}
+      	<tr>
+					<td>{{this}}</td>
+				</tr>
+    		{{/each}}
+  		</table>
+		</td>
+
+		<!-- PV -->
+		<td>
+  		<table>
+    		<tr>
+					<th class="th5">PV</th>
+				</tr>
+    		{{#each pvRows}}
+      	<tr>
+					<td>{{this}}</td>
+				</tr>
+    		{{/each}}
+  		</table>
+		</td>
+
+		<!-- TA -->
+		<td>
+  		<table>
+    		<tr>
+					<th class="th5">TA</th>
+				</tr>
+    		{{#each taRows}}
+				<tr>
+					<td>{{this}}</td>
+				</tr>
+  			{{/each}}
+  		</table>
+		</td>
+
+		<td>
+			<table class="table2">
+				<tr>
+					{{#each bloques}}
+					<th class="th4">
+						<table class="table2">
+							<tr>
+								<th class="th4"></th>
+								<th class="th4"></th>
+								<th class="th4" colspan="2">15</th>
+								<th class="th4"></th>
+    						<th class="th4" colspan="2">30</th>
+    						<th class="th4"></th>
+								<th class="th4" colspan="2">45</th>
+    						<th class="th4"></th>
+								<th class="th4">↑</th>
+  						</tr>
+        		</table>
+      		</th>
+    			{{/each}}
+  			</tr>
+			</table>
+
+			<table class="table2">
+  			<tr>
+    			{{#each bloques}}
+      	<th class="th4">
+        	<table class="table2">
+          {{#each filas}}
+        <tr>
+          {{#each celdas}}
+          <td>
+            {{#if valor}}
+            {{#if simbolo}}{{simbolo}}{{/if}}
+          {{/if}}
+          </td>
+          {{/each}}
+        </tr>
+          {{/each}}
+      	</table>
+      	</th>
+    		{{/each}}
+  			</tr>
+			</table>
+		</td>
+
+  	<tr>
+			<th class="th5" colspan="4">ALDRETE MODIFICADO</th>
+			<td class="td1">{{aldrete}}</td>
+		</tr>
+  	<tr>
+			<th class="th5" colspan="4">BROMAGE</th>
+			<td class="td1">{{bromage}}</td>
+		</tr>
+  	<tr>
+			<th class="th5" colspan="4">RAMSAY</th>
+			<td class="td1">{{ramsay}}</td>
+		</tr>
+  	<tr>
+			<th class="th5" colspan="4">EVA</th>
+			<td class="td1">{{eva}}</td>
+		</tr>
+  	<tr>
+			<th class="th5" colspan="4">STEWARD</th>
+			<td class="td1">{{steward}}</td>
+		</tr>
+  	<tr>
+			<th class="th5" colspan="4">OTRO</th>
+			<td class="td1">{{otro}}</td>
+		</tr>
+		</table>
+	{{/with}}
+</div>
+
+
+	<div class='document__postA__e'>
+		<table>
+	    <tr>
+	      <td>
+					{{#with E}}
+	        <table>
+					  <tr>
+					    <th class="th1" colspan="2">E. INGRESOS</th>
+					  </tr>
+					  <tr>
+					    <td class="td3">ORAL</td>
+					    <td class="td1">{{oral}}</td>
+					  </tr>
+					  <tr>
+					    <td class="td3">INFUSIONES</td>
+					    <td class="td1">{{infusiones}}</td>
+					  </tr>
+					  <tr>
+					    <td class="td3">SANGRE Y DERIVADOS</td>
+					    <td class="td1">{{sangre_derivados}}</td>
+					  </tr>
+					  <tr>
+					    <td class="td3">OTROS</td>
+					    <td class="td1">{{otros}}</td>
+					  </tr>
+					  <tr>
+					    <th>TOTAL</th>
+					    <td class="td1">{{total}}</td>
+					  </tr>
+				</table>
+				{{/with}}
+	      </td>
+	        <td>
+						{{#with F}}
+	        	<table>
+					    <tr>
+					      <th class="th1" colspan="2">F. ELIMINACION</th>
+					    </tr>
+					    <tr>
+					    	<td class="td3">DIURESIS O SONDA VESICAL</td>
+					    	<td class="td1">{{diuresis}}</td>
+					    </tr>
+					    <tr>
+					    	<td class="td3">VÓMITO O SONDA NASOGASTRICO</td>
+					    	<td class="td1">{{vomito}}</td>
+					    </tr>
+					    <tr>
+					    	<td class="td3">TORÁCICO</td>
+					    	<td class="td1">{{toracico}}</td>
+					    </tr>
+					    <tr>
+					    	<td class="td3">DRENAJES</td>
+					    	<td class="td1">{{drenajes}}</td>
+					    </tr>
+					    <tr>
+					    	<td class="td3">OTRAS</td>
+					    	<td class="td1">{{otras}}</td>
+					    </tr>
+					    <tr>
+					    	<th>TOTAL</th>
+					    	<td class="td1">{{total}}</td>
+					    </tr>
+					  </table>
+						{{/with}}
+	        		</td>
+	        	</tr>
 	    </table>
 	</div>
-	<div style="width:100%;padding-top: 3px">
-		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 9px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-	    	<thead>
-	    		<tr>
-	              <th colspan="5" style="text-align: left;font-size: 10px" bgcolor="ccccff">D. MONITORIZACIÓN</th>
-	            </tr>
-	    	</thead>
-	        <tbody>
-	        	<tr>
-	        		<td  style="text-align: center;width: 100px">
-	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-					    	<tbody>
-					    		<tr>
-					    			<td style="width: 70px;height: 10px;height: 10px"  bgcolor="CCFFCC"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="width: 70px;height: 10px"  bgcolor="CCFFCC">TAS</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td  bgcolor="CCFFCC" style="height: 10px">TAD</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td   bgcolor="CCFFCC" style="height: 10px">TAM</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px">FREC.CARDIACA</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px">TEMPERATURA</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px">PVC</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px">SATURACION O2</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC" style="height: 10px"></td>
-					    			<td></td>
-					    		</tr>
 
-					    	</tbody>
-					    </table>
-	        		</td>
-
-	        		<td style="width: 20px">
-	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-					    	<tbody>
-					    		<tr>
-					    			<td style="height: 10px"  bgcolor="CCFFCC">T°</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">42</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">41</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">40</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">39</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">38</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">37</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">36</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">35</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    	</tbody>
-					    </table>
-	        		</td>
-
-	        		<td style="width: 20px">
-	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-					    	<tbody>
-					    		<tr>
-					    			<td style="height: 10px"  bgcolor="CCFFCC">PV</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">23</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">21</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">19</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">17</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">15</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">13</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">11</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">9</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">7</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">5</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">3</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">1</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    	</tbody>
-					    </table>
-	        		</td>
-
-	        		<td style="width: 20px">
-	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-					    	<tbody>
-					    		<tr>
-					    			<td style="height: 10px"  bgcolor="CCFFCC">TA</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">240</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">220</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">200</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">180</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">160</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">140</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">120</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">100</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">80</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">60</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">40</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">20</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px">0</td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 10px"></td>
-					    		</tr>
-					    	</tbody>
-					    </table>
-	        		</td>
-
-	        		<td>
-	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-					    	<tbody>
-					    		<?php
-					    		$aux=0;
-					    		$aux1=0;
-					    		for ($i=0; $i < 27; $i++) { ?>
-					    		<tr>
-					    			<?php for ($a=0; $a < 31; $a++) {
-					    			
-					    			if($archivo2[1]['FILA'][$aux] == $i && $archivo2[1]['COLUMNA'][$aux1] == $a){ 
-					    				$aux ++;
-                            			$aux1 ++;
-                            			 ?>
-					    				<td style="height: 10px;width: 10px"><?php echo($archivo2[1]['VALOR'][$a])?></td>
-					    			<?php }else{ ?>
-					    				<td style="height: 10px;width: 10px"></td>
-					    			<?php } ?>
-					    			<?php } ?>
-					    		</tr>
-					    		<?php } ?>
-					    	</tbody>
-					    </table>
-	        		</td>
-	        	</tr>
-	        	<tr>
-	        		<th colspan="4" bgcolor="CCFFCC" style="text-align: right;">ALDRETE</th>
-	        		<td ></td>
-	        	</tr>
-	        	<tr>
-	        		<th colspan="4" bgcolor="CCFFCC" style="text-align: right;">BROMAGE</th>
-	        		<td ></td>
-	        	</tr>
-	        	<tr>
-	        		<th colspan="4" bgcolor="CCFFCC" style="text-align: right;">RAMSAY</th>
-	        		<td ></td>
-	        	</tr>
-	        	<tr>
-	        		<th colspan="4" bgcolor="CCFFCC" style="text-align: right;">EVA</th>
-	        		<td ></td>
-	        	</tr>
-	        	<tr>
-	        		<th colspan="4" bgcolor="CCFFCC" style="text-align: right;">STEWARD</th>
-	        		<td ></td>
-	        	</tr>
-	        	<tr>
-	        		<th colspan="4" bgcolor="CCFFCC" style="text-align: right;">OTRO</th>
-	        		<td ></td>
-	        	</tr>
-
-	        </tbody>
-	    </table>
-	</div>
-	<div style="width:100%;padding-top: 3px">
-		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 9px;">
-	        <tbody>
-	        	<tr>
-	        		<td style="width: 385px">
-	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-	        				<thead>
-					    		<tr>
-					              <th colspan="2" style="text-align: left;font-size: 10px" bgcolor="ccccff">E. INGRESOS</th>
-					            </tr>
-					    	</thead>
-					    	<tbody>
-					    		<tr>
-					    			<td style="width: 100px"  bgcolor="CCFFCC">ORAL</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td  bgcolor="CCFFCC">INFUSIONES</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td   bgcolor="CCFFCC">SANGRE Y DERIVADOS</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td bgcolor="CCFFCC">OTROS</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td style="height: 22px"  bgcolor="CCFFCC">TOTAL</td>
-					    			<td></td>
-					    		</tr>
-					    	</tbody>
-					    </table>
-	        		</td>
-	        		<td  style="width: 385px">
-	        			<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-	        				<thead>
-					    		<tr>
-					              <th colspan="2" style="text-align: left;font-size: 10px" bgcolor="ccccff">F. ELIMINACION</th>
-					            </tr>
-					    	</thead>
-					    	<tbody>
-					    		<tr>
-					    			<td style="width: 140px"  bgcolor="CCFFCC">DIURESIS O SONDA VESICAL</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td   bgcolor="CCFFCC">VÓMITO O SONDA NASOGASTRICO</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td   bgcolor="CCFFCC">TORÁCICO</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td   bgcolor="CCFFCC">DRENAJES</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td   bgcolor="CCFFCC">OTRAS</td>
-					    			<td></td>
-					    		</tr>
-					    		<tr>
-					    			<td  bgcolor="CCFFCC">TOTAL</td>
-					    			<td></td>
-					    		</tr>
-					    	</tbody>
-					    </table>
-	        		</td>
-	        	</tr>
-	        </tbody>
-	    </table>
-	</div>
 	<footer>
 		<div style="width:100%;">
 			<table class="table table-bordered" style="font-size: 7px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">
@@ -853,152 +594,146 @@
 	    	</table>
 		</div>
 	</footer>
-	<div style="width:100%;page-break-before: always;">
-		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 9px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-	    	<thead>
-	    		<tr>
-	              <th colspan="5" style="text-align: left;font-size: 10px" bgcolor="ccccff">G. EVOLUCIÓN POSTANESTÉSICA</th>
-	            </tr>
-	    	</thead>
-	        <tbody>
-	        	<tr>
-	        		<th bgcolor="CCFFCC" style="width: 80px">FECHA</th>
-	        		<th bgcolor="CCFFCC" style="width: 50px">HORA</th>
-	        		<th bgcolor="CCFFCC">EVOLUCIÓN</th>
-	        		<th bgcolor="CCFFCC" style="width: 220px">PRESCRIPCIÓN</th>
-	        		<th bgcolor="CCFFCC" style="width: 100px">ADMINISTRACIÓN FARMACOS</th>
-	        	</tr>
-	        	<tr valign="top">
-	        		<td style="height: 650px"><?php echo($archivo[1]['FECHA_POST'][0])?></td>
-	        		<td><?php echo($archivo[1]['HORA_POST'][0])?></td>
-	        		<td><?php echo($archivo[1]['OBSERVACIONES'][0])?></td>
-	        		<td></td>
-	        		<td></td>
-	        	</tr>
 
-	        </tbody>
+	<div class='document__postA__g'>
+		{{#with G}}
+		<table>
+	    <tr>
+	        <th class="th1" colspan="5">G. EVOLUCIÓN POSTANESTÉSICA</th>
+	    </tr>
+	    <tr>
+	      <th class="th2">FECHA</th>
+	      <th class="th2">HORA</th>
+	      <th class="th2">EVOLUCIÓN</th>
+	      <th class="th2">PRESCRIPCIÓN</th>
+	      <th class="th2">ADMINISTRACIÓN FARMACOS</th>
+	    </tr>
+	    <tr>
+	      <td class="td4j">{{fecha}}</td>
+	      <td class="td4j">{{hora}}</td>
+	      <td class="td4j">{{evolucion}}</td>
+	      <td class="td4j">{{prescripcion}}</td>
+	      <td class="td4j">{{administracion_farmacos}}</td>
+	    </tr>
 	    </table>
+			{{/with}}
 	</div>
 
-	<div style="width:100%;padding-top: 3px">
-		<table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 8px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;width: 100%">
-	    	<thead>
-	    		<tr>
-	              <th colspan="13" style="text-align: left;font-size: 10px" bgcolor="ccccff">H. CONDICION DE EGRESO</th>
-	            </tr>
-	    	</thead>
-	        <tbody>
-	        	<tr>
-	        		<th bgcolor="CCFFCC" style="width: 90px">CONSTANTES VITALES DE ENTREGA</th>
-	        		<td style="width: 60px">TA</td>
-	        		<td style="width: 60px"><?php echo($archivo3[1]['PRESION_ARTERIAL_SISTOLICA'][0].'/'.$archivo3[1]['PRESION_ARTERIAL_DIASTOLICA'][0])?></td>
-	        		<td style="width: 60px">FC</td>
-	        		<td style="width: 60px"><?php echo($archivo3[1]['FRECUENCIA_CARDIACA'][0])?></td>
-	        		<td style="width: 60px">FR</td>
-	        		<td style="width: 60px"><?php echo($archivo3[1]['FRECUENCIA_RESPIRATORIA'][0])?></td>
-	        		<td style="width: 60px">SAT. O2</td>
-	        		<td style="width: 60px"><?php echo($archivo3[1]['SATURACION_OXIGENO'][0])?></td>
-	        		<td style="width: 60px">T</td>
-	        		<td colspan="3" style="width: 26px"><?php echo($archivo3[1]['TEMPERATURA_AXILAR'][0])?></td>
-	        	</tr>
-	        	<tr>
-	        		<th rowspan="3">EGRESO DE CUIDADOS POSTANESTÉSICOS</th>
-	        		<th colspan="3">ESCALA / INDICE </th>
-	        		<th colspan="2">PUNTAJE </th>
-	        		<th colspan="7"> RESPONSABLES </th>
-	        	</tr>
-	        	<tr>
-	        		<td colspan="3" style="text-align: right">ALDRETE MODIFICADO</td>
-	        		<td colspan="2" style="text-align: right;"><?php echo($archivo4[1]['ALDRETE'][0])?></td>
-	        		<th colspan="7">ENTREGA</th>
-
-	        	</tr>
-	        	<tr>
-	        		<td colspan="3" style="text-align: right;">BROMAGE</td>
-	        		<td colspan="2" style="text-align: right;"><?php echo($archivo4[1]['BROMAGE'][0])?></td>
-	        		<th>NOMBRE</th>
-	        		<td colspan="6"><?php echo($archivo[1]['ENTREGA_EGRESO'][0])?></td>
-	        	</tr>
-	        	<tr>
-	        		<th rowspan="2">FECHA</th>
-	        		<td colspan="3" style="text-align: right;">RAMSAY</td>
-	        		<td colspan="2"></td>
-	        		<th>FIRMA</th>
-	        		<td colspan="6"></td>
-	        	</tr>
-	        	<tr>
-	        		<td colspan="3" style="text-align: right;">EVA</td>
-	        		<td colspan="2"></td>
-	        		<th colspan="7">RECIBE</th>
-	        	</tr>
-	        	<tr>
-	        		<th rowspan="2">HORA</th>
-	        		<td colspan="3" style="text-align: right;">STEWARD</td>
-	        		<td colspan="2"></td>
-	        		<th>NOMBRE</th>
-	        		<td colspan="6"><?php echo($archivo[1]['RECIBE_EGRESO'][0])?></td>
-	        	</tr>
-	        	<tr>
-	        		<td colspan="3" style="text-align: right;">OTRO:</td>
-	        		<td colspan="2"></td>
-	        		<th>FIRMA</th>
-	        		<td colspan="6"></td>
-	        	</tr>
-	        	<tr>
-	        		<th rowspan="2">CONDICIONES AL SALIR</th>
-	        		<td colspan="2">EXTUBADO</td>
-	     			<td></td>
-	     			<th rowspan="2">CONDUCIDO A:</th>
-	     			<td rowspan="2">HOSPITALIZACIÓN</td>
-	     			<td rowspan="2"style="width: 30px;text-align: center;">X</td>
-	     			<td rowspan="2">CRÍTICOS DE EMERGENCIA</td>
-	     			<td rowspan="2"style="width: 30px;text-align: center;"></td>
-	     			<td rowspan="2">DOMICILIO</td>
-	     			<td rowspan="2"style="width: 30px;text-align: center;"></td>
-	     			<td rowspan="2">MORGUE</td>
-	     			<td rowspan="2"style="width: 28px;text-align: center;"></td>
-	        	</tr>
-	        	<tr>
-	        		<td colspan="2">INTUBADO</td>
-	        		<td></td>
-	        	</tr>
-
-	        </tbody>
+	<div class='document__postA__h'>
+		{{#with H}}
+		<table>
+	    <tr>
+	      <th class="th1" colspan="13">H. CONDICION DE EGRESO</th>
+	    </tr>
+	    <tr>
+	      <th class="th3">CONSTANTES VITALES DE ENTREGA</th>
+	      <th>TA</th>
+	      <td>{{ta}}</td>
+	      <th>FC</th>
+	      <td>{{fc}}</td>
+	      <th>FR</th>
+	      <td>{{fr}}</td>
+	      <th>SAT. O2</th>
+	      <td>{{sat_O2}}</td>
+	      <th>T°</th>
+	      <td colspan="3">{{t}}</td>
+	    </tr>
+	    <tr>
+	      <th rowspan="3">EGRESO DE CUIDADOS POSTANESTÉSICOS</th>
+	      <th colspan="3">ESCALA / INDICE </th>
+	      <th colspan="2">PUNTAJE </th>
+	      <th colspan="7"> RESPONSABLES </th>
+	    </tr>
+	    <tr>
+	      <td colspan="3">ALDRETE MODIFICADO</td>
+	      <td colspan="2">{{aldrete_modificado}}</td>
+	      <th colspan="7">ENTREGA</th>
+	    </tr>
+	    <tr>
+	      <td colspan="3">BROMAGE</td>
+	      <td colspan="2">{{bromage}}</td>
+	      <th>NOMBRE</th>
+	      <td colspan="6">{{entrega.nombre}}</td>
+	    </tr>
+	    <tr>
+	      <th rowspan="2">FECHA</th>
+	      <td colspan="3">RAMSAY</td>
+	      <td colspan="2">{{ramsay}}</td>
+	      <th>FIRMA</th>
+	      <td colspan="6">{{entrega.firma}}</td>
+	    </tr>
+	    <tr>
+	      <td colspan="3">EVA</td>
+	      <td colspan="2">{{eva}}</td>
+	      <th colspan="7">RECIBE</th>
+	    </tr>
+	    <tr>
+	      <th rowspan="2">HORA</th>
+	      <td colspan="3">STEWARD</td>
+	      <td colspan="2">{{steward}}</td>
+	      <th>NOMBRE</th>
+	      <td colspan="6">{{entrega.nombre}}</td>
+	    </tr>
+	    <tr>
+	      <td colspan="3">OTRO:</td>
+	      <td colspan="2">{{otro}}</td>
+	      <th>FIRMA</th>
+	      <td colspan="6">{{entrega.firma}}</td>
+	    </tr>
+	    <tr>
+	      <th rowspan="2">CONDICIONES AL SALIR</th>
+	      <td colspan="2">EXTUBADO</td>
+	     	<td>{{#if condiciones_salida.extubado}}X{{/if}}</td>
+	     	<th rowspan="2">CONDUCIDO A:</th>
+	     	<td rowspan="2">HOSPITALIZACIÓN</td>
+	     	<td rowspan="2">{{#if conducido.hospitalizacion}}X{{/if}}</td>
+	     	<td rowspan="2">CRÍTICOS DE EMERGENCIA</td>
+	     	<td rowspan="2">{{#if conducido.emergencia}}X{{/if}}</td>
+	     	<td rowspan="2">DOMICILIO</td>
+	     	<td rowspan="2">{{#if conducido.domicilio}}X{{/if}}</td>
+	     	<td rowspan="2">MORGUE</td>
+	     	<td rowspan="2">{{#if conducido.morgue}}X{{/if}}</td>
+	    </tr>
+	    <tr>
+	      <td colspan="2">INTUBADO</td>
+	      <td>{{#if condiciones_salida.intubado}}X{{/if}}</td>
+	    </tr>
 	    </table>
+			{{/with}}
 	</div>
 	
-	<div style="width:100%;padding-top: 3px">
-	    <table class="table table-bordered" cellpadding="1px" cellspacing="0px" border="1" style="font-size: 9px;font-family: arial;margin-bottom: 0px;width: 100%;border-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;">
-	        <tbody>
-	            <tr>
-	                <th colspan="5" style="text-align: left;font-size: 10px;" bgcolor="ccccff">K. DATOS DEL PROFESIONAL RESPONSABLE</th>
-	            </tr>
-	            <tr>
-	                <th style="width: 100px;" bgcolor="#ccffcc">FECHA</th>
-	                <th style="width: 100px;" bgcolor="#ccffcc">HORA</th>
-	                <th style="width: ;"bgcolor="#ccffcc">PRIMER NOMBRE</th>
-	                <th style="width: ;" bgcolor="#ccffcc">PRIMER APELLIDO</th>
-	                <th style="width: ;" bgcolor="#ccffcc">SEGUNDO APELLIDO</th>
-	            </tr>
-	            <tr>
-	                <td><?php echo($archivo[1]['FECHA_POST'][0])?> </td>
-	                <td><?php echo($archivo[1]['HORA_POST'][0])?></td>
-	                <td><?php echo($archivo[1]['NOMBRE_MED'][0])?></td>
-	                <td><?php echo($archivo[1]['PRIMER_APELLIDO'][0])?></td>
-	                <td><?php echo($archivo[1]['SEGUNDO_APELLIDO'][0])?></td>
-	            </tr>
-	            <tr>
-	            	<th colspan="2" bgcolor="#ccffcc">NUMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
-	            	<th colspan="2" bgcolor="#ccffcc">FIRMA</th>
-	            	<th bgcolor="#ccffcc">SELLO</th>
-	            </tr>
-	            <tr>
-	            	<td colspan="2"><?php echo($archivo[1]['CEDULA'][0])?></td>
-	            	<td colspan="2" style="height: 30px" valign="top"><img src="<?php echo($imagenEnBase64_f); ?>" style="position: absolute; left: 240;top: 670;width: 150Px;"></td>
-	            	<td><img src="<?php echo($imagenEnBase64_s); ?>" style="position: absolute; left: 460;top: 690;width: 100px;"></td>
-	            </tr>
-	        </tbody>
+	<div class='document__postA__i'>
+		{{#with I}}
+	  <table>
+	    <tr>
+	      <th class="th1" colspan="5">I. DATOS DEL PROFESIONAL RESPONSABLE</th>
+	    </tr>
+	    <tr>
+	      <th class="th2">FECHA</th>
+	      <th class="th2">HORA</th>
+	      <th class="th2">PRIMER NOMBRE</th>
+	      <th class="th2">PRIMER APELLIDO</th>
+	      <th class="th2">SEGUNDO APELLIDO</th>
+	    </tr>
+	    <tr>
+	      <td>{{fecha}}</td>
+	      <td>{{hora}}</td>
+	      <td>{{primer_nombre}}</td>
+	      <td>{{primer_apellido}}</td>
+	      <td>{{segundo_apellido}}</td>
+	    </tr>
+	    <tr>
+	      <th colspan="2">NUMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+	      <th colspan="2">FIRMA</th>
+	      <th>SELLO</th>
+	    </tr>
+	    <tr>
+	      <td colspan="2">{{numero_identificacion}}</td>
+	      <td colspan="2"><img src="{{firma}}"></td>
+	      <td><img src="{{sello}}"></td>
+	    </tr>
 	    </table>
+			{{/with}}
 	</div>
 </body>
 </html>
