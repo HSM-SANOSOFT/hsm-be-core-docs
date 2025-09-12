@@ -32,5 +32,2787 @@
             "intravenosa": true,
             "sedacion": true
         }
+    },
+
+    "C": {
+        "aldrede_modificado": {
+            "a7": true,
+            "a8": true,
+            "a9": true,
+            "a10": true
+        },
+
+        "bromage": {
+            "b100": true,
+            "b66": true,
+            "b33": true,
+            "b0": true
+        },
+
+        "ramsay": {
+            "r0": true,
+            "r1": true,
+            "r2": true,
+            "r3": true,
+            "r4": true,
+            "r5": true,
+            "r6": true
+        },
+
+        "eva": {
+            "e0": true,
+            "e1": true,
+            "e2": true,
+            "e3": true,
+            "e4": true,
+            "e5": true,
+            "e6": true,
+            "e7": true,
+            "e8": true,
+            "e9": true,
+            "e10": true
+        },
+
+        "steward": {
+            "s0": true,
+            "s1": true,
+            "s2": true,
+            "s3": true,
+            "s4": true,
+            "s5": true,
+            "s6": true
+        },
+
+        "otros": "string",
+
+        "fecha": "string",
+        "hora": "string",
+
+        "entrega": {
+            "nombre": "string",
+            "firma": "string"
+        },
+
+        "recibe": {
+            "nombre": "string",
+            "firma": "string"
+        }
+    },
+
+    
+  "D": {
+    "tRows": ["","","","","","","","","","42", "","41", "","40", "","39", "","38", "","37", "","36", "","35", "","","","","","","",""],
+    "pvRows": ["", "","", "","", "","", "17","", "15","", "13","", "11","", "9","", "7","", "5","", "3","", "1","", "","","","","","",""],
+    "taRows": ["240","", "220","", "200","", "180","", "160","", "140","", "120","", "100","", "80","", "60","", "40","", "20","", "0","","","","","","",""],
+
+    "bloques": [
+      {
+        "filas": [
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "+" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false }
+            ]
+          }
+        ]
+      },
+      {
+        "filas": [
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          }
+        ]
+      },
+      {
+        "filas": [
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          }
+        ]
+      },
+      {
+        "filas": [
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          }
+        ]
+      },
+      {
+        "filas": [
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          }
+        ]
+      },
+      {
+        "filas": [
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "+" },
+              { "valor": false }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          },
+          {
+            "celdas": [
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∨" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "∧" },
+              { "valor": false },
+              { "valor": false },
+              { "valor": true,  "simbolo": "×" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "●" },
+              { "valor": false },
+              { "valor": true,  "simbolo": "△" }
+            ]
+          }
+        ]
+      }
+    ],
+
+    "aldrete": "1",
+    "bromage": "2",
+    "ramsay": "3",
+    "eva": "4",
+    "steward": "5",
+    "otro": "5"
+  },
+
+  "E": {
+    "oral": "1",
+    "infusiones": "2",
+    "sangre_derivados": "3",
+    "otros": "4",
+    "total": "5"
+  },
+
+  "F": {
+    "diuresis": "1",
+    "vomito": "2",
+    "toracico": "3",
+    "drenajes": "4",
+    "otras": "5",
+    "total": "6"
+  },
+
+   "G": {
+    "fecha": "24/04/2021",
+    "hora": "13:50",
+    "evolucion": "Paciente egresa de quirofano",
+    "prescripcion": "Amoxicilina",
+    "administracion_farmacos":"Cada 8 horas"
+  },
+
+  "H": {
+    "const_vitales": {
+        "ta": "",
+        "fc": "",
+        "fr": "",
+        "sat_O2": "",
+        "t": ""
+    },
+
+    "escala": {
+        "aldrete_mod": "",
+        "bromage": "",
+        "ramsay": "",
+        "eva": "",
+        "steward": "",
+        "otro": ""
+    },
+
+    "entrega": {
+        "nombre": "",
+        "firma": ""
+    },
+
+    "recibe": {
+        "nombre": "",
+        "firma": ""
+    },
+
+    "condiciones_salida": {
+        "extubado": true,
+        "intubado": true
+    },
+
+    "conducido": {
+        "hospitalizacion": true,
+        "cuidados_intensivos": true,
+        "emergencia": true,
+        "domicilio": true,
+        "morgue": true
     }
-}    
+  },
+
+  "I": {
+    "fecha": "24/08/2025",
+    "hora": "08:20",
+    "primer_nombre": "JOSE PABLO",
+    "primer_apellido": "LOPEZ",
+    "segundo_apellido": "LOPEZ",
+    "numero_identificacion": "0987456321",
+    "firma": "data:image/png;base64,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",
+    "sello": "data:image/jpeg;base64,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"
+  }
+}
+
+
+
+
+
+
