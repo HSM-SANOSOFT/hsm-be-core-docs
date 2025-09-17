@@ -278,37 +278,8 @@
 	            <th class='th1'>F. DIAGNÓSTICO</th>
 	        </tr>
 	    	<tr>
-	    		<td valign="top"><div style="height: 150px;text-align: justify;" ><?php echo ($diag).'</br>INFORME FINAL: '. nl2br(($archivo[1]['MALIGNIDAD'][0]=='V')?'POSITIVO':'NEGATIVO')?></div></td>
+	    		<td class='td4j'>{{diagnostico}}</td>
 	    	</tr>
-				<?php
-				if ($archivo[1]['HAS_IMAGEN'][0] == 1) {
-					$sql_imagen="SELECT 
-						EXM_NUMERO,
-						LEVEL AS PARTE_NUMERO,
-						DBMS_LOB.SUBSTR(IMAGEN, 4000, (LEVEL-1)*4000+1) AS PARTE_IMAGEN
-					FROM BIOPSIAS_DETALLES
-					WHERE EXM_NUMERO = '".$valor1."'  
-					AND IMAGEN IS NOT NULL
-					CONNECT BY 
-						PRIOR EXM_NUMERO = EXM_NUMERO
-						AND PRIOR DBMS_RANDOM.VALUE IS NOT NULL
-						AND (LEVEL-1)*4000+1 <= DBMS_LOB.GETLENGTH(IMAGEN)
-					START WITH EXM_NUMERO = '".$valor1."'";
-					$stmt_imagen = oci_parse($conn, $sql_imagen);
-					oci_execute($stmt_imagen);
-					$ARRAY_IMAGEN = array();
-					oci_fetch_all($stmt_imagen, $ARRAY_IMAGEN, null, null, OCI_FETCHSTATEMENT_BY_ROW);
-					foreach ($ARRAY_IMAGEN as $value) {
-						$imagen.=$value['PARTE_IMAGEN'];
-					}
-				}
-				if (true) {
-				?>
-				<tr>
-	    			<td valign="top"><div style="height: 150px;text-align: justify;" ><img src="<?php echo($imagen); ?>" style="width: 100px;"></div></td>
-	    		</tr>
-				<?php } ?>
-	    	</tbody>
 	    </table>
         {{/with}}
 	</div>
