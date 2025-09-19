@@ -347,18 +347,18 @@
     },
 
     "D_anv": {
-        "fecha_generacion": "",
-        "hora_generacion": "",
-        "nombres_med": "",
-        "primer_apellido_med": "",
-        "segundo_apellido_med": "",
-        "identificacion_med": "",
-        "firma_med": "",
-        "sello_med": "",
-        "fecha_toma_muestra": "",
-        "hora_toma_muestra": "",
-        "nombre_apellido_personaTmuestra": "",
-        "firma_personaTmuestra": ""
+        "fecha_pedido": "1",
+        "hora_pedido": "1",
+        "primer_nombre_resp": "1",
+        "primer_apellido_resp": "1",
+        "segundo_apellido_resp": "1",
+        "identificacion_resp": "1",
+        "firma_resp": "https://www.siremsyr.com/wp-content/uploads/2015/02/firma-doctor.png",
+        "sello_resp": "https://upload.wikimedia.org/wikipedia/commons/9/99/Firma_Franetovich.jpg",
+        "fecha_muestra": "1",
+        "hora_muestra": "1",
+        "nombre_completo_encargado": "1",
+        "firma_encargado": "https://www.siremsyr.com/wp-content/uploads/2015/02/firma-doctor.png"
     },
 
     "A_rev": {
@@ -438,5 +438,20 @@
             "psd_2S": true,
             "psd_2L": true
         }
+    },
+
+    "C_rev": {
+        "fecha_pedido": "1",
+        "hora_pedido": "1",
+        "primer_nombre_resp": "1",
+        "primer_apellido_resp": "1",
+        "segundo_apellido_resp": "1",
+        "identificacion_resp": "1",
+        "firma_resp": "https://www.siremsyr.com/wp-content/uploads/2015/02/firma-doctor.png",
+        "sello_resp": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi1PFTXxgEZqZnOI49VeY4AmBH3OkwXLEMEg&s",
+        "fecha_muestra": "1",
+        "hora_muestra": "1",
+        "nombre_completo_encargado": "1",
+        "firma_encargado": "https://www.siremsyr.com/wp-content/uploads/2015/02/firma-doctor.png"
     }
 }

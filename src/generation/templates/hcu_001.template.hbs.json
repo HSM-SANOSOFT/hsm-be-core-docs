@@ -1,0 +1,200 @@
+{
+    "A": {
+        "institucion_sistema": "CLINICA SANTAMARIA",
+        "unicodigo": 25410,
+        "establecimiento_salud": "CLINICA SANTAMARIA",
+        "numero_historia_clinica": "123456789",
+        "numero_archivo": "104242"
+    },
+
+    "B": {
+      "fecha_admision": "",
+      "nombre_apellido_admisionista": ""
+    },
+
+    "C": {
+      "primer_apellido": "LOPEZ",
+      "segundo_apellido": "GARCIA",
+      "primer_nombre": "JOSE",
+      "segundo_nombre": "PABLO",
+      "identificacion": "0987456321",
+      "estado_civil": "SOLTERO",
+      "sexo": "M",
+      "telefono": "1",
+      "celular": "0987456321",
+      "correo_electronico": "1",
+      "fecha_nacimiento": "20/04/1990",
+      "lugar_nacimiento": "GUAYAQUIL",
+      "nacionalidad": "ECUATORIANA",
+      "edad": "30",
+      "condicion_edad": {
+        "h": false,
+        "d": false,
+        "m": false,
+        "a": true
+      },
+      "provincia": "1",
+      "canton": "1",
+      "parroquia": "1",
+      "sector": "1",
+      "calle_principal": "1",
+      "calle_secundaria": "1",
+      "referencia": "1",
+      "autoidentificacion_etnica": "1",
+      "nacionalidad_etnica": "1",
+      "pueblos": "1",
+      "nivel_educacion": "1",
+      "estado_educacion": "1",
+      "ocupacion": "1",
+      "empresa_trabajo": "1",
+      "seguro_salud": "1",
+      "tipo_bono": "1"
+    },
+
+    "D": {
+      "llamar_a": "1",
+      "parentesco": "1",
+      "direccion": "1",
+      "telefono": "1"
+    },
+
+    "E": {
+      "items": [
+        { 
+          "n": "1.", 
+          "fecha_registro": "", 
+          "estado_civil": "", 
+          "nivel_educacion": "", 
+          "empresa": "", 
+          "ocupacion": "", 
+          "seguro": "", 
+          "residencia": { 
+            "provincia": "", 
+            "canton": "", 
+            "parroquia": "", 
+            "barrio": "", 
+            "telefono": "", 
+            "calle_principal": "", 
+            "calle_secundaria": "", 
+            "referencia": "" 
+            } 
+        },
+        { 
+          "n": "2.", 
+          "fecha_registro": "", 
+          "estado_civil": "", 
+          "nivel_educacion": "", 
+          "empresa": "", 
+          "ocupacion": "", 
+          "seguro": "", 
+          "residencia": { 
+            "provincia": "", 
+            "canton": "", 
+            "parroquia": "", 
+            "barrio": "", 
+            "telefono": "", 
+            "calle_principal": "", 
+            "calle_secundaria": "", 
+            "referencia": "" 
+          } 
+        },
+        { 
+          "n": "3.", 
+          "fecha_registro": "", 
+          "estado_civil": "", 
+          "nivel_educacion": "", 
+          "empresa": "", 
+          "ocupacion": "", 
+          "seguro": "", 
+          "residencia": { 
+            "provincia": "", 
+            "canton": "", 
+            "parroquia": "", 
+            "barrio": "", 
+            "telefono": "", 
+            "calle_principal": "", 
+            "calle_secundaria": "", 
+            "referencia": "" 
+          } 
+        }
+      ]
+    },
+
+    "F": {
+      "items": [
+      {
+        "numero_orden": "1",
+        "fecha_admision": "",
+        "dias_estadia": "",
+        "codigo_servicio_inec": "",
+        "dx_principal": { 
+          "descripcion": "", 
+          "cie": "", 
+          "definitivo": false 
+        },
+        "dx_secundario": { 
+          "descripcion": "", 
+          "cie": "", 
+          "definitivo": false 
+        },
+
+        "condicion_egreso": { 
+          "alta": false, 
+          "muerte_menor_48h": false, "muerte_mayor_48h": false 
+        },
+        "tratamiento": { 
+          "clinico": false, 
+          "quirurgico": false, "procedimientos_principales": "", "sello_firma_responsable": "" 
+        }
+      },
+      {
+        "numero_orden": "2",
+        "fecha_admision": "",
+        "dias_estadia": "",
+        "codigo_servicio_inec": "",
+        "dx_principal": { 
+          "descripcion": "", 
+          "cie": "", 
+          "definitivo": false 
+        },
+        "dx_secundario": { 
+          "descripcion": "", 
+          "cie": "", 
+          "definitivo": false 
+        },
+        "condicion_egreso": { 
+          "alta": false, "muerte_menor_48h": false, "muerte_mayor_48h": false 
+        },
+        "tratamiento": { 
+          "clinico": false, 
+          "quirurgico": false, "procedimientos_principales": "", "sello_firma_responsable": "" 
+        }
+      },
+      {
+        "numero_orden": "3",
+        "fecha_admision": "",
+        "dias_estadia": "",
+        "codigo_servicio_inec": "",
+        "dx_principal": { 
+          "descripcion": "", 
+          "cie": "", 
+          "definitivo": false 
+        },
+        "dx_secundario": { 
+          "descripcion": "", 
+          "cie": "", 
+          "definitivo": false 
+        },
+        "condicion_egreso": { 
+          "alta": false, 
+          "muerte_menor_48h": false, "muerte_mayor_48h": false 
+        },
+        "tratamiento": { 
+          "clinico": false, 
+          "quirurgico": false, "procedimientos_principales": "", "sello_firma_responsable": "" 
+        }
+      }
+    ]
+  }
+}
+  

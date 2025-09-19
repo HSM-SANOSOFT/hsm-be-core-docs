@@ -40,22 +40,22 @@
         "obstetricos_andrologicos": {
             "edad_menarquia": 10,
             "edad_menospausia": 50,
-            "ciclos": "number",
-            "inicio_vida_sexual": "number",
-            "num_gestas": "number",
-            "num_partos": "number",
-            "num_abortos": "number",
-            "num_cesareas": "number",
-            "num_hijos_vivos": "number",
-            "fecha_ult_menstruacion": "number",
-            "fecha_ult_parto": "number",
-            "fecha_ult_citologia_cervical": "number",
-            "fecha_ult_colposcopia": "number",
-            "fecha_ult_mamografia": "number",
+            "ciclos": "",
+            "inicio_vida_sexual": "",
+            "num_gestas": "",
+            "num_partos": "",
+            "num_abortos": "",
+            "num_cesareas": "",
+            "num_hijos_vivos": "",
+            "fecha_ult_menstruacion": "",
+            "fecha_ult_parto": "",
+            "fecha_ult_citologia_cervical": "",
+            "fecha_ult_colposcopia": "",
+            "fecha_ult_mamografia": "",
             "metodo_planificacion": true,
-            "terapia_hormonal": "number",
-            "fecha_ult_antigeno_prostatico": "string",
-            "fecha_ult_eco_prostatico": "string"
+            "terapia_hormonal": "",
+            "fecha_ult_antigeno_prostatico": "",
+            "fecha_ult_eco_prostatico": ""
         },
 
         "descripcion_antecedentes": "PACIENTE N/P"
@@ -104,7 +104,9 @@
         "talla": "",
         "imc": "",
         "perimetro_cefalico": "",
-        "pulsioximetria": ""
+        "pulsioximetria": "",
+        "score_mama": "",
+        "otros": ""
     },
 
    "H":{

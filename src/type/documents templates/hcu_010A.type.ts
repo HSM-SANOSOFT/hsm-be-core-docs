@@ -344,18 +344,18 @@ export type Hcu010ADocumentTemplate = {
     },
 
     D_anv: {
-        fecha_generacion: number,
-        hora_generacion: number,
-        nombres_med: string,
-        primer_apellido_med: string,
-        segundo_apellido_med: string,
-        identificacion_med: string,
-        firma_med: string,
-        sello_med: string,
-        fecha_toma_muestra: number,
-        hora_toma_muestra: number,
-        nombre_apellido_personaTmuestra: string,
-        firma_personaTmuestra: string
+        fecha_pedido: number,
+        hora_pedido: number,
+        primer_nombre_resp: string,
+        primer_apellido_resp: string,
+        segundo_apellido_resp: string,
+        identificacion_resp: string,
+        firma_resp: string,
+        sello_resp: string,
+        fecha_muestra: number,
+        hora_muestra: number,
+        nombre_completo_encargado: string,
+        firma_encargado: string
     },
 
     A_rev: {
@@ -435,5 +435,20 @@ export type Hcu010ADocumentTemplate = {
             psd_2S: boolean,
             psd_2L: boolean
         }
+    },
+
+    C_rev: {
+        fecha_pedido: number,
+        hora_pedido: number,
+        primer_nombre_resp: string,
+        primer_apellido_resp: string,
+        segundo_apellido_resp: string,
+        identificacion_resp: string,
+        firma_resp: string,
+        sello_resp: string,
+        fecha_muestra: number,
+        hora_muestra: number,
+        nombre_completo_encargado: string,
+        firma_encargado: string
     }
 }

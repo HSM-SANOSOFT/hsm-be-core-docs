@@ -1,0 +1,160 @@
+{
+  "A": {
+    "institucion_sistema": "CLINICA SANTAMARIA",
+    "unicodigo": 25410,
+    "establecimiento_salud": "CLINICA SANTAMARIA",
+    "numero_historia_clinica": "123456789",
+    "numero_archivo": "104242",
+    "numero_hoja": "1",
+    "primer_apellido": "LOPEZ",
+    "segundo_apellido": "GARCIA",
+    "primer_nombre": "JOSE",
+    "segundo_nombre": "PABLO",
+    "sexo": "M",
+    "fecha_nacimiento": "20/04/1990",
+    "edad": "30"
+  },
+
+  "B": {
+    "primera": true,
+    "subsecuente": true,
+
+    "motivo_consulta": ""
+  },
+
+  "C":{
+    "cardiopatia": true,
+    "hipertension": false,
+    "enf_c_vascular": false,
+    "endocrino_metabolico": false,
+    "cancer": false,
+    "tuberculosis": false,
+    "enf_menta": false,
+    "enf_infecciosa": false,
+    "mal_formacion": false,
+    "otro": false,
+
+    "descripcion_antecedentes": "PACIENTE N/P"
+  },
+
+  "D":{
+    "cardiopatia": true,
+    "hipertension": false,
+    "enf_c_vascular": false,
+    "endocrino_metabolico": false,
+    "cancer": false,
+    "tuberculosis": false,
+    "enf_menta": false,
+    "enf_infecciosa": false,
+    "mal_formacion": false,
+    "otro": false,
+
+    "descripcion_antecedentes": "PACIENTE N/P"
+  },
+
+  "E": {
+    "problema_actual": "1"
+  },
+
+  "F":{
+    "fecha": "",
+    "hora": "",
+    "temperatura": "",
+    "presion_arterial": "",
+    "pulso": "",
+    "frecuencia_respiratoria": "",
+    "peso": "",
+    "talla": "",
+    "imc": "",
+    "perimetro_abdominal": "",
+    "hemoglobina_capilar": "",
+    "glucosa_capilar": "",
+    "pulsioximetria": ""
+  },
+
+  "G": {
+    "piel_anexos": false,
+    "organos_sentidos": false,
+    "respiratorio": false,
+    "cardio_vascular": false,
+    "digestivo": false,
+    "genito_urinario": false,
+    "musculo_esqueletico": false,
+    "endocrino": false,
+    "hemo_linfatico": false,
+    "nervioso": false,
+
+    "descripcion_revision": "PACIENTE N/P"
+  },
+
+  "H":{
+    "regional":{
+      "piel_faneras": false,
+      "cabeza": true,
+      "ojos": false,
+      "oidos": false,
+      "nariz": false,
+      "boca": false,
+      "oro_faringe": true,
+      "cuello": true,
+      "axilas_mamas": false,
+      "torax": false,
+      "abdomen": false,
+      "columna": false,
+      "ingle_perine": false,
+      "miembros_superiores": false,
+      "miembros_inferiores": false
+    },
+    "sistemico":{
+      "organos_sentidos": true,
+      "respiratorio": true,
+      "cardio_vascular": false,
+      "digestivo": false,
+      "genital": false,
+      "urinario": false,
+      "musculo_esqueletico": false,
+      "endocrino": false,
+      "hemo_linfatico": false,
+      "neurologico": true
+    },
+    "descripcion": "string"
+  },
+
+  "I": {
+    "diagnosticos": [
+      {
+        "descripcion": "HEMORRAGIA EPIDURAL","cie": "S06.4","pre": false,"def": true    
+      },
+      {
+        "descripcion": "HEMORRAGIA SUBARACNOIDEA TRAUMATICA","cie": "S06.6","pre": true,"def": false   
+      },
+      {
+        "descripcion": "HEMORRAGIA SUBDURAL TRAUMATICA","cie": "s06.5","pre": true,"def": false    
+      },
+      {
+        "descripcion": "","cie": "","pre": "","def": ""    
+      },
+      {
+        "descripcion": "","cie": "","pre": "","def": ""    
+      },
+      {
+        "descripcion": "","cie": "","pre": "","def": ""   
+      }
+    ]
+  },
+
+  "J": {
+    "plan_tratamiento": "1"
+  },
+
+  "K": {
+    "fecha": "1",
+    "hora": "1",
+    "primer_nombre": "1",
+    "primer_apellido": "1",
+    "segundo_apellido": "1",
+    "identificacion": "1",
+    "firma_resp": "https://www.nicepng.com/png/detail/358-3588776_firma-calligraphy.png",
+    "sello_resp": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKMW6E8O9eezp_N4jdoe66QVepF_COrRNMaQ&s"
+  }
+}

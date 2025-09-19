@@ -1215,37 +1215,44 @@
   {{#with D_anv}}
 	<table class="table2">
     		<tr>
-          <th class='th4' colspan="4">D. DATOS DEL PROFESIONAL RESPONSABLE</th>
+          <th class='th1' colspan="5">D. DATOS DEL PROFESIONAL RESPONSABLE</th>
         </tr>
         <tr>
-            <th class='th4'>FECHA GENERACIÓN PEDIDO</th>
-            <th class='th4'>HORA GENERACIÓN PEDIDO</th>
-            <th class='th4'>NOMBRES Y APELLIDOS</th>
-            <th rowspan="6" style="text-align: left;width: 30%" ></th>
+            <th class='th2'>FECHA GENERACIÓN PEDIDO</th>
+            <th class='th2'>HORA GENERACIÓN PEDIDO</th>
+            <th class='th2'>PRIMER NOMBRE</th>
+            <th class='th2'>PRIMER APELLIDO</th>
+            <th class='th2'>SEGUNDO APELLIDO</th>
         </tr>
         <tr>
-            <td style="height: 10px"><?php echo($archivo[1]['FECHA_DE_PETICION'][0])?> </td>
-            <td style="height: 10px"><?php echo($archivo[1]['HORA'][0])?></td>
-            <td style="height: 10px"><?php echo($archivo[1]['MEDICO'][0])?></td>
+            <td>{{fecha_pedido}}</td>
+            <td>{{hora_pedido}}</td>
+            <td>{{primer_nombre_resp}}</td>
+            <td>{{primer_apellido_resp}}</td>
+            <td>{{segundo_apellido_resp}}</td>
         </tr>
         <tr>
-            <th colspan="2" style="width: 30%;height: 10px;text-align: left" bgcolor="ccffff">NÚMERO DOCUMENTO DE IDENTIFICACION</th>
-            <th  style="width: 30%;height: 10px;text-align: left" bgcolor="ccffff">FIRMA Y SELLO</th>
+            <th class='th2' colspan="2">NÚMERO DOCUMENTO DE IDENTIFICACION</th>
+            <th class='th2'>FIRMA</th>
+            <th class='th2' colspan="2">SELLO</th>
         </tr>
         <tr>
-            <td colspan="2" style="height: 10px"><?php echo($archivo[1]['CEDULA'][0])?></td>
-            <td style="height: 10px"></td>
+            <td colspan="2">{{identificacion_resp}}</td>
+            <td><img src='{{firma_resp}}'/></td>
+            <td colspan="2"><img src='{{sello_resp}}'/></td>
         </tr>
         <tr>
-            <th style="text-align: left;width: 15%" bgcolor="ccffff">FECHA TOMA MUESTRA</th>
-            <th style="text-align: left;width: 15%" bgcolor="ccffff">HORA TOMA MUESTRA</th>
-            <th  style="text-align: left;width: 10%;" bgcolor="ccffff">NOMBRE Y APELLIDO PERSONA QUE TOMA</th>
+            <th class='th2'>FECHA TOMA MUESTRA</th>
+            <th class='th2'>HORA TOMA MUESTRA</th>
+            <th class='th2'>NOMBRE Y APELLIDO PERSONA QUE TOMA</th>
+            <th class='th2' colspan="2">FIRMA</th>
         </tr>
-            <tr>
-                <td style="height: 10px"></td>
-                <td style="height: 10px"></td>
-                <td  style="height: 10px"></td>
-            </tr>
+        <tr>
+            <td>{{fecha_muestra}}</td>
+            <td>{{hora_muestra}}</td>
+            <td>{{nombre_completo_encargado}}</td>
+            <td colspan="2"><img src='{{firma_encargado}}'/></td>
+        </tr>
 </table>
 {{/with}}
 	</div>
@@ -1518,48 +1525,51 @@
   {{/with}}	
 </div>
 
-<div style="width:100%;padding-top: 2px">
-    <table cellpadding="1px" cellspacing="0px" border="1"   style="width: 100%;font-size: 7px">
-        <thead>
-            <tr>
-              <th colspan="4" style="text-align: left;" bgcolor="ccffff">D. DATOS DEL PROFESIOANL RESPONSABLE</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th style="text-align: left;width: 15%" bgcolor="ccffff">FECHA GENERACIÓN PEDIDO</th>
-                <th style="text-align: left;width: 15%" bgcolor="ccffff">HORA GENERACIÓN PEDIDO</th>
-                <th style="text-align: left;width: 10%" bgcolor="ccffff">NOMBRES Y APELLIDOS</th>
-                <th rowspan="6" style="text-align: left;width: 30%" ></th>
-
-            </tr>
-            <tr>
-                <td style="height: 10px"><?php echo($archivo[1]['FECHA_DE_PETICION'][0])?> </td>
-                <td style="height: 10px"><?php echo($archivo[1]['HORA'][0])?></td>
-                <td style="height: 10px"><?php echo($archivo[1]['MEDICO'][0])?></td>
-            </tr>
-            <tr>
-                <th colspan="2" style="width: 30%;height: 10px;text-align: left" bgcolor="ccffff">NÚMERO DOCUMENTO DE IDENTIFICACION</th>
-                <th  style="width: 30%;height: 10px;text-align: left" bgcolor="ccffff">FIRMA Y SELLO</th>
-            </tr>
-            <tr>
-                <td colspan="2" style="height: 10px"><?php echo($archivo[1]['CEDULA'][0])?></td>
-                <td style="height: 10px"></td>
-            </tr>
-            <tr>
-                <th style="text-align: left;width: 15%" bgcolor="ccffff">FECHA TOMA MUESTRA</th>
-                <th style="text-align: left;width: 15%" bgcolor="ccffff">HORA TOMA MUESTRA</th>
-                <th  style="text-align: left;width: 10%;" bgcolor="ccffff">NOMBRE Y APELLIDO PERSONA QUE TOMA</th>
-
-            </tr>
-            <tr>
-                <td style="height: 10px"></td>
-                <td style="height: 10px"></td>
-                <td  style="height: 10px"></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<div class='document__lab__sol_reverso__c'>
+  {{#with C_rev}}
+    <table class="table2">
+    		<tr>
+          <th class='th1' colspan="5">D. DATOS DEL PROFESIONAL RESPONSABLE</th>
+        </tr>
+        <tr>
+            <th class='th2'>FECHA GENERACIÓN PEDIDO</th>
+            <th class='th2'>HORA GENERACIÓN PEDIDO</th>
+            <th class='th2'>PRIMER NOMBRE</th>
+            <th class='th2'>PRIMER APELLIDO</th>
+            <th class='th2'>SEGUNDO APELLIDO</th>
+        </tr>
+        <tr>
+            <td>{{fecha_pedido}}</td>
+            <td>{{hora_pedido}}</td>
+            <td>{{primer_nombre_resp}}</td>
+            <td>{{primer_apellido_resp}}</td>
+            <td>{{segundo_apellido_resp}}</td>
+        </tr>
+        <tr>
+            <th class='th2' colspan="2">NÚMERO DOCUMENTO DE IDENTIFICACION</th>
+            <th class='th2'>FIRMA</th>
+            <th class='th2' colspan="2">SELLO</th>
+        </tr>
+        <tr>
+            <td colspan="2">{{identificacion_resp}}</td>
+            <td><img src='{{firma_resp}}'/></td>
+            <td colspan="2"><img src='{{sello_resp}}'/></td>
+        </tr>
+        <tr>
+            <th class='th2'>FECHA TOMA MUESTRA</th>
+            <th class='th2'>HORA TOMA MUESTRA</th>
+            <th class='th2'>NOMBRE Y APELLIDO PERSONA QUE TOMA</th>
+            <th class='th2' colspan="2">FIRMA</th>
+        </tr>
+        <tr>
+            <td>{{fecha_muestra}}</td>
+            <td>{{hora_muestra}}</td>
+            <td>{{nombre_completo_encargado}}</td>
+            <td colspan="2"><img src='{{firma_encargado}}'/></td>
+        </tr>
+      </table>
+        {{/with}}
+	    </div>
 <img src="<?php echo($rutaImagenSalida); ?>" style="position: absolute; top: 280; left: 400;height: 100px;width: 100px;"></th>
 <div style="width:100%">
     <table class="table table-bordered" style="font-size: 7px;width:100%;margin-bottom: 0px;padding: 0px;margin: 0px">

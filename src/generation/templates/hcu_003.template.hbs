@@ -324,7 +324,7 @@
 	            <th class='th1'>E. ENFERMEDAD O PROBLEMA ACTUAL</th>
 	        </tr>
 	        <tr>
-	            <td class='td1'>{{enfermedad_actual}}</td>
+	            <td class='td4j'>{{enfermedad_actual}}</td>
 	        </tr>
 	    </table>
         {{/with}}
@@ -334,34 +334,44 @@
         {{#with F}}
 	    <table class="table2">
 	    	<tr>
-	            <th class='th1' colspan="10">F. REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS</th>
+	            <th class='th1' colspan="15">F. REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS</th>
 	        </tr>
 	        <tr>
-	        	<th class='th5'>1.PIEL - ANEXOS</th>
+						<th class='th5'>1.</th>
+	        	<th class='th5'>PIEL - ANEXOS</th>
 	        	<td>{{#if piel_anexos}}X{{/if}}</td>
-	        	<th class='th5'>3.RESPIRATORIO</th>
+						<th class='th5'>3.</th>
+	        	<th class='th5'>RESPIRATORIO</th>
 	        	<td>{{#if respiratorio}}X{{/if}}</td>
-	        	<th class='th5'>5.DIGESTIVO</th>
+						<th class='th5'>5.</th>
+	        	<th class='th5'>DIGESTIVO</th>
 	        	<td>{{#if digestivo}}X{{/if}}</td>
-	        	<th class='th5'>7.MÚSCULO - ESQUELÉTICO</th>
+						<th class='th5'>7.</th>
+	        	<th class='th5'>MÚSCULO - ESQUELÉTICO</th>
 	        	<td>{{#if musculo_esqueletico}}X{{/if}}</td>
-	        	<th class='th5'>9.HEMO - LINFÁTICO</th>
+						<th class='th5'>9.</th>
+	        	<th class='th5'>HEMO - LINFÁTICO</th>
 	        	<td>{{#if hemo_linfatico}}X{{/if}}</td>
 	        </tr>
 	        <tr>
-	        	<th class='th5'>2.ÓRGANOS DE LOS SENTIDOS</th>
+						<th class='th5'>2.</th>
+	        	<th class='th5'>ÓRGANOS DE LOS SENTIDOS</th>
 	        	<td>{{#if organos_sentidos}}X{{/if}}</td>
-	        	<th class='th5'>4.CARDIO - VASCULAR</th>
+						<th class='th5'>4.</th>
+	        	<th class='th5'>CARDIO - VASCULAR</th>
 	        	<td>{{cardio_vascular}}</td>
-	        	<th class='th5'>6.GENITO - URINARIO</th>
+						<th class='th5'>6.</th>
+	        	<th class='th5'>GENITO - URINARIO</th>
 	        	<td>{{#if genito_urinario}}X{{/if}}</td>
-	        	<th class='th5'>8.ENDÓCRINO</th>
+						<th class='th5'>8.</th>
+	        	<th class='th5'>ENDÓCRINO</th>
 	        	<td>{{#if endocrino}}X{{/if}}</td>
-	        	<th class='th5'>10.NERVIOSO</th>
+						<th class='th5'>10.</th>
+	        	<th class='th5'>NERVIOSO</th>
 	        	<td>{{#if nervioso}}X{{/if}}</td>
 	        </tr>
 	        <tr>
-	            <td class='td4j'colspan="10">{{descripcion_revision}}</td>
+	            <td class='td4j'colspan="15">{{descripcion_revision}}</td>
 	        </tr>
 	    </table>
         {{/with}}
@@ -378,60 +388,40 @@
 		</div>
 	</footer>
 
-		<div style="width:100%;padding-top: 3px">
-			<table class="table2">
-		    		<tr>
-		              <th colspan="5" style="text-align: left;font-size: 10px" bgcolor="ccccff">DATOS DEL USUARIO / PACIENTE</th>
-		            </tr>
-		    	</thead>
-		        <tbody>
-		            <tr >
-		            	<th  bgcolor="CCFFCC">PRIMER APELLIDO</th>
-		            	<th  bgcolor="CCFFCC">PRIMER NOMBRE</th>
-		            	<th  bgcolor="CCFFCC">EDAD</th>
-		            	<th  bgcolor="CCFFCC">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
-		            	<th  bgcolor="CCFFCC">NÚMERO DE ARCHIVO</th>
-		            </tr>
-		            <tr>
-		            	<td style="height: 10px;text-align: center;"><?php echo($archivo[1]['APELLIDO_PATERNO'][0])?></td>
-		            	<td style="height: 10px;text-align: center;"><?php echo($archivo[1]['PRIMER_NOMBRE'][0])?></td>
-		            	<td style="height: 10px;text-align: center;"><?php echo($archivo[1]['EDAD'][0])?></td>
-		            	<td style="height: 10px;text-align: center;"><b><?php echo($archivo[1]['NUMERO_HC'][0])?></b></td>
-		            	<td style="height: 10px;text-align: center;"></td>
-		            </tr>
-		        </tbody>
-		    </table>
-		</div>
-	</div>
-
 	<div class="document__g">
 		{{#with G}}
 	    <table class="table2">
 	    	<tr>
-	            <th class='th1' colspan="9">G. CONSTANTES VITALES Y ANTROPOMETRÍA</th>
-	        </tr>
-	        <tr>
-	        	<th class='th5'>TEMPERATURA (ºC)</th>
-	        	<th class='th5'>PRESIÓN ARTERIAL (mmHg)</th>
-	        	<th class='th5'>PULSO /  min</th>
-	        	<th class='th5'>FRECUENCIA RESPIRATORIA / min</th>
-	        	<th class='th5'>PESO (Kg)</th>
-	        	<th class='th5'>TALLA (cm)</th>
-	        	<th class='th5'>IMC (Kg/m2)</th>
-	        	<th class='th5'>PERÍMETRO CEFÁLICO (cm)</th>
-	        	<th class='th5'>PULSIOXIMETRIA (%)</th>
-	        </tr>
-	        <tr>
-	            <td>{{temperatura}}</td>
-	            <td>{{presion_arterial}}</td>
-	            <td>{{pulso}}</td>
-	            <td>{{frecuencia_respiratoria}}</td>
-	            <td>{{peso}}</td>
-	            <td>{{talla}}</td>
-	            <td>{{imc}}</td>
-	            <td>{{perimetro_cefalico}}</td>
-	            <td>{{pulsioximetria}}</td>
-	        </tr>
+	        <th class='th1' colspan="9">G. CONSTANTES VITALES Y ANTROPOMETRÍA</th>
+	      </tr>
+	      <tr>
+	        <th class='th5'>TEMPERATURA (ºC)</th>
+	        <th class='th5'>PRESIÓN ARTERIAL (mmHg)</th>
+	        <th class='th5'>PULSO /  min</th>
+	        <th class='th5'>FRECUENCIA RESPIRATORIA / min</th>
+	        <th class='th5'>PESO (Kg)</th>
+	        <th class='th5'>TALLA (cm)</th>
+	        <th class='th5'>IMC (Kg/m2)</th>
+	        <th class='th5'>PERÍMETRO CEFÁLICO (cm)</th>
+	        <th class='th5'>PULSIOXIMETRIA (%)</th>
+	      </tr>
+	      <tr>
+	        <td>{{temperatura}}</td>
+	        <td>{{presion_arterial}}</td>
+	        <td>{{pulso}}</td>
+	        <td>{{frecuencia_respiratoria}}</td>
+	        <td>{{peso}}</td>
+	        <td>{{talla}}</td>
+	        <td>{{imc}}</td>
+	        <td>{{perimetro_cefalico}}</td>
+	        <td>{{pulsioximetria}}</td>
+	      </tr>
+				<tr>
+	        <th class='th5'>SCORE MAMÁ</th>
+	        <td>{{score_mama}}</td>
+					<th class='th5'>OTROS</th>
+	        <td colspan="6" class="td1">{{score_mama}}</td>
+				</tr>
 	    </table>
 		{{/with}}
 	</div>
@@ -440,76 +430,101 @@
 		{{#with H}}
 	    <table class="table2">
 	    	<tr>
-	            <th class='th1' colspan="10">H. EXAMEN FÍSICO</th>
-	        </tr>
-	        <tr>
-	        	<th class='th1' colspan="6">REGIONAL</th>
-	        	<th class='th1' colspan="4">SISTÉMICO</th>
-	        </tr>
-	        <tr>
-	            <td class='td2'>1R. PIEL - FANERAS</td>
-	            <td>{{#if regional.piel_faneras}}X{{/if}}</td>
-	            <td class='td2'>6R. BOCA</td>
-	            <td>{{#if regional.boca}}X{{/if}}</td>
-	            <td class='td2'>11R. ABDOMEN </td>
-	            <td>{{#if regional.abdomen}}X{{/if}}</td>
-	            <td class='td2'>1S. ÓRGANOS DE LOS SENTIDOS</td>
-	            <td>{{#if sistemico.organos_sentidos}}X{{/if}}</td>
-	            <td class='td2'>6S. URINARIO</td>
-	            <td>{{#if sistemico.urinario}}X{{/if}}</td>
-	        </tr>
-	        <tr>
-	            <td class='td2'>2R. CABEZA </td>
-	            <td>{{#if regional.cabeza}}X{{/if}}</td>
-	            <td class='td2'>7R. OROFARINGE</td>
-	            <td>{{#if regional.oro_faringe}}X{{/if}}</td>
-	            <td class='td2'>12R. COLUMNA VERTEBRAL</td>
-	            <td>{{#if regional.columna}}X{{/if}}</td>
-	            <td class='td2'>2S. RESPIRATORIO</td>
-	            <td>{{#if sistemico.respiratorio}}X{{/if}}</td>
-	            <td class='td2'>7S. MÚSCULO - ESQUELÉTICO</td>
-	            <td>{{#if sistemico.musculo_esqueletico}}X{{/if}}</td>
-	        </tr>
-	        <tr>
-	            <td class='td2'>3R. OJOS</td>
-	            <td>{{#if regional.ojos}}X{{/if}}</td>
-	            <td class='td2'>8R. CUELLO</td>
-	            <td>{{#if regional.cuello}}X{{/if}}</td>
-	            <td class='td2'>13R. INGLE-PERINÉ</td>
-	            <td>{{#if regional.ingle_perine}}X{{/if}}</td>
-	            <td class='td2'>3S. CARDIO - VASCULAR</td>
-	            <td>{{#if sistemico.cardio_vascular}}X{{/if}}</td>
-	            <td class='td2'>8S. ENDÓCRINO</td>
-	            <td>{{#if sistemico.endocrino}}X{{/if}}</td>
-	        </tr>
-	        <tr>
-	            <td class='td2'>4R. OÍDOS</td>
-	            <td>{{#if regional.oidos}}X{{/if}}</td>
-	            <td class='td2'>9R. AXILAS - MAMAS</td>
-	            <td>{{#if regional.axilas_mamas}}X{{/if}}</td>
-	            <td class='td2'>14R. MIEMBROS SUPERIORES</td>
-	            <td>{{#if regional.miembros_superiores}}X{{/if}}</td>
-	            <td class='td2'>4S. DIGESTIVO</td>
-	            <td>{{#if sistemico.digestivo}}X{{/if}}</td>
-	            <td class='td2'>9S. HEMO - LINFÁTICO</td>
-	            <td>{{#if sistemico.hemo_linfatico}}X{{/if}}</td>
-	        </tr>
-	        <tr>
-	            <td class='td2'>5R. NARIZ</td>
-	            <td>{{#if regional.nariz}}X{{/if}}</td>
-	            <td class='td2'>10R. TÓRAX</td>
-	            <td>{{#if regional.torax}}X{{/if}}</td>
-	            <td class='td2'>15R. MIEMBROS INFERIORES</td>
-	            <td>{{#if regional.miembros_inferiores}}X{{/if}}</td>
-	            <td class='td2'>5S. GENITAL</td>
-	            <td>{{#if sistemico.genital}}X{{/if}}</td>
-	            <td class='td2'>10S. NEUROLÓGICO</td>
-	            <td>{{#if sistemico.neurologico}}X{{/if}}</td>
-	        </tr>
-	        <tr>
-	            <td class='td4j' colspan="6">{{regional.descripcion_regional}}</td>
-	            <td colspan="4"><img src={{sistemico.descripcion}}></td>
-	        </tr>
+	        <th class='th1' colspan="15">H. EXAMEN FÍSICO</th>
+	      </tr>
+	      <tr>
+	        <th class='th1' colspan="9">REGIONAL</th>
+	        <th class='th1' colspan="6">SISTÉMICO</th>
+	      </tr>
+	      <tr>
+					<th class='th5'>1R.</th>
+	        <td class='td2'>PIEL - FANERAS</td>
+	        <td>{{#if regional.piel_faneras}}X{{/if}}</td>
+					<th class='th5'>6R.</th>
+	        <td class='td2'>BOCA</td>
+	        <td>{{#if regional.boca}}X{{/if}}</td>
+					<th class='th5'>11R.</th>
+	        <td class='td2'>ABDOMEN </td>
+	        <td>{{#if regional.abdomen}}X{{/if}}</td>
+					<th class='th5'>1S.</th>
+	        <td class='td2'>ÓRGANOS DE LOS SENTIDOS</td>
+	        <td>{{#if sistemico.organos_sentidos}}X{{/if}}</td>
+					<th class='th5'>6S.</th>
+	        <td class='td2'>URINARIO</td>
+	        <td>{{#if sistemico.urinario}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+					<th class='th5'>2R.</th>
+	        <td class='td2'>CABEZA </td>
+	        <td>{{#if regional.cabeza}}X{{/if}}</td>
+					<th class='th5'>7R.</th>
+	        <td class='td2'>OROFARINGE</td>
+	        <td>{{#if regional.oro_faringe}}X{{/if}}</td>
+					<th class='th5'>12R.</th>
+	        <td class='td2'>COLUMNA VERTEBRAL</td>
+	        <td>{{#if regional.columna}}X{{/if}}</td>
+					<th class='th5'>2S.</th>
+	        <td class='td2'>RESPIRATORIO</td>
+	        <td>{{#if sistemico.respiratorio}}X{{/if}}</td>
+					<th class='th5'>7S.</th>
+	        <td class='td2'>MÚSCULO - ESQUELÉTICO</td>
+	        <td>{{#if sistemico.musculo_esqueletico}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+					<th class='th5'>3R.</th>
+	        <td class='td2'>OJOS</td>
+	        <td>{{#if regional.ojos}}X{{/if}}</td>
+					<th class='th5'>8R.</th>
+	        <td class='td2'>CUELLO</td>
+	        <td>{{#if regional.cuello}}X{{/if}}</td>
+					<th class='th5'>13R.</th>
+	        <td class='td2'>INGLE-PERINÉ</td>
+	        <td>{{#if regional.ingle_perine}}X{{/if}}</td>
+					<th class='th5'>3S.</th>
+	        <td class='td2'>CARDIO - VASCULAR</td>
+	        <td>{{#if sistemico.cardio_vascular}}X{{/if}}</td>
+					<th class='th5'>8S.</th>
+	        <td class='td2'>ENDÓCRINO</td>
+	        <td>{{#if sistemico.endocrino}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+					<th class='th5'>4R.</th>
+	        <td class='td2'>OÍDOS</td>
+	        <td>{{#if regional.oidos}}X{{/if}}</td>
+					<th class='th5'>9R.</th>
+	        <td class='td2'>AXILAS - MAMAS</td>
+	        <td>{{#if regional.axilas_mamas}}X{{/if}}</td>
+					<th class='th5'>14R.</th>
+	        <td class='td2'>MIEMBROS SUPERIORES</td>
+	        <td>{{#if regional.miembros_superiores}}X{{/if}}</td>
+					<th class='th5'>4S.</th>
+	        <td class='td2'>DIGESTIVO</td>
+	        <td>{{#if sistemico.digestivo}}X{{/if}}</td>
+					<th class='th5'>9S.</th>
+	        <td class='td2'>HEMO - LINFÁTICO</td>
+	        <td>{{#if sistemico.hemo_linfatico}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+					<th class='th5'>5R.</th>
+	        <td class='td2'>NARIZ</td>
+	        <td>{{#if regional.nariz}}X{{/if}}</td>
+					<th class='th5'>10R.</th>
+	        <td class='td2'>TÓRAX</td>
+	        <td>{{#if regional.torax}}X{{/if}}</td>
+					<th class='th5'>15R.</th>
+	        <td class='td2'>MIEMBROS INFERIORES</td>
+	        <td>{{#if regional.miembros_inferiores}}X{{/if}}</td>
+					<th class='th5'>5S.</th>
+	        <td class='td2'>GENITAL</td>
+	        <td>{{#if sistemico.genital}}X{{/if}}</td>
+					<th class='th5'>10S.</th>
+	        <td class='td2'>NEUROLÓGICO</td>
+	        <td>{{#if sistemico.neurologico}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+	        <td class='td4j' colspan="9">{{regional.descripcion_regional}}</td>
+	        <td colspan="6"><img src={{sistemico.descripcion}}></td>
+	      </tr>
 	    </table>
 		{{/with}}
 	</div>

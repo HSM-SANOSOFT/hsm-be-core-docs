@@ -105,7 +105,9 @@ export type Hcu003DocumentTemplate = {
         talla: number,
         imc: number,
         perimetro_cefalico: number,
-        pulsioximetria: number
+        pulsioximetria: number,
+        score_mama: string,
+        otros: string
     },
 
     H:{

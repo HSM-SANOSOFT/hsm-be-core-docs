@@ -1,0 +1,612 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+      }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+		.thV {
+			background-color: #ccffcc;
+  		font-weight: bold;
+  		text-align: center;
+			height: auto;
+			width: 10px;
+			padding: 2px 0;
+			line-height: 1;
+			writing-mode: vertical-rl;
+			transform: rotate(180deg);
+			white-space: nowrap;
+		}
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: white;
+      }
+
+      .th4 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: center;
+      }
+
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: center;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+	  	.td2 {
+        text-align: right;
+        /*width: max-content;*/
+        white-space: nowrap;
+				background-color: #ccccff;
+				width: 5px
+      }
+
+			.td3 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+				background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+			.document__cexterna,
+      .document__cexterna__a,
+      .document__cexterna__b,
+      .document__cexterna__c,
+      .document__cexterna__d,
+			.document__cexterna__e,
+			.document__cexterna__f,
+			.document__cexterna__g,
+			.document__cexterna__h,
+			.document__cexterna__i,
+			.document__cexterna__j,
+			.document__cexterna__k {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+			</style>
+</head>
+<body>
+    <header></header>
+    <main>
+
+	<div class='document__cexterna'>
+		<div class='document__cexterna__a'>
+			{{#with A}}
+			<table>
+				<tr>
+					<th class="th1" colspan="6">A. DATOS DEL ESTABLECIMIENTO Y USUARIO / PACIENTE</th>
+				</tr>
+				<tr>
+					<th class="th2">INSTITUCIÓN DEL SISTEMA</th>
+					<th class="th2">UNICÓDIGO</th>
+					<th class="th2">ESTABLECIMIENTO DE SALUD</th>
+					<th class="th2">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+					<th class="th2">NÚMERO DE ARCHIVO</th>
+					<th class="th2">No. HOJA</th>
+				</tr>
+				<tr>
+					<td>{{institucion_sistema}}</td>
+					<td>{{unicodigo}}</td>
+					<td>{{establecimiento_salud}}</td>
+					<td>{{numero_historia_clinica}}</td>
+					<td>{{numero_archivo}}</td>
+					<td>{{numero_hoja}}</td>
+				</tr>
+				<tr>
+					<th class="th2">PRIMER APELLIDO</th>
+					<th class="th2">SEGUNDO APELLIDO</th>
+					<th class="th2">PRIMER NOMBRE</th>
+					<th class="th2">SEGUNDO NOMBRE</th>
+					<th class="th2">SEXO</th>
+					<th class="th2">EDAD (Años)</th>
+				</tr>
+				<tr>
+					<td>{{primer_apellido}}</td>
+					<td>{{segundo_apellido}}</td>
+					<td>{{primer_nombre}}</td>
+					<td>{{segundo_nombre}}</td>
+					<td>{{sexo}}</td>
+					<td>{{edad}}</td>
+				</tr>
+			</table>
+			{{/with}}
+		</div>
+
+		<div class='document__cexterna__b'>
+			{{#with B}}
+			<table class="table2">
+				<tr>
+					<th class="th1">B. MOTIVO DE CONSULTA</th>
+					<th class="th1">PRIMERA</th>
+					<td>{{#if primera}}X{{/if}}</td>
+					<th class="th1">SUBSECUENTE</th>
+					<td>{{#if subsecuente}}X{{/if}}</td>
+				</tr>
+				<tr>
+					<td class="td4j" colspan="5">{{motivo_consulta}}</td>
+				</tr>
+			</table>
+			{{/with}}
+		</div>
+
+		<div class="document__cexterna__c">
+      {{#with C}}
+	    <table>
+	    	<tr>
+	        <th class='th1' colspan="20">C. ANTECEDENTES PATOLÓGICOS PERSONALES</th>
+	      </tr>
+	      <tr>
+	        <th class='th5'>1. CARDIOPATÍA</th>
+	        <td>{{#if cardiopatia}}X{{/if}}</td>
+	        <th class='th5'>2. HIPERTENSIÓN</th>
+	        <td>{{#if hipertension}}X{{/if}}</td>
+	        <th class='th5'>3. ENF. C. VASCULAR</th>
+	        <td>{{#if enf_c_vascular}}X{{/if}}</td>
+	        <th class='th5'>4.  ENDÓCRINO METABÓLICO</th>
+	        <td>{{#if endocrino_metabolico}}X{{/if}}</td>
+	        <th class='th5'>5. CÁNCER</th>
+	        <td>{{#if cancer}}X{{/if}}</td>
+	        <th class='th5'>6. TUBERCULOSIS</th>
+	        <td>{{#if tuberculosis}}X{{/if}}</td>
+	        <th class='th5'>7.  ENF. MENTAL</th>
+	        <td>{{#if enf_mental}}X{{/if}}</td>
+	        <th class='th5'>8. ENF. INFECCIOSA</th>
+	        <td>{{#if enf_infecciosa}}X{{/if}}</td>
+	        <th class='th5'>9.  MAL FORMACIÓN</th>
+	        <td>{{#if mal_formacion}}X{{/if}}</td>
+	        <th class='th5'>10.  OTRO</th>
+	        <td>{{#if otro}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+	        <td class='td4j'colspan="20">{{descripcion_antecedentes}}</td>
+	      </tr>
+	    </table>
+      {{/with}}
+		</div>
+
+		<div class="document__cexterna__d">
+      {{#with D}}
+	    <table>
+	    	<tr>
+	        <th class='th1' colspan="20">D. ANTECEDENTES PATOLÓGICOS FAMILIARES</th>
+	      </tr>
+	      <tr>
+	        <th class='th5'>1. CARDIOPATÍA</th>
+	        <td>{{#if cardiopatia}}X{{/if}}</td>
+	        <th class='th5'>2. HIPERTENSIÓN</th>
+	        <td>{{#if hipertension}}X{{/if}}</td>
+	        <th class='th5'>3. ENF. C. VASCULAR</th>
+	        <td>{{#if enf_c_vascular}}X{{/if}}</td>
+	        <th class='th5'>4.  ENDÓCRINO METABÓLICO</th>
+	        <td>{{#if endocrino_metabolico}}X{{/if}}</td>
+	        <th class='th5'>5. CÁNCER</th>
+	        <td>{{#if cancer}}X{{/if}}</td>
+	        <th class='th5'>6. TUBERCULOSIS</th>
+	        <td>{{#if tuberculosis}}X{{/if}}</td>
+	        <th class='th5'>7.  ENF. MENTAL</th>
+	        <td>{{#if enf_mental}}X{{/if}}</td>
+	        <th class='th5'>8. ENF. INFECCIOSA</th>
+	        <td>{{#if enf_infecciosa}}X{{/if}}</td>
+	        <th class='th5'>9.  MAL FORMACIÓN</th>
+	        <td>{{#if mal_formacion}}X{{/if}}</td>
+	        <th class='th5'>10.  OTRO</th>
+	        <td>{{#if otro}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+	        <td class='td4j'colspan="20">{{descripcion_antecedentes}}</td>
+	      </tr>
+	    </table>
+      {{/with}}
+		</div>
+
+		<div class="document__cexterna__e">
+			{{#with E}}
+			<table>
+				<tr>
+					<th class="th1">E. ENFERMEDAD O PROBLEMA ACTUAL</th>
+					<td class="td2">CRONOLOGÍA - LOCALIZACIÓN - CARACTERÍSTICAS - INTENSIDAD - FRECUENCIA - FACTORES AGRAVANTES</td>
+				</tr>
+				<tr>
+					<td class="td4j" colspan="2">{{problema_actual}}</td>
+				</tr>
+			</table>
+			{{/with}}
+		</div>
+
+		<div class="document__cexterna__f">
+			{{#with F}}
+			<table>
+	    	<tr>
+	        <th class='th1' colspan="13">F. CONSTANTES VITALES Y ANTROPOMETRÍA</th>
+	      </tr>
+	      <tr>
+					<th class='th5'>FECHA</th>
+					<th class='th5'>HORA</th>
+					<th class='thV'>TEMPERATURA<br>(ºC)</th>
+	        <th class='thV'>PRESIÓN<br>ARTERIAL<br>(mmHg)</th>
+	        <th class='thV'>PULSO / min</th>
+	        <th class='thV'>FRECUENCIA<br>RESPIRATORIA<br>/min</th>
+	        <th class='thV'>PESO (Kg)</th>
+	        <th class='thV'>TALLA (cm)</th>
+	        <th class='thV'>IMC (Kg/m²)</th>
+	        <th class='thV'>PERÍMETRO<br>ABDOMINAL<br>(cm)</th>
+					<th class='thV'>HEMOGLOBINA<br>CAPILAR (g/dl)</th>
+					<th class='thV'>GLUCOSA<br>CAPILAR (Mg/dl)</th>
+	        <th class='thV'>PULSIOXIMETRIA<br>(%)</th>
+	      </tr>
+	      <tr>
+					<td>{{fecha}}</td>
+					<td>{{hora}}</td>
+	        <td>{{temperatura}}</td>
+	        <td>{{presion_arterial}}</td>
+	        <td>{{pulso}}</td>
+	        <td>{{frecuencia_respiratoria}}</td>
+	        <td>{{peso}}</td>
+	        <td>{{talla}}</td>
+	        <td>{{imc}}</td>
+					<td>{{perimetro_abdominal}}</td>
+					<td>{{hemoglobina_capilar}}</td>
+	        <td>{{glucosa_capilar}}</td>
+	        <td>{{pulsioximetria}}</td>
+	      </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+		<div class="document__cexterna__g">
+			{{#with G}}
+			<table>
+				<tr>
+					<th class='th1' colspan="8">G. REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS</th>
+					<td class='td2' colspan="7">MARCAR "X"  CUANDO PRESENTE PATOLOGÍA Y DESCRIBA</td>
+				</tr>
+				<tr>
+					<th class='th5'>1</th>
+					<td class='td3'>PIEL - ANEXOS</td>
+					<td>{{#if piel_anexos}}X{{/if}}</td>
+					<th class='th5'>3</th>
+					<td class='td3'>RESPIRATORIO</td>
+					<td>{{#if respiratorio}}X{{/if}}</td>
+					<th class='th5'>5</th>
+					<td class='td3'>DIGESTIVO</td>
+					<td>{{#if digestivo}}X{{/if}}</td>
+					<th class='th5'>7</th>
+					<td class='td3'>MÚSCULO - ESQUELÉTICO</td>
+					<td>{{#if musculo_esqueletico}}X{{/if}}</td>
+					<th class='th5'>9</th>
+					<td class='td3'>HEMO - LINFÁTICO</td>
+					<td>{{#if hemo_linfatico}}X{{/if}}</td>
+				</tr>
+
+				<tr>
+					<th class='th5'>2</th>
+					<td class='td3'>ÓRGANOS DE LOS SENTIDOS</td>
+					<td>{{#if organos_sentidos}}X{{/if}}</td>
+					<th class='th5'>4</th>
+					<td class='td3'>CARDIO - VASCULAR</td>
+					<td>{{#if cardio_vascular}}X{{/if}}</td>
+					<th class='th5'>6</th>
+					<td class='td3'>GENITO - URINARIO</td>
+					<td>{{#if genito_urinario}}X{{/if}}</td>
+					<th class='th5'>8</th>
+					<td class='td3'>ENDOCRINO</td>
+					<td>{{#if endocrino}}X{{/if}}</td>
+					<th class='th5'>10</th>
+					<td class='td3'>NERVIOSO</td>
+					<td>{{#if nervioso}}X{{/if}}</td>
+				</tr>
+				<tr>
+					<td colspan="15">{{descripcion_antecedentes}}</td>
+				</tr>
+			</table>
+			{{/with}}
+		</div>
+
+		<div style="width: 100%">
+			<table style="width: 100%">
+				<tr>
+					<td style="font-size: 9px; text-align: left; width: 100%"> SNS-MSP / HCU-form.002 / 2021 </td>      
+					<td style="font-size: 9px; text-align: right; width: 100%"> CONSULTA EXTERNA - ANAMNESIS (1)  </td>
+				</tr>      
+			</table>
+		</div>
+
+		<div style="page-break-after: always;"></div>
+
+		<div class="document__cexterna__h">
+			{{#with H}}
+	    <table class="table2">
+	    	<tr>
+	        <th class='th1' colspan="15">H. EXAMEN FÍSICO</th>
+	      </tr>
+	      <tr>
+	        <th class='th1' colspan="9">REGIONAL</th>
+	        <th class='th1' colspan="6">SISTÉMICO</th>
+	      </tr>
+	      <tr>
+					<th class='th5'>1R.</th>
+	        <td class='td3'>PIEL - FANERAS</td>
+	        <td>{{#if regional.piel_faneras}}X{{/if}}</td>
+					<th class='th5'>6R.</th>
+	        <td class='td3'>BOCA</td>
+	        <td>{{#if regional.boca}}X{{/if}}</td>
+					<th class='th5'>11R.</th>
+	        <td class='td3'>ABDOMEN </td>
+	        <td>{{#if regional.abdomen}}X{{/if}}</td>
+					<th class='th5'>1S.</th>
+	        <td class='td3'>ÓRGANOS DE LOS SENTIDOS</td>
+	        <td>{{#if sistemico.organos_sentidos}}X{{/if}}</td>
+					<th class='th5'>6S.</th>
+	        <td class='td3'>URINARIO</td>
+	        <td>{{#if sistemico.urinario}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+					<th class='th5'>2R.</th>
+	        <td class='td3'>CABEZA </td>
+	        <td>{{#if regional.cabeza}}X{{/if}}</td>
+					<th class='th5'>7R.</th>
+	        <td class='td3'>OROFARINGE</td>
+	        <td>{{#if regional.oro_faringe}}X{{/if}}</td>
+					<th class='th5'>12R.</th>
+	        <td class='td3'>COLUMNA VERTEBRAL</td>
+	        <td>{{#if regional.columna}}X{{/if}}</td>
+					<th class='th5'>2S.</th>
+	        <td class='td3'>RESPIRATORIO</td>
+	        <td>{{#if sistemico.respiratorio}}X{{/if}}</td>
+					<th class='th5'>7S.</th>
+	        <td class='td3'>MÚSCULO - ESQUELÉTICO</td>
+	        <td>{{#if sistemico.musculo_esqueletico}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+					<th class='th5'>3R.</th>
+	        <td class='td3'>OJOS</td>
+	        <td>{{#if regional.ojos}}X{{/if}}</td>
+					<th class='th5'>8R.</th>
+	        <td class='td3'>CUELLO</td>
+	        <td>{{#if regional.cuello}}X{{/if}}</td>
+					<th class='th5'>13R.</th>
+	        <td class='td3'>INGLE-PERINÉ</td>
+	        <td>{{#if regional.ingle_perine}}X{{/if}}</td>
+					<th class='th5'>3S.</th>
+	        <td class='td3'>CARDIO - VASCULAR</td>
+	        <td>{{#if sistemico.cardio_vascular}}X{{/if}}</td>
+					<th class='th5'>8S.</th>
+	        <td class='td3'>ENDÓCRINO</td>
+	        <td>{{#if sistemico.endocrino}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+					<th class='th5'>4R.</th>
+	        <td class='td3'>OÍDOS</td>
+	        <td>{{#if regional.oidos}}X{{/if}}</td>
+					<th class='th5'>9R.</th>
+	        <td class='td3'>AXILAS - MAMAS</td>
+	        <td>{{#if regional.axilas_mamas}}X{{/if}}</td>
+					<th class='th5'>14R.</th>
+	        <td class='td3'>MIEMBROS SUPERIORES</td>
+	        <td>{{#if regional.miembros_superiores}}X{{/if}}</td>
+					<th class='th5'>4S.</th>
+	        <td class='td3'>DIGESTIVO</td>
+	        <td>{{#if sistemico.digestivo}}X{{/if}}</td>
+					<th class='th5'>9S.</th>
+	        <td class='td3'>HEMO - LINFÁTICO</td>
+	        <td>{{#if sistemico.hemo_linfatico}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+					<th class='th5'>5R.</th>
+	        <td class='td3'>NARIZ</td>
+	        <td>{{#if regional.nariz}}X{{/if}}</td>
+					<th class='th5'>10R.</th>
+	        <td class='td3'>TÓRAX</td>
+	        <td>{{#if regional.torax}}X{{/if}}</td>
+					<th class='th5'>15R.</th>
+	        <td class='td3'>MIEMBROS INFERIORES</td>
+	        <td>{{#if regional.miembros_inferiores}}X{{/if}}</td>
+					<th class='th5'>5S.</th>
+	        <td class='td3'>GENITAL</td>
+	        <td>{{#if sistemico.genital}}X{{/if}}</td>
+					<th class='th5'>10S.</th>
+	        <td class='td3'>NEUROLÓGICO</td>
+	        <td>{{#if sistemico.neurologico}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+	        <td class='td4j' colspan="15">{{descripcion}}</td>
+	      </tr>
+	    </table>
+		{{/with}}
+	</div>
+
+	<div class="document__cexterna__i">
+		{{#with I}}
+		<table class="table2">
+	    <tr>
+	      <th class='th1' colspan="2">I. DIAGNÓSTICO</th>
+	      <th class='th1'>CIE</th>
+	      <th class='th1'>PRE</th>
+	      <th class='th1'>DEF</th>
+	      <th class='th1' colspan="2"></th>
+	      <th class='th1'>CIE</th>
+	      <th class='th1'>PRE</th>
+	      <th class='th1'>DEF</th>
+	    </tr>
+	    <tr>
+	      <th class='th5'>1.</th>
+	      <td class='td1'>{{diagnosticos.[0].descripcion}}</td>
+	      <td class='td1'>{{diagnosticos.[0].cie}}</td>
+	      <td class='td1'>{{#if diagnosticos.[0].pre}}X{{/if}}</th>
+	      <td class='td1'>{{#if diagnosticos.[0].def}}X{{/if}}</th>
+	      <!-- 2 -->
+	      <th  class='th5'>4.</th>
+	      <td class='td1'>{{diagnosticos.[3].descripcion}}</td>
+	      <td class='td1'>{{diagnosticos.[3].cie}}</td>
+	      <td class='td1'>{{#if diagnosticos.[3].pre}}X{{/if}}</th>
+	      <td class='td1'>{{#if diagnosticos.[3].def}}X{{/if}}</th>
+	    </tr>
+	    <tr>
+	      <th class='th5'>2.</th>
+	      <td class='td1'>{{diagnosticos.[1].descripcion}}</td>
+	      <td class='td1'>{{diagnosticos.[1].cie}}</td>
+	      <td class='td1'>{{#if diagnosticos.[1].pre}}X{{/if}}</th>
+	      <td class='td1'>{{#if diagnosticos.[1].def}}X{{/if}}</th>
+	      <!-- 2 -->
+	      <th  class='th5'>5.</th>
+	      <td class='td1'>{{diagnosticos.[4].descripcion}}</td>
+	      <td class='td1'>{{diagnosticos.[4].cie}}</td>
+	      <td class='td1'>{{#if diagnosticos.[4].pre}}X{{/if}}</th>
+	      <td class='td1'>{{#if diagnosticos.[4].def}}X{{/if}}</th>
+	    </tr>
+	    <tr>
+	      <th class='th5'>3.</th>
+	      <td class='td1'>{{diagnosticos.[2].descripcion}}</td>
+	      <td class='td1'>{{diagnosticos.[2].cie}}</td>
+	      <td class='td1'>{{#if diagnosticos.[2].pre}}X{{/if}}</th>
+	      <td class='td1'>{{#if diagnosticos.[2].def}}X{{/if}}</th>
+	      <!-- 2 -->
+	      <th class='th5'>6.</th>
+	      <td class='td1'>{{diagnosticos.[5].descripcion}}</td>
+	      <td class='td1'>{{diagnosticos.[5].cie}}</td>
+	      <td class='td1'>{{#if diagnosticos.[5].pre}}X{{/if}}</th>
+	      <td class='td1'>{{#if diagnosticos.[5].def}}X{{/if}}</th>
+	    </tr>
+	  </table>
+		{{/with}}
+	</div>
+
+	<div class="document__cexterna__j">
+		{{#with J}}
+		<table>
+			<tr>
+		    <th class='th1' colspan="4"> J. PLAN DE TRATAMIENTO</th>
+		    <td class='td2'>DIAGNOSTICO, TERAPÉUTICO Y EDUCACIONAL</td>
+		  </tr>
+		  <tr>
+		   	<td class='td4j' colspan="5">{{plan_tratamiento}}</td>
+		  </tr>
+			</table>
+			{{/with}}
+		</div>
+
+		<div class="document__cexterna__k">
+			{{#with K}}
+		  <table>
+		    <tr>
+		    	<th class='th1' colspan="5">K. DATO DEL PERSONAL RESPONSABLE</th>
+		    </tr>
+		    <tr>
+		    	<th class='th2'> FECHA (aaaa-mm-dd)</th>
+		    	<th class='th2'> HORA (hh-mm)</th>
+		    	<th class='th2'> PRIMER NOMBRE</th>
+		    	<th class='th2'>PRIMER APELLIDO</th>
+		    	<th class='th2'>SEGUNDO APELLIDO</th>
+		    </tr>
+		    <tr>
+		    	<td>{{fecha}}</td>
+		    	<td>{{hora}}</td>
+		    	<td>{{primer_nombre}}</td>
+		    	<td>{{primer_apellido}}</td>
+		    	<td>{{segundo_apellido}}</td>
+		    </tr>
+		    <tr>
+		    	<th class='th2' colspan="2">NÚMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+		    	<th class='th2' colspan="2">FIRMA</th>
+		    	<th class='th2'>SELLO</th>
+		    </tr>
+		    <tr>
+		    	<td colspan="2">{{identificacion}}</td>
+		    	<td colspan="2"><img src="{{firma_resp}}"></td>
+		    	<td><img src="{{sello_resp}}"></td>
+		    </tr>
+			</table>
+			{{/with}}
+		</div>
+
+		</div>
+			</main>
+			<footer>
+			<p> SNS-MSP / HCU-form.002 / 2021 </p>      
+			<p> CONSULTA EXTERNA -  EXAMEN FÍSICO Y PRESCRIPCIONES (2)</p>
+			</footer>
+	</body>
+</html>
