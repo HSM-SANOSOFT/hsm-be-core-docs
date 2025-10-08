@@ -1,0 +1,1581 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <style>
+      @page {
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: fixed;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        min-width: 25px;
+      }
+
+      th {
+        /*width: 100%;*/
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+        width: 5px;
+      }
+
+      .th3 {
+        background-color: #ccccff;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        background-color:#ccffcc;
+        width: 5px;
+      }
+
+      .td1 {
+        text-align: left;
+        width: fit-content;
+        white-space: nowrap;
+      }
+
+      .td2 {
+        text-align: center;
+        width: fit-content;
+        white-space: nowrap;
+        background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__bit__uci,
+      .document__bit__uci__a,
+      .document__bit__uci__b,
+      .document__bit__uci__c,
+      .document__bit__uci__d,
+      .document__bit__uci__e,
+      .document__bit__uci__f,
+      .document__bit__uci__g,
+      .document__bit__uci__h,
+      .document__bit__uci__i,
+      .document__bit__uci__j,
+      .document__bit__uci__k {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+
+.th-diagonal {
+  position: relative;
+  background: 
+    linear-gradient(to top right, 
+      transparent calc(50% - 0.5px), 
+      black calc(50% - 0.5px), 
+      black calc(50% + 0.5px), 
+      transparent calc(50% + 0.5px)
+    ),
+    white;
+  font-weight: bold;
+  height: 35px;
+  min-width: 120px;
+  border: 1px solid black;
+}
+
+.th-diagonal span {
+  position: absolute;
+  font-size: 8px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.th-diagonal .param {
+  bottom: 3px;
+  left: 5px;
+}
+
+.th-diagonal .horas {
+  top: 3px;
+  right: 5px;
+}
+
+      </style>
+        </head>
+        <body>
+    <header></header>
+    <main>
+
+<div class="document__bit__uci">
+  <div class="document__bit__uci__a">
+    {{#with A}}
+      <table>
+        <tr>
+          <th class="th1" colspan="12"> A. DATOS DEL ESTABLECIMIENTO Y USUARIO / PACIENTES</th>
+        </tr>
+        <tr>
+          <th class="th2" colspan="2">INSTITUCIÓN DEL SISTEMAS</th>
+          <th class="th2" colspan="2">UNICÓDIGO</th>
+          <th class="th2" colspan="2">ESTABLECIMIENTO DE SALUD</th>
+          <th class="th2" colspan="2">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+          <th class="th2" colspan="2">NÚMERO DE ARCHIVO</th>
+          <th class="th2" colspan="2">No. HOJA</th>
+        </tr>
+        <tr>
+          <td colspan="2">{{institucion_sistema}}</td>
+          <td colspan="2">{{unicodigo}}</td>
+          <td colspan="2">{{establecimiento_salud}}</td>
+          <td colspan="2">{{numero_historia_clinica}}</td>
+          <td colspan="2">{{numero_archivo}}</td>
+          <td colspan="2">{{numero_hoja}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="2">PRIMER APELLIDO </th>
+          <th class="th2" colspan="2">SEGUNDO APELLIDO </th>
+          <th class="th2" colspan="2">PRIMER NOMBRE </th>
+          <th class="th2" colspan="2">SEGUNDO NOMBRE </th>
+          <th class="th2" colspan="2">SEXO</th>
+          <th class="th2" colspan="2">EDAD (AÑOS) </th>
+        </tr>
+        <tr>
+          <td colspan="2">{{primer_apellido}}</td>
+          <td colspan="2">{{segundo_apellido}}</td>
+          <td colspan="2">{{primer_nombre}}</td>
+          <td colspan="2">{{segundo_nombre}}</td>
+          <td colspan="2">{{sexo}}</td>
+          <td colspan="2">{{edad}}</td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+  <div class="document__bit__uci__b">
+    {{#with B}}
+      <table>      
+        <tr>
+          <th class="th1" colspan="11"> B. ANTROPOMETRÍA </th>
+        </tr>
+        <tr>
+          <th class="th2">TALLA (cm)</th>
+          <td colspan="2">{{talla}}</td>
+          <th class="th2">PESO REAL (kg)</th>
+          <td>{{peso_real}}</td>
+          <th class="th2">IMC (m/kg2)</th>
+          <td>{{imc}}</td>
+          <th class="th2">PESO IDEAL (kg)</th>
+          <td>{{peso_ideal}}</td>
+          <th class="th2">SUPERFICIE CORPORAL (m2)</th>
+          <td>{{superficie_corporal}}</td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+  <div class="document__bit__uci__c">
+    {{#with C}}
+      <table>
+        <tr>
+          <th class="th1" colspan="32">C. BITÁCORA </th>    
+        </tr> 
+        <tr>
+          <th class="th2" colspan="4"> SERVICIO DE PROCEDENCIA:</th> 
+          <td colspan="2">{{servicio_procedencia}}</td>
+          <th class="th2" colspan="24">DIAGNÓSTICOS DE INGRESO A UCI</th>
+          <th class="th2" colspan="2">CIE</th>
+        </tr>
+        <tr>
+          <th class="th2" colspan="4"> FECHA DE INGRESO A UCI</th> 
+          <td colspan="2">{{ingreso_uci}}</td>
+          <th class="th2">1.</th>
+          <td class="td1" colspan="23">{{diagnostico_uci.[0].descripcion}}</td>
+          <td colspan="2">{{diagnostico_uci.[0].cie}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="4">FECHA ACTUAL (aaaa-mm-dd)</th> 
+          <td colspan="2">{{fecha_actual}}</td>
+          <th class="th2">2.</th>
+          <td class="td1" colspan="23">{{diagnostico_uci.[1].descripcion}}</td>
+          <td colspan="2">{{diagnostico_uci.[1].cie}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="4"> DIAS DE HOSPITALIZACIÒN </th> 
+          <td colspan="2">{{dias_hospitalizacion}}</td>
+          <th class="th2">3.</th>
+          <td class="td1" colspan="23">{{diagnostico_uci.[2].descripcion}}</td>
+          <td colspan="2">{{diagnostico_uci.[2].cie}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="2"> ALERGIAS: </th> 
+          <td colspan="4">{{alergias}}</td>
+          <th class="th2">4.</th>
+          <td class="td1" colspan="23">{{diagnostico_uci.[3].descripcion}}</td>
+          <td colspan="2">{{diagnostico_uci.[3].cie}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="3">GRUPO Y FACTOR:</th> 
+          <td colspan="3">{{grupo_factor}}</td>
+          <th class="th2">5.</th>
+          <td class="td1" colspan="23">{{diagnostico_uci.[4].descripcion}}</td>
+          <td colspan="2">{{diagnostico_uci.[4].cie}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="6">HORAS</th> 
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <th>11</th>
+          <th>12</th>
+          <th>13</th>
+          <th>14</th>
+          <th>15</th>
+          <th>16</th>
+          <th>17</th>
+          <th>18</th>
+          <th>19</th> 
+          <th>20</th> 
+          <th>21</th> 
+          <th>22</th> 
+          <th>23</th> 
+          <th>24</th> 
+          <th>1</th> 
+          <th>2</th> 
+          <th>3</th> 
+          <th>4</th> 
+          <th>5</th> 
+          <th>6</th> 
+          <th>7</th> 
+          <th class="th2" colspan="2">RESULTADOS DE LABORATORIO</th> 
+        </tr>
+        <tr>
+          <th class="th2" colspan="2" rowspan="48">C<br>O<br>N<br>S<br>T<br>A<br>N<br>T<br>E<br>S<br><br>V<br>I<br>T<br>A<br>L<br>E<br>S</th>
+          <th colspan="4">PRESION VENOSA CENTRAL</th>
+
+          {{#each presion_venosa}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <th>LEUCOCITOS</th> 
+          <td>{{resultados_laboratorio.leucocitos}}</td>  
+        </tr>
+
+        <tr>
+          <th colspan="4">TENSION ARTERIAL MEDIA</th>
+
+          {{#each tension_arterial}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <th>JOVENES</th> 
+          <td>{{resultados_laboratorio.jovenes}}</td>
+        </tr>
+
+        <tr>
+          <th colspan="4" colspan="4">GASTO CARDÍACO</th> 
+
+          {{#each gasto_cardiaco}}
+            <td>{{this}}</td>
+          {{/each}}
+          
+          <th>CAYADOS</th> 
+          <td>{{resultados_laboratorio.cayados}}</td>
+        </tr>
+
+        <tr>
+          <th colspan="4">INDICE CARDÍACO</th> 
+          
+          {{#each indice_cardiaco}}
+            <td>{{this}}</td>
+          {{/each}}
+          
+          <th>SEGMENTADOS</th> 
+          <td>{{resultados_laboratorio.segmentados}}</td>
+        </tr>
+
+        <tr>
+          <th colspan="4">VOLUMEN SISTÓLICO</th>
+
+          {{#each volumen_sistolico}}
+            <td>{{this}}</td>
+          {{/each}}
+            
+          <th>EOSINOFILOS</th> 
+          <td>{{resultados_laboratorio.eosinofilos}}</td>
+        </tr>   
+
+        <tr>
+          <th colspan="4">RESISTENCIA VASCULAR SISTÉMICA INDEXADA</th> 
+          
+          {{#each resistencia_vascular}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <th>LINFOCITOS</th> 
+          <td>{{resultados_laboratorio.linfocitos}}</td>
+        </tr>
+
+        <tr>
+          <th colspan="4">PRESIÓN INTRA ABDOMINAL</th>
+
+          {{#each presion_intra_abdominal}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <th>TP</th>
+          <td>{{resultados_laboratorio.tp}}</td>
+        </tr>
+
+        <tr>
+          <th colspan="4">PULSIOXIMETRÍA</th> 
+          
+          {{#each pulsioximetria}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <th>TTP</th> 
+          <td>{{resultados_laboratorio.ttp}}</td>
+        </tr>
+
+        <tr>
+          <th colspan="4"></th>
+
+          {{#each vacio1}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <th>PLAQUETAS</th> 
+          <td>{{resultados_laboratorio.plaquetas}}</td>
+        </tr>
+
+        <tr>
+          <th colspan="4"></th>
+
+          {{#each vacio2}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <th>TGO</th> 
+          <td>{{resultados_laboratorio.tgo}}</td>
+        </tr>
+
+        <tr>
+          <td colspan="4"></td> 
+          
+          {{#each vacio3}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <th>TGP</th> 
+          <td>{{resultados_laboratorio.tgp}}</td>
+        </tr>
+
+        <tr>
+          <th colspan="4"></th>
+
+          {{#each vacio4}}
+            <td>{{this}}</td>
+          {{/each}}
+          
+          <th>HEMATOCRITO</th> 
+          <td>{{resultados_laboratorio.hematocrito}}</td>
+        </tr>
+
+        <tr>
+          <th rowspan="4">90</th>
+          <th rowspan="4">41</th>
+          <th rowspan="4">180</th>
+          <th rowspan="4">200</th>
+
+          {{#each vacio5}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <th>GLUCOSA</th> 
+          <td>{{resultados_laboratorio.glucosa}}</td>
+        </tr>
+        
+        <tr>
+          {{#each vacio6}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <th>UREA</th> 
+          <td>{{resultados_laboratorio.urea}}</td>
+        </tr>
+
+        <tr>
+          {{#each vacio7}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <th>CREATININA</th> 
+          <td>{{resultados_laboratorio.creatinina}}</td>
+        </tr>
+
+        <tr>
+          {{#each vacio8}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <th>CI</th>
+          <td>{{resultados_laboratorio.Cl}}</td>
+        </tr>
+
+        <tr>
+          <th rowspan="4">80</th>
+          <th rowspan="4">40</th>
+          <th rowspan="4">160</th>
+          <th rowspan="4">180</th>
+          
+          {{#each vacio9}}
+            <td>{{this}}</td>
+          {{/each}}
+          
+          <th>Na</th> 
+          <td>{{resultados_laboratorio.Na}}</td>
+        </tr>
+
+        <tr>
+          {{#each vacio10}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <th>K</th> 
+          <td>{{resultados_laboratorio.K}}</td>
+        </tr>
+
+        <tr>
+          {{#each vacio11}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio12}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <th rowspan="4">70</th>
+          <th rowspan="4">39</th>
+          <th rowspan="4">140</th>
+          <th rowspan="4">160</th>
+          
+          {{#each vacio13}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio14}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio15}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio16}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <th rowspan="4">60</th>
+          <th rowspan="4">38</th>
+          <th rowspan="4">120</th>
+          <th rowspan="4">140</th>
+          
+          {{#each vacio17}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio18}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio19}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio20}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <th rowspan="4">50</th>
+          <th rowspan="4">37</th>
+          <th rowspan="4">100</th>
+          <th rowspan="4">120</th>
+          
+          {{#each vacio21}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio22}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio23}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio24}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <th rowspan="4">40</th>
+          <th rowspan="4">36</th>
+          <th rowspan="4">80</th>
+          <th rowspan="4">100</th>
+          
+          {{#each vacio25}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio26}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio27}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio28}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <th rowspan="4">30</th>
+          <th rowspan="4">35</th>
+          <th rowspan="4">60</th>
+          <th rowspan="4">80</th>
+          
+          {{#each vacio29}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio30}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio31}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio32}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <th rowspan="4">20</th>
+          <th rowspan="4">34</th>
+          <th rowspan="4">40</th>
+          <th rowspan="4">60</th>
+          
+          {{#each vacio33}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio34}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio35}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          {{#each vacio36}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <th>/ o E</th>
+          <th rowspan="2">33</th>
+          <th rowspan="2">20</th>
+          <th rowspan="2">40</th>
+          
+          {{#each vacio37}}
+            <td>{{this}}</td>
+          {{/each}}
+          <th rowspan="2" colspan="2" >AGUA ENDÓGENA 1</th> 
+        </tr>
+
+        <tr>
+          <th>/ o A</th>
+          
+          {{#each vacio38}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <th> ● C</td>
+          <th rowspan="2">△<br>T</th>
+          <th rowspan="2"> ●<br>P</th>
+          <th rowspan="2"> ✕<br>T.A</th>
+          
+          {{#each vacio39}}
+            <td>{{this}}</td>
+          {{/each}}
+          
+          <th rowspan="2">TOTAL 1</th>
+          <td rowspan="2">{{total1}}</td>
+        </tr>
+
+        <tr>
+          <th>FR</th>
+
+          {{#each vacio40}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        {{!-- MEDICACIÓN 2 --}}
+
+        <tr>
+          <th rowspan="34">I<br>N<br>G<br>R<br>E<br>S<br>O<br>S</th>
+          <th rowspan="16">M<br>E<br>D<br>I<br>C<br>A<br>C<br>I<br>Ó<br>N<br><br> 2</th> 
+          <td class="td1" colspan="4">{{medicacion2.m1}}</td>
+
+          {{#each celdas_2m1}}
+            <td>{{this}}</td>
+          {{/each}}
+          
+          <td colspan="2">{{descripcion_m2.dm1}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m2}}</td>
+
+          {{#each celdas_2m2}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{descripcion_m2.dm2}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m3}}</td>
+
+          {{#each celdas_2m3}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{descripcion_m2.dm3}}</td> 
+        </tr>
+                  
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m4}}</td>
+
+          {{#each celdas_2m4}}
+            <td>{{this}}</td>
+          {{/each}}
+          
+          <td colspan="2">{{descripcion_m2.dm4}}</td> 
+        </tr>
+                  
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m5}}</td>
+            
+          {{#each celdas_2m5}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{descripcion_m2.dm5}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m6}}</td>
+          
+          {{#each celdas_2m6}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <td colspan="2">{{descripcion_m2.dm6}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m7}}</td>
+
+          {{#each celdas_2m7}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <td colspan="2">{{descripcion_m2.dm7}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m8}}</td>
+
+          {{#each celdas_2m8}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{descripcion_m2.dm8}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m9}}</td>
+
+          {{#each celdas_2m9}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{descripcion_m2.dm9}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m10}}</td>
+
+          {{#each celdas_2m10}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{medicacion2.m10}}</td>
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m11}}</td>
+
+          {{#each celdas_2m11}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{medicacion2.m11}}</td>
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m12}}</td>
+
+          {{#each celdas_2m12}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{medicacion2.m12}}</td>
+        </tr>
+                  
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m13}}</td>
+            
+            {{#each celdas_2m13}}
+              <td>{{this}}</td>
+            {{/each}}
+                        
+          <td colspan="2">{{medicacion2.m13}}</td> 
+        </tr>
+                  
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m14}}</td>
+
+          {{#each celdas_2m14}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <td colspan="2">{{medicacion2.m14}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m15}}</td>
+
+          {{#each celdas_2m15}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <td colspan="2">{{medicacion2.m15}}</td> 
+        </tr>
+        
+        <tr>
+          <td class="td1" colspan="4">{{medicacion2.m16}}</td>
+          
+          {{#each celdas_2m16}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <th>TOTAL 2</th>
+          <td>{{total2}}</td> 
+        </tr>
+
+      {{!-- INFUSIONES 3 --}}
+        <tr>
+          <th rowspan="16">I<br>N<br>F<br>U<br>S<br>I<br>O<br>N<br>E<br>S<br> 3</th> 
+          <td class="td1" colspan="4">{{infusion3.i1}}</td>
+
+          {{#each celdas_3i1}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{infusion3.i1}}</td>
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i2}}</td>
+
+          {{#each celdas_3i2}}
+            <td>{{this}}</td>
+          {{/each}}
+          
+          <td colspan="2">{{infusion3.i2}}</td>
+        </tr>
+                        <!---------->
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i3}}</td>
+
+          {{#each celdas_3i3}}
+            <td>{{this}}</td>
+          {{/each}}
+          
+          <td colspan="2">{{infusion3.i3}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i4}}</td>
+
+          {{#each celdas_3i4}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{infusion3.i4}}</td>
+        </tr>
+      
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i5}}</td>
+            
+          {{#each celdas_3i5}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{infusion3.i5}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i6}}</td>
+
+          {{#each celdas_3i6}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{infusion3.i6}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i7}}</td>
+
+          {{#each celdas_3i7}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{infusion3.i7}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i8}}</td>
+
+          {{#each celdas_3i8}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{infusion3.i8}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i9}}</td>
+          
+          {{#each celdas_3i9}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{infusion3.i9}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i10}}</td>
+
+          {{#each celdas_3i10}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{infusion3.i10}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i11}}</td>
+
+          {{#each celdas_3i11}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{infusion3.i11}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i12}}</td>
+
+          {{#each celdas_3i12}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <td colspan="2">{{infusion3.i12}}</td> 
+        </tr>
+        
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i13}}</td>
+
+          {{#each celdas_3i13}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <td colspan="2">{{infusion3.i13}}</td> 
+        </tr>
+                  
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i14}}</td>
+
+          {{#each celdas_3i14}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <td colspan="2">{{infusion3.i14}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">{{infusion3.i15}}</td>
+
+          {{#each celdas_3i15}}
+            <td>{{this}}</td>
+          {{/each}}
+                    
+          <td colspan="2">{{infusion3.i14}}</td> 
+        </tr>
+
+        <tr>
+          <td class="td1" colspan="4">LÍQUIDOS VÍA ORAL</td>
+          
+          {{#each celdas_3i16}}
+            <td>{{this}}</td>
+          {{/each}}
+                        
+          <th>TOTAL 3</th>
+          <td>{{total3}}</td>  
+        </tr>
+
+        <tr>
+          <td colspan="3"rowspan="2">4 DIETA</td>
+
+          <td class="td1" colspan="2">HORARIA</td>
+
+          {{#each celdas_3i17}}
+            <td>{{this}}</td>
+          {{/each}}
+
+          <tr>
+            <td class="td1" colspan="2">TOTAL</td>
+            
+            {{#each celdas_3i18}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <th>TOTAL 4</th> 
+            <td>{{total4}}</td>   
+          </tr>
+
+          <tr>
+            <th colspan="2" rowspan="14">5<br><br> E<br>G<br>R<br>E<br>S<br>O<br>S</th>
+                        
+            <td class="td1" colspan="4">INSENSIBLES</td>
+              {{#each celdas_e1}}
+            <td>{{this}}</td>
+            {{/each}}
+            
+            <td colspan="2"></td>
+          </tr>
+
+          <tr>
+            <td class="td1" colspan="4">VÓMITO</td>
+
+            {{#each celdas_e2}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td colspan="2"></td>
+          </tr>
+
+          <tr>
+            <td class="td1" colspan="4" colspan="4">SONDA NASOGASTRICA</td>
+            
+            {{#each celdas_e3}}
+            <td>{{this}}</td>
+            {{/each}}
+            
+            <td colspan="2"></td>
+          </tr>
+
+          <tr>
+            <td class="td1" colspan="4">HECES</td>
+            
+            {{#each celdas_e4}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td colspan="2"></td>
+          </tr>
+
+          <tr>
+            <th colspan="4">DRENAJES</th>
+            
+            {{#each celdas_e5}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td colspan="2"></td>
+          </tr>
+
+          <tr>
+            <td colspan="4">{{descripcion_e1}}</td>
+            
+            {{#each celdas_e6}}
+            <td>{{this}}</td>
+            {{/each}}
+            
+            <td colspan="2"></td>
+          </tr>
+          
+          <tr>
+            <td colspan="4">{{descripcion_e2}}</td>
+            
+            {{#each celdas_e7}}
+            <td>{{this}}</td>
+            {{/each}} 
+                        
+            <td colspan="2"></td>
+          </tr>
+                  
+          <tr>
+            <td colspan="4">{{descripcion_e3}}</td>
+
+            {{#each celdas_e8}}
+            <td>{{this}}</td>
+            {{/each}}  
+                        
+            <td colspan="2"></td>
+          </tr>
+
+          <tr>
+            <td colspan="4">{{descripcion_e4}}</td>
+
+            {{#each celdas_e9}}
+            <td>{{this}}</td>
+            {{/each}}  
+                        
+            <td colspan="2"></td>
+          </tr>
+
+           <tr>
+            <td colspan="4">{{descripcion_e5}}</td>
+
+            {{#each celdas_e10}}
+            <td>{{this}}</td>
+            {{/each}}  
+                        
+            <td colspan="2"></td>
+          </tr>
+
+          <tr>
+            <th colspan="3" rowspan="2">IRRIGACION</th>
+
+            <td>ENTRADA</td>
+            
+            {{#each celdas_e11}}
+            <td>{{this}}</td>
+            {{/each}}
+            
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>SALIDA</td>
+            
+            {{#each celdas_e12}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td>TOTAL 5</td>
+            <td>{{total5}}</td>
+          </tr>
+                  
+          <tr>
+            <td colspan="3" rowspan="2">6 DIURESIS</td>
+            <td>HORARIA</td>
+
+            {{#each celdas_e13}}
+            <td>{{this}}</td>
+            {{/each}}
+
+            <td></td> 
+            <td></td>   
+          </tr>
+                  
+          <tr>
+            <td>TOTAL</td>
+
+            {{#each celdas_e14}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td>TOTAL 6</td>
+            <td>{{total6}}</td>
+          </tr>
+
+          <tr>
+            <th colspan="6">REFLEJOS MIOTÁTICOS</th>
+            
+            {{#each celdas_e15}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <th colspan="2">INGRESOS</th>   
+          </tr>
+                  
+          <tr>
+            <th class="th2" rowspan="9" colspan="2">E<br>S<br>C<br>A<br>L<br>A<br>S</th>
+
+            <td class="td1" colspan="4">ESCALA DEL DOLOR EVA: 1 AL 10</td>
+            
+            {{#each celdas_esc1}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td class="td1">TOTAL 1</td>
+            <td>{{ingresos.total1}}</td>  
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">RASS</td>
+            
+            {{#each celdas_esc2}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td class="td1">TOTAL 2</td>
+            <td>{{ingresos.total2}}</td>  
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">RAMSAY</td>
+            
+            {{#each celdas_esc3}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td class="td1">TOTAL 3</td>
+            <td>{{ingresos.total3}}</td>  
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">MOTTLING SCORE</td>
+            
+            {{#each celdas_esc4}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td class="td1">TOTAL 4</td>
+            <td>{{ingresos.total4}}</td>  
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">DIÁMETRO PUPILAR D/I</td>
+
+            {{#each celdas_esc5}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td class="td1">SUMA</td>
+            <td>{{ingresos.suma}}</td>  
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">APERTURA OCULAR (4)</td>
+            
+            {{#each celdas_esc6}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <th colspan="2">EGRESOS</th>  
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">RESPUESTA MOTORA (6)</td>
+            
+            {{#each celdas_esc7}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td class="td1">TOTAL 5</td> 
+            <td>{{egresos.total5}}</td>   
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">RESPUESTA VERBAL (5)</td>
+            
+            {{#each celdas_esc8}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td class="td1">TOTAL 6</td> 
+            <td>{{egresos.total6}}</td>   
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">TOTAL GLASGOW (15)</td>
+            
+            {{#each celdas_esc9}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td class="td1">SUMA</td> 
+            <td>{{egresos.suma}}</td>   
+          </tr>
+                  
+          <tr>
+            <th class="th2" colspan="2" rowspan="13">G<br>A<br>S<br>E<br>S</th>
+            <td class="td1" colspan="4">pH</td>
+            
+            {{#each celdas_gases1}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td rowspan="3">BALANCE DIARIO</td>
+            <td rowspan="3">{{egresos.balance_diario}}</td>
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">PCO2</td>
+                       
+            {{#each celdas_gases2}}
+            <td>{{this}}</td>
+            {{/each}}
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">PO2</td>
+                        
+            {{#each celdas_gases3}}
+            <td>{{this}}</td>
+            {{/each}}
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">HCO3</td>
+            
+            {{#each celdas_gases4}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <th rowspan="3">BALANCE TOTAL</th>
+            <td rowspan="3">{{egresos.balance_total}}</td>
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">EXCESO DE BASE</td>
+            
+            {{#each celdas_gases5}}
+            <td>{{this}}</td>
+            {{/each}}
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">FIO  2  (%)</td>
+            
+            {{#each celdas_gases6}}
+            <td>{{this}}</td>
+            {{/each}}
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">Pa O2 / Fi O2</td>
+            
+            {{#each celdas_gases7}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <th class="th2" colspan="2" rowspan="2">PERSONAL DE ENFERMERIA  RESPONSABLE</th>
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">SaO2</td>
+            
+            {{#each celdas_gases8}}
+            <td>{{this}}</td>
+            {{/each}}
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">LACTATO</td>
+            
+            {{#each celdas_gases9}}
+            <td>{{this}}</td>
+            {{/each}}
+                        
+            <td class="td1" rowspan="2">AM</td>
+            <td class="td1" rowspan="2">{{personal_enfermeria.am}}</td>
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">Na</td>
+            
+            {{#each celdas_gases10}}
+            <td>{{this}}</td>
+            {{/each}}
+          </tr>
+                  
+          <tr>
+            <td class="td1" colspan="4">K</td>
+            
+            {{#each celdas_gases11}}
+            <td>{{this}}</td>
+            {{/each}}
+
+            <td class="td1" rowspan="2">PM</td>
+            <td class="td1" rowspan="2">{{personal_enfermeria.pm}}</td>
+          </tr>
+                  
+          <tr>
+            <td colspan="4"></td>
+            
+            {{#each celdas_gases12}}
+            <td>{{this}}</td>
+            {{/each}}
+          </tr>
+                  
+          <tr>
+            <td colspan="4"></td>
+            
+            {{#each celdas_gases13}}
+            <td>{{this}}</td>
+            {{/each}}
+            
+            <td class="td1" rowspan="2">HS</td>
+            <td class="td1" rowspan="2">{{personal_enfermeria.hs}}</td>
+          </tr>
+                  
+          <tr>
+            <th class="th2" colspan="6">GLUCOSA</th>
+
+            {{#each glucosa_celdas}}
+            <td>{{this}}</td>
+            {{/each}}
+          </tr>
+                  
+          <tr>
+            <th colspan="6"></th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>11</th>
+            <th>12</th>
+            <th>13</th>
+            <th>14</th>
+            <th>15</th>
+            <th>16</th>
+            <th>17</th>
+            <th>18</th>
+            <th>19</th>
+            <th>20</th>
+            <th>21</th>
+            <th>22</th>
+            <th>23</th>
+            <th>24</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th colspan="2" ></th>
+          </tr>       
+        </table>
+        <table>
+          <tr>
+            <th style="font-size: 4px; text-align: left;"> SNS-MSP/HCU-form.113/2021</th>      
+            <th style="font-size: 4px; text-align: right;"> BITÁCORA UCI ADULTO (1) </th>
+          </tr>
+        </table>
+      {{/with}}
+    </div>
+
+  <div class="document__bit__uci__d">
+    <table class="table2">
+      <tr>
+        <th class="th1" colspan="31">D. VENTILACIÓN MECÁNICA</th>
+      </tr>
+
+      <tr>
+        <th rowspan="2">No.</th>
+        <th rowspan="2" class="th-diagonal">
+        <span class="param">PARÁMETROS</span>
+        <span class="horas">HORAS</span>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+        <th>11</th>
+        <th>12</th>
+        <th>13</th>
+        <th>14</th>
+        <th>15</th>
+        <th>16</th>
+        <th>17</th>
+        <th>18</th>
+        <th>19</th>
+        <th>20</th>
+        <th>21</th>
+        <th>22</th>
+        <th>23</th>
+        <th>24</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td style="text-align:left;">MODO VENTILATORIO</td>
+        <td colspan="25"></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td style="text-align:left;">PRESIÓN PICO</td>
+        <td colspan="25"></td>
+      </tr>
+
+    {{!-- y así sucesivamente para los demás parámetros --}}
+  </table>
+</div>

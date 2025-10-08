@@ -1,0 +1,110 @@
+{
+  "A": {
+    "institucion_sistema": "CLINICA SANTAMARIA",
+    "unicodigo": 25410,
+    "establecimiento_salud": "CLINICA SANTAMARIA",
+    "numero_historia_clinica": "123456789",
+    "numero_archivo": "104242"
+  },
+
+  "B": {
+    "primer_apellido": "LOPEZ",
+    "segundo_apellido": "GARCIA",
+    "primer_nombre": "JOSE",
+    "segundo_nombre": "PABLO",
+    "sexo": "M",
+    "edad": "30",
+    "condicion_edad": {
+      "h": false,
+      "d": false,
+      "m": false,
+      "a": true
+    },
+
+    "servicio_atendido": "CONSULTA EXTERNA",
+    "especialidad": "MEDICINA GENERAL",
+
+    "fecha_atencion": {
+      "anio": "2024",
+      "mes": "10",
+      "dia": "02",
+      "fecha_letras": "DOS DE OCTUBRE DEL DOS MIL VEINTICUATRO"
+    },
+
+    "hora_atencion": {
+      "desde": "11:30",
+      "hasta": "13:00"
+    },
+
+    "hospitalizacion": {
+      "fecha_ingreso": {
+        "anio": "2024",
+        "mes": "05",
+        "dia": "30",
+        "fecha_letras": "TREINTA DE MAYO DEL DOS MIL VEINTICUATRO "
+      },
+
+      "fecha_alta": {
+        "anio": "2024",
+        "mes": "06",
+        "dia": "03",
+        "fecha_letras": "TRES DE JUNIO DEL DOS MIL VEINTICUATRO"
+      }
+    }
+  },
+
+  "C": {
+    "reposo": {
+      "si": true,
+      "no": true,
+      "horas_numeros": 48,
+      "horas_letras": "CUARENTA Y OCHO"
+    },
+
+    "desde": {
+      "anio": "2024",
+      "mes": "02",
+      "dia": "24",
+      "fecha_letras": "VEINTICUATRO DE FEBRERO DEL DOS MIL VEINTICUATRO"
+    },
+
+    "hasta": {
+      "anio": 2024,
+      "mes": "02",
+      "dia": "26",
+      "fecha_letras": "VEINTISEIS DE FEBRERO DEL DOS MIL VEINTICUATRO"
+    }
+  },
+
+  "D": {
+    "diagnostico": [
+      {
+        "descripcion": "ENVENENAMIENTO",
+        "cie": "X49"
+      },
+      {
+        "descripcion": "ENVENENAMIENTO",
+        "cie": "X49"
+      },
+      {
+        "descripcion": "ENVENENAMIENTO",
+        "cie": "X49"
+      },
+      {
+        "descripcion": "ENVENENAMIENTO",
+        "cie": "X49"
+      }
+    ]
+  },
+
+  "E": {
+    "fecha": "21/04/2024",
+    "hora": "10:00",
+    "primer_nombre": "JOSE PABLO",
+    "primer_apellido": "GOMEZ",
+    "segundo_apellido": "GONZALEZ",
+    "numero_identificacion": "0987456321",
+    "firma": "https://upload.wikimedia.org/wikipedia/commons/9/99/Firma_Franetovich.jpg",
+    "sello": "https://p.kindpng.com/picc/s/569-5691094_transparent-sello-png-line-art-png-download.png"
+  }
+}

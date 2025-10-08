@@ -1,0 +1,542 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <style>
+      @page {
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: fixed;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+      }
+
+      th {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3{
+        background-color: white;
+        font-weight: bold;
+        text-align: left;
+        border-right: hidden;
+        text-align: center;
+        height: 30px;
+      }
+
+      .th4 {
+        background-color: white;
+        font-weight: bold;
+        text-align: left;
+        border-bottom: hidden;
+        border-right: hidden;
+        text-align: center;
+        height: 30px;
+      }
+
+      .th5 {
+        background-color: white;
+        font-weight: bold;
+        text-align: left;
+        border-bottom: hidden;
+        text-align: center;
+      }
+
+      .td1 {
+        text-align: left;
+        width: fit-content;
+        white-space: nowrap;
+        border-bottom: 1px solid black;
+        border-left: hidden;
+        height: 60px;
+        border-bottom: hidden;
+
+      }
+
+      .td2 {
+        text-align: justify;
+        width: 100%;
+        border: 1px solid white;
+      }
+
+       .td2l {
+        text-align: center;
+        width: 100%;
+        border: 1px solid white;
+      }
+
+      .td3{
+        background-color: white;
+        border-bottom: 1px solid black;
+        border-right: hidden;
+        border-top: hidden; /* si no quieres línea arriba */
+        
+      }
+
+      .td4{
+        background-color: white;
+        border-bottom: 1px solid black;
+        border-left: hidden;
+        border-right: hidden;
+        border-top: hidden; /* si no quieres línea arriba */
+      }
+
+      .td5{
+        background-color: white;
+        border-bottom: 1px solid black;
+        border-left: hidden;
+        border-top: hidden; /* si no quieres línea arriba */
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__cons,
+      .document__cons__a,
+      .document__cons__b,
+      .document__cons__c,
+      .document__cons__d,
+      .document__cons__e {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+
+  </style>
+  </head>
+  <body>
+    <header></header>
+    <main>    
+  <div class='document__cons'>
+    <div class='document__cons__a'>
+      {{#with A}}
+      <table>
+        <tr>
+          <th class="th1" colspan="10">A. DATOS DEL ESTABLECIMIENTO Y USUARIO</th>
+        </tr>
+        <tr>
+          <th class="th2" colspan="2">INSTITUCIÓN DEL SISTEMA</th>
+          <th class="th2" colspan="2">ESTABLECIMIENTO DE SALUD</th>
+          <th class="th2" colspan="2">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+          <th class="th2" colspan="5">NÚMERO DE ARCHIVO</th>
+        </tr>
+        <tr>
+          <td colspan="2">{{institucion_sistema}}</td>
+          <td colspan="2">{{establecimiento_salud}}</td>
+          <td colspan="2">{{numero_historia_clinica}}</td>
+          <td colspan="5">{{numero_archivo}}</td>
+        </tr>
+        <tr>
+          <th class="th2" rowspan="2">PRIMER APELLIDO</th>
+          <th class="th2" rowspan="2">SEGUNDO APELLIDO</th>
+          <th class="th2" rowspan="2">PRIMER NOMBRE</th>
+          <th class="th2" rowspan="2">SEGUNDO NOMBRE</th>
+          <th class="th2" rowspan="2">SEXO</th>
+          <th class="th2" rowspan="2">EDAD</th>
+          <th class="th2" colspan="4">CONDICIÓN EDAD</th>
+        </tr>
+        <tr>
+          <th class="th2">H</th>
+          <th class="th2">D</th>
+          <th class="th2">M</th>
+          <th class="th2">A</th>
+        </tr>
+        <tr>
+          <td>{{primer_apellido}}</td>
+          <td>{{segundo_apellido}}</td>
+          <td>{{primer_nombre}}</td>
+          <td>{{segundo_nombre}}</td>
+          <td>{{sexo}}</td>
+          <td>{{edad}}</td>
+          <td>{{#if condicion_edad.h}}X{{/if}}</td>
+          <td>{{#if condicion_edad.d}}X{{/if}}</td>
+          <td>{{#if condicion_edad.m}}X{{/if}}</td>
+          <td>{{#if condicion_edad.a}}X{{/if}}</td>
+        </tr>
+      </table>
+      {{/with}}
+    </div>
+
+    <div class='document__cons__b'>
+      {{#with B}}
+      <table>
+        <tr>
+          <th class="th1" colspan="11">B. CONSENTIMIENTO INFORMADO</th>
+        </tr>
+        <tr>
+          <th class="th2" colspan="3">CONSENTIMIENTO INFORMADO PARA:</th>
+          <td colspan="8">{{consentimiento}}</td>
+        </tr>
+        <tr>
+          <th class="th2">SERVICIO:</th>
+          <td colspan="4">{{servicio}}</td>
+          <th class="th2" colspan="2">TIPO DE ATENCIÓN:</th>
+          <th>AMBULATORIO</th>
+          <td>{{#if tipo_servicio.ambulatorio}}X{{/if}}</td>
+          <th>HOSPITALIZACIÓN</th>
+          <td>{{#if tipo_servicio.hospitalizacion}}X{{/if}}</td>
+        </tr>
+        <tr>
+          <th class="th2">DIAGNÓSTICO:</th>
+          <td colspan="7">{{diagnostico}}</td>
+          <th class="th2">CIE 10:</th>
+          <td colspan="2">{{cie}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="3">NOMBRE DEL PROCEDIMIENTO RECOMENDADO:</th>
+          <td colspan="8">{{nombre_procedimiento}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="2">EN QUÉ CONSISTE:</th>
+          <td colspan="9">{{consiste}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="2">CÓMO SE REALIZA:</th>
+          <td colspan="9">{{realiza}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="11">GRÁFICO DE LA INTERVENCIÓN (incluya un gráfico previamente seleccionado que facilite la comprensión al paciente)</th>
+        </tr>
+        <tr>
+          <td colspan="11"><img src="{{grafico_intervencion}}"></td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="3">DURACIÓN ESTIMADA DE LA INTERVENCIÓN: </th>
+          <td colspan="8">{{duracion_intervencion}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="3">BENEFICIOS DEL PROCEDIMIENTO: </th>
+          <td colspan="8">{{beneficio_procedimiento}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="3">RIEGOS FRECUENTES (POCO GRAVES):</th>
+          <td colspan="8">{{riesgos_frecuentes}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="3">RIESGOS POCO FRECUENTES (GRAVES):</th>
+          <td colspan="8">{{riesgos_graves}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="11">DE EXISTIR, ESCRIBA LOS RIESGOS ESPECÍFICOS RELACIONADOS CON EL PACIENTE (edad, estado de salud, creencias, valores, etc):</th>
+        </tr>
+        <tr>
+          <td colspan="11">{{riesgos_especificos}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="3">ALTERNATIVAS AL PROCEDIMIENTO: </th>
+          <td colspan="8">{{alternativas_procedimiento}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="3">DESCRIPCIÓN DEL MANEJO POSTERIOR AL PROCEDIMIENTO: </th>
+          <td colspan="8">{{manejo_posterior}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="3">CONSECUENCIAS POSIBLES SI NO SE REALIZA EL PROCEDIMIENTO:</th>
+          <td colspan="8">{{consecuencias_noprocedimiento}}</td>
+        </tr>
+      </table>
+      {{/with}}
+    </div>
+
+<div style="width: 100%">
+      <table width="100%" border="0" cellpadding="5" cellspacing="0" style=";font-family: arial;text-align: center; border-collapse:collapse;border-color:#ddd;font-size:8px;">
+
+            <tr>
+                  <th style="text-align: left;">SNS-MSP / HCU-form.024/2016</th>
+                  <th style="text-align: right;">CONSENTIMIENTO INFORMADO (1)</th>
+            </tr>
+      </table>
+</div>
+
+ 
+    <div class='document__cons__c'>
+      {{#with C}}
+      <table>
+        <tr>
+          <th class="th1" colspan="5">C. DECLARACIÓN DE CONSETIMIENTO INFORMADO</th>
+        </tr>
+        <tr>
+          <th class="th2">FECHA</th>
+          <td>{{fecha}}</td>
+          <th class="th2">HORA</th>
+          <td colspan="2">{{hora}}</td>
+        </tr>
+        <tr>
+          <td class="td2" colspan="5">
+            He  facilitado la  información  completa que conozco,  y  me ha  sido solicitada,  sobre  los antecedentes personales,  familiares y de  mi estado  de salud.   Soy consciente que de omitir estos datos puede afectarse los  resultados del  tratamiento. Estoy de acuerdo con el procedimiento que se me ha propuesto; he sido informado de las ventajas e inconvenientes del mismo; se me ha explicado de forma clara en qué consiste, los beneficios  y posibles riesgos del procedimiento. He escuchado,  leído  y comprendido la información recibida  y  se me ha dado la  oportunidad  de preguntar sobre el procedimiento. He  tomado  consciente  y   libremente de decisión de  autorizar el  procedimiento adicional,  si es considerado necesario según el juicio del profesional de la salud, para mi beneficio. También conozco que puedo retirar mi consentimiento cuando lo estime oportuno.
+          </td>
+        </tr>
+        <tr>
+          <td class="td3">{{nombre_completo_paciente}}</td>
+          <td class="td1"></td>
+          <td class="td4">{{cedula_paciente}}</td>
+          <td class="td1"></td>
+          <td class="td5"><img src='{{firma_paciente}}'></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th class="th4">Nombre completo del paciente</th>
+          <td class="td2l"></td>
+          <th class="th4">Cédula de ciudadanía</th>
+          <td class="td2l"></td>
+          <th class="th5">Firma del paciente o huella, según el caso</th>
+        </tr>
+        <tr>
+          <td class="td3"></td>
+          <td class="td1"></td>
+          <td class="td5" colspan="3"></td>
+        </tr>
+        <tr>
+          <th class="th4">Nombre del profesional que realiza el procedimiento</th>
+          <td class="td2l"></td>
+          <th class="th5" colspan="3">Firma, sello y código del profesional de la salud que realizará el procedimiento</th>
+        </tr>
+        <tr>
+          <th class="th4" colspan="5">Si el paciente no está en capacidad para firmar el consentimiento informado:</th>
+        </tr>
+        <tr>
+          <td class="td3">{{nombre_rep_legal}}</td>
+          <td class="td1"></td>
+          <td class="td4">{{cedula_rep_legal}}</td>
+          <td class="td1"></td>
+          <td class="td5"><img src='{{firma_rep_legal}}'></td>
+        </tr>
+        <tr>
+          <th class="th4">Nombre del representante legal.</th>
+          <td class="td2l"></td>
+          <td class="th4">Cédula de ciudadanía</td>
+          <td class="td2l"></td>
+          <td class="th5">Firma del representante legal.</td>
+        </tr>
+        <tr>
+          <td class="td3" colspan="2">{{parentesco}}</td>
+          <td class="td2l" colspan="3"></td>
+        </tr>
+        <tr>
+          <th class="th3" colspan="2">Parentesco</th>
+          <td class="td2l" colspan="3"></td>
+        </tr>
+      </table>
+      {{/with}}
+    </div>
+
+    <div class='document__cons__d'>
+      {{#with D}}
+      <table>
+        <tr>
+          <th class="th1" colspan="5">D. NEGATIVA DEL CONSENTIMIENTO INFORMADO</th>
+        </tr>
+        <tr>
+          <th class="th2" colspan="2">FECHA</th>
+          <td colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="td2" colspan="5">
+            Una vez que he entendido claramente el procedimiento propuesto, así como las consecuencias posibles si no se realiza la intervención, no autorizo y me niego a que se me realice el procedimiento propuesto y desvinculo de responsabilidades futuras de cualquier índole al establecimiento de salud y al profesional sanitario que me atiende, por no realizar la intervención sugerida.
+          </td>
+        </tr>
+        <tr>
+          <td class="td3">{{nombre_completo_paciente}}</td>
+          <td class="td1"></td>
+          <td class="td4">{{cedula_paciente}}</td>
+          <td class="td1"></td>
+          <td class="td5"><img src='{{firma_paciente}}'></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th class="th4">Nombre completo del paciente</th>
+          <td class="td2l"></td>
+          <th class="th4">Cédula de ciudadanía</th>
+          <td class="td2l"></td>
+          <th class="th5">Firma del paciente o huella, según el caso</th>
+        </tr>
+        <tr>
+          <td class="td3"></td>
+          <td class="td1"></td>
+          <td class="td5" colspan="3"></td>
+        </tr>
+        <tr>
+          <th class="th4">Nombre del profesional que realiza el procedimiento</th>
+          <td class="td2l"></td>
+          <th class="th5" colspan="3">Firma, sello y código del profesional de la salud que realizará el procedimiento</th>
+        </tr>
+        <tr>
+          <th class="th4" colspan="5">Si el paciente no está en capacidad para firmar el consentimiento informado:</th>
+        </tr>
+        <tr>
+          <td class="td3">{{nombre_rep_legal}}</td>
+          <td class="td1"></td>
+          <td class="td4">{{cedula_rep_legal}}</td>
+          <td class="td1"></td>
+          <td class="td5"><img src='{{firma_rep_legal}}'></td>
+        </tr>
+        <tr>
+          <th class="th4">Nombre del representante legal.</th>
+          <td class="td2l"></td>
+          <td class="th4">Cédula de ciudadanía</td>
+          <td class="td2l"></td>
+          <td class="th5">Firma del representante legal.</td>
+        </tr>
+        <tr>
+          <td class="td3" colspan="2">{{parentesco}}</td>
+          <td class="td2l" colspan="3"></td>
+        </tr>
+        <tr>
+          <th class="th4" colspan="2">Parentesco</th>
+          <td class="td2l" colspan="3"></td>
+        </tr>
+        <tr>
+          <th class="th4" colspan="5">Si el paciente no acepta el procedimiento sugerido por el profesional y se niega a firmar este acápite:</th>
+        </tr>
+        <tr>
+          <td class="td3"></td>
+          <td class="td1"></td>
+          <td class="td4"></td>
+          <td class="td1"></td>
+          <td class="td5"></td>
+        </tr>
+        <tr>
+          <th class="th3">Nombre completo del testigo</th>
+          <td class="td2l"></td>
+          <th class="th3">Cédula de ciudadanía</th>
+          <td class="td2l"></td>
+          <th>Firma del testigo</th>
+        </tr>
+      </table>
+      {{/with}}
+    </div>
+
+    <div class='document__cons__e'>
+      {{#with E}}
+      <table>
+        <tr>
+          <th class="th1" colspan="5">E. REVOCATORIA DEL CONSENTIMIENTO INFORMADO</th>
+        </tr>
+        <tr>
+          <td class="td2" colspan="5">
+            De forma libre y voluntaria, revoco el consentimiento realizado en fecha y manifiesto expresamente mi deseo de no continuar con el procedimiento médico que doy por finalizado en esta fecha:
+            Libero de responsabilidades futuras de cualquier índole al establecimiento de salud y al profesional sanitario que me atiende.
+          </td>
+        </tr>
+        <tr>
+          <td class="td3">{{nombre_completo_paciente}}</td>
+          <td class="td1"></td>
+          <td class="td4">{{cedula_paciente}}</td>
+          <td class="td1"></td>
+          <td class="td5"><img src='{{firma_paciente}}'></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th class="th4">Nombre completo del paciente</th>
+          <td class="td2l"></td>
+          <th class="th4">Cédula de ciudadanía</th>
+          <td class="td2l"></td>
+          <th class="th5">Firma del paciente o huella, según el caso</th>
+        </tr>
+        <tr>
+          <td class="td3"></td>
+          <td class="td1"></td>
+          <td class="td5" colspan="3"></td>
+        </tr>
+        <tr>
+          <th class="th4">Nombre del profesional que realiza el procedimiento</th>
+          <td class="td2l"></td>
+          <th class="th5" colspan="3">Firma, sello y código del profesional de la salud que realizará el procedimiento</th>
+        </tr>
+        <tr>
+          <th class="th4" colspan="5">Si el paciente no está en capacidad para firmar el consentimiento informado:</th>
+        </tr>
+        <tr>
+          <td class="td3">{{nombre_rep_legal}}</td>
+          <td class="td1"></td>
+          <td class="td4">{{cedula_rep_legal}}</td>
+          <td class="td1"></td>
+          <td class="td5"><img src='{{firma_rep_legal}}'></td>
+        </tr>
+        <tr>
+          <th class="th4">Nombre del representante legal.</th>
+          <td class="td2l"></td>
+          <td class="th4">Cédula de ciudadanía</td>
+          <td class="td2l"></td>
+          <td class="th5">Firma del representante legal.</td>
+        </tr>
+        <tr>
+          <td class="td3" colspan="2">{{parentesco}}</td>
+          <td class="td2l" colspan="3"></td>
+        </tr>
+        <tr>
+          <th class="th3" colspan="2">Parentesco</th>
+          <td class="td2l" colspan="3"></td>
+        </tr>
+      </table>
+      {{/with}}
+    </div>
+    </div>
+    <div>
+      <footer>
+        <p>SNS-MSP / HCU-form.024/2016</p>
+        <p>CONSENTIMIENTO INFORMADO (2)</p>
+      </footer>
+</div>

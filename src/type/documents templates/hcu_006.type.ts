@@ -12,6 +12,7 @@ export type Hcu006DocumentTemplate = {
         primer_nombre: string;
         segundo_nombre: string;
         sexo: string;
+        fecha_nacimiento:string;
         edad: string;
         condicion_edad: {
             h: boolean;

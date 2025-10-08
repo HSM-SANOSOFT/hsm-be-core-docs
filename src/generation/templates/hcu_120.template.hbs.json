@@ -1,0 +1,685 @@
+{
+  "A": {
+    "institucion_sistema": "CLINICA SANTAMARIA",
+    "unicodigo": 25410,
+    "establecimiento_salud": "CLINICA SANTAMARIA",
+    "numero_historia_clinica": "123456789",
+    "numero_archivo": "104242",
+    "primer_apellido": "LOPEZ",
+    "segundo_apellido": "GARCIA",
+    "primer_nombre": "JOSE",
+    "segundo_nombre": "PABLO",
+    "fecha_nacimiento": "25/08/1995",
+    "sexo": "M",
+    "edad": "30",
+    "condicion_edad": {
+      "h": false,
+      "d": false,
+      "m": false,
+      "a": true
+    }
+  },
+
+  "B": {
+   "grupos": [{}, {}, {},{}],
+    "filas": [
+      {
+        "hora": "8",
+        "mostrar_td4j": true,
+        "bloques": [
+          {"intervencion": "Curación de herida", "marcado": true, "responsable": "Ana V."},
+          {"intervencion": "", "marcado": false, "responsable": ""},
+          {"intervencion": "Aplicación de ketorolaco", "marcado": true, "responsable": "María R."},
+          {"intervencion": "", "marcado": true, "responsable": "María R." }
+        ]
+      },
+      {
+        "hora": "9",
+        "bloques": [
+          { "marcado": false, "responsable": "" },
+          { "marcado": true,  "responsable": "Luisa P." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "10",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "11",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "12",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "13",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "14",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "15",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "16",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "17",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "18",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "19",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "20",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "21",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "22",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "23",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "0",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "1",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "2",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "3",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "4",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "5",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "6",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "7",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      }
+    ],
+
+    "filas2": [
+      {
+        "hora": "8",
+        "mostrar_td4j": true,
+        "bloques": [
+          {"intervencion": "Curación de herida", "marcado": true, "responsable": "Ana V."},
+          {"intervencion": "", "marcado": false, "responsable": ""},
+          {"intervencion": "Aplicación de ketorolaco", "marcado": true, "responsable": "María R."},
+          {"intervencion": "", "marcado": true, "responsable": "María R." }
+        ]
+      },
+      {
+        "hora": "9",
+        "bloques": [
+          { "marcado": false, "responsable": "" },
+          { "marcado": true,  "responsable": "Luisa P." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "10",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "11",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "12",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "13",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "14",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "15",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "16",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "17",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "18",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "19",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "20",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "21",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "22",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "23",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "0",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "1",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "2",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "3",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "4",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "5",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "6",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "7",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      }
+    ],
+
+    "filas3": [
+      {
+        "hora": "8",
+        "mostrar_td4j": true,
+        "bloques": [
+          {"intervencion": "Curación de herida", "marcado": true, "responsable": "Ana V."},
+          {"intervencion": "", "marcado": false, "responsable": ""},
+          {"intervencion": "Aplicación de ketorolaco", "marcado": true, "responsable": "María R."},
+          {"intervencion": "", "marcado": true, "responsable": "María R." }
+        ]
+      },
+      {
+        "hora": "9",
+        "bloques": [
+          { "marcado": false, "responsable": "" },
+          { "marcado": true,  "responsable": "Luisa P." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "10",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "11",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "12",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "13",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "14",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "15",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "16",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "17",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "18",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "19",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "20",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "21",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "22",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "23",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "0",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "1",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "2",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "3",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "4",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "5",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "6",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      },
+      {
+        "hora": "7",
+        "bloques": [
+          { "marcado": true,  "responsable": "Carlos T." },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" },
+          { "marcado": false, "responsable": "" }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,268 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <style>
+      @page {
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: fixed;
+      }
+
+      .table2 {
+        table-layout: fixed;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+      }
+
+      th {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: #95B3D7;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        width: 5px;
+      }
+
+      .td1 {
+        text-align: left;
+        width: fit-content;
+        white-space: nowrap;
+      }
+
+      .td2 {
+        text-align: center;
+        width: fit-content;
+        white-space: nowrap;
+        background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__interv__enf,
+      .document__interv__enf__a,
+      .document__interv__enf__b {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+
+      </style>
+        </head>
+        <body>
+    <header></header>
+    <main>
+
+<div class="document__interv__enf">
+  <div class="document__interv__enf__a">
+    {{#with A}}
+      <table>
+        <tr>
+          <th class="th1" colspan="11">A. DATOS DEL ESTABLECIMIENTO Y USUARIO / PACIENTE</th>
+        </tr>
+        <tr>
+          <th class="th2" colspan="2">INSTITUCIÓN DEL SISTEMA</th>
+          <th class="th2">UNICÓDIGO</th>
+          <th class="th2">ESTABLECIMIENTO DE SALUD</th>
+          <th class="th2">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+          <th class="th2" colspan="2">NÚMERO DE ARCHIVO</th>
+          <th class="th2" colspan="4">No. HOJA</th>
+        </tr>
+        <tr>
+          <td colspan="2">{{institucion_sistema}}</td>
+          <td>{{unicodigo}}</td>
+          <td>{{establecimiento_salud}}</td>
+          <td>{{numero_historia_clinica}}</td>
+          <td colspan="2">{{numero_archivo}}</td>
+          <td colspan="4">{{numero_hoja}}</td>
+        </tr>
+        <tr>
+          <th class="th2" rowspan="2">PRIMER APELLIDO</th>
+          <th class="th2" rowspan="2">SEGUNDO APELLIDO</th>
+          <th class="th2" rowspan="2">PRIMER NOMBRE</th>
+          <th class="th2" rowspan="2">SEGUNDO NOMBRE</th>
+          <th class="th2" rowspan="2">FECHA DE NACIMIENTO</th>
+          <th class="th2" rowspan="2">SEXO</th>
+          <th class="th2" rowspan="2">EDAD</th>
+          <th class="th2" colspan="4">CONDICIÓN EDAD</th>
+        </tr>
+        <tr>
+          <th class="th2">H</th>
+          <th class="th2">D</th>
+          <th class="th2">M</th>
+          <th class="th2">A</th>
+        </tr>
+        <tr>
+          <td>{{primer_apellido}}</td>
+          <td>{{segundo_apellido}}</td>
+          <td>{{primer_nombre}}</td>
+          <td>{{segundo_nombre}}</td>
+          <td>{{fecha_nacimiento}}</td>
+          <td>{{sexo}}</td>
+          <td>{{edad}}</td>
+          <td>{{#if condicion_edad.h}}X{{/if}}</td>
+          <td>{{#if condicion_edad.d}}X{{/if}}</td>
+          <td>{{#if condicion_edad.m}}X{{/if}}</td>
+          <td>{{#if condicion_edad.a}}X{{/if}}</td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+  
+ <div class="document__interv__enf__b">
+  {{#with B}}
+    <table>
+      <tr>
+        <th class="th1" colspan="16">B. INTERVENCIONES DE ENFERMERIA</th>
+      </tr>
+
+      {{!-- FECHA abarca toda la fila --}}
+      <tr>
+        <th class="th2" colspan="4">FECHA<br>(aaaa-mm-dd)</th>
+        <td colspan="12"></td>
+      </tr>
+
+      {{!-- PRIMERA SECCIÓN --}}
+      <tr>
+        {{#each grupos}}
+          <th class="th2">INTERVENCIÓN</th>
+          <th class="th2" colspan="2">HORA</th>
+          <th class="th2">RESPONSABLE</th>
+        {{/each}}
+      </tr>
+
+      {{#each filas}}
+      <tr>
+        {{#each bloques}}
+        {{#if ../mostrar_td4j}}
+        <td class="td4j" rowspan="24">{{intervencion}}</td>
+        {{/if}}
+        <td>{{../hora}}</td>
+        <td>{{#if marcado}}X{{/if}}</td>
+        <td>{{responsable}}</td>
+        {{/each}}
+      </tr>
+      {{/each}}
+
+      {{!-- SEGUNDA SECCIÓN --}}
+      <tr>
+        {{#each grupos}}
+          <th class="th2">INTERVENCIÓN</th>
+          <th class="th2" colspan="2">HORA</th>
+          <th class="th2">RESPONSABLE</th>
+        {{/each}}
+      </tr>
+
+      {{#each filas2}}
+      <tr>
+        {{#each bloques}}
+        {{#if ../mostrar_td4j}}
+        <td class="td4j" rowspan="24">{{intervencion}}</td>
+        {{/if}}
+        <td>{{../hora}}</td>
+        <td>{{#if marcado}}X{{/if}}</td>
+        <td>{{responsable}}</td>
+        {{/each}}
+      </tr>
+      {{/each}}
+
+        {{!-- TERCERA SECCIÓN --}}
+      <tr>
+        {{#each grupos}}
+          <th class="th2">INTERVENCIÓN</th>
+          <th class="th2" colspan="2">HORA</th>
+          <th class="th2">RESPONSABLE</th>
+        {{/each}}
+      </tr>
+
+      {{#each filas3}}
+      <tr>
+        {{#each bloques}}
+        {{#if ../mostrar_td4j}}
+        <td class="td4j" rowspan="24">{{intervencion}}</td>
+        {{/if}}
+        <td>{{../hora}}</td>
+        <td>{{#if marcado}}X{{/if}}</td>
+        <td>{{responsable}}</td>
+        {{/each}}
+      </tr>
+      {{/each}}
+    </table>
+  {{/with}}
+</div>
+
+
+
+
+<div>
+      <table width="100%" border="0" cellpadding="7" cellspacing="0" style=";font-family: arial;text-align: center; border-collapse:collapse;border-color:#ddd;font-size:7px;">
+            <tr>
+                  <th style="text-align: left; padding: 7wpx;border-style: solid;border-bottom-color:  #ffffff ;border-style: solid;border-left-color:  #ffffff ;border-style: solid;border-right-color:  #ffffff ;" >SNS-MSP/HCU-form.120/2021</th>
+                  <th style="text-align: right; padding: 10wpx;border-style: solid;border-bottom-color:  #ffffff ;border-style: solid;border-left-color:  #ffffff ;border-style: solid;border-right-color:  #ffffff ;" >INTERVENCIONES DE ENFERMERIA (2) </th>
+            </tr>
+      </table>
+</div>

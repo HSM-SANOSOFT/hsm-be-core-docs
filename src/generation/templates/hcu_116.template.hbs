@@ -1,0 +1,344 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <style>
+      @page {
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: fixed;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        min-width: 25px;
+      }
+
+      th {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+        width: 5px;
+      }
+
+      .th3 {
+        background-color: #ccccff;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        background-color:#ccffcc;
+        width: 5px;
+      }
+
+      .td1 {
+        text-align: left;
+        width: fit-content;
+        white-space: nowrap;
+      }
+
+      .td2 {
+        text-align: center;
+        width: fit-content;
+        white-space: nowrap;
+        background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__cert__disc,
+      .document__cert__disc__a,
+      .document__cert__disc__b,
+      .document__cert__disc__c,
+      .document__cert__disc__d,
+      .document__cert__disc__e,
+      .document__cert__disc__f,
+      .document__cert__disc__g {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+
+      </style>
+        </head>
+        <body>
+    <header></header>
+    <main>
+
+<div class="document__cert__disc">
+  <div class="document__cert__disc__a">
+    {{#with A}}
+      <table>
+        <tr>
+          <th class="th1" colspan="10">A. DATOS DEL ESTABLECIMIENTO Y USUARIO</th>
+        </tr>
+        <tr>
+          <th class="th2" colspan="2">INSTITUCIÓN DEL SISTEMA</th>
+          <th class="th2" colspan="2">UNICÓDIGO</th>
+          <th class="th2" colspan="2">ESTABLECIMIENTO DE SALUD</th>
+          <th class="th2" colspan="2">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+          <th class="th2" colspan="2">NÚMERO DE ARCHIVO</th>
+        </tr>
+        <tr>
+          <td colspan="2">{{institucion_sistema}}</td>
+          <td colspan="2">{{unicodigo}}</td>
+          <td colspan="2">{{establecimiento_salud}}</td>
+          <td colspan="2">{{numero_historia_clinica}}</td>
+          <td colspan="2">{{numero_archivo}}</td>
+        </tr>
+        <tr>
+          <th class="th2" rowspan="2" colspan="2">PRIMER APELLIDO</th>
+          <th class="th2" rowspan="2" colspan="2">SEGUNDO APELLIDO</th>
+          <th class="th2" rowspan="2">PRIMER NOMBRE</th>
+          <th class="th2" rowspan="2">SEGUNDO NOMBRE</th>
+          <th class="th2" rowspan="2">SEXO</th>
+          <th class="th2" rowspan="2">EDAD</th>
+          <th class="th2" colspan="2">CONDICIÓN EDAD</th>
+        </tr>
+        <tr>
+          <th class="th2">M</th>
+          <th class="th2">A</th>
+        </tr>
+        <tr>
+          <td colspan="2">{{primer_apellido}}</td>
+          <td colspan="2">{{segundo_apellido}}</td>
+          <td>{{primer_nombre}}</td>
+          <td>{{segundo_nombre}}</td>
+          <td>{{sexo}}</td>
+          <td>{{edad}}</td>
+          <td>{{#if condicion_edad.m}}X{{/if}}</td>
+          <td>{{#if condicion_edad.a}}X{{/if}}</td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+  <div class="document__cert__disc__b">
+    {{#with B}}
+      <table class="table2">
+        <tr>
+          <th class="th1">B. EVALUACIÓN PARA CALIFICACIÓN DE:</th>
+          <th class="th1">DISCAPACIDAD</th>
+          <td>{{#if discapacidad}}X{{/if}}</td>  
+          <th class="th1">CONDICIÓN  DISCAPACITANTE</th>
+          <td>{{#if condicion_discapacitante}}X{{/if}}</td>    
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+  <div class="document__cert__disc__c">
+    {{#with C}}
+      <table>
+        <tr>
+          <th class="th1">C. CUADRO CLÍNICO</th>
+        </tr>
+        <tr>
+          <td class="td4j">{{cuadro_clinico}}</td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+  <div class="document__cert__disc__d">
+    {{#with D}}
+      <table>
+        <tr>
+          <th class="th1" colspan="2">D.DIAGNÓSTICO</th>
+          <th class="th1">CIE</th>
+          <th class="th1" colspan="2"></th>
+          <th class="th1">CIE</th>
+        </tr>
+        <tr>
+          <th class="th5">1.</th>
+          <td class="td1">{{diagnostico.[0].descripcion}}</td>
+          <td>{{diagnostico.[0].cie}}</td>
+          <th class="th5">4.</th>
+          <td class="td1">{{diagnostico.[3].descripcion}}</td>
+          <td>{{diagnostico.[3].cie}}</td>
+        </tr>
+        <tr>
+          <th class="th5">2.</th>
+          <td class="td1">{{diagnostico.[1].descripcion}}</td>
+          <td>{{diagnostico.[1].cie}}</td>
+          <th class="th5">5.</th>
+          <td class="td1">{{diagnostico.[4].descripcion}}</td>
+          <td>{{diagnostico.[4].cie}}</td>
+        </tr>
+        <tr>
+          <th class="th5">3.</th>
+          <td class="td1">{{diagnostico.[2].descripcion}}</td>
+          <td>{{diagnostico.[2].cie}}</td>
+          <th class="th5">6.</th>
+          <td class="td1">{{diagnostico.[5].descripcion}}</td>
+          <td>{{diagnostico.[5].cie}}</td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+  <div class="document__cert__disc__e">
+    {{#with E}}
+      <table>
+        <tr>
+          <th class="th1" colspan="3">E. TRATAMIENTOS RECIBIDOS</th>   
+        </tr>
+        <tr>
+          <th class="th2">TIPO DE TRATAMIENTO</th>
+          <th class="th2">FECHA DE INICIO</th>
+          <th class="th2">DESCRIPCIÓN DEL TRATAMIENTO</th>
+        </tr>
+        <tr>
+          <th class="th2">FARMACOLÓGICO / NO FARMACOLÓGICO</th>
+          <td class="td4j">{{tratamiento.farmacologico.fecha_inicio}}</td>
+          <td class="td4j">{{tratamiento.farmacologico.descripcion_tratamiento}}</td>
+        </tr>
+        <tr>
+          <th class="th2">REHABILITACIÓN</th>
+          <td class="td4j">{{tratamiento.rehabilitacion.fecha_inicio}}</td>
+          <td class="td4j">{{tratamiento.rehabilitacion.descripcion_tratamiento}}</td>
+        </tr>
+         <tr>
+          <th class="th2">QUIRÚRGICO</th>
+          <td class="td4j">{{tratamiento.quirurgico.fecha_inicio}}</td>
+          <td class="td4j">{{tratamiento.quirurgico.descripcion_tratamiento}}</td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+  <div class="document__cert__disc__f">
+    {{#with F}}
+      <table class="table2">
+        <tr>
+          <th class="th1">F. SECUELAS:</th>
+          <th class="th1">PERMANENTES E IRREVERSIBLES</th>
+          <td>{{#if permanentes_irreversibles}}X{{/if}}</td>
+          <th class="th1">TEMPORALES Y REVERSIBLES</th>
+          <td>{{#if temporales_reversibles}}X{{/if}}</td>
+        </tr>
+        <tr>
+          <th class="th2">TIPO</th>
+          <th class="th2" colspan="4">DESCRIPCIÓN</th>
+        </tr>
+        <tr>
+          <td class="td4j">{{secuelas.[0].tipo}}</th>
+          <td class="td4j" colspan="4">{{secuelas.[0].descripcion}}</td>
+        </tr>
+        <tr>
+          <td class="td4j">{{secuelas.[1].tipo}}</th>
+          <td class="td4j" colspan="4">{{secuelas.[1].descripcion}}</td>
+        </tr>
+        <tr>
+          <td class="td4j">{{secuelas.[2].tipo}}</th>
+          <td class="td4j" colspan="4">{{secuelas.[2].descripcion}}</td>
+        </tr>
+        <tr>
+          <td colspan="5"><strong>NOTA En caso de Condición Discapacitante (secuelas temporales y reversibles):</strong> A pesar del tratamiento realizado la evolución y pronóstico es previsiblemente desfavorable en un plazo mayor de (1) año de evolución sin que llegue a ser permanente.</td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+  <div class="document__cert__disc__g">
+    {{#with G}}
+      <table>
+        <tr>
+          <th class="th1" colspan="5">G. DATOS DEL PROFESIONAL RESPONSABLE</th>
+        </tr>
+        <tr>
+          <th class="th2">FECHA<br>(aaaa-mm-dd)</th>
+          <th class="th2">HORA<br>(hh:mm)</th>
+          <th class="th2">PRIMER NOMBRE</th>
+          <th class="th2">PRIMER APELLIDO</th>
+          <th class="th2">SEGUNDO APELLIDO</th>
+        </tr>
+        <tr>
+          <td>{{fecha}}</td>
+          <td>{{hora}}</td>
+          <td>{{primer_nombre}}</td>
+          <td>{{primer_apellido}}</td>
+          <td>{{segundo_apellido}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="2">NÚMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+          <th class="th2">FIRMA</th>
+          <th class="th2" colspan="2">SELLO</th>
+        </tr>
+        <tr>
+          <td colspan="2">{{numero_identificacion}}</td>
+          <td><img src='{{firma}}'/></td>
+          <td colspan="2"><img src='{{sello}}'/></td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+  </div>
+    </main>
+    <footer>
+      <p>SNS-MSP / HCU-form.116 / 2021</p>
+      <p>CERTIFICADO DE DISCAPACIDAD / CONDICION DISCAPACITANTE</p>
+    </footer>
+  </body>
+</html>

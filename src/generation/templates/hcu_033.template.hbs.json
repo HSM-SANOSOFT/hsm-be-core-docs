@@ -1,0 +1,259 @@
+{
+  "A": {
+    "institucion_sistema": "CLINICA SANTAMARIA",
+    "unicodigo": "25410",
+    "establecimiento_salud": "CLINICA SANTAMARIA",
+    "numero_historia_clinica": "123456789",
+    "numero_archivo": "987654321",
+    "numero_hoja": "IV",
+    "primer_apellido": "LOPEZ",
+    "segundo_apellido": "GARCIA",
+    "primer_nombre": "JOSE",
+    "segundo_nombre": "PABLO",
+    "sexo": "M",
+    "edad": "30",
+    "condicion_edad": {
+      "h": false,
+      "d": false,
+      "m": false,
+      "a": true
+    }
+  },
+
+  "B": {
+    "embarazada": {
+      "si": true,
+      "no": true
+    },
+
+    "motivo_consulta": "1"
+  },
+
+  "C": {
+    "enfermedad_actual":"1"
+  },
+  
+  "D": {
+    "antibiotico": "true",
+    "anestesia": "true",
+    "hemorragias": "true",
+    "vih_sida": "true",
+    "tuberculosis": "true",
+    "asma": "true",
+    "diabetes": "true",
+    "hipertension_arterial": "true",
+    "enf_cardiaca": "true",
+    "otro": "true",
+
+    "antecedentes_personales": "1"
+  },
+
+  "E":{
+    "cardiopatia": "true",
+    "hipertension": "true",
+    "enf_c_vascular": "true",
+    "endocrino_metabolico": "true",
+    "cancer": "true",
+    "tuberculosis": "true",
+    "enf_mental": "true",
+    "enf_infecciosa": "true",
+    "mal_formacion": "true",
+    "otro": "true",
+
+    "descripcion_antecedentes": ""
+  },
+
+  "F": {
+    "temperatura": "1",
+    "pulso": "1",
+    "frecuencia_respiratoria": "1",
+    "presion_arterial": "1"
+  },
+
+  "G": {
+    "labios": "true",
+    "max_superior": "true",
+    "lengua": "true",
+    "piso_boca": "true",
+    "glan_salivales": "true",
+    "atm": "true",
+    "otros": "true",
+    "mejillas": "true",
+    "max_inferior": "true",
+    "paladar": "true",
+    "carrillos": "true",
+    "oro_faringe": "true",
+    "ganglios": "true",
+
+    "descripcion_examen": "1"
+  },
+
+  "H": {
+    "upperTeeth": [18, 17, 16, 15, 14, 13, 12, 11],
+    "lowerTeeth": [48, 47, 46, 45, 44, 43, 42, 41, 31, 32, 33, 34, 35, 36, 37, 38],
+    "upperMolars": [55, 54, 53, 52, 51, 61, 62, 63, 64, 65],
+    "lowerMolars": [85, 84, 83, 82, 81, 71, 72, 73, 74, 75]
+  },
+
+  "I": {
+    "higiene_oral": {
+      "piezas_dentales": {
+        "p16": true,
+        "p17": true,
+        "p55": true,
+        "placa1": "0",
+        "calculo1": "0",
+        "gingivitis1": "0",
+        "p11": true,
+        "p21": true,
+        "p51": true,
+        "placa2": "0",
+        "calculo2": "0",
+        "gingivitis2": "0",
+        "p26": true,
+        "p27": true,
+        "p65": true,
+        "placa3": "0",
+        "calculo3": "0",
+        "gingivitis3": "0",
+        "p36": true,
+        "p37": true,
+        "p75": true,
+        "placa4": "0",
+        "calculo4": "0",
+        "gingivitis4": "0",
+        "p31": true,
+        "p41": true,
+        "p71": true,
+        "placa5": "0",
+        "calculo5": "0",
+        "gingivitis5": "0",
+        "p46": true,
+        "p47": true,
+        "p85": true,
+        "placa6": "0",
+        "calculo6": "0",
+        "gingivitis6": "0",
+
+        "total_placa": 0,
+        "total_calculo": 0,
+        "total_gingivitis": 0
+      },
+
+      "periodontal": {
+        "leve": true,
+        "moderada": true,
+        "severa": true
+      },
+
+      "oclusion": {
+        "angleI": true,
+        "angleII": true,
+        "angleIII": true
+      },
+
+      "fluorosis": {
+        "leve": true,
+        "moderada": true,
+        "severa": true
+      }
+    }
+  },
+
+  "J": {
+    "D": {
+      "C": "0",
+      "D": "0",
+      "O": "0",
+
+      "total_D": "0"
+    },
+
+    "d": {
+      "c": "0",
+      "e": "0",
+      "o": "0",
+
+      "total_d": "0"
+    }
+  },
+
+  "L": {
+    "pedido_examenes": ""
+  },
+
+  "M": {
+    "biometria": "true",
+    "quimica_sanguinea": "true",
+    "rayos_x": "true",
+    "otros": "true",
+    "descripcion_otros": "1",
+    
+    "informe_examen": "1"
+  },
+
+  "N": {
+    "diagnosticos": [
+      {
+        "descripcion": "loreitsum ipsum dolor sit amet consectetur adipiscing elit",
+        "cie": "I62.0",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "loreitsum ipsum dolor sit amet consectetur adipiscing elit",
+        "cie": "I62.0",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "loreitsum ipsum dolor sit amet consectetur adipiscing elit",
+        "cie": "I62.0",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "loreitsum ipsum dolor sit amet consectetur adipiscing elit",
+        "cie": "I62.0",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "loreitsum ipsum dolor sit amet consectetur adipiscing elit",
+        "cie": "I62.0",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "loreitsum ipsum dolor sit amet consectetur adipiscing elit",
+        "cie": "I62.0",
+        "pre": true,
+        "def": true
+      }
+    ]
+  },
+
+  "O": {
+    "fecha": "1",
+    "hora": "1",
+    "primer_nombre_resp": "1",
+    "primer_apellido_resp": "1",
+    "segundo_apellido_resp": "1",
+    "identificacion_resp": "1",
+    "firma_resp": "https://www.pngkey.com/png/detail/358-3588668_firmas-png.png",
+    "sello_resp": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Firma-y-sello-morales.jpg"
+  },
+
+  "P": {
+    "no_sesion": "1",
+    "diagnostico_complicaciones": "1",
+    "procedimiento": "1",
+    "prescripciones": "1",
+    "firma": "https://www.pngkey.com/png/detail/358-3588668_firmas-png.png",
+    "fecha": "1",
+    "diagnostico_fecha": "1",
+    "descripcion_procedimiento": "1",
+    "descripcion_prescripcion": "1",
+    "sello": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Firma-y-sello-morales.jpg"
+  }
+}

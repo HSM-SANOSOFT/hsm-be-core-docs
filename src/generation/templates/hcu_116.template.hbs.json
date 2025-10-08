@@ -1,0 +1,109 @@
+{
+  "A": {
+    "institucion_sistema": "CLINICA SANTAMARIA",
+    "unicodigo": 25410,
+    "establecimiento_salud": "CLINICA SANTAMARIA",
+    "numero_historia_clinica": "123456789",
+    "numero_archivo": "104242",
+    "primer_apellido": "LOPEZ",
+    "segundo_apellido": "GARCIA",
+    "primer_nombre": "JOSE",
+    "segundo_nombre": "PABLO",
+    "sexo": "M",
+    "edad": "30",
+    "condicion_edad": {
+      "h": false,
+      "d": false,
+      "m": false,
+      "a": true
+    }
+  },
+
+  "B": {
+    "discapacidad": true,
+    "condicion_discapacitante": true
+  },
+
+  "C": {
+    "cuadro_clinico": ""
+  },
+
+  "D": {
+    "diagnostico": [
+      {
+        "descripcion": "HERIDA SUBCUTANEA",
+        "cie": "1"
+      },
+      {
+        "descripcion": "HERIDA SUBCUTANEA",
+        "cie": "1"
+      },
+      {
+        "descripcion": "HERIDA SUBCUTANEA",
+        "cie": "1"
+      },
+      {
+        "descripcion": "HERIDA SUBCUTANEA",
+        "cie": "1"
+      },
+      {
+        "descripcion": "HERIDA SUBCUTANEA",
+        "cie": "1"
+      },
+      {
+        "descripcion": "HERIDA SUBCUTANEA",
+        "cie": "1"
+      }
+    ]
+  },
+
+  "E": {
+    "tratamiento": {
+      "farmacologico": {
+        "fecha_inicio": "1",
+        "descripcion_tratamiento": "1"
+      },
+
+      "rehabilitacion": {
+        "fecha_inicio": "1",
+        "descripcion_tratamiento": "1"
+      },
+
+      "quirurgico": {
+        "fecha_inicio": "1",
+        "descripcion_tratamiento": "1"
+      }
+    }
+  },
+
+  "F": {
+    "permanentes_irreversibles": true,
+    "temporales_reversibles": true,
+
+    "secuelas": [
+      {
+        "tipo": "5656563",
+        "descripcion": "56652"
+      },
+      {
+        "tipo": "1",
+        "descripcion": "1"
+      },
+      {
+        "tipo": "1",
+        "descripcion": "1"
+      }
+    ]
+  },
+
+  "G": {
+    "fecha": "24/05/2024",
+    "hora": "11:00",
+    "primer_nombre": "JOSE PABLO",
+    "primer_apellido": "GOMEZ",
+    "segundo_apellido": "GONZALEZ",
+    "numero_identificacion": "0987456321",
+    "firma": "https://upload.wikimedia.org/wikipedia/commons/9/99/Firma_Franetovich.jpg",
+    "sello": "https://p.kindpng.com/picc/s/569-5691094_transparent-sello-png-line-art-png-download.png"
+  }
+}

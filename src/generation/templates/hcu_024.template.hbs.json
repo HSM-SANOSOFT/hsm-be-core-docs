@@ -1,0 +1,86 @@
+{
+  "A": {
+    "institucion_sistema": "CLINICA SANTAMARIA",
+    "unicodigo": 25410,
+    "establecimiento_salud": "CLINICA SANTAMARIA",
+    "numero_historia_clinica": "123456789",
+    "numero_archivo": "104242",
+    "primer_apellido": "LOPEZ",
+    "segundo_apellido": "GARCIA",
+    "primer_nombre": "JOSE",
+    "segundo_nombre": "PABLO",
+    "sexo": "M",
+    "fecha_nacimiento": "20/04/1990",
+    "edad": "30",
+    "condicion_edad": {
+      "h": false,
+      "d": false,
+      "m": false,
+      "a": true
+    }
+  },
+
+  "B": {
+    "consentimiento": "",
+    "servicio": "",
+
+    "tipo_servicio": {
+      "ambulatoria": true,
+      "hospitalizacion": true
+    },
+
+    "diagnostico": "",
+    "cie": "",
+    "nombre_procedimiento": "",
+    "consiste": "",
+    "realiza": "",
+    "grafico_intervencion": "https://www.comunidad.madrid/hospital/12octubre/sites/12octubre/files/styles/image_text_50/public/2024-03/cirug%C3%ADa%20cardiaca%20%2861%29.png?itok=vEjxlCzg",
+    "duracion_intervencion": "",
+    "beneficios_procedimiento": "",
+    "riesgos_frecuentes": "",
+    "riesgos_graves": "",
+    "riesgos_especificos": "",
+    "alternativas_procedimiento": "",
+    "manejo_posterior": "",
+    "consecuencias_noprocedimiento": ""
+  },
+
+  "C": {
+    "nombre_completo_paciente": "",
+    "cedula_paciente": "0987456321",
+    "firma_paciente": "https://www.siremsyr.com/wp-content/uploads/2015/02/firma-doctor.png",
+    "nombre_profesional": "",
+    "firma_profesional": "",
+    "nombre_rep_legal": "",
+    "cedula_rep_legal": "",
+    "firma_rep_legal": "https://www.siremsyr.com/wp-content/uploads/2015/02/firma-doctor.png",
+    "parentesco": ""
+  },
+
+  "D": {
+    "nombre_completo_paciente": "",
+    "cedula_paciente": "0987456321",
+    "firma_paciente": "https://www.siremsyr.com/wp-content/uploads/2015/02/firma-doctor.png",
+    "nombre_profesional": "",
+    "firma_profesional": "",
+    "nombre_rep_legal": "",
+    "cedula_rep_legal": "",
+    "firma_rep_legal": "https://www.siremsyr.com/wp-content/uploads/2015/02/firma-doctor.png",
+    "parentesco": "",
+    "nombre_completo_testigo": "",
+    "cedula_testigo": "",
+    "firma_testigo": "https://www.siremsyr.com/wp-content/uploads/2015/02/firma-doctor.png"
+  },
+
+  "E": {
+    "nombre_completo_paciente": "",
+    "cedula_paciente": "0987456321",
+    "firma_paciente": "https://www.siremsyr.com/wp-content/uploads/2015/02/firma-doctor.png",
+    "nombre_profesional": "",
+    "firma_profesional": "",
+    "nombre_rep_legal": "",
+    "cedula_rep_legal": "",
+    "firma_rep_legal": "https://www.siremsyr.com/wp-content/uploads/2015/02/firma-doctor.png",
+    "parentesco": ""
+  }
+}

@@ -1,0 +1,753 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <style>
+      @page {
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: fixed;
+      }
+
+      .table2 {
+        table-layout: fixed;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+      }
+
+      th {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: #95B3D7;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+      }
+
+      .td1 {
+        text-align: left;
+        width: fit-content;
+        white-space: nowrap;
+      }
+
+      .td2 {
+        text-align: center;
+        width: fit-content;
+        white-space: nowrap;
+        background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__transFS__reg,
+      .document__transFS__reg__a,
+      .document__transFS__reg__b,
+      .document__transFS__reg__c,
+      .document__transFS__reg__env,
+      .document__transFS__seg,
+      .document__transFS__seg__a,
+      .document__transFS__seg__b,
+      .document__transFS__seg__c,
+      .document__transFS__seg__d {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+
+    </style>
+        </head>
+        <body>
+    <header></header>
+    <main>
+
+    <div class='document__transFS__reg'>
+        <div class='document__transFS__reg__a'>
+        {{#with A_reg}}
+            <table>
+                <tr>
+                    <th class="th1" colspan="10">A. DATOS DEL ESTABLECIMIENTO Y USUARIO</th>
+                </tr>
+                    <tr>
+                    <th class="th2" colspan="2">INSTITUCIÓN DEL SISTEMA</th>
+                    <th class="th2" colspan="2">UNICÓDIGO</th>
+                    <th class="th2" colspan="2">ESTABLECIMIENTO DE SALUD</th>
+                    <th class="th2" colspan="2">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+                    <th class="th2" colspan="4">NÚMERO DE ARCHIVO</th>
+                </tr>
+                    <tr>
+                    <td colspan="2">{{institucion_sistema}}</td>
+                    <td colspan="2">{{unicodigo}}</td>
+                    <td colspan="2">{{establecimiento_salud}}</td>
+                    <td colspan="2">{{numero_historia_clinica}}</td>
+                    <td colspan="5">{{numero_archivo}}</td>
+                </tr>
+                <tr>
+                    <th class="th2" rowspan="2">PRIMER APELLIDO</th>
+                    <th class="th2" rowspan="2">SEGUNDO APELLIDO</th>
+                    <th class="th2" rowspan="2">PRIMER NOMBRE</th>
+                    <th class="th2" rowspan="2">SEGUNDO NOMBRE</th>
+                    <th class="th2" rowspan="2">SEXO</th>
+                    <th class="th2" rowspan="2">EDAD</th>
+                    <th class="th2" colspan="4">CONDICIÓN EDAD</th>
+                </tr>
+                <tr>
+                    <th class="th2">H</th>
+                    <th class="th2">D</th>
+                    <th class="th2">M</th>
+                    <th class="th2">A</th>
+                </tr>
+                <tr>
+                    <td>{{primer_apellido}}</td>
+                    <td>{{segundo_apellido}}</td>
+                    <td>{{primer_nombre}}</td>
+                    <td>{{segundo_nombre}}</td>
+                    <td>{{sexo}}</td>
+                    <td>{{edad}}</td>
+                    <td>{{#if condicion_edad.h}}X{{/if}}</td>
+                    <td>{{#if condicion_edad.d}}X{{/if}}</td>
+                    <td>{{#if condicion_edad.m}}X{{/if}}</td>
+                    <td>{{#if condicion_edad.a}}X{{/if}}</td>
+                </tr>
+            </table>
+        {{/with}}
+        </div>
+
+        <div class='document__transFS__reg__b'>
+        {{#with B_reg}}
+            <table class="table2">
+                <tr>
+                    <th class="th1" colspan="12">B. SERVICIO Y PRIORIDAD DE ATENCIÓN</th>
+                </tr>
+                </tr>
+                    <tr>
+                    <th class="th2" colspan="2">DIAGNÓSTICO PRINCIPAL</th>
+                    <th class="th2">CIE</th>
+                    <th class="th2" colspan="6">SERVICIO</th>
+                    <th class="th2">ESPECIALIDAD</th>
+                    <th class="th2">SALA</th>
+                    <th class="th2">CAMA</th>
+                </tr>
+                <tr>
+                    <td class="td1" colspan="2">{{diagnostico_principal}}</td>
+                    <td class="td1">{{cie}}</td>
+                    <th class="th5">EMERGENCIA</th>
+                    <td>{{#if servicio.emergencia}}X{{/if}}</td>
+                    <th class="th5">CONSULTA EXTERNA</th>
+                    <td>{{#if servicio.consulta_externa}}X{{/if}}</td>
+                    <th class="th5">HOSPITALIZACIÓN</th>
+                    <td>{{#if servicio.hospitalizacion}}X{{/if}}</td>
+                    <td class="td1">{{especialidad}}</td>
+                    <td class="td1">{{sala}}</td>
+                    <td class="td1">{{cama}}</td>
+                </tr>
+                <tr>
+                    <th class="th5" colspan="2">DIAGNÓSTICO PARA TRANSFUSIÓN</th>
+                    <td class="td1" colspan="7">{{diagnostico_transfusion}}</td>
+                    <th class="th2">CIE</th>
+                    <td class="td1" colspan="2">{{cie_transfusion}}</td>
+                </tr>
+                <tr>
+                    <th class="th5" colspan="4">CATEGORIZACIÓN DEL PACIENTE</th>
+                    <th class="th5" colspan="3" rowspan="3">PRIORIDAD DE LA SOLICITUD</th>
+                    <td class="td2">EMERGENCIA (5min)</td>
+                    <td>{{#if prioridad.emergencia_5min}}X{{/if}}</td>
+                    <th class="th2" colspan="2">ALISTAR</th>
+                    <td>{{#if alistar}}X{{/if}}</td>
+                </tr>
+                <tr>
+                    <td class="td2">CLÍNICO</td>
+                    <td>{{#if categorizacion.clinico}}X{{/if}}</td>
+                    <td class="td2">NEONATOLÓGICO</td>
+                    <td>{{#if categorizacion.neonatologico}}X{{/if}}</td>
+                    <td class="td2">URGENCIA (15 min)</td>
+                    <td>{{#if prioridad.urgencia_15min}}X{{/if}}</td>
+                    <td class="td2">FECHA</td>
+                    <td colspan="2">{{fecha}}</td>
+                </tr>
+                <tr>
+                    <td class="td2">QUIRÚRGICO</td>
+                    <td>{{#if categorizacion.quirurgico}}X{{/if}}</td>
+                    <td class="td2">GINECO - OBSTÉTRICO</td>
+                    <td>{{#if categorizacion.gineco_obst}}X{{/if}}</td>
+                    <td class="td2">RUTINA (45 min)</td>
+                    <td>{{#if prioridad.rutina_45min}}X{{/if}}</td>
+                    <td class="td2">HORA</td>
+                    <td colspan="2">{{hora}}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">REACCIONES TRANSFUSIONALES ADVERAS PREVIAS</th>
+                    <th>SI</th>
+                    <td>{{#if reacciones.si}}X{{/if}}</td>
+                    <th>NO</th>
+                    <td>{{#if reacciones.no}}X{{/if}}</td>
+                    <th>CUALES</th>
+                    <td colspan="5">{{reacciones.cuales}}</td>
+                </tr>
+                <tr>
+                    <th colspan="4">TRATAMIENTO TERAPEUTICO (ESPECIFIQUE NOMBRE Y TIEMPO DE ADMINISTRACIÓN)</th>
+                    <td class="td1" colspan="8">{{tratamiento}}</td>
+                </tr>
+            </table>
+        {{/with}}
+        </div>
+
+        <div class='document__transFS__reg__c'>
+        {{#with C_reg}}
+            <table>
+                <tr>
+                    <th class="th1" colspan="14">C. COMPONENTES SANGUÍNEOS ENVIADOS Y PRUEBAS PRETRANSFUSIONALES</th>
+                </tr>
+                <tr>
+                    <th colspan="7">DATOS DEL COMPONENTE SANGUÍNEO</th>
+                    <th colspan="7">DATOS PRETRANSFUSIONALES DEL PACIENTE/RECEPTOR</th>
+                </tr>
+                <tr>
+                    <th>INSPECCIÓN</th>
+                    <th>T °C</th>
+                    <th>TIPO DE COMPONENTE SANGUÍNEO</th>
+                    <th>GRUPO ABO/RH</th>
+                    <th>CÓDIGO</th>
+                    <th>VOLUMEN (CC)</th>
+                    <th>FECHA DE CADUCIDAD<br>dd/mm/aaaa</th>
+
+                    <th>GRUPO ABO/RH</th>
+                    <th>SUBGRUPO<br>ABO</th>
+                    <th>FENOTIPO<br>RH</th>
+                    <th>COOMBS<br>DIRECTO</th>
+                    <th>PRUEBAS<br>CRUZADAS</th>
+                    <th>INVESTIGACIÓN DE ANTICUERPOS<br>IRREGULARES</th>
+                    <th>IDENTIFICACIÓN DEL ANTICUERPO<br>IRREGULAR</th>
+                </tr>
+                <tr>
+                    <td>{{comp_sang.inspeccion1}}</td>
+                    <td>{{comp_sang.t1}}</td>
+                    <td>{{comp_sang.tipo_comp1}}</td>
+                    <td>{{comp_sang.grupo_abo1}}</td>
+                    <td>{{comp_sang.codigo1}}</td>
+                    <td>{{comp_sang.volumen1}}</td>
+                    <td>{{comp_sang.fecha_caducidad1}}</td>
+                    <td>{{transf_paciente.grupo_abo}}</td>
+                    <td>{{transf_paciente.subgrupo_abo}}</td>
+                    <td>{{transf_paciente.fenotipo}}</td>
+                    <td>{{transf_paciente.coombs_directo}}</td>
+                    <td>{{transf_paciente.pruebas_cruzadas}}</td>
+                    <td>{{transf_paciente.inv_anticuerpo}}</td>
+                    <td>{{transf_paciente.ident_anticuerpo}}</td>
+                </tr>
+                <tr>
+                    <td>{{comp_sang.inspeccion2}}</td>
+                    <td>{{comp_sang.t2}}</td>
+                    <td>{{comp_sang.tipo_comp2}}</td>
+                    <td>{{comp_sang.grupo_abo2}}</td>
+                    <td>{{comp_sang.codigo2}}</td>
+                    <td>{{comp_sang.volumen2}}</td>
+                    <td>{{comp_sang.fecha_caducidad2}}</td>
+                    <th colspan="7">TOTAL DE COMPONENTES SANGUINEOS ENVIADOS</th>
+                </tr>
+                <tr>
+                    <td>{{comp_sang.inspeccion3}}</td>
+                    <td>{{comp_sang.t3}}</td>
+                    <td>{{comp_sang.tipo_comp3}}</td>
+                    <td>{{comp_sang.grupo_abo3}}</td>
+                    <td>{{comp_sang.codigo3}}</td>
+                    <td>{{comp_sang.volumen3}}</td>
+                    <td>{{comp_sang.fecha_caducidad3}}</td>
+                    <th colspan="2">OBSERVACIONES</th>
+                    <td class="td1" colspan="5">{{transf_paciente.observaciones}}</td>
+                </tr>
+                <tr>
+                    <td>{{comp_sang.inspeccion4}}</td>
+                    <td>{{comp_sang.t4}}</td>
+                    <td>{{comp_sang.tipo_comp4}}</td>
+                    <td>{{comp_sang.grupo_abo4}}</td>
+                    <td>{{comp_sang.codigo4}}</td>
+                    <td>{{comp_sang.volumen4}}</td>
+                    <td>{{comp_sang.fecha_caducidad4}}</td>
+                    <td rowspan="8" colspan="7" class="td4j">{{transf_paciente.descripcion_observaciones}}</td>
+                    </tr>
+                <tr>
+                    <td>{{comp_sang.inspeccion5}}</td>
+                    <td>{{comp_sang.t5}}</td>
+                    <td>{{comp_sang.tipo_comp5}}</td>
+                    <td>{{comp_sang.grupo_abo5}}</td>
+                    <td>{{comp_sang.codigo5}}</td>
+                    <td>{{comp_sang.volumen5}}</td>
+                    <td>{{comp_sang.fecha_caducidad5}}</td>
+                </tr>
+                <tr>
+                    <td>{{comp_sang.inspeccion6}}</td>
+                    <td>{{comp_sang.t6}}</td>
+                    <td>{{comp_sang.tipo_comp6}}</td>
+                    <td>{{comp_sang.grupo_abo6}}</td>
+                    <td>{{comp_sang.codigo6}}</td>
+                    <td>{{comp_sang.volumen6}}</td>
+                    <td>{{comp_sang.fecha_caducidad6}}</td>
+                </tr>
+                <tr>
+                    <td>{{comp_sang.inspeccion7}}</td>
+                    <td>{{comp_sang.t7}}</td>
+                    <td>{{comp_sang.tipo_comp7}}</td>
+                    <td>{{comp_sang.grupo_abo7}}</td>
+                    <td>{{comp_sang.codigo7}}</td>
+                    <td>{{comp_sang.volumen7}}</td>
+                    <td>{{comp_sang.fecha_caducidad7}}</td>
+                </tr>
+                <tr>
+                    <td>{{comp_sang.inspeccion8}}</td>
+                    <td>{{comp_sang.t8}}</td>
+                    <td>{{comp_sang.tipo_comp8}}</td>
+                    <td>{{comp_sang.grupo_abo8}}</td>
+                    <td>{{comp_sang.codigo8}}</td>
+                    <td>{{comp_sang.volumen8}}</td>
+                    <td>{{comp_sang.fecha_caducidad8}}</td>
+                </tr>
+                <tr>
+                    <td>{{comp_sang.inspeccion9}}</td>
+                    <td>{{comp_sang.t9}}</td>
+                    <td>{{comp_sang.tipo_comp9}}</td>
+                    <td>{{comp_sang.grupo_abo9}}</td>
+                    <td>{{comp_sang.codigo9}}</td>
+                    <td>{{comp_sang.volumen9}}</td>
+                    <td>{{comp_sang.fecha_caducidad9}}</td>
+                </tr>
+                <tr>
+                    <td>{{comp_sang.inspeccion10}}</td>
+                    <td>{{comp_sang.t10}}</td>
+                    <td>{{comp_sang.tipo_comp10}}</td>
+                    <td>{{comp_sang.grupo_abo10}}</td>
+                    <td>{{comp_sang.codigo10}}</td>
+                    <td>{{comp_sang.volumen10}}</td>
+                    <td>{{comp_sang.fecha_caducidad10}}</td>
+                </tr>
+                <tr>
+                    <td>{{comp_sang.inspeccion11}}</td>
+                    <td>{{comp_sang.t11}}</td>
+                    <td>{{comp_sang.tipo_comp11}}</td>
+                    <td>{{comp_sang.grupo_abo11}}</td>
+                    <td>{{comp_sang.codigo11}}</td>
+                    <td>{{comp_sang.volumen11}}</td>
+                    <td>{{comp_sang.fecha_caducidad11}}</td>
+                </tr>
+            </table>
+        {{/with}}
+        </div>
+
+        <div class='document__transFS__reg__env'>
+            {{#env}}
+            <table>
+            <tr>
+                <th class="th2">ENVIADO POR:</th>
+                <td>{{enviado_por}}</td>
+                <th class="th2">FECHA:</th>
+                <td>{{fecha_enviado}}</td>
+                <th class="th2">HORA:</th>
+                <td>{{hora_enviado}}</td>
+                <th class="th2">FIRMA:</th>
+                <td><img src='{{firma_enviado}}'></td>
+            </tr>
+            <tr>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <th class="th2">TRANSPORTADO POR:</th>
+                <td>{{transportado_por}}</td>
+                <th class="th2">FECHA:</th>
+                <td>{{fecha_transportado}}</td>
+                <th class="th2">HORA:</th>
+                <td>{{hora_transportado}}</td>
+                <th class="th2">FIRMA:</th>
+                <td><img src='{{firma_transportado}}'></td>
+            </tr>
+            <tr>
+                <td colspan="8"></td>
+            </tr>
+            <tr>
+                <th class="th2">RECIBIDO POR:</th>
+                <td>{{recibido_por}}</td>
+                <th class="th2">FECHA:</th>
+                <td>{{fecha_recibido}}</td>
+                <th class="th2">HORA:</th>
+                <td>{{hora_recibido}}</td>
+                <th class="th2">FIRMA:</th>
+                <td><img src='{{firma_recibido}}'></td>
+            </tr>
+            <tr>
+                <td colspan="8"></td>
+            </tr>
+            </table>
+            {{/env}}
+        </div>
+        
+        <div style="width:100%;">
+			<table>
+		        <th style="text-align: left;" >SNS-MSP / HCU-form.122 / 2021</th>
+		        <th style="text-align: right;font-size: 8px">TRANSFUSIÓN SANGUÍNEA - REGISTRO</th>
+	    	</table>
+		</div>
+
+    <div class='document__transFS__seg'>
+        <div class='document__transFS__seg__a'>
+            {{#with A_seg}}
+            <table>
+                <tr>
+                    <th class="th1" colspan="10">A. DATOS DEL ESTABLECIMIENTO Y USUARIO</th>
+                </tr>
+                    <tr>
+                    <th class="th2" colspan="2">INSTITUCIÓN DEL SISTEMA</th>
+                    <th class="th2" colspan="2">UNICÓDIGO</th>
+                    <th class="th2" colspan="2">ESTABLECIMIENTO DE SALUD</th>
+                    <th class="th2" colspan="2">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+                    <th class="th2" colspan="4">NÚMERO DE ARCHIVO</th>
+                </tr>
+                    <tr>
+                    <td colspan="2">{{institucion_sistema}}</td>
+                    <td colspan="2">{{unicodigo}}</td>
+                    <td colspan="2">{{establecimiento_salud}}</td>
+                    <td colspan="2">{{numero_historia_clinica}}</td>
+                    <td colspan="5">{{numero_archivo}}</td>
+                </tr>
+                <tr>
+                    <th class="th2" rowspan="2">PRIMER APELLIDO</th>
+                    <th class="th2" rowspan="2">SEGUNDO APELLIDO</th>
+                    <th class="th2" rowspan="2">PRIMER NOMBRE</th>
+                    <th class="th2" rowspan="2">SEGUNDO NOMBRE</th>
+                    <th class="th2" rowspan="2">SEXO</th>
+                    <th class="th2" rowspan="2">EDAD</th>
+                    <th class="th2" colspan="4">CONDICIÓN EDAD</th>
+                </tr>
+                <tr>
+                    <th class="th2">H</th>
+                    <th class="th2">D</th>
+                    <th class="th2">M</th>
+                    <th class="th2">A</th>
+                </tr>
+                <tr>
+                    <td>{{primer_apellido}}</td>
+                    <td>{{segundo_apellido}}</td>
+                    <td>{{primer_nombre}}</td>
+                    <td>{{segundo_nombre}}</td>
+                    <td>{{sexo}}</td>
+                    <td>{{edad}}</td>
+                    <td>{{#if condicion_edad.h}}X{{/if}}</td>
+                    <td>{{#if condicion_edad.d}}X{{/if}}</td>
+                    <td>{{#if condicion_edad.m}}X{{/if}}</td>
+                    <td>{{#if condicion_edad.a}}X{{/if}}</td>
+                </tr>
+            </table>
+        {{/with}}
+        </div>
+
+        <div class='document__transFS__seg__b'>
+            {{#with B_seg}}
+                <table>
+                    <tr>
+                        <th class="th1" colspan="22">B. SEGUIMIENTO DEL PROCESO TRANSFUSIONAL</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">HORA DE INICIO DE TRANSFUSIÓN</th>
+                        <th rowspan="2">CÓDIGO DEL COMPONENTE SANGUINEO ADMINISTRADO</th>
+                        <th rowspan="2">VÍA DE ADMINISTRACIÓN</th>
+                        <th rowspan="2">N° CATETER UTILIZADO</th>
+                        <th colspan="3">TEMPERATURA °C</th>
+                        <th colspan="3">TENSIÓN ARTERIAL (mmHg)</th>
+                        <th colspan="3">FRECUENCIA CARDÍACA/min</th>
+                        <th colspan="3">FRECUENCIA RESPIRATORIA/min</th>
+                        <th rowspan="2">HORA FINALIZADA</th>
+                        <th rowspan="2">TIEMPO TOTAL</th>
+                        <th rowspan="2">VOLUMEN ADMINISTRADO</th>
+                        <th colspan="2">REACCIÓN ADVERSA</th>
+                        <th>CUAL</th>
+                    </tr>
+                    <tr>
+                        <td>ANTES</td>
+                        <td>DURANTE</td>
+                        <td>DESPUÉS</td>
+
+                        <td>ANTES</td>
+                        <td>DURANTE</td>
+                        <td>DESPUÉS</td>
+
+                        <td>ANTES</td>
+                        <td>DURANTE</td>
+                        <td>DESPUÉS</td>
+
+                        <td>ANTES</td>
+                        <td>DURANTE</td>
+                        <td>DESPUÉS</td>
+
+                        <td>SI</td>
+                        <td>NO</td>
+                    </tr>
+                    {{#each filas}}
+                    <tr>
+                        <td>{{hora_transfusion}}</td>
+                        <td>{{codigo_componente}}</td>
+                        <td>{{via_administracion}}</td>
+                        <td>{{n_cateter}}</td>
+
+                        <td>{{temp_antes}}</td>
+                        <td>{{temp_durante}}</td>
+                        <td>{{temp_despues}}</td>
+
+                        <td>{{ta_antes}}</td>
+                        <td>{{ta_durante}}</td>
+                        <td>{{ta_despues}}</td>
+
+                        <td>{{fc_antes}}</td>
+                        <td>{{fc_durante}}</td>
+                        <td>{{fc_despues}}</td>
+
+                        <td>{{fr_antes}}</td>
+                        <td>{{fr_durante}}</td>
+                        <td>{{fr_despues}}</td>
+
+                        <td>{{hora_finalizada}}</td>
+                        <td>{{tiempo_total}}</td>
+                        <td>{{volumen_administrado}}</td>
+
+                        <td>{{#if reaccion_si}}X{{/if}}</td>
+                        <td>{{#if reaccion_no}}X{{/if}}</td>
+                        <td>{{reaccion_cual}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            {{/with}}
+        </div>
+
+        <div class='document__transFS__seg__c'>
+            {{#with C_seg}}
+            <table>
+                <tr>
+                    <th class="th1" colspan="12">C.NOTIFICACIÓN DE REACCIÓN ADVERSA TRANSFUSIONAL (RAT)</th>
+                </tr>
+                <tr>
+                    <th class="th3" colspan="12">MOMENTO EN QUE SE PRESENTÓ LA REACCIÓN ADVERSA TRANSFUSIONAL</th>
+                </tr>
+                <tr>
+                    <th colspan="2">DURANTE LA TRANSFUSIÓN</th>
+                    <td colspan="2">{{#if durante}}X{{/if}}</td>
+                    <th colspan="2">POSTRANSFUSIÓN</th>
+                    <td colspan="2">{{#if postransfusion}}X{{/if}}</td>
+                    <th colspan="2">HORA DE INICIO DE REACCIÓN ADVERSA TRANSFUSIONAL</th>
+                    <td colspan="2">{{hora_inicio}}</td>
+                </tr>
+                <tr>
+                    <th class="th3" colspan="12">SIGNOS Y SÍNTOMAS CLÍNICOS PRESENTADOS</th>
+                </tr>
+                <tr>
+                    <th>ANAFILAXIA</th>
+                    <td>{{#if sintomas.anafilaxia}}X{{/if}}</td>
+                    <th>COAGULACIÓN INTRAVASCULAR</th>
+                    <td>{{#if sintomas.coagulacion_intravascular}}X{{/if}}</td>
+                    <th>FIEBRE</th>
+                    <td>{{#if sintomas.fiebre}}X{{/if}}</td>
+                    <th>HIPERTENSIÓN</th>
+                    <td>{{#if sintomas.hipertension}}X{{/if}}</td>
+                    <th>NAUSEA</th>
+                    <td>{{#if sintomas.nausea}}X{{/if}}</td>
+                    <th>TAQUICARDIA</th>
+                    <td>{{#if sintomas.taquicardia}}X{{/if}}</td>
+                </tr>
+                <tr>
+                    <th>CIANOSIS</th>
+                    <td>{{#if sintomas.cianosis}}X{{/if}}</td>
+                    <th>DOLOR LUMBAR</th>
+                    <td>{{#if sintomas.dolor_lumbar}}X{{/if}}</td>
+                    <th>HEMOGLOBINURIA</th>
+                    <td>{{#if sintomas.hemoglobinuria}}X{{/if}}</td>
+                    <th>HIPOTENSIÓN</th>
+                    <td>{{#if sintomas.hipotension}}X{{/if}}</td>
+                    <th>SHOCK</th>
+                    <td>{{#if sintomas.shock}}X{{/if}}</td>
+                    <th>URTICARIA</th>
+                    <td>{{#if sintomas.urticaria}}X{{/if}}</td>
+                </tr>
+                <tr>
+                    <th>DISNEA</th>
+                    <td>{{#if sintomas.disnea}}X{{/if}}</td>
+                    <th>EDEMA PULMONAR</th>
+                    <td>{{#if sintomas.edema_pulmonar}}X{{/if}}</td>
+                    <th>HEMORRAGIA</th>
+                    <td>{{#if sintomas.hemorragia}}X{{/if}}</td>
+                    <th>ICTERICIA</th>
+                    <td>{{#if sintomas.ictericia}}X{{/if}}</td>
+                    <th>SEROCONVERSIÓN</th>
+                    <td>{{#if sintomas.seroconversion}}X{{/if}}</td>
+                    <th>VÓMITO</th>
+                    <td>{{#if sintomas.vomito}}X{{/if}}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">OTRO (ESPECIFICAR)</th>
+                    <td>{{#if sintomas.otro}}X{{/if}}</td>
+                    <td class="td1" colspan="9">{{sintomas.otro_especificar}}</td>
+                </tr>
+                <tr>
+                    <th class="th3" colspan="12">IDENTIFICACIÓN REACCIÓN ADVERSA TRANSFUSIONAL (RAT) - MEDICINA TRANSFUSIONAL</th>
+                </tr>
+                <tr>
+                    <th colspan="8">SEGÚN EL TIEMPO TRANSCURRIDO DESDE LA TRANSFUSIÓN Y EL ACONTECIMIENTO DE LA RAT:</th>
+                    <td>INMEDIATA (menor 48h)</td>
+                    <td>{{#if reaccion_adversa.inmediata}}X{{/if}}</td>
+                    <td>TARDÍA (mayor 48h)</td>
+                    <td>{{#if reaccion_adversa.tardia}}X{{/if}}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">REACCIÓN FEBRIL NO HEMOLÍTICA</th>
+                    <td>{{#if reaccion_adversa.no_hemolitica}}X{{/if}}</td>
+                    <th colspan="2">REACCIÓN ANAFILÁTICA</th>
+                    <td>{{#if reaccion_adversa.anafilatica}}X{{/if}}</td>
+                    <th colspan="2">REACCIÓN HEMOLÍTICA TARDÍA</th>
+                    <td>{{#if reaccion_adversa.hemolitica_tardia}}X{{/if}}</td>
+                    <th colspan="2">INFECCIÓN BACTERIANA</th>
+                    <td>{{#if reaccion_adversa.infeccion_bacteriana}}X{{/if}}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">REACCIÓN HEMOLÍTICA AGUDA</th>
+                    <td>{{#if reaccion_adversa.hemolitica_aguda}}X{{/if}}</td>
+                    <th colspan="2">REACCIÓN ALÉRGICA</th>
+                    <td>{{#if reaccion_adversa.alergica}}X{{/if}}</td>
+                    <th colspan="2">PÚRPURA TRANSFUSIONAL</th>
+                    <td>{{#if reaccion_adversa.purpura_transfusional}}X{{/if}}</td>
+                    <th colspan="2">INFECCIÓN VIRAL</th>
+                    <td>{{#if reaccion_adversa.infeccion_viral}}X{{/if}}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">HEMOLISIS NO INMUNE</th>
+                    <td>{{#if reaccion_adversa.hemolisis_noInmune}}X{{/if}}</td>
+                    <th colspan="2">SOBRECARGA CIRCULATORIA</th>
+                    <td>{{#if reaccion_adversa.sobrecarga_circulatoria}}X{{/if}}</td>
+                    <th colspan="2">ENFERMEDAD INJERTO CONTRA HUÉSPED (EICH)</th>
+                    <td>{{#if reaccion_adversa.eich}}X{{/if}}</td>
+                    <th colspan="2">INFECCIÓN PARASITARIA</th>
+                    <td>{{#if reaccion_adversa.infeccion_parasitaria}}X{{/if}}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">EDEMA PULMONAR NO CARDIOGÉNICO (TRALI)</th>
+                    <td>{{#if reaccion_adversa.trali}}X{{/if}}</td>
+                    <th colspan="2">SEPSIS</th>
+                    <td>{{#if reaccion_adversa.sepsis}}X{{/if}}</td>
+                    <th colspan="2">INMUNOMODULACIÓN</th>
+                    <td>{{#if reaccion_adversa.inmunomodulacion}}X{{/if}}</td>
+                    <th colspan="2">SOBRECARGA DE HIERRO</th>
+                    <td>{{#if reaccion_adversa.sobrecarga_hierro}}X{{/if}}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">OTRO (ESPECIFICAR)</th>
+                    <td>{{#if reaccion_adversa.otro}}X{{/if}}</td>
+                    <td class="td1" colspan="9">{{reaccion_adversa.otro_especificar}}</td>
+                </tr>
+            </table>
+            {{/with}}
+        </div>
+
+        <div class='document__transFS__seg__d'>
+            {{#with D_seg}}
+            <table>
+                <tr>
+                    <th class="th1" colspan="12">D. DATOS DEL PROFESIONAL RESPONSABLE</th>
+                </tr>
+                <tr>
+                    <th colspan="4">RESPONSABLE DEL SMT</th>
+                    <th colspan="4">RESPONSABLE INICIO TRANSFUSIÓN</th>
+                    <th colspan="4">RESPONSABLE FIN TRANSFUSIÓN</th>
+                </tr>
+                <tr>
+                    <th colspan="2">NOMBRE Y APELLIDO</th>
+                    <td colspan="2">{{responsable_smt.nombre_apellido}}</td>
+                    <th colspan="2">NOMBRE Y APELLIDO</th>
+                    <td colspan="2">{{resp_Inicio_trans.nombre_apellido}}</td>
+                    <th colspan="2">NOMBRE Y APELLIDO</th>
+                    <td colspan="2">{{resp_Fin_trans.nombre_apellido}}</td>
+                </tr>
+                    <th colspan="2">FIRMA</th>
+                    <td colspan="2">{{responsable_smt.firma}}</td>
+                    <th colspan="2">FIRMA</th>
+                    <td colspan="2">{{resp_Inicio_trans.firma}}</td>
+                    <th colspan="2">FIRMA</th>
+                    <td colspan="2">{{resp_Fin_trans.firma}}</td>
+                <tr>
+                    <th colspan="2">SELLO Y CÓDIGO</th>
+                    <td colspan="2">{{responsable_smt.sello_codigo}}</td>
+                    <th colspan="2">SELLO Y CÓDIGO</th>
+                    <td colspan="2">{{resp_Inicio_trans.sello_codigo}}</td>
+                    <th colspan="2">SELLO Y CÓDIGO</th>
+                    <td colspan="2">{{resp_Fin_trans.sello_codigo}}</td>
+                </tr>
+                </table>
+                {{/with}}
+        </div>
+        </div>
+        <div style="width:100%;">
+			<table>
+		        <th style="text-align: left;" >SNS-MSP / HCU-form.122 / 2021</th>
+		        <th style="text-align: right;font-size: 8px">TRANSFUSIÓN SANGUÍNEA - SEGUIMIENTO</th>
+	    	</table>
+		</div>
+        
+</body>
+</html>

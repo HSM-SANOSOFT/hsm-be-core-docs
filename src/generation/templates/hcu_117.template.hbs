@@ -1,0 +1,361 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <style>
+      @page {
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: fixed;
+      }
+
+      .table2 {
+        table-layout: fixed;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+      }
+
+      th {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+        width: 5px;
+      }
+
+      .th3 {
+        background-color: #ccccff;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        background-color:#ccffcc;
+        width: 5px;
+      }
+
+      .td1 {
+        text-align: left;
+        width: fit-content;
+        white-space: nowrap;
+      }
+
+      .td2 {
+        text-align: center;
+        width: fit-content;
+        white-space: nowrap;
+        background-color: #ccffcc;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__cert__med,
+      .document__cert__med__a,
+      .document__cert__med__b,
+      .document__cert__med__c,
+      .document__cert__med__d,
+      .document__cert__med__e {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+
+      </style>
+        </head>
+        <body>
+    <header></header>
+    <main>
+
+<div class="document__cert__med">
+  <div class="document__cert__med__a">
+    {{#with A}}
+      <table>
+        <tr>
+          <th class="th1" colspan="5">A. DATOS DEL ESTABLECIMIENTO Y USUARIO / PACIENTE</th>
+        </tr>
+        <tr>
+          <th class="th2">INSTITUCIÓN DEL SISTEMA</th>
+          <th class="th2">UNICÓDIGO</th>
+          <th class="th2">ESTABLECIMIENTO DE SALUD</th>
+          <th class="th2">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+          <th class="th2">NÚMERO DE ARCHIVO</th>
+        </tr>
+        <tr>
+          <td>{{institucion_sistema}}</td>
+          <td>{{unicodigo}}</td>
+          <td>{{establecimiento_salud}}</td>
+          <td>{{numero_historia_clinica}}</td>
+          <td>{{numero_archivo}}</td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+  <div class="document__cert__med__b">
+    {{#with B}}
+    <table>
+      <tr>
+        <th class="th1" colspan="13">B. CERTIFICO QUE:</th>
+      </tr>
+      <tr>
+        <th class="th2" rowspan="2" colspan="2">PRIMER APELLIDO</th>
+        <th class="th2" rowspan="2" colspan="2">SEGUNDO APELLIDO</th>
+        <th class="th2" rowspan="2" colspan="2">PRIMER NOMBRE</th>
+        <th class="th2" rowspan="2">SEGUNDO NOMBRE</th>
+        <th class="th2" rowspan="2">SEXO</th>
+        <th class="th2" rowspan="2">EDAD</th>
+        <th class="th2" colspan="4">CONDICION EDAD (MARCAR)</th>
+      </tr>
+      <tr>
+        <th class="th2">H</th>
+        <th class="th2">D</th>
+        <th class="th2">M</th>
+        <th class="th2">A</th>
+      </tr>
+      <tr>
+        <td colspan="2">{{primer_apellido}}</td>
+        <td colspan="2">{{segundo_apellido}}</td>
+        <td colspan="2">{{primer_nombre}}</td>
+        <td>{{segundo_nombre}}</td>
+        <td>{{sexo}}</td>
+        <td>{{edad}}</td>
+        <td>{{#if condicion_edad.h}}X{{/if}}</td>
+        <td>{{#if condicion_edad.d}}X{{/if}}</td>
+        <td>{{#if condicion_edad.m}}X{{/if}}</td>
+        <td>{{#if condicion_edad.a}}X{{/if}}</td>
+      </tr>
+      <tr>
+        <th class="th2" colspan="2">FUE  ATENDIDO EN EL SERVICIO DE</th>
+        <td colspan="4">{{servicio_atendido}}</td>
+        <th class="th2">ESPECIALIDAD</th>
+        <td colspan="6">{{especialidad}}</td>
+      </tr>
+      <tr>
+        <th class="th2" rowspan="2">FECHA DE ATENCIÓN:</th>
+        <td>{{fecha_atencion.anio}}</td>
+        <td>{{fecha_atencion.mes}}</td>
+        <td>{{fecha_atencion.dia}}</td>
+        <td colspan="9">{{fecha_atencion.fecha_letras}}</td>	
+      </tr>
+      <tr>
+        <th class="th2">AÑO</th>
+        <th class="th2">MES</th>
+        <th class="th2">DIA</th>
+        <th class="th2" colspan="9">ESCRIBIR FECHA DE ATRAS</th>
+      </tr>
+      <tr>
+        <th class="th2">HORA DE ATENCIÓN</th>
+        <th>DESDE:</th>
+        <td colspan="4">{{hora_atencion.desde}}</td>
+        <th>HASTA:</th>
+        <td colspan="6">{{hora_atencion.hasta}}</td>
+      </tr>
+      <tr>
+        <th class="th2" colspan="13">EN CASO DE HOSPITALIZACIÓN</th>
+      </tr>
+      <tr>
+        <th class="th2" rowspan="2">FECHA DE INGRESO:</th>
+        <td>{{hospitalizacion.fecha_ingreso.anio}}</td>
+        <td>{{hospitalizacion.fecha_ingreso.mes}}</td>
+        <td>{{hospitalizacion.fecha_ingreso.dia}}</td>
+        <td colspan="9">{{hospitalizacion.fecha_ingreso.fecha_letras}}</td>	
+      </tr>
+      <tr>
+        <th class="th2">AÑO</th>
+        <th class="th2">MES</th>
+        <th class="th2">DIA</th>
+        <th colspan="9" class="th2">ESCRIBIR FECHA DE ATRAS</th>
+      </tr>
+      <tr>
+        <th class="th2" rowspan="2">FECHA DE ALTA:</th>
+        <td>{{hospitalizacion.fecha_alta.anio}}</td>
+        <td>{{hospitalizacion.fecha_alta.mes}}</td>
+        <td>{{hospitalizacion.fecha_alta.dia}}</td>
+        <td colspan="9">{{hospitalizacion.fecha_alta.fecha_letras}}</td>	
+      </tr>
+      <tr>
+        <th class="th2">AÑO</th>
+        <th class="th2">MES</th>
+        <th class="th2">DIA</th>
+        <th class="th2" colspan="9">ESCRIBIR FECHA DE ATRAS</th>
+      </tr>
+    </table>
+    {{/with}}
+  </div>
+
+  <div class="document__cert__med__c">
+    {{#with C}}
+      <table>
+        <tr>
+          <th class="th1" colspan="13">C. SE RECOMIENDA:</th>
+        </tr>
+        <tr>
+          <th class="th2" rowspan="2">REPOSO</th>
+          <th>SI</th>
+          <td>{{#if reposo.si}}X{{/if}}</td>
+          <td colspan="2">{{reposo.horas_numeros}}</td>
+          <td colspan="8">{{reposo.horas_letras}}</td>
+        </tr>
+        <tr>
+          <th>NO</th>
+          <td>{{#if reposo.no}}X{{/if}}</td>
+          <th class="th2" colspan="2">HORAS EN NÚMEROS</th>
+          <th class="th2" colspan="8">ESCRIBIR LAS HORAS EN NÚMEROS</th>
+        </tr>
+        <tr>
+          <th class="th2" rowspan="2">DESDE:</th>
+          <td>{{desde.anio}}</td>
+          <td>{{desde.mes}}</td>
+          <td>{{desde.dia}}</td>
+          <td colspan="9">{{desde.fecha_letras}}</td>	
+        </tr>
+        <tr>
+          <th class="th2">AÑO</th>
+          <th class="th2">MES</th>
+          <th class="th2">DIA</th>
+          <th class="th2" colspan="9">ESCRIBIR FECHA EN LETRAS</th>
+        </tr>
+        <tr>
+          <th class="th2" rowspan="2">HASTA:</th>
+          <td>{{hasta.anio}}</td>
+          <td>{{hasta.mes}}</td>
+          <td>{{hasta.dia}}</td>
+          <td colspan="9">{{hasta.fecha_letras}}</td>	
+        </tr>
+        <tr>
+          <th class="th2">AÑO</th>
+          <th class="th2">MES</th>
+          <th class="th2">DIA</th>
+          <th class="th2" colspan="9">ESCRIBIR FECHA EN LETRAS</th>
+        </tr>
+    </table>
+    {{/with}}
+  </div>
+
+  <div class="document__cert__med__d">
+    {{#with D}}
+      <table>
+        <tr>
+          <th class="th1" colspan="2">D. DIAGNÓSTICO</th>
+          <th class="th3">CIE</th>
+          <td class="th1" colspan="4"></td>
+          <td class="th3">CIE</td>
+        </tr>
+        <tr>
+          <th class="th5">1.</th>
+          <td>{{diagnostico.[0].descripcion}}</td>
+          <td>{{diagnostico.[0].cie}}</td>
+          <th class="th5">4.</th>
+          <td colspan="3">{{diagnostico.[3].descripcion}}</td>
+          <td>{{diagnostico.[3].cie}}</td>
+        </tr>
+      <tr>
+        <th class="th5">2.</th>
+        <td>{{diagnostico.[1].descripcion}}</td>
+        <td>{{diagnostico.[1].cie}}</td>
+        <th class="th5">3.</th>
+        <td colspan="3">{{diagnostico.[2].descripcion}}</td>
+        <td>{{diagnostico.[2].cie}}</td>
+      </tr>
+    </table>
+    {{/with}}
+  </div>
+
+  <div class="document__cert__med__e">
+    {{#with E}}
+      <table>
+        <tr>
+          <th class="th1" colspan="5">E. DATO DEL PROFESIONAL RESPONSABLE</th>
+          </tr>
+        <tr>
+          <th class="th2">FECHA<br>(aaaa-mm-dd)</th>
+          <th class="th2">HORA<br>(hh-mm)</th>
+          <th class="th2">PRIMER NOMBRE</th>
+          <th class="th2">PRIMER APELLIDO</th>
+          <th class="th2">SEGUNDO APELLIDO</th>
+        </tr>
+        <tr>
+          <td>{{fecha}}</td>
+          <td>{{hora}}</td>
+          <td>{{primer_nombre}}</td>
+          <td>{{primer_apellido}}</td>
+          <td>{{segundo_apellido}}</td>
+        </tr>
+        <tr>
+          <th class="th2" colspan="2">NÚMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+          <th class="th2" colspan="2">FIRMA</th>
+          <th class="th2">SELLO</th>
+        </tr>
+        <tr>
+          <td colspan="2">{{numero_identificacion}}</td>
+          <td colspan="2"><img src='{{firma}}'/></td>
+          <td><img src='{{sello}}'/></td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+</div>
+    </main>
+    <footer>
+      <p>SNS-MSP / HCU-form.117 / 2021</p>
+      <p>CERTIFICADO MÉDICO</p>
+    </footer>
+  </body>
+</html>

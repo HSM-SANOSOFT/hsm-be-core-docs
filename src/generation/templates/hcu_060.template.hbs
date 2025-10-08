@@ -1,0 +1,748 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <style>
+      @page {
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: fixed;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+      }
+
+      th {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid black;
+        border-bottom: hidden;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+      }
+
+      .td1 {
+        text-align: left;
+        width: fit-content;
+        white-space: nowrap;
+      }
+
+      .td2 {
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid black;
+        border-left: hidden;
+        border-right: hidden;
+      }
+
+      .td3 {
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid black;
+
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__verif,
+      .document__verif__a,
+      .document__verif__b,
+      .document__verif__c,
+      .document__verif__d,
+      .document__verif__e,
+      .document__verif__f {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+
+    </style>
+      </head>
+      <body>
+    <header></header>
+    <main>
+
+  <div class='document__verif'>
+    <div class='document__verif__a'>
+      {{#with A}}
+	    <table>
+		    <tr>
+			    <th class="th1" colspan="10">A. DATOS DEL ESTABLECIMIENTO Y USUARIO / PACIENTE</th>
+		    </tr>
+		    <tr>
+          <th class="th2" colspan="2">INSTITUCIÓN DEL SISTEMA</th>
+          <th class="th2">UNICÓDIGO</th>
+          <th class="th2" colspan="2">ESTABLECIMIENTO DE SALUD</th>
+          <th class="th2">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+          <th class="th2" colspan="2">NÚMERO DE ARCHIVO</th>
+          <th class="th2" colspan="2">NO.HOJA</th>
+		    </tr>
+        <tr>
+          <td colspan="2">{{institucion_sistema}}</td>
+          <td>{{unicodigo}}</td>
+          <td colspan="2">{{establecimiento_salud}}</td>
+          <td>{{numero_historia_clinica}}</td>
+          <td colspan="2">{{numero_archivo}}</td>
+          <td colspan="2">{{numero_hoja}}</td>
+        </tr>
+        <tr>
+          <th class="th2" rowspan="2">PRIMER APELLIDO</th>
+          <th class="th2" rowspan="2">SEGUNDO APELLIDO </th>
+          <th class="th2" rowspan="2">PRIMER NOMBRE</th>
+          <th class="th2" rowspan="2">SEGUNDO NOMBRE</th>
+          <th class="th2" rowspan="2">SEXO</th>
+          <th class="th2" rowspan="2">EDAD</th>
+          <th class="th2" colspan="4">CONDICIÓN EDAD (MARCAR)</th>
+        </tr>
+        <tr>
+          <th class="th2">H</th>
+          <th class="th2">D</th>
+          <th class="th2">M</th>
+          <th class="th2">A</th>
+        </tr>
+        <tr>
+          <td>{{primer_apellido}}</td>
+          <td>{{segundo_apellido}}</td>
+          <td>{{primer_nombre}}</td>
+          <td>{{segundo_nombre}}</td>
+          <td>{{sexo}}</td>
+          <td>{{edad}}</td>
+          <td>{{#if condicion_edad.h}}X{{/if}}</td>
+          <td>{{#if condicion_edad.d}}X{{/if}}</td>
+          <td>{{#if condicion_edad.m}}X{{/if}}</td>
+          <td>{{#if condicion_edad.a}}X{{/if}}</td>
+        </tr>
+      </table>
+      {{/with}}
+    </div>
+
+    <div class='document__verif__b'>	
+	    <table>
+		    <tr>
+			    <th class="th1" colspan="4">B. DATOS DE LA CIRUGÍA</th>
+		    </tr>
+        <tr>
+          <th class="th2">FECHA<br>(aaaa-mm-dd)</th>
+          <th class="th2" colspan="2"> PROCEDIMIENTO PROPUESTO</th>
+          <th class="th2">QUIRÓFANO</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan="2"></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class='document__verif__c'>
+	    <table>	
+        <tr>
+          <th class="th1" colspan="7"> C. ENTRADA <br> (Antes de la inducción de la anestesia)</th>
+          <th class="th1" colspan="7">D. PAUSA QUIRÚRGICA <br> (Antes de la incisión cutánea)	</th>
+          <th class="th1" colspan="7" >E. SALIDA <br> (Antes de que el paciente salga del quirófano)</th>
+        </tr>
+        <tr>
+          <th class="th3" colspan="7">EL PACIENTE HA CONFIRMADO</th>
+          <th class="th3" colspan="7">Confirmación que todos los miembros del equipo<br>se han presentado por su nombre y función</th>
+          <th class="th3" colspan="7">El responsable de la lista de chequeo confirma <br>verbalmente con el equipo quirúrgico:</th>
+        </tr>
+        <tr>
+          <th class="th3" colspan="3"></th>
+          <td class="td2">SI</td>
+          <th class="th3"></th>
+          <td class="td2">NO</td>
+          <th class="th3"></th>
+
+          <td class="td3" colspan="7"></td>
+
+          <th class="th3" colspan="7"></th>
+        </tr>
+        <tr>
+          <td class="td3" colspan="3" >SU IDENTIDAD</td>
+          <td class="td3"></td>
+          <td class="td3"></td>
+          <td class="td3"></td>
+          <td class="td3"></td>
+
+          <td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff;">SI</td>
+          <td></td>
+          <td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+          <td></td>
+          <td colspan="3" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+
+          <td colspan="7" rowspan="2" style="text-align: left; border-style: solid; border-top-color:#ffffff; border-bottom-color: #ffffff">El recuento FINAL de material blanco e <br> instrumental quirúrgico (previo al cierre) este <br> completo: </td>
+        </tr>
+        <tr>
+          <td colspan="3" style="border-style: solid; border-bottom-color: #ffffff">Sitio quirúrgico</td>
+          <td></td>
+          <td style="border-style: solid; border-bottom-color: #ffffff"></td>
+          <td></td>
+          <td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+          <td colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+
+		</tr>
+		<tr>
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff">El procedimiento</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="7"></td>
+		</tr>
+		<tr>
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff">Su consentimiento verbal y escrito</td>
+			<td style="border-style: solid; border-top-color: #000000"></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td ></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-right-color: #ffffff; border-top-color: #ffffff;"></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td ></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+
+		</tr>
+		<tr>
+			<th colspan="7">Demarcación del sitio quirúrgico</th>
+
+			<th colspan="7" style="border-style: solid; border-bottom-color: #ffffff">Responsable de la lista de chequeo confirma verbalmente con el equipo quirúrgico:</th>
+
+			<th colspan="7">Hubo necesidad de empaquetar al paciente</th>
+		</tr>
+		<tr>
+			<td style="border-style: solid; border-top-color: #ffffff; border-bottom-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-top-color: #ffffff; border-bottom-color: #ffffff">NO</td>
+			<td></td>
+			<td style="border-style: solid; border-top-color: #ffffff; border-bottom-color: #ffffff">NO PROCEDE</td>
+			<td></td>
+			<td style="border-style: solid; border-top-color: #ffffff; border-bottom-color: #ffffff"></td>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-right-color: #ffffff">SI</td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-right-color: #ffffff">NO</td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td style="border-style: solid; border-top-color: #ffffff; border-bottom-color: #ffffff; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td colspan="2" style="border-style: solid; border-top-color: #ffffff; border-bottom-color: #ffffff"></td>
+		</tr>
+		<tr>
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff">Identidad del paciente</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td> 
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></td>
+		</tr>
+		<tr>
+			<th colspan="7" rowspan="2" style="border-style: solid; border-bottom-color: #ffffff">  Se ha completado el control formal del instrumental anestésico, medicación y riesgo anestésico</th>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff">Sitio quirúrgico</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<th colspan="7" style="border-style: solid; border-bottom-color:#ffffff">Registre el número de compresas______________________</th>
+		</tr>
+		<tr>
+
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff">Procedimiento (lateralidad)</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></td>
+		</tr>
+		<tr>
+			<td colspan="3" style="border-style: solid; border-top-color: #ffffff; border-bottom-color: #ffffff; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-right-color: #ffffff">SI</td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-right-color: #ffffff">NO</td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></td>
+		</tr>
+		<tr>
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff">Equipo de intubación</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<th colspan="7" style="border-style: solid; border-bottom-color: #ffffff">Previsión de eventos críticos</th>
+
+			<th colspan="7" style="border-style: solid; border-bottom-color: #ffffff">Nombre del procedimiento realizado</th>
+		</tr>
+		<tr>
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff">Equipo de aspiración de la vía aérea</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff; border-right-color: #ffffff">El cirujano expresa: </td>
+			<td style="border-style: solid;  border-right-color: #ffffff">SI</td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-right-color: #ffffff">NO</td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff" >______________________________</td>
+		</tr>
+		<tr>
+			<td colspan="7" style="text-align: left;">Sistema de ventilación</td>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff">Duración del procedimiento</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff">________________________________</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="text-align: right; border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">Oxigeno</td>
+			<td></td>
+			<td style="border-style: solid; border-top-color: #ffffff; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-top-color: #ffffff; border-bottom-color: #ffffff"></td>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff">Pérdida prevista de sangre</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="7" rowspan="2" style="border-style: solid; border-bottom-color: #ffffff"></td>
+		</tr>
+		<tr>
+			<td colspan="3" style="text-align: right; border-style: solid; border-bottom-color: #ffffff">Fármacos inhalados</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></td>
+		</tr>
+		<tr>
+			<td colspan="3" style="text-align: right;border-style: solid; border-bottom-color: #ffffff">Medicación</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="3"  style="border-style: solid; border-bottom-color: #ffffff; border-right-color: #ffffff">El anestesiólogo expresa algún <br> problema específico</td>
+			<td style="border-style: solid; border-right-color: #ffffff">SI</td>
+			<td style="border-style: solid; border-right-color: #ffffff; border-bottom-color: #ffffff"></td>
+			<td style="border-style: solid; border-right-color: #ffffff">NO</td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<th colspan="7" >Clasicación de la herida</th>
+		</tr>
+		<tr>
+			<td colspan="7" rowspan="2" style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">Limpia</td>
+			<td></td>
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">Contaminada</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+		</tr>
+		<tr>
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff">Limpia-contaminada</td>
+			<td ></td>
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff">Sucia</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+		</tr>
+		<tr>
+			<th colspan="7" rowspan="2">Pulsoxímetro colocado en el paciente y funcionando</th>
+
+			<th colspan="7" rowspan="2" style="border-style: solid; border-bottom-color: #ffffff;">Equipo de enfermería y/o instrumentación <br> quirúrgica revisa:</th>
+
+			<td colspan="7" ></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff; border-right-color: #ffffff">Toma de muestras</td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+		</tr>
+		<tr>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff; border-right-color:#ffffff"></td>
+			<td style="border-style: solid; border-right-color: #ffffff">SI</td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-right-color: #ffffff">NO</td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff; "></td>
+		</tr>
+		<tr>
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff; "></td>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff;">Esterilidad (con resultado de Indicadores e integradores químicos internos y externos)</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; "></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; "></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff; "></td>
+		</tr>
+		<tr>
+			<th colspan="7">Capnógrafo colocado y funcionando</th>
+
+<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff; border-right-color: #ffffff;"></td>
+			<td colspan="4"  style="border-style: solid; border-left-color: #ffffff; border-bottom-color: #ffffff"></td>
+
+			<th colspan="7">Etiquetado de las muestras (nombres y apellidos completos del paciente, historia clínica, fecha)</th>
+		</tr>
+		<tr>
+
+
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO PROCEDE</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+
+			<td colspan="3" style="border-style: solid; border-right-color: #ffffff; border-bottom-color: #ffffff"></td>
+			<td style="border-style: solid; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-right-color:#ffffff"></td>
+			<td style="border-style: solid; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+		</tr>
+		<tr>
+			<th colspan="7">Tiene el paciente alergias conocidas</th>
+
+
+			<td colspan="3"  style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">Recuento INICIAL de material <br> blanco e Instrumental quirúrgico.</td>
+			<td></td>
+			<td  style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+			<td></td>
+			<td  style="border-style: solid; border-bottom-color: #ffffff;" ></td>
+
+			<td colspan="7"  style="border-style: solid; border-bottom-color: #ffffff;"></td>
+		</tr>
+		<tr>
+			<td  style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td  style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td  style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff; border-right-color: #ffffff">CUALES</td>
+			<td colspan="2"  style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff; border-left-color:#ffffff">_____________</td>
+
+			<td colspan="7"></td>
+
+			<th colspan="7">Identifique el tipo de muestra a enviar</th>
+		</tr>
+		<tr>
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff;"></td>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">Dudas o problemas relacionados <br> con el instrumental y equipos.</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff;">Citoquímico</td>
+			<td ></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff; border-right-color: #ffffff">No.</td>
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">________________</td>
+		</tr>
+		<tr>
+			<th colspan="7">Vía aérea difícil / riesgo de aspiración</th>
+
+			<th colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></th>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff">Nombre:____________________________</td>
+		</tr>
+		<tr>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+			<td></td>
+			<td colspan="5" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI, y hay instrumental y equipos disponibles</td>
+
+			<th colspan="7" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">Se ha administrado profilaxis antibiótica en los <br> últimos 60 minutos</th>
+
+			<td colspan="7"></td>
+		</tr>
+		<tr>
+			<td style="border-style: solid; border-bottom-color: #ffffff"></td>
+			<td></td>
+			<td colspan="5" style="border-style: solid; border-bottom-color: #ffffff">NO</td>
+
+			<td colspan="7"></td>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">Cultivos</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff; border-right-color: #ffffff">No.</td>
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">________________</td>
+		</tr>
+		<tr>
+			<th colspan="7"> Riesgo de hemorragia > 500 ml (7 ml/kg en niños) </th>
+
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO PROCEDE</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+
+			<td colspan="7">Nombre:___________________________</td>
+		</tr>
+		<tr>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+			<td></td>
+			<td colspan="5" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI, y se ha previsto la disponibilidad de <br> acceso intravenoso y líquidos adecuados.</td>
+			
+			<th colspan="7">Dispone de imágenes diagnosticas esenciales <br> Para el procedimiento quirúrgico</th>
+
+			<td colspan="3" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">Anatomopatológico</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff; border-right-color: #ffffff">No.</td>
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">___________________</td>
+		</tr>
+		<tr>
+			<td style="border-style: solid; border-bottom-color:#ffffff"></td>
+			<td></td>
+			<td colspan="5" style="border-style: solid; border-bottom-color:#ffffff">NO</td>
+
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO PROCEDE</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff">Nombre:____________________________</td>
+		</tr>
+		<tr>
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff"></td>
+			
+			<th colspan="7">Dispone de imágenes diagnosticas esenciales <br> Para el procedimiento quirúrgico</th>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff">Otros:</td>
+		</tr>
+		<tr>
+			<th colspan="7">Se ha confirmado la reserva de hemoderivados con el laboratorio</th>
+
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO PROCEDE</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff; ">__________________________________</td>
+		</tr>
+		<tr>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO APLICA</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff;"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff">___________________________________</td>
+		</tr>
+		<tr>
+			<td colspan="7"></td>
+
+			<td colspan="7"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff;">__________________________________</td>
+		</tr>
+		<tr>
+			<th colspan="14" bgcolor="ccccff">F. DATOS DE LOS PROFESIONALES RESPONSABLES</th>
+
+			<th colspan="7" >Si hay problemas que resolver, relacionados con <br> el instrumental y los equipos</th>
+		</tr>
+		<tr>
+			<th colspan="5" bgcolor="ccffcc">NOMBRE COMPLETO DE LA PERSONA RESPONSABLE <br> DE LA LISTA DE VERIFICACIÓN</th>
+			<th colspan="4" bgcolor="ccffcc">NOMBRE COMPLETO DEL CIRUJANO</th>
+			<th colspan="5" bgcolor="ccffcc">NOMBRE COMPLETO <br> DEL ANESTESIÓLOGO</th>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff;"></td>
+		</tr>
+		<tr>
+			<td colspan="5"></td>
+			<td colspan="4"></td>
+			<td colspan="5"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff">Cuáles:</td>
+		</tr>
+		<tr>
+			<td colspan="5"></td>
+			<td colspan="4"></td>
+			<td colspan="5"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff;"> <br> ________________________________________</td>
+		</tr>
+		<tr>
+			<td colspan="5"></td>
+			<td colspan="4"></td>
+			<td colspan="5"></td>
+
+			<td colspan="7" style="border-style: solid; border-bottom-color: #ffffff;"> ________________________________________ <br> <br> ________________________________________</td>
+		</tr>
+		<tr>
+			<th colspan="5" bgcolor="ccffcc">FIRMA Y SELLO</th>
+			<th colspan="4" bgcolor="ccffcc">FIRMA Y SELLO</th>
+			<th colspan="5" bgcolor="ccffcc">FIRMA Y SELLO</th>
+
+			<th colspan="7" >El cirujano, el anestesiólogo y el personal de enfermería <br> revisan los principales aspectos de la
+recuperación del paciente.</th>
+		</tr>
+		<tr>
+			<td colspan="5" rowspan="2"></td>
+			<td colspan="4" rowspan="2"></td>
+			<td colspan="5" rowspan="2"></td>
+
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff; border-right-color: #ffffff"></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">SI</td>
+			<td></td>
+			<td style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff">NO</td>
+			<td></td>
+			<td colspan="2" style="border-style: solid; border-bottom-color: #ffffff; border-top-color: #ffffff"></td>
+		</tr>
+		<tr>
+			<td colspan="7"></td>
+		</tr>
+	</table>
+</div>
+
+<div style="width: 100%;">
+      <table width="100%" cellpadding="3" cellspacing="0" style=";font-family: arial;:collapse; text-align: ; border-color:#ddd;font-size: 6px;">
+            <tr>
+                  <th  style="width:100%; text-align: left; padding: 0px;"> SNS-MSP/HCU-form.060/2021</th>
+                  <th  style="width:100%;  text-align:  right; padding: 0px;" >LISTA VERIFICACIÓN CIRUGÍA SEGURA </th>
+            </tr>       
+      </table>
+</div>

@@ -12,6 +12,7 @@
         "segundo_nombre": "PABLO",
         "sexo": "M",
         "edad": "30",
+        "fecha_nacimiento": "24/04/1995",
         "condicion_edad": {
            "h": false,
            "d": false,

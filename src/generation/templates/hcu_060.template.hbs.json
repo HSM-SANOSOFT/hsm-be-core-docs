@@ -1,0 +1,30 @@
+{
+  "A": {
+    "institucion_sistema": "CLINICA SANTAMARIA",
+    "unicodigo": 25410,
+    "establecimiento_salud": "CLINICA SANTAMARIA",
+    "numero_historia_clinica": "0987456321",
+    "numero_archivo": "091547",
+    "primer_apellido": "LOPEZ",
+    "segundo_apellido": "GOMEZ",
+    "primer_nombre": "JUAN",
+    "segundo_nombre": "JOSE",
+    "sexo": "M",
+    "fecha_nacimiento": "14/01/2001",
+    "edad": "24",
+    "condicion_edad": {
+      "h": false,
+      "d": false,
+      "m": false,
+      "a": true
+    }
+  },
+
+  "B": {},
+
+  "C": {},
+
+  "D": {},
+
+  "F": {}
+}

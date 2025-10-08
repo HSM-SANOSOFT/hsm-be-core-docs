@@ -1,0 +1,339 @@
+{
+    "A_reg": {
+      "institucion_sistema": "CLINICA SANTAMARIA",
+      "unicodigo": 25410,
+      "establecimiento_salud": "CLINICA SANTAMARIA",
+      "numero_historia_clinica": "123456789",
+      "numero_archivo": "104242",
+      "primer_apellido": "LOPEZ",
+      "segundo_apellido": "GARCIA",
+      "primer_nombre": "JOSE",
+      "segundo_nombre": "PABLO",
+      "sexo": "M",
+      "edad": "30",
+      "condicion_edad": {
+        "h": false,
+        "d": false,
+        "m": false,
+        "a": true
+      }
+    },
+
+    "B_reg": {
+      "diagnostico_principal": "1",
+      "cie": "1",
+
+      "servicio": {
+        "emergencia": true,
+        "consulta_externa": true,
+        "hospitalizacion": true
+      },
+
+      "especialidad": "1",
+      "sala": "1",
+      "cama": "1",
+
+      "diagnostico_transfusion": "1",
+      "cie_transfusion": "1",
+
+      "categorizacion": {
+        "clinico": "true",
+        "neonatologico": "true",
+        "quirurgico": "true",
+        "gineco_obst": "true"
+      },
+
+      "prioridad": {
+        "emergencia_5min": true,
+        "urgencia_15min": true,
+        "rutina_45min": true 
+      },
+
+      "alistar": true,
+      "fecha": "1",
+      "hora": "1",
+
+      "reacciones": {
+        "si": true,
+        "no": true,
+        "cuales": "1"
+      },
+
+      "tratamiento": "1"
+    },
+
+    "C_reg": {
+      "comp_sang": {
+        "inspeccion1": "1",
+        "t1": "1",
+        "tipo_comp1": "1",
+        "grupo_abo1": "1",
+        "codigo1": "1",
+        "volumen1": "1",
+        "fecha_caducidad1": "1",
+
+        "inspeccion2": "1",
+        "t2": "1",
+        "tipo_comp2": "1",
+        "grupo_abo2": "1",
+        "codigo2": "1",
+        "volumen2": "1",
+        "fecha_caducidad2": "1",
+
+        "inspeccion3": "1",
+        "t3": "1",
+        "tipo_comp3": "1",
+        "grupo_abo3": "1",
+        "codigo3": "1",
+        "volumen3": "1",
+        "fecha_caducidad3": "1",
+
+        "inspeccion4": "1",
+        "t4": "1",
+        "tipo_comp4": "1",
+        "grupo_abo4": "1",
+        "codigo4": "1",
+        "volumen4": "1",
+        "fecha_caducidad4": "1",
+
+        "inspeccion5": "1",
+        "t5": "1",
+        "tipo_comp5": "1",
+        "grupo_abo5": "1",
+        "codigo5": "1",
+        "volumen5": "1",
+        "fecha_caducidad5": "1",
+
+        "inspeccion6": "1",
+        "t6": "1",
+        "tipo_comp6": "1",
+        "grupo_abo6": "1",
+        "codigo6": "1",
+        "volumen6": "1",
+        "fecha_caducidad6": "1",
+
+        "inspeccion7": "1",
+        "t7": "1",
+        "tipo_comp7": "1",
+        "grupo_abo7": "1",
+        "codigo7": "1",
+        "volumen7": "1",
+        "fecha_caducidad7": "1",
+
+        "inspeccion8": "1",
+        "t8": "1",
+        "tipo_comp8": "1",
+        "grupo_abo8": "1",
+        "codigo8": "1",
+        "volumen8": "1",
+        "fecha_caducidad8": "1",
+
+        "inspeccion9": "1",
+        "t9": "1",
+        "tipo_comp9": "1",
+        "grupo_abo9": "1",
+        "codigo9": "1",
+        "volumen9": "1",
+        "fecha_caducidad9": "1",
+
+        "inspeccion10": "1",
+        "t10": "1",
+        "tipo_comp10": "1",
+        "grupo_abo10": "1",
+        "codigo10": "1",
+        "volumen10": "1",
+        "fecha_caducidad10": "1",
+
+        "inspeccion11": "1",
+        "t11": "1",
+        "tipo_comp11": "1",
+        "grupo_abo11": "1",
+        "codigo11": "1",
+        "volumen11": "1",
+        "fecha_caducidad11": "1"
+      },
+
+      "transf_paciente": {
+        "grupo_abo": "1",
+        "subgrupo_abo": "1",
+        "fenotipo": "1",
+        "coombs_directo": "1",
+        "pruebas_cruzadas": "1",
+        "inv_anticuerpo": "1",
+        "ident_anticuerpo": "1",
+
+        "observaciones": "1",
+        "descripcion_observaciones": "El paciente"
+      }
+    },
+
+    "env": {
+      "enviado_por": "1",
+      "fecha_enviado": "1",
+      "hora_enviado": "1",
+      "firma_enviado": "https://www.dpe.gob.ec/wp-content/uploads/2018/06/firma-Gaby.jpg",
+
+      "transportado_por": "1",
+      "fecha_transportado": "1",
+      "hora_transportado": "1",
+      "firma_transportado": "https://www.dpe.gob.ec/wp-content/uploads/2018/06/firma-Gaby.jpg",
+
+      "recibido_por": "1",
+      "fecha_recibido": "1",
+      "hora_recibido": "1",
+      "firma_recibido": "https://www.dpe.gob.ec/wp-content/uploads/2018/06/firma-Gaby.jpg"
+    },
+
+    "A_seg": {
+      "institucion_sistema": "CLINICA SANTAMARIA",
+      "unicodigo": 25410,
+      "establecimiento_salud": "CLINICA SANTAMARIA",
+      "numero_historia_clinica": "123456789",
+      "numero_archivo": "104242",
+      "primer_apellido": "LOPEZ",
+      "segundo_apellido": "GARCIA",
+      "primer_nombre": "JOSE",
+      "segundo_nombre": "PABLO",
+      "sexo": "M",
+      "edad": "30",
+      "condicion_edad": {
+        "h": false,
+        "d": false,
+        "m": false,
+        "a": true
+      }
+    },
+
+    "B_seg": {
+      "filas": [
+        {
+          "hora_transfusion": "08:05",
+          "codigo_componente": "ER-001",
+          "via_administracion": "EV",
+          "n_cateter": "18G",
+
+          "temp_antes": "36.6",
+          "temp_durante": "36.7",
+          "temp_despues": "36.8",
+          "ta_antes": "120/80", 
+          "ta_durante": "115/75", 
+          "ta_despues": "118/78",
+          "fc_antes": "80", 
+          "fc_durante": "84", 
+          "fc_despues": "78",
+          "fr_antes": "18", 
+          "fr_durante": "19", 
+          "fr_despues": "17",
+
+          "hora_finalizada": "09:25",
+          "tiempo_total": "1h 20m",
+          "volumen_administrado": "250 ml",
+
+          "reaccion_si": false,  
+          "reaccion_no": true,    
+          "reaccion_cual": "1"
+        },
+        {
+          "hora_transfusion": "08:05",
+          "codigo_componente": "ER-001",
+          "via_administracion": "EV",
+          "n_cateter": "18G",
+
+          "temp_antes": "36.6",
+          "temp_durante": "36.7",
+          "temp_despues": "36.8",
+          "ta_antes": "120/80", 
+          "ta_durante": "115/75", 
+          "ta_despues": "118/78",
+          "fc_antes": "80", 
+          "fc_durante": "84", 
+          "fc_despues": "78",
+          "fr_antes": "18", 
+          "fr_durante": "19", 
+          "fr_despues": "17",
+
+          "hora_finalizada": "09:25",
+          "tiempo_total": "1h 20m",
+          "volumen_administrado": "250 ml",
+
+          "reaccion_si": true,  
+          "reaccion_no": false,    
+          "reaccion_cual": ""
+        }
+      ]
+    },
+
+    "C_seg": {
+      "durante": true,
+      "postransfusion": true,
+      "hora_inicio": "1",
+
+      "sintomas": {
+        "anafilaxia": true,
+        "coagulacion_intravascular": true,
+        "fiebre": true,
+        "hipertension": true,
+        "nausea": true,
+        "taquicardia": true,
+        "cianosis": true,
+        "dolor_lumbar": true,
+        "hemoglobinuria": true,
+        "hipotension": true,
+        "shock": true,
+        "urticaria": true,
+        "disnea": true,
+        "edema_pulmonar": true,
+        "hemorragia": true,
+        "ictericia": true,
+        "seroconversion": true,
+        "vomito": true,
+        "otro": true,
+        "otro_especificar": "1"
+      },
+
+      "reaccion_adversa": {
+        "inmediata": true,
+        "tardia": true,
+
+        "no_hemolitica": true,
+        "anafilatica": true,
+        "hemolitica_tardia": true,
+        "infeccion_bacteriana": true,
+        "hemolitica_aguda": true,
+        "alergica": true,
+        "purpura_transfusional": true,
+        "infeccion_viral": true,
+        "hemolisis_noInmune": true,
+        "sobrecarga_circulatoria": true,
+        "eich": true,
+        "infeccion_parasitaria": true,
+        "trali": true,
+        "sepsis": true,
+        "inmunomodulacion": true,
+        "sobrecarga_hierro": true,
+        "otro": true,
+        "otro_especificar": "1"
+      }
+    },
+
+    "D_seg": {
+      "responsable_smt": {
+        "nombre_apellido": "1",
+        "firma": "1",
+        "sello_codigo": "1"
+      },
+
+      "resp_Inicio_trans": {
+        "nombre_apellido": "1",
+        "firma": "1",
+        "sello_codigo": "1"
+      },
+
+      "resp_Fin_trans": {
+        "nombre_apellido": "1",
+        "firma": "1",
+        "sello_codigo": "1"
+      }
+    }
+  }
+  

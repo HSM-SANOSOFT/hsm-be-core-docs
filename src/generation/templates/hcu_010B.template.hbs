@@ -135,95 +135,97 @@
     <main>
     <!--inicio de la primera hoja-->
     <div class='document__lab__inf_anverso'>
-        <div class='document__lab__inf_anverso__a'>
+      <div class='document__lab__inf_anverso__a'>
         {{#with A_anv}}
         <table>
-            <tr>
-                <th class='th1' colspan="11">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
-            </tr>
-            <tr >
-                <th class='th2'>INSTITUCION DEL SISTEMA</th>
-                <th class='th2'>UNICÓDIGO</th>
-                <th class='th2' colspan="2">ESTABLECIMIENTO DE SALUD</th>
-                <th class='th2' colspan="3">NÚMERO DE HISTORIA CLÍNICA</th>
-                <th class='th2' colspan="4">NÚMERO DE ARCHIVO</th>
-            </tr>
-            <tr>
-                <td>{{institucion_sistema}}</td>
-                <td>{{unicodigo}}</td>
-                <td colspan="2">{{establecimiento_salud}}</td>
-                <td colspan="3">{{numero_historia_clinica}}</td>
-                <td colspan="4">{{numero_archivo}}</td>
-            </tr>
-            <tr>
-                <th class='th2' rowspan="2">PRIMER APELLIDO</th>
-                <th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
-                <th class='th2' rowspan="2">PRIMER NOMBRE</th>
-                <th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
-                <th class='th2' rowspan="2">SEXO</th>
-                <th class='th2' rowspan="2">FECHA NACIMIENTO</th>
-                <th class='th2' rowspan="2">EDAD</th>
-                <th class='th2' colspan="4">CONDICION EDAD</th>
-            </tr>
-            <tr>
-                <th class='th2'>M</th>
-                <th class='th2'>D</th>
-                <th class='th2'>M</th>
-                <th class='th2'>A</th>
-            </tr>
-            <tr>
-                <td>{{primer_apellido}}</td>
-                <td>{{segundo_apellido}}</td>
-                <td>{{primer_nombre}}</td>
-                <td>{{segundo_nombre}}</td>
-                <td>{{sexo}}</td>
-                <td>{{fecha_nacimiento}}</td>
-                <td>{{edad}}</td>
-                <td>{{#if condicion_edad.m1}}X{{/if}}</td>
-                <td>{{#if condicion_edad.d}}X{{/if}}</td>
-                <td>{{#if condicion_edad.m2}}X{{/if}}</td>
-                <td>{{#if condicion_edad.a}}X{{/if}}</td>
-            </tr> 
+          <tr>
+            <th class='th1' colspan="11">A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+          </tr>
+          <tr>
+            <th class='th2'>INSTITUCION DEL SISTEMA</th>
+            <th class='th2'>UNICÓDIGO</th>
+            <th class='th2' colspan="2">ESTABLECIMIENTO DE SALUD</th>
+            <th class='th2' colspan="3">NÚMERO DE HISTORIA CLÍNICA</th>
+            <th class='th2' colspan="4">NÚMERO DE ARCHIVO</th>
+          </tr>
+          <tr>
+            <td>{{institucion_sistema}}</td>
+            <td>{{unicodigo}}</td>
+            <td colspan="2">{{establecimiento_salud}}</td>
+            <td colspan="3">{{numero_historia_clinica}}</td>
+            <td colspan="4">{{numero_archivo}}</td>
+          </tr>
+          <tr>
+            <th class='th2' rowspan="2">PRIMER APELLIDO</th>
+            <th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
+            <th class='th2' rowspan="2">PRIMER NOMBRE</th>
+            <th class='th2' rowspan="2">SEGUNDO APELLIDO</th>
+            <th class='th2' rowspan="2">SEXO</th>
+            <th class='th2' rowspan="2">FECHA NACIMIENTO</th>
+            <th class='th2' rowspan="2">EDAD</th>
+            <th class='th2' colspan="4">CONDICION EDAD</th>
+          </tr>
+          <tr>
+            <th class='th2'>M</th>
+            <th class='th2'>D</th>
+            <th class='th2'>M</th>
+            <th class='th2'>A</th>
+          </tr>
+          <tr>
+            <td>{{primer_apellido}}</td>
+            <td>{{segundo_apellido}}</td>
+            <td>{{primer_nombre}}</td>
+            <td>{{segundo_nombre}}</td>
+            <td>{{sexo}}</td>
+            <td>{{fecha_nacimiento}}</td>
+            <td>{{edad}}</td>
+            <td>{{#if condicion_edad.m1}}X{{/if}}</td>
+            <td>{{#if condicion_edad.d}}X{{/if}}</td>
+            <td>{{#if condicion_edad.m2}}X{{/if}}</td>
+            <td>{{#if condicion_edad.a}}X{{/if}}</td>
+          </tr> 
         </table>
         {{/with}}
-    </div>
+      </div>
+
     <div class='document__lab__inf_anverso__b'>
-        {{#with B_anv}}
+      {{#with B_anv}}
         <table>
-            <tr>
-                <th class='th1' colspan="17">B. SERVICIO Y PRIORIDAD DE ATENCIÓN</th>
-            </tr>
-            <tr>
-                <th class='th2'>DIAGNÓSTICO</th>
-                <th class='th2'>CIE</th>
-                <th class='th2' colspan="6">SERVICIO</th>
-                <th class='th5'>ESPECIALIDAD</th>
-                <th class='th5'>SALA</th>
-                <th class='th5'>CAMA</th>
-                <th class='th2' colspan="6">PRIORIDAD</th>
-            </tr>
-            <tr>
-                <td>{{diagnostico}}</td>
-                <td>{{cie}}</td>
-                <td class='td2'>EMERGENCIA:</td>
-                <td>{{#if servicio.emergencia}}X{{/if}}</td>
-                <td class='td2'>CONSULTA EXTERNA:</td>
-                <td>{{#if servicio.consulta_ext}}X{{/if}}</td>
-                <td class='td2'>HOSPITALIZACION</td>
-                <td>{{#if servicio.hospitalizacion}}X{{/if}}</td>
-                <td>{{especialidad}}</td>
-                <td>{{sala}}</td>
-                <td>{{cama}}</td>
-                <td class='td2'>URGENTE</td>
-                <td>{{#if prioridad.urgente}}X{{/if}}</td>
-                <td class='td2'>RUTINA</td>
-                <td>{{#if prioridad.rutina}}X{{/if}}</td>
-                <td class='td2'>CONTROL</td>
-                <td>{{#if prioridad.control}}X{{/if}}</td>
-            </tr>
+          <tr>
+            <th class='th1' colspan="17">B. SERVICIO Y PRIORIDAD DE ATENCIÓN</th>
+          </tr>
+          <tr>
+            <th class='th2'>DIAGNÓSTICO</th>
+            <th class='th2'>CIE</th>
+            <th class='th2' colspan="6">SERVICIO</th>
+            <th class='th5'>ESPECIALIDAD</th>
+            <th class='th5'>SALA</th>
+            <th class='th5'>CAMA</th>
+            <th class='th2' colspan="6">PRIORIDAD</th>
+          </tr>
+          <tr>
+            <td>{{diagnostico}}</td>
+            <td>{{cie}}</td>
+            <td class='td2'>EMERGENCIA:</td>
+            <td>{{#if servicio.emergencia}}X{{/if}}</td>
+            <td class='td2'>CONSULTA EXTERNA:</td>
+            <td>{{#if servicio.consulta_ext}}X{{/if}}</td>
+            <td class='td2'>HOSPITALIZACION</td>
+            <td>{{#if servicio.hospitalizacion}}X{{/if}}</td>
+            <td>{{especialidad}}</td>
+            <td>{{sala}}</td>
+            <td>{{cama}}</td>
+            <td class='td2'>URGENTE</td>
+            <td>{{#if prioridad.urgente}}X{{/if}}</td>
+            <td class='td2'>RUTINA</td>
+            <td>{{#if prioridad.rutina}}X{{/if}}</td>
+            <td class='td2'>CONTROL</td>
+            <td>{{#if prioridad.control}}X{{/if}}</td>
+          </tr>
         </table>
         {{/with}}
     </div>
+
     <div class='document__lab__inf_anverso__c'>
       {{#with C_anv}}
         <table>
@@ -252,7 +254,7 @@
                         <td></td>
                       </tr>
                       <tr>
-                        <td class='td2' colspan="3"colspan="3">VELOCIDAD DE SEDIMENTACIÓN</td>
+                        <td class='td2' colspan="3">VELOCIDAD DE SEDIMENTACIÓN</td>
                         <td colspan="2">{{hematologico.sedimentacion}}</td>
                         <td>mmh</td>
                         <td class='td2'>HCM</td>

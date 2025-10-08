@@ -1,0 +1,861 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: fixed;
+      }
+
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+      }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        background-color: #cbf5ec;
+      }
+      .th4 {
+        background-color: white;
+        font-weight: normal;
+        text-align: left;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: left;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+			.td2 {
+				text-align: right;
+				/*width: max-content;*/
+				white-space: nowrap;
+				background-color: #ccccff;
+				width: 5px;
+			}
+
+			.td3 {
+				text-align: center;
+				/*width: max-content;*/
+				white-space: nowrap;
+				background-color: #cbf5ec;
+			}
+
+			.td3j {
+        height: 20px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+    .document__odont,
+    .document__odont__a,
+    .document__odont__b,
+    .document__odont__c,
+    .document__odont__d,
+    .document__odont__e,
+    .document__odont__f,
+    .document__odont__g,
+    .document__odont__h,
+    .document__odont__i,
+    .document__odont__j,
+    .document__odont__k,
+    .document__odont__l,
+    .document__odont__m,
+    .document__odont__n,
+    .document__odont__o,
+    .document__odont__p {
+      width: 100%;
+      margin-top: 5px;
+      padding: 0;
+    }
+
+</style>
+  </head>
+  <body>
+  <header></header>
+  <main> 
+
+  <div class='document__odont'>
+    <div class='document_odont__a'>
+      {{#with A}}
+      <table>
+        <tr>
+	        <th class='th1' colspan='11'>A. DATOS DEL ESTABLECIMIENTO Y USUARIO/ PACIENTE</th>
+	      </tr>
+	      <tr>
+	        <th class='th2' colspan='2'>INSTITUCION DEL SISTEMA</th>
+	        <th class='th2'>UNICÓDIGO</th>
+	        <th class='th2' colspan='2'>ESTABLECIMIENTO DE SALUD</th>
+	        <th class='th2'>NÚMERO DE HISTORIA CLÍNICA</th>
+	        <th class='th2'>NÚMERO DE ARCHIVO</th>
+          <th class='th2' colspan='4'>No. HOJA</th>
+	      </tr>
+	      <tr>
+	        <td colspan='2'>{{institucion_sistema}}</td>
+	        <td>{{unicodigo}}</td>
+	        <td colspan='2'>{{establecimiento_salud}}</td>
+	        <td>{{numero_historia_clinica}}</td>
+	        <td>{{numero_archivo}}</td>
+          <td colspan="4">{{no_hoja}}</td>
+	      </tr>
+	      <tr>
+	        <th class='th2' rowspan='2' colspan='2'>PRIMER APELLIDO</th>
+	        <th class='th2' rowspan='2'>SEGUNDO APELLIDO</th>
+	        <th class='th2' rowspan='2'>PRIMER NOMBRE</th>
+	        <th class='th2' rowspan='2'>SEGUNDO NOMBRE</th>
+	        <th class='th2' rowspan='2'>SEXO</th>
+	        <th class='th2' rowspan='2'>EDAD</th>
+	        <th class='th2' colspan='4'>CONDICION EDAD</th>
+	      </tr>
+	      <tr>
+	        <th class='th2'>H</th>
+	        <th class='th2'>D</th>
+	        <th class='th2'>M</th>
+	        <th class='th2'>A</th>
+	      </tr>
+	      <tr>
+	        <td colspan='2'>{{primer_apellido}}</td>
+	        <td>{{segundo_apellido}}</td>
+	        <td>{{primer_nombre}}</td>
+	        <td>{{segundo_nombre}}</td>
+	        <td>{{sexo}}</td>
+	        <td>{{edad}}</td>
+	        <td>{{#if condicion_edad.h}} x {{/if}}</td>
+	        <td>{{#if condicion_edad.d}} x {{/if}}</td>
+	        <td>{{#if condicion_edad.m}} x {{/if}}</td>
+	        <td>{{#if condicion_edad.a}} x {{/if}}</td>
+	      </tr> 
+      </table> 
+      {{/with}}
+    </div>  
+
+		<div class='document__odont__b'>
+			{{#with B}}
+			<table>
+				<tr>
+					<th class="th1">B. MOTIVO DE CONSULTA</th>
+					<th class="th5">EMBARAZADA</th>
+					<th class="th2">SI</th>
+					<td>{{#if embarazada.si}}X{{/if}}</td>
+					<th class="th2">NO</th>
+					<td>{{#if embarazada.no}}X{{/if}}</td>
+				</tr>
+				<tr>
+					<td class="td4j" colspan="6">{{motivo_consulta}}</td>
+				</tr>
+			</table>
+			{{/with}}
+		</div>
+
+		<div class='document__odont__c'>
+			{{#with C}}
+			<table>
+				<tr>
+					<th class="th1">C. ENFERMEDAD ACTUAL</th>
+				</tr>
+				<tr>
+					<td class="td4j">{{enfermedad_actual}}</td>
+				</tr>
+			</table>
+			{{/with}}
+		</div>
+
+		<div class="document__odont__d">
+      {{#with D}}
+	    <table>
+	    	<tr>
+	        <th class='th1' colspan="20">D. ANTECEDENTES PATOLÓGICOS PERSONALES</th>
+	      </tr>
+	      <tr>
+	        <th class='th5'>1.ALERGIA ANTIBIOTICO</th>
+	        <td>{{#if antibiotico}}X{{/if}}</td>
+	        <th class='th5'>2.ALERGIA ANESTESIA</th>
+	        <td>{{#if anestesia}}X{{/if}}</td>
+	        <th class='th5'>3. HEMORRAGIAS</th>
+	        <td>{{#if hemorragias}}X{{/if}}</td>
+	        <th class='th5'>4.VIH/SIDA</th>
+	        <td>{{#if vih_sida}}X{{/if}}</td>
+	        <th class='th5'>5. TUBERCULOSIS</th>
+	        <td>{{#if tuberculosis}}X{{/if}}</td>
+	        <th class='th5'>6.ASMA</th>
+	        <td>{{#if asma}}X{{/if}}</td>
+	        <th class='th5'>7.DIABETES</th>
+	        <td>{{#if diabetes}}X{{/if}}</td>
+	        <th class='th5'>8.HIPERTENSIÓN ARTERIAL</th>
+	        <td>{{#if hipertension_arterial}}X{{/if}}</td>
+	        <th class='th5'>9. ENF.CARDIACA</th>
+	        <td>{{#if enf_cardiaca}}X{{/if}}</td>
+	        <th class='th5'>10.OTRO</th>
+	        <td>{{#if otro}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+	        <td class='td4j'colspan="20">{{antecedentes_personales}}</td>
+	      </tr>
+	    </table>
+      {{/with}}
+		</div>
+
+		<div class="document__odont__e">
+      {{#with E}}
+	    <table>
+	    	<tr>
+	        <th class='th1' colspan="20">E. ANTECEDENTES PATOLÓGICOS FAMILIARES</th>
+	      </tr>
+	      <tr>
+	        <th class='th5'>1. CARDIOPATÍA</th>
+	        <td>{{#if cardiopatia}}X{{/if}}</td>
+	        <th class='th5'>2. HIPERTENSIÓN</th>
+	        <td>{{#if hipertension}}X{{/if}}</td>
+	        <th class='th5'>3. ENF. C. VASCULAR</th>
+	        <td>{{#if enf_c_vascular}}X{{/if}}</td>
+	        <th class='th5'>4.  ENDÓCRINO METABÓLICO</th>
+	        <td>{{#if endocrino_metabolico}}X{{/if}}</td>
+	        <th class='th5'>5. CÁNCER</th>
+	        <td>{{#if cancer}}X{{/if}}</td>
+	        <th class='th5'>6. TUBERCULOSIS</th>
+	        <td>{{#if tuberculosis}}X{{/if}}</td>
+	        <th class='th5'>7.  ENF. MENTAL</th>
+	        <td>{{#if enf_mental}}X{{/if}}</td>
+	        <th class='th5'>8. ENF. INFECCIOSA</th>
+	        <td>{{#if enf_infecciosa}}X{{/if}}</td>
+	        <th class='th5'>9.  MAL FORMACIÓN</th>
+	        <td>{{#if mal_formacion}}X{{/if}}</td>
+	        <th class='th5'>10.  OTRO</th>
+	        <td>{{#if otro}}X{{/if}}</td>
+	      </tr>
+	      <tr>
+	        <td class='td4j'colspan="20">{{descripcion_antecedentes}}</td>
+	      </tr>
+	    </table>
+      {{/with}}
+		</div>
+
+		<div class='document__odont__f'>
+			{{#with F}}
+			<table>
+				<tr>
+					<th class="th1" colspan="8">F. CONSTANTES VITALES</th>
+				</tr>
+				<tr>
+					<th class="th2">TEMPERATURA °C</th>
+					<td>{{temperatura}}</td>
+					<th class="th2">PULSO/ min.</th>
+					<td>{{pulso}}</td>
+					<th class="th2">FRECUENCIA RESPIRATORIA/ min.</th>
+					<td>{{frecuencia_respiratoria}}</td>
+					<th class="th2">PRESIÓN ARTERIAL (mmHg)</th>
+					<td>{{presion_arterial}}</td>
+				</tr>
+			</table>
+			{{/with}}
+		</div>
+
+		<div class='document__odont__g'>
+			{{#with G}}
+			<table>
+				<tr>
+					<th class="th1" colspan="20">G. EXAMEN DEL SISTEMA ESTOMATOGNÁTICO</th>
+					<td class='td2'>DESCRIBIR LA PATOLOGÍA DE LA REGIÓN AFECTADA REGISTRANDO EL NÚMERO</td>
+				</tr>
+				<tr>
+					<th class="th5">1.</th>
+					<th class="th5">LABIOS</th>
+					<td>{{#if labios}}X{{/if}}</td>
+					<th class="th5">3.</th>
+					<th class="th5">MAXILIAR SUPERIOR</th>
+					<td>{{#if max_superior}}X{{/if}}</td>
+					<th class="th5">5.</th>
+					<th class="th5">LENGUA</th>
+					<td>{{#if lengua}}X{{/if}}</td>
+					<th class="th5">7.</th>
+					<th class="th5">PISO DE LA BOCA</th>
+					<td>{{#if piso_boca}}X{{/if}}</td>
+					<th class="th5">9.</th>
+					<th class="th5">GLÁNDULAS SALIVALES</th>
+					<td>{{#if glan_salivales}}X{{/if}}</td>
+					<th class="th5">11.</th>
+					<th class="th5">A.T.M</th>
+					<td>{{#if atm}}X{{/if}}</td>
+					<th class="th5">13.</th>
+					<th class="th5">OTROS</th>
+					<td>{{#if otros}}X{{/if}}</td>
+				</tr>
+				<tr>
+					<th class="th5">2.</th>
+					<th class="th5">MEJILLAS</th>
+					<td>{{#if mejillas}}X{{/if}}</td>
+					<th class="th5">4.</th>
+					<th class="th5">MAXILIAR INFERIOR</th>
+					<td>{{#if max_inferior}}X{{/if}}</td>
+					<th class="th5">6.</th>
+					<th class="th5">PALADAR</th>
+					<td>{{#if paladar}}X{{/if}}</td>
+					<th class="th5">8.</th>
+					<th class="th5">CARRILLOS</th>
+					<td>{{#if carrillos}}X{{/if}}</td>
+					<th class="th5">10.</th>
+					<th class="th5">ORO FARINGE</th>
+					<td>{{#if oro_faringe}}X{{/if}}</td>
+					<th class="th5">12.</th>
+					<th class="th5">GANGLIOS</th>
+					<td>{{#if ganglios}}X{{/if}}</td>
+				</tr>
+				<tr>
+					<td class="td4j" colspan="21">{{descripcion_examen}}</td>
+				</tr>
+			</table>
+			{{/with}}
+		</div>
+
+		<div class='document__odont__h'>
+  		{{#with H}}
+  		<table>
+    		<tr>
+      		<th class='th1' colspan='21'>H. ODONTOGRAMA</th>
+      		<td class='td2'>PINTAR CON: <b>AZUL</b> PARA TRATAMIENTO REALIZADO Y <b>ROJO</b> PARA PATOLOGÍA ACTUAL<br>MOVILIDAD Y RECESIÓN: MARCAR (1, 2, 3 ó 4). SI APLICA</td>
+    		</tr>
+    
+    		<tr>
+      		<td class="td3" colspan="2">RECESIÓN</td>
+      			{{#each upperTeeth}}
+      		<td>{{../recesion.[this]}}</td>
+      			{{/each}}
+    		</tr>
+    
+    		<tr>
+      		<td class="td3" colspan="2">MOVILIDAD</td>
+      			{{#each upperTeeth}}
+      		<td>{{../movilidad.[this]}}</td>
+      			{{/each}}
+    		</tr>
+
+    		<tr>
+      		<td colspan="2"></td>
+      			{{#each upperTeeth}}
+      		<td>{{this}}</td>
+      			{{/each}}
+    		</tr>
+
+    		<tr>
+      		<td colspan="2"></td>
+      			{{#each upperTeeth}}
+      		<td>imagen</td>
+      			{{/each}}
+    		</tr>
+
+				<tr>
+					<td colspan="2"></td>
+					<td>9</td>
+					<td></td>
+					{{#each upperMolars}}
+					<td>{{this}}</td>
+					{{/each}}
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+    {{!-- Fila de molares superiores --}}
+    <tr>
+      <td colspan="2"></td>
+      <td></td>
+      <td></td>
+      {{#each upperMolars}}
+      <td>⊕</td>
+      {{/each}}
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    {{!-- Espaciador --}}
+    <tr>
+      <td colspan="22"></td>
+    </tr>
+
+    {{!-- Fila de molares inferiores --}}
+    <tr>
+      <td class="td2"></td>
+      <td></td>
+      <td></td>
+      {{#each lowerMolars}}
+      <td>⊕</td>
+      {{/each}}
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    {{!-- Fila de números de molares inferiores --}}
+    <tr>
+      <td class="td2"></td>
+      <td></td>
+      <td></td>
+      {{#each lowerMolars}}
+      <td>{{this}}</td>
+      {{/each}}
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    {{!-- Fila de diagramas de dientes inferiores --}}
+    <tr>
+      <td class="td2"></td>
+      {{#each lowerTeeth}}
+      <td>◣</td>
+      {{/each}}
+    </tr>
+
+    {{!-- Fila de números de dientes inferiores --}}
+    <tr>
+      <td class="td2"></td>
+      {{#each lowerTeeth}}
+      <td>{{this}}</td>
+      {{/each}}
+    </tr>
+
+    {{!-- Fila de MOVILIDAD inferior --}}
+    <tr>
+      <td class="td2">MOVILIDAD</td>
+      {{#each lowerTeeth}}
+      <td>{{../movilidad.[this]}}</td>
+      {{/each}}
+    </tr>
+    
+    {{!-- Fila de RECESIÓN inferior --}}
+    <tr>
+      <td class="td2">RECESIÓN</td>
+      {{#each lowerTeeth}}
+      <td>{{../recesion.[this]}}</td>
+      {{/each}}
+    </tr>
+  </table>
+  {{/with}}
+		</div>
+
+    <div class='document__odont__i'>
+			{{#with I}}
+			<table class="table2">
+				<tr>
+					<td>
+						<table>
+				<tr>
+					<th class='th1' colspan="2">I. INDICADORES DE SALUD BUCAL</th>
+				</tr>
+				<tr>
+          <td>
+            <table>
+              <tr>
+                <th class='th2' colspan="9">HIGIENE ORAL SIMPLIFICADA</th>
+								<th class='th2' colspan="2">ENFERMEDAD PERIODONTAL</th>
+								<th class='th2' colspan="2">TIPOS DE OCLUSIÓN</th>
+								<th class='th2' colspan="2">NIVEL DE FLUOROSIS</th>
+              </tr>
+              <tr>
+                <th class='th3' rowspan="2"  colspan="6">PIEZAS DENTALES EXAMINADAS</th>
+                <th class='th3'>PLACA</th>
+								<th class='th3'>CÁLCULO</th>
+                <th class='th3'>GINGIVITIS</th>
+								<th class='th3'>LEVE</th>
+								<td>{{#if higiene_oral.periodontal.leve}}X{{/if}}</td>
+								<th class='th3'>ANGLE I</th>
+								<td>{{#if higiene_oral.oclusion.angleI}}X{{/if}}</td>
+								<th class='th3'>LEVE</th>
+								<td>{{#if higiene_oral.fluorosis.leve}}X{{/if}}</td>
+              </tr>
+							<tr>
+								<td class='td3'>0-1-2-3-9</td>
+								<td class='td3'>0-1-2-3</td>
+								<td class='td3'>0-1</td>
+								<th class='th3'>MODERADA</th>
+								<td>{{#if higiene_oral.periodontal.moderada}}X{{/if}}</td>
+								<th class='th3'>ANGLE II</th>
+								<td>{{#if higiene_oral.oclusion.angleII}}X{{/if}}</td>
+								<th class='th3'>MODERADA</th>
+								<td>{{#if higiene_oral.fluorosis.moderada}}X{{/if}}</td>
+            	</tr>
+							<tr>
+								<th class='th3'>16</th>
+								<td>{{#if higiene_oral.piezas_dentales.p16}}X{{/if}}</td>
+								<th class='th3'>17</th>
+								<td>{{#if higiene_oral.piezas_dentales.p17}}X{{/if}}</td>
+								<th class='th3'>55</th>
+								<td>{{#if higiene_oral.piezas_dentales.p55}}X{{/if}}</td>
+								<td>{{higiene_oral.piezas_dentales.placa1}}</td>
+								<td>{{higiene_oral.piezas_dentales.calculo1}}</td>
+								<td>{{higiene_oral.piezas_dentales.gingivitis1}}</td>
+								<th class='th3'>SEVERA</th>
+								<td>{{#if higiene_oral.periodontal.severa}}X{{/if}}</td>
+								<th class='th3'>ANGLE III</th>
+								<td>{{#if higiene_oral.oclusion.angleIII}}X{{/if}}</td>
+								<th class='th3'>SEVERA</th>
+								<td>{{#if higiene_oral.fluorosis.severa}}X{{/if}}</td>
+            	</tr>
+							<tr>
+								<th class='th3'>11</th>
+								<td>{{#if higiene_oral.piezas_dentales.p11}}X{{/if}}</td>
+								<th class='th3'>21</th>
+								<td>{{#if higiene_oral.piezas_dentales.p21}}X{{/if}}</td>
+								<th class='th3'>51</th>
+								<td>{{#if higiene_oral.piezas_dentales.p51}}X{{/if}}</td>
+								<td>{{higiene_oral.piezas_dentales.placa2}}</td>
+								<td>{{higiene_oral.piezas_dentales.calculo2}}</td>
+								<td>{{higiene_oral.piezas_dentales.gingivitis2}}</td>
+							</tr>
+							<tr>
+								<th class='th3'>26</th>
+								<td>{{#if higiene_oral.piezas_dentales.p26}}X{{/if}}</td>
+								<th class='th3'>27</th>
+								<td>{{#if higiene_oral.piezas_dentales.p27}}X{{/if}}</td>
+								<th class='th3'>65</th>
+								<td>{{#if higiene_oral.piezas_dentales.p65}}X{{/if}}</td>
+								<td>{{higiene_oral.piezas_dentales.placa3}}</td>
+								<td>{{higiene_oral.piezas_dentales.calculo3}}</td>
+								<td>{{higiene_oral.piezas_dentales.gingivitis3}}</td>
+							</tr>
+							<tr>
+								<th class='th3'>31</th>
+								<td>{{#if higiene_oral.piezas_dentales.p31}}X{{/if}}</td>
+								<th class='th3'>41</th>
+								<td>{{#if higiene_oral.piezas_dentales.p41}}X{{/if}}</td>
+								<th class='th3'>71</th>
+								<td>{{#if higiene_oral.piezas_dentales.p71}}X{{/if}}</td>
+								<td>{{higiene_oral.piezas_dentales.placa4}}</td>
+								<td>{{higiene_oral.piezas_dentales.calculo4}}</td>
+								<td>{{higiene_oral.piezas_dentales.gingivitis4}}</td>
+							</tr>
+							<tr>
+								<th class='th3'>46</th>
+								<td>{{#if higiene_oral.piezas_dentales.p46}}X{{/if}}</td>
+								<th class='th3'>47</th>
+								<td>{{#if higiene_oral.piezas_dentales.p47}}X{{/if}}</td>
+								<th class='th3'>85</th>
+								<td>{{#if higiene_oral.piezas_dentales.p85}}X{{/if}}</td>
+								<td>{{higiene_oral.piezas_dentales.placa5}}</td>
+								<td>{{higiene_oral.piezas_dentales.calculo5}}</td>
+								<td>{{higiene_oral.piezas_dentales.gingivitis5}}</td>
+							</tr>
+							<tr>
+								<th class='th2' colspan="6">TOTALES</th>
+								<td>{{higiene_oral.piezas_dentales.total_placa}}</td>
+								<td>{{higiene_oral.piezas_dentales.total_calculo}}</td>
+								<td>{{higiene_oral.piezas_dentales.total_gingivitis}}</td>
+							 </tr>
+        			</table>
+      			</td>
+    			</tr>
+  			</table>
+  		{{/with}}
+		</div>
+
+	<div class='document__odont__j'>
+					<td>
+						{{#with J}}
+						<table class="table2">
+		    			<tr>
+		    				<th class='th1' colspan="5">J. ÍNDICES CPO-ceo</th>
+		    			</tr>
+							<tr>
+					      <th class='th2' rowspan="2">D</th>
+								<th class='th2'>C</th>
+								<th class='th2'>P</th>
+								<th class='th2'>O</th>
+								<th class='th2'>TOTAL</th>
+							</tr>
+							<tr>
+								<td>{{D.C}}</td>
+								<td>{{D.D}}</td>
+								<td>{{D.O}}</td>
+								<td>{{D.total_D}}</td>
+							</tr>
+							<tr>
+					      <th class='th2' rowspan="2">d</th>
+								<th class='th2'>c</th>
+								<th class='th2'>e</th>
+								<th class='th2'>o</th>
+								<th class='th2'>TOTAL</th>
+							</tr>
+							<tr>
+								<td>{{d.c}}</td>
+								<td>{{d.e}}</td>
+								<td>{{d.o}}</td>
+								<td>{{d.total_d}}</td>
+							</tr>
+							</table>
+							{{/with}}
+			    </td>
+				</tr>
+				</div>
+
+		<div class='document__odont__k'>
+					<table>
+						<tr>
+							<th class='th1' colspan="5">K. SIMBOLOGÍA DEL ODONTOGRAMA</th>
+						</tr>
+					</table>
+		</div>
+
+		<div class='document__odont__l'>
+			{{#with L}}
+			<table>
+				<tr>
+					<th class="th1">L. PEDIDO DE EXÁMENES COMPLEMENTARIOS</th>
+				</tr>
+				<tr>
+					<td class="td4j">{{motivo_consulta}}</td>
+				</tr>
+				</table>
+				{{/with}}
+		</div>
+
+		<div class='document__odont__m'>
+			{{#with M}}
+			<table class="table2">
+				<tr>
+					<th class="th1" colspan="9">M. INFORME DE EXÁMENES</th>
+				</tr>
+				<tr>
+					<th class="th2">BIOMETRÍA</th>
+					<td>{{#if biometria}}X{{/if}}</td>
+					<th class="th2">QUÍMICA SANGUÍNEA</th>
+					<td>{{#if quimica_sanguinea}}X{{/if}}</td>
+					<th class="th2">RAYOS - X</th>
+					<td>{{#if rayos_x}}X{{/if}}</td>
+					<th class="th2">OTROS</th>
+					<td>{{#if otros}}X{{/if}}</td>
+					<td>{{descripcion_otros}}</td>
+				</tr>
+				<tr>
+					<td class="td4j" colspan="9">{{informe_examen}}</td>
+				</tr>
+				</table>
+				{{/with}}
+		</div>
+
+		<div class="document__odont__n">
+			{{#with N}}
+				<table>
+          <tr>
+            <th class='th1' colspan='4'>N. DIAGNÓSTICO</th>
+            <th class='th1'>CIE</th>
+            <th class='th1'>PRE</th>
+            <th class='th1'>DEF</th>
+            <th class='th1' colspan='4'></th>
+            <th class='th1'>CIE</th>
+            <th class='th1'>PRE</th>
+            <th class='th1'>DEF</th>
+          </tr>
+          <tr>
+            <th class='th5'>1.</th>
+            <td class='td1' colspan='3'>{{diagnosticos.[0].descripcion}}</td>
+            <td class='td1'>{{diagnosticos.[0].cie}}</td>
+            <td>{{#if diagnosticos.[0].pre}}X{{/if}}</td>
+            <td>{{#if diagnosticos.[0].def}}X{{/if}}</td>
+
+            <th class='th5'>4.</th>
+            <td class='td1' colspan='3'>{{diagnosticos.[3].descripcion}}</td>
+            <td class='td1'>{{diagnosticos.[3].cie}}</td>
+            <td>{{#if diagnosticos.[3].pre}}X{{/if}}</td>
+            <td>{{#if diagnosticos.[3].def}}X{{/if}}</td>
+          </tr>
+          <tr>
+            <th class='th5'>2.</th>
+            <td class='td1' colspan='3'>{{diagnosticos.[1].descripcion}}</td>
+            <td class='td1'>{{diagnosticos.[1].cie}}</td>
+            <td>{{#if diagnosticos.[1].pre}}X{{/if}}</td>
+            <td>{{#if diagnosticos.[1].def}}X{{/if}}</td>
+
+            <th class='th5'>5.</th>
+            <td class='td1' colspan='3'>{{diagnosticos.[4].descripcion}}</td>
+            <td class='td1'>{{diagnosticos.[4].cie}}</td>
+            <td>{{#if diagnosticos.[4].pre}}X{{/if}}</td>
+            <td>{{#if diagnosticos.[4].def}}X{{/if}}</td>
+        	</tr>
+          <tr>
+            <th class='th5'>3.</th>
+            <td class='td1' colspan='3'>{{diagnosticos.[2].descripcion}}</td>
+            <td class='td1'>{{diagnosticos.[2].cie}}</td>
+            <td>{{#if diagnosticos.[2].pre}}X{{/if}}</td>
+            <td>{{#if diagnosticos.[2].def}}X{{/if}}</td>
+
+            <th class='th5'>6.</th>
+            <td class='td1'colspan='3'>{{diagnosticos.[5].descripcion}}</td>
+            <td class='td1'>{{diagnosticos.[5].cie}}</td>
+            <td>{{#if diagnosticos.[5].pre}}X{{/if}}</td>
+            <td>{{#if diagnosticos.[5].def}}X{{/if}}</td>
+          </tr>
+        </table>
+      {{/with}}
+    </div>
+
+		<div class='document__odont__o'>
+		{{#with O}}
+	    <table>
+	      <tr>
+	        <th class='th1' colspan="5">O. DATOS DEL PROFESIONAL RESPONSABLE</th>
+	      </tr>
+	      <tr>
+	        <th class='th2'>FECHA<br>(aaaa-mm-dd)</th>
+	        <th class='th2'>HORA<br>(hh-mm)</th>
+	        <th class='th2'>PRIMER NOMBRE</th>
+	        <th class='th2'>PRIMER APELLIDO</th>
+	        <th class='th2'>SEGUNDO APELLIDO</th>
+	      </tr>
+	      <tr>
+	        <td>{{fecha}}</td>
+	        <td>{{hora}}</td>
+	        <td>{{primer_nombre_resp}}</td>
+	        <td>{{primer_apellido_resp}}</td>
+	        <td>{{segundo_apellido_resp}}</td>
+	      </tr>
+	      <tr>
+	        <th class='th2' colspan="2">NUMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+	        <th class='th2' colspan="2">FIRMA</th>
+	        <th class='th2'>SELLO</th>
+	      </tr>
+	    	<tr>
+	        <td colspan="2">{{identificacion_resp}}</td>
+					<td colspan="2"><img src='{{firma_resp}}'/></td>
+	        <td colspan="2"><img src='{{sello_resp}}'/></td>
+	      </tr>
+	    </table>
+		{{/with}}
+		</div>
+
+		<div class='document__odont__p'>
+			{{#with P}}
+				<table>
+					<tr>
+	          <th class='th1' colspan="5">P.TRATAMIENTO</th>
+	        </tr>
+					<tr>
+	          <th class='th2'>No.DE SESIÓN Y FECHA</th>
+						<th class='th2'>DIAGNOSTICO Y COMPLICACIONES</th>
+						<th class='th2'>PROCEDIMIENTOS</th>
+						<th class='th2'>PRESCRIPCIONES</th>
+						<th class='th2'>FIRMA Y SELLO</th>
+	        </tr>
+					<tr>
+	          <th class='th2'>No.SESIÓN</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<th class='th2'>FIRMA</th>
+	        </tr>
+					<tr>
+	          <th class="td3j">{{no_sesion}}</th>
+						<td class="td1">{{diagnostico_complicaciones}}</td>
+						<td class="td1">{{procedimiento}}</td>
+						<td class="td1">{{prescripciones}}</td>
+						<th><img src='{{firma}}'/></th>
+	        </tr>
+					<tr>
+	          <th class='th2'>FECHA</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<th class='th2'>SELLO</th>
+	        </tr>
+					<tr>
+	          <th class="td3j">{{fecha}}</th>
+						<td class="td1">{{diagnostico_fecha}}</td>
+						<td class="td1">{{descripcion_procedimiento}}</td>
+						<td class="td1">{{descripcion_prescripcion}}</td>
+						<th><img src='{{sello}}'/></th>
+	        </tr>
+				</table>
+				{{/with}}
+		</div>
+
+	</div>
+    <div>
+      <footer>
+        <p>SNS-MSP / HCU-form.033/2021</p>
+        <p>ODONTOLOGÍA (1)</p>
+      </footer>
+</div>
+</body>
+</html>

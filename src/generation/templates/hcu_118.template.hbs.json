@@ -1,0 +1,145 @@
+{
+    "A": {
+      "institucion_sistema": "CLINICA SANTAMARIA",
+      "unicodigo": 25410,
+      "establecimiento_salud": "CLINICA SANTAMARIA",
+      "numero_historia_clinica": "123456789",
+      "numero_archivo": "104242",
+      "primer_apellido": "LOPEZ",
+      "segundo_apellido": "GARCIA",
+      "primer_nombre": "JOSE",
+      "segundo_nombre": "PABLO",
+      "sexo": "M",
+      "edad": "30",
+      "condicion_edad": {
+        "h": false,
+        "d": false,
+        "m": false,
+        "a": true
+      }
+    },
+
+    "B": {
+      "diagnostico_principal": "1",
+      "cie": "1",
+
+      "servicio": {
+        "emergencia": true,
+        "consulta_externa": true,
+        "hospitalizacion": true
+      },
+
+      "especialidad": "1",
+      "sala": "1",
+      "cama": "1",
+
+      "diagnostico_transfusion": "1",
+      "cie_transfusion": "1",
+
+      "categorizacion": {
+        "clinico": "true",
+        "neonatologico": "true",
+        "quirurgico": "true",
+        "gineco_obst": "true"
+      },
+
+      "prioridad": {
+        "emergencia_5min": true,
+        "urgencia_15min": true,
+        "rutina_45min": true 
+      },
+
+      "alistar": true,
+      "fecha": "1",
+      "hora": "1",
+
+      "tratamiento": "1"
+    },
+
+    "C": {
+      "trans_anter": {
+        "si": true,
+        "no": true,
+        "no_sabe": true
+      },
+
+      "T_trans_anter": {
+        "menor_2meses": true,
+        "entre_3a5m": true,
+        "entre_6a8m": true,
+        "entre_9a12m": true,
+        "mayor_12m": true
+      },
+
+      "reac_prev": {
+        "si": true,
+        "especifique": "1",
+        "no": true,
+        "no_sabe": true
+      }
+    },
+
+    "D": {
+      "hemoglobina": "1",
+      "hemotocrito": "1",
+      "plaquetas": "1",
+      "tp": "1",
+      "ttp": "1",
+      "grupo_abo": "1",
+      "inr": "1",
+      "otros": "1"
+    },
+
+    "E": {
+      "numero": {
+        "concent_glob": "1",
+        "leucoplaquetaria": "1",
+        "leucorreducidos": "1",
+        "pediatricos": "1",
+        "pedia_leucoplaqueteria": "1",
+        "pedia_leucorreducidos": "1",
+        "irradiados": "1",
+
+        "concent_plaquetas": "1",
+        "plaquetas_aferesis": "1",
+        "plasma_congelado": "1",
+        "crioprecipitado": "1",
+        "plasma_refrigerado": "1",
+        "sangre_reconstituida": "1",
+        "otro": "1"
+      },
+
+      "letras": {
+        "concent_glob": "1",
+        "leucoplaquetaria": "1",
+        "leucorreducidos": "1",
+        "pediatricos": "1",
+        "pedia_leucoplaqueteria": "1",
+        "pedia_leucorreducidos": "1",
+        "irradiados": "1",
+
+        "concent_plaquetas": "1",
+        "plaquetas_aferesis": "1",
+        "plasma_congelado": "1",
+        "crioprecipitado": "1",
+        "plasma_refrigerado": "1",
+        "sangre_reconstituida": "1",
+        "otro": "1"
+      }
+    },
+
+    "F": {
+      "nombre_persona": "JUAN JOSE GOMEZ GOMEZ"
+    },
+
+    "F_table": {
+      "fecha_pedido": "",
+      "hora_pedido": "",
+      "nombre_apellido_prof": "",
+      "firma_sello_personal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi1PFTXxgEZqZnOI49VeY4AmBH3OkwXLEMEg&s",
+      "fecha_muestra": "",
+      "hora_muestra": "",
+      "nombre_apellido_prof_muestra": "",
+      "firma_prof_muestra": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTKI-gKBae2Jue3qRVwe0_YJECipYeXLnzlw&s"
+    }
+  }
