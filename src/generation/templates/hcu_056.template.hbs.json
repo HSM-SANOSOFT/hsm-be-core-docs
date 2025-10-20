@@ -1,0 +1,345 @@
+{
+  "A": {
+    "institucion_sistema": "CLINICA SANTAMARIA",
+    "unicodigo": 25410,
+    "establecimiento_salud": "CLINICA SANTAMARIA",
+    "numero_historia_clinica": "123456789",
+    "numero_archivo": "104242",
+    "primer_apellido": "GOMEZ",
+    "segundo_apellido": "MORA",
+    "primer_nombre": "JOSE",
+    "segundo_nombre": "PABLO",
+    "sexo": "M",
+    "edad": 30,
+
+    "acompaniante": {
+      "no": true,
+      "pareja": true,
+      "madre": true,
+      "padre": true,
+      "amigo": true,
+      "pariente": true,
+      "otros": "1"
+    }
+  },
+
+  "B": {
+    "motivo_consulta_adolescente": "1",
+    "motivo_consulta_acompaniante": "1"
+  },
+
+  "C": {
+    "enfermedad_actual": "1"
+  },
+
+  "D": {
+    "perinatales_normales": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "crecimiento_normal": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "desarrollo_normal": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "vacunas_completas": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "enf_cronicas": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "enf_infecto_contagiosas": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "trastorno_psicologico": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "medicinas_sustancias": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "accidentes_intoxicacion": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "alergias": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "infecc_recurrentes": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "cx_hosp": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "presunta_violencia": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "judiciales": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "describa": "1"
+  },
+
+  "E": {
+    "diabetes": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "obesidad": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "alergias": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "cardio_vasculares": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "cancer": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "infecciones": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "alcohol_drogas": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "violencia_familiar": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "madre_adolescente": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "judiciales": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "describa": "1"
+  },
+
+  "F": {
+    "familia": {
+      "convive": {
+        "madre": {
+          "si": true,
+          "no": true
+        },
+
+        "padre": {
+          "si": true,
+          "no": true
+        },
+
+        "madrastra": {
+          "si": true,
+          "no": true
+        },
+
+        "padrastro": {
+          "si": true,
+          "no": true
+        },
+
+        "hermanos": {
+          "si": true,
+          "no": true
+        },
+
+        "pareja": {
+          "si": true,
+          "no": true
+        },
+
+        "hijo": {
+          "si": true,
+          "no": true
+        },
+
+        "solo": {
+          "si": true,
+          "no": true
+        },
+
+        "otros": {
+          "si": true,
+          "no": true
+        }
+      },
+
+      "vive": {
+        "institucion": {
+          "si": true,
+          "no": true
+        },
+
+        "calle": {
+          "si": true,
+          "no": true
+        },
+
+        "casa": {
+          "si": true,
+          "no": true
+        }
+      }
+    },
+
+    "nivel_instruccion": {
+      "analfabeto": {
+        "padre_sust": true,
+        "madre_sust": true
+      },
+
+      "inicial": {
+        "padre_sust": true,
+        "madre_sust": true
+      },
+
+      "basica": {
+        "padre_sust": true,
+        "madre_sust": true
+      },
+
+      "bachillerato": {
+        "padre_sust": true,
+        "madre_sust": true
+      },
+
+      "tecnico": {
+        "padre_sust": true,
+        "madre_sust": true
+      },
+
+      "tercer_nivel": {
+        "padre_sust": true,
+        "madre_sust": true
+      },
+
+      "cuarto_nivel": {
+        "padre_sust": true,
+        "madre_sust": true
+      }
+    },
+
+    "trabajo": {
+      "ninguno": {
+        "padre_sust": true,
+        "madre_sust": true
+      },
+
+      "estable": {
+        "padre_sust": true,
+        "madre_sust": true
+      },
+
+      "no_estable": {
+        "padre_sust": true,
+        "madre_sust": true
+      },
+
+      "especifique": "1"
+    },
+
+    "percepcion": {
+      "buena": true,
+      "regular": true,
+      "mala": true,
+      "no_hay": true
+    },
+
+    "familiograma": {
+      "descripcion_img": "1",
+      "observaciones": "1"
+    },
+
+    "vivienda": {
+      "enegia_electrica": {
+        "si": true,
+        "no": true
+      },
+
+      "agua": {
+        "hogar": true,
+        "fuera_hogar": true
+      },
+
+      "excretas": {
+        "hogar": true,
+        "fuera_hogar": true
+      },
+
+      "num_cuartos": "1",
+      "num_pers_hab": "1",
+      "comp_cama": "1",
+
+      "observacion": "1"
+    }
+  }
+}

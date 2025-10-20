@@ -1,4 +1,4 @@
-export type Hcu117DocumentTemplate = {
+export type Hcu116DocumentTemplate = {
   //DATOS DEL ESTABLECIMIENTO Y USUARIO/PACIENTE
   A: {
     institucion_sistema: string;

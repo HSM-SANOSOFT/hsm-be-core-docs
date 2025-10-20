@@ -329,5 +329,451 @@
     "glucosa_celdas": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"]
   },
 
-  "D": {}
+  "D": {
+    "celdas": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    "celda_vent": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_Ppico": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_Pmedia": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_peep": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_Apeep": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_Psoporte": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_volumenT": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_volumenP": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_volumenM": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_volumenEsp": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_frecResp": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_frecEsp": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_estatica": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_resistencia": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_fiO2": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_etcO2": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_Vfugas": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_orotraqueal": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_Porotraqueal": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_espiracion": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_vacio1": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_vacio2": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_vacio3": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"],
+    "celda_vacio4": ["0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1"]
+  },
+
+  "E": {
+    "intubacion": {
+      "fecha": "string",
+      "inicio": "string",
+      "cambio": "string",
+      "retiro": "string"
+    },
+
+    "traqueo": {
+      "fecha": "string",
+      "inicio": "string",
+      "cambio": "string",
+      "retiro": "string"
+    },
+
+    "toracico": {
+      "fecha": "string",
+      "inicio": "string",
+      "cambio": "string",
+      "retiro": "string"
+    },
+
+    "sondaG": {
+      "fecha": "string",
+      "inicio": "string",
+      "cambio": "string",
+      "retiro": "string"
+    },
+
+    "dialisis": {
+      "fecha": "string",
+      "inicio": "string",
+      "cambio": "string",
+      "retiro": "string"
+    },
+
+    "central": {
+      "fecha": "string",
+      "inicio": "string",
+      "cambio": "string",
+      "retiro": "string"
+    },
+
+    "periferico": {
+      "fecha": "string",
+      "inicio": "string",
+      "cambio": "string",
+      "retiro": "string"
+    },
+
+    "marcapasos": {
+      "fecha": "string",
+      "inicio": "string",
+      "cambio": "string",
+      "retiro": "string"
+    },
+
+    "arterial": {
+      "fecha": "string",
+      "inicio": "string",
+      "cambio": "string",
+      "retiro": "string"
+    },
+
+    "vesical": {
+      "fecha": "string",
+      "inicio": "string",
+      "cambio": "string",
+      "retiro": "string"
+    },
+
+    "lumbar": {
+      "fecha": "string",
+      "inicio": "string",
+      "cambio": "string",
+      "retiro": "string"
+    }
+  },
+
+  "F": {
+    "aire_ambiente": {
+      "am": "1",
+      "pm": "1",
+      "hs": "1"
+    },
+
+    "cateter_nasal": {
+      "am": "1",
+      "pm": "1",
+      "hs": "1"
+    },
+
+    "mascarilla": {
+      "am": "1",
+      "pm": "1",
+      "hs": "1"
+    },
+
+    "tubo_t": {
+      "am": "1",
+      "pm": "1",
+      "hs": "1"
+    }
+  },
+
+  "G": {
+    "solicitud_examen": [
+      {
+        "tipo_examen": "1",
+        "hora_examen": "1",
+        "hora_resultado": "1"
+      },
+
+      {
+        "tipo_examen": "2",
+        "hora_examen": "2",
+        "hora_resultado": "2"
+      },
+
+      {
+        "tipo_examen": "3",
+        "hora_examen": "3",
+        "hora_resultado": "3"
+      },
+
+      {
+        "tipo_examen": "4",
+        "hora_examen": "4",
+        "hora_resultado": "4"
+      },
+
+      {
+        "tipo_examen": "5",
+        "hora_examen": "5",
+        "hora_resultado": "5"
+      },
+
+      {
+        "tipo_examen": "6",
+        "hora_examen": "6",
+        "hora_resultado": "6"
+      },
+
+      {
+        "tipo_examen": "7",
+        "hora_examen": "7",
+        "hora_resultado": "7"
+      },
+
+      {
+        "tipo_examen": "8",
+        "hora_examen": "8",
+        "hora_resultado": "8"
+      },
+
+      {
+        "tipo_examen": "9",
+        "hora_examen": "9",
+        "hora_resultado": "9"
+      },
+
+      {
+        "tipo_examen": "10",
+        "hora_examen": "10",
+        "hora_resultado": "10"
+      }
+    ]
+  },
+
+  "H": {
+    "aislamiento": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "banio": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "perineal": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "reposo": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "posicion": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "cambio_posicion": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "levantarlo": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "cuidado_piel": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "cuidado_ojos": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "higiene_bucal": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "fiebre": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "rehabilitacion": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "nebulizaciones": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "tera_resp": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "cuid_traqueal": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "asp_secreciones": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "curacion": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "control_sangr": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "drenajes": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "cont_sondaG": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "cont_sondaV": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "riesg_caidas": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "riesg_ulcera": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    },
+
+    "riesg_trombo": {
+      "frecuencia": "string",
+      "am": "string",
+      "pm": "string",
+      "hs": "string"
+    }
+  },
+
+  "I": {
+    "interconsultas": [
+      {
+        "servicio_inter": "1",
+        "hora_solicitud": "1",
+        "hora_respuesta": "1"
+      },
+
+      {
+        "servicio_inter": "2",
+        "hora_solicitud": "2",
+        "hora_respuesta": "2"
+      },
+
+      {
+        "servicio_inter": "3",
+        "hora_solicitud": "3",
+        "hora_respuesta": "3"
+      },
+
+      {
+        "servicio_inter": "4",
+        "hora_solicitud": "4",
+        "hora_respuesta": "4"
+      },
+
+      {
+        "servicio_inter": "5",
+        "hora_solicitud": "5",
+        "hora_respuesta": "5"
+      },
+
+      {
+        "servicio_inter": "6",
+        "hora_solicitud": "6",
+        "hora_respuesta": "6"
+      },
+
+      {
+        "servicio_inter": "7",
+        "hora_solicitud": "7",
+        "hora_respuesta": "7"
+      }
+    ]
+  },
+
+  "J": {
+    "descripcion_am": "",
+    "descripcion_pm": "",
+    "descripcion_hs": ""
+  },
+
+  "K": {
+    "am": {
+      "primer_nombre": "JOSE PABLO",
+      "primer_apellido": "LOPEZ",
+      "segundo_apellido":"GARCIA",
+      "numero_ident": "0987456321",
+      "firma": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG6RQIbDyGyyqBMYIRXxTvuhe_y22KNNxPHg&s",
+      "sello": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF9VL2V_bJD2mDnrWhuxuSE5N7mn2oKHbDCQ&s"
+    },
+
+    "pm": {
+      "primer_nombre": "JOSE PABLO",
+      "primer_apellido": "LOPEZ",
+      "segundo_apellido":"GARCIA",
+      "numero_ident": "0987456321",
+      "firma": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG6RQIbDyGyyqBMYIRXxTvuhe_y22KNNxPHg&s",
+      "sello": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF9VL2V_bJD2mDnrWhuxuSE5N7mn2oKHbDCQ&s"
+    },
+
+    "hs": {
+      "primer_nombre": "JOSE PABLO",
+      "primer_apellido": "LOPEZ",
+      "segundo_apellido":"GARCIA",
+      "numero_ident": "0987456321",
+      "firma": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG6RQIbDyGyyqBMYIRXxTvuhe_y22KNNxPHg&s",
+      "sello": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF9VL2V_bJD2mDnrWhuxuSE5N7mn2oKHbDCQ&s"
+    }
+  }
 }

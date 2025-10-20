@@ -1,0 +1,668 @@
+<html>
+    <head>
+      <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: unset;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+        }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        text-align: center;
+        font-size: 9px;
+        background-color: #ccccff
+      }
+      .th4 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: center;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: center;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+	  .td2 {
+        text-align: center;
+        /*width: max-content;*/
+        white-space: nowrap;
+		    background-color: #ccffcc;
+      }
+
+      .td3 {
+        text-align: right;
+        background-color: #ccccff;
+      }
+
+      .td3j {
+        height: 30px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__atenAdoles,
+      .document__atenAdoles__a,
+      .document__atenAdoles__b,
+      .document__atenAdoles__c,
+      .document__atenAdoles__d,
+			.document__atenAdoles__e,
+			.document__atenAdoles__f,
+			.document__atenAdoles__g,
+      .document__atenAdoles__h,
+      .document__atenAdoles__i,
+      .document__atenAdoles__j,
+      .document__atenAdoles__k,
+      .document__atenAdoles__l,
+      .document__atenAdoles__m,
+      .document__atenAdoles__n,
+      .document__atenAdoles__o,
+      .document__atenAdoles__p,
+      .document__atenAdoles__q,
+      .document__atenAdoles__r {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+</style>
+</head>
+<body>
+  <header></header>
+    <main>
+      <div class='document__atenAdoles'>
+				<div class='document__atenAdoles__a'>
+					{{#with A}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="15">A. DATOS DEL ESTABLECIMIENTO Y USUARIO / PACIENTE</th>
+	          </tr>
+	    			<tr>
+							<th class="th2">INSTITUCIÓN DEL SISTEMA</th>
+							<th class="th2" colspan="4">UNICÓDIGO</th>
+              <th class="th2" colspan="4">ESTABLECIMIENTO DE SALUD</th>
+							<th class="th2" colspan="4">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+							<th class="th2" colspan="3">NÚMERO DE ARCHIVO</th>
+	    			</tr>
+						<tr>
+							<td>{{institucion_sistema}}</td>
+							<td colspan="4">{{unicodigo}}</td>
+              <td colspan="4">{{establecimiento_salud}}</td>
+							<td colspan="4">{{numero_historia_clinica}}</td>
+							<td colspan="3">{{numero_archivo}}</td>
+						</tr>
+            <tr>
+							<th class="th2">PRIMER APELLIDO</th>
+							<th class="th2" colspan="4">SEGUNDO APELLIDO</th>
+              <th class="th2" colspan="4">PRIMER NOMBRE</th>
+							<th class="th2" colspan="4">SEGUNDO NOMBRE</th>
+							<th class="th2">SEXO</th>
+              <th class="th2" colspan="2">EDAD<br>(AÑOS)</th>
+	    			</tr>
+            <tr>
+              <td >{{primer_apellido}}</td>
+              <td colspan="4">{{segundo_apellido}}</td>
+              <td colspan="4">{{primer_nombre}}</td>
+              <td colspan="4">{{segundo_nombre}}</td>
+              <td>{{sexo}}</td>
+              <td colspan="2">{{edad}}</td>
+            </tr>
+            <tr>
+              <th class="th2">ACOMPAÑANTE</th>
+              <td>NO</td>
+              <td>{{#if acompaniante.no}}X{{/if}}</td>
+              <td>PAREJA</td>
+              <td>{{#if acompaniante.pareja}}X{{/if}}</td>
+              <td>MADRE</td>
+              <td>{{#if acompaniante.madre}}X{{/if}}</td>
+              <td>PADRE</td>
+              <td>{{#if acompaniante.padre}}X{{/if}}</td>
+              <td>AMIGO/A</td>
+              <td>{{#if acompaniante.amigo}}X{{/if}}</td>
+              <td>PARIENTE</td>
+              <td>{{#if acompaniante.pariente}}X{{/if}}</td>
+              <td>OTROS</td>
+              <td>{{acompaniante.otros}}</td>
+            </tr>
+	    		</table>
+					{{/with}}
+				</div>
+
+        <div class='document__atenAdoles__b'>
+					{{#with B}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="2">B. ATENCIÓN MÉDICA</th>
+	          </tr>
+            <tr>
+              <th class="th2">MOTIVO DE CONSULTA (según adolescente)</th>
+              <th class="th2">MOTIVO DE CONSULTA (según acompañante)</th>
+            </tr>
+            <tr>
+              <td class="td4j">{{motivo_consulta_adolescente}}</td>
+              <td class="td4j">{{motivo_consulta_acompaniante}}</td>
+            </tr>
+            </table>
+					{{/with}}
+				</div>
+
+        <div class='document__atenAdoles__c'>
+					{{#with C}}
+					<table>
+						<tr>
+	            <th class="th1">C. ENFERMEDAD ACTUAL</th>
+	          </tr>
+            <tr>
+              <td class="td4j">{{enfermedad_actual}}</td>
+            </tr>
+          </table>
+					{{/with}}
+				</div>
+
+        <div class='document__atenAdoles__d'>
+					{{#with D}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="36">D. ANTECEDENTES PATOLÓGICOS Y PERSONALES</th>
+              <th class="th1" colspan="6">N/C: NO CONOCE</th>
+	          </tr>
+            <tr>
+              <th class="th2" colspan="6">PERINATALES NORMALES</th>
+              <th class="th2" colspan="6">CRECIMIENTO NORMAL</th>
+              <th class="th2" colspan="6">DESARROLLO NORMAL</th>
+              <th class="th2" colspan="6">VACUNAS COMPLETAS</th>
+              <th class="th2" colspan="6">ENFERMEDADES CRÓNICAS</th>
+              <th class="th2" colspan="6">ENFERMEDADES INFECTO<br>CONTAGIOSAS</th>
+              <th class="th2" colspan="6">TRASTORNO<br>PSICOLÓGICO</th>
+            </tr>
+            <tr>
+              <td>SI</td>
+              <td>{{#if perinatales_normales.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if perinatales_normales.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if perinatales_normales.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if crecimiento_normal.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if crecimiento_normal.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if crecimiento_normal.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if desarrollo_normal.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if desarrollo_normal.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if desarrollo_normal.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if vacunas_completas.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if vacunas_completas.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if vacunas_completas.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if enf_cronicas.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if enf_cronicas.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if enf_cronicas.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if enf_infecto_contagiosas.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if enf_infecto_contagiosas.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if enf_infecto_contagiosas.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if trastorno_psicologico.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if trastorno_psicologico.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if trastorno_psicologico.n_c}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="6">USO DE MEDICINAS O<br>SUSTANCIAS</th>
+              <th class="th2" colspan="6">ACCIDENTES INTOXICACIÓN</th>
+              <th class="th2" colspan="6">ALERGIAS</th>
+              <th class="th2" colspan="6">INFECCIONES<br>RECURRENTES</th>
+              <th class="th2" colspan="6">CIRUGÍA / HOSPITALIZACIÓN</th>
+              <th class="th2" colspan="6">PRESUNTA VIOLENCIA</th>
+              <th class="th2" colspan="6">JUDICIALES</th>
+            </tr>
+            <tr>
+              <td>SI</td>
+              <td>{{#if medicinas_sustancias.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if medicinas_sustancias.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if medicinas_sustancias.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if accidentes_intoxicacion.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if accidentes_intoxicacion.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if accidentes_intoxicacion.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if alergias.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if alergias.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if alergias.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if infecc_recurrentes.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if infecc_recurrentes.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if infecc_recurrentes.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if cx_hosp.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if cx_hosp.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if cx_hosp.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if presunta_violencia.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if presunta_violencia.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if presunta_violencia.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if judiciales.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if judiciales.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if judiciales.n_c}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="6">DESCRIBA</th>
+              <td colspan="36" class="td3j">{{describa}}</td>
+            </tr>
+          </table>
+					{{/with}}
+				</div>
+
+        <div class='document__atenAdoles__e'>
+					{{#with E}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="30">E. ANTECEDENTES PATOLÓGICOS FAMILIARES</th>
+            </tr>
+            <tr>
+              <th class="th2" colspan="6">DIABETES</th>
+              <th class="th2" colspan="6">OBESIDAD</th>
+              <th class="th2" colspan="6">ALERGIAS</th>
+              <th class="th2" colspan="6">CARDIO<br>VASCULARES</th>
+              <th class="th2" colspan="6">CANCER</th>
+            </tr>
+            <tr>
+              <td>SI</td>
+              <td>{{#if diabetes.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if diabetes.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if diabetes.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if obesidad.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if obesidad.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if obesidad.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if alergias.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if alergias.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if alergias.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if cardio_vasculares.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if cardio_vasculares.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if cardio_vasculares.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if cancer.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if cancer.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if cancer.n_c}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="6">INFECCIONES</th>
+              <th class="th2" colspan="6">ALCOHOL / DROGAS</th>
+              <th class="th2" colspan="6">VIOLENCIA FAMILIAR</th>
+              <th class="th2" colspan="6">MADRE / PADRE ADOLESCENTE</th>
+              <th class="th2" colspan="6">JUDICIALES</th>
+            </tr>
+            <tr>
+              <td>SI</td>
+              <td>{{#if infecciones.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if infecciones.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if infecciones.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if alcohol_drogas.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if alcohol_drogas.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if alcohol_drogas.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if violencia_familiar.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if violencia_familiar.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if violencia_familiar.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if madre_adolescente.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if madre_adolescente.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if madre_adolescente.n_c}}X{{/if}}</td>
+
+              <td>SI</td>
+              <td>{{#if judiciales.si}}X{{/if}}</td>
+              <td>NO</td>
+              <td>{{#if judiciales.no}}X{{/if}}</td>
+              <td>N/C</td>
+              <td>{{#if judiciales.n_c}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="6">DESCRIBA</th>
+              <td colspan="24" class="td3j">{{describa}}</td>
+            </tr>
+          </table>
+					{{/with}}
+				</div>
+
+        <div class='document__atenAdoles__f'>
+					{{#with F}}
+					<table class="table2">
+						<tr>
+	            <th class="th1" colspan="17">F. DATOS ENTORNO FAMILIAR</th>
+            </tr>
+            <tr>
+              <th class="th2" colspan="3">FAMILIA</th>
+              <th class="th2" colspan="8">NIVEL DE INSTRUCCIÓN</th>
+              <th class="th2">FAMILIOGRAMA</th>
+              <th class="th2" colspan="5">VIVIENDA</th>
+            </tr>
+            <tr>
+              <th>CONVIVE<br>CON</th>
+              <th>SI</th>
+              <th>NO</th>
+
+              <th>PADRE O<br>SUSTITUTO</th>
+              <th colspan="6"></th>
+              <th>MADRE O<br>SUSTITUTA</th>
+
+              <td rowspan="14">{{familiograma}}</td>
+
+              <th>ENERGÍA ELÉCTRICA</th>
+              <th>SI</th>
+              <td></td>
+              <th>NO</th>
+              <td></td>
+            </tr>
+            <tr>
+              <td>MADRE</td>
+              <td></td>
+              <td></td>
+
+              <td></td>
+              <td colspan="6">ANALFABETO</td>
+              <td></td>
+
+              <td></td>
+              <th colspan="2">EN HOGAR</th>
+              <th colspan="2">FUERA HOGAR</th>
+            </tr>
+            <tr>
+              <td>PADRE</td>
+              <td></td>
+              <td></td>
+
+              <td></td>
+              <td colspan="6">INICIAL</td>
+              <td></td>
+
+              <th>AGUA</th>
+              <td colspan="2"></td>
+              <td colspan="2"></td>
+            </tr>
+            <tr>
+              <td>MADRASTRA</td>
+              <td></td>
+              <td></td>
+
+              <td></td>
+              <td colspan="6">BÁSICA</td>
+              <td></td>
+
+              <th>EXCRETAS</th>
+              <td colspan="2"></td>
+              <td colspan="2"></td>
+            </tr>
+            <tr>
+              <td>PADRASTRO</td>
+              <td></td>
+              <td></td>
+
+              <td></td>
+              <td colspan="6">BACHILLERATO</td>
+              <td></td>
+
+              <td colspan="5"></td>
+            </tr>
+            <tr>
+              <td>HERMANOS</td>
+              <td></td>
+              <td></td>
+
+              <td></td>
+              <td colspan="6">TÉCNICO</td>
+              <td></td>
+
+              <th class="th2" rowspan="2" colspan="3">NÚMERO DE CUARTOS PARA DORMIR</th>
+              <td rowspan="2" colspan="2"></td>
+            </tr>
+            <tr>
+              <td>PAREJA</td>
+              <td></td>
+              <td></td>
+
+              <td></td>
+              <td colspan="6">TERCER NIVEL</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>HIJO/A</td>
+              <td></td>
+              <td></td>
+
+              <td></td>
+              <td colspan="6">CUARTO NIVEL</td>
+              <td></td>
+
+              <th class="th2" rowspan="2" colspan="3">NÚMERO DE PERSONAS QUE HABITAN</th>
+              <td rowspan="2" colspan="3"></td>
+            </tr>
+            <tr>
+              <td>SOLO</td>
+              <td></td>
+              <td></td>
+
+              <th class="th2" colspan="8">TRABAJO</th>
+            </tr>
+            <tr>
+              <td>OTROS</td>
+              <td></td>
+              <td></td>
+
+              <th>PADRE O<br>SUSTITUTO</th>
+              <td colspan="6"></td>
+              <th>MADRE O<br>SUSTITUTA</th>
+
+              <th class="th2" colspan="3" rowspan="2">COMPARTE CAMA</th>
+              <td colspan="2" rowspan="2"></td>
+            </tr>
+            <tr>
+              <td colspan="3"></td>
+
+              <td></td>
+              <td colspan="6">NINGUNO</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>VIVE</th>
+              <th>SI</th>
+              <th>NO</th>
+
+              <td></td>
+              <td colspan="6">ESTABLE</td>
+              <td></td>
+
+              <th colspan="5" rowspan="2">OBSERVACIONES</th>
+            </tr>
+            <tr>
+              <td>EN INSTITUCIÓN</td>
+              <td></td>
+              <td></td>
+
+              <td></td>
+              <td colspan="6">NO ESTABLE</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>EN LA CALLE</td>
+              <td></td>
+              <td></td>
+
+              <th>ESPECIFIQUE:</th>
+              <td colspan="7">{{especifique}}</td>
+
+              <td colspan="5"></td>
+            </tr>
+            <tr>
+              <td>CASA</td>
+              <td></td>
+              <td></td>
+
+              <th class="th2" colspan="8">PERCEPCIÓN FAMILIAR DEL ADOLESCENTE</th>
+              <th>OBSERVACIONES:</th>
+              <td colspan="5"></td>
+            </tr>
+            <tr>
+              <td colspan="3"></td>
+
+              <td>BUENA</td>
+              <td></td>
+              <td>REGULAR</td>
+              <td></td>
+              <td>MALA</td>
+              <td></td>
+              <td>NO HAY</td>
+              <td></td>
+
+              <td></td>
+              <td colspan="5"></td>
+            </tr>
+            </>
+					{{/with}}
+				</div>
+      </div>

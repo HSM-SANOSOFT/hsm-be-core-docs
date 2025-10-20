@@ -295,5 +295,357 @@ export type Hcu113DocumentTemplate = {
     glucosa_celdas: string[]
   },
 
-  D: {}
+  D: {
+    celdas: string[],
+    celda_vent: string[],
+    celda_Ppico: string[],
+    celda_Pmedia: string[],
+    celda_peep: string[],
+    celda_Apeep: string[],
+    celda_Psoporte: string[],
+    celda_volumenT: string[],
+    celda_volumenP: string[],
+    celda_volumenM: string[],
+    celda_volumenEsp: string[],
+    celda_frecResp: string[],
+    celda_frecEsp: string[],
+    celda_estatica: string[],
+    celda_resistencia: string[],
+    celda_fiO2: string[],
+    celda_etcO2: string[],
+    celda_Vfugas: string[],
+    celda_orotraqueal: string[],
+    celda_Porotraqueal: string[],
+    celda_espiracion: string[],
+    celda_vacio1: string[],
+    celda_vacio2: string[],
+    celda_vacio3: string[],
+    celda_vacio4: string[]
+  },
+
+  E: {
+    intubacion: {
+      fecha: string,
+      inicio: string,
+      cambio: string,
+      retiro: string
+    },
+
+    traqueo: {
+      fecha: string,
+      inicio: string,
+      cambio: string,
+      retiro: string
+    },
+
+    toracico: {
+      fecha: string,
+      inicio: string,
+      cambio: string,
+      retiro: string
+    },
+
+    sondaG: {
+      fecha: string,
+      inicio: string,
+      cambio: string,
+      retiro: string
+    },
+
+    dialisis: {
+      fecha: string,
+      inicio: string,
+      cambio: string,
+      retiro: string
+    },
+
+    central: {
+      fecha: string,
+      inicio: string,
+      cambio: string,
+      retiro: string
+    },
+
+    periferico: {
+      fecha: string,
+      inicio: string,
+      cambio: string,
+      retiro: string
+    },
+
+    marcapasos: {
+      fecha: string,
+      inicio: string,
+      cambio: string,
+      retiro: string
+    },
+
+    arterial: {
+      fecha: string,
+      inicio: string,
+      cambio: string,
+      retiro: string
+    },
+
+    vesical: {
+      fecha: string,
+      inicio: string,
+      cambio: string,
+      retiro: string
+    },
+
+    lumbar: {
+      fecha: string,
+      inicio: string,
+      cambio: string,
+      retiro: string
+    }
+  },
+
+  F: {
+    aire_ambiente: {
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    cateter_nasal: {
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    mascarilla: {
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    tubo_t: {
+      am: string,
+      pm: string,
+      hs: string
+    }
+  },
+
+  G: {
+    solicitud_examen:{
+      tipo_examen: string,
+      hora_examen: string,
+      hora_resultado: string
+    }[];
+  },
+
+  H: {
+    aislamiento: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    banio: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    perineal: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    reposo: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    posicion: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    cambio_posicion: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    levantarlo: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    cuidado_piel: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    cuidado_ojos: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    higiene_bucal: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    fiebre: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    rehabilitacion: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    nebulizaciones: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    tera_resp: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    cuid_traqueal: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    asp_secreciones: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    curacion: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    control_sangr: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    drenajes: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    cont_sondaG: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    cont_sondaV: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    riesg_caidas: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    riesg_ulcera: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    },
+
+    riesg_trombo: {
+      frecuencia: string,
+      am: string,
+      pm: string,
+      hs: string
+    }
+  },
+
+  I: {
+    interconsultas:{
+      servicio_inter: string,
+      hora_solicitud: string,
+      hora_respuesta: string
+    }[];
+  },
+
+  J: {
+    descripcion_am: string,
+    descripcion_pm: string,
+    descripcion_hs: string
+  },
+
+  K: {
+    am: {
+      primer_nombre: string,
+      primer_apellido: string,
+      segundo_apellido: string,
+      numero_ident: string,
+      firma: string,
+      sello: string,
+    },
+
+    pm: {
+      primer_nombre: string,
+      primer_apellido: string,
+      segundo_apellido: string,
+      numero_ident: string,
+      firma: string,
+      sello: string,
+    },
+
+    hs: {
+      primer_nombre: string,
+      primer_apellido: string,
+      segundo_apellido: string,
+      numero_ident: string,
+      firma: string,
+      sello: string,
+    }
+  }
 }

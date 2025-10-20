@@ -71,7 +71,6 @@
       }
       .th2 {
         background-color: #ccffcc;
-        width: 5px;
       }
 
       .th3 {
@@ -79,8 +78,10 @@
       }
       .th4 {
         background-color: white;
-        font-weight: normal;
         text-align: left;
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
       }
       .th5 {
         background-color:#ccffcc;
@@ -123,38 +124,38 @@
         padding: 0;
       }
 
-.th-diagonal {
-  position: relative;
-  background: 
-    linear-gradient(to top right, 
-      transparent calc(50% - 0.5px), 
-      black calc(50% - 0.5px), 
-      black calc(50% + 0.5px), 
-      transparent calc(50% + 0.5px)
-    ),
-    white;
-  font-weight: bold;
-  height: 35px;
-  min-width: 120px;
-  border: 1px solid black;
-}
+      .th-diagonal {
+        position: relative;
+        background: 
+          linear-gradient(to top right, 
+            transparent calc(50% - 0.5px), 
+            black calc(50% - 0.5px), 
+            black calc(50% + 0.5px), 
+            transparent calc(50% + 0.5px)
+          ),
+          white;
+        font-weight: bold;
+        height: 35px;
+        min-width: 120px;
+        border: 1px solid black;
+      }
 
-.th-diagonal span {
-  position: absolute;
-  font-size: 8px;
-  font-weight: bold;
-  white-space: nowrap;
-}
+      .th-diagonal span {
+        position: absolute;
+        font-size: 8px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
 
-.th-diagonal .param {
-  bottom: 3px;
-  left: 5px;
-}
+      .th-diagonal .param {
+        bottom: 3px;
+        left: 5px;
+      }
 
-.th-diagonal .horas {
-  top: 3px;
-  right: 5px;
-}
+      .th-diagonal .horas {
+        top: 3px;
+        right: 5px;
+      }
 
       </style>
         </head>
@@ -1502,6 +1503,7 @@
     </div>
 
   <div class="document__bit__uci__d">
+    {{#with D}}
     <table class="table2">
       <tr>
         <th class="th1" colspan="31">D. VENTILACIÓN MECÁNICA</th>
@@ -1539,43 +1541,827 @@
       </tr>
 
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        {{#each celdas}}
+        <td>{{this}}</td>
+        {{/each}}
       </tr>
 
       <tr>
         <td>1</td>
-        <td style="text-align:left;">MODO VENTILATORIO</td>
-        <td colspan="25"></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td style="text-align:left;">PRESIÓN PICO</td>
-        <td colspan="25"></td>
-      </tr>
+        <td class="td1">MODO VENTILATORIO</td>
+        
+        {{#each celda_vent}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
 
-    {{!-- y así sucesivamente para los demás parámetros --}}
+        <tr>
+          <td>2</td>
+          <td class="td1">PRESIÓN PICO</td>
+          
+          {{#each celda_Ppico}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td class="td1">PRESIÓN MEDIA</td>
+          
+          {{#each celda_Pmedia}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td class="td1">PEEP</td>
+          
+          {{#each celda_peep}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td class="td1">AUTO PEEP</td>
+          
+          {{#each celda_Apeep}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>6</td>
+          <td class="td1">PRESIÓN SOPORTE</td>
+          
+          {{#each celda_Psoporte}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>7</td>
+          <td class="td1">VOLUMEN TIDAL ESPIRADO MÁQUINA</td>
+          
+          {{#each celda_volumenT}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>8</td>
+          <td class="td1">VOLUMEN TIDAL ESPIRADO PACIENTE</td>
+          
+          {{#each celda_volumenP}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>9</td>
+          <td class="td1">VOLUMEN MINUTO ESPIRADO MÁQUINA</td>
+          
+          {{#each celda_volumenM}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>10</td>
+          <td class="td1">VOLUMEN MINUTO ESPIRADO PACIENTE</td>
+          
+          {{#each celda_volumenEsp}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>11</td>
+          <td class="td1">FRECUENCIA RESPIRATORIA MÁQUINA</td>
+          
+          {{#each celda_frecResp}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>12</td>
+          <td class="td1">FRECUENCIA RESPIRATORIA ESPONTÁNEA</td>
+          
+          {{#each celda_frecEsp}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>13</td>
+          <td class="td1">COMPLIANCE ESTÁTICA</td>
+          
+          {{#each celda_estatica}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>14</td>
+          <td class="td1">RESISTENCIA INSPIRATORIA</td>
+          
+          {{#each celda_resistencia}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>15</td>
+          <td class="td1">FiO2</td>
+          
+          {{#each celda_fiO2}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>16</td>
+          <td class="td1">ETCO2</td>
+          
+          {{#each celda_etcO2}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>17</td>
+          <td class="td1">VOLUMEN FUGAS</td>
+          
+          {{#each celda_Vfugas}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>18</td>
+          <td class="td1">NIVEL TUBO OROTRAQUEAL</td>
+          
+          {{#each celda_orotraqueal}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>19</td>
+          <td class="td1">PRESIÓN DE BALÓN TUBO OROTRAQUEAL</td>
+          
+          {{#each celda_Porotraqueal}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>20</td>
+          <td class="td1">RELACIÓN INSPIRACIÓN/ESPIRACIÓN</td>
+          
+          {{#each celda_espiracion}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>21</td>
+          <td class="td1"></td>
+          
+          {{#each celda_vacio1}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>22</td>
+          <td class="td1"></td>
+          
+          {{#each celda_vacio2}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>23</td>
+          <td class="td1"></td>
+          
+          {{#each celda_vacio3}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+
+        <tr>
+          <td>24</td>
+          <td class="td1"></td>
+          
+          {{#each celda_vacio4}}
+            <td>{{this}}</td>
+          {{/each}}
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+
+  <div class="document__bit__uci__e">
+    {{#with E}}
+      <table> 
+        <td>
+          <div>
+            <table class="table2">
+              <tr>
+                <th class="th1" rowspan="2" colspan="9">E. PROCEDIMIENTOS</th>
+                <th colspan="4">FECHA (aaaa-mm-dd)</th>
+              </tr>
+              <tr>
+                <td>Trae</td> 
+                <td>Inicio</td> 
+                <td>Cambio</td> 
+                <td>Retiro</td> 
+              </tr>
+              <tr>
+                <td class="td1" colspan="9">INTUBACIÓN TRAQUEAL</td> 
+                <td>{{intubacion.fecha}}</td> 
+                <td>{{intubacion.inicio}}</td> 
+                <td>{{intubacion.cambio}}</td> 
+                <td>{{intubacion.retiro}}</td>
+              </tr>
+              <tr>
+                <td class="td1" colspan="9">TRAQUEOSTOMÍA</td> 
+                <td>{{traqueo.fecha}}</td> 
+                <td>{{traqueo.inicio}}</td> 
+                <td>{{traqueo.cambio}}</td> 
+                <td>{{traqueo.retiro}}</td>
+              </tr>
+              <tr>
+                <td class="td1" colspan="9">TUBO TORÁCICO</td> 
+                <td>{{toracico.fecha}}</td> 
+                <td>{{toracico.inicio}}</td> 
+                <td>{{toracico.cambio}}</td> 
+                <td>{{toracico.retiro}}</td>
+              </tr>
+              <tr>
+                <td class="td1" colspan="9">SONDA GÁSTRICA</td> 
+                <td>{{sondaG.fecha}}</td> 
+                <td>{{sondaG.inicio}}</td> 
+                <td>{{sondaG.cambio}}</td> 
+                <td>{{sondaG.retiro}}</td>
+              </tr>
+              <tr>
+                <td class="td1" colspan="9">CATETER DE DIALISIS</td> 
+                <td>{{dialisis.fecha}}</td> 
+                <td>{{dialisis.inicio}}</td> 
+                <td>{{dialisis.cambio}}</td> 
+                <td>{{dialisis.retiro}}</td>
+              </tr>
+              <tr>
+                <td class="td1" colspan="9">CATETER VENOSO CENTRAL</td> 
+                <td>{{central.fecha}}</td> 
+                <td>{{central.inicio}}</td> 
+                <td>{{central.cambio}}</td> 
+                <td>{{central.retiro}}</td>
+              </tr>
+              <tr>
+                <td class="td1" colspan="9">CATETER VENOSO PERIFERICO</td> 
+                <td>{{periferico.fecha}}</td> 
+                <td>{{periferico.inicio}}</td> 
+                <td>{{periferico.cambio}}</td> 
+                <td>{{periferico.retiro}}</td>
+              </tr>
+              <tr>
+                <td class="td1" colspan="9">MARCAPASOS TEMPORAL</td> 
+                <td>{{marcapasos.fecha}}</td> 
+                <td>{{marcapasos.inicio}}</td> 
+                <td>{{marcapasos.cambio}}</td> 
+                <td>{{marcapasos.retiro}}</td>
+              </tr>
+              <tr>
+                <td class="td1" colspan="9">LINEA ARTERIAL</td> 
+                <td>{{arterial.fecha}}</td> 
+                <td>{{arterial.inicio}}</td> 
+                <td>{{arterial.cambio}}</td> 
+                <td>{{arterial.retiro}}</td>
+              </tr>
+              <tr>
+                <td class="td1" colspan="9">SONDA VESICAL</td> 
+                <td>{{vesical.fecha}}</td> 
+                <td>{{vesical.inicio}}</td> 
+                <td>{{vesical.cambio}}</td> 
+                <td>{{vesical.retiro}}</td>
+              </tr>
+              <tr>
+                <td class="td1" colspan="9">PUNCIÓN LUMBAR</td> 
+                <td>{{lumbar.fecha}}</td> 
+                <td>{{lumbar.inicio}}</td> 
+                <td>{{lumbar.cambio}}</td> 
+                <td>{{lumbar.retiro}}</td>
+              </tr>
+              <tr>
+                <td colspan="9"></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> 
+                <td></td>
+              </tr>
+              <tr>
+                <td colspan="9"></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> 
+                <td></td>
+              </tr>
+              <tr>
+                <td colspan="9"></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> 
+                <td></td>
+              </tr>
+            </table>
+          {{/with}}
+        </div>
+        </div>
+
+
+  <div class="document__bit__uci__h">
+    {{#with H}}
+      <table class="table2">
+        <tr>
+          <th class="th1" colspan="11">H. CUIDADOS GENERALES</th>
+        </tr>
+        <tr>
+          <th colspan="6">DETALLE</th> 
+          <th colspan="2">FRECUENCIA</th> 
+          <th>AM</th> 
+          <th>PM</th> 
+          <th>HS</th> 
+        </tr> 
+        <tr>
+          <td>1</td>  
+          <td class="td1" colspan="5">AISLAMIENTO:</td>  
+          <td colspan="2">{{aislamiento.frecuencia}}</td>  
+          <td>{{aislamiento.am}}</td>  
+          <td>{{aislamiento.pm}}</td>  
+          <td>{{aislamiento.hs}}</td>   
+        </tr>
+        <tr>
+          <td>2</td>  
+          <td class="td1" colspan="5">BAÑO</td>  
+          <td colspan="2">{{banio.frecuencia}}</td>  
+          <td>{{banio.am}}</td>  
+          <td>{{banio.pm}}</td>  
+          <td>{{banio.hs}}</td>    
+        </tr>
+        <tr>
+          <td>3</td>  
+          <td class="td1" colspan="5">ASEO PERINEAL</td>  
+          <td colspan="2">{{perineal.frecuencia}}</td>  
+          <td>{{perineal.am}}</td>  
+          <td>{{perineal.pm}}</td>  
+          <td>{{perineal.hs}}</td>  
+        </tr>
+        <tr>
+          <td>4</td>  
+          <td class="td1" colspan="5">REPOSO RELATIVO</td>  
+          <td colspan="2">{{reposo.frecuencia}}</td>  
+          <td>{{reposo.am}}</td>  
+          <td>{{reposo.pm}}</td>  
+          <td>{{reposo.hs}}</td>  
+        </tr>
+        <tr>
+          <td>5</td>  
+          <td class="td1" colspan="5">POSICIÓN: </td>  
+          <td colspan="2">{{posicion.frecuencia}}</td>  
+          <td>{{posicion.am}}</td>  
+          <td>{{posicion.pm}}</td>  
+          <td>{{posicion.hs}}</td>    
+        </tr>
+        <tr>
+          <td>6</td>  
+          <td class="td1" colspan="5">CAMBIOS DE POSICIÓN</td>  
+          <td colspan="2">{{cambio_posicion.frecuencia}}</td>  
+          <td>{{cambio_posicion.am}}</td>  
+          <td>{{cambio_posicion.pm}}</td>  
+          <td>{{cambio_posicion.hs}}</td>  
+        </tr>
+        <tr>
+          <td>7</td>  
+          <td class="td1" colspan="5">LEVANTARLO</td>  
+          <td colspan="2">{{levantarlo.frecuencia}}</td>  
+          <td>{{levantarlo.am}}</td>  
+          <td>{{levantarlo.pm}}</td>  
+          <td>{{levantarlo.hs}}</td>     
+        </tr>
+        <tr>
+          <td>8</td>  
+          <td class="td1" colspan="5">CUIDADOS DE PIEL</td>  
+          <td colspan="2">{{cuidado_piel.frecuencia}}</td>  
+          <td>{{cuidado_piel.am}}</td>  
+          <td>{{cuidado_piel.pm}}</td>  
+          <td>{{cuidado_piel.hs}}</td>
+        </tr>
+        <tr>
+          <td>9</td>  
+          <td class="td1" colspan="5">CUIDADOS DE OJOS</td>  
+          <td colspan="2">{{cuidado_ojos.frecuencia}}</td>  
+          <td>{{cuidado_ojos.am}}</td>  
+          <td>{{cuidado_ojos.pm}}</td>  
+          <td>{{cuidado_ojos.hs}}</td>  
+        </tr>
+        <tr>
+          <td>10</td>  
+          <td class="td1" colspan="5">HIGIENE BUCAL</td>  
+          <td colspan="2">{{higiene_bucal.frecuencia}}</td>  
+          <td>{{higiene_bucal.am}}</td>  
+          <td>{{higiene_bucal.pm}}</td>  
+          <td>{{higiene_bucal.hs}}</td>  
+        </tr>
+        <tr>
+          <td>11</td>  
+          <td class="td1" colspan="5">CONTROL FIEBRE MEDIOS FISICOS</td>  
+          <td colspan="2">{{fiebre.frecuencia}}</td>  
+          <td>{{fiebre.am}}</td>  
+          <td>{{fiebre.pm}}</td>  
+          <td>{{fiebre.hs}}</td>    
+        </tr>
+        <tr>
+          <td>12</td>  
+          <td class="td1" colspan="5">REHABILITACION MOTORA</td>  
+          <td colspan="2">{{rehabilitacion.frecuencia}}</td>  
+          <td>{{rehabilitacion.am}}</td>  
+          <td>{{rehabilitacion.pm}}</td>  
+          <td>{{rehabilitacion.hs}}</td>   
+        </tr>
+        <tr>
+          <td>13</td>  
+          <td class="td1" colspan="5">NEBULIZACIONES</td>  
+          <td colspan="2">{{nebulizaciones.frecuencia}}</td>  
+          <td>{{nebulizaciones.am}}</td>  
+          <td>{{nebulizaciones.pm}}</td>  
+          <td>{{nebulizaciones.hs}}</td>  
+        </tr>
+        <tr>
+          <td>14</td>  
+          <td class="td1" colspan="5">TERAPIA RESPIRATORIA</td>  
+          <td colspan="2">{{tera_resp.frecuencia}}</td>  
+          <td>{{tera_resp.am}}</td>  
+          <td>{{tera_resp.pm}}</td>  
+          <td>{{tera_resp.hs}}</td> 
+        </tr>
+        <tr>
+          <td>15</td>  
+          <td class="td1" colspan="5">CUIDADOS DE TUBO TRAQUEAL</td>  
+          <td colspan="2">{{cuid_traqueal.frecuencia}}</td>  
+          <td>{{cuid_traqueal.am}}</td>  
+          <td>{{cuid_traqueal.pm}}</td>  
+          <td>{{cuid_traqueal.hs}}</td>  
+        </tr>
+        <tr>
+          <td>16</td>  
+          <td class="td1" colspan="5">ASPIRACIÓN DE SECRECIONES</td>  
+          <td colspan="2">{{asp_secreciones.frecuencia}}</td>  
+          <td>{{asp_secreciones.am}}</td>  
+          <td>{{asp_secreciones.pm}}</td>  
+          <td>{{asp_secreciones.hs}}</td>  
+        </tr>
+        <tr>
+          <td>17</td>  
+          <td class="td1" colspan="5">CURACIÓN:</td>  
+          <td colspan="2">{{curacion.frecuencia}}</td>  
+          <td>{{curacion.am}}</td>  
+          <td>{{curacion.pm}}</td>  
+          <td>{{curacion.hs}}</td> 
+        </tr>
+        <tr>
+          <td>18</td>  
+          <td class="td1" colspan="5">CONTROL DE SANGRADO</td>  
+          <td colspan="2">{{control_sangr.frecuencia}}</td>  
+          <td>{{control_sangr.am}}</td>  
+          <td>{{control_sangr.pm}}</td>  
+          <td>{{control_sangr.hs}}</td>  
+        </tr>
+        <tr>
+          <td>19</td>  
+          <td class="td1" colspan="5">CUIDADO DE DRENAJES</td>  
+          <td colspan="2">{{drenajes.frecuencia}}</td>  
+          <td>{{drenajes.am}}</td>  
+          <td>{{drenajes.pm}}</td>  
+          <td>{{drenajes.hs}}</td> 
+        </tr>
+        <tr>
+          <td>20</td>  
+          <td class="td1" colspan="5">CONTROL DE SONDA GÁSTRICA</td>  
+          <td colspan="2">{{cont_sondaG.frecuencia}}</td>  
+          <td>{{cont_sondaG.am}}</td>  
+          <td>{{cont_sondaG.pm}}</td>  
+          <td>{{cont_sondaG.hs}}</td>  
+        </tr>
+        <tr>
+          <td>21</td>  
+          <td class="td1" colspan="5">CONTROL DE SONDA VESICAL</td>  
+          <td colspan="2">{{cont_sondaV.frecuencia}}</td>  
+          <td>{{cont_sondaV.am}}</td>  
+          <td>{{cont_sondaV.pm}}</td>  
+          <td>{{cont_sondaV.hs}}</td>   
+        </tr>
+        <tr>
+          <td>22</td>  
+          <td class="td1" colspan="5">RIESGO CAIDAS</td>  
+          <td colspan="2">{{riesg_caidas.frecuencia}}</td>  
+          <td>{{riesg_caidas.am}}</td>  
+          <td>{{riesg_caidas.pm}}</td>  
+          <td>{{riesg_caidas.hs}}</td>    
+        </tr>
+        <tr>
+          <td>23</td>  
+          <td class="td1" colspan="5">RIESGO ÚLCERAS DE PRESIÓN</td>  
+          <td colspan="2">{{riesg_ulcera.frecuencia}}</td>  
+          <td>{{riesg_ulcera.am}}</td>  
+          <td>{{riesg_ulcera.pm}}</td>  
+          <td>{{riesg_ulcera.hs}}</td>   
+        </tr>
+        <tr>
+          <td>24</td>  
+          <td class="td1" colspan="5">RIESGO DE TROMBOEMBOLISMO</td>  
+          <td colspan="2">{{riesg_trombo.frecuencia}}</td>  
+          <td>{{riesg_trombo.am}}</td>  
+          <td>{{riesg_trombo.pm}}</td>  
+          <td>{{riesg_trombo.hs}}</td>  
+        </tr>
+        <tr>
+          <td>25</td>  
+          <td class="td1" colspan="5"></td>  
+          <td colspan="2"></td>  
+          <td></td>  
+          <td></td>  
+          <td></td>   
+        </tr>
+        <tr>
+          <td>26</td>  
+          <td class="td1" colspan="5"></td>  
+          <td colspan="2"></td>  
+          <td></td>  
+          <td></td>  
+          <td></td>   
+        </tr>
+      </table>
+    {{/with}}
+  </div>
+    
+    <td>   
+      <div class="document__bit__uci__f">
+        {{#with F}}
+        <table>
+          <tr>
+            <th class="th1">F. OXIGENACIÓN</th>
+            <th>AM</th>
+            <th>PM</th>
+            <th>HS</th>
+          </tr>
+          <tr>
+            <td class="td1">AIRE AMBIENTE</td> 
+            <td>{{aire_ambiente.am}}</td> 
+            <td>{{aire_ambiente.pm}}</td> 
+            <td>{{aire_ambiente.hs}}</td>  
+          </tr>
+          <tr>
+            <td class="td1">CATETER NASAL</td> 
+            <td>{{cateter_nasal.am}}</td> 
+            <td>{{cateter_nasal.pm}}</td> 
+            <td>{{cateter_nasal.hs}}</td> 
+          </tr>
+          <tr>
+            <td class="td1">MASCARILLA</td> 
+            <td>{{mascarilla.am}}</td> 
+            <td>{{mascarilla.pm}}</td> 
+            <td>{{mascarilla.hs}}</td>  
+          </tr>
+          <tr>
+            <td class="td1">TUBO EN T</td> 
+            <td>{{tubo_t.am}}</td> 
+            <td>{{tubo_t.pm}}</td> 
+            <td>{{tubo_t.hs}}</td> 
+          </tr>
+        </table>
+      {{/with}}
+    </div>
+
+    <div class="document__bit__uci__g">
+      {{#with G}}
+        <table class="table2">
+          <tr>
+            <th class="th1" colspan="2">G. SOLICITUD DE EXÁMENES</th>
+            <th colspan="2">HORA DE TOMA</th>
+            <th colspan="2">HORA RESULTADO</th>
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{solicitud_examen.[0].tipo_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[0].hora_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[0].hora_resultado}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{solicitud_examen.[1].tipo_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[1].hora_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[1].hora_resultado}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{solicitud_examen.[2].tipo_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[2].hora_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[2].hora_resultado}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{solicitud_examen.[3].tipo_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[3].hora_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[3].hora_resultado}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{solicitud_examen.[4].tipo_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[4].hora_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[4].hora_resultado}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{solicitud_examen.[5].tipo_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[5].hora_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[5].hora_resultado}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{solicitud_examen.[6].tipo_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[6].hora_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[6].hora_resultado}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{solicitud_examen.[7].tipo_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[7].hora_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[7].hora_resultado}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{solicitud_examen.[8].tipo_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[8].hora_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[8].hora_resultado}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{solicitud_examen.[9].tipo_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[9].hora_examen}}</td> 
+            <td colspan="2">{{solicitud_examen.[9].hora_resultado}}</td>  
+          </tr>
+        </table>
+      {{/with}}
+    </div>
+
+    <div class="document__bit__uci__i">
+      {{#with I}}
+        <table class="table2">
+          <tr>
+            <th class="th1" colspan="6">I. INTERCONSULTAS</th>
+          </tr>
+          <tr>
+            <th colspan="2">SERVICIO INTERCONSULTADO</th>
+            <th colspan="2">HORA DE SOLICITUD</th>
+            <th colspan="2">HORA DE RESPUESTA</th>
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{interconsultas.[0].servicio_inter}}</td> 
+            <td colspan="2">{{interconsultas.[0].hora_solicitud}}</td> 
+            <td colspan="2">{{interconsultas.[0].hora_respuesta}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{interconsultas.[1].servicio_inter}}</td> 
+            <td colspan="2">{{interconsultas.[1].hora_solicitud}}</td> 
+            <td colspan="2">{{interconsultas.[1].hora_respuesta}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{interconsultas.[2].servicio_inter}}</td> 
+            <td colspan="2">{{interconsultas.[2].hora_solicitud}}</td> 
+            <td colspan="2">{{interconsultas.[2].hora_respuesta}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{interconsultas.[3].servicio_inter}}</td> 
+            <td colspan="2">{{interconsultas.[3].hora_solicitud}}</td> 
+            <td colspan="2">{{interconsultas.[3].hora_respuesta}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{interconsultas.[4].servicio_inter}}</td> 
+            <td colspan="2">{{interconsultas.[4].hora_solicitud}}</td> 
+            <td colspan="2">{{interconsultas.[4].hora_respuesta}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{interconsultas.[5].servicio_inter}}</td> 
+            <td colspan="2">{{interconsultas.[5].hora_solicitud}}</td> 
+            <td colspan="2">{{interconsultas.[5].hora_respuesta}}</td>  
+          </tr>
+          <tr>
+            <td class="td1" colspan="2">{{interconsultas.[6].servicio_inter}}</td> 
+            <td colspan="2">{{interconsultas.[6].hora_solicitud}}</td> 
+            <td colspan="2">{{interconsultas.[6].hora_respuesta}}</td>  
+          </tr>
+        </table>
+      {{/with}}  
+    </div>
+    </td>
+    </tr>
   </table>
+  
+
+  <div class="document__bit__uci__j">
+    {{#with J}}
+      <table class="table2">
+        <tr>
+          <th class="th1" colspan="2"> J. INFORME DE ENFERMERIA</th>
+        </tr>
+        <tr>
+          <th class="th4">AM:{{descripcion_am}}</th> 
+        </tr>
+        <tr>
+          <th class="th4">PM:{{descripcion_pm}}</th> 
+        </tr>  
+        <tr>
+          <th class="th4">HS:{{descripcion_hs}}</th> 
+        </tr>  
+      </table>
+    {{/with}}
+  </div>
+
+  <div class="document__bit__uci__k">
+    {{#with K}}
+      <table class="table2">
+        <tr>
+          <th class="th1" colspan="4">K. DATOS DEL PROFESIONAL RESPONSABLE</th>
+        </tr>
+        <tr>
+          <td rowspan="4">AM</td>
+          <th class="th2">PRIMER NOMBRE</th>
+          <th class="th2">PRIMER APELLIDO</th> 
+          <th class="th2">SEGUNDO APELLIDO</th>
+        </tr>
+        <tr>
+          <td>{{am.primer_nombre}}</td>
+          <td>{{am.primer_apellido}}</td> 
+          <td>{{am.segundo_apellido}}</td>
+        </tr>
+        <tr>
+          <th class="th2"> NÚMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+          <th class="th2">FIRMA</th> 
+          <th class="th2">SELLO</th>
+        </tr>
+        <tr>
+          <td>{{am.numero_ident}}</td>
+          <td><img src="{{am.firma}}"/></td> 
+          <td><img src="{{am.sello}}"/></td> 
+        </tr>
+        <tr>
+          <td rowspan="4">PM</td>
+          <th class="th2">PRIMER NOMBRE</th>
+          <th class="th2">PRIMER APELLIDO</th> 
+          <th class="th2">SEGUNDO APELLIDO</th>
+        </tr>
+        <tr>
+          <td>{{pm.primer_nombre}}</td>
+          <td>{{pm.primer_apellido}}</td> 
+          <td>{{pm.segundo_apellido}}</td>
+        </tr>
+        <tr>
+          <th class="th2">NÚMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+          <th class="th2">FIRMA</th> 
+          <th class="th2">SELLO</th>
+        </tr>
+        <tr>
+          <td>{{pm.numero_ident}}</td>
+          <td><img src="{{pm.firma}}"/></td> 
+          <td><img src="{{pm.sello}}"/></td>
+        </tr>
+        <tr>
+          <td rowspan="4">HS</td>
+          <th class="th2">PRIMER NOMBRE</th>
+          <th class="th2">PRIMER APELLIDO</th> 
+          <th class="th2">SEGUNDO APELLIDO</th>
+        </tr>
+        <tr>
+          <td>{{hs.primer_nombre}}</td>
+          <td>{{hs.primer_apellido}}</td> 
+          <td>{{hs.segundo_apellido}}</td>
+        </tr>
+        <tr>
+          <th class="th2"> NÚMERO DE DOCUMENTO DE IDENTIFICACIÓN</th>
+          <th class="th2">FIRMA</th> 
+          <th class="th2">SELLO</th>
+        </tr>
+        <tr>
+          <td>{{hs.numero_ident}}</td>
+          <td><img src="{{hs.firma}}"/></td>
+          <td><img src="{{hs.sello}}"/></td>
+        </tr>
+      </table>
+    {{/with}}
+  </div>
 </div>
+    
+    </main>
+    <footer>
+      <p>SNS-MSP / HCU-form.113 / 2021</p>
+      <p>BITÁCORA UCI ADULTO (2)</p>
+    </footer>
+  </body>
+</html>
+      </div>

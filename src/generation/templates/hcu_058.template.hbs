@@ -1,0 +1,823 @@
+<html>
+    <head>
+      <meta charset='UTF-8' />
+	  <style>
+      @page { 
+        counter-reset: page 0;
+      }
+      body {
+        background-color: white;
+        color: black;
+        font-size: 8px;
+        font-family: arial;
+        margin: 1px;
+        padding: 1px;
+      }
+      main {
+        padding-bottom: 30px;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+      .page::after {
+        content: counter(page);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        border: 2px solid black;
+        table-layout: auto;
+      }
+
+      .table2 {
+        table-layout: fixed;
+      }
+      img {
+        max-height: 100px;
+        width: auto;
+      }
+
+      td {
+        min-width: 8px;
+        text-align: center;
+        border: 1px solid black;
+        height: 8px;      
+        }
+
+      th {
+        width: auto;
+        text-align: center;
+        border: 1px solid black;
+        height: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+
+      .th1 {
+        text-align: left;
+        font-size: 9px;
+        background-color: #ccccff;
+      }
+      .th2 {
+        background-color: #ccffcc;
+      }
+
+      .th3 {
+        text-align: center;
+        font-size: 9px;
+        background-color: #ccccff
+      }
+      .th4 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: center;
+      }
+      .th5 {
+        background-color: #ccffcc;
+        width: 5px;
+        text-align: center;
+      }
+
+      .td1 {
+        text-align: left;
+        /*width: max-content;*/
+        white-space: nowrap;
+      }
+
+	  .td2 {
+        text-align: center;
+        /*width: max-content;*/
+        white-space: nowrap;
+		    background-color: #ccffcc;
+      }
+
+      .td3 {
+        text-align: right;
+        background-color: #ccccff;
+      }
+
+      .td4j {
+        height: 90px;
+        text-align: justify;
+        vertical-align: top;
+      }
+
+      .document__Cpaliativos,
+      .document__Cpaliativos__a,
+      .document__Cpaliativos__b,
+      .document__Cpaliativos__c,
+      .document__Cpaliativos__d,
+			.document__Cpaliativos__e,
+			.document__Cpaliativos__f,
+			.document__Cpaliativos__g,
+      .document__Cpaliativos__h,
+      .document__Cpaliativos__i,
+      .document__Cpaliativos__j,
+      .document__Cpaliativos__k,
+      .document__Cpaliativos__l,
+      .document__Cpaliativos__m,
+      .document__Cpaliativos__n,
+      .document__Cpaliativos__o,
+      .document__Cpaliativos__p,
+      .document__Cpaliativos__q,
+      .document__Cpaliativos__r {
+        width: 100%;
+        margin-top: 5px;
+        padding: 0;
+      }
+</style>
+</head>
+<body>
+  <header></header>
+    <main>
+      <div class='document__Cpaliativos'>
+				<div class='document__Cpaliativos__a'>
+					{{#with A}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="5">A. DATOS DEL ESTABLECIMIENTO</th>
+	          </tr>
+	    			<tr>
+							<th class="th2">INSTITUCIÓN DEL SISTEMA</th>
+							<th class="th2">ESTABLECIMIENTO DE SALUD</th>
+							<th class="th2">UNICÓDIGO</th>
+							<th class="th2">NÚMERO DE HISTORIA CLÍNICA ÚNICA</th>
+							<th class="th2">NÚMERO DE ARCHIVO</th>
+	    			</tr>
+						<tr>
+							<td>{{institucion_sistema}}</td>
+							<td>{{establecimiento_salud}}</td>
+							<td>{{unicodigo}}</td>
+							<td>{{numero_historia_clinica}}</td>
+							<td>{{numero_archivo}}</td>
+						</tr>
+	    		</table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__b'>
+					{{#with B}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="14">B. DATOS PERSONALES DEL PACIENTE / USUARIO</th>
+	          </tr>
+            <tr>
+							<th class="th2" rowspan="2" colspan="7">PRIMER APELLIDO</th>
+							<th class="th2" rowspan="2">SEGUNDO APELLIDO</th>
+							<th class="th2" rowspan="2">PRIMER NOMBRE</th>
+							<th class="th2" rowspan="2">SEGUNDO NOMBRE</th>
+							<th class="th2" colspan="4">TIPO DE DOCUMENTO DE IDENTIFICACION</th>
+						</tr>
+            <tr>
+              <td class="td2">CC/CI</td>
+              <td class="td2">PAS.</td>
+              <td class="td2">CARNÉ</td>
+              <td class="td2">S/D</td>
+            </tr>
+            <tr>
+              <td colspan="7">{{primer_apellido}}</td>
+              <td>{{segundo_apellido}}</td>
+              <td>{{primer_nombre}}</td>
+              <td>{{segundo_nombre}}</td>
+              <td>{{#if identificacion.cc_ci}}X{{/if}}</td>
+              <td>{{#if identificacion.pas}}X{{/if}}</td>
+              <td>{{#if identificacion.carne}}X{{/if}}</td>
+              <td>{{#if identificacion.sd}}X{{/if}}</td>
+            </tr>
+            <tr>
+							<th class="th2" colspan="7">ESTADO CIVIL</th>
+							<th class="th2" rowspan="2">SEXO</th>
+              <th class="th2" rowspan="2">No. TELÉFONO FIJO</th>
+							<th class="th2" rowspan="2">No. TELÉFONO CELULAR</th>
+							<th class="th2" rowspan="2" colspan="4">CORREO ELECTRÓNICO</th>
+						</tr>
+            <tr>
+              <td class="td2">SOL</td>
+              <td class="td2">CAS</td>
+              <td class="td2">DIV</td>
+              <td class="td2">VIU</td>
+              <td class="td2">UN</td>
+              <td class="td2">U-H</td>
+              <td class="td2">NA</td>
+            </tr>
+            <tr>
+              <td>{{#if estado_civil.sol}}X{{/if}}</td>
+              <td>{{#if estado_civil.cas}}X{{/if}}</td>
+              <td>{{#if estado_civil.div}}X{{/if}}</td>
+              <td>{{#if estado_civil.viu}}X{{/if}}</td>
+              <td>{{#if estado_civil.un}}X{{/if}}</td>
+              <td>{{#if estado_civil.u_h}}X{{/if}}</td>
+              <td>{{#if estado_civil.na}}X{{/if}}</td>
+              <td>{{sexo}}</td>
+              <td>{{telefono_fijo}}</td>
+              <td>{{telefono_celular}}</td>
+              <td colspan="4">{{correo_electronico}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="7" rowspan="2">FECHA NACIMIENTO<br>(aaaa-mm-dd)</th>
+              <th class="th2" rowspan="2">LUGAR DE NACIMIENTO</th>
+              <th class="th2" rowspan="2">NACIONALIDAD</th>
+              <th class="th2" rowspan="2">EDAD</th>
+              <th class="th2" colspan="4">CONDICIÓN EDAD<br>(MARCAR)</th>
+            </tr>
+            <tr>
+              <th class="th2">H</th>
+              <th class="th2">D</th>
+              <th class="th2">M</th>
+              <th class="th2">A</th>
+            </tr>
+            <tr>
+              <td colspan="7">{{fecha_nacimiento}}</td>
+              <td>{{lugar_nacimiento}}</td>
+              <td>{{nacionalidad}}</td>
+              <td>{{edad}}</td>
+              <td>{{#if condicion_edad.h}}X{{/if}}</td>
+              <td>{{#if condicion_edad.d}}X{{/if}}</td>
+              <td>{{#if condicion_edad.m}}X{{/if}}</td>
+              <td>{{#if condicion_edad.a}}X{{/if}}</td>
+            </tr>
+            <tr>
+							<th class="th2" rowspan="4" colspan="7">RESIDENCIA HABITUAL</th>
+							<th class="th2">PROVINCIA</th>
+							<th class="th2">CANTÓN</th>
+							<th class="th2">PARROQUIA</th>
+							<th class="th2" colspan="4">BARRIO O SECTOR</th>
+						</tr>
+						<tr>
+							<td>{{residencia.provincia}}</td>
+							<td>{{residencia.canton}}</td>
+							<td>{{residencia.parroquia}}</td>
+							<td colspan="4">{{residencia.sector}}</td>
+						</tr>
+						<tr>
+							<th class="th2" colspan="2">CALLE PRINCIPAL</th>
+							<th class="th2">CALLE SECUNDARIA</th>
+							<th class="th2" colspan="4">REFERENCIA</th>
+						</tr>
+						<tr>
+							<td colspan="2">{{residencia.calle_principal}}</td>
+							<td>{{residencia.calle_secundaria}}</td>
+							<td colspan="4">{{residencia.referencia}}</td>
+						</tr>
+            </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__c'>
+					{{#with C}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="17">C. DATOS DEL CUIDADOR/A PRINCIPAL</th>
+	          </tr>
+            <tr>
+              <th class="th2" colspan="6">NOMBRE</th>
+              <th class="th2" colspan="8">DIRECCIÓN</th>
+              <th class="th2">No. TELÉFONO</th>
+              <th class="th2">CORREO ELECTRÓNICO</th>
+            </tr>
+            <tr>
+              <td colspan="6">{{nombre}}</td>
+              <td colspan="8">{{direccion}}</td>
+              <td>{{telefono}}</td>
+              <td>{{correo_electronico}}</td>
+            </tr>
+            <tr>
+              <th class="th2">PARENTESCO</th>
+              <th>HIJO/A</th>
+              <td>{{#if parentesco.hijo}}X{{/if}}</td>
+              <th>CONYUGE</th>
+              <td>{{#if parentesco.conyuge}}X{{/if}}</td>
+              <th>PADRE/MADRE</th>
+              <td>{{#if parentesco.padre}}X{{/if}}</td>
+              <th>NIETO</th>
+              <td>{{#if parentesco.nieto}}X{{/if}}</td>
+              <th>YERNO/NUERA</th>
+              <td>{{#if parentesco.yerno}}X{{/if}}</td>
+              <th>NO TIENE</th>
+              <td>{{#if parentesco.no_tiene}}X{{/if}}</td>
+              <th>OTRO ESPECIFIQUE</th>
+              <td colspan="2">{{parentesco.otro}}</td>
+            </tr>
+            </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__d'>
+					{{#with D}}
+					<table >
+						<tr>
+	            <th class="th1" colspan="2">D. DIAGNÓSTICO DE INGRESO</th>
+              <th class="th3">CIE</th>
+              <th class="th3">PRE</th>
+              <th class="th3">DEF</th>
+
+              <th class="th3" colspan="2"> </th>
+              <th class="th3">CIE</th>
+              <th class="th3">PRE</th>
+              <th class="th3">DEF</th>
+
+              <th class="th3" rowspan="2" colspan="2">PATOLOGÍA POR LA<br>QUE INGRESA A<br>CUIDADOS<br>PALIATIVOS</th>
+	          </tr>
+            <tr>
+              <th class="th5">1.</th>
+              <td class="td1">{{diagnostico.[0].descripcion}}</td>
+              <td>{{diagnostico.[0].cie}}</td>
+              <td>{{#if diagnostico.[0].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[0].def}}X{{/if}}</td>
+
+              <th class="th5">4.</th>
+              <td class="td1">{{diagnostico.[3].descripcion}}</td>
+              <td>{{diagnostico.[3].cie}}</td>
+              <td>{{#if diagnostico.[3].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[3].def}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th5">2.</th>
+              <td class="td1">{{diagnostico.[1].descripcion}}</td>
+              <td>{{diagnostico.[1].cie}}</td>
+              <td>{{#if diagnostico.[1].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[1].def}}X{{/if}}</td>
+
+              <th class="th5">5.</th>
+              <td class="td1">{{diagnostico.[4].descripcion}}</td>
+              <td>{{diagnostico.[4].cie}}</td>
+              <td>{{#if diagnostico.[4].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[4].def}}X{{/if}}</td>
+
+              <td>ONCOLÓGICO</td>
+              <td>{{#if patologia.oncologico}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th5">3.</th>
+              <td class="td1">{{diagnostico.[2].descripcion}}</td>
+              <td>{{diagnostico.[2].cie}}</td>
+              <td>{{#if diagnostico.[2].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[2].def}}X{{/if}}</td>
+
+              <th class="th5">6.</th>
+              <td class="td1">{{diagnostico.[5].descripcion}}</td>
+              <td>{{diagnostico.[5].cie}}</td>
+              <td>{{#if diagnostico.[5].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[5].def}}X{{/if}}</td>
+
+              <td>NO ONCOLÓGICO</td>
+              <td>{{#if patologia.no_oncologico}}X{{/if}}</td>
+            </tr>
+            </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__e'>
+					{{#with E}}
+					<table>
+						<tr>
+	            <th class="th1">E. MOTIVO DE CONSULTA</th>
+            </tr>
+            <tr>
+              <td class="td4j">{{motivo_consulta}}</td>
+            </tr>
+            </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__f'>
+					{{#with F}}
+					<table>
+						<tr>
+	            <th class="th1">F. ENFERMEDAD O PROBLEMA ACTUAL</th>
+            </tr>
+            <tr>
+              <td class="td4j">{{problema_actual}}</td>
+            </tr>
+            </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__g'>
+					{{#with G}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="20">G. ANTECEDENTES PATOLÓGICOS PERSONALES</th>
+            </tr>
+            <tr>
+              <th class='th5'>1. CARDIOPATÍA</th>
+              <td>{{#if cardiopatia}}X{{/if}}</td>
+              <th class='th5'>2. HIPERTENSIÓN</th>
+              <td>{{#if hipertension}}X{{/if}}</td>
+              <th class='th5'>3. ENF. C. VASCULAR</th>
+              <td>{{#if enf_c_vascular}}X{{/if}}</td>
+              <th class='th5'>4.  ENDÓCRINO METABÓLICO</th>
+              <td>{{#if endocrino_metabolico}}X{{/if}}</td>
+              <th class='th5'>5. CÁNCER</th>
+              <td>{{#if cancer}}X{{/if}}</td>
+              <th class='th5'>6. TUBERCULOSIS</th>
+              <td>{{#if tuberculosis}}X{{/if}}</td>
+              <th class='th5'>7.  ENF. MENTAL</th>
+              <td>{{#if enf_mental}}X{{/if}}</td>
+              <th class='th5'>8. ENF. INFECCIOSA</th>
+              <td>{{#if enf_infecciosa}}X{{/if}}</td>
+              <th class='th5'>9.  MAL FORMACIÓN</th>
+              <td>{{#if mal_formacion}}X{{/if}}</td>
+              <th class='th5'>10.  OTRO</th>
+              <td>{{#if otro}}X{{/if}}</td>
+	          </tr>
+	          <tr>
+	            <td class='td4j'colspan="20">{{descripcion_antecedentes}}</td>
+	          </tr>
+          </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__h'>
+					{{#with H}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="14">H. HÁBITOS Y ESTILOS DE VIDA</th>
+            </tr>
+            <tr>
+              <th class="th2">1. ALCOHOL</th>
+              <td>{{#if alcohol}}X{{/if}}</td>
+
+              <th class="th2">2. TABACO</th>
+              <td>{{#if tabaco}}X{{/if}}</td>
+
+              <th class="th2">3. DROGAS</th>
+              <td>{{#if drogas}}X{{/if}}</td>
+
+              <th class="th2">4. AFICIONES</th>
+              <td>{{#if aficiones}}X{{/if}}</td>
+
+              <th class="th2">5. CARÁCTER</th>
+              <td>{{#if caracter}}X{{/if}}</td>
+
+              <th class="th2">6. CREENCIAS</th>
+              <td>{{#if creencias}}X{{/if}}</td>
+
+              <th class="th2">7. VALORES</th>
+              <td>{{#if valores}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th2">8. ALIMENTOS</th>
+              <td>{{#if alimentos}}X{{/if}}</td>
+
+              <th class="th2">9. MEDICAMENTOS</th>
+              <td>{{#if medicamentos}}X{{/if}}</td>
+
+              <th class="th2">10. MICCIONAL</th>
+              <td>{{#if miccional}}X{{/if}}</td>
+
+              <th class="th2">11. DEFECATORIOS</th>
+              <td>{{#if defecatorios}}X{{/if}}</td>
+
+              <th class="th2">12. ACTIVIDAD FÍSICA</th>
+              <td>{{#if actividad_fisica}}X{{/if}}</td>
+
+              <th class="th2">13. OTROS</th>
+              <td>{{#if otros}}X{{/if}}</td>
+
+              <th class="th2" colspan="2"></th>
+            </tr>
+            <tr>
+              <td class="td4j" colspan="14">{{descripcion_habitos}}</td>
+            </tr>
+            </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__i'>
+					{{#with I}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="15">I. CONOCIMIENTO DE LA ENFERMEDAD</th>
+            </tr>
+            <tr>
+              <th class="th2" colspan="12">EL PACIENTE</th>
+              <th class="th2" colspan="3">EL FAMILIAR / CUIDADOR PRINCIPAL</th>
+            </tr>
+            <tr>
+              <th class="th2" rowspan="2">CONOCE EL<br>DIAGNÓSTICO</th>
+              <th>SI</th>
+              <td>{{#if paciente.conoce_diag.si}}X{{/if}}</td>
+
+              <th class="th2" rowspan="2">CONOCE EL<br>PRONÓSTICO</th>
+              <th>SI</th>
+              <td>{{#if paciente.conoce_pron.si}}X{{/if}}</td>
+
+              <th class="th2" rowspan="2">VOLUNTAD<br>ANTICIPADA</th>
+              <th>SI</th>
+              <td>{{#if paciente.volun_antic.si}}X{{/if}}</td>
+
+              <th class="th2" rowspan="2">TESTAMENTO<br>VITAL</th>
+              <th>SI</th>
+              <td>{{#if paciente.test_vital.si}}X{{/if}}</td>
+
+              <th class="th2" rowspan="2">CONOCE EL DIAGNÓSTICO Y<br>PRONÓSTICO</th>
+              <th>SI</th>
+              <td>{{#if familiar.diag_pronos.si}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th>NO</th>
+              <td>{{#if paciente.conoce_diag.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if paciente.conoce_pron.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if paciente.volun_antic.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if paciente.test_vital.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if familiar.diag_pronos.no}}X{{/if}}</td>
+            </tr>
+            </table>
+					{{/with}}
+				</div>
+
+        <footer>
+		      <div style="width:100%;">
+			      <table>
+		          <th style="text-align: left;" >SNS-MSP / HCU-form.058 / 2021</th>
+		          <th style="text-align: right;font-size: 8px">CUIDADOS PALIATIVOS(<span class="page"></span>)</th>
+	    	    </table>
+		      </div>
+	      </footer>
+
+        <div class='document__Cpaliativos__j'>
+					{{#with J}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="5">J. CONSTANTES VITALES Y ANTROPOMETRÍA</th>
+            </tr>
+            <tr>
+              <th class='th5'>TEMPERATURA (ºC)</th>
+              <th class='th5'>PRESIÓN ARTERIAL (mmHg)</th>
+              <th class='th5'>PULSO /  min</th>
+              <th class='th5'>FRECUENCIA RESPIRATORIA / min</th>
+              <th class='th5'>PESO (Kg)</th>
+            </tr>
+            <tr>
+              <td>{{temperatura}}</td>
+              <td>{{presion_arterial}}</td>
+              <td>{{pulso}}</td>
+              <td>{{frecuencia_respiratoria}}</td>
+              <td>{{peso}}</td>
+            </tr>
+          </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__k'>
+					{{#with K}}
+					<table class="table2">
+						<tr>
+	            <th class="th1" colspan="2">K. EXAMEN FÍSICO</th>
+            </tr>
+            <tr>
+              <td class="td4j">{{examen_fisico}}</td>
+              <td><img src="{{examen_img}}"></td>
+            </tr>
+            </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__l'>
+					{{#with L}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="11">L. REGISTRO DE INTENSIDAD DE SÍNTOMAS DE 0 A 10</th>
+            </tr>
+            <tr>
+              <th class="th2" rowspan="2">FECHA DE EVALUACIÓN</th>
+              <th class="th2" colspan="10">SÍNTOMAS</th>
+            </tr>
+            <tr>
+              <td class="td2">DOLOR</td>
+              <td class="td2">CANSANCIO</td>
+              <td class="td2">NAUSEA</td>
+              <td class="td2">DEPRESIÓN</td>
+              <td class="td2">ANSIEDAD</td>
+              <td class="td2">SOMNOLENCIA</td>
+              <td class="td2">HIPOREXIA</td>
+              <td class="td2">DISNEA</td>
+              <td class="td2">DIFICULTAD PARA DORMIR</td>
+              <td class="td2">ESTREÑIMIENTO</td>
+            </tr>
+            <tr>
+              <td>{{fecha_evaluacion}}</td>
+              <td>{{sintomas.dolor}}</td>
+              <td>{{sintomas.cansancio}}</td>
+              <td>{{sintomas.nausea}}</td>
+              <td>{{sintomas.depresion}}</td>
+              <td>{{sintomas.ansiedad}}</td>
+              <td>{{sintomas.somnolencia}}</td>
+              <td>{{sintomas.hiporexia}}</td>
+              <td>{{sintomas.disnea}}</td>
+              <td>{{sintomas.dificultad_dormir}}</td>
+              <td>{{sintomas.estreñimiento}}</td>
+            </tr>
+            </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__m'>
+					{{#with M}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="11">M. SISTEMA DE VALORACIÓN POR COMPONENTES</th>
+            </tr>
+            <tr>
+              <th class="th2" rowspan="2">FECHA DE EVALUACIÓN</th>
+              <th class="th2" colspan="10">COMPONENTES</th>
+            </tr>
+            <tr>
+              <td class="th2">KPS y PPS</td>
+              <td class="th2">BARTHEL</td>
+              <td class="th2">PFEIFFER</td>
+              <td class="th2">DME</td>
+              <td class="th2">GIJÓN</td>
+              <td class="th2">ZARIT</td>
+              <td class="th2">NEC. ESPIRITUAL</td>
+              <td class="th2"></td>
+              <td class="th2"></td>
+              <td class="th2"></td>
+            </tr>
+            <tr>
+              <td>{{fecha_evaluacion}}</td>
+              <td>{{componentes.kps}}</td>
+              <td>{{componentes.barthel}}</td>
+              <td>{{componentes.pfeiffer}}</td>
+              <td>{{componentes.dme}}</td>
+              <td>{{componentes.gijon}}</td>
+              <td>{{componentes.zarit}}</td>
+              <td>{{componentes.nec_espiritual}}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__n'>
+					{{#with N}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="11">N. FAMILIOGRAMA</th>
+            </tr>
+            <tr>
+              <td class="td4j">{{familiograma}}</td>
+            </tr>
+          </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__o'>
+					{{#with O}}
+					<table >
+						<tr>
+	            <th class="th1" colspan="2">O. DIAGNÓSTICO</th>
+              <th class="th3">CIE</th>
+              <th class="th3">PRE</th>
+              <th class="th3">DEF</th>
+
+              <th class="th3" colspan="2"></th>
+              <th class="th3">CIE</th>
+              <th class="th3">PRE</th>
+              <th class="th3">DEF</th>
+            </tr>
+            <tr>
+              <th class="th5">1.</th>
+              <td class="td1">{{diagnostico.[0].descripcion}}</td>
+              <td>{{diagnostico.[0].cie}}</td>
+              <td>{{#if diagnostico.[0].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[0].def}}X{{/if}}</td>
+
+              <th class="th5">4.</th>
+              <td class="td1">{{diagnostico.[3].descripcion}}</td>
+              <td>{{diagnostico.[3].cie}}</td>
+              <td>{{#if diagnostico.[3].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[3].def}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th5">2.</th>
+              <td class="td1">{{diagnostico.[1].descripcion}}</td>
+              <td>{{diagnostico.[1].cie}}</td>
+              <td>{{#if diagnostico.[1].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[1].def}}X{{/if}}</td>
+
+              <th class="th5">5.</th>
+              <td class="td1">{{diagnostico.[4].descripcion}}</td>
+              <td>{{diagnostico.[4].cie}}</td>
+              <td>{{#if diagnostico.[4].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[4].def}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th5">3.</th>
+              <td class="td1">{{diagnostico.[2].descripcion}}</td>
+              <td>{{diagnostico.[2].cie}}</td>
+              <td>{{#if diagnostico.[2].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[2].def}}X{{/if}}</td>
+
+              <th class="th5">6.</th>
+              <td class="td1">{{diagnostico.[5].descripcion}}</td>
+              <td>{{diagnostico.[5].cie}}</td>
+              <td>{{#if diagnostico.[5].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[5].def}}X{{/if}}</td>
+            </tr>
+          </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__p'>
+					{{#with P}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="3">P. PLAN DE TRATAMIENTO</th>
+              <td class="td3" colspan="2">DIAGNÓSTICO, TERAPÉUTICO Y EDUCACIONAL</td>
+            </tr>
+            <tr>
+              <td class="td4j" colspan="5">{{plan_tratamiento}}</td>
+            </tr>
+            <tr>
+              <th>PRESCRIPCIÓN DE OPIOIDE POTENTE</th>
+              <td>INICIA</td>
+              <td>{{#if prescripcion_opioide.inicia}}X{{/if}}</td>
+              <td>CONTINUA</td>
+              <td>{{#if prescripcion_opioide.continua}}X{{/if}}</td>
+            </tr>
+          </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__q'>
+					{{#with Q}}
+					<table class="table2">
+						<tr>
+	            <th class="th1" colspan="4">Q. DATOS DEL INFORMANTE</th>
+            </tr>
+            <tr>
+              <th>NOMBRE</th>
+              <td>{{nombre}}</td>
+              <th>PARENTESCO</th>
+              <td>{{parentesco}}</td>
+            </tr>
+          </table>
+					{{/with}}
+				</div>
+
+        <div class='document__Cpaliativos__r'>
+					{{#with R}}
+					<table>
+						<tr>
+	            <th class="th1" colspan="5">R. DATOS DEL PROFESIONAL RESPONSABLE</th>
+            </tr>
+            <tr>
+              <th class="th2">FECHA<br>(aaaa-mm-dd)</th>
+              <th class="th2">HORAA<br>(hh:mm)</th>
+              <th class="th2">PRIMER NOMBRE</th>
+              <th class="th2">PRIMER APELLIDO</th>
+              <th class="th2">SEGUNDO APELLIDO</th>
+            </tr>
+            <tr>
+              <td>{{fecha}}</td>
+              <td>{{hora}}</td>
+              <td>{{primer_nombre}}</td>
+              <td>{{primer_apellido}}</td>
+              <td>{{segundo_apellido}}</td>
+            </tr>
+            <tr>
+              <th class="th2">NÚMERO DE DOCUMENTO DE IDENTIDAD</th>
+              <th class="th2" colspan="2">FIRMA</th>
+              <th class="th2" colspan="2">SELLO</th>
+            </tr>
+            <tr>
+              <td>{{numero_identificacion}}</td>
+              <td colspan="2"><img src="{{firma}}"></td>
+              <td colspan="2"><img src="{{sello}}"></td>
+            </tr>
+          </table>
+					{{/with}}
+				</div>
+      </div>
+
+      </main>
+    <footer>
+      <p>SNS-MSP / HCU-form.058 / 2021</p>
+      <p>CUIDADOS PALIATIVOS(2)</p>
+    </footer>
+  </body>
+</html>

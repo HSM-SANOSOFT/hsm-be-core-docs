@@ -1,0 +1,308 @@
+{
+  "A": {
+    "institucion_sistema": "CLINICA SANTAMARIA",
+    "unicodigo": 25410,
+    "establecimiento_salud": "CLINICA SANTAMARIA",
+    "numero_historia_clinica": "123456789",
+    "numero_archivo": "104242"
+  },
+
+  "B": {
+    "primer_apellido": "1",
+    "segundo_apellido": "1",
+    "primer_nombre": "1",
+    "segundo_nombre": "1",
+    "sexo": "1",
+    "telefono_fijo": "1",
+    "telefono_celular": "1",
+    "correo_electronico": "1",
+    "fecha_nacimiento": "1",
+    "lugar_nacimiento": "1",
+    "nacionalidad": "1",
+    "edad": "1",
+
+    "identificacion": {
+      "cc_ci": true,
+      "pas": true,
+      "carne": true,
+      "sd": true
+    },
+
+    "estado_civil": {
+      "sol": true,
+      "cas": true,
+      "div": true,
+      "viu": true,
+      "un": true,
+      "u_h": true,
+      "na": true
+    },
+
+    "condicion_edad": {
+      "h": true,
+      "d": true,
+      "m": true,
+      "a": true
+    },
+
+    "residencia": {
+      "provincia": "1",
+      "canton": "1",
+      "parroquia": "1",
+      "sector": "1",
+      "calle_principal": "1",
+      "calle_secundaria": "1",
+      "referencia": "1"
+    }
+  },
+
+  "C": {
+    "nombre": "1",
+    "direccion": "1",
+    "telefono": "1",
+    "correo_electronico": "1",
+
+    "parentesco": {
+      "hijo": true,
+      "conyuge": true,
+      "padre": true,
+      "nieto": true,
+      "yerno": true,
+      "no_tiene": true,
+      "otro": "VECINO"
+    }
+  },
+
+  "D": {
+    "diagnostico": [
+      {
+        "descripcion": "HEMORRAGIA 1",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 2",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 3",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 4",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 5",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 6",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      }
+    ],
+
+    "patologia": {
+      "oncologico": true,
+      "no_oncologico": true
+    }
+  },
+
+  "E": {
+    "motivo_consulta": "1"
+  },
+
+  "F": {
+    "problema_actual": "1"
+  },
+
+  "G": {
+    "cardiopatia": "true",
+    "hipertension": "true",
+    "enf_c_vascular": "true",
+    "endocrino_metabolico": "true",
+    "cancer": "true",
+    "tuberculosis": "true",
+    "enf_mental": "true",
+    "enf_infecciosa": "true",
+    "mal_formacion": "true",
+    "otro": "true",
+
+    "descripcion_antecedentes": "1"
+  },
+
+  "H": {
+    "alcohol": true,
+    "tabaco": true,
+    "drogas": true,
+    "aficiones": true,
+    "caracter": true,
+    "creencias": true,
+    "valores": true,
+    "alimentos": true,
+    "medicamentos": true,
+    "miccional": true,
+    "defecatorios": true,
+    "actividad_fisica": true,
+    "otros": true,
+
+    "descripcion_habitos": "1"
+  },
+
+  "I": {
+    "paciente": {
+      "conoce_diag": {
+        "si": true,
+        "no": true
+      },
+
+      "conoce_pron": {
+        "si": true,
+        "no": true
+      },
+
+      "volun_antic": {
+        "si": true,
+        "no": true
+      },
+
+      "test_vital": {
+        "si": true,
+        "no": true
+      }
+    },
+
+    "familiar": {
+      "diag_pronos": {
+        "si": true,
+        "no": true
+      }
+    }
+  },
+
+  "J": {
+    "temperatura": "1",
+    "presion_arterial": "1",
+    "pulso": "1",
+    "frecuencia_respiratoria": "1",
+    "peso": "1"
+  },
+
+  "K": {
+    "examen_fisico": "1",
+    "examen_img": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTqtOO4bhLcIKtZr6Er9g-DvuOqe-6rzk7728hpOJQ3-d0bDqtp"
+  },
+
+  "L": {
+    "fecha_evaluacion": "1",
+
+    "sintomas": {
+      "dolor": "1",
+      "cansancio": "1",
+      "nausea": "1",
+      "depresion": "1",
+      "ansiedad": "1",
+      "somnolencia": "1",
+      "hiporexia": "1",
+      "disnea": "1",
+      "dificultad_dormir": "1",
+      "estreñimiento": "1"
+    }
+  },
+
+  "M": {
+    "fecha_evaluacion": "1",
+    "observaciones": "1",
+
+    "componentes": {
+      "kps": "1",
+      "barthel": "1",
+      "pfeiffer": "1",
+      "dme": "1",
+      "gijon": "1",
+      "zarit": "1",
+      "nec_espiritual": "1"
+    }
+  },
+
+  "N": {
+    "familiograma": "1"
+  },
+
+  "O": {
+    "diagnostico": [
+      {
+        "descripcion": "HEMORRAGIA 1",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 2",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 3",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 4",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 5",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 6",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      }
+    ]
+  },
+
+  "P": {
+    "plan_tratamiento": "1",
+
+    "prescripcion_opioide": {
+      "inicia": true,
+      "continua": true
+    }
+  },
+
+  "Q": {
+    "nombre": "1",
+    "parentesco": "1"
+  },
+
+  "R": {
+    "fecha": "",
+    "hora": "",
+    "primer_nombre": "",
+    "primer_apellido": "",
+    "segundo_apellido": "",
+    "numero_identificacion": "",
+    "firma": "",
+    "sello": ""
+  }
+}
