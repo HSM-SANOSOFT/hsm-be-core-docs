@@ -81,7 +81,6 @@
       }
       .th4 {
         background-color: #ccffcc;
-        width: 5px;
         text-align: center;
       }
       .th5 {
@@ -120,6 +119,15 @@
         vertical-align: top;
       }
 
+      .info-box {
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
+      }
+
       .document__atenAdoles,
       .document__atenAdoles__a,
       .document__atenAdoles__b,
@@ -143,6 +151,7 @@
         margin-top: 5px;
         padding: 0;
       }
+      
 </style>
 </head>
 <body>
@@ -491,22 +500,22 @@
               <th colspan="6"></th>
               <th>MADRE O<br>SUSTITUTA</th>
 
-              <td rowspan="14">{{familiograma}}</td>
+              <td rowspan="14"><img src="{{familiograma.descripcion_img}}"></td>
 
               <th>ENERGÍA ELÉCTRICA</th>
               <th>SI</th>
-              <td></td>
+              <td>{{#if vivienda.energia_electrica.si}}X{{/if}}</td>
               <th>NO</th>
-              <td></td>
+              <td>{{#if vivienda.energia_electrica.no}}X{{/if}}</td>
             </tr>
             <tr>
               <td>MADRE</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.convive.madre.si}}X{{/if}}</td>
+              <td>{{#if familia.convive.madre.no}}X{{/if}}</td>
 
-              <td></td>
+              <td>{{#if nivel_instruccion.analfabeto.padre_sust}}X{{/if}}</td>
               <td colspan="6">ANALFABETO</td>
-              <td></td>
+              <td>{{#if nivel_instruccion.analfabeto.madre_sust}}X{{/if}}</td>
 
               <td></td>
               <th colspan="2">EN HOGAR</th>
@@ -514,155 +523,964 @@
             </tr>
             <tr>
               <td>PADRE</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.convive.padre.si}}X{{/if}}</td>
+              <td>{{#if familia.convive.padre.no}}X{{/if}}</td>
 
-              <td></td>
+              <td>{{#if nivel_instruccion.inicial.padre_sust}}X{{/if}}</td>
               <td colspan="6">INICIAL</td>
-              <td></td>
+              <td>{{#if nivel_instruccion.inicial.madre_sust}}X{{/if}}</td>
 
               <th>AGUA</th>
-              <td colspan="2"></td>
-              <td colspan="2"></td>
+              <td colspan="2">{{#if vivienda.agua.hogar}}X{{/if}}</td>
+              <td colspan="2">{{#if vivienda.agua.fuera_hogar}}X{{/if}}</td>
             </tr>
             <tr>
               <td>MADRASTRA</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.convive.madrastra.si}}X{{/if}}</td>
+              <td>{{#if familia.convive.madrastra.no}}X{{/if}}</td>
 
-              <td></td>
+              <td>{{#if nivel_instruccion.basica.padre_sust}}X{{/if}}</td>
               <td colspan="6">BÁSICA</td>
-              <td></td>
+              <td>{{#if nivel_instruccion.basica.madre_sust}}X{{/if}}</td>
 
               <th>EXCRETAS</th>
-              <td colspan="2"></td>
-              <td colspan="2"></td>
+              <td colspan="2">{{#if vivienda.excretas.hogar}}X{{/if}}</td>
+              <td colspan="2">{{#if vivienda.excretas.fuera_hogar}}X{{/if}}</td>
             </tr>
             <tr>
               <td>PADRASTRO</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.convive.padrastro.si}}X{{/if}}</td>
+              <td>{{#if familia.convive.padrastro.no}}X{{/if}}</td>
 
-              <td></td>
+              <td>{{#if nivel_instruccion.bachillerato.padre_sust}}X{{/if}}</td>
               <td colspan="6">BACHILLERATO</td>
-              <td></td>
+              <td>{{#if nivel_instruccion.bachillerato.madre_sust}}X{{/if}}</td>
 
               <td colspan="5"></td>
             </tr>
             <tr>
               <td>HERMANOS</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.convive.hermanos.si}}X{{/if}}</td>
+              <td>{{#if familia.convive.hermanos.no}}X{{/if}}</td>
 
-              <td></td>
+              <td>{{#if nivel_instruccion.tecnico.padre_sust}}X{{/if}}</td>
               <td colspan="6">TÉCNICO</td>
-              <td></td>
+              <td>{{#if nivel_instruccion.tecnico.madre_sust}}X{{/if}}</td>
 
               <th class="th2" rowspan="2" colspan="3">NÚMERO DE CUARTOS PARA DORMIR</th>
-              <td rowspan="2" colspan="2"></td>
+              <td rowspan="2" colspan="2">{{vivienda.num_cuartos}}</td>
             </tr>
             <tr>
               <td>PAREJA</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.convive.pareja.si}}X{{/if}}</td>
+              <td>{{#if familia.convive.pareja.no}}X{{/if}}</td>
 
-              <td></td>
+              <td>{{#if nivel_instruccion.tercer_nivel.padre_sust}}X{{/if}}</td>
               <td colspan="6">TERCER NIVEL</td>
-              <td></td>
+              <td>{{#if nivel_instruccion.tercer_nivel.madre_sust}}X{{/if}}</td>
             </tr>
             <tr>
               <td>HIJO/A</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.convive.hijo.si}}X{{/if}}</td>
+              <td>{{#if familia.convive.hijo.no}}X{{/if}}</td>
 
-              <td></td>
+              <td>{{#if nivel_instruccion.cuarto_nivel.padre_sust}}X{{/if}}</td>
               <td colspan="6">CUARTO NIVEL</td>
-              <td></td>
+              <td>{{#if nivel_instruccion.cuarto_nivel.madre_sust}}X{{/if}}</td>
 
               <th class="th2" rowspan="2" colspan="3">NÚMERO DE PERSONAS QUE HABITAN</th>
-              <td rowspan="2" colspan="3"></td>
+              <td rowspan="2" colspan="3">{{vivienda.num_pers_hab}}</td>
             </tr>
             <tr>
               <td>SOLO</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.convive.solo.si}}X{{/if}}</td>
+              <td>{{#if familia.convive.solo.no}}X{{/if}}</td>
 
               <th class="th2" colspan="8">TRABAJO</th>
             </tr>
             <tr>
               <td>OTROS</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.convive.otros.si}}X{{/if}}</td>
+              <td>{{#if familia.convive.otros.no}}X{{/if}}</td>
 
               <th>PADRE O<br>SUSTITUTO</th>
               <td colspan="6"></td>
               <th>MADRE O<br>SUSTITUTA</th>
 
               <th class="th2" colspan="3" rowspan="2">COMPARTE CAMA</th>
-              <td colspan="2" rowspan="2"></td>
+              <td colspan="2" rowspan="2">{{vivienda.comp_cama}}</td>
             </tr>
             <tr>
               <td colspan="3"></td>
 
-              <td></td>
+              <td>{{#if trabajo.ninguno.padre_sust}}X{{/if}}</td>
               <td colspan="6">NINGUNO</td>
-              <td></td>
+              <td>{{#if trabajo.ninguno.madre_sust}}X{{/if}}</td>
             </tr>
             <tr>
               <th>VIVE</th>
               <th>SI</th>
               <th>NO</th>
 
-              <td></td>
+              <td>{{#if trabajo.estable.padre_sust}}X{{/if}}</td>
               <td colspan="6">ESTABLE</td>
-              <td></td>
+              <td>{{#if trabajo.estable.madre_sust}}X{{/if}}</td>
 
               <th colspan="5" rowspan="2">OBSERVACIONES</th>
             </tr>
             <tr>
               <td>EN INSTITUCIÓN</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.vive.institucion.si}}X{{/if}}</td>
+              <td>{{#if familia.vive.institucion.no}}X{{/if}}</td>
 
-              <td></td>
+              <td>{{#if trabajo.no_estable.padre_sust}}X{{/if}}</td>
               <td colspan="6">NO ESTABLE</td>
-              <td></td>
+              <td>{{#if trabajo.no_estable.madre_sust}}X{{/if}}</td>
             </tr>
             <tr>
               <td>EN LA CALLE</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.vive.calle.si}}X{{/if}}</td>
+              <td>{{#if familia.vive.calle.no}}X{{/if}}</td>
 
               <th>ESPECIFIQUE:</th>
-              <td colspan="7">{{especifique}}</td>
+              <td class="td1" colspan="7">{{trabajo.especifique}}</td>
 
-              <td colspan="5"></td>
+              <td class="td1" colspan="5" rowspan="3">{{vivienda.observacion}}</td>
             </tr>
             <tr>
               <td>CASA</td>
-              <td></td>
-              <td></td>
+              <td>{{#if familia.vive.casa.si}}X{{/if}}</td>
+              <td>{{#if familia.vive.casa.no}}X{{/if}}</td>
 
               <th class="th2" colspan="8">PERCEPCIÓN FAMILIAR DEL ADOLESCENTE</th>
               <th>OBSERVACIONES:</th>
-              <td colspan="5"></td>
             </tr>
             <tr>
               <td colspan="3"></td>
 
               <td>BUENA</td>
-              <td></td>
+              <td>{{#if percepcion.buena}}X{{/if}}</td>
               <td>REGULAR</td>
-              <td></td>
+              <td>{{#if percepcion.regular}}X{{/if}}</td>
               <td>MALA</td>
-              <td></td>
+              <td>{{#if percepcion.mala}}X{{/if}}</td>
               <td>NO HAY</td>
-              <td></td>
+              <td>{{#if percepcion.no_hay}}X{{/if}}</td>
 
-              <td></td>
-              <td colspan="5"></td>
+              <td class="td1">{{familiograma.observaciones}}</td>
             </tr>
-            </>
+          </table>
 					{{/with}}
 				</div>
+
+        <div class="info-box">
+          <p>SNS-MSP / HCU-form.056 / 2021</p>
+          <p>ATENCIÓN ADOLESCENTES(<span class="page"></span>)</p>
+        </div>
+
+        <div class='document__atenAdoles__g'>
+          {{#with G}}
+          <table>
+            <tr>
+              <th class="th1" colspan="21">G. DATOS SOBRE LA EDUCACIÓN</th>
+            </tr>
+            <tr>
+              <th class="th4" colspan="4">ESTUDIA</th>
+              <th class="th4">NOMBRE INSTITUCIÓN EDUCATIVA</th>
+              <th class="th4" colspan="4">NIVEL EN CURSO</th>
+              <th class="th4">GRADO / <br>CURSO</th>
+              <th class="th4" colspan="4">PRESUNTA VIOLENCIA / ABUSO<br>ESCOLAR</th>
+              <th class="th4">AÑOS REPETIDOS</th>
+              <td>{{anios_repetidos}}</td>
+              <th class="th4">DESERCIÓN /<br>EXCLUSIÓN</th>
+              <th class="th4">SI</th>
+              <td>{{#if desercion.si}}X{{/if}}</td>
+              <th class="th4">NO</th>
+              <td>{{#if desercion.no}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th>SI</th>
+              <td>{{#if estudia.si}}X{{/if}}</td>
+              <th>NO</th>
+              <td>{{#if estudia.no}}X{{/if}}</td>
+
+              <td>{{nombre_institucion}}</td>
+
+              <th>NINGUNO</th>
+              <td>{{#if nivel_curso.ninguno}}X{{/if}}</td>
+              <th>BACHILLERATO</th>
+              <td>{{#if nivel_curso.bachillerato}}X{{/if}}</td>
+
+              <td>{{grado}}</td>
+
+              <th>SI</th>
+              <td>{{#if violencia.si}}X{{/if}}</td>
+              <th>NO</th>
+              <td>{{#if violencia.no}}X{{/if}}</td>
+
+              <th>CAUSAS</th>
+              <td>{{causas_anio_rep}}</td>
+
+              <th>CAUSAS</th>
+              <td colspan="4">{{desercion.causa}}</td>
+            </tr>
+            <tr>
+              <td colspan="4"></td>
+
+              <td></td>
+
+              <th>BÁSICO</th>
+              <td>{{#if nivel_curso.basico}}X{{/if}}</td>
+              <th>TERCER NIVEL</th>
+              <td>{{#if nivel_curso.tercer_nivel}}X{{/if}}</td>
+
+              <td colspan="5"></td>
+
+              <td colspan="2"></td>
+
+              <td colspan="5"></td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="4">OBSERVACIONES:</th>
+              <td class="td1" colspan="17">{{observacion}}</td>
+            </tr>
+          </table>
+          {{/with}}
+        </div>
+
+        <div class='document__atenAdoles__h'>
+          {{#with H}}
+          <table>
+            <tr>
+              <th class="th1" colspan="22">H. DATOS SOBRE EL TRABAJO</th>
+            </tr>
+            <tr>
+              <th class="th2" colspan="4">ACTIVIDAD</th>
+              <th class="th2">EDAD INICIO TRABAJO</th>
+              <th class="th2">TRABAJO</th>
+              <th class="th2" colspan="6">HORAS DE TRABAJO</th>
+              <th class="th2" colspan="4">RAZÓN DEL TRABAJO</th>
+              <th class="th2" colspan="3">TRABAJO LEGALIZADO</th>
+              <th class="th2" colspan="3">TRABAJO INSALUBRE</th>
+            </tr>
+            <tr>
+              <th>TRABAJA</th>
+              <td>{{#if actividad.trabaja}}X{{/if}}</td>
+              <th>BUSCA POR PRIMERA VEZ</th>
+              <td>{{#if actividad.primera_vez}}X{{/if}}</td>
+
+              <td>{{inicio_trabajo}}</td>
+
+              <td>{{trabajo}}</td>
+
+              <th>MAÑANA</th>
+              <td>{{#if horas_trabajo.manana}}X{{/if}}</td>
+              <th>FIN DE SEMANA</th>
+              <td>{{#if horas_trabajo.fin_semana}}X{{/if}}</td>
+              <th>NOCHE</th>
+              <td>{{#if horas_trabajo.noche}}X{{/if}}</td>
+
+              <th>ECONÓMICA</th>
+              <td>{{#if razon_trabajo.economica}}X{{/if}}</td>
+              <th>ME GUSTA</th>
+              <td>{{#if razon_trabajo.me_gusta}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if trabajo_legalizado.si}}X{{/if}}</td>
+              <th>N/C</th>
+
+              <th>SI</th>
+              <td>{{#if trabajo_insalubre.si}}X{{/if}}</td>
+              <th>N/C</th>
+            </tr>
+            <tr>
+              <th>NO Y NO BUSCA</th>
+              <td>{{#if actividad.no_busca}}X{{/if}}</td>
+              <th>DESOCUPADO</th>
+              <td>{{#if actividad.desocupado}}X{{/if}}</td>
+
+              <th>AÑOS</th>
+
+              <th>HORAS POR SEMANA</th>
+
+              <th>TARDE</th>
+              <td>{{#if horas_trabajo.tarde}}X{{/if}}</td>
+              <th>TODO EL DÍA</th>
+              <td>{{#if horas_trabajo.todo_dia}}X{{/if}}</td>
+              <th>N/C</th>
+              <td>{{#if horas_trabajo.n_c}}X{{/if}}</td>
+
+              <th>AUTONOMÍA</th>
+              <td>{{#if razon_trabajo.autonomia}}X{{/if}}</td>
+              <th>N/C</th>
+              <td>{{#if razon_trabajo.n_c}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if trabajo_legalizado.no}}X{{/if}}</td>
+              <td>{{#if trabajo_legalizado.n_c}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if trabajo_insalubre.no}}X{{/if}}</td>
+              <td>{{#if trabajo_insalubre.n_c}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="2">OBSERVACIONES:</th>
+              <td class="td1" colspan="19">{{observaciones}}</td>
+            </tr>
+            </table>
+          {{/with}}
+        </div>
+
+        <div class='document__atenAdoles__i'>
+          {{#with I}}
+          <table>
+            <tr>
+              <th class="th1" colspan="25">I. DATOS SOBRE VIDA SOCIAL</th>
+            </tr>
+            <tr>
+              <th class="th2" colspan="4">ACEPTACIÓN</th>
+              <th class="th2" colspan="2">PAREJA</th>
+              <th class="th2" colspan="2">AMIGOS</th>
+              <th class="th2" colspan="2">ACTIVIDAD<br>GRUPAL</th>
+              <th class="th2" colspan="2">DEPORTE</th>
+              <th class="th2" colspan="2">TELEVISIÓN</th>
+              <th class="th2" colspan="2">COMPUTADOR</th>
+              <th class="th2" colspan="2">REDES SOCIALES</th>
+              <th class="th2" colspan="2">CELULAR</th>
+              <th class="th2" colspan="2">VIDEO JUEGO</th>
+              <th class="th2" colspan="3">OTRAS ACTIVIDADES</th>
+            </tr>
+            <tr>
+              <th>ACEPTADO</th>
+              <td>{{#if aceptacion.aceptado}}X{{/if}}</td>
+              <th>RECHAZADO</th>
+              <td>{{#if aceptacion.rechazado}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if pareja.si}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if amigos.si}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if act_grupal.si}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if deporte.si}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if television.si}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if computador.si}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if redes_sociales.si}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if celular.si}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if videojuego.si}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if otras_actividades.si}}X{{/if}}</td>
+              <th>CUALES</th>
+            </tr>
+            <tr>
+              <th>IGNORADO</th>
+              <td>{{#if aceptacion.ignorado}}X{{/if}}</td>
+              <th>NO CONOCE</th>
+              <td>{{#if aceptacion.no_conoce}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if pareja.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if amigos.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if act_grupal.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if deporte.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if television.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if computador.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if redes_sociales.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if celular.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if videojuego.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if otras_actividades.no}}X{{/if}}</td>
+              <td>{{otras_actividades.cuales}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="8">HORAS POR DÍA</th>
+              <td colspan="2">{{act_grupal.horas_dias}}</td>
+              <td colspan="2">{{deporte.horas_dias}}</td>
+              <td colspan="2">{{television.horas_dias}}</td>
+              <td colspan="2">{{computador.horas_dias}}</td>
+              <td colspan="2">{{redes_sociales.horas_dias}}</td>
+              <td colspan="2">{{celular.horas_dias}}</td>
+              <td colspan="2">{{videojuego.horas_dias}}</td>
+              <td colspan="3">{{otras_actividades.horas_dias}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="2">OBSERVACIONES:</th>
+              <td class="td1" colspan="23">{{observaciones}}</td>
+            </tr>
+          </table>
+          {{/with}}
+        </div>
+
+        <div class='document__atenAdoles__j'>
+          {{#with J}}
+          <table>
+            <tr>
+              <th class="th1" colspan="23">J. HÁBITOS</th>
+            </tr>
+            <tr>
+              <th class="th2" colspan="2">HORAS DE SUEÑO</th>
+              <th class="th2" colspan="2">ALIMENTACIÓN SALUDABLE</th>
+              <th class="th2" colspan="3">COMIDAS POR DIA CON LA<br>FAMILIA</th>
+              <th class="th2" colspan="4">TABACO</th>
+              <th class="th2">EDAD INICIO<br>TABACO</th>
+              <th class="th2" colspan="2">ALCOHOL</th>
+              <th class="th2" colspan="2">EDAD INICIO ALCOHOL</th>
+              <th class="th2" colspan="4">OTRAS SUSTANCIAS</th>
+              <th class="th2" colspan="3">CONDUCE VEHICULO</th>
+            </tr>
+            <tr>
+              <th>MENOS 8 HORAS</th>
+              <td>{{#if horas_sueno.menos_8h}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if alim_saludable.si}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if comida_dia.si}}X{{/if}}</td>
+              <th>CUANTAS</th>
+
+              <th>SI</th>
+              <td>{{#if tabaco.si}}X{{/if}}</td>
+              <th>CUANTOS</th>
+              <td>{{tabaco.cuantos}}</td>
+
+              <th>AÑOS</th>
+
+              <th>SI</th>
+              <td>{{#if alcohol.si}}X{{/if}}</td>
+
+              <th>AÑOS</th>
+              <td>{{inicio_alcohol.anios}}</td>
+
+              <th>SI</th>
+              <td>{{#if otras_sustancias.si}}X{{/if}}</td>
+              <th>CUAL</th>
+              <td>{{otras_sustancias.cual}}</td>
+
+              <th>SI</th>
+              <td>{{#if conduce_vehiculo.si}}X{{/if}}</td>
+              <th>CUAL</th>
+            </tr>
+            <tr>
+              <th>MAS 8 HORAS</th>
+              <td>{{#if horas_sueno.mas_8h}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if alim_saludable.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if comida_dia.no}}X{{/if}}</td>
+              <td>{{comida_dia.cuantas}}</td>
+
+              <th>NO</th>
+              <td>{{#if tabaco.no}}X{{/if}}</td>
+              <th>FRECUENCIA</th>
+              <td>{{tabaco.frecuencia}}</td>
+
+              <td>{{inicio_tabaco}}</td>
+
+              <th>NO</th>
+              <td>{{#if alcohol.no}}X{{/if}}</td>
+
+              <th>FRECUENCIA</th>
+              <td>{{inicio_alcohol.frecuencia}}</td>
+
+              <th>NO</th>
+              <td>{{#if otras_sustancias.no}}X{{/if}}</td>
+              <th>FRECUENCIA</th>
+              <td>{{otras_sustancias.frecuencia}}</td>
+
+              <th>NO</th>
+              <td>{{#if conduce_vehiculo.no}}X{{/if}}</td>
+              <td>{{conduce_vehiculo.cual}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="2">OBSERVACIONES</th>
+              <td class="td1">{{observaciones}}</td>
+            </tr>
+            </table>
+          {{/with}}
+        </div>
+
+        <div class='document__atenAdoles__k'>
+          {{#with K}}
+          <table>
+            <tr>
+              <th class="th1" colspan="25">K. ANTECEDENTES GINECO-UROLÓGICO</th>
+            </tr>
+            <tr>
+              <th class="th2" colspan="2">MENARQUIA /<br>ESPERMARQUIA</th>
+              <th class="th2" colspan="6">FECHA ÚLTIMA MENSTRUACIÓN</th>
+              <th class="th2" colspan="3">CICLOS REGULARES</th>
+              <th class="th2" colspan="3">DISMENORREA</th>
+              <th class="th2" colspan="2">SECRECIÓN GENITAL</th>
+              <th class="th2" colspan="3">INFECCIONES DE TRANSMISIÓN SEXUAL</th>
+              <th class="th2" colspan="6">OTROS</th>
+            </tr>
+            <tr>
+              <th>EDAD</th>
+              <td>{{menarquia.edad}}</td>
+
+              <th colspan="2">NO CONOCE</th>
+              <td>{{#if ult_mens.no_conoce}}X{{/if}}</td>
+              <th colspan="2">NO CORRESPONDE</th>
+              <td>{{#if ult_mens.no_corresponde}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if ciclos_regulares.si}}X{{/if}}</td>
+              <th>N/C</th>
+
+              <th>SI</th>
+              <td>{{#if dismenorrea.si}}X{{/if}}</td>
+              <th>N/C</th>
+
+              <th>SI</th>
+              <td>{{#if secr_gen.si}}X{{/if}}</td>
+
+              <th>SI</th>
+              <td>{{#if infecc_sex.si}}X{{/if}}</td>
+              <th>ESPECIFIQUE</th>
+
+              <th>EMBARAZOS</th>
+              <td>{{otros.embarazos}}</td>
+              <th>PARTOS</th>
+              <td>{{otros.partos}}</td>
+              <th>CESÁREAS</th>
+              <td>{{otros.cesareas}}</td>
+            </tr>
+            <tr>
+              <th>NO CONOCE</th>
+              <td>{{menarquia.no_conoce}}</td>
+
+              <th>AÑO</th>
+              <td>{{ult_mens.anio}}</td>
+              <th>MES</th>
+              <td>{{ult_mens.mes}}</td>
+              <th>DÍA</th>
+              <td>{{ult_mens.dia}}</td>
+
+              <th>NO</th>
+              <td>{{#if ciclos_regulares.no}}X{{/if}}</td>
+              <td>{{#if ciclos_regulares.n_c}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if dismenorrea.no}}X{{/if}}</td>
+              <td>{{#if dismenorrea.n_c}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if secr_gen.no}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if infecc_sex.no}}X{{/if}}</td>
+              <td>{{infecc_sex.especifique}}</td>
+
+              <th>ABORTOS</th>
+              <td>{{otros.abortos}}</td>
+              <th>HIJOS VIVOS</th>
+              <td>{{otros.hijos_vivos}}</td>
+              <th>HIJOS MUERTOS</th>
+              <td>{{otros.hijos_muertos}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="3">OBSERVACIONES:</th>
+              <td class="td1" colspan="22">{{observaciones}}</td>
+            </tr>
+            </table>
+          {{/with}}
+        </div>
+
+        <div class='document__atenAdoles__l'>
+          {{#with L}}
+          <table>
+            <tr>
+              <th class="th1" colspan="29">L. SEXUALIDAD</th>
+            </tr>
+            <tr>
+              <th class="th2" colspan="2">NECESITA<br>ASESORÍA</th>
+              <th class="th2" colspan="4">TIPO RELACIONES SEXUALES</th>
+              <th class="th2" colspan="3">PAREJA ACTUAL</th>
+              <th class="th2" colspan="7">EDAD INICIO RELACIONES SEXUALES</th>
+              <th class="th2" colspan="3">DISFUNCIÓN SEXUAL</th>
+              <th class="th2" colspan="4">MÉTODO ANTICONCEPTIVO</th>
+              <th class="th2" colspan="3">APOYO DE PAREJA</th>
+              <th class="th2" colspan="3">PRESUNTA VIOLENCIA<br>SEXUAL</th>
+            </tr>
+            <tr>
+              <th>SI</th>
+              <td>{{#if asesoria.si}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if tipo_relaciones.no}}X{{/if}}</td>
+              <th>HOMOSEXUAL</th>
+              <td>{{#if tipo_relaciones.homosexual}}X{{/if}}</td>
+
+              <th>ÚNICA</th>
+              <td>{{#if pareja.unica}}X{{/if}}</td>
+              <th>N/C</th>
+
+              <th>AÑOS</th>
+              <th colspan="6">VOLUNTARIAS</th>
+              
+              <th>SI</th>
+              <td>{{#if disfuncion_sexual.si}}X{{/if}}</td>
+              <th>N/C</th>
+
+              <th>SI</th>
+              <td>{{#if anticonceptivo.si}}X{{/if}}</td>
+              <th>NO</th>
+              <td>{{#if anticonceptivo.no}}X{{/if}}</td>
+
+              <th>SIEMPRE</th>
+              <td>{{#if apoyo_pareja.siempre}}X{{/if}}</td>
+              <th>NUNCA</th>
+
+              <th>SI</th>
+              <td>{{#if violencia_sexual.si}}X{{/if}}</td>
+              <th>N/C</th>
+            </tr>
+            <tr>
+              <th>NO</th>
+              <td>{{#if asesoria.no}}X{{/if}}</td>
+
+              <th>BISEXUAL</th>
+              <td>{{#if tipo_relaciones.bisexual}}X{{/if}}</td>
+              <th>HETEROSEXUAL</th>
+              <td>{{#if tipo_relaciones.heterosexual}}X{{/if}}</td>
+
+              <th>VARIAS</th>
+              <td>{{#if pareja.varias}}X{{/if}}</td>
+              <td>{{#if pareja.n_c}}X{{/if}}</td>
+
+              <td>{{inicio_relac.anios}}</td>
+              <th>SI</th>
+              <td>{{#if inicio_relac.voluntarias.si}}X{{/if}}</td>
+              <th>NO</th>
+              <td>{{#if inicio_relac.voluntarias.no}}X{{/if}}</td>
+              <th>N/C</th>
+              <td>{{#if inicio_relac.voluntarias.n_c}}X{{/if}}</td>
+             
+              <th>NO</th>
+              <td>{{#if disfuncion_sexual.no}}X{{/if}}</td>
+              <td>{{#if disfuncion_sexual.n_c}}X{{/if}}</td>
+
+              <th>CUAL</th>
+              <td colspan="3">{{anticonceptivo.cual}}</td>
+
+              <th>AVECES</th>
+              <td>{{#if apoyo_pareja.a_veces}}X{{/if}}</td>
+              <td>{{#if apoyo_pareja.nunca}}X{{/if}}</td>
+
+              <th>NO</th>
+              <td>{{#if violencia_sexual.no}}X{{/if}}</td>
+              <td>{{#if violencia_sexual.n_c}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="3">OBSERVACIONES:</th>
+              <td class="td1" colspan="26">{{observaciones}}</td>
+            </tr>
+            </table>
+          {{/with}}
+        </div>
+
+        <div class='document__atenAdoles__m'>
+          {{#with M}}
+          <table>
+            <tr>
+              <th class="th1" colspan="17">M. SITUACIÓN PSICOEMOCIONAL</th>
+            </tr>
+            <tr>
+              <th class="th2" colspan="3">IMAGEN CORPORAL</th>
+              <th class="th2" colspan="6">ESTADO DE ÁNIMO (SALUD MENTAL)</th>
+              <th class="th2" colspan="5">REFERENTE PERSONAL</th>
+              <th class="th2" colspan="3">PROYECTO DE VIDA</th>
+            </tr>
+            <tr>
+              <th>CONFORME</th>
+              <td>{{#if imagen_corporal.conforme}}X{{/if}}</td>
+              <th>IMPIDE RELACIÓN CON DEMÁS</th>
+
+              <th>BUENO</th>
+              <td>{{#if estado_animo.bueno}}X{{/if}}</td>
+              <th>TRISTE</th>
+              <td>{{#if estado_animo.triste}}X{{/if}}</td>
+              <th>NERVIOSO</th>
+              <td>{{#if estado_animo.nervioso}}X{{/if}}</td>
+
+              <th>MADRE</th>
+              <td>{{#if referente_personal.madre}}X{{/if}}</td>
+              <th>OTRO FAMILIAR</th>
+              <td>{{#if referente_personal.otro_familiar}}X{{/if}}</td>
+              <th>NINGUNO</th>
+
+              <th>CLARO</th>
+              <td>{{#if proyecto_vida.claro}}X{{/if}}</td>
+              <th>NINGUNO</th>
+            </tr>
+            <tr>
+              <th>CREA PREOCUPACIÓN</th>
+              <td>{{#if imagen_corporal.crea_preocupacion}}X{{/if}}</td>
+              <td>{{#if imagen_corporal.impide_relacion}}X{{/if}}</td>
+
+              <th>ALEGRE</th>
+              <td>{{#if estado_animo.alegre}}X{{/if}}</td>
+              <th>MUY TÍMIDO</th>
+              <td>{{#if estado_animo.timido}}X{{/if}}</td>
+              <th>OTRO</th>
+              <td>{{#if estado_animo.otro}}X{{/if}}</td>
+
+              <th>PADRE</th>
+              <td>{{#if referente_personal.padre}}X{{/if}}</td>
+              <th>FUERA DEL HOGAR</th>
+              <td>{{#if referente_personal.fuera_hogar}}X{{/if}}</td>
+              <td>{{#if referente_personal.ninguno}}X{{/if}}</td>
+
+              <th>CONFUSO</th>
+              <td>{{#if proyecto_vida.confuso}}X{{/if}}</td>
+              <td>{{#if proyecto_vida.ninguno}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th2" colspan="2">OBSERVACIONES:</th>
+              <td class="td1" colspan="15">{{observaciones}}</td>
+            </tr>
+            </table>
+          {{/with}}
+        </div>
+
+        <div class='document__atenAdoles__n'>
+          {{#with N}}
+          <table>
+            <tr>
+              <th class="th1" colspan="9">N. CONSTANTES VITALES Y ANTROPOMETRÍA</th>
+            </tr>
+            <tr>
+              <th class="th2">TEMPERATURA (°C)</th>
+              <th class="th2">PRESIÓN ARTERIAL (mmHg)</th>
+              <th class="th2">PULSO / min</th>
+              <th class="th2">FRECUENCIA RESPIRATORIA / min</th>
+              <th class="th2">PESO (Kg)</th>
+              <th class="th2">TALLA (cm)</th>
+              <th class="th2">IMC (Kg/m²)</th>
+              <th class="th2">PERÍMETRO CEFÁLICO (cm)</th>
+              <th class="th2">PULSIOXIMETRIA (%)</th>
+            </tr>
+            <tr>
+              <td>{{temperatura}}</td>
+              <td>{{presion_arterial}}</td>
+              <td>{{pulso}}</td>
+              <td>{{frecuencia_respiratoria}}</td>
+              <td>{{peso}}</td>
+              <td>{{talla}}</td>
+              <td>{{imc}}</td>
+              <td>{{perimetro_cefalico}}</td>
+              <td>{{pulsioximetria}}</td>
+            </tr>
+            </table>
+          {{/with}}
+        </div>
+
+        <div class='document__atenAdoles__o'>
+          {{#with O}}
+          <table>
+            <tr>
+              <th class="th1" colspan="10">O. EXAMEN FÍSICO</th>
+              <td class="td3" colspan="3">MARCAR "X" CUANDO PRESENTE PATOLOGÍA Y DESCRIBA</td>
+            </tr>
+            <tr>
+              <th class="th2">1. ASPECTO NORMAL</th>
+              <td>{{#if aspecto_normal}}X{{/if}}</td>
+              <th class="th2">4. AGUDEZA AUDITIVA</th>
+              <td>{{#if agudeza_auditiva}}X{{/if}}</td>
+              <th class="th2">7. TÓRAX Y MAMAS</th>
+              <td>{{#if torax_mamas}}X{{/if}}</td>
+              <th class="th2">10. ABDOMEN</th>
+              <td>{{#if abdomen}}X{{/if}}</td>
+              <th class="th2">13. MIEMBROS SUPERIORES</th>
+              <td>{{#if miembros_superiores}}X{{/if}}</td>
+              <th class="th2" colspan="3">16. TANNER</th>
+            </tr>
+            <tr>
+              <th class="th2">2. PIEL Y FANERAS</th>
+              <td>{{#if piel_faneras}}X{{/if}}</td>
+              <th class="th2">5. BOCA Y DIENTES</th>
+              <td>{{#if boca_dientes}}X{{/if}}</td>
+              <th class="th2">8. CARDIO PULMONAR</th>
+              <td>{{#if cardio_pulmonar}}X{{/if}}</td>
+              <th class="th2">11. GENITO URINARIO</th>
+              <td>{{#if genito_urinario}}X{{/if}}</td>
+              <th class="th2">14. MIEMBROS INFERIORES</th>
+              <td>{{#if miembros_inferiores}}X{{/if}}</td>
+              <th class="th2">MAMAS</th>
+              <th class="th2">GENITALES</th>
+              <th class="th2">VELLO PÚBICO</th>
+            </tr>
+            <tr>
+              <th class="th2">3. AGUDEZA VISUAL</th>
+              <td>{{#if agudeza_visual}}X{{/if}}</td>
+              <th class="th2">6. CUELLO Y TIROIDES</th>
+              <td>{{#if cuello_tiroides}}X{{/if}}</td>
+              <th class="th2">9. COLUMNA VERTEBRAL</th>
+              <td>{{#if columna_vertebral}}X{{/if}}</td>
+              <th class="th2">12. ANO - RECTAL</th>
+              <td>{{#if ano_rectal}}X{{/if}}</td>
+              <th class="th2">15. NEUROLÓGICO</th>
+              <td>{{#if neurologico}}X{{/if}}</td>
+              <td>{{#if mamas}}X{{/if}}</td>
+              <td>{{#if genitales}}X{{/if}}</td>
+              <td>{{#if vello_pubico}}X{{/if}}</td>
+              </tr>
+              <tr>
+                <th class="th2">OBSERVACIONES:</th>
+                <td class="td1" colspan="12">{{observaciones}}</td>
+              </tr>
+              <tr>
+                <td class="td1" colspan="13">{{observaciones_fisico}}</td>
+              </tr>
+            </table>
+          {{/with}}
+        </div>
+
+        <div class='document__atenAdoles__p'>
+          {{#with P}}
+          <table>
+            <tr>
+              <th class="th1" colspan="2">P. DIAGNOSTICO</th>
+              <th class="th3">CIE</th>
+              <th class="th3">PRE</th>
+              <th class="th3">DEF</th>
+
+              <th class="th3" colspan="2"> </th>
+              <th class="th3">CIE</th>
+              <th class="th3">PRE</th>
+              <th class="th3">DEF</th>
+            </tr>
+            <tr>
+              <th class="th5">1.</th>
+              <td class="td1">{{diagnostico.[0].descripcion}}</td>
+              <td>{{diagnostico.[0].cie}}</td>
+              <td>{{#if diagnostico.[0].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[0].def}}X{{/if}}</td>
+
+              <th class="th5">4.</th>
+              <td class="td1">{{diagnostico.[3].descripcion}}</td>
+              <td>{{diagnostico.[3].cie}}</td>
+              <td>{{#if diagnostico.[3].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[3].def}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th5">2.</th>
+              <td class="td1">{{diagnostico.[1].descripcion}}</td>
+              <td>{{diagnostico.[1].cie}}</td>
+              <td>{{#if diagnostico.[1].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[1].def}}X{{/if}}</td>
+
+              <th class="th5">5.</th>
+              <td class="td1">{{diagnostico.[4].descripcion}}</td>
+              <td>{{diagnostico.[4].cie}}</td>
+              <td>{{#if diagnostico.[4].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[4].def}}X{{/if}}</td>
+            </tr>
+            <tr>
+              <th class="th5">3.</th>
+              <td class="td1">{{diagnostico.[2].descripcion}}</td>
+              <td>{{diagnostico.[2].cie}}</td>
+              <td>{{#if diagnostico.[2].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[2].def}}X{{/if}}</td>
+
+              <th class="th5">6.</th>
+              <td class="td1">{{diagnostico.[5].descripcion}}</td>
+              <td>{{diagnostico.[5].cie}}</td>
+              <td>{{#if diagnostico.[5].pre}}X{{/if}}</td>
+              <td>{{#if diagnostico.[5].def}}X{{/if}}</td>
+            </tr>
+            </table>
+          {{/with}}
+        </div>
+
+        <div class='document__atenAdoles__q'>
+          {{#with Q}}
+          <table>
+            <tr>
+              <th class="th1">Q. PLAN DE TRATAMIENTO</th>
+              <td class="td3">DE DIAGNÓSTICO, TERAPÉUTICOS, EDUCACIONALES Y REHABILITACION</td>
+            </tr>
+            <tr>
+              <td class="td4j" colspan="2">{{plan_tratamiento}}</td>
+            </tr>
+            </table>
+          {{/with}}
+        </div>
+
+        <div class='document__atenAdoles__r'>
+          {{#with R}}
+          <table>
+            <tr>
+              <th class="th1" colspan="5">R. DATOS DEL PROFESIONAL RESPONSABLE</th>
+            </tr>
+            <tr>
+              <th class="th2">FECHA<br>(aaaa-mm-dd)</th>
+              <th class="th2">HORA<br>(hh:mm)</th>
+              <th class="th2">PRIMER NOMBRE</th>
+              <th class="th2">PRIMER APELLIDO</th>
+              <th class="th2">SEGUNDO APELLIDO</th>
+            </tr>
+            <tr>
+              <td>{{fecha}}</td>
+              <td>{{hora}}</td>
+              <td>{{primer_nombre}}</td>
+              <td>{{primer_apellido}}</td>
+              <td>{{segundo_apellido}}</td>
+            </tr>
+            <tr>
+              <th class="th2">NÚMERO DE DOCUMENTACIÓN DE IDENTIFICACIÓN</th>
+              <th class="th2" colspan="2">FIRMA</th>
+              <th class="th2" colspan="2">SELLO</th>
+            </tr>
+            <tr>
+              <td>{{identificacion}}</td>
+              <td colspan="2"><img src="{{firma}}"></td>
+              <td colspan="2"><img src="{{sello}}"></td>
+            </tr>
+            </table>
+          {{/with}}
+        </div>
       </div>
+
+      </main>
+    <footer>
+      <p>SNS-MSP / HCU-form.056 / 2021</p>
+      <p>ATENCIÓN ADOLESCENTES(<span class="page"></span>)</p>
+    </footer>
+  </body>
+</html>

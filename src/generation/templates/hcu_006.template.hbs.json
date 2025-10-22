@@ -38,7 +38,8 @@
     },
 
     "F": {
-        "indicacion_alta": "hola"
+        "indicacion_alta": "hola",
+        "proximo_control": "1"
     },
 
      

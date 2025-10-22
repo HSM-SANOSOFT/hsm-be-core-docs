@@ -64,18 +64,18 @@
         white-space: nowrap;
       }
 
-		.thV {
-			background-color: #ccffcc;
-  		font-weight: bold;
-  		text-align: center;
-			height: auto;
-			width: 10px;
-			padding: 2px 0;
-			line-height: 1;
-			writing-mode: vertical-rl;
-			transform: rotate(180deg);
-			white-space: nowrap;
-		}
+			.thV {
+				background-color: #ccffcc;
+				font-weight: bold;
+				text-align: center;
+				height: auto;
+				width: 10px;
+				padding: 2px 0;
+				line-height: 1;
+				writing-mode: vertical-rl;
+				transform: rotate(180deg);
+				white-space: nowrap;
+			}
 
       .th1 {
         text-align: left;
@@ -128,6 +128,15 @@
         height: 90px;
         text-align: justify;
         vertical-align: top;
+      }
+
+			.info-box {
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
       }
 
 			.document__cexterna,
@@ -385,14 +394,10 @@
 			{{/with}}
 		</div>
 
-		<div style="width: 100%">
-			<table style="width: 100%">
-				<tr>
-					<td style="font-size: 9px; text-align: left; width: 100%"> SNS-MSP / HCU-form.002 / 2021 </td>      
-					<td style="font-size: 9px; text-align: right; width: 100%"> CONSULTA EXTERNA - ANAMNESIS (1)  </td>
-				</tr>      
-			</table>
-		</div>
+		<div class="info-box">
+      <p>SNS-MSP / HCU-form.002 / 2021</p>
+      <p>CONSULTA EXTERNA - ANAMNESIS(<span class="page"></span>)</p>
+    </div>
 
 		<div class="document__cexterna__h">
 			{{#with H}}
@@ -604,7 +609,7 @@
 			</main>
 			<footer>
 			<p> SNS-MSP / HCU-form.002 / 2021 </p>      
-			<p> CONSULTA EXTERNA -  EXAMEN FÍSICO Y PRESCRIPCIONES (2)</p>
+			<p> CONSULTA EXTERNA -  EXAMEN FÍSICO Y PRESCRIPCIONES (<span class="page"></span>)</p>
 			</footer>
 	</body>
 </html>

@@ -315,12 +315,12 @@
     },
 
     "familiograma": {
-      "descripcion_img": "1",
+      "descripcion_img": "https://pymstatic.com/99692/conversions/familiograma-8-default.jpg",
       "observaciones": "1"
     },
 
     "vivienda": {
-      "enegia_electrica": {
+      "energia_electrica": {
         "si": true,
         "no": true
       },
@@ -341,5 +341,435 @@
 
       "observacion": "1"
     }
+  },
+
+  "G": {
+    "estudia": {
+      "si": true,
+      "no": true
+    },
+
+    "nombre_institucion": "1",
+
+    "nivel_curso": {
+      "ninguno": true,
+      "bachillerato": true,
+      "basico": true,
+      "tercer_nivel": true
+    },
+
+    "grado": "1",
+
+    "violencia": {
+      "si": true,
+      "no": true
+    },
+
+    "anios_repetidos": "1",
+    "causas_anio_rep": "1",
+
+    "desercion": {
+      "si": true,
+      "no": true,
+
+      "causa": "1"
+    },
+
+    "observacion": "1"
+  },
+
+  "H": {
+    "actividad": {
+      "trabaja": true,
+      "primera_vez": true,
+      "no_busca": true,
+      "desocupado": true
+    },
+
+    "inicio_trabajo": "1",
+    "trabajo": "1",
+
+    "horas_trabajo": {
+      "manana": "1",
+      "fin_semana": "1",
+      "noche": "1",
+      "tarde": "1",
+      "todo_dia": "1",
+      "n_c": "1"
+    },
+
+    "razon_trabajo": {
+      "economica": true,
+      "me_gusta": true,
+      "autonomia": true,
+      "n_c": true
+    },
+
+    "trabajo_legalizado": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "trabajo_insalubre": {
+      "si": true,
+      "no": true,
+      "n_c": true
+    },
+
+    "observaciones": "1"
+  },
+
+  "I": {
+    "aceptacion": {
+      "aceptado": true,
+      "rechazado": true,
+      "ignorado": true,
+      "no_conoce": true
+    },
+
+    "pareja": {
+      "si": true,
+      "no": true
+    },
+
+    "amigos": {
+      "si": true,
+      "no": true
+    },
+
+    "act_grupal": {
+      "si": true,
+      "no": true,
+      "horas_dias": "1"
+    },
+
+    "deporte": {
+      "si": true,
+      "no": true,
+      "horas_dias": "1"
+    },
+
+    "television": {
+      "si": true,
+      "no": true,
+      "horas_dias": "1"
+    },
+
+    "computador": {
+      "si": true,
+      "no": true,
+      "horas_dias": "1"
+    },
+
+    "redes_sociales": {
+      "si": true,
+      "no": true,
+      "horas_dias": "1"
+    },
+
+    "celular": {
+      "si": true,
+      "no": true,
+      "horas_dias": "1"
+    },
+
+    "videojuego": {
+      "si": true,
+      "no": true,
+      "horas_dias": "1"
+    },
+
+    "otras_actividades": {
+      "si": true,
+      "no": true,
+      "cuales": "1",
+      "horas_dias": "1"
+    },
+
+    "horas_dia": "1",
+    "observaciones": "1"
+  },
+  
+  "J": {
+    "horas_sueno": {
+      "menos_8h": true,
+      "mas_8h": true
+    },
+
+    "alim_saludable":{
+      "si": true,
+      "no": true
+    },
+
+    "comida_dia":{
+      "si": true,
+      "no": true,
+      "cuantas": "1"
+    },
+
+    "tabaco":{
+      "si": true,
+      "no": true,
+      "cuantos": "1",
+      "frecuencia": "1"
+    },
+
+    "inicio_tabaco": "1",
+
+    "alcohol":{
+      "si": true,
+      "no": true
+    },
+
+    "inicio_alcohol":{
+      "anios": "1",
+      "frecuencia": "1"
+    },
+
+    "otras_sustancias":{
+      "si": true,
+      "no": true,
+      "cual": "1",
+      "frecuencia": "1"
+    },
+
+    "conduce_vehiculo":{
+      "si": true,
+      "no": true,
+      "cual": "1"
+    },
+
+    "observaciones": "1"
+  },
+
+  "K": {
+    "menarquia": {
+      "edad": "1",
+      "no_conoce": "1"
+    },
+
+    "ult_mens": {
+      "no_conoce": true,
+      "no_corresponde": true,
+      "anio": "1",
+      "mes": "1",
+      "dia": "1"
+    },
+
+    "ciclos_regulares": {
+      "si": true,
+      "no": true,
+      "n_c": "1"
+    },
+
+    "dismenorrea": {
+      "si": true,
+      "no": true,
+      "n_c": "1"
+    },
+
+    "secr_gen": {
+      "si": true,
+      "no": true
+    },
+
+    "infecc_sex": {
+      "si": true,
+      "no": true,
+      "especifique": "1"
+    },
+
+    "otros": {
+      "embarazos": "1",
+      "partos": "1",
+      "cesareas": "1",
+      "abortos": "1",
+      "hijos_vivos": "1",
+      "hijos_muertos": "1"
+    },
+
+    "observaciones": "1"
+  },
+
+  "L": {
+    "asesoria": {
+      "si": true,
+      "no": true
+    },
+
+    "tipo_relaciones":{
+      "no": true,
+      "homosexual": true,
+      "bisexual": true,
+      "heterosexual": true
+    },
+
+    "pareja": {
+      "unica": true,
+      "n_c": "1",
+      "varias": "1"
+    },
+
+    "inicio_relac":{
+      "anios": "1",
+
+      "voluntarias": {
+        "si": true,
+        "no": true,
+        "n_c": true
+      }
+    },
+
+    "disfuncion_sexual": {
+      "si": true,
+      "n_c": true,
+      "no": true
+    },
+
+    "anticonceptivo": {
+      "si": true,
+      "no": true,
+      "cual": "1"
+    },
+
+    "apoyo_pareja": {
+      "siempre": true,
+      "nunca": true,
+      "a_veces": true
+    },
+
+    "violencia_sexual": {
+      "si": true,
+      "n_c": true,
+      "no": true
+    },
+
+    "observaciones": "1"
+  },
+
+  "M": {
+    "imagen_corporal": {
+      "conforme":true,
+      "crea_preocupacion": true,
+      "impide_relacion": "1"
+    },
+
+    "estado_animo": {
+      "bueno": true,
+      "triste": true,
+      "nervioso": true,
+      "alegre": true,
+      "timido": true,
+      "otro": true
+    },
+
+    "referente_personal": {
+      "madre": true,
+      "otro_familiar": true,
+      "ninguno": "1",
+      "padre": true,
+      "fuera_hogar": true
+    },
+
+    "proyecto_vida": {
+      "claro": true,
+      "confuso": true,
+      "ninguno": "1"
+    },
+
+    "observaciones": "1"
+  },
+
+  "N": {
+    "temperatura": "1",
+    "presion_arterial": "1",
+    "pulso": "1",
+    "frecuencia_respiratoria": "1",
+    "peso": "1",
+    "talla": "1",
+    "imc": "1",
+    "perimetro_cefalico": "1",
+    "pulsioximetria": "1"
+  },
+
+  "O": {
+    "aspecto_normal": true,
+    "agudeza_auditiva": true,
+    "torax_mamas": true,
+    "abdomen": true,
+    "miembros_superiores": true,
+    "piel_faneras": true,
+    "boca_dientes": true,
+    "cardio_pulmonar": true,
+    "genito_urinario": true,
+    "miembros_inferiores": true,
+    "agudeza_visual": true,
+    "cuello_tiroides": true,
+    "columna_vertebral": true,
+    "ano_rectal": true,
+    "neurologico": true,
+    "mamas": true,
+    "genitales": true,
+    "vello_pubico": true,
+
+    "observaciones": "1",
+    "observaciones_fisico": "1"
+  },
+
+  "P": {
+    "diagnostico": [
+      {
+        "descripcion": "HEMORRAGIA 1",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 2",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 3",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 4",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 5",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      },
+      {
+        "descripcion": "HEMORRAGIA 6",
+        "cie": "x250",
+        "pre": true,
+        "def": true
+      }
+    ]
+  },
+
+  "Q": {
+    "plan_tratamiento": "1"
+  },
+
+  "R": {
+    "fecha": "17/05/2023",
+    "hora": "10:50",
+    "primer_nombre": "JUAN JOSE",
+    "primer_apellido": "GOMEZ",
+    "segundo_apellido": "GONZÁLEZ",
+    "identificacion": "0987456321",
+    "firma": "https://drmarcoromeo.com/wp-content/uploads/2023/11/Firma-Dr-Marco-Romeo2.png",
+    "sello": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi1PFTXxgEZqZnOI49VeY4AmBH3OkwXLEMEg&s"
   }
 }

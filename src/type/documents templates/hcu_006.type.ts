@@ -39,7 +39,8 @@ export type Hcu006DocumentTemplate = {
     },
 
     "F": {
-        "indicacion_alta": "string"
+        "indicacion_alta": "string",
+        "proximo_control": "string"
     },
     
     "G": {

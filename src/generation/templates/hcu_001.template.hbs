@@ -53,7 +53,7 @@
         text-align: center;
         border: 1px solid black;
         height: 8px;      
-        }
+      }
 
       th {
         width: auto;
@@ -72,7 +72,7 @@
         writing-mode: vertical-rl;
         transform: rotate(180deg);
         white-space: nowrap;
-    }
+    	}
 
       .th1 {
         text-align: left;
@@ -103,17 +103,26 @@
         white-space: nowrap;
       }
 
-	  .td2 {
-        text-align: left;
-        /*width: max-content;*/
-        white-space: nowrap;
-		background-color: #ccffcc;
-      }
+			.td2 {
+				text-align: left;
+				/*width: max-content;*/
+				white-space: nowrap;
+				background-color: #ccffcc;
+			}
 
       .td4j {
         height: 90px;
         text-align: justify;
         vertical-align: top;
+      }
+
+			.info-box {
+        padding: 0 20px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background-color: white;
       }
 
       .document__admision,
@@ -313,7 +322,7 @@
 
 				<div class='document__admision__e'>
   				{{#with E}}
-  					<table>
+  					<table class="table2">
     					<tr>
       					<th class="th1" colspan="7">E. REGISTRO DE CAMBIOS</th>
     					</tr>
@@ -365,6 +374,11 @@
   						</table>
   					{{/with}}
 					</div>
+
+					<div class="info-box">
+          <p>SNS-MSP / HCU-form.001 / 2019</p>
+          <p>ADMISIÓN</p>
+        </div>
 
 					<div class='document__admision__f'>
   				{{#with F}}
@@ -492,10 +506,11 @@
 						</table>
 				</div>
 				</div>
+
 				</main>
-    <footer>
-      <p>SNS-MSP / HCU-form.001/ 2021</p>
-      <p> EGRESO</p>
-    </footer>
-</body>
-</html>
+    	<footer>
+				<p>SNS-MSP / HCU-form.001/ 2019</p>
+				<p> EGRESO</p>
+    	</footer>
+		</body>
+	</html>
